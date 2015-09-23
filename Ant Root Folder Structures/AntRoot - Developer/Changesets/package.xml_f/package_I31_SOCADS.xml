@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MyChangeSet</fullName>
+    <description>MyChangeSet</description>
+
+	<version>33.0</version>
+	
+    <types>
+        <members>OnBoardFormModel__c.Social_Ads_Package__c</members>
+        <members>OnBoardFormModel__c.SA_Campaign_Goal__c</members>
+        <name>CustomField</name>
+    </types>
+	
+	<types>
+        <members>OnBoardForm</members>
+        <name>ApexPage</name>
+    </types>
+	
+	<types>
+        <members>OnBoardFormControllerExt</members>
+        <name>ApexClass</name>
+    </types>
+</Package>

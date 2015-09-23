@@ -1,0 +1,16 @@
+Details
+
+{!Case.Contact}
+{!Case.Media_Partner__c}
+
+{!Case.PE_Reason_Type__c}
+{!Case.Product__c}
+{!Case.PE_New_Product_Description__c}
+
+Competitive? - {!Case.PE_Competitor_Offers__c}
+{!Case.PE_Competitor__c}
+{!Case.PE_Competitive_Offers_Details__c}
+
+Revenue - {!Case.PE_Potential_Revenue_Dollars__c}
+
+Summary : {!Case.PE_Request_Summary__c}

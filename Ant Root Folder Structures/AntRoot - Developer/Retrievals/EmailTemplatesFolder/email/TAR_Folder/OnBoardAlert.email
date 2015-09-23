@@ -1,0 +1,12 @@
+Sales Rep Name : {!Account.Affiliated_Sales_Rep__c}
+<br/>
+<br/>
+Monthly Budget : {!Account.Budget_Range__c}
+<br/>
+<br/>
+Genesys Order # : {!Account.Order_Number__c}
+<br/>
+<br/>
+Click Here To View The Company Record/Submittal
+<br/>
+{!Account.Link}

@@ -1,0 +1,13 @@
+Hello {!Lead.Affiliated_Sales_Rep__c}
+
+Please see attached for the audit that you requested. With {!Lead.Company} , we see opportunity for them to grow with {Prod Mix}.
+
+{Enter Narrative}
+
+If you would like to have a G/O Digital Representative on the phone with you to help you pitch this to your client, please let me know. We are here to help!
+
+Let me know if you need anything else!
+
+Sincerely,
+
+{!User.Name}

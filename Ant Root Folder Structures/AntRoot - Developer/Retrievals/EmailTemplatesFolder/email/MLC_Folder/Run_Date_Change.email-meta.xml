@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>A simple email to send a run date change to merchants</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Run Date Change</name>
+    <style>none</style>
+    <subject>DealChicken Run Date Change</subject>
+    <textOnly>Hi {!Contact.FirstName},
+
+Thank you again for partnering with DealChicken for the following promotion: {!Opportunity.DC_Description__c}
+
+We would like to re-schedule your promotion from &lt;b&gt;{!Opportunity.DC_Run_Date__c}&lt;/b&gt; to &lt;b&gt;{!Opportunity.DC_End_Date__c}.&lt;/b&gt;
+
+If you have any questions, please do not hesitate to reach out to the DealChicken Team.
+
+Thanks.
+
+
+
+DealChicken Merchant Loyalty Team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,13 @@
+{!Case.Link}
+
+INFORMATION RECEIVED:
+
+{!Case.Link}
+
+Company                -  {!Case.Company_Name__c}
+Media Partner          - {!Case.Media_Partner__c}
+Industry                 - {!Case.Industry_General__c}
+Sales Rep              - {!Case.Affl_Sales_Rep__c}
+
+ECommerce Site? - {!Case.GLW_ECommerce_Site__c}
+New Or Redesign? - {!Case.GLW_Website_New_Or_Redesign__c}

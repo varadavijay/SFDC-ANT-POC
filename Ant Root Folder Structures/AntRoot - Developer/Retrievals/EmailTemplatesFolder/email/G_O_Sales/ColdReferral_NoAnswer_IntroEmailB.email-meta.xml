@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Option B - Email to Gatekeeper/Office Manager asking who is in charge of marketing for business</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ColdReferral_NoAnswer_IntroEmailB</name>
+    <style>none</style>
+    <subject>Quick question</subject>
+    <textOnly>Hey {!Lead.FirstName},
+
+Could you please refer me to the person in charge of marketing for {!Lead.Company}?
+
+If that is you, let’s talk about how G/O Digital can get you more local customers at the lowest cost using search, social, email and mobile marketing!
+
+Thanks for your time,
+
+{!Lead.OwnerFullName}
+
+{!Lead.OwnerPhone}
+
+{!Lead.OwnerEmail}
+
+
+
+Forward to a Friend
+G/O Digital | 225 N. Michigan Avenue | 16th Floor | Chicago, IL 60613</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>AgreementSigned</name>
+    <style>none</style>
+    <subject>Contract Has Been Signed!</subject>
+    <textOnly>Agreement:
+
+
+{!echosign_dev1__SIGN_AgreementEvent__c.echosign_dev1__SIGN_Agreement__c}
+
+
+
+
+{!echosign_dev1__SIGN_Agreement__c.Link}
+
+
+Recipient:
+{!echosign_dev1__SIGN_Agreement__c.echosign_dev1__Recipient__c}
+
+
+
+Sales Rep:
+{!echosign_dev1__SIGN_AgreementEvent__c.Sales_Rep__c}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

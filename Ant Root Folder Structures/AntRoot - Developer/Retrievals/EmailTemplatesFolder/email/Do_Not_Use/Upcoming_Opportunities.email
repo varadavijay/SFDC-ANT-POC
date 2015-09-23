@@ -1,0 +1,9 @@
+Hi,
+
+All of the Opportunities listed below are sitting within the Negotiation/Review or Pitch stage of the Opportunity pipeline with an expected Close Date of this week.  Please evaluate each Opportunity as this shows your pipeline for the week.
+
+Here are your relevant Opportunities:
+{!Opportunity.Name}
+{!Opportunity.StageName}
+{!Opportunity.CloseDate}
+{!Opportunity.Link}

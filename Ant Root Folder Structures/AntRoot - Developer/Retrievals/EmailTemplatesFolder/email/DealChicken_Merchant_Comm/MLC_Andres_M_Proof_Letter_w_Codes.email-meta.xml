@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>National - Codes</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>National - Codes</name>
+    <style>none</style>
+    <subject>*IMPORTANT* DealChicken Redemption Codes Attached</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+As a reminder, your promotion, {!Opportunity.Name}, is scheduled to launch on {!Opportunity.DC_Run_Date__c} and ends on {!Opportunity.DC_End_Date__c}.
+
+You are almost ready to run on DealChicken. Your next step is to upload the attached Redemption Codes for your deal.
+
+If you have any questions regarding the Redemption Codes, please let me know.
+
+Thank you for partnering with DealChicken, and we are looking forward to launching your business!
+
+My best,
+
+Danielle Gosnell
+Merchant Loyalty Coordinator
+Social Commerce
+dgosnell@gannett.com</textOnly>
+    <type>custom</type>
+</EmailTemplate>

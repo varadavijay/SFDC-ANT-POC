@@ -1,0 +1,184 @@
+<style type="text/css">
+<!--
+.fineprint {
+	font-size: 9px;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #666;
+}
+.main1 {	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #363636;
+	line-height: 18px;
+}
+.main1b {	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #ffffff;
+	line-height: 18px;
+}
+.main2 {	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #363636;
+	line-height: 18px;
+	font-weight: bold;
+}
+.main2a {	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #7a1b51;
+	line-height: 17px;
+	font-weight: bold;
+}
+.main3 {	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #f47734;
+	line-height: 16px;
+	font-weight: bold;
+}
+.main4 {	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #7a1b51;
+	line-height: 18px;
+}
+.style3 {	font-size: 12px;
+	line-height: 20px;
+	color: #666;
+}
+div, p, a, li, td { -webkit-text-size-adjust:none; }
+-->
+</style>
+<br />
+<table width="611" cellspacing="0" cellpadding="1" border="0" align="center">
+	<tbody>
+		<tr bgcolor="#cbcbcb">
+			<td width="609" style="-webkit-text-size-adjust: none;">
+			<table width="609" cellspacing="0" cellpadding="10" border="0">
+				<tbody>
+					<tr bgcolor="#ffffff">
+						<td width="589" style="-webkit-text-size-adjust: none;">
+						<table width="589" cellspacing="0" cellpadding="0" border="0" align="center">
+							<tbody>
+								<tr>
+									<td width="589" style="-webkit-text-size-adjust: none;">
+									<table width="589" cellspacing="0" cellpadding="0" border="0" align="center">
+										<tbody>
+											<tr>
+												<td width="590" style="font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px; -webkit-text-size-adjust: none;"><img src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/DCH_03712_HEADER.jpg?nocache=550" width="590" height="115" style="display: block;" /></td>
+											</tr>
+											<tr>
+												<td style="font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px; -webkit-text-size-adjust: none;">
+												<table width="590" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td width="20" style="-webkit-text-size-adjust: none;">
+															<p style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px; -webkit-text-size-adjust: none;">
+															<img width="20" height="20" src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/spacer-pthuron.gif" />
+															</p>
+															<p style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px; -webkit-text-size-adjust: none;">&nbsp;
+															
+															</p>
+															</td>
+															<td width="338" style="-webkit-text-size-adjust: none;"><p style="-webkit-text-size-adjust: none;"><span class="main4" style="font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; font-size: 18px; color: #7a1b51; line-height: 18px; font-weight:bold;">Hi,
+
+<br/><br/>
+
+<span class="main2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px; font-weight:normal;">Congratulations! Your promotion is scheduled to launch on {!Opportunity.DC_Run_Date__c} and end on {!Opportunity.DC_End_Date__c}. 
+
+<br><br>
+															
+<span class="main2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color:#FF0000; line-height: 18px; font-weight: bold;">**PLEASE READ THE FOLLOWING VERY CAREFULLY**											          
+
+<br/><br/>
+
+<span class="main2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px; font-weight:normal;">You are almost ready to run on DealChicken. Your next step is to completely review this information and verify the details. DealChicken has its own voice and we are experts in making sure that comes across in the best way to sell your promotion. 
+
+<br/><br/>
+<b>Company Name</b>: {!Opportunity.Account}<br/>
+<b>Company Display Name</b>: {!Opportunity.Display_Name__c}<br/>
+<b>Sell Price</b>: {!Opportunity.DC_Sell_Price__c}<br/>
+<b>Total Value</b>: {!Opportunity.DC_Total_Value__c}<br/>
+<b>Merchant Share %</b>: {!Opportunity.DC_Advertiser_Perc__c}<br/>
+<b>Expiration Date</b>: {!Opportunity.DC_Expiration__c}<br/>
+<b>Deal Description used for creating content</b>: {!Opportunity.DC_Description__c}<br/>
+<b>Shipping</b>: {!Opportunity.DC_Instr_Limits__c}<br/>
+<b>Inventory Quantity</b>: {!Opportunity.NM_Promotion_Sold_Limit__c}<br/>
+<b>Purchasers will redeem their promotion at </b> {!Opportunity.DC_Red_Loc__c}.<br/>
+<b>Products will ship via</b> {!Opportunity.NM_Method_To_Ship__c} <b>within </b>{!Opportunity.NM_Days_To_Ship__c} <b>days of voucher redemption.<br/>
+<b>
+<br/>
+<b>Your refund policy is: <span class="main2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px; font-weight:normal;"><span class="main2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px; font-weight:normal;">{!Opportunity.NM_Ret_Ref_Policy__c}<br/>
+<br/>
+
+<b>Redemption Codes</b>: 
+<span class="main2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px; font-weight:normal;"><span class="main2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px; font-weight:normal;">The codes for your promotion are attached.  Please let us know if you have any issues uploading these codes on your end.
+<br/><br/>
+
+<span class="main2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px; font-weight: bold;"><b>If no changes are needed, please reply letting us know that this information is correct. If you do have redemption location, price or deal detail edits, please let us know as soon as possible. </b>
+
+<br/><br/>
+
+<span class="main2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px; font-weight:normal;"><span class="main2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px; font-weight:normal;">Once we have your approval, your feature will go live on the above launch date and cannot be changed. If we do not have your approval in 48 hours, we will launch the promotion with the information above. 
+
+<br/><br/>
+
+Thank you for partnering with DealChicken, and we are looking forward to launching your business!
+
+<br/>	</span><br/>
+
+-The DealChicken Team
+
+</p>
+
+<p style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px; -webkit-text-size-adjust: none;">&nbsp;</p></td>
+															<td width="20" style="-webkit-text-size-adjust: none;"><span style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px;"><img width="20" height="20" alt="" src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/spacer-pthuron.gif" /></span></td>
+															<td width="212" valign="top" bgcolor="#d7d7d7" align="center" rowspan="2" style="-webkit-text-size-adjust: none;">
+															<table width="162" cellspacing="0" cellpadding="5" border="0" valign="top">
+																<tbody>
+																	<tr>
+																		<td height="533" colspan="2" valign="top" style="-webkit-text-size-adjust: none;">
+																		<div align="left" style="-webkit-text-size-adjust: none;" valign="top">
+																		  <p style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(51, 51, 51); font-size: 12px; -webkit-text-size-adjust: none;"><span class="main2a" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #7a1b51; line-height: 17px; font-weight: bold;">How will I know who purchases my promotion?</span>
+
+<br/><br/>
+
+<span class="main1" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px;">After your promotion starts, you'll receive a full report with the number of units sold, a checklist of buyers and total revenue. </span></p>
+
+<p class="main1" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px; -webkit-text-size-adjust: none;"><strong class="main2a" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #7a1b51; line-height: 17px; font-weight: bold;">When will I receive payment?</strong>
+
+<br/><br/>
+
+Initial payments are based on sales of your promotion during its first 7 days on our site (referred to as the "initial" period).  You will receive 70% of the payment for your week one sales in a single check, roughly 12 days after your promotion starts running.  You will receive the remaining 30% approximately 25 business days after your first payment. 
+ 
+<br/><br/>
+
+For promotions running longer than 7 days, you will receive a monthly payment on or about the 15th of the following calendar month, less a 10% holdback.  The holdback will be paid (excluding any refunds) as part of your next month's payment, until there is no longer a balance.
+
+</p>
+                                                                        </div>
+																		</div></td>
+																	</tr>
+																</tbody>
+															</table>
+															<br />
+															</td>
+														</tr>
+											
+													</tbody>
+												</table>
+												</td>
+											</tr>
+											<tr>
+												<td height="44" bgcolor="#363636" class="main1b" style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; color: #ffffff; line-height: 18px; -webkit-text-size-adjust: none;" align="center">Merchant Site : <a href="http://merchants.dealchicken.com/about/" style="color: #ffffff; -webkit-text-size-adjust: none;">About</a> | <a href="http://merchants.dealchicken.com/successes/" style="color: #ffffff; -webkit-text-size-adjust: none;">Successes</a> | <a href="http://merchants.dealchicken.com/resources/" style="color: #ffffff; -webkit-text-size-adjust: none;">Resources</a> | <a href="http://merchants.dealchicken.com/category/coop-news/" style="color: #ffffff; -webkit-text-size-adjust: none;">Coop News</a></td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>

@@ -1,0 +1,9 @@
+Hello {!Lead.FirstName}, 
+
+I left you a voicemail a moment ago. I currently work with other {!Lead.Industry_Specific__c}s, helping them with their online presence. I read some great things about you, and was looking to set up a time to talk. 
+
+Do you have 20 minutes either today or tomorrow? If not, what time works best for you? 
+
+To learn more about what we can do for you, please visit our website at: http://godigitalmarketing.com/local/ 
+
+Best,

@@ -1,0 +1,11 @@
+<br/>
+{!Opportunity.Waiting_Status_Email_Body__c}
+<br/><br/>
+Thank You,
+<br/><br/>
+Your GO Team
+<br/>
+<br/>
+<br/>
+<br/>
+Link To Opp:{!Opportunity.LinkToView__c}

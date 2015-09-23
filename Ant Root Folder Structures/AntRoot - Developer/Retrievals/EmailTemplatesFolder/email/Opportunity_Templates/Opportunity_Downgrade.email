@@ -1,0 +1,12 @@
+Hi There,
+
+An Opportunity has been changed to Downgraded by the Customer Care Team.  If you'd like to follow-up, here is the applicable information:
+
+{!Opportunity.Name}
+{!Opportunity.OwnerFullName}
+{!Opportunity.CloseDate}
+{!Opportunity.Downgrade_Reason__c}
+{!Opportunity.LastModifiedBy}
+
+
+{!Opportunity.Link}

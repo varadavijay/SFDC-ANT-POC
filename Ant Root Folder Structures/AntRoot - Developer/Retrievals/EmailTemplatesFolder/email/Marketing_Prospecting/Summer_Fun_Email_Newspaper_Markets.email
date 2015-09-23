@@ -1,0 +1,134 @@
+<style type="text/css">
+a {
+color: #f47734;
+font-size: 9pt;
+font-family: Arial, Helvetica, sans-serif;
+}
+div, p, a, li, td { -webkit-text-size-adjust:none; }
+</style>
+<br />
+<table width="611" cellspacing="0" cellpadding="1" border="0" align="center">
+	<tbody>
+		<tr bgcolor="#cbcbcb">
+			<td width="609" style="">
+			<table width="609" cellspacing="0" cellpadding="10" border="0">
+				<tbody>
+					<tr bgcolor="#ffffff">
+						<td width="589" style="">
+						<table width="589" cellspacing="0" cellpadding="0" border="0" align="center">
+							<tbody>
+								<tr>
+									<td width="589" style="">
+									<table width="589" cellspacing="0" cellpadding="0" border="0" align="center">
+										<tbody>
+											<tr>
+												<td width="590" style="font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px;"><img width="590" height="209" mdid="773a8c2b-4f79-4ae5-82c1-96dfa369c737" alt="DHC_04362_spring-merchant-email-header" title="DHC_04362_spring-merchant-email-header" style="display: block; width: 590px; height: 209px; border-color: rgb(0, 0, 0); margin: 0px;" src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/DHC_04514_summerfun-merchant-email-header.jpg" /></td>
+											</tr>
+											<tr>
+												<td style="font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px;">
+												<table width="590" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td width="20" style="">
+															<p style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px;">
+															<img width="20" height="20" src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/spacer-pthuron.gif" />
+															</p>
+															<p style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px;">
+															&nbsp;
+															</p>
+															</td>
+															<td width="338" style="">
+															<p style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px;">
+															DealChicken invites you to be a part of 14 days of cool savings. From water parks and baseball games to movies and local events, DealChicken's Summer Fun promotion makes it easy for online shoppers to discover and connect with neighborhood merchants. A new merchant will be featured daily July 1-14 during our exclusive promotion. For more information, <a conversion="false" alias="download our Summer Fun information sheet" title="download our Summer Fun information sheet" href="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/DCH_04431_summer+fun+sales+sheet_Newspaper.pdf">download our Summer Fun information sheet</a>.<br />
+															<br />
+															To reserve one of 14 featured Summer Fun positions, contact {!Contact.OwnerFirstName} {!Contact.OwnerLastName} by June 17th at <a style="color: rgb(244, 119, 52); font-size: 9pt; font-family: Arial,Helvetica,sans-serif;" title="{!Contact.OwnerEmail}" href="mailto:{!Contact.OwnerEmail}?subject=I'd like to be featured in the Summer Fun promotion" conversion="undefined" alias="{!Contact.OwnerEmail}">{!Contact.OwnerEmail}</a> or {!Contact.OwnerPhone}.
+															</p>
+															<p style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px;">
+															<a style="color: rgb(244, 119, 52); font-size: 9pt; font-family: Arial,Helvetica,sans-serif;" conversion="undefined" alias="Feature Your Business" title="" href="mailto:{!Contact.OwnerEmail}?subject=I'd like to be featured in the Summer Fun promotion"><img width="181" height="28" border="0" style="border-color: rgb(0, 0, 0); margin: 0px; width: 181px; height: 28px;" src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/featureyourbusiness_button.jpg" title="featureyourbusiness_button" alt="featureyourbusiness_button" mdid="b6902fe0-5fb4-409c-9131-add2dd3eb451" /></a>
+															</p>
+															<p style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px;">
+															<img width="320" height="9" src="http://image.exct.net/lib/fef41d79716607/m/1/dottedline_378.gif" alt="" />
+															</p>
+															</td>
+															<td width="20" style=""><span style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px;"><img width="20" height="20" src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/spacer-pthuron.gif" alt="" /></span></td>
+															<td width="212" valign="top" bgcolor="#d7d7d7" align="center" style="" rowspan="2">
+															<img width="168" height="21" style="display: block;" alt="How It Works" src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/howitworks-vday2.jpg" /><br />
+															<table width="162" cellspacing="0" cellpadding="5" border="0">
+																<tbody>
+																	<tr>
+																		<td valign="top" style=""><img width="25" height="25" style="display: block;" name="" alt="1" src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/numbers-vday-1.jpg" /></td>
+																		<td style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(51, 51, 51); font-size: 12px;">
+																		<div align="left" style="">
+																		<span style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(51, 51, 51); font-size: 12px;">DealChicken alerts consumers to great deals.</span>
+																		</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td valign="top" style=""><img width="25" height="25" style="display: block;" alt="2" src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/numbers-vday-2.jpg" /></td>
+																		<td style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(51, 51, 51); font-size: 12px;">
+																		<div align="left" style="">
+																		<span style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(51, 51, 51); font-size: 12px;">Consumers purchase the deal on DealChicken.com and redeem at your location or website.</span>
+																		</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td width="25" valign="top" style=""><img width="25" height="25" style="display: block;" alt="3" src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/numbers-vday-3.jpg" /></td>
+																		<td width="117" style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(51, 51, 51); font-size: 12px;">
+																		<div align="left" style="">
+																		<span style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(51, 51, 51); font-size: 12px;">Merchants receive a revenue split less a 2.5% credit card processing fee.</span>
+																		</div>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+															</td>
+														</tr>
+														<tr>
+															<td align="center" style="" colspan="3">
+															<table width="334" cellspacing="0" cellpadding="0" border="0">
+																<tbody>
+																	<tr>
+																		<td valign="top" height="10" style="" colspan="2">
+																		</td>
+																	</tr>
+																	<tr>
+																		<td width="200" valign="top" height="76" style=""><a style="color: rgb(244, 119, 52); font-size: 9pt; font-family: Arial,Helvetica,sans-serif;" href="http://www.youtube.com/watch?v=EZh74mLKzlo" title="" alias="video" conversion="false"><img width="186" height="103" border="0" mdid="0990026d-9e4a-4032-96b2-b8f5afcc86e3" style="border-color: rgb(0, 0, 0); margin: 0px; width: 186px; height: 103px;" src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/videoanimation-animated-NEW.gif" title="videoanimation-whyDCH" alt="videoanimation-whyDCH" /></a></td>
+																		<td width="134" style="">
+																		<p align="left" style="">
+																		<span style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(153, 51, 102); font-size: 12px; font-weight: bold;">Why try DealChicken?<br />
+																		</span><span style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px;">Hear how DealChicken can transform your business and bring in new, high-quality customers</span>
+																		</p>
+																		<p style="">
+																		<a style="color: rgb(244, 119, 52); font-size: 9pt; font-family: Arial,Helvetica,sans-serif;" title="" href="http://www.youtube.com/watch?v=EZh74mLKzlo" conversion="false" alias="watch the video"><img width="128" height="25" border="0" src="http://image.exct.net/lib/fef41d79716607/m/1/button_watchvideo.gif" alt="" name="" style="border-color: rgb(0, 0, 0); margin: 0px; width: 128px; display: block; height: 25px;" /></a>
+																		</p>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td valign="top" height="20
+																		" style="" colspan="2"><span style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px;"><img width="20" height="20" src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/spacer-pthuron.gif" alt="" /></span></td>
+																	</tr>
+																</tbody>
+															</table>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+											<tr>
+												<td style="font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px;"><img width="590" vspace="0" hspace="0" height="44" border="0" src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/brandbar_{!Contact.OwnerFirstName}_{!Contact.OwnerLastName}.gif" title="bottombar" alt="bottombar" mdid="7043d150-28f0-4bdb-9fe5-be397508c669" style="width: 590px; height: 44px;" /></td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>

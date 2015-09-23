@@ -1,0 +1,11 @@
+Hello {!Lead.FirstName}, 
+
+I left you a voicemail a moment ago. I currently work with other companies in your area to help them with their online presence. I read some great things about your company and was looking to set up a time to talk. 
+
+Do you have 20 minutes either tomorrow for one of our Regional Account Executives to stop by and give you more information on G/O Digital? If not, what time works best for you? 
+
+To learn more about what we can do for you, please visit our website at: http://godigitalmarketing.com/local/ 
+
+Best,
+
+{!Lead.Lead_Owner__c}

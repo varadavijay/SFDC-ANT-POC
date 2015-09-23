@@ -1,0 +1,4 @@
+<br/>
+Case Link : {!Case.Link}<br/>
+Submitted By : {!Case.Affl_Sales_Rep__c}<br/>
+Media Partner : {!Case.Media_Partner__c}

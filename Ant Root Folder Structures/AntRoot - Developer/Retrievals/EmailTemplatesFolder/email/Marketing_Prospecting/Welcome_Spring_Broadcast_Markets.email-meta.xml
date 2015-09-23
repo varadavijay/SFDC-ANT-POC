@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Welcome Spring- Broadcast Markets</name>
+    <style>none</style>
+    <subject>Welcome spring: DealChicken is hatching spring savings by the dozen</subject>
+    <textOnly>DealChicken is hatching  spring savings by the dozen. From flowers and landscaping to spring cleaning, DealChicken&apos;s Welcome Spring promotion makes it easy for online shoppers to discover and connect with neighborhood merchants. A new merchant will be featured daily April 1-12 in our exclusive Welcome Spring promotion  For more information, download our Welcome Spring information sheet.
+
+To reserve one of 12 featured Welcome Spring positions, contact {!Contact.OwnerFirstName} {!Contact.OwnerLastName} by March 18th at {!Contact.OwnerEmail} or {!Contact.OwnerPhone}.
+
+
+
+
+DealChicken alerts consumers to great deals.
+Consumers purchase the deal on DealChicken.com and redeem at your location or website.
+Merchants receive 50% of total sales less a 2.5% credit card processing fee.
+
+Why try DealChicken?
+Hear how DealChicken can transform your business and bring in new, high-quality customers</textOnly>
+    <type>custom</type>
+</EmailTemplate>

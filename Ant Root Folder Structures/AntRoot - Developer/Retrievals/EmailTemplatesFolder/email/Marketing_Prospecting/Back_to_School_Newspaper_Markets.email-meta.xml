@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Back-to-School - Newspaper Markets</name>
+    <style>none</style>
+    <subject>Introducing 14 Days of Deals for Back-to-School</subject>
+    <textOnly>School is in session at DealChicken and you are invited. DealChicken is featuring 14 days of select savings on last-chance getaways, end of summer entertainment, events and more in addition to the traditional supplies and clothing. Don&apos;t miss your chance to get in early on the back to school rush. After all, 29% of back to school shoppers start shopping two months before school starts.
+
+DealChicken will feature a new merchant daily from July 29- Aug. 11.  For more information, download our 14 Days of Deals for Back-to-School information sheet.
+
+To reserve one of 14 featured Back-to-School positions, contact {!Contact.OwnerFirstName} {!Contact.OwnerLastName} by July 15th at {!Contact.OwnerEmail} or {!Contact.OwnerPhone}.
+
+
+
+
+DealChicken alerts consumers to great deals.
+Consumers purchase the deal on DealChicken.com and redeem at your location or website.
+Merchants receive a revenue split less a 2.5% credit card processing fee.
+
+Why try DealChicken?
+Hear how DealChicken can transform your business and bring in new, high-quality customers</textOnly>
+    <type>custom</type>
+</EmailTemplate>

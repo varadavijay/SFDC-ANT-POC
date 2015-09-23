@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to send to any lead who requests product info</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Learn more about products response</name>
+    <style>none</style>
+    <subject>G/O Digital Information Request</subject>
+    <type>text</type>
+</EmailTemplate>

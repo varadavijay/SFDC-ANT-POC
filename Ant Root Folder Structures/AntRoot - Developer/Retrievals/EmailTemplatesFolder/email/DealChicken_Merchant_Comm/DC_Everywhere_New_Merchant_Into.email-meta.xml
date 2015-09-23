@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>DC - Everywhere New Merchant Into</name>
+    <style>none</style>
+    <subject>Welcome to DealChicken</subject>
+    <textOnly>Dear {!echosign_dev1__SIGN_Agreement__c.echosign_dev1__Account__c},
+
+Dear [name of merchant] ,
+
+Thank you so much for becoming a part of the DealChicken team. We are looking forward to selling your merchandise on the DealChicken site in the near future. A few things to think about as we begin our partnership:
+
+1. Merchandise Needs - We are looking for all sorts of products including jewelry, electronics, spa and kitchen supplies and more.
+• If you have any items that you are interested in us putting on DealChicken, send sample products with your merchant name inside the box to: 
+Adam Bender, DealChicken, Gannett Corporation, 7950 Jones Branch Dr, McLean, VA 22107.
+• Let your main point of contact know what products are being sent and the price points for each. 
+
+2.  Sample Process - At DealChicken, we want to feature the best daily deals and provide a channel for our merchants to move a large volume of merchandise. In order to accomplish this, we have a sample review process.
+• DealChicken must receive samples for all merchandise promotions a minimum of 10 days before the promotion run date.
+• A few things to think about before sending samples:  
+• Merchandise must be sent as it would be received by our users.  
+• Merchandise should be clearly labeled with the name of the product and your company name.  
+• Instructions and documentation written in English without grammatical or spelling errors should be included for each product. 
+• Please note, we do not return samples.
+
+3.  Refund policy – At DealChicken our refund policy for merchandise is that the “Merchant’s refund policy applies”
+• Your order form includes the expected response time for consumer questions or correspondence. 
+• Please do not refer customers back to DealChicken for product issues such as faulty merchandise, returns, etc.
+• It is our hope that we do not receive calls coming in from consumers who were directed back to DealChicken, as that would require DealChicken to halt all future promotions. 
+
+{!DealChicken_Project__c.Handler__c}
+{!echosign_dev1__SIGN_Agreement__c.DC_Area_Manager_NameF__c},  {!echosign_dev1__SIGN_Agreement__c.DC_Area_Manager_Location__c}
+{!echosign_dev1__SIGN_Agreement__c.DC_Area_Manager_EmailF__c}
+{!echosign_dev1__SIGN_Agreement__c.DC_Area_Manager_Phone__c}
+
+
+How will I know who purchases my deal?
+After your deal starts, you&apos;ll receive a full report with the number of deals sold, a checklist of buyers and total revenue.
+
+When will I receive payment?
+Expect your first payment 70% of your share of the deal&apos;s revenue five business days after the deal ends if you&apos;ve chosen direct-deposit. If you&apos;ve chosen to receive a check, this process can take up to three weeks. The balance payment (excluding refunds, if any) will be processed 25 business days after your deal closes.
+
+
+Merchant Site : About | Successes | Resources | Coop News</textOnly>
+    <type>custom</type>
+</EmailTemplate>

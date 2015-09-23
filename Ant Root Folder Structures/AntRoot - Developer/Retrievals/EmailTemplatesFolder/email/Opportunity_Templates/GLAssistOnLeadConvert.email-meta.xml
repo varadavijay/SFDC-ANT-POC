@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>GLAssistOnLeadConvert</name>
+    <style>none</style>
+    <subject>GL Assist On Lead - Converted! - {!Opportunity.Name}</subject>
+    <textOnly>{!Opportunity.Name}
+Link To Opp : {!Opportunity.LinkToView__c}
+
+Assist Rep/s
+
+{!Opportunity.GL_Assisting_Rep__c}
+{!Opportunity.GL_Assist_Rep_2__c}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>National - Vendor Approval</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>National - Vendor Approval</name>
+    <style>none</style>
+    <subject>DealChicken - Approval</subject>
+    <textOnly>Hi,
+
+Congratulations! At this point in time, we are excited to move forward with distributing your amazing products to our quality customers.  Thank you very much for your patience and assistance through our Vendor Approval Process.
+
+Please reach out to Adam Bender (abender@gannett.com) to begin working on specific products and promotions.
+
+Thank you very much for your time and we look forward to a successful partnership. If you have any questions, please let us know.
+
+The DealChicken team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

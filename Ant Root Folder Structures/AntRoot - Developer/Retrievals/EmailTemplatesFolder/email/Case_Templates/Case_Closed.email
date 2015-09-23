@@ -1,0 +1,9 @@
+Hi,
+
+The Case you submitted has been closed, please click the link below to view the details.
+
+
+{!Case.Type}
+{!Case.ClosedDate}
+{!Case.Account}
+{!Case.Link}

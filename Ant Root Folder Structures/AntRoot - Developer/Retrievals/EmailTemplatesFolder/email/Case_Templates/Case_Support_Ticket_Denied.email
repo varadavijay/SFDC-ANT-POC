@@ -1,0 +1,15 @@
+The following Support Ticket has been Denied by {!ApprovalRequest.Process_Approver} 
+
+
+Please review the Case Comments for further information
+
+
+Short Description:
+________________________________________________
+{!Case.Subject}
+{!Case.Description}
+________________________________________________
+
+
+To view the Case Record in Salesforce, click the link below. 
+{!Case.Link}

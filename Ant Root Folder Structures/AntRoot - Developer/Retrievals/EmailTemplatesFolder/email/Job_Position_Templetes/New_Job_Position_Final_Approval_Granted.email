@@ -1,0 +1,5 @@
+Hello!
+
+The {!Job_Position__c.Job_Title__c} position submitted by {!Job_Position__c.OwnerFullName} has been Approved by {!Job_Position__c.Final_Approver__c}.
+
+{!Job_Position__c.Link}

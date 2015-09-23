@@ -1,0 +1,9 @@
+Hi {!Contact.FirstName}, 
+
+I hope you are well. I called for our scheduled appointment again, but you were not available. This will be my last time reaching out. It is a real shame because you are in a terrific position to see success like many of the other {INDUSTRY}'s that we work with. 
+
+If you change your mind and decide you are interested in receiving new local customers, please feel free to reach back out to me. 
+
+Best, 
+
+{!Opportunity.OwnerFirstName}

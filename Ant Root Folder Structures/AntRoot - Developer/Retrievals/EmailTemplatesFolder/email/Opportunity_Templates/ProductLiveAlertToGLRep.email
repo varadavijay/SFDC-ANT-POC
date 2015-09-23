@@ -1,0 +1,16 @@
+Hello,
+<br/><br/>
+This email is to inform you that the below G/O Digital Product is LIVE! 
+<br/><br/>
+Please communicate to your billing department accordingly. If you have questions regarding this product please contact your GO Digital Account Manager, noted below.
+<br/><br/>
+Product : {!Project__c.Product_Name__c}
+<br/><br/>
+Customer : {!Project__c.Project_Account__c}
+<br/><br/>
+Digital AM : {!Project__c.Affl_Sales_Rep__c}
+<br/><br/><br/><br/>
+Thank You,
+<br/><br/>
+Your GO Team
+<br/>

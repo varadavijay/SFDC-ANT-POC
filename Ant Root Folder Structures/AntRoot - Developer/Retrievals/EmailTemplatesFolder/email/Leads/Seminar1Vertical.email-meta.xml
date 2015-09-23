@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Seminar1Vertical</name>
+    <style>none</style>
+    <subject>Learn Social Media!</subject>
+    <textOnly>Gannett Local Workshop
+
+April.SanMarco@gannett.com
+
+how are your customers using social media?
+
+G/O Digital is holding a SEO/SEM Social Media Workshop for business experts, and would Love for you to attend!
+
+60 MIN CRASH COURSE IN SOCIAL MEDIA
+
+Social Media 101
+Successful Case Studies
+Discover Proven Strategies
+Learn Tested Techniques
+Generate New Customers
+
+CLASS OUTLINE
+
+What is Social Media?
+What does the Fortune 100 know that I don&apos;t?
+Why is it so important for my business?
+How do I use social media to create new customers?
+How do I get started?
+
+Use the links below to accept our invite and register for the time that best fits your schedule. (click on the date/time that you wish to attend)
+
+©2012  |  www.gannettlocal.com  |  All Rights Reserved</textOnly>
+    <type>custom</type>
+</EmailTemplate>

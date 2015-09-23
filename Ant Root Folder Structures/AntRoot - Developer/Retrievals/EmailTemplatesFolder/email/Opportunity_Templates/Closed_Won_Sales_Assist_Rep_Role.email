@@ -1,0 +1,20 @@
+Opportunity Name: 
+{!Opportunity.Name}
+
+Opportunity Record Type: 
+{!Opportunity.RecordType}
+
+Opportunity Owner: 
+{!Opportunity.OwnerFullName}
+
+Affl Sales Rep: 
+{!Opportunity.Sales_Rep__c}
+
+Marketing Source: 
+{!Opportunity.Marketing_Source__c}
+
+Media Partner: 
+{!Opportunity.Media_Partner_Name__c}
+
+Link: 
+{!Opportunity.Link}

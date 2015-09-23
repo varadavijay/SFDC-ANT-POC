@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>DC - Deal Date Merchant Email TB</name>
+    <style>none</style>
+    <subject>Deal Day Is Tomorrow!</subject>
+    <textOnly>Your promotion is ready to go, are you?
+
+Your DealChicken offer starts tomorrow. Here are a few suggestions and reminders:
+
+Make sure your website is up to date. DealChicken customers may go to your website if they want more information before purchasing the deal.
+Prepare your employees. Educate them on voucher redemption and prepare them for extra volume. Remember that people can start redeeming the next day. Download our redemption guidelines to help prepare your employees.
+Keep an eye on your inbox for the deal report. The day after your promotion begins and each day following, you will receive a report with the number of deals sold and a list of buyers.
+
+Visit our DealChicken merchant site for more tips and suggestions. Please let me know if you have any questions.
+
+
+REDEMPTION
+GUIDELINES
+Have questions?
+I&apos;m here to help.
+
+{!echosign_dev1__SIGN_Agreement__c.DC_MLC_Name__c}
+{!echosign_dev1__SIGN_Agreement__c.DC_MLC_Location__c}
+{!echosign_dev1__SIGN_Agreement__c.DC_MLC_Email__c}
+{!echosign_dev1__SIGN_Agreement__c.DC_MLC_Phone__c}
+
+
+Merchant Site : About | Successes | Resources | Coop News</textOnly>
+    <type>custom</type>
+</EmailTemplate>

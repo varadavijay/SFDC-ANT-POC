@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Website Request Complete Email HTML</name>
+    <style>none</style>
+    <subject>Your Website Audit Is Complete!</subject>
+    <textOnly>Hello {!Case.Affl_Sales_Rep__c}
+
+Your Website Request Is Complete. Please contact G/O Digital at &quot;answers@godigitalmarketing.com&quot; with any questions or updates regarding the fulfillment of the audit or any changes and additions that need to be made.
+
+INFORMATION SUMMARY:
+
+Case Number - {!Case.CaseNumber}
+Company - {!Case.Company_Name__c}
+Media Partner - {!Case.Media_Partner__c}
+Industry - {!Case.Industry_General__c}
+Sales Rep - {!Case.Affl_Sales_Rep__c}
+Link To Proposal - {!Case.Link_To_Proposal__c}
+Proposal Notes - {!Case.GLW_Proposal_Notes__c}
+
+
+ECommerce Site? - {!Case.GLW_ECommerce_Site__c}
+New Or Redesign? - {!Case.GLW_Website_New_Or_Redesign__c}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

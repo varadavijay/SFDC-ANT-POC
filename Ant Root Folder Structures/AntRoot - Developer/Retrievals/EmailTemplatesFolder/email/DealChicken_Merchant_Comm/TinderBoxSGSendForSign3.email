@@ -1,0 +1,14 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<p class="MsoNormal"><font face="Arial, sans-serif">Hello&nbsp;{!Contact.Name},</font></p><div><font face="Arial, sans-serif"><br></font></div><div><p class="MsoNormal"><font face="Arial, sans-serif">Congratulations, your Simply Gifted deal is almost ready to go. &nbsp;A few clicks and you’ll be on your way to attracting lots of new customers. Simply click the link below to review and accept the agreement terms and tell us how you’d like to be paid. It’s that simple.<o:p></o:p></font></p><p class="MsoNormal"><font face="Arial, sans-serif">&nbsp;</font></p><font face="Arial, sans-serif">When you click on the link below, you will be prompted to enter your First and Last Name.</font></div><div><br></div><div><span style="font-size: 12pt;"><font color="#ff0000">(Sales - Paste Tinderbox Link Here)</font></span></div><div><span style="font-size: 12pt;"><font color="#ff0000"><br></font></span></div><div><p class="MsoNormal"><font face="Arial, sans-serif">When you reach our site, you’ll be able to review and sign your agreement, enter your W9 data and provide direct deposit information (it’s the fastest way to get paid) all in one place. The whole process only takes a few minutes. Once we get your approval we can get started.<o:p></o:p></font></p><p class="MsoNormal"><font face="Arial, sans-serif"><br><br></font></p></div>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[]]></td>
+</tr>
+</table>

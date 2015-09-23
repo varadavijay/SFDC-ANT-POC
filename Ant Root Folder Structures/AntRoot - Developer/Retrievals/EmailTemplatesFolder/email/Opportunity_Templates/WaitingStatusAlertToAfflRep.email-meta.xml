@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Waiting Status Alert To Affl Rep</name>
+    <style>none</style>
+    <subject>{!Opportunity.Account} - {!Opportunity.Waiting_Status_Last_Product__c} - {!Opportunity.Waiting_Status_Last_Set__c}</subject>
+    <textOnly>{!Opportunity.Waiting_Status_Email_Body__c}
+
+Thank You,
+
+Your GO Team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,15 @@
+<br/>
+Waiting Since - {!Project__c.Waiting_Since_Date__c}
+<br/><br/>
+This email is to notify you that the following G/O Digital products are:
+<br/><br/>
+{!Project__c.Project_Status__c} For -- {!Project__c.Product_Name__c}<br/>
+----------------------------------------------------------------------------------------------<br/>
+Notes:  {!Project__c.Status_Notes__c}<br/>
+----------------------------------------------------------------------------------------------
+<br/><br/>
+Please note that the campaign launch date will be further delayed if there is no client response.  Please reach out to your client to help expedite this process.
+<br/><br/>
+Thank You,
+<br/><br/>
+Your GO Team

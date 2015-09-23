@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Approval</letterhead>
+    <name>Appointment Request 2</name>
+    <style>freeForm</style>
+    <subject>You have new customers waiting</subject>
+    <textOnly>Hello {!Lead.FirstName},
+
+I hope you are well. I have been trying to get a hold of you. [Affiliate name] is looking for select local businesses to feature offers on DealChicken.com. We’d like to showcase {!Lead.Company}. With No upfront cost, DealChicken is a low-risk way for your business to be seen by [Affiliate name]’s audience.
+
+Do you have time to speak later today or tomorrow?
+
+
+
+
+Best,
+
+{!Lead.OwnerFullName}
+
+{!Lead.OwnerPhone}</textOnly>
+    <type>html</type>
+</EmailTemplate>

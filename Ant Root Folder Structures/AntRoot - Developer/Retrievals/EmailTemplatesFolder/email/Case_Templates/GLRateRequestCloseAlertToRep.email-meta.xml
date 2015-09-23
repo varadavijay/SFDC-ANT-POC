@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>GO Rate Request - Close Alert to Affl Rep</name>
+    <style>none</style>
+    <subject>GO Rate Request Completed- {!Case.Company_Name__c}</subject>
+    <textOnly>{!Case.Affl_Sales_Rep__c},
+
+Rate Request ID: {!Case.CaseNumber} 
+
+Your Rate Request has been processed, with the status of
+{!Case.Status}.
+
+Summary:
+{!Case.Resolution_Summary__c}
+
+
+Please reply to this email if you have further questions.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

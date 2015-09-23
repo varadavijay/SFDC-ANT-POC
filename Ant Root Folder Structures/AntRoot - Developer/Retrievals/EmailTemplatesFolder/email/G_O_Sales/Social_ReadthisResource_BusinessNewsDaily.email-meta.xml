@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Business News Daily article you should send to Restaurant, Retail, Food, Entertainment vertical!</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Social_ReadthisResource_BusinessNewsDaily</name>
+    <style>none</style>
+    <subject>Thought you might want to read this</subject>
+    <textOnly>Hi {!Contact.FirstName},
+
+I hope you are well!  We spoke about your interest in getting {!Account.Name} in front of more local customers with G/O Digital.
+
+I&apos;ve pulled together some articles and reports on how you can grow {!Account.Name} using Facebook - which I think will be of great benefit to you.  Once of the articles I found was from Business News Daily titled &quot;Your Business&apos;s Biggest Mistake: Not Being on Facebook.&quot;  Here is the link: http://www.businessnewsdaily.com/6980-biggest-mistake-no-facebook.html
+
+If you would like, I can send you the rest of the articles and reports by email?  Just give me a call or send me an email!
+
+Sincerely,
+
+{!Contact.OwnerFullName}
+
+{!Contact.OwnerPhone}
+
+{!Contact.OwnerEmail}
+
+
+
+Forward to a Friend
+G/O Digital | 225 N. Michigan Avenue | 16th Floor | Chicago, IL 60613</textOnly>
+    <type>custom</type>
+</EmailTemplate>

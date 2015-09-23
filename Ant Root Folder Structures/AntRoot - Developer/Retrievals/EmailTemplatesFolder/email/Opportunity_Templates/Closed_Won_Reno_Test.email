@@ -1,0 +1,10 @@
+A Reno deal has been Closed-Won, please follow up with the sales rep.
+
+{!Opportunity.Name}
+{!Opportunity.OwnerFullName}
+{!Opportunity.Amount}
+Payment Processing: {!Payment_Processing__c.RecordType}
+
+{!Opportunity.Link}
+
+<a href={!Opportunity.Link}>{!Opportunity.Name}</a>

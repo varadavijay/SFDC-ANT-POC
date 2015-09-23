@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Pro Sports Opt-In Email</name>
+    <style>none</style>
+    <subject>Pro Sports Opt-In Email</subject>
+    <textOnly>Your free online report from Staples and GannettLocal
+
+Dear {!Contact.FirstName},
+
+It was great speaking with you today. Here is the link I spoke with you about with the additional information, and a FREE copy of our marketing guide titled, Social Media Marketing for Local Businesses. It is a quick and easy read about how to utilize social media to capture new customers and retain the ones you have.
+
+I hope you enjoy the information. Please let me know if you have any questions, or if you would like to learn more about how you can grow your business by marketing online.
+
+Thanks,
+
+{!Lead.OwnerFullName}
+p: {!Lead.OwnerPhone}
+e: {!Lead.OwnerEmail}
+
+Â© 2013 GannettLocal | 200 East Van Buren Street, Phoenix, AZ 85004</textOnly>
+    <type>custom</type>
+</EmailTemplate>

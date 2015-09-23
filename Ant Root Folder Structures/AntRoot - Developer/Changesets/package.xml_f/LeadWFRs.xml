@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead Destructive Changes</fullName>
+    <description>Lead Destructive Changes</description>
+    <types>
+        <!-- <members>Case_Templates/Audit_Request_Thank_You_Email</members> -->
+        <members>Direct_Mail_Campaign/Keys_whitepaper_request_website</members>
+        <members>Direct_Mail_Campaign/Learn_more_about_products_response</members>
+        <members>Direct_Mail_Campaign/PPC_whitepaper_request_website</members>
+        <members>Direct_Mail_Campaign/SEO_whitepaper_request_website</members>
+        <members>Leads/CustomWebsitAlert</members>
+        <members>Leads/Thank_you_for_requesting_a_demo</members>
+        <members>Opportunity_Templates/EmailCountAlert</members>
+        <name>EmailTemplate</name>
+    </types>
+    <types>
+        <members>Lead.Audit_Request_Thank_You_Email</members>
+        <members>Lead.Dig_Audit_Request_Not_In_List_Notice</members>
+        <members>Lead.Downloaded_Whitepaper_7_Keys</members>
+        <members>Lead.Downloaded_Whitepaper_PPC</members>
+        <members>Lead.Downloaded_Whitepaper_SEO</members>
+        <members>Lead.Email_Count_Request_Notification</members>
+        <members>Lead.General_Sales_Request</members>
+        <members>Lead.Lead_Custom_Website_Quote_Needed</members>
+        <members>Lead.Thank_you_for_Requesting_a_Demo</members>
+        <name>WorkflowAlert</name>
+    </types>
+    <types>
+        <members>Lead.Contacted_Update</members>
+        <members>Lead.Hook_Accepted_Date</members>
+        <members>Lead.Update_Has_Score</members>
+        <name>WorkflowFieldUpdate</name>
+    </types>
+    <types>
+        <members>Lead.Lead_Update_InsideSales</members>
+        <name>WorkflowOutboundMessage</name>
+    </types>
+    <types>
+        <members>Lead.Completed Blueprint Task - gl intern assign</members>
+        <members>Lead.Completed Survey Task - gl intern assign</members>
+        <members>Lead.Downloaded Whitepaper - 7 Keys</members>
+        <members>Lead.Downloaded Whitepaper - PPC</members>
+        <members>Lead.Downloaded Whitepaper - SEO</members>
+        <members>Lead.General Sales Request</members>
+        <members>Lead.Hooked Accepted</members>
+        <members>Lead.Lead - Dig Audit Request Not In List Notice</members>
+        <members>Lead.Lead - Dig Audit Request Thank You Email</members>
+        <members>Lead.Lead - Digital Audit Custom Website</members>
+        <members>Lead.Lead - Digital Audit Email Count</members>
+        <members>Lead.Lead Update- InsideSales</members>
+        <members>Lead.Requested a Demo</members>
+        <members>Lead.Send Email To Merchant</members>
+        <members>Lead.Uncontacted%2FAttempting to Dialogue Stamp</members>
+        <name>WorkflowRule</name>
+    </types>
+    <types>
+        <members>Lead.Blueprint_Completed</members>
+        <members>Lead.Downloaded_Whitepaper_7_Keys</members>
+        <members>Lead.Downloaded_Whitepaper_PPC</members>
+        <members>Lead.Downloaded_Whitepaper_SEO</members>
+        <members>Lead.General_Sales_Request</members>
+        <members>Lead.Immediate_Action_Requested_Demo</members>
+        <members>Lead.Score_Complete</members>
+        <name>WorkflowTask</name>
+    </types>
+    <version>33.0</version>
+</Package>

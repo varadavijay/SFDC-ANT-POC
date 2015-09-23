@@ -1,0 +1,10 @@
+Hi,
+
+A new case has been created.  Please check the Case queue and respond immediately.
+
+Details:
+{!Case.Link}
+{!Case.Type}
+{!Case.Priority}
+{!Case.Description}
+{!Case.CreatedBy}

@@ -1,0 +1,12 @@
+The following Support Ticket  has been marked Completed by {!Case.LastModifiedBy}.
+
+
+Short Description:
+________________________________________________
+{!Case.Subject}
+{!Case.Description}
+________________________________________________
+
+
+To view the Case Record in Salesforce, click the link below. 
+{!Case.Link}

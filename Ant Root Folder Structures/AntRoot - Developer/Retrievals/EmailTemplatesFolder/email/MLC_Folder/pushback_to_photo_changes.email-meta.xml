@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Basic_DealChicken</letterhead>
+    <name>Pushback to photo changes</name>
+    <style>freeForm</style>
+    <subject>DealChicken.com Proof Approval- Photo Changes Requested</subject>
+    <textOnly>Hi {!Contact.Name},
+
+Thank you for providing feedback on your DealChicken proof but I regret to inform you that we will be unable to make the requested photo changes due to our strict proofing policies.
+
+We want to use the best possible photos for your promotion however all photos that we use must be accompanied by copyright permission and comply with our system quality and sizing requirements. 
+
+Sizing and Quality Requirements:
+Images to be used on DealChicken will need to be no smaller than 1000 pixels wide or 400 pixels tall. For the photos to be potentially used in the print ad then the picture will need to be no smaller than 1400 pixels wide or 1000 pixels tall in addition to being shot at 300 dpi. 
+
+In addition to the size requirements we have a few guidelines we follow to ensure the most visually-appealing deal possible. Photos need to be horizontal in layout to be able to fit on our website due do our size constraints. We also cannot use photos taken by camera phone or photos that were scanned from a printed copy. 
+
+Please keep in mind we have extensive experience in creating proofs that sell deals. Therefore, we ask that you please take another look at the proof and provide your written proof approval.
+
+You can view your proof again by clicking here: {!Opportunity.DC_Proof_Hyperlink__c}
+
+Thanks for your understanding in this matter.  
+
+My best,</textOnly>
+    <type>html</type>
+</EmailTemplate>

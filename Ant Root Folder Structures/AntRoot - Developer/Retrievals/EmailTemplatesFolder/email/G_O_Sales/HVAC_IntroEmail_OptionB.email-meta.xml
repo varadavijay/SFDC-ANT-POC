@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Option B - Email to HVAC business trying to schedule a call</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>HVAC_IntroEmail_OptionB</name>
+    <style>none</style>
+    <subject>We get your phone ringing</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+With almost half of your customers turning to the Internet to find a local HVAC business, being on the first page of Google with positive reviews is more important than ever!* I saw your business online and would like to discuss how we can get you ranked higher in Google searches at the lowest cost possible.
+
+G/O Digital specializes in getting HVAC businesses like {!Lead.Company}  in front of local customers across Google, Yahoo!, and Bing.  Learn a little about us by downloading our eBook The Small Business SEO &amp; PPC Blueprint.
+
+After you download the eBook, let&apos;s talk! What day is best for you?
+
+Sincerely,
+
+{!Lead.OwnerFullName}
+
+{!Lead.OwnerPhone}
+
+{!Lead.OwnerEmail}
+
+
+*Decision Analyst 2013 Home Comfort Study
+
+
+Forward to a Friend
+G/O Digital | 225 N. Michigan Avenue | 16th Floor | Chicago, IL 60613</textOnly>
+    <type>custom</type>
+</EmailTemplate>

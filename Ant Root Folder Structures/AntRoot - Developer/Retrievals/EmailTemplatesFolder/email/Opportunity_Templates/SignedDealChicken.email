@@ -1,0 +1,12 @@
+A Chicken Deal has been Signed!  
+
+Account            - {!Opportunity.Account}
+Market             - {!Opportunity.Market_Record__c}
+Area Manager       - {!Opportunity.Market_Area_Manager__c}
+
+
+Opportunity        - {!Opportunity.Name}
+Opportunity Owner  - {!Opportunity.OwnerFullName}
+
+Opportunity Link :  {!Opportunity.Link}
+Account Link     :  {!Opportunity.AccountId}

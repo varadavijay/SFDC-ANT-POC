@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Mother&apos;s Day- Newspaper Markets</name>
+    <style>none</style>
+    <subject>Introducing 12 days of deals for mom</subject>
+    <textOnly>DealChicken invites you to be part of our Mother&apos;s Day gift guide. From brunch to jewelry, DealChicken&apos;s Mother&apos;s Day promotion makes it easy for online shoppers to discover and connect with neighborhood merchants. A new merchant will be featured daily May 1-12 during our exclusive promotion.  For more information, download our Mother&apos;s Day information sheet.
+
+To reserve one of 12 featured Mother&apos;s Day positions, contact {!Contact.OwnerFirstName} {!Contact.OwnerLastName} by April 17th at {!Contact.OwnerEmail} or {!Contact.OwnerPhone}.
+
+
+
+
+DealChicken alerts consumers to great deals.
+Consumers purchase the deal on DealChicken.com and redeem at your location or website.
+Merchants receive a revenue split less a 2.5% credit card processing fee.
+
+Why try DealChicken?
+Hear how DealChicken can transform your business and bring in new, high-quality customers</textOnly>
+    <type>custom</type>
+</EmailTemplate>

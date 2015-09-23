@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Basic_DealChicken</letterhead>
+    <name>TinderBoxDCSendForSign3</name>
+    <style>formalLetter</style>
+    <subject>DealChicken – Please Review And Accept Your Deal!</subject>
+    <textOnly>Hello {!Contact.Name},
+
+
+Congratulations, your DealChicken deal is starting to hatch! A few clicks and you’ll be on your way to attracting lots of new customers. Simply click the link below to review and accept the agreement terms and tell us how you’d like to be paid. It’s that simple.
+
+
+When you click on the link below, you will be prompted to enter your First and Last Name.
+
+(Sales - Paste Tinderbox Link Here)
+
+When you reach our site, you’ll be able to review and sign your agreement, enter your W9 data and provide direct deposit information (it’s the fastest way to get paid) all in one place. The whole process only takes a few minutes. Once we get your approval we can get your deal scheduled.
+
+
+Each business featured on DealChicken.com gets the added exposure of email, promotion by our local media partner (and their website!) plus additional distribution by thousands of affiliate partners. We look forward to an ongoing partnership!</textOnly>
+    <type>html</type>
+</EmailTemplate>

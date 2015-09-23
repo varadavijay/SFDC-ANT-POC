@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Approval</letterhead>
+    <name>Prospect Gone Dark</name>
+    <style>freeForm</style>
+    <subject>Last attempt for {affiliate} exposure</subject>
+    <textOnly>Hey {!Opportunity.SAPrimaryContact__c},
+
+
+
+I have been trying to get in touch with you in regard to running your deal on [Affiliate name, website] &amp; DealChicken.com. This will be my last attempt to contact you.  We are working hard to feature the best [type of business] that [city] has to offer. There’s still time to put together an offer for {company name}, but I need you to respond.
+
+
+
+If you change your mind are interested in promoting a deal, please feel free to give me a call back
+
+
+
+Best,
+
+{!Opportunity.OwnerFullName}
+
+{!Opportunity.OwnerPhone}</textOnly>
+    <type>html</type>
+</EmailTemplate>

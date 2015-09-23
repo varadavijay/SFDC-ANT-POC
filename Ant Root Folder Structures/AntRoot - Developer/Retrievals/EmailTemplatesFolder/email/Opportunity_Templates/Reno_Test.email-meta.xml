@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Reno Test</name>
+    <style>none</style>
+    <subject>tsest</subject>
+    <textOnly>A Reno deal has been Closed-Won, please follow up with the sales rep. 
+
+BC Bistro LLC-Social Media Audit 
+Steven Insalaco 
+$250.00 
+Payment Processing: 
+
+https://na7.salesforce.com/006A000000BFWrk</textOnly>
+    <type>custom</type>
+</EmailTemplate>

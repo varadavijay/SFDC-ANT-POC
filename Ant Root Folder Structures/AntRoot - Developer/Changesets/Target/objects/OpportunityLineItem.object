@@ -1,0 +1,2785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddProduct</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChoosePricebook</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditAllProduct</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>OpportunityProductRouter</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AMP_PPC_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>AMP PPC Start Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Opportunity Product</relationshipLabel>
+        <relationshipName>Opportunity_Product</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Ad_ID__c</fullName>
+        <externalId>true</externalId>
+        <inlineHelpText>Mactive Ad Number, controlled by Ad Ops</inlineHelpText>
+        <label>Ad ID</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Add_Notice_1__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Add Notice 1</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Opportunity Product (Add Notice 1)</relationshipLabel>
+        <relationshipName>AddContactNotice1</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Add_Notice_2__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Add Notice 2</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Opportunity Product (Add Notice 2)</relationshipLabel>
+        <relationshipName>AddContactNotice2</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Add_Notice_3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Add Notice 3</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Opportunity Product (Add Notice 3)</relationshipLabel>
+        <relationshipName>AddContactNotice3</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Affl_Sales_Rep_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Affl_Sales_Rep__r.FirstName &amp; &quot; &quot; &amp; Affl_Sales_Rep__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Affl Sales Rep Name</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Affl_Sales_Rep__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Affl Sales Rep</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Opportunity Product</relationshipLabel>
+        <relationshipName>Affiliated_Products</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Approved_by_Manager__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Approved by Manager</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Bus_Days_10__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.Bus_Days_10__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Bus Days 10</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Bus_Days_3__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.Bus_Days_3__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Bus Days 3</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Bus_Days_OnBoarded__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+MOD((  OnBoard_Date__c ) - DATE(2000,1,4),7)=0, 
+IF(Today() - OnBoard_Date__c &lt;= 3,Today() - OnBoard_Date__c ,(Today() - OnBoard_Date__c ) - ((Today() - OnBoard_Date__c)/7) * 2), 
+
+
+IF(MOD((OnBoard_Date__c ) - DATE(2000,1,5),7)=0, 
+IF(Today() - OnBoard_Date__c &lt;= 2,Today() - OnBoard_Date__c ,(Today() - OnBoard_Date__c ) - (FLOOR(Today() - OnBoard_Date__c )/7) * 2), 
+
+
+IF(MOD((OnBoard_Date__c ) - DATE(2000,1,6),7)=0, 
+IF(Today() - OnBoard_Date__c &lt;= 1,Today() - OnBoard_Date__c ,(Today() - OnBoard_Date__c ) - (FLOOR(Today() - OnBoard_Date__c )/7) * 2), 
+
+
+IF(MOD((OnBoard_Date__c ) - DATE(2000,1,7),7)=0, 
+IF(Today() - OnBoard_Date__c = 0,Today() - OnBoard_Date__c ,(Today() - OnBoard_Date__c ) - (FLOOR(Today() - OnBoard_Date__c )/7) * 2), 
+
+
+IF(MOD((OnBoard_Date__c ) - DATE(2000,1,8),7)=0, 
+IF(Today() - OnBoard_Date__c &lt; 3,0,(Today() - OnBoard_Date__c ) - (FLOOR(Today() - OnBoard_Date__c )/7) * 2), 
+
+
+IF(MOD((OnBoard_Date__c ) - DATE(2000,1,9),7)=0, 
+IF(Today() - OnBoard_Date__c &lt; 2,0,(Today() - OnBoard_Date__c ) - (FLOOR(Today() - OnBoard_Date__c )/7) * 2), 
+
+
+IF(Today() - OnBoard_Date__c &lt; 5,(Today() - OnBoard_Date__c ),(Today() - OnBoard_Date__c ) - (FLOOR(Today() - OnBoard_Date__c )/7) * 2) + ((FLOOR(Today() - OnBoard_Date__c )/7)-1) 
+) 
+) 
+) 
+) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Bus Days (OnBoarded)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bus_Days_SLA__c</fullName>
+        <externalId>false</externalId>
+        <formula>(PricebookEntry.Product2.SLA_Bus_Days__c -  Bus_Days_OnBoarded__c) * (-1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Bus Days (SLA)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CanCreateILI__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Waiting_Status__c) == PricebookEntry.Product2.Invoice_StatusToCreateILI__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Can Create ILI&apos;s</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CancelType__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of Cancel</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Cancel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hard Cancel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Canceled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Cancelled</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Cancellation_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancellation Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Cancelled Before Live</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled After Live</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fulfilled Non-Renewal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Cancellation_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancellation Reason</label>
+        <picklist>
+            <controllingField>Cancellation_Category__c</controllingField>
+            <picklistValues>
+                <fullName>Sales Expectation Mismatch</fullName>
+                <controllingFieldValues>Cancelled After Live</controllingFieldValues>
+                <controllingFieldValues>Cancelled Before Live</controllingFieldValues>
+                <controllingFieldValues>Fulfilled Non-Renewal</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>G/O Error</fullName>
+                <controllingFieldValues>Cancelled After Live</controllingFieldValues>
+                <controllingFieldValues>Cancelled Before Live</controllingFieldValues>
+                <controllingFieldValues>Fulfilled Non-Renewal</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client/Business Issue</fullName>
+                <controllingFieldValues>Cancelled After Live</controllingFieldValues>
+                <controllingFieldValues>Cancelled Before Live</controllingFieldValues>
+                <controllingFieldValues>Fulfilled Non-Renewal</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Billing Issue</fullName>
+                <controllingFieldValues>Cancelled After Live</controllingFieldValues>
+                <controllingFieldValues>Cancelled Before Live</controllingFieldValues>
+                <controllingFieldValues>Fulfilled Non-Renewal</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client Unresponsive</fullName>
+                <controllingFieldValues>Cancelled Before Live</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Performance</fullName>
+                <controllingFieldValues>Cancelled After Live</controllingFieldValues>
+                <controllingFieldValues>Fulfilled Non-Renewal</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reallocation</fullName>
+                <controllingFieldValues>Cancelled After Live</controllingFieldValues>
+                <controllingFieldValues>Cancelled Before Live</controllingFieldValues>
+                <controllingFieldValues>Fulfilled Non-Renewal</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Code_Service_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Service_End_Date__c - TODAY()</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Code Service End Date</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Company_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Company Name</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Count_SEO__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(PricebookEntry.Product2.SEO_Product__c = True,1,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Count SEO</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Count_Social__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( PricebookEntry.Product2.Social_Media_Notice__c = True,1,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Count Social</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Count_Web__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( PricebookEntry.Product2.Web_Development_Product__c = True, 1,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Count Web</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Delivered__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISNULL(Live_Date__c)),Live_Date__c, 
+IF(AND(NOT(ISNULL(Fulfilled_Date__c)),TEXT(Waiting_Status__c)=&quot;Fulfilled-Complete&quot;),Fulfilled_Date__c,NULL))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Date Delivered</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_Field_For_Testing__c</fullName>
+        <externalId>false</externalId>
+        <formula>TODAY() + 1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Date Field For Testing</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DaysInStatus_Awaiting_OnBoard__c</fullName>
+        <externalId>false</externalId>
+        <formula>(InStatus_Awaiting_OnBoard__c /60)/24</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DaysInStatus Awaiting OnBoard</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DaysInStatus_InFulfillment2__c</fullName>
+        <description>Days in Status In Fulfillment for business days only (no weekends)</description>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK( In_Fulfillment_Out_Stamp__c )), 
+
+/* If TRUE */ 
+IF( 
+/* Is same business week? */ 
+AND( 
+(CASE(MOD(DATEVALUE(In_Fulfillment_Out_Stamp__c ) - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0) 
++ CASE(MOD( Project_In_Fulfill_Date__c - DATE(1985, 1, 5), 7), 0, 0, 1, 
+5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) 
+&gt;5), 
+DATEVALUE(In_Fulfillment_Out_Stamp__c ) - Project_In_Fulfill_Date__c &lt; 6 ), 
+/* Then work out the number of business days with this formula */ CASE(MOD(DATEVALUE(In_Fulfillment_Out_Stamp__c ) - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0) 
++ CASE(MOD(Project_In_Fulfill_Date__c - DATE(1985, 1, 5), 7), 0, 0, 1, 
+5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) 
+- 6, 
+/* Otherwise use this formula */ 
+FLOOR( 
+(DATEVALUE(In_Fulfillment_Out_Stamp__c ) 
+-(Project_In_Fulfill_Date__c 
++ CASE(MOD(Project_In_Fulfill_Date__c - DATE(1985, 1, 5), 7), 0, 0, 1, 
+6, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0)) 
+)/7)*5 
++CASE(MOD(Project_In_Fulfill_Date__c - DATE(1985, 1, 5), 7), 0, 0, 1, 
+5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) 
++CASE(MOD(DATEVALUE(In_Fulfillment_Out_Stamp__c ) - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 
+2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0) 
+-1), 
+
+/* If FALSE */ 
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DaysInStatus InFulfillment2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DaysInStatus_InFulfillment__c</fullName>
+        <externalId>false</externalId>
+        <formula>(InStatus_In_Fulfillment__c /60 )/24</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DaysInStatus InFulfillment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DaysInStatus_Pending__c</fullName>
+        <externalId>false</externalId>
+        <formula>( InStatus_Pending__c /60)/24</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DaysInStatus Pending</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DaysInStatus_WaitingApproval__c</fullName>
+        <externalId>false</externalId>
+        <formula>( InStatus_WaitingApproval__c /60)/24</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DaysInStatus WaitingApproval</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DaysInStatus_WaitingResource__c</fullName>
+        <externalId>false</externalId>
+        <formula>( InStatus_WaitingResource__c /60)/24</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DaysInStatus WaitingResource</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DaysInStatus_Waiting_Approval2__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK( Project__r.In_Waiting_Approval_Out_Stamp__c )), 
+
+/* If TRUE */ 
+IF( 
+/* Is same business week? */ 
+AND( 
+(CASE(MOD(DATEVALUE(Project__r.In_Waiting_Approval_Out_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0) 
++ CASE(MOD(DATEVALUE(Project__r.In_Waiting_Approval_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 
+5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) 
+&gt;5), 
+DATEVALUE(Project__r.In_Waiting_Approval_Out_Stamp__c) - DATEVALUE(Project__r.In_Waiting_Approval_Stamp__c) &lt; 6 ), 
+/* Then work out the number of business days with this formula */ CASE(MOD(DATEVALUE(Project__r.In_Waiting_Approval_Out_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0) 
++ CASE(MOD(DATEVALUE(Project__r.In_Waiting_Approval_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 
+5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) 
+- 6, 
+/* Otherwise use this formula */ 
+FLOOR( 
+(DATEVALUE(Project__r.In_Waiting_Approval_Out_Stamp__c) 
+-(DATEVALUE(Project__r.In_Waiting_Approval_Stamp__c) 
++ CASE(MOD(DATEVALUE(Project__r.In_Waiting_Approval_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 
+6, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0)) 
+)/7)*5 
++CASE(MOD(DATEVALUE(Project__r.In_Waiting_Approval_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 
+5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) 
++CASE(MOD(DATEVALUE(Project__r.In_Waiting_Approval_Out_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 
+2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0) 
+-1), 
+
+/* If FALSE */ 
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DaysInStatus Waiting Approval2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DaysIn_Status_Awaiting_Onboard2__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(Project__r.In_Awaiting_Onboard_Out_Stamp__c)), 
+
+/* If TRUE */ 
+IF( 
+/* Is same business week? */ 
+AND( 
+(CASE(MOD(DATEVALUE(Project__r.In_Awaiting_Onboard_Out_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0) 
++ CASE(MOD(DATEVALUE(Project__r.In_Awaiting_Onboard_Stamp__c)  - DATE(1985, 1, 5), 7), 0, 0, 1, 
+5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) 
+&gt;5), 
+DATEVALUE(Project__r.In_Awaiting_Onboard_Out_Stamp__c) - DATEVALUE(Project__r.In_Awaiting_Onboard_Stamp__c) &lt; 6 ), 
+/* Then work out the number of business days with this formula */ CASE(MOD(DATEVALUE(Project__r.In_Awaiting_Onboard_Out_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0) 
++ CASE(MOD(DATEVALUE(Project__r.In_Awaiting_Onboard_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 
+5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) 
+- 6, 
+/* Otherwise use this formula */ 
+FLOOR( 
+(DATEVALUE(Project__r.In_Awaiting_Onboard_Out_Stamp__c) 
+-(DATEVALUE(Project__r.In_Awaiting_Onboard_Stamp__c) 
++ CASE(MOD(DATEVALUE(Project__r.In_Awaiting_Onboard_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 
+6, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0)) 
+)/7)*5 
++CASE(MOD(DATEVALUE(Project__r.In_Awaiting_Onboard_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 
+5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) 
++CASE(MOD(DATEVALUE(Project__r.In_Awaiting_Onboard_Out_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 
+2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0) 
+-1), 
+
+/* If FALSE */ 
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DaysIn Status Awaiting Onboard2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DaysIn_Status_Pending2__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK( Project__r.In_Pending_Out_Stamp__c )), 
+
+/* If TRUE */ 
+IF( 
+/* Is same business week? */ 
+AND( 
+(CASE(MOD(DATEVALUE(Project__r.In_Pending_Out_Stamp__c ) - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0) 
++ CASE(MOD(DATEVALUE(Project__r.In_Pending_Stamp__c)- DATE(1985, 1, 5), 7), 0, 0, 1, 
+5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) 
+&gt;5), 
+DATEVALUE(Project__r.In_Pending_Out_Stamp__c ) - DATEVALUE(Project__r.In_Pending_Stamp__c) &lt; 6 ), 
+/* Then work out the number of business days with this formula */ CASE(MOD(DATEVALUE(Project__r.In_Pending_Out_Stamp__c ) - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0) 
++ CASE(MOD(DATEVALUE(Project__r.In_Pending_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 
+5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) 
+- 6, 
+/* Otherwise use this formula */ 
+FLOOR( 
+(DATEVALUE(Project__r.In_Pending_Out_Stamp__c ) 
+-(DATEVALUE(Project__r.In_Pending_Stamp__c) 
++ CASE(MOD(DATEVALUE(Project__r.In_Pending_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 
+6, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0)) 
+)/7)*5 
++CASE(MOD(DATEVALUE(Project__r.In_Pending_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 
+5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) 
++CASE(MOD(DATEVALUE(Project__r.In_Pending_Out_Stamp__c ) - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 
+2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0) 
+-1), 
+
+/* If FALSE */ 
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DaysIn Status Pending2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DaysIn_Status_Waiting_Resource2__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK( Project__r.In_Waiting_Resource_Out_Stamp__c )), 
+
+/* If TRUE */ 
+IF( 
+/* Is same business week? */ 
+AND( 
+(CASE(MOD(DATEVALUE(Project__r.In_Waiting_Resource_Out_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0) 
++ CASE(MOD(DATEVALUE(Project__r.In_Waiting_Resource_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 
+5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) 
+&gt;5), 
+DATEVALUE(Project__r.In_Waiting_Resource_Out_Stamp__c) - DATEVALUE(Project__r.In_Waiting_Resource_Stamp__c) &lt; 6 ), 
+/* Then work out the number of business days with this formula */ CASE(MOD(DATEVALUE(Project__r.In_Waiting_Resource_Out_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0) 
++ CASE(MOD(DATEVALUE(Project__r.In_Waiting_Resource_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 
+5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) 
+- 6, 
+/* Otherwise use this formula */ 
+FLOOR( 
+(DATEVALUE(Project__r.In_Waiting_Resource_Out_Stamp__c) 
+-(DATEVALUE(Project__r.In_Waiting_Resource_Stamp__c) 
++ CASE(MOD(DATEVALUE(Project__r.In_Waiting_Resource_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 
+6, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0)) 
+)/7)*5 
++CASE(MOD(DATEVALUE(Project__r.In_Waiting_Resource_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 
+5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) 
++CASE(MOD(DATEVALUE(Project__r.In_Waiting_Resource_Out_Stamp__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 
+2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0) 
+-1), 
+
+/* If FALSE */ 
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DaysIn Status Waiting Resource2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DaysWithGLErr__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATEVALUE(Live_Date__c) - Opportunity.CloseDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DaysWithGOErr</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DaysWithGL__c</fullName>
+        <description>DateValue(Live_Date__c)- OnBoard_Date__c - 
+(CASE(MOD( OnBoard_Date__c- DATE(1985,6,24),7), 
+  0 , CASE( MOD( DateValue(Live_Date__c)- OnBoard_Date__c, 7),1,0,2,0,3,0,4,0,5,1,6,2,0), 
+  1 , CASE( MOD( DateValue(Live_Date__c)- OnBoard_Date__c, 7),0,0,1,0,2,0,3,0,4,0,5,2,2), 
+  2 , CASE( MOD( DateValue(Live_Date__c)- OnBoard_Date__c, 7),0,0,1,0,2,0,3,1,2), 
+  3 , CASE( MOD( DateValue(Live_Date__c)- OnBoard_Date__c, 7),0,0,1,0,2,1,2), 
+  4 , CASE( MOD( DateValue(Live_Date__c)- OnBoard_Date__c, 7),0,0,1,1,2), 
+  5 , CASE( MOD( DateValue(Live_Date__c)- OnBoard_Date__c, 7),0,1,2), 
+  6 , CASE( MOD( DateValue(Live_Date__c)- OnBoard_Date__c, 7),6,2,1),
+  999)
+  +
+  (FLOOR(( DateValue(Live_Date__c)- OnBoard_Date__c)/7)*2))
+
+- ((InStatus_WaitingApproval__c/60)/24)
+- ((InStatus_WaitingResource__c /60)/24)</description>
+        <externalId>false</externalId>
+        <formula>(InStatus_Awaiting_OnBoard__c +  InStatus_In_Fulfillment__c)/1440</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DaysWithGO</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_In_Status_CWtoDigAM__c</fullName>
+        <description>Business days in status Closed Won - new formula and new status:
+1) Calculate the total number of days between two dates
+2) figure out how many weekend days are between the two dates and subtract them out of the result
+3) Add adjustment for the Floor function error when the days are offset in the week</description>
+        <externalId>false</externalId>
+        <formula>/* First-Order Calculation, subtract the dates */
+DateValue( Project__r.In_Closed_Won_Out_Stamp__c )- DateValue( Project__r.In_Closed_Won_Stamp__c )
+/* Second-Order calculation, remove the weekends */
+- (FLOOR((DateValue(Project__r.In_Closed_Won_Out_Stamp__c)-    DateValue(Project__r.In_Closed_Won_Stamp__c))/7)*2)
+/* Third-order calculation, adjust for rounding errors based on days of week */
+- IF((MOD( DateValue(Project__r.In_Closed_Won_Stamp__c)- DATE(2000,1,2),7) = 6
+   &amp;&amp; MOD( DateValue(Project__r.In_Closed_Won_Out_Stamp__c) - DATE(2000,1,2),7) != 6)
+   ||(MOD( DateValue(Project__r.In_Closed_Won_Stamp__c)- DATE(2000,1,2),7) != 6
+   &amp;&amp; MOD( DateValue(Project__r.In_Closed_Won_Out_Stamp__c) - DATE(2000,1,2),7) = 6), 1,
+   IF(MOD(DateValue(Project__r.In_Closed_Won_Stamp__c)- DATE(2000,1,2),7)
+      &gt; MOD(DateValue(Project__r.In_Closed_Won_Out_Stamp__c) - DATE(2000,1,2),7), 2, 0))</formula>
+        <label>Days In Status CW To DigAM</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_To_Go_Live__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( ISNULL( Live_Date__c ),null,   DATEVALUE(Live_Date__c ) -DATEVALUE( Opportunity.Closed_Won_Time_Stamp__c ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label># Days To Go Live</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_To_Live__c</fullName>
+        <description>Days to go live in the SLA calculation; set by Product SLA Services class on Opportunity Product status change to Live.</description>
+        <externalId>false</externalId>
+        <label>Days To Live</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Default_Include_In_Monthly_Total__c</fullName>
+        <description>The Formula Field that displays &quot;true&quot; or &quot;false&quot; based on the value on the related Product</description>
+        <externalId>false</externalId>
+        <formula>IF (PricebookEntry.Product2.Include_In_Monthly_Total__c = True,&quot;True&quot;,&quot;False&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The Formula Field that displays &quot;true&quot; or &quot;false&quot; based on the value on the related Product</inlineHelpText>
+        <label>Default Include In Monthly Total</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dig_Account_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Dig Account Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Dig_AM_Products</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Digital_No_Start_Date_Req__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Digital No Start Date Req</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Digital_Product__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(PricebookEntry.Product2.Digital_No_Start_Date_Req__c  = True,&apos;Yes&apos;,&apos;No&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Digital Product</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Earliest_Timestamp__c</fullName>
+        <description>Pull the earliest timestamp from the project in an effort to make the Days in Status CW to DigAM assigned compile. It looks like the earliest Timestamp formula is counted in the compilation characters</description>
+        <externalId>false</externalId>
+        <formula>Project__r.Earliest_Timestamp__c</formula>
+        <label>Earliest Timestamp</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Email_CPM__c</fullName>
+        <description>SR-2867/DEV-962: Jumpstart and Finance users need the ability to see, edit and report on this information</description>
+        <externalId>false</externalId>
+        <label>Email - CPM</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Email_Recipients_Qty__c</fullName>
+        <description>SR-2867/DEV-962: Jumpstart and Finance users need the ability to see, edit and report on this information</description>
+        <externalId>false</externalId>
+        <label>Email - Recipients Qty</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>End_Of_Service_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Of Service Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expiration_Date__c</fullName>
+        <description>Date the Contract Expires - changed from this code to new due to inaccuracies - 10/14/2013
+
+&quot;Date(
+Year(DateValue(Live_Date__c))+ if(Month(DateValue(Live_Date__c)) + Quantity=12,0,Floor((Month(DateValue(Live_Date__c)) +  Quantity)/12)),
+
+IF(Mod(Month(DateValue(Live_Date__c)) + Quantity ,12)=0,12,Mod(Month(DateValue(Live_Date__c)) + Quantity ,12)),
+
+IF(
+Day(DateValue(Live_Date__c))&gt;28, 28, Day(DateValue(Live_Date__c))
+)
+)&quot;</description>
+        <externalId>false</externalId>
+        <formula>End_Of_Service_Date__c</formula>
+        <inlineHelpText>Date the Contract Expires (Go Live Date plus Number of Payment Periods)</inlineHelpText>
+        <label>Expiration Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ExpireNoticeDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>Expiration_Date__c - 14</formula>
+        <label>ExpireNoticeDate</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Fulfilled_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If/When product newly enters a Fulfilled status, a value of that present moment will be placed here.</inlineHelpText>
+        <label>Fulfillment Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>FulfillmentStatus__c</fullName>
+        <description>This field has been added for the PPC - G/O Care Case with Fulfillment Status report</description>
+        <externalId>false</externalId>
+        <label>Fulfillment Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Manual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WaitingOnLandingPage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AMP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Full_Charge_Amt__c</fullName>
+        <externalId>false</externalId>
+        <formula>TotalPrice +  Setup_Fee_Amt__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Full Charge Amt</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>HTML_Fee__c</fullName>
+        <description>SR-2867/DEV-962: Jumpstart and Finance users need the ability to see, edit and report on this information</description>
+        <externalId>false</externalId>
+        <label>HTML Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Has_ILI__c</fullName>
+        <externalId>false</externalId>
+        <formula>Project__r.Has_ILI__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Has ILI&apos;S</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InStatus_Awaiting_OnBoard__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>InStatus Awaiting OnBoard</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InStatus_In_Fulfillment__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>InStatus In Fulfillment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InStatus_Pending__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>InStatus Pending</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InStatus_TimeIn__c</fullName>
+        <externalId>false</externalId>
+        <label>InStatus TimeIn</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>InStatus_WaitingApproval__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>InStatus WaitingApproval</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InStatus_WaitingResource__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>InStatus WaitingResource</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>In_Fulfillment_Out_Stamp__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Live_Date__c &lt; Project__r.In_Fulfillment_Out_Stamp__c,Live_Date__c,Project__r.In_Fulfillment_Out_Stamp__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>In Fulfillment Out Stamp</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>In_Fulfillment_Stamp__c</fullName>
+        <externalId>false</externalId>
+        <formula>Project__r.In_Fulfillment_Stamp__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>In Fulfillment Stamp</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_CancelDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoice Cancel Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_CancelFeePercent__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancellation Fee Percent</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_DayOfMonth__c</fullName>
+        <externalId>false</externalId>
+        <formula>Day(Invoice_ServiceStartDate__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Invoice Anniversary Day</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_PriceVariable__c</fullName>
+        <description>Stores pricing information while creating new OLI</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains different pricing variables such as CPM for Email, cost per location for Maps and cost per hours for Web Creative Fees.</inlineHelpText>
+        <label>Product Price Variable</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_ServiceEndDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Product End of Service Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_ServiceStartDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Start of Service Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Units__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(NumberOfHours__c)), NumberOfHours__c,  
+   IF(NOT(ISBLANK(Email_Recipients_Qty__c)), Email_Recipients_Qty__c,
+      IF(NOT(ISBLANK(NumberOfLocations__c)), NumberOfLocations__c,null
+      )
+   )
+)</formula>
+        <label>Invoice Units</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Schedule_Bill_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Schedule Bill Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Opportunity Product</relationshipLabel>
+        <relationshipName>Opportunity_Product</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Link_Edit__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;https://na10.salesforce.com/&quot; &amp; Id &amp; &quot;/e?retURL=%2F00OF0000004BI1F?pv1=&quot; &amp; $User.FirstName &amp; &quot;+&quot; &amp;  $User.LastName, &quot;JumpToEdit&quot;,&quot;_self&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Link Edit</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Link_View__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;https://na10.salesforce.com/&quot; &amp; Id, &quot;JumpToView&quot;,&quot;_self&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Link View</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Live_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Live Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Live_Last_Set_DateTime__c</fullName>
+        <externalId>false</externalId>
+        <label>Live Last Set DateTime</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Live_Last_Set_Person__c</fullName>
+        <externalId>false</externalId>
+        <label>Live Last Set Person</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Live_Last_Set_Prev_Val__c</fullName>
+        <externalId>false</externalId>
+        <label>Live Last Set Prev Val</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Live_Last_Set_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Live Last Set Value</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Live_Timer__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Opportunity.IsWon = True,IF(AND(NOT(ISNULL(Opportunity.Dig_On_B_Call_Date__c)),NOT(ISNULL( Live_Date__c ))), Live_Date__c  - Opportunity.Dig_On_B_Call_Date__c, if(Not(isnull(Live_Date__c)),Live_Date__c -  Opportunity.Closed_Won_Time_Stamp__c ,0)),0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Live Timer</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Live__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Live</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Media_Partner_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.Media_Partner__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Media Partner Name</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Media_Partner__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.Media_Partner_Id__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Media Partner</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Meets_SLA__c</fullName>
+        <description>If the Time In Fulfillment is Less than of equal to the number of SLA Days Attributed to the Product, Mark as 1 Otherwise mark as 0</description>
+        <externalId>false</externalId>
+        <formula>if(   DaysInStatus_InFulfillment__c &gt; PricebookEntry.Product2.SLA_Bus_Days__c,0,1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Meets_SLA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mgmt_Fee_Percent__c</fullName>
+        <description>The Finance and Operations Teams need a way for the Jumpstart Team to code PPC Management Fee when it is put in as a product.</description>
+        <externalId>false</externalId>
+        <label>Mgmt Fee %</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Month_1_Charge__c</fullName>
+        <externalId>false</externalId>
+        <formula>UnitPrice +  Setup_Fee_Amt__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Month 1 Charge</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>160</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Notify_Email_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Notify Email 1</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Notify_Email_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Notify Email 2</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Notify_Email_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Notify Email 3</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NumberOfHours__c</fullName>
+        <externalId>false</externalId>
+        <label>Number Of Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NumberOfLocations__c</fullName>
+        <externalId>false</externalId>
+        <label>Number Of Locations</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OnBoard_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATEVALUE(Opportunity.Dig_On_B_Call_Date__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>OnBoard Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Opp_Acct_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.AccountId</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opp Acct Id</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opp_Affl_Sales_Rep__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.Sales_Rep__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opp Affl Sales Rep</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opp_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.CloseDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opp Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Opp_Dig_Acct_Man_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.Dig_Account_Manager__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opp Dig Acct Man Id</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opp_Last_Sched_Bill_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.Last_Schedule_Bill_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opp Last Sched Bill Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Opp_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opp Name</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opp_Owner_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.OwnerId</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opp Owner Id</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opp_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opp Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Sales_Rep_Products</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Opp_Product_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Id)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Product ID</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opp_Sales_Rep_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.Sales_Rep__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opp Sales Rep Id</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OpportunityId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Order_Form__c</fullName>
+        <description>Order form link shows PPC Order Form for now and potentially be applied for any other products that requires a link</description>
+        <externalId>false</externalId>
+        <formula>IF(AND( 
+CONTAINS(PricebookEntry.Product2.ProductCode, &apos;SML-PPC Budgeted&apos;), 
+ISPICKVAL(Opportunity.StageName, &apos;Closed Won&apos;), 
+Opportunity.CloseDate &gt; DATE(2013,09,25)), 
+HYPERLINK(&apos;apex/PPCOrderForm?OpportunityLineItemId=&apos; + Id, &apos;PPC Order Form&apos;, &apos;_parent&apos;) , &apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Order Form</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>P_P_C_I__c</fullName>
+        <externalId>false</externalId>
+        <label>P.P.C.I.</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Processing__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Payment Processing</label>
+        <referenceTo>Payment_Processing__c</referenceTo>
+        <relationshipLabel>Opportunity Product</relationshipLabel>
+        <relationshipName>Opportunity_Product</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Periods2__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Periods/Cycles</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Print_Product__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(PricebookEntry.Product2.Print_Product__c  = True,&apos;Yes&apos;,&apos;No&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Print Product</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product2Id</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Category__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS( Product_Name__c ,&quot;SEO&quot;),&quot;SEO&quot;,IF(CONTAINS( Product_Name__c ,&quot;Web&quot;),&quot;WEB&quot;,IF(CONTAINS( Product_Name__c ,&quot;Page&quot;),&quot;WEB&quot;,IF(CONTAINS( Product_Name__c ,&quot;Social&quot;),&quot;SOC&quot;,IF(CONTAINS( Product_Name__c ,&quot;Email&quot;),&quot;EMA&quot;,IF(CONTAINS( Product_Name__c ,&quot;Maps&quot;),&quot;MAP&quot;,IF(CONTAINS( Product_Name__c ,&quot;Retarget&quot;),&quot;DIS&quot;,IF(CONTAINS( Product_Name__c ,&quot;Facebook&quot;),&quot;SOC&quot;,IF(CONTAINS( Product_Name__c ,&quot;PPC&quot;),&quot;PPC&quot;,&quot;OTHER&quot;)))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Category</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_CurrentValue__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(NOT(ISBLANK(Record_Type_Name__c)),Record_Type_Name__c == &apos;USCP Opportunity&apos;), TotalPrice + (TotalPrice * Mgmt_Fee_Percent__c), ( Quantity * UnitPrice )+ HTML_Fee__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current Product Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Product_Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>PricebookEntry.Product2.Description</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Description</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>PricebookEntry.Product2.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Id</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>PricebookEntry.Product2.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Name</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_OriginalValue__c</fullName>
+        <externalId>false</externalId>
+        <label>Original Product Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Product_PorC_Date__c</fullName>
+        <description>Populates Based on most recent status move into a qualified Status type</description>
+        <externalId>false</externalId>
+        <label>Product P or C Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project_Awaiting_Onboard_to_today__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(DATEVALUE(Project_Start_Date__c) &lt;&gt; TODAY(),
+  /* If TRUE */
+     IF(AND((CASE(MOD(Today() - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0)+ CASE(MOD(DATEVALUE(Project_Start_Date__c) - DATE(1985, 1, 5), 7), 0, 0, 1,5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0)&gt;5),Today() - DATEVALUE(Project_Start_Date__c) &lt; 6 ),CASE(MOD(Today() - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0)+ CASE(MOD(DATEVALUE(Project_Start_Date__c) - DATE(1985, 1, 5), 7), 0, 0, 1,5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0)- 6,FLOOR((Today()-(DATEVALUE(Project_Start_Date__c)+ CASE(MOD(DATEVALUE(Project_Start_Date__c) - DATE(1985, 1, 5), 7), 0, 0, 1,6, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0)))/7)*5+CASE(MOD(DATEVALUE(Project_Start_Date__c) - DATE(1985, 1, 5), 7), 0, 0, 1,5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0)+CASE(MOD(Today() - DATE(1985, 1, 5), 7), 0, 0, 1, 0,2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0)-1),
+  /* If FALSE */
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Awaiting Onboard to today</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Completion_Time__c</fullName>
+        <description>Business days to go live = Live_Date__c - Project__r.D2GL_Start_Time_Stamp__c 
+1) Calculate the total number of days between two dates 
+2) figure out how many weekend days are between the two dates and subtract them out of the result 
+3) Add adjustment for the Floor function error when the days are offset in the week</description>
+        <externalId>false</externalId>
+        <formula>/* First-Order Calculation, subtract the dates */ 
+DateValue( Live_Date__c )- DateValue( Project__r.D2GL_Start_Time_Stamp__c  ) 
+/* Second-Order calculation, remove the weekends */ 
+- (FLOOR((DateValue(Live_Date__c)- DateValue(Project__r.D2GL_Start_Time_Stamp__c))/7)*2) 
+/* Third-order calculation, adjust for rounding errors based on days of week */ 
+- IF((MOD( DateValue(Project__r.D2GL_Start_Time_Stamp__c)- DATE(2000,1,2),7) = 6 
+&amp;&amp; MOD( DateValue(Live_Date__c) - DATE(2000,1,2),7) != 6) 
+||(MOD( DateValue(Project__r.D2GL_Start_Time_Stamp__c)- DATE(2000,1,2),7) != 6 
+&amp;&amp; MOD( DateValue(Live_Date__c) - DATE(2000,1,2),7) = 6), 1, 
+IF(MOD(DateValue(Project__r.D2GL_Start_Time_Stamp__c)- DATE(2000,1,2),7) 
+&gt; MOD(DateValue(Live_Date__c) - DATE(2000,1,2),7), 2, 0))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Closed Won To Live</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Fulfill_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(Live_Date__c)), 
+
+/* If TRUE */ 
+IF( 
+/* Is same business week? */ 
+AND( 
+(CASE(MOD(DATEVALUE(Live_Date__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0) 
++ CASE(MOD( Project_In_Fulfill_Date__c  - DATE(1985, 1, 5), 7), 0, 0, 1, 
+5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) 
+&gt;5), 
+DATEVALUE(Live_Date__c) - Project_In_Fulfill_Date__c  &lt; 6 ), 
+/* Then work out the number of business days with this formula */ CASE(MOD(DATEVALUE(Live_Date__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0) 
++ CASE(MOD(Project_In_Fulfill_Date__c  - DATE(1985, 1, 5), 7), 0, 0, 1, 
+5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) 
+- 6, 
+/* Otherwise use this formula */ 
+FLOOR( 
+(DATEVALUE(Live_Date__c) 
+-(Project_In_Fulfill_Date__c  
++ CASE(MOD(Project_In_Fulfill_Date__c   - DATE(1985, 1, 5), 7), 0, 0, 1, 
+6, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0)) 
+)/7)*5 
++CASE(MOD(Project_In_Fulfill_Date__c  - DATE(1985, 1, 5), 7), 0, 0, 1, 
+5, 2, 5, 3, 4, 4, 3, 5, 2, 6, 1, 0) 
++CASE(MOD(DATEVALUE(Live_Date__c) - DATE(1985, 1, 5), 7), 0, 0, 1, 0, 
+2, 1, 3, 2, 4, 3, 5, 4, 6, 5, 0) 
+-1), 
+
+/* If FALSE */ 
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project InFulfill To Live</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_In_Fulfill_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATEVALUE(Project__r.In_Fulfillment_Stamp__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project In Fulfill Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project_In_Pipe_Time__c</fullName>
+        <description>Calculates the number of business days between the Project Start Date and the Live Date. The Project Start Date should come after the Live Date. If the Project Start Date is before the LIve Date, the value is zero.</description>
+        <externalId>false</externalId>
+        <formula>IF(DATEVALUE(Project_Start_Date__c)&lt;DATEVALUE(Live_Date__c),0,
+
+/* First-Order Calculation, subtract the dates */
+DateValue(Project_Start_Date__c)- DateValue(Live_Date__c)
+/* Second-Order calculation, remove the weekends */
+- (FLOOR(( DateValue(Project_Start_Date__c)- DateValue(Live_Date__c))/7)*2)
+/* Third-order calculation, adjust for rounding errors based on days of week */
+- IF((MOD( DateValue(Live_Date__c)          - DATE(2000,1,2),7) = 6
+   &amp;&amp; MOD( DateValue(Project_Start_Date__c) - DATE(2000,1,2),7) != 6)
+|| (MOD( DateValue(Live_Date__c)-             DATE(2000,1,2),7) != 6 
+ &amp;&amp; MOD( DateValue(Project_Start_Date__c) - DATE(2000,1,2),7) = 6), 1,
+IF(MOD(DateValue(Live_Date__c)- DATE(2000,1,2),7) &gt; MOD( DateValue(Project_Start_Date__c) - DATE(2000,1,2),7), 2, 0)) 
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Awaiting OnBoard To Live</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Initiation_Date__c</fullName>
+        <description>Date Opp Went Won</description>
+        <externalId>false</externalId>
+        <formula>Opportunity.CloseDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opp Closed Won Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.DAMAssigned__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Start Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Project_Story_Review_Needed__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+OR(
+DATEVALUE(Opportunity.DAMAssigned__c)&lt; Opportunity.CloseDate,
+
+IF
+(
+(
+DaysInStatus_Awaiting_OnBoard__c+ 
+DaysInStatus_WaitingResource__c+ 
+DaysInStatus_WaitingApproval__c+ 
+DaysInStatus_Pending__c+ 
+DaysInStatus_InFulfillment__c
+)
+&gt; Project_Completion_Time__c,True,False)
+)
+,&quot;Review&quot;,&quot;Good&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Story - Review Needed</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project</label>
+        <referenceTo>Project__c</referenceTo>
+        <relationshipLabel>Opportunity Product</relationshipLabel>
+        <relationshipName>Opportunity_Product</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Property_Product__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.Sales_Rep__r.Account.Name + &quot; -  &quot; +  Product_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Property Product</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Qty_ContractMonths__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Contract Months</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Qty_LineItems__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Line Items</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ROP_Height__c</fullName>
+        <externalId>false</externalId>
+        <label>ROP Height (Inch)</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>13.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>13.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>14.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>14.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>15.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>15.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>16.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>16.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>17.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>17.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>18.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>18.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>19.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>19.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>20.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>20.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>21.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>21.5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ROP_Section__c</fullName>
+        <externalId>false</externalId>
+        <label>ROP Section</label>
+        <picklist>
+            <picklistValues>
+                <fullName>MAIN NEWS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SPORTS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AZ LIVING (Monday, Tuesday &amp; Sundays)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AZ Living – FOOD &amp; DRINK (WEDS)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AZ LIVING – THINGS TO DO (THURS)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AZ LIVING – HEALTH &amp; WELLNESS (FRIDAY)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AZ LIVING – EXPLORE AZ (SATURDAY)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BUSINESS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ROP_Visual__c</fullName>
+        <externalId>false</externalId>
+        <label>ROP Visual</label>
+        <picklist>
+            <picklistValues>
+                <fullName>BL&amp;WT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>COLOR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ROP__c</fullName>
+        <externalId>false</externalId>
+        <label>ROP Columns</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Record_Type_Name__c</fullName>
+        <description>Opportunity Record type Name</description>
+        <externalId>false</externalId>
+        <label>Record Type Name</label>
+        <length>30</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Related_Case_Result__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Related_Case__r.GL_Rate_Exception_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Related Case - Result</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Related_Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Related Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Opportunity Product</relationshipLabel>
+        <relationshipName>Opportunity_Product</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Renewable__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(PricebookEntry.Product2.Renewable__c = True, &quot;Renewable&quot; , &quot;Non-Renewable&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Renewable</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RenewalText__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( Opportunity.IsRenewed__c = True, &quot;Renewed&quot;, &quot;Fulfilled&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>RenewalText</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReplicationOLI_SourceID__c</fullName>
+        <description>OLI ID for the OLI from which this one was replicated</description>
+        <externalId>false</externalId>
+        <label>Originating OLI ID</label>
+        <length>25</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReplicationOLI_TargetID__c</fullName>
+        <description>The OLI to which this OLI was replicated</description>
+        <externalId>false</externalId>
+        <label>Replicated OLI ID</label>
+        <length>25</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLA_Met__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(DaysInStatus_InFulfillment2__c&lt;=SLA__c,1,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SLA Met</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLA_Product_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(PricebookEntry.Product2.SLA_Product_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SLA Product Type</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLA__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Product_Name__c=&quot;Email Blast&quot;,8,PricebookEntry.Product2.SLA_Bus_Days__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SLA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sell_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Sell Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>NewSell</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UpSell</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CrossSell</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auto Extension</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Service_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Live_Date__c + ((Quantity + 1) * 28)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service End Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Setup_Fee_Amt__c</fullName>
+        <externalId>false</externalId>
+        <label>Setup Fee Amt</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Setup_Fee_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Populated by a workflow rule/field update. Must be a field on the OLI to enable an Roll-Up formula. Roll-Up formulas can&apos;t use other formula fields so, this field is needed for the &quot;Opportunities missing setup fees&quot; report</description>
+        <externalId>false</externalId>
+        <label>Setup Fee Required</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Setup_Fee__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Setup Fee</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Social_Media_Notice__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(PricebookEntry.Product2.Social_Media_Notice__c = True,&apos;Yes&apos;,&apos;No&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Social Media Notice</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_Bus_Days_3__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+MOD(( Status_Change_Date__c ) - DATE(2000,1,4),7)=0,Status_Change_Date__c +6, 
+IF(MOD((Status_Change_Date__c ) - DATE(2000,1,5),7)=0,Status_Change_Date__c +6, 
+IF(MOD((Status_Change_Date__c ) - DATE(2000,1,6),7)=0,Status_Change_Date__c +6, 
+IF(MOD((Status_Change_Date__c ) - DATE(2000,1,7),7)=0,Status_Change_Date__c +6, 
+IF(MOD((Status_Change_Date__c ) - DATE(2000,1,8),7)=0,Status_Change_Date__c +5, 
+IF(MOD((Status_Change_Date__c ) - DATE(2000,1,9),7)=0,Status_Change_Date__c +4, 
+Status_Change_Date__c +4 
+) 
+) 
+) 
+) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status Bus Days 3</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status_Bus_Days_7__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+MOD(( Status_Change_Date__c ) - DATE(2000,1,4),7)=0,Status_Change_Date__c +10, 
+IF(MOD((Status_Change_Date__c ) - DATE(2000,1,5),7)=0,Status_Change_Date__c +10, 
+IF(MOD((Status_Change_Date__c ) - DATE(2000,1,6),7)=0,Status_Change_Date__c +10, 
+IF(MOD((Status_Change_Date__c ) - DATE(2000,1,7),7)=0,Status_Change_Date__c +10, 
+IF(MOD((Status_Change_Date__c ) - DATE(2000,1,8),7)=0,Status_Change_Date__c +9, 
+IF(MOD((Status_Change_Date__c ) - DATE(2000,1,9),7)=0,Status_Change_Date__c +8, 
+Status_Change_Date__c +8 
+) 
+) 
+) 
+) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status Bus Days 7</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status_Change_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Status Change Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status_Last_Waiting_Set_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Wait Set Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Status_Last_Waiting_UnSet_Date__c</fullName>
+        <description>Used To Track Time of When Status came OUT of a Waiting Stage.</description>
+        <externalId>false</externalId>
+        <label>Wait UnSet Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Status_Text__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Waiting_Status__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status Text</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_Waiting_Check__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Status Waiting Check</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Term__c</fullName>
+        <externalId>false</externalId>
+        <label>Term</label>
+        <length>15</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Test_Workflow_Box__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Test Workflow Box</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Time_In_Current_Status_Days__c</fullName>
+        <description>+ ((FLOOR((Today() -  Status_Change_Date__c)-2)/7))</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+MOD(( Status_Change_Date__c ) - DATE(2000,1,4),7)=0,
+IF(Today() -  Status_Change_Date__c &lt;= 3,Today() -  Status_Change_Date__c,(Today() -  Status_Change_Date__c) - (FLOOR(Today() -  Status_Change_Date__c)/7) * 2) + 1, 
+
+
+IF(MOD((Status_Change_Date__c ) - DATE(2000,1,5),7)=0,
+IF(Today() -  Status_Change_Date__c &lt;= 2,Today() -  Status_Change_Date__c,(Today() -  Status_Change_Date__c) - (FLOOR(Today() -  Status_Change_Date__c)/7) * 2), 
+
+
+IF(MOD((Status_Change_Date__c ) - DATE(2000,1,6),7)=0,
+IF(Today() -  Status_Change_Date__c &lt;= 1,Today() -  Status_Change_Date__c,(Today() -  Status_Change_Date__c) - (FLOOR(Today() -  Status_Change_Date__c)/7) * 2), 
+
+
+IF(MOD((Status_Change_Date__c ) - DATE(2000,1,7),7)=0,
+IF(Today() -  Status_Change_Date__c = 0,Today() -  Status_Change_Date__c,(Today() -  Status_Change_Date__c) - (FLOOR(Today() -  Status_Change_Date__c)/7) * 2), 
+
+
+IF(MOD((Status_Change_Date__c ) - DATE(2000,1,8),7)=0,
+IF(Today() -  Status_Change_Date__c &lt; 3,0,(Today() -  Status_Change_Date__c) - (FLOOR(Today() -  Status_Change_Date__c)/7) * 2), 
+
+
+IF(MOD((Status_Change_Date__c ) - DATE(2000,1,9),7)=0,
+IF(Today() -  Status_Change_Date__c &lt; 2,0,(Today() -  Status_Change_Date__c) - (FLOOR(Today() -  Status_Change_Date__c)/7) * 2), 
+
+
+IF(Today() -  Status_Change_Date__c &lt; 5,(Today() -  Status_Change_Date__c),(Today() -  Status_Change_Date__c) - (FLOOR(Today() -  Status_Change_Date__c)/7) * 2) + ((FLOOR(Today() -  Status_Change_Date__c)/7)-1)
+) 
+) 
+) 
+) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Bus Days (In Status)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_To_Deliver__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISNULL(Live_Date__c)),Live_Date__c - Opportunity.Closed_Won_Time_Stamp__c,
+IF(NOT(ISNULL( Fulfilled_Date__c)),Fulfilled_Date__c- Opportunity.Closed_Won_Time_Stamp__c,NULL))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Time To Deliver</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TotalMonthlyCharge__c</fullName>
+        <externalId>false</externalId>
+        <formula>UnitPrice  + (UnitPrice  *  Mgmt_Fee_Percent__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Monthly Charge</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TotalPrice_Probability_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>UnitPrice * Opportunity.Probability</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The formula is Actual Price * Probability</inlineHelpText>
+        <label>Forecast Formula</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Upsell__c</fullName>
+        <externalId>false</externalId>
+        <label>Upsell?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Waiting_Age__c</fullName>
+        <externalId>false</externalId>
+        <formula>Now() -  Status_Last_Waiting_Set_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Waiting Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Waiting_Status_Descr__c</fullName>
+        <externalId>false</externalId>
+        <label>Status Descr/Notes</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Waiting_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Closed Won</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awaiting Onboard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Fulfillment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waiting On Client Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waiting On Client Resource</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Live</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hard Cancel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fulfilled Renewed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fulfilled Non-Renewal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fulfilled-Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>--Internal Use Only--</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paused:Billing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paused:No Contact</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>chk_Include_in_Monthly__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Field to indicate in Monthly total Field whether or not to include this prdouct</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field to indicate in Monthly total Field whether or not to include this prdouct.  Updated automatically based on DEFAULT INCLUDE IN MONTHLY Text field</inlineHelpText>
+        <label>Include In Monthly Total</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>tinderbox__Include_Content__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked it will include the associated TinderBox content for this product.</description>
+        <externalId>false</externalId>
+        <label>Include Content</label>
+        <type>Checkbox</type>
+    </fields>
+    <validationRules>
+        <fullName>CancelReason_Required_On_Cancel</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+Opportunity.RecordType.Name != &apos;USCP Opportunity&apos;,  
+OR(
+ISCHANGED(Cancellation_Category__c),
+ISCHANGED(Cancellation_Reason__c)
+),
+!ISPICKVAL(Cancellation_Category__c,&quot;&quot;),
+ISPICKVAL(Cancellation_Reason__c,&quot;&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>Cancellation_Reason__c</errorDisplayField>
+        <errorMessage>Please select a Cancellation Reason from the picklist</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cancel_NonRenew_Status_Requirements</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+Opportunity.RecordType.Name != &apos;USCP Opportunity&apos;, 
+OR(
+ISCHANGED(Waiting_Status__c),  
+ISCHANGED(Cancellation_Category__c)
+),
+OR(
+ISPICKVAL(Waiting_Status__c,&quot;Cancelled&quot;),
+ISPICKVAL(Waiting_Status__c,&quot;Fulfilled Non-Renewal&quot;)
+),
+OR(
+ISBLANK(Waiting_Status_Descr__c),
+ISBLANK(TEXT(Cancellation_Category__c)))
+)</errorConditionFormula>
+        <errorDisplayField>Waiting_Status__c</errorDisplayField>
+        <errorMessage>Cancelled or Non-Renewal requires a Cancellation Category selection and Status Descr/Notes</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cancel_Removal</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+Opportunity.RecordType.Name != &apos;USCP Opportunity&apos;,
+NOT(
+OR(
+ISPICKVAL(Waiting_Status__c,&quot;Canceled&quot;),
+ISPICKVAL(Waiting_Status__c,&quot;Cancelled&quot;),
+ISPICKVAL(Waiting_Status__c,&quot;Fulfilled Non-Renewal&quot;)
+)),
+NOT(ISBLANK(TEXT(Cancellation_Category__c)))
+)</errorConditionFormula>
+        <errorDisplayField>Cancellation_Category__c</errorDisplayField>
+        <errorMessage>Please Clear Cancellation Category if there is not A Canceled or Non-Renewal Status</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cancel_Requires_Notes</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+Opportunity.RecordType.Name != &apos;USCP Opportunity&apos;, 
+OR(
+ISCHANGED(Waiting_Status__c),
+ISCHANGED(Waiting_Status_Descr__c )),
+OR(
+ISPICKVAL(Waiting_Status__c,&quot;Cancelled&quot;),
+ISPICKVAL(Waiting_Status__c,&quot;Canceled&quot;)
+),
+ISBLANK(Waiting_Status_Descr__c ))</errorConditionFormula>
+        <errorDisplayField>Waiting_Status_Descr__c</errorDisplayField>
+        <errorMessage>Notes Are Required For A Cancelled Status</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cancelled_Status_needs_Closed_Won_Stage</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(NOT(ISPICKVAL(Opportunity.StageName, &quot;Closed Won&quot;)) &amp;&amp;  ISPICKVAL( Waiting_Status__c , &quot;Cancelled&quot;) , true, false)</errorConditionFormula>
+        <errorMessage>Opportunity Products can not be Cancelled if the Opportunity is in a stage other than Closed Won. Please mark the Opportunity as Closed Won in order to cancel the Opportunity Products or contact your manager.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cannot_Back_Date_Live_Date</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(Live_Date__c &lt; (NOW() - (1/100)), NOT(ISNULL(Live_Date__c)),ISCHANGED( Live_Date__c ))</errorConditionFormula>
+        <errorDisplayField>Live_Date__c</errorDisplayField>
+        <errorMessage>You cannot back date a Live Date Value.  Please refer to your manager to set prior Live Dates</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cannot_Enter_Live_Date_Unchecked</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(NOT(ISNULL(Live_Date__c)), Live__c = False,ISCHANGED( Live_Date__c ))</errorConditionFormula>
+        <errorDisplayField>Live__c</errorDisplayField>
+        <errorMessage>You must check the &apos;Live&apos; checkbox to set the Live Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Dig_AM_Requirement_for_Status</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND( Opportunity.Dig_Account_Manager__c = Null, NOT(ISPICKVAL(Waiting_Status__c,&quot;&quot;)),Opportunity.Digital_Products_Notice__c = True, NOT(Opportunity.RecordTypeId=&quot;012F0000000y9rk&quot;))</errorConditionFormula>
+        <errorDisplayField>Waiting_Status__c</errorDisplayField>
+        <errorMessage>You Must Have A Digital Account Manager Assigned To The Opportunity Prior To Assigning A Status To Any Product.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>IssueNotes_Required_On_Cancel</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+Opportunity.RecordType.Name != &apos;USCP Opportunity&apos;, 
+OR(
+ISNULL(Waiting_Status_Descr__c),
+Waiting_Status_Descr__c=&quot;Empty&quot;
+),
+ISPICKVAL(Waiting_Status__c ,&quot;Cancelled&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>Waiting_Status_Descr__c</errorDisplayField>
+        <errorMessage>Please Enter a Description of the Cancelation Reason/s</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>IssueNotes_Required_On_Waiting</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+Waiting_Status_Descr__c = Null,
+OR(
+ISPICKVAL( Waiting_Status__c ,&quot;Waiting On Client Resource&quot;),
+ISPICKVAL(Waiting_Status__c,&quot;Waiting On Client Approval&quot;)
+)
+)</errorConditionFormula>
+        <errorDisplayField>Waiting_Status_Descr__c</errorDisplayField>
+        <errorMessage>Please Enter a Description of the Waiting Reason</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>List_Change_Permissions</fullName>
+        <active>false</active>
+        <description>Only allow changes to prices on Setup product or Component Product Family</description>
+        <errorConditionFormula>and
+(ISPICKVAL(Product2.Family, &quot;&quot;),
+( Product2.Name &lt;&gt; &quot;Setup Fee&quot;))</errorConditionFormula>
+        <errorDisplayField>UnitPrice</errorDisplayField>
+        <errorMessage>Sorry, pricing modifications are only allowed on setup or components.  Contact your manager.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Non_USCP_Cannot_Select_HardCancel</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+Opportunity.RecordType.Name != &apos;USCP Opportunity&apos;,
+ISCHANGED(Waiting_Status__c),
+ISPICKVAL(Waiting_Status__c,&quot;Hard Cancel&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>Waiting_Status__c</errorDisplayField>
+        <errorMessage>Hard Cancel is not a valid option for this Opportunity type</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Only_Admin_change_Live_Date</fullName>
+        <active>true</active>
+        <description>Only Admins are allowed to change live dates</description>
+        <errorConditionFormula>ISCHANGED( Live_Date__c )
+&amp;&amp; !ISNULL(Live_Date__c) 
+&amp;&amp; !Contains($Profile.Name,&apos;Admin&apos;)</errorConditionFormula>
+        <errorDisplayField>Live_Date__c</errorDisplayField>
+        <errorMessage>Only Admins have access to change the live date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Pending_Requires_Notes</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(Waiting_Status__c,&quot;Pending&quot;),ISBLANK( Waiting_Status_Descr__c ),DATEVALUE(CreatedDate)&gt;=DATE(2013,3,28))</errorConditionFormula>
+        <errorDisplayField>Waiting_Status_Descr__c</errorDisplayField>
+        <errorMessage>Notes Are Required For A Pending Status.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Quantity_Must_Be_An_Integer</fullName>
+        <active>true</active>
+        <description>The quantity field (which translates into periods) can only be an integer. Decimals are not allowed.</description>
+        <errorConditionFormula>FLOOR( Quantity ) &lt;&gt;  Quantity</errorConditionFormula>
+        <errorDisplayField>Quantity</errorDisplayField>
+        <errorMessage>Please enter a whole number for Periods.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Setup_Fee_List_Change_OK_Nothing_Else</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND( 
+ListPrice &lt;&gt; UnitPrice ,
+ISPICKVAL(Product2.Family,&quot;&quot;) , 
+HasRevenueSchedule =FALSE
+
+
+)</errorConditionFormula>
+        <errorDisplayField>UnitPrice</errorDisplayField>
+        <errorMessage>Sorry, pricing modifications are not allowed on items that are not components or setup up fees. Contact your manager.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Seven_Days_Start_Date_Force</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(NOT(Opportunity.IsClosed), ServiceDate&lt;(TODAY()+7))</errorConditionFormula>
+        <errorDisplayField>ServiceDate</errorDisplayField>
+        <errorMessage>Start Date cannot be less than 7 days from Today</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Start_Date_Force</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISNULL(ServiceDate), Product2.Digital_No_Start_Date_Req__c  = False )</errorConditionFormula>
+        <errorDisplayField>ServiceDate</errorDisplayField>
+        <errorMessage>You must enter a Start Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Start_Date_Force_Old</fullName>
+        <active>false</active>
+        <errorConditionFormula>ISNULL(ServiceDate)</errorConditionFormula>
+        <errorDisplayField>ServiceDate</errorDisplayField>
+        <errorMessage>You must enter a Start Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>USCP_CancelDate_Removal</fullName>
+        <active>true</active>
+        <description>If we remove Invoice Cancel Date for USCP Opportunity Product then remove Waiting Status Desc ,Cancellation Category and Cancellation reason</description>
+        <errorConditionFormula>AND( 
+Opportunity.RecordType.Name == &apos;USCP Opportunity&apos;, 
+ISBLANK(Invoice_CancelDate__c),
+OR(
+NOT(ISBLANK(TEXT(Cancellation_Category__c))),
+NOT(ISBLANK(TEXT(Cancellation_Reason__c))) 
+) 
+)</errorConditionFormula>
+        <errorMessage>Please clear the selected Cancellation Reason and Cancellation Category.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>USCP_CancelDate_Requires_Notes_Category</fullName>
+        <active>true</active>
+        <description>If there is Invoice Cancel Date on USCP Opportunity Product then Notes , Cancellation Category and Cancellation Reason are required.</description>
+        <errorConditionFormula>AND( 
+Opportunity.RecordType.Name == &apos;USCP Opportunity&apos;, 
+NOT(ISBLANK(Invoice_CancelDate__c)),  
+OR( 
+ISBLANK(Waiting_Status_Descr__c), 
+ISBLANK(TEXT(Cancellation_Category__c)),
+ISBLANK(TEXT(Cancellation_Reason__c))  
+)
+)</errorConditionFormula>
+        <errorMessage>Please enter data in all fields.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>USCP_InvoiceCancelDate_Min_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+Opportunity.RecordType.Name == &apos;USCP Opportunity&apos;,
+ISCHANGED(Invoice_CancelDate__c), 
+Invoice_CancelDate__c &lt; Today()
+)</errorConditionFormula>
+        <errorMessage>Please Enter a date of today or in the future.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Add_USCP_Products</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Add USCP Products</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/OpportunityPriceBook?oppId={!Opportunity.Id}&amp;retURL=%2F{!Opportunity.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Payment_Entries</fullName>
+        <availability>online</availability>
+        <description>Create Payment Entries for the Opportunity Products schedule</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create Payment Entries</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>this.disabled = true;
+this.value = &apos;Processing...&apos;;
+this.setAttribute(&apos;class&apos;, &apos;btnDisabled&apos;);
+
+{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/apex.js&quot;)}
+
+try{
+   var resultMsg = sforce.apex.execute(&quot;OpportunityPaymentEntries&quot;,&quot;createPaymentEntries&quot;,{oppLineItemId:&quot;{!OpportunityLineItem.Id}&quot;});
+
+   if (resultMsg != &quot;Success&quot;) {
+	alert(resultMsg);
+   } 
+}catch(e){
+   alert(e.toString(),&apos;{!OpportunityLineItem.Id}&apos;);
+}
+
+this.disabled = false;
+window.parent.location.reload();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Edit_All_USCP_Product</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Edit All USCP Product</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/opportunityProductEntry?oppId={!Opportunity.Id}&amp;retURL=%2F{!Opportunity.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Status_History_Review</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Status History Review</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://na10.salesforce.com/00OF0000004ChDD?pv1={!OpportunityLineItem.ProjectId__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>TestButt</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>TestButt</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>https://na10.salesforce.com/p/opp/SelectSearch?addTo={!Opportunity.Id__c}&amp;retURL=%2F{!Opportunity.Id__c}&amp;PricebookEntrycol0=&quot;Product Name&quot;&amp;PricebookEntryoper0=&quot;starts with&quot;&amp;PricebookEntryfval0=&quot;CP&quot;</url>
+    </webLinks>
+</CustomObject>

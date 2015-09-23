@@ -1,0 +1,33 @@
+<img src="http://image.gannettlocal-email.com/lib/fed115777664077d/i/1/5ffc6d5c-a.jpg" align=left><br><br><br><br><br>
+
+<font face="verdana" size="2" color="#444444">
+
+Hi {!Lead.FirstName},<br><br>
+
+Thank you for your inquiry about email marketing at BuyerZone.com. I am your representative at GannettLocal, the one-stop shop for small business marketing solutions, and I will be following up within 24 hours to provide you an initial quote and discuss any remaining information needed to provide you finalized pricing.<br> 
+
+In the coming days, you will be contacted by other email vendors looking to earn your business, but I wanted to point a few unique things about GannettLocal that make us the best fit for your direct marketing needs:<br>
+<ul>
+<li>We are owned by Gannett Media, a Fortune 500 company that's been in business for over 100 years, so we have the credibility and stability you're looking for.</li>
+<li>We were created to serve small businesses like {!Account.Name}, so we are used to developing solutions for your industry and budget. Plus, we offer full campaign management and art development so you are free to focus on running your business.</li>
+<li>We are different from other email technology providers because of our database. In addition to being able to design and create your email campaign, we can create a list for you using relevant geographic, behavioral and demographic targeting to your desired audience.</li>
+<li>While we offer email marketing services, we also provide a full range of local marketing services, including website optimization and online advertising. So, when you're ready to try something new, we'll be ready for you.</li></ul>
+
+I look forward to the opportunity to help you grow your business and find new customers. I'll be in touch soon to provide you an initial quote and find out more about your needs and goals.<br><br>
+
+Best regards,<br><br>
+{!Lead.OwnerFullName}<br>
+{!Lead.OwnerPhone}<br>
+{!Lead.OwnerEmail}<br>
+<a href="http://www.gannettlocal.com">www.gannettlocal.com</a> 
+<br><br><br><br><br>
+
+
+</font>
+
+<table cellpadding="2" cellspacing="0" width="600" ID="Table5" Border=0><tr><td><font face="verdana" size="1" color="#444444">This email was sent by: GannettLocal<br>200 E. Van Buren, MC 10<br>Phoenix, Arizona 85003<br></font></td></tr></table>
+
+<table cellpadding="2" cellspacing="0" width="600" ID="Table5" Border=0><tr><td><font face="verdana" size="1" color="#444444">To unsubscribe from future emails, <a href="mailto:christine@gannettlocal.com?subject=Unsubscribe">click here</a>.
+
+
+</font></td></tr></table>

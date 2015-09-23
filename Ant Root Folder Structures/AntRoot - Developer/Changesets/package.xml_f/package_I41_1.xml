@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MyChangeSet</fullName>
+    <description>MyChangeSet</description>
+	
+	<types>
+		<members>opportunityProductEntry</members>
+		<name>ApexPage</name>
+    </types> 	
+
+	<types>
+		<members>opportunityProductEntry_VFC</members>
+		<members>OpportunityLineItemAfterUpdateHandler</members>
+		<members>OpportunityBeforeUpdateTriggerHandler</members>
+		<name>ApexClass</name>
+    </types> 	
+	
+	<types>
+		<members>Product2.Edit_Email_Recipients__c</members>
+		<name>CustomField</name>
+    </types> 	
+	 
+    <version>28.0</version>
+</Package>

@@ -1,0 +1,14 @@
+<br/>
+To View Opp : <a href="{!Opportunity.Link}">Jump To View</a><br/><br/>
+Opportunity Owner : {!Opportunity.OwnerFirstName}<br/>
+Opportunity Owner : {!Opportunity.OwnerLastName}<br/><br/>
+Deal Run Date : {!Opportunity.DC_Run_Date__c}<br/><br/>
+Market : {!Opportunity.DealChicken_Market__c}<br/>
+Account : {!Opportunity.Account}<br/>
+Opportunity Name : {!Opportunity.Name}<br/><br/>
+
+Descr : <br/> {!Opportunity.DC_Description__c}<br/><br/>
+Instr/Limits : {!Opportunity.DC_Instr_Limits__c}<br/><br/>
+Expiration : {!Opportunity.DC_Expiration__c}<br/><br/>
+Sell Price : {!Opportunity.DC_Sell_Price__c}<br/><br/>
+Total Value : {!Opportunity.DC_Total_Value__c}<br/>

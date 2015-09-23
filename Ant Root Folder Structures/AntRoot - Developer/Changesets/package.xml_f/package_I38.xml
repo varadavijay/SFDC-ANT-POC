@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sprint 34 Changes</fullName>
+    <description>Sprint 34 Changes</description>
+
+	<version>28.0</version>
+	
+	<types>
+        <members>OpportunityLineItemUSCPExt</members>
+        <members>opportunityProductEntry_VFC</members>
+        <members>OpportunityPriceBookController</members>
+        <members>OpportunityPriceBookController_Test</members>
+        <members>USCPILIGenerator</members>
+        <members>OpportunityLineItemUSCPCancelController</members>
+        <members>automatedRateCalculationUtil_Test</members>
+        <members>automatedRateCalculationUtil</members>
+        <name>ApexClass</name>
+    </types> 
+	
+	<types>
+        <members>InvoiceAdjustment</members>
+        <members>opportunityProductEntry</members>
+        <members>OpportunityPriceBook</members>
+        <name>ApexPage</name>
+    </types> 
+	
+	<types>
+        <members>Product2.UseMatrix__c</members>
+        <members>Automated_Rate_Calculation__c.MatrixResult__c</members>
+        <name>CustomField</name>
+    </types> 
+	
+	<types>
+        <members>Project__c-Project Layout</members>
+        <name>Layout</name>
+    </types> 
+	
+	<types>
+		<members>Admin</members>
+        <name>Profile</name>
+	</types>
+	
+</Package>

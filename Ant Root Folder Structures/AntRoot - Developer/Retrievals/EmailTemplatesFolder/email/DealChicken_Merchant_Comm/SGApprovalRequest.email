@@ -1,0 +1,18 @@
+<br>
+Notes:<br>
+{!Opportunity.Deal_Description__c}<br/><br/>
+
+{!Opportunity.Link}<br/><br/>
+
+{!Opportunity.OwnerFirstName}<br/>
+{!Opportunity.OwnerLastName}<br/><br/>
+
+{!Opportunity.Account}<br/>
+{!Opportunity.Name}<br/><br/>
+
+{!Opportunity.DC_Description__c}<br/>
+{!Opportunity.DC_Instr_Limits__c}<br/>
+{!Opportunity.DC_Expiration__c}<br/>
+{!Opportunity.DC_Sell_Price__c}<br/>
+{!Opportunity.DC_Total_Value__c}<br/>
+{!Opportunity.DC_Split_Perc__c} - (Split Perc)

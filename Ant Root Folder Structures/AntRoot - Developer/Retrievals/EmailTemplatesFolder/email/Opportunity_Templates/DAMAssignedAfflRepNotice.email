@@ -1,0 +1,10 @@
+<br/><br/>
+Hello {!Opportunity.AfflRep_FirstName__c},
+<br/><br/>{!Opportunity.Dig_Account_Manager__c} has been assigned to your digital opportunity.
+<br/><br/>
+Opportunity Title : {!Opportunity.Name}<br><br/>
+Attached Products:<br/>
+{!Opportunity.Product_List__c}<br/><br/>
+<br/><br/>
+Thank You,<br/><br/>
+{!Opportunity.LastModifiedBy}

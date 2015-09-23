@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MyChangeSet</fullName>
+    <description>MyChangeSet</description>
+	<!-- 
+	<types>
+        <members>NewSupportTicket</members>
+        <name>ApexPage</name>
+    </types>
+	
+	<types>
+        <members>Case.Support_Ticket</members>
+        <name>RecordType</name>
+    </types>
+	
+	<types>
+        <members>Project__c-Project Layout</members>
+        <members>Project__c-Project Layout - Read Only</members>
+        <name>Layout</name>
+    </types>
+	
+	<types> 
+		<members>Project__c.Qty_ContractMonths__c</members>
+		<members>Project__c.Invoice_Units__c</members>
+		<members>Project__c.Invoice_PriceVariable__c</members>
+		<members>Project__c.UnitPrice__c</members>
+		<members>Project__c.Mgmt_Fee_Percent__c</members>
+		<members>Project__c.TotalMonthlyCharge__c</members>
+		<members>Project__c.Invoice_ServiceStartDate__c</members>
+		<members>Project__c.Invoice_ServiceEndDate__c</members>
+		<members>Project__c.Invoice_CancelDate__c</members>
+		<members>Project__c.HasMediaSpend__c</members>
+		<members>Project__c.Has_ILI__c</members>
+		<members>Project__c.Count_Of_ILI__c</members>
+		<members>Project__c.RegenerateILIs__c</members>
+		<members>Project__c.Cancelled__c</members>
+		<name>CustomField</name>
+    </types>
+	
+	<types>
+        <members>ACQ Sales Rep IS</members>
+		<members>Adam Claypool</members>
+		<members>Admin</members>
+		<members>Chatter Only User</members>
+		<members>ContractManager</members>
+		<members>Data Extractor</members>
+		<members>Data Importer</members>
+		<members>Data Reader</members>
+		<members>DealChicken Operations</members>
+		<members>Digital Account Manager</members>
+		<members>Digital AM Team Manager</members>
+		<members>Digital Project Manager</members>
+		<members>DW Admin</members>
+		<members>GO Digital Data System</members>
+		<members>Guest User</members>
+		<members>Jira Agent</members>
+		<members>Knowledge Team</members>
+		<members>Lead Gen Supervisor</members>
+		<members>Lead Generation Specialists</members>
+		<members>Market Research</members>
+		<members>Marketing Analyst</members>
+		<members>MarketingProfile</members>
+		<members>Marketo Sync</members>
+		<members>National Sales</members>
+		<members>OrderHub API - OBFModel Only</members>
+		<members>President</members>
+		<members>Production Administrator</members>
+		<members>Read Only - Custom</members>
+		<members>ReadOnly</members>
+		<members>RETIRED USERS</members>
+		<members>SML Account Manager</members>
+		<members>SML Accounts - Jump Start Managers TBTest</members>
+		<members>SML Accounts - Jump Start Managers</members>
+		<members>SML Accounts - Jump Start Specialist TBTest</members>
+		<members>SML Accounts - Jump Start Specialist</members>
+		<members>SML Accounts - Supervisor</members>
+		<members>SML Customer Care %2FEncrypted Field Access</members>
+		<members>SML Customer Care</members>
+		<members>SML Standard Manager</members>
+		<members>SolutionManager</members>
+		<members>Standard</members>
+		<members>System Administrator Read Only</members>
+        <name>Profile</name>
+    </types> 
+	<types>
+        <members>Opportunity.Prevent_Opportunity_RT_Update</members>
+        <name>ValidationRule</name>
+    </types>
+	
+	<types>
+        <members>*</members>
+        <name>ValidationRule</name>
+    </types>
+	
+	 -->
+	 
+	<!-- <types>
+        <members>*</members>
+        <name>Workflow</name>
+    </types> -->
+	<types>
+        <members>*</members>
+        <name>ApexPage</name>
+    </types>
+	<types>
+        <members>*</members>
+        <name>ApexClass</name>
+    </types>
+	<types>
+        <members>*</members>
+        <name>ApexTrigger</name>
+    </types>
+	<!-- <types>
+        <members>Account.Assignment AM Complete</members>
+        <members>Account.CF Add CF Action</members>
+        <members>Account.CF Update CF Action</members>
+        <members>Account.Check Red Flag</members>
+        <members>Account.National Approval</members>
+        <members>Account.OnBoard Alert</members>
+        <members>Account.Reject the Merchant</members>
+        <members>Account.Update CF User %26 Pass</members>
+        <name>WorkflowRule</name>
+    </types> -->
+    <version>34.0</version>
+</Package>

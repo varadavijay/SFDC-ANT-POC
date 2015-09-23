@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Welcome Email - Digital Only</name>
+    <style>none</style>
+    <subject>Your GannettLocal Digital Package</subject>
+    <textOnly>Hi ,
+
+ Welcome to Gannett Local! I&apos;ll be your marketing specialist – I&apos;m here to make sure your campaign delivers results for . If you ever have any questions – from how something works, to how to update your ads for a big sale – I&apos;m here to help. 
+
+ To launch your package, you can expect a call in the next two days from our tech team. These digital experts will set up your online strategy, so when someone searches for your type of business in your neighborhood, you show up near the top. 
+
+ I&apos;ll be coordinating this whole process – so if you have any questions, give me a call or shoot me an email. I&apos;m here to make it simple! 
+
+ &lt;&lt;Name&gt;&gt; 
+&lt;&lt;Phone Number&gt;&gt;
+&lt;&lt;Email Address&gt;&gt; 
+ GannettLocal.com</textOnly>
+    <type>custom</type>
+</EmailTemplate>

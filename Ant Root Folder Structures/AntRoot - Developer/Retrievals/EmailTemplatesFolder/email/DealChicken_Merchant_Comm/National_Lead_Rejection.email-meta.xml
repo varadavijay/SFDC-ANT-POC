@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Lead Rejection</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>National - Lead Rejection</name>
+    <style>none</style>
+    <subject>DealChicken - Application Status</subject>
+    <textOnly>Hi,
+
+Thank you for your interest in DealChicken!
+
+We’re pleased you took the time to share your product with our selection team. At this time, however, we are unable to feature your products on our site.
+
+DealChicken offers a unique product mix that varies based on market, current purchasing trends, merchant reputation and various other metrics. Our decision is the result of a complex scoring system, and not the decision of an individual staff member.
+
+Market conditions do change, so we’ll keep your contact information on file. In the interim, please let us know if you make material changes to your product offerings, pricing, etc.
+
+Thank you very much for your interest in DealChicken.
+
+The DealChicken team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

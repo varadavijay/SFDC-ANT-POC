@@ -1,0 +1,11 @@
+An ETA has been Entered By {!RequestsIssues__c.LastModifiedBy}.
+{!RequestsIssues__c.ETA__c}
+
+
+Short Description:
+{!RequestsIssues__c.Name}
+{!RequestsIssues__c.Title_Short_Description__c}
+
+To View The Issue Record, Click Here
+
+{!RequestsIssues__c.Link}

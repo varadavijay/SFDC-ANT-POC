@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BuyerZone Auto Response - Direct Mail</name>
+    <style>none</style>
+    <subject>A response to your BuyerZone.com inquiry</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+Thank you for your inquiry about direct mail at BuyerZone.com. I am your representative at GannettLocal, the one-stop shop for small business marketing solutions, and I will be following up within 24 hours to provide you an initial quote and discuss any remaining information needed to provide you finalized pricing. 
+
+In the coming days, you will be contacted by other direct mail vendors looking to earn your business, but I wanted to point a few unique things about GannettLocal that make us the best fit for your direct marketing needs:
+
+*We are owned by Gannett Media, a Fortune 500 company that&apos;s been in business for over 100 years, so we have the credibility and stability you&apos;re looking for.
+*We were created to serve small businesses like {!Account.Name}, so we are used to developing solutions for your industry and budget. Plus, we offer full campaign management and art development so you are free to focus on running your business.
+*We are different from other direct mail providers because of the integrity of our database. Our longstanding relationship with our local communities and our management of premier media properties, such as USA Today, allow us to provide your business with relevant targeting to your desired audience.
+*While we offer direct mail services, we also provide a full range of local marketing services, including website optimization and online advertising. So, when you&apos;re ready to try something new, we&apos;ll be ready for you.
+
+I look forward to the opportunity to help you grow your business and find new customers. I&apos;ll be in touch soon to provide you an initial quote and find out more about your needs and goals.
+
+Best regards,
+
+{!Lead.OwnerFullName}
+{!Lead.OwnerPhone}
+{!Lead.OwnerEmail}
+www.gannettlocal.com 
+
+
+
+
+
+This email was sent by: GannettLocal
+200 E. Van Buren, MC 10
+Phoenix, Arizona 85003
+
+
+To unsubscribe from future emails, reply to this email with &quot;Unsubscribe&quot; in the body of the email.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

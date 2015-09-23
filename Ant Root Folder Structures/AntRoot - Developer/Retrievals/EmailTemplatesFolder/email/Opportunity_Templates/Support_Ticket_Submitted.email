@@ -1,0 +1,8 @@
+A Systems Request Has Been Submitted By {!Case.Dev_Submitted_By__c}
+
+Short Description:
+{!Case.Subject}
+
+To View The Issue Record, Click Here
+
+{!Case.Link}

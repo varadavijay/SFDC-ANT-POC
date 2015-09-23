@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+
+<style type="text/css">
+#body a { color: #f47734; }
+#footer a { color: #ffffff; }
+</style>
+</head>
+
+<body>
+<br />
+<table width="611" cellspacing="0" cellpadding="1" border="0" align="center">
+  <tbody>
+    <tr bgcolor="#cbcbcb">
+      <td width="609"><table width="609" cellspacing="0" cellpadding="10" border="0">
+        <tbody>
+          <tr bgcolor="#ffffff">
+            <td width="589"><table width="589" cellspacing="0" cellpadding="0" border="0" align="center">
+              <tbody>
+                <tr>
+                  <td width="589"><table width="589" cellspacing="0" cellpadding="0" border="0" align="center">
+                    <tbody>
+                      <tr>
+                        <td width="590"><img src="http://cdn2.hubspot.net/hub/295503/file-288266369-jpg/email/email-header-color.jpg" alt="Image 1" width="590" height="115" /></td>
+                      </tr>
+                      <tr>
+                        <td><div id="body"><table width="590" cellspacing="0" cellpadding="0" border="0">
+                          <tbody style="font-family: Arial, Helvetica, sans-serif; color: #363636; font-size: 12px;">
+                            <tr>
+                              <td width="20"><p><img src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/spacer-pthuron.gif" alt="Image 5" width="20" height="20" /></p>                    
+                              <td width="338"><p><div style="color: #7a1b51; font-size: 16px;"><strong>Hi {!Lead.FirstName},</strong></div></p><br />
+<p>Thank you for your interest in DealChicken!</p>
+
+<p>We are pleased you took the time to contact us about a possible partnership with DealChicken. At this time, however, we are unable to feature your company on our site.</p>
+
+<p>DealChicken offers a unique mix of products and services that vary based on market, current purchasing trends, merchant reputation and various other metrics. Our decision is the result of a complex scoring system, and not the decision of an individual staff member. This scoring tool helps us determine how successful a potential DealChicken deal might be. The last thing we want to do is run a deal that does not meet your expectations!</p> 
+
+<p>Market conditions do change, so we will keep your contact information on file. In the interim, please let us know if you make material changes to your product offerings, pricing, etc.</p>
+
+<p>Thank you very much for your interest in DealChicken.</p>
+
+<p>The DealChicken team</p>
+<br /><br />
+</td>
+                              <td width="20"><img width="20" height="20" alt="Image 4" src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/spacer-pthuron.gif" /></td>
+                            </tr>
+                          </tbody>
+                        </table></td>
+                      </tr>
+                      <tr>
+						<td height="44" bgcolor="#7a1b51" align="center" style="color: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 10px;"><div id="footer">Merchant Site :<a href="http://merchants.dealchicken.com/about/">About</a>|<a href="http://merchants.dealchicken.com/successes/">Successes</a>|<a href="http://merchants.dealchicken.com/resources/">Resources</a>|<a href="http://merchants.dealchicken.com/category/coop-news/">Coop News</a></div></td>
+                      </tr>
+                    </tbody>
+                  </table></td>
+                </tr>
+              </tbody>
+            </table></td>
+          </tr>
+        </tbody>
+      </table></td>
+    </tr>
+	<tr style="font-family: Arial, Helvetica, sans-serif; color: #7a1b51; font-size: 10px;">
+    	<td align="center"><br /><p>© 2013 DealChicken | 7950 Jones Branch Drive, McLean, VA 22107</p>
+        </td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

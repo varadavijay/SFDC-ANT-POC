@@ -1,0 +1,8 @@
+Link To Opp :  {!Opportunity.LinkToView__c}
+<br/><br/>
+Opportunity Title : {!Opportunity.Name}<br><br/>
+Attached Products:<br/>
+{!Opportunity.Product_List__c}<br/><br/>
+<br/><br/>
+Thank You,<br/><br/>
+<br/><br/>

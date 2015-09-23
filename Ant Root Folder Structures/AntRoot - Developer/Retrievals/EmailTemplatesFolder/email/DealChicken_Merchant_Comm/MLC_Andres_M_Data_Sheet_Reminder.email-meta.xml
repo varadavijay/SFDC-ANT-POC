@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>National - Data Sheet Reminder</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>National - Data Sheet Reminder</name>
+    <style>none</style>
+    <subject>*IMPORTANT* DealChicken Data Sheet Approval Reminder</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+As a reminder, the following promotion, {!Opportunity.Name}, is scheduled to launch on {!Opportunity.DC_Run_Date__c} and end on {!Opportunity.DC_End_Date__c}.
+
+We are still waiting on the approval of your data sheet that we sent you.  Please review the data sheet in its entirety and send back your approval of the information.  If you have any change requests, please let us know as soon as possible.
+
+If you need us to resend the data sheet, please let us know as well.
+
+The DealChicken team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

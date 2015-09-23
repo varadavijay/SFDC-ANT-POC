@@ -1,0 +1,11 @@
+Error Message : {!ApplicationLogs__c.Error_Message__c}
+
+Stack Trace : {!ApplicationLogs__c.StackTrace__c}
+
+Line Number: {!ApplicationLogs__c.Line_Number__c}
+
+Class : {!ApplicationLogs__c.Class_Name__c}
+
+Method: {!ApplicationLogs__c.Method_Name__c}
+
+Log URL : {!ApplicationLogs__c.Link}

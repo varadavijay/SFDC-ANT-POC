@@ -1,0 +1,14 @@
+The following Support Ticket has been submitted by {!Case.Dev_Submitted_By__c}
+
+This request has been submitted for approval by your business unit’s Lead.  You will be notified of resolution upon completion.
+
+
+Short Description:
+________________________________________________
+{!Case.Subject}
+{!Case.Description}
+________________________________________________
+
+
+To view the Case Record in Salesforce, click the link below. 
+{!Case.Link}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Template to use when sending out proof to merchant from Andres</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>DealChickenBreakfast</letterhead>
+    <name>(MLC: Andres) Proof Approval Letter</name>
+    <style>freeForm</style>
+    <subject>*IMPORTANT* DealChicken Proof Needs Approval</subject>
+    <textOnly>**PLEASE READ THE FOLLOWING VERY CAREFULLY**
+
+Good morning/afternoon [Name Here],
+
+Congratulations! Your promotion is scheduled to launch x/x and run through x/x.
+
+Here is a link to your deal proof:
+
+You are almost ready to run on DealChicken. Your next step is to completely review the proof of your deal for any edits in location, price and the deal details. Of course, DealChicken has its own voice and we are experts in making sure that comes across in the best way to sell your promotion.
+
+If no changes are needed, please reply letting us know that the ad is approved. If you do have location, price or deal detail edits, please let us know as soon as possible.
+
+Once we have your approval, your feature will go live on the above launch date and cannot be changed. If we do not have your approval in 48 hours, we will move your promotion to the end of our schedule.
+
+Thank you for partnering with DealChicken, and we are looking forward to launching your business!
+
+My best,
+
+Andrés Morales
+Merchant Loyalty Coordinator
+Social Commerce
+Free range: (802) 310-5274
+anmorales@dealchicken.com
+www.dealchicken.com</textOnly>
+    <type>html</type>
+</EmailTemplate>

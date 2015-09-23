@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MyChangeSet</fullName>
+    <description>MyChangeSet</description>
+	
+<!-- 	<types>
+		<members>opportunityProductEntry</members>
+		<members>OpportunityLineItemUSCPEdit</members>
+		<members>OpportunityLineItemUSCPEditSysAdmin</members>
+		<name>ApexPage</name>
+    </types> 	
+
+	<types> 
+		<members>OpportunityBeforeUpdateTriggerHandler</members>
+		<members>OnBoardFormAfterInsertTriggerHandler</members>
+		<name>ApexClass</name>
+    </types> 
+	
+	<types> 
+		<members>Opportunity-Wholesale Opportunity Finance Layout</members>
+		<members>Opportunity-Wholesale Opportunity Layout - GU</members>
+		<members>Opportunity-Wholesale Opportunity Layout</members> 
+		<members>OnBoardFormModel__c-OnBoardFormModel Layout</members> 
+		<members>Case-Case Layout OnBoard</members> 
+		<members>Case-Case Layout DigitalAudit TB Test</members> 
+		<members>Case-Case Layout DigitalAudit TB</members> 
+		<name>Layout</name>
+    </types>  
+	
+	<types> 
+		<members>OpportunityLineItem.Lock_Fields_Update_on_ILI_Gen</members>
+		<members>OpportunityLineItem.USCP_OLIStatusToClosedWon_OnlyFinance</members>
+		<name>ValidationRule</name>
+    </types>  
+	
+	<types> 
+		<members>OnBoardFormModel__c.Genesys_Account_Number__c</members>
+		<members>Case.Genesys_Account_Number__c</members>
+		<members>Opportunity.Genesys_Account_Number__c</members>
+		<members>Case.DA_OrgKW6__c</members>
+		<members>Case.DA_OrgKW7__c</members>
+		<members>Case.DA_OrgKW8__c</members>
+		<members>Case.DA_OrgKW9__c</members>
+		<members>Case.DA_OrgKW10__c</members>
+		<members>Case.Proposal_Link__c</members>
+		<name>CustomField</name>
+    </types>   
+
+	<types>
+		<members>*</members>
+        <name>Profile</name>
+    </types> -->
+
+	<types> 
+		<members>Opportunity-Wholesale Opportunity Finance Layout</members>
+		<members>Opportunity-Wholesale Opportunity Layout - GU</members>
+		<members>Opportunity-Wholesale Opportunity Layout</members> 
+		<members>OnBoardFormModel__c-OnBoardFormModel Layout</members> 
+		<members>Case-Case Layout OnBoard</members> 
+		<members>Case-Case Layout DigitalAudit TB Test</members> 
+		<members>Case-Case Layout DigitalAudit TB</members> 
+		<name>Layout</name>
+    </types>  
+    <version>28.0</version>
+</Package>

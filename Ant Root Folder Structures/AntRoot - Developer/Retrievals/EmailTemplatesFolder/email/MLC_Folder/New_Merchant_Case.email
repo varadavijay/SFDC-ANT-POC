@@ -1,0 +1,10 @@
+Hi All,
+Looks like a new Merchant Case has come into Salesforce. Below are the specifics about the case.
+
+Case Number: {!Case.CaseNumber}
+
+Contact: {!Case.Contact}
+Account: {!Case.Account}
+
+Subject: {!Case.Subject}
+Reason/Description: {!Case.Description}

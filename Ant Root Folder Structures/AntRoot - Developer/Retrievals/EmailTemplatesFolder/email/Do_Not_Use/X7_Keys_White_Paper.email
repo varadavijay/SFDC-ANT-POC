@@ -1,0 +1,13 @@
+Hi {!Lead.FirstName},
+
+Thank you for your interest in Gannett Local. I'm attaching the "7 Keys to Finding & Growing Customers" whitepaper that you requested. I hope that it provides you with valuable tips and best practices for marketing your Phoenix area business.
+
+Gannett Local offers local marketing packages that combine targeted online and print solutions so you can effectively reach customers in your area. As your Personal Phoenix Marketing Consultant, I am here to provide you a customized solution for your business. If you have any questions or would like to schedule a free business growth consultation, please reach out to me at {!User.X800_Number__c}.
+
+I look forward to hearing from you.
+
+Best Regards,
+
+{!Lead.OwnerFullName}
+{!User.X800_Number__c}
+{!Lead.OwnerEmail}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html bgcolor="#b4b8bb" style="margin: 0; padding: 0; background-color: #b4b8bb">
+<head>
+    <title>Your free online report from Staples and GannettLocal</title>
+        <style type="text/css">
+        /*<![CDATA[*/
+            /* iOS automatically adds a link to addresses */
+            /* Style the footer with the same color as the footer text */
+
+            #footer a {
+                color: #0290b1;
+                -webkit-text-size-adjust: none;
+                text-decoration: underline;
+                font-weight: normal
+            }
+            
+    		#main_body {
+                box-shadow: 0px 1px rgba(0, 0, 0, 0.1)
+            }
+            a {
+				color: #96c83f;
+				text-decoration: none;
+                font-weight: 600;
+			}
+            a:hover {
+    			color: #f9a01b;
+				text-decoration: none;
+                font-weight: bold;
+			}
+        /*]]>*/
+        </style>
+        <!-- http://www.emailonacid.com/blog/details/C13/ensure_that_your_entire_email_is_rendered_by_default_in_the_iphone_ipad -->
+        <!--                                                                                                                     -->
+        <!--                                                                                                                     -->
+        <!--                            _/    _/            _/          _/_/_/                        _/                         -->
+        <!--                           _/    _/  _/    _/  _/_/_/    _/        _/_/_/      _/_/    _/_/_/_/                      -->
+        <!--                          _/_/_/_/  _/    _/  _/    _/    _/_/    _/    _/  _/    _/    _/                           -->
+        <!--                         _/    _/  _/    _/  _/    _/        _/  _/    _/  _/    _/    _/                            -->
+        <!--                        _/    _/    _/_/_/  _/_/_/    _/_/_/    _/_/_/      _/_/        _/_/                         -->
+        <!--                                                               _/                                                    -->
+        <!--                                                              _/                                                     -->
+        <!--                                                                                                                     -->
+        <!--                                                 Extra White Space!                                                  -->
+        <!--                                                                                                                     -->
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+</head>
+<body bgcolor="#b4b8bb" style="margin: 0; padding: 0;  background-color: #b4b8bb" marginheight="0" marginwidth="0" topmargin="0">
+    <!-- start container 100% -->
+    <table bgcolor="#b4b8bb" style="background-color: #b4b8bb; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none" cellpadding="0" cellspacing="0" border="0" width="100%">
+            <!-- email body 640px -->
+                <tr><td>&nbsp;</td></tr>
+                <tr>
+                	<td bgcolor="#b4b8bb" style="background-color: #b4b8bb">
+                    	<div align="center">
+                        	<table cellpadding="0" cellspacing="0" border="0" width="640" style="font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 18px; color: #757675">
+                            	<tr>
+                                	<td width="100%" bgcolor="#ffffff" style="background-color: #ffffff; border: 1px solid #757675; border-radius: 4px">
+                                    	<div align="center">
+                                        <!-- start content -->
+                                            <table cellpadding="0" cellspacing="0" border="0" width="600" height"50">
+                                            	<tr><td>&nbsp;</td></tr>
+                                                <!-- start logo -->
+                                                <tr>
+                                                    <td valign="center" align="left" style=" background-color: #ffffff;"> 
+                                                    	<a href="http://www.godigitalmarketing.com" target="_blank"><img src="http://cdn2.hubspot.net/hub/162877/file-284077532-png/gl-godigital.png" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr><td>&nbsp;</td></tr>
+                                            </table>
+                                 			<!-- end logo -->
+                                 			<!-- end header -->
+                                            <!-- start header image -->
+                                            <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#96c83f" style="background-color: #96c83f;">
+                                                <tr>
+													<td valign="top">&nbsp;
+														
+                                                    </td>
+												</tr>
+											</table>
+                                            <!-- end header image --> 
+                                            <!-- start email body content -->
+                                            <table cellpadding="0" cellspacing="0" border="0" width="600">
+                                                <tr><td>&nbsp;</td></tr>
+                                                <tr>
+                                                	<td valign="top" style="text-align: left; font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 18px; color: #757675; background-color: #ffffff; border: none;">
+                                                        	<p>{!Lead.Salutation} {!Lead.LastName},</p>
+                                                            
+<p>It was great speaking with you today. <a href="http://hub.am/1a0f0FR">Here is the link I told you about to the additional information and a FREE copy of our ebook titled, <em>Insider Tips and Tricks for Online Marketing</em>.</a> It is a quick and easy read about how to utilize the Internet to capture new clients and retain the ones you have. It covers a lot of information about the best online solutions for small businesses, but I think your practice will find the information very beneficial as well.</p>
+
+<p>I hope you enjoy the information. Please let me know if you have any questions, or if you would like to learn more about how you can grow your practice by marketing online. 
+</p>
+
+<p>Thanks,</p>
+
+
+<p>{!Lead.Owner_First_Name__c}&nbsp;{!Lead.Owner_Last_Name__c}<br/>
+p: {!Lead.Owner_Phone__c}<br/>
+e: {!Lead.Owner_Email__c}</p>
+                                                    </td>
+                                                </tr>
+                                                <tr><td>&nbsp;</td></tr>
+                                            </table>
+                                            <!-- end email body content -->
+                                        <!-- end content -->
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <!-- start footer -->
+                <tr>
+                    <td bgcolor="#b4b8bb" style="background-color: #b4b8bb;">
+                    <div align="center">
+                        <table cellpadding="0" width="600" cellspacing="0" border="0">
+                            <tr><td>&nbsp;</td></tr>
+                            <tr>
+                                <td align="center" bgcolor="#b4b8bb" style="background-color: #b4b8bb;">
+                                    <p id="footer" style="font-family: Helvetica, Arial, sans-serif; text-align: center; font-size: 9px; line-height: 12px; color: #0290b1; display: block">
+                                        © 2013 GannettLocal | 200 East Van Buren Street, Phoenix, AZ 85004
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr><td>&nbsp;</td></tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <!-- end footer -->
+	</table>
+    <!-- end container -->
+</body>
+</html>

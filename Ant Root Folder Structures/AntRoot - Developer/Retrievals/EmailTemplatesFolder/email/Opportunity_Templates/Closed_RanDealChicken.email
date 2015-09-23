@@ -1,0 +1,9 @@
+A Chicken Deal has Ran!  Please follow up with Billing & Accounting.
+
+{!Opportunity.Account}
+{!Opportunity.Amount}
+
+{!Opportunity.Name}
+{!Opportunity.OwnerFullName}
+
+{!Opportunity.Link}

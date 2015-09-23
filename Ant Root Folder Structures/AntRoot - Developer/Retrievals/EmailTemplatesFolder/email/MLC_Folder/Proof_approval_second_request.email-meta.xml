@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>APXTConga4__Conga_Email_Letterhead</letterhead>
+    <name>Proof approval- second request</name>
+    <style>freeForm</style>
+    <subject>URGENT- DealChicken Proof Needs Your Approval</subject>
+    <textOnly>Your deal is currently scheduled to run [date] and your promotion is ready to proof. Please click on the link below for a preview of your offer. Respond with your approval by [deadline time, date]. Double check that the deal details match what we have in the contract, including all mentions of price and restrictions.
+Here’s how it will appear on our site:
+[preview link]
+
+If you have any questions, please feel free to reach out to me at any time. Thanks!</textOnly>
+    <type>html</type>
+</EmailTemplate>

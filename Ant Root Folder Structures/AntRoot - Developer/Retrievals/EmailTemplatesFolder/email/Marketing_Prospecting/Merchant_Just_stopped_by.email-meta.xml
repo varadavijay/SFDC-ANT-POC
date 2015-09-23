@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Merchant - Just stopped by/just called - Broadcast Markets</name>
+    <style>none</style>
+    <subject>Thanks for speaking with me</subject>
+    <textOnly>{!Contact.FirstName},
+
+
+
+Thank you for taking the time to speak with me today! You&apos;d like to see new customers coming through your door and DealChicken has the tools to help. Our engaged audience and the benefits of a DealChicken promotion ensure proven results for your business.
+
+
+
+The benefits of a DealChicken promotion include:
+
+Zero upfront costs
+A unique, customized write up about your business which will be featured on the DealChicken homepage and in the mobile app
+Your promotion is emailed to our exclusive (and growing) list of local subscribers
+Promotion of your offer through our television station as well as through our social media sites
+DealChicken provides you with assistance throughout all steps to make sure we craft the perfect promotion together
+You get a check instead of writing one
+
+Visit our merchant site for more information, or download our information sheet.
+
+I will be in contact in regards to crafting your promotion or feel free to contact me at {!Contact.OwnerFirstName} {!Contact.OwnerLastName} at {!Contact.OwnerEmail} or {!Contact.OwnerPhone}.
+
+Sincerely,
+
+{!Contact.OwnerFirstName} {!Contact.OwnerLastName}
+DealChicken
+Account Executive
+Social Commerce
+Phone: {!Contact.OwnerPhone}
+{!Contact.OwnerEmail}
+www.dealchicken.com</textOnly>
+    <type>custom</type>
+</EmailTemplate>

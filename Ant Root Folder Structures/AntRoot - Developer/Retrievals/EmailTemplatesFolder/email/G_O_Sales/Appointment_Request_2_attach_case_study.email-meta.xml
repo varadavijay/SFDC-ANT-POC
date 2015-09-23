@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>2nd appointment request - attach a case study or video link</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Appointment Request 2 - attach case study</name>
+    <style>none</style>
+    <subject>Re: Meeting Request</subject>
+    <type>text</type>
+</EmailTemplate>

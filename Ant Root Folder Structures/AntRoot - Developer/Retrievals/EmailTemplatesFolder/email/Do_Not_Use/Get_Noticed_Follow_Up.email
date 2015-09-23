@@ -1,0 +1,17 @@
+Hi {!Lead.FirstName}, 
+
+It was great to speak with you today. I’m following up with more information about the Get Noticed solution we discussed. This package combines digital and print solutions that will help local customers find – and choose – your business. Our expert and knowledgeable technical team will get you results by: 
+*Helping you design a compelling Community Print ad that will drive immediate traffic to your business
+*Creating an effective Pay-per-Click campaign that will get you noticed in local searches 
+*Setting up call tracking so you can measure the results of your marketing programs
+
+I am confident that this package is the most powerful way to quickly reach customers in your target locations and to ensure that you are found when people search for your type of business. 
+
+I will follow up with you soon to discuss getting started with Gannett Local.  In the meantime, please let me know if you have any other questions or need any more information. 
+
+Thank you again, 
+
+{!Lead.OwnerFullName} 
+{!User.X800_Number__c} 
+{!Lead.OwnerEmail} 
+GannettLocal.com

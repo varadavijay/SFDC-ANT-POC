@@ -1,0 +1,16 @@
+Hi {!Contact.OwnerFirstName}, 
+
+It was great to speak with you today. Attached is the Go Organic solution we discussed. Given you [SPECIALIZE IN A VARIETY OF SERVICES AND TARGET CUSTOMERS THROUGHOUT THE EAST VALLEY], this package ensures your customers can always find you online.
+
+As we spoke about today, our tech team will work daily to make sure you show up on page 1 of Google, Yahoo, and Bing. At the same time, they will work to make sure you are showing up in Google Maps for two of your most important keywords, such as [PLUMBER IN SCOTTSDALE AND TOILETS IN SCOTTSDALE]. As part of this, our team will create a credible and Google-trusted business profile for you, which we will submit to 40+ different directories, including azcentral.com. 
+
+While there is no monthly contract, we do ask that you see this a commitment for 3 - 6 months. Bottom line is that I am confident this solution is the most powerful way to reach all your customers and that you are found for your most important products and services. 
+
+Let me know a good chance to follow up with you and I will set up a time to talk. Also, happy to include our SEO team on the phone as well if that would be helpful. Hope this helps and let me know if you have any other questions in the meantime. 
+
+Thank you again,
+
+{!Lead.OwnerFullName}
+{!User.X800_Number__c}
+{!Lead.OwnerEmail}
+GannettLocal.com

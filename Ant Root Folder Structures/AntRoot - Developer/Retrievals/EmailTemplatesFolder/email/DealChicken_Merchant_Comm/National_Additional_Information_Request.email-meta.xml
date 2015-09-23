@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Additional Information Request</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>National - Additional Information Request</name>
+    <style>none</style>
+    <subject>DealChicken - Application Review</subject>
+    <textOnly>Hi,
+
+Thank you again for your interest in partnering with DealChicken.  Unfortunately, we are unable to pull any information regarding your business through Dun and Bradstreet or Equifax.
+
+In order to move forward, can you provide any additional information, such as the following?
+
+Previous address
+Additional business address
+Business display name (DBA)
+Corporation types
+Previous owner(s)
+
+Any additional information would be appreciated as well.
+
+Thank you very much.
+
+The DealChicken team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

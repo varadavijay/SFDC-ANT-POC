@@ -1,0 +1,5 @@
+Order Entry for this Opportunity is complete, please follow up accordingly.
+
+{!Opportunity.Name}
+{!Opportunity.Link}
+{!Order_Fulfillment__c.Link}

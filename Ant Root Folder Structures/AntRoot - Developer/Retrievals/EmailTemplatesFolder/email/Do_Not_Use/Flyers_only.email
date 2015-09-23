@@ -1,0 +1,13 @@
+Hi {!Contact.FirstName},
+
+Welcome to Gannett Local! I'll be your marketing specialist -- I'm here to make sure your campaign delivers results for {!Account.Name}.  If you ever have any questions – from how something works, to how to update your ads for a big sale – I'm here to help. 
+
+You can expect an important phone call in the next two to three days from our customer care team who will help design your flyers and schedule a drop date.  They know tons about ad design and promotions, but want your ads to capture your business's personality too. They'll be asking about any business information, discounts or logo images you'd like to include. They'll also confirm the zip codes you'd like to target, to make sure we reach the right customers.
+
+Attached are some important documents for you to review prior to your call.  This will get you started in thinking about your ad and make for a quick and easy call with customer care.
+
+I'll be coordinating this whole process - so if you have any questions, give me a call or shoot an email. I'm here to make it simple! 
+
+{!Opportunity.OwnerFullName}
+{!User.X800_Number__c}
+{!Opportunity.OwnerEmail}

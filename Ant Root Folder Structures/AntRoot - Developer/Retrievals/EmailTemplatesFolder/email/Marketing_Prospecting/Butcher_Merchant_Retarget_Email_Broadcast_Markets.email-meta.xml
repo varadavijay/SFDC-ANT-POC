@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Butcher Merchant Retarget Email Broadcast Markets</name>
+    <style>none</style>
+    <subject>Congratulations on your successful DealChicken promotion</subject>
+    <textOnly>Congratulations on your successful DealChicken promotion. You performed so well we&apos;d like you give you an exclusive opportunity to be featured again on our site.
+
+As a reminder, your promotion will include:
+
+Email delivery to our exclusive (and growing) list of local subscribers
+Your offer featured on the DealChicken homepage and in the mobile app
+Your offer on the broadcast station, the area&apos;s trusted news source
+Your offer featured on the station&apos;s website
+Your offer promoted on our Facebook and Twitter pages
+
+The great news is, we&apos;ll keep bringing new customers to your counter. So whether you have a delicious new cut of steak, or simply want to stay top-of-mind, DealChicken will help you bring more customers in.
+
+I will call you this week to set up a time to schedule your next promotion or feel free to contact me at {!Contact.OwnerLastName} {!Contact.OwnerFirstName} {!Contact.OwnerEmail} or {!Contact.OwnerPhone}.
+
+
+
+Can I change the promotion?
+If needed, we can work with you to craft a new offer that will fit your current needs.
+
+Will my promotion reach a new audience?
+DealChicken is constantly growing our list of email subscribers, so your offer will be seen by previous and new DealChicken members.
+
+
+*Utpal M. Dholakia, Rice University &quot;How Businesses Fare with Daily Deals as they Gain Experience:
+A Multi-Time Period Study of Daily Deal Performance,&quot; June 25, 2012.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

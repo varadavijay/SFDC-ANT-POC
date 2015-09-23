@@ -1,0 +1,8 @@
+A Digital Account Manager for this company has been assigned to facilitate the digital project. Please send any questions to "answers@godigitalmarketing.com" for any updates regarding the fulfillment of the audit or any changes and additions that need to be made. 
+
+
+Opportunity Name  -  {!Opportunity.Name}
+Company                -  {!Opportunity.Account}
+
+AM Assigned                 - {!Opportunity.Dig_Account_Manager__c}
+Products/Services      - {!Opportunity.Product_List__c}

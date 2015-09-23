@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Basic_DealChicken</letterhead>
+    <name>Federal Gift Card Law Explanation</name>
+    <style>freeForm</style>
+    <subject>Honoring deals past the expiration</subject>
+    <textOnly>Hi {!Contact.Name},
+
+We understand you have some questions about what happens now that your deal is expired. While the promotional value has expired, the amount that the customer paid is valid for 5 or more years depending on which state you live in.
+
+This is something that&apos;s regulated by the Federal Government. DealChicken is unable to provide you with legal advice pertaining to your business. You should consult your own attorney.
+
+
+We can give you the following information:
+
+
+
+· Explanation of the Federal Gift Card Law: http://www.allthingsgiftcard.com/2010/06/federal-gift-card-law-explained-in-simple-terms/
+
+
+
+· · Explanation of how this applies to our vouchers: http://www.franchising.com/articles/do_gift_certificate_laws_apply_to_coupons.html
+
+ff
+
+f</textOnly>
+    <type>html</type>
+</EmailTemplate>

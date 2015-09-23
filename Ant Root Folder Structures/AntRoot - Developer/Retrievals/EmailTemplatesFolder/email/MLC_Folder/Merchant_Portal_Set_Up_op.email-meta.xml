@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>An email sent to Merchants with their Merchant Portal log in information</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Merchant Portal Set Up - From Opp</name>
+    <style>none</style>
+    <subject>*IMPORTANT* DealChicken Promotion Details</subject>
+    <textOnly>Hi {!Opportunity.SAPrimaryContact__c},
+
+Thank you for approving your DealChicken proof. Now is the time to set up your Merchant Portal so you can pull the certificate report and redeem customers when they use their voucher. We can set that up for you if you would like.
+
+If so, reply back and request us to enable your merchant account.
+
+If you don’t have a DealChicken account please follow these steps:
+
+Visit www.dealchicken.com
+Scroll to the bottom of the page and under the “Calling All Shoppers” option, click “Sign Up and Start Getting Deals”
+Complete the form
+Send us an email from the email address associated with your account requesting us to enable your merchant account
+
+We have also attached a document that details this process.
+
+Once we receive your email request, we will enable your merchant account and send you an email confirmation. If you have any questions on this, feel free to reply back to us.
+
+The DealChicken Merchant Loyalty Team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>DC_Support</letterhead>
+    <name>Deal Pulled</name>
+    <style>freeForm</style>
+    <subject>*Notice - Deal Pulled*</subject>
+    <textOnly>Hi Team,
+
+
+It looks like a deal we were going to run got pulled. If this deal is from your Market, please pull it from the UI.
+
+Here are the specifics about it:
+
+
+Opportunity Name:  {!Opportunity.Name}
+
+
+
+Reason for Pull: {!Opportunity.Reason_for_Pull__c}
+
+
+
+Salesforce ID: {!Opportunity.Id}
+
+
+
+DealChicken Market: {!Opportunity.DealChicken_Market__c}
+
+
+
+Related Company: {!Opportunity.Account}
+
+
+
+DealID: {!Opportunity.Deal_ID__c}
+
+
+
+Proof Link: {!Opportunity.DC_Proof_Hyperlink__c}</textOnly>
+    <type>html</type>
+</EmailTemplate>

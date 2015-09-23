@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to HVAC business trying to schedule a call</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>HVAC_IntroEmail_OptionA</name>
+    <style>none</style>
+    <subject>Does {!Lead.Company} Need More Customers?</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+It&apos;s a fact: More than half of your prior-year customers can&apos;t remember your  name and 43% of them will turn to the Internet to find an HVAC business when their system fails.* Will they find you again - or your competitors?
+
+Watch how Kay Heating and Air Conditioning keeps its customers coming back because of its website, search and social presence: Watch the Video
+
+Do you want more customers too? Or are you OK with losing them to your competition?  Contact me today so we can discuss how to get you more calls!
+
+Sincerely,
+
+{!Lead.OwnerFullName}
+
+{!Lead.OwnerPhone}
+
+{!Lead.OwnerEmail}
+
+
+*Decision Analyst 2013 Home Comfort Study
+
+
+Forward to a Friend
+G/O Digital | 225 N. Michigan Avenue | 16th Floor | Chicago, IL 60613</textOnly>
+    <type>custom</type>
+</EmailTemplate>

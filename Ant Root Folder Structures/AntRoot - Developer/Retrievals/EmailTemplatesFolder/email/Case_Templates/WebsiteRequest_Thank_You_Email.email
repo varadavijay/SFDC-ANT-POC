@@ -1,0 +1,13 @@
+Hello {!Case.Affl_Sales_Rep__c}
+
+Your Website Request Is Received.  Please contact G/O Digital at "answers@godigitalmarketing.com" with any questions or updates regarding the fulfillment of the audit or any changes and additions that need to be made.  The audit will be completed and returned within 48 business hours.
+
+INFORMATION RECEIVED:
+
+Company                -  {!Case.Company_Name__c}
+Media Partner          - {!Case.Media_Partner__c}
+Industry                 - {!Case.Industry_General__c}
+Sales Rep              - {!Case.Affl_Sales_Rep__c}
+
+ECommerce Site? - {!Case.GLW_ECommerce_Site__c}
+New Or Redesign? - {!Case.GLW_Website_New_Or_Redesign__c}

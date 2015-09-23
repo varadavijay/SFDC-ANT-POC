@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Lead Referral Request</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>National - Lead Referral Request</name>
+    <style>none</style>
+    <subject>DealChicken - Referral Request</subject>
+    <textOnly>Hi,
+
+Thank you again for your interest in partnering with DealChicken.  At this time, we are ready to move forward with the pre-approval process.
+
+Please provide us with 3 referrals, so we can contact them regarding past performance.  These referrals must be daily deal sites or E-commerce business partners.
+
+We will need the following information for each business:
+
+Business Name
+Business website
+Business point of contact
+Business phone &amp; email
+
+In order to expedite this process, you are welcome to reach out to these referrals to let them know that we will be contacting them.
+
+Please let us know if you have any questions.
+
+Thank you very much.
+
+The DealChicken team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

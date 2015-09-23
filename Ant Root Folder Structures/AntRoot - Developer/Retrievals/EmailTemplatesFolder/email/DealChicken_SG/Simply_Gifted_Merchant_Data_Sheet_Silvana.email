@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<style type="text/css">
+
+.footer {	font-family: Arial, Helvetica, sans-serif;
+font-size: 11px;
+color: #dfe43e;
+line-height: 18px;
+}
+
+.footer a {
+	color: #dfe43e;
+	text-decoration: none;
+}
+
+.main {	font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+color: #363636;
+line-height: 18px;
+}
+
+ol {	font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+color: #363636;
+line-height: 18px;
+}
+
+.code {	font-family: Arial, Helvetica, sans-serif;
+font-size: 10px;
+color: #000000;
+line-height: 18px;
+background-color: #e6e124;
+border-style: dotted;
+border-width: 1px;
+}
+
+.code-container { margin-left: 20px;
+margin-right: 20px;
+}
+
+.title {	font-family: Arial, Helvetica, sans-serif;
+font-size: 20px;
+color: #363636;
+line-height: 18px;
+margin-top: 20px;
+
+}
+
+.sg-link {font-family: Arial, Helvetica, sans-serif;
+font-size: 16px;
+line-height: 18px;
+font-weight: bold;
+}
+
+.sg-link a:link {
+color: #555555;
+}
+
+</style>
+<br>
+</head>
+<body><table width="611" cellspacing="0" cellpadding="1" border="0" align="center"><tbody><tr bgcolor="#cbcbcb">
+<td width="609" style="">
+			<table width="609" cellspacing="0" cellpadding="10" border="0"><tbody><tr bgcolor="#ffffff">
+<td width="589" style="">
+						<table width="589" cellspacing="0" cellpadding="0" border="0" align="center"><tbody><tr>
+<td width="589" style="">
+									<table width="589" cellspacing="0" cellpadding="0" border="0" align="center"><tbody>
+<tr>
+<td width="590" style="font-size: 12px; font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102);"><img src="http://image.e.dealchicken.com/lib/fe661570776d06797412/m/3/sgf-email-header.jpg" width="590" height="105"></td>
+											</tr>
+<tr>
+<td style="font-size: 12px; font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102);">
+												<table width="590" cellspacing="0" cellpadding="0" border="0"><tbody><tr>
+<td width="20" valign="top" style="">
+															<p style="font-size: 12px; font-family: Arial,Helvetica,sans-serif; line-height: 18px; color: rgb(102, 102, 102);">
+															<img width="20" height="20" src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/spacer-pthuron.gif"></p>
+															<p style="font-size: 12px; font-family: Arial,Helvetica,sans-serif; line-height: 18px; color: rgb(102, 102, 102);">&nbsp;
+															
+															</p>
+															</td>
+															<td width="550" height="350" valign="middle" style="">
+<p class="title" style="font-family: Arial, Helvetica, sans-serif; font-size: 20px; color: #363636; line-height: 18px;">Welcome to Simply Gifted!</p>
+														     <p class="main" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px;">Congratulations! Your Simply Gifted gift cards are online and ready to be purchased. You are able to view your live gift cards by following this link: <br><div class="sg-link" align="center"><a href="http://simplygifted.com/merchant/{!Opportunity.Merchant_ID__c}">http://www.simplygifted.com/merchant/{!Opportunity.Merchant_ID__c}</a></div>
+ <p class="main" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px;">
+There is just one more step for you to complete and then you'll have purchasable gift cards to your business available right on your website.
+<ol><li>Select the text in the box below and copy it by right-clicking and selecting copy or hitting CTRL+C on the keyboard
+<li>Open the HTML file for the main page of your website and whichever other pages you want the gift cards on
+<li>Scroll to the bottom and locate the &lt;&#47;body&gt; tag
+<li>Paste the text that you copied from below just ABOVE that tag by right clicking and selecting paste or hitting CTRL+V on the keyboard
+<li>Save the file and upload it back onto your web server</ol>
+</p>
+												     <p class="main" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px;"><p> <p class="main" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px;">
+ <p class="main" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px;">
+<div class="code-container"><div class="code">&lt;!-- Widget --&gt;<br>
+&lt;script type="text/javascript"&gt;<br>
+    var _sg = _sg || [{!Opportunity.Merchant_ID__c}, 'right'];<br>
+    (function() { var sg = document.createElement('script'); sg.type = 'text/javascript'; sg.async = true; sg.src = ('https:' == document.location.protocol ? 'https://' : ' http://') + 'simplygifted.com/js/sg.js?r='+(new Date().getTime()); var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sg, s); })();<br>
+&lt;/script&gt;<br><br>
+
+&lt;noscript&gt;<br>
+  Buy &lt;a href="http://simplygifted.com/merchant/{!Opportunity.Merchant_ID__c}"&gt;{!Opportunity.TB_Company_Name__c} gift cards&lt;/a&gt; at &lt;a href="http://simplygifted.com">SimplyGifted.com&lt;/a&gt;<br>
+&lt;/noscript&gt;</div></div><br>
+
+<p class="main" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px;">
+Thanks,<br><br>
+
+Silvana Tascon<br>
+Deal Quality & Scheduling<br>
+DealChicken / Simply Gifted <br>
+(703) 854-5653<br>
+stascon@gannett.com<br><br>
+</td>
+															<td width="20" valign="top" style=""><span style="font-size: 12px; font-family: Arial,Helvetica,sans-serif; line-height: 18px; color: rgb(102, 102, 102);"><img src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/spacer-pthuron.gif" alt="" width="20" height="20"></span></td>
+														</tr></tbody></table>
+</td>
+											</tr>
+<tr>
+<td bgcolor="#363636" align="center" height="35" class="footer" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #dfe43e; line-height: 18px;">
+<a href="http://simplygifted.com/about" style="color: #dfe43e; text-decoration: none;">About</a> | <a href="http://simplygifted.com/how" style="color: #dfe43e; text-decoration: none;">How it Works</a> | <a href="http://simplygifted.com/merchants" style="color: #dfe43e; text-decoration: none;">Merchants</a> | <a href="mailto:customersupport@simplygifted.com" style="color: #dfe43e; text-decoration: none;">Contact Us</a>
+												</td>
+											</tr>
+<tr>
+<td bgcolor="#363636" align="center" height="22" class="footer" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #dfe43e; line-height: 18px;"><img src="http://image.e.dealchicken.com/lib/fe661570776d06797412/m/3/sgf-email-footer.jpg" width="590" height="99"></td>
+										  </tr>
+</tbody></table>
+</td>
+								</tr></tbody></table>
+</td>
+					</tr></tbody></table>
+</td>
+		</tr></tbody></table></body>
+</html>

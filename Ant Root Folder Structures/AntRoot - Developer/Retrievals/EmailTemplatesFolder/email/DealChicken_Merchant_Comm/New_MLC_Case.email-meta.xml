@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Basic_DealChicken</letterhead>
+    <name>New MLC Case</name>
+    <style>freeForm</style>
+    <subject>Your DealChicken Case {!Case.Id}</subject>
+    <textOnly>Hi {!Case.Contact},
+We just wanted to let you know we&apos;ve received your inquiry into our support system. We&apos;ll be reaching out to you shortly to help get you on your way, we look forward to working with you soon.
+
+
+
+
+
+Warmest Regards,
+The DealChicken Merchant Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Target Gift Card</name>
+    <style>none</style>
+    <subject>Target gift card for 15 minutes of your time</subject>
+    <textOnly>$15 Target Gift Card for 15 Minutes of Your Time
+Learn How to Find Local Customers
+Quantities are Limited so Schedule Today
+www.gannettlocal.com/giftcard
+
+Hi {!Lead.FirstName}, 
+
+We know you are busy, but we would like 15 minutes of your time to introduce you to the techniques that businesses like {!Lead.Company} are using to attract new local customers. There is no cost to you and you will receive a $15 Target gift card just by scheduling and attending a brief live presentation. 
+
+Just click here to set up a convenient time: http://www.gannettlocal.com/giftcard 
+
+As part of the media company that owns Arizona Republic and USA Today, GannettLocal belongs to a rich history of targeting local consumers in the places where they go for information. And now we&apos;re bringing small and medium sized businesses a proven set of online tools that help people find your business on the web - where they are already spending time. 
+
+In just a few minutes, we can show you how to harness the power of the internet to:
+
+*Appear on the first page of Google search results 
+*Drive new visitors to your website without spending hundreds on advertising 
+*Send your customers timely promotions and event notices 
+*Spread brand awareness through free social media tools  
+
+To learn more - and get your free gift card - contact me today or schedule a no-obligation overview of local marketing essentials today at http://www.gannettlocal.com/giftcard. 
+
+
+&quot;Previous local marketing solutions didn&apos;t narrow my audience down to a relevant group that would actually be in need of my services.&quot;
+-Chris Brown, Owner, Brandi Carpet, Gilbert 
+
+ 
+
+
+
+ 
+ © 2010 Gannett Local. All rights reserved.
+Target® is not affiliated with GannettLocal. Target does not sponsor, endorse, approve or have any responsibility for this promotion. The Bullseye Design and Target are registered trademarks and Target GiftCard is a service mark of Target Brands, Inc. All rights reserved. Terms and conditions are applied to GiftCards. Target is not a participating partner in or sponsor of this offer.		
+
+ 
+Gannett Local 
+200 E. Van Buren Street, MC 10, Phoenix, AZ, 85004, USA
+http://www.gannettlocal.com/privacy-policy/</textOnly>
+    <type>custom</type>
+</EmailTemplate>

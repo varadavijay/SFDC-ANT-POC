@@ -1,0 +1,6 @@
+Account  : {!Account.Name}
+
+Dig Acct Mgr   : {!Account.Account_Manager__c}
+Soc Med Spc  : {!Account.SocialMediaSpecialist__c}
+
+Account Page Link  :  {!Account.Link}

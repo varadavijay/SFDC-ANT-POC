@@ -1,0 +1,13 @@
+Hi {!Lead.FirstName}, 
+
+It was a pleasure speaking with you – your time is valuable, and much appreciated. I am including a couple of items for your review: my customer service promise (this is my personal commitment to being a local marketing partner for your business), and an overview of G/O Digital.  Our vision is to serve as a one-stop shop for businesses that want to expand their clientele, increase their sales and stay competitive in today’s market. 
+
+As traditional advertising and marketing continues to change and grow increasingly complex, I am committed to helping you navigate all the options available to you, eliminating unnecessary spending and maximizing your results. 
+
+I look forward to working with you, and ultimately helping your business become more profitable with tailored approaches to your needs and goals. In the meantime, if you have any questions, please contact me at the phone number or email below. I am here to help. 
+
+Best regards,
+
+{!Lead.OwnerFullName} 
+{!Lead.OwnerPhone}
+{!Lead.OwnerEmail}

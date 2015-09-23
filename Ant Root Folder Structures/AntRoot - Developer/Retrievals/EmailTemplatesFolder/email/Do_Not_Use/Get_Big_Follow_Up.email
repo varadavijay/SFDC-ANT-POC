@@ -1,0 +1,18 @@
+Hi {!Lead.FirstName}, 
+
+It was great to speak with you today. I’m following up with more information about the Get Noticed solution we discussed. This package combines digital and print solutions that will help you promote seasonal specials or events to local customers. Our expert and knowledgeable technical team will get you results by: 
+*Helping you design a compelling Community Print ad and flyer insert that will drive immediate traffic to your business
+*Building an email campaign that promotes your special to a targeted local audience
+*Creating a display ad on Arizona’s most visited website (AZCentral.com) that will quickly get the attention of potential customers 
+*Setting up call tracking so you can measure the results of your marketing programs
+
+I am confident that this package is the most powerful way to promote your upcoming event or promotion and to reach new customers in your target locations. 
+
+I will follow up with you soon to discuss getting started with Gannett Local.  In the meantime, please let me know if you have any other questions or need any more information. 
+
+Thank you again, 
+
+{!Lead.OwnerFullName} 
+{!User.X800_Number__c} 
+{!Lead.OwnerEmail} 
+GannettLocal.com

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Dads &amp; Grad Gift Guide Email Broadcast Markets</name>
+    <style>none</style>
+    <subject>Introducing the Dads and Grads Gift Guide</subject>
+    <textOnly>DealChicken invites you to be part of our Dads &amp; Grads gift guide. From electronics to barbecue supplies, DealChicken&apos;s Dads &amp; Grads promotion makes it easy for online shoppers to discover and connect with neighborhood merchants. A new merchant will be featured daily June 3-16 during our exclusive promotion.  For more information, download our Dads &amp; Grads gift guide information sheet.
+
+To reserve one of 14 featured Dads &amp; Grads gift guide positions, contact {!Contact.OwnerFirstName} {!Contact.OwnerLastName} by May 20th at {!Contact.OwnerEmail} or {!Contact.OwnerPhone}.
+
+
+
+
+DealChicken alerts consumers to great deals.
+Consumers purchase the deal on DealChicken.com and redeem at your location or website.
+Merchants receive a revenue split less a 2.5% credit card processing fee.
+
+Why try DealChicken?
+Hear how DealChicken can transform your business and bring in new, high-quality customers</textOnly>
+    <type>custom</type>
+</EmailTemplate>

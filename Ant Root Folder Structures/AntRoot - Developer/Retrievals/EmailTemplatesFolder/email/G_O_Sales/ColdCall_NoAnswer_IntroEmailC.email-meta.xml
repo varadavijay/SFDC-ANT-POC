@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Option C- Email to introduce G/O Digital with CTA to schedule a call</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ColdCall_NoAnswer_IntroEmailC</name>
+    <style>none</style>
+    <subject>Does {!Lead.Company} Need More Customers?</subject>
+    <textOnly>Dear {!Lead.FirstName},
+
+I wanted to introduce {!Lead.Company} to G/O Digital  – the leader in digital marketing services for local businesses.
+
+At G/O Digital, we understand the power of digital marketing and the specific needs of your local business. Our team of talented industry leaders is dedicated to delivering best-in-class results using search, social, and email marketing services. Find out more about what we offer by downloading our free white paper, “The Top 5 Digital Marketing Services for Local Businesses”  and see how your marketing efforts compare to your competitors by requesting a free digital assessment here.
+
+Sincerely,
+
+{!Lead.OwnerFullName}
+
+{!Lead.OwnerPhone}
+
+{!Lead.OwnerEmail}
+
+
+
+Forward to a Friend
+G/O Digital | 225 N. Michigan Avenue | 16th Floor | Chicago, IL 60613</textOnly>
+    <type>custom</type>
+</EmailTemplate>

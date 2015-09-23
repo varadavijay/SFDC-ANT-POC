@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Product Live Alert To Affl Rep</name>
+    <style>none</style>
+    <subject>{!Project__c.Project_Account__c} - {!Project__c.Product_Name__c} - Live!</subject>
+    <textOnly>Hello {!Project__c.Affl_Sales_Rep_First__c},
+
+This email is to inform you that the below G/O Digital Product is LIVE!
+
+Please communicate to your billing department accordingly. If you have questions regarding this product please contact your GO Digital Account Manager, noted below.
+
+Product : {!Project__c.Product_Name__c}
+
+Customer : {!Project__c.Project_Account__c}
+
+Digital AM : {!Project__c.Digital_Account_Manager__c}
+
+
+
+Thank You,
+
+Your GO Team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

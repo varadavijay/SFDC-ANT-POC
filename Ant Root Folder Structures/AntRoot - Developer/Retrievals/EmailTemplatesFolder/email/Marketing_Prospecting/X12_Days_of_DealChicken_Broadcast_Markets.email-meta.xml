@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>12 Days of DealChicken- Broadcast Markets</name>
+    <style>none</style>
+    <subject>DealChicken&apos;s Gift to You</subject>
+    <textOnly>12 Days of DealChicken is your ticket to online holiday spending. During the holiday spending rush, it&apos;s hard to set yourself apart from the crowd. Stakes are high for businesses. Holiday spending can represent 20-40% of annual sales for some merchants according to the National Retail Federation. Let DealChicken be your ticket to the shopping frenzy.
+
+From December 2-15th DealChicken will showcase a new local merchant daily.  For more information, download our 12 Days of DealChicken information sheet.
+
+To reserve one of 12 featured positions, contact {!Contact.OwnerFirstName} {!Contact.OwnerLastName} by Nov. 15th at {!Contact.OwnerEmail} or {!Contact.OwnerPhone}.
+
+
+
+
+DealChicken alerts consumers to great deals.
+Consumers purchase the deal on DealChicken.com and redeem at your location or website.
+Merchants receive a revenue split less a 2.5% credit card processing fee.
+
+Why try DealChicken?
+Hear how DealChicken increased brand awareness &amp; website traffic for a specialty retailer.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

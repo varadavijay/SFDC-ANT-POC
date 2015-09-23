@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>MyChangeSet</fullName>
+
+    <description>MyChangeSet</description>
+    <types>
+        <members>OnBoardFormModel__c.Advertiser_Web_Address_URL</members> 
+        <members>OnBoardFormModel__c.CMS_Login_Valid_URL</members> 
+        <members>OnBoardFormModel__c.Clickthrough_URL10_Valid_URL</members> 
+        <members>OnBoardFormModel__c.Clickthrough_URL1_Valid_URL</members> 
+        <members>OnBoardFormModel__c.Clickthrough_URL2_Valid_URL</members> 
+        <members>OnBoardFormModel__c.Clickthrough_URL3_Valid_URL</members> 
+        <members>OnBoardFormModel__c.Clickthrough_URL4_Valid_URL</members> 
+        <members>OnBoardFormModel__c.Clickthrough_URL5_Valid_URL</members> 
+        <members>OnBoardFormModel__c.Clickthrough_URL6_Valid_URL</members> 
+        <members>OnBoardFormModel__c.Clickthrough_URL7_Valid_URL</members> 
+        <members>OnBoardFormModel__c.Clickthrough_URL8_Valid_URL</members> 
+        <members>OnBoardFormModel__c.Clickthrough_URL9_Valid_URL</members> 
+        <members>OnBoardFormModel__c.Current_Facebook_Valid_URL</members> 
+        <members>OnBoardFormModel__c.Desired_URL_Domain_Name_Validate</members> 
+        <members>OnBoardFormModel__c.Domain_Name_URL_Validate</members> 
+        <members>OnBoardFormModel__c.Facebook_Ads_Landing_Page_Valid_URL</members> 
+        <members>OnBoardFormModel__c.PPC_Compitetor1_Valid_URL</members> 
+        <members>OnBoardFormModel__c.PPC_Compitetor2_Valid_URL</members> 
+        <members>OnBoardFormModel__c.PPC_Compitetor3_Valid_URL</members> 
+        <members>OnBoardFormModel__c.SA_Current_Facebook_Page_Valid_URL</members> 
+        <members>OnBoardFormModel__c.TWDesired_URL_Domain_Name_Validate</members> 
+        <members>OnBoardFormModel__c.Valid_Audit_URL</members> 
+        <members>OnBoardFormModel__c.Valid_Host_URL</members> 
+        <members>OnBoardFormModel__c.Valid_Link_To_Proposal_URL</members> 
+        <name>ValidationRule</name>
+    </types>	
+	                
+    <version>30.0</version>
+</Package>

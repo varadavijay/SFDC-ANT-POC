@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Fall Fun- Broadcast Markets- Contacts only</name>
+    <style>none</style>
+    <subject>Introducing 14 days of Fall Fun</subject>
+    <textOnly>Keep business hot while temperatures drop. DealChicken is featuring 14 days of select deals from haunted houses, seasonal menus and home improvement to preparing for the rapidly approaching holiday season. DealChicken will promote this unique feature with additional advertising. This means your business gets deal-specific mentions, plus theme promotion for 14 days at no extra cost!
+
+DealChicken will feature a new merchant daily from September 30- October 13.  For more information, download our Fall Fun information sheet.
+
+To reserve one of 14 featured Fall Fun positions, contact {!Contact.OwnerFirstName} {!Contact.OwnerLastName} by Sept. 16th at {!Contact.OwnerEmail} or {!Contact.OwnerPhone}.
+
+
+
+
+DealChicken alerts consumers to great deals.
+Consumers purchase the deal on DealChicken.com and redeem at your location or website.
+Merchants receive a revenue split less a 2.5% credit card processing fee.
+
+Why try DealChicken?
+Hear how DealChicken attracted new visitors to a regional county fair</textOnly>
+    <type>custom</type>
+</EmailTemplate>

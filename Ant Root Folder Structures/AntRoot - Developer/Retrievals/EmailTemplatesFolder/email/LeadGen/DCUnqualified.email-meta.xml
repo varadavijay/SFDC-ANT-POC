@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>DCUnqualified</name>
+    <style>none</style>
+    <subject>Thanks For Your Interest!</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+
+Thank you for your interest in DealChicken!
+
+We are pleased you took the time to contact us about a possible partnership with DealChicken. At this time, however, we are unable to feature your company on our site.
+
+DealChicken offers a unique mix of products and services that vary based on market, current purchasing trends, merchant reputation and various other metrics. Our decision is the result of a complex scoring system, and not the decision of an individual staff member. This scoring tool helps us determine how successful a potential DealChicken deal might be. The last thing we want to do is run a deal that does not meet your expectations!
+
+Market conditions do change, so we will keep your contact information on file. In the interim, please let us know if you make material changes to your product offerings, pricing, etc.
+
+Thank you very much for your interest in DealChicken.
+
+The DealChicken team
+
+
+
+Merchant Site :About|Successes|Resources|Coop News
+
+
+© 2013 DealChicken | 7950 Jones Branch Drive, McLean, VA 22107</textOnly>
+    <type>custom</type>
+</EmailTemplate>

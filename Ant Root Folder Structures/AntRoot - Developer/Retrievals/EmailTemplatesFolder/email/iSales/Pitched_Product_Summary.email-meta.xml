@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Approval</letterhead>
+    <name>Pitched - Product Summary</name>
+    <style>freeForm</style>
+    <subject>RE: Per Our Conversation. DealChicken Overview</subject>
+    <textOnly>Hi {!Opportunity.SAPrimaryContact__c},
+
+
+Thanks for your time today! As mentioned on the call, I know {!Opportunity.Account} will be a great fit on our website, DealChicken.com as well as on [affiliate name ] out of [City].
+
+Here is a brief rundown on how your business will be featured with us:
+
+
+·  Together we create a deal to offer potential customers in the local area
+
+• The deal is promoted [in/on] the [affiliates]’ [newspaper or TV broadcast]
+
+• Featured on the front page of the local news affiliates’ websites
+
+• Featured on www.DealChicken.com with a link to your website or facebook page
+
+• And much more!
+
+
+Please look at the following link to see why we WILL benefit your business! http://merchants.dealchicken.com/
+
+Read testimonials from other merchants who have worked with us:
+
+http://merchants.dealchicken.com/successes/
+
+
+
+I look forward to speaking with you [ Firm time and date] to answer any questions you have and working out your deal.
+
+
+
+Best,
+
+{!Opportunity.OwnerFullName}
+
+{!Opportunity.OwnerPhone}</textOnly>
+    <type>html</type>
+</EmailTemplate>

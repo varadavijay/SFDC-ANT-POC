@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SML Extension Alert!</name>
+    <style>none</style>
+    <subject>SML Extension Alert!</subject>
+    <textOnly>Link To Opp :  {!Opportunity.LinkToView__c}
+
+Opportunity Title : {!Opportunity.Name}
+
+Attached Products:
+{!Opportunity.Product_List__c}
+
+
+
+Thank You,</textOnly>
+    <type>custom</type>
+</EmailTemplate>

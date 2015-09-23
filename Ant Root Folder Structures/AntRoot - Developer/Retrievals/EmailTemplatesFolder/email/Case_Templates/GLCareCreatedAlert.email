@@ -1,0 +1,7 @@
+Company Entered : {!Case.Company_Name__c}
+Sales Rep : {!Case.Affl_Sales_Rep__c}
+Media Partner : {!Case.Media_Partner__c}
+Care Type : {!Case.GLC_Submission_Type__c}
+
+Description:{!Case.GLC_Request_Reason__c}
+Link:{!Case.Link}

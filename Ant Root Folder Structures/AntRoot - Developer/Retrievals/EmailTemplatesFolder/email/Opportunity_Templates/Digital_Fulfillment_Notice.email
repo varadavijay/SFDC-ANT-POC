@@ -1,0 +1,14 @@
+{!Opportunity.Market_Record__c}
+
+{!Opportunity.Account}
+{!Opportunity.Name}
+
+{!Opportunity.Amount}
+{!Opportunity.StageName}
+{!Opportunity.CloseDate}
+
+Updated By:
+{!Opportunity.LastModifiedBy}
+
+Link:
+{!Opportunity.Link}

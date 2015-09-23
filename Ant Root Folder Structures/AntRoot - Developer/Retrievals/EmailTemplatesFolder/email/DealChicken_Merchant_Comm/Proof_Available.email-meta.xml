@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Proof Available</name>
+    <style>none</style>
+    <subject>Your DealChicken Proof is now available</subject>
+    <textOnly>It&apos;s almost time!
+
+Your promotion is ready to proof. Please click on the link below for a preview of your offer. Respond with your approval or any changes by [deadline time, date]. Double check that the details match what we have in the contract, including all mentions of price and restrictions.
+
+Here’s how it will appear on our site:
+
+[preview link]
+
+Your deal is currently scheduled to run [date] as the featured deal, and as a side deal [date through date].
+
+If you have any questions, please feel free to reach out to me at any time. Thanks!
+
+[manager’s name]
+Area Manager, [location]
+[email]
+[phone #]
+
+
+
+DealChicken alerts consumers to great deals.
+Consumers purchase the deal on DealChicken.com and redeem at your location or website.
+Customers continue to visit merchant becoming a loyal regular!
+
+Merchant Site : About | Successes | Resources | Coop News</textOnly>
+    <type>custom</type>
+</EmailTemplate>

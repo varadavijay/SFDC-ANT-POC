@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Restaurant Week- Newspaper Markets</name>
+    <style>none</style>
+    <subject>Introducing DealChicken Restaurant Week</subject>
+    <textOnly>Wrap up the backyard BBQs and invite customers to enjoy the last days of summer at your restaurant... during DealChicken Restaurant Week. Unlike a traditional restaurant week, you won&apos;t have a rush of customers during one week - their visits will be spaced out over the time your promotion is valid, typically 6 months.
+
+
+
+Restaurant deals are very popular with DealChicken users - it&apos;s our #1 category!  A promotional offer is a great way to introduce new customers to your restaurant.  For more information, download our Restaurant Week  information sheet.
+
+To reserve one of eight featured Restaurant Week positions, contact {!Contact.OwnerFirstName} {!Contact.OwnerLastName} by August 16th at {!Contact.OwnerEmail} or {!Contact.OwnerPhone}.
+
+
+
+
+DealChicken alerts consumers to great dining deals.
+Consumers purchase the deal on DealChicken.com and redeem at your restaurant.
+Merchants receive a revenue split less a 2.5% credit card processing fee.
+
+Why try DealChicken?
+Hear how DealChicken has helped bring local customers to area restaurants</textOnly>
+    <type>custom</type>
+</EmailTemplate>

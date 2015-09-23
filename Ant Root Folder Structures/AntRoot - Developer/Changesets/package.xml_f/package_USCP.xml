@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sprint 34 Changes</fullName>
+    <description>Sprint 34 Changes</description>
+
+	<version>33.0</version>
+	
+	<types>
+        <members>AbstractInvoiceLineItemsClass</members>
+        <members>InvoiceAdjustmentCntrl</members>
+        <members>InvoiceLineItemCompCntrl</members>
+        <members>OLIStatusHistoryCompCntrl</members>
+        <members>OppLineItemCntrl</members>
+        <members>OpportunityLineItemExt</members>
+        <members>OpportunityLineItemUSCPCancelController</members>
+        <members>OpportunityLineItemUSCPExt</members>
+        <members>OpportunityPriceBookController</members>
+        <members>OpportunityPriceBookController_Test</members>
+        <members>OpportunityProductRouter</members>
+        <members>USCPILIGenerator</members>
+        <members>USCPILIGenerator_Test</members>
+        <members>USCPOLIRelatedListCntrl</members>
+        <members>automatedRateCalculationUtil</members>
+        <members>automatedRateCalculationUtil_Test</members>
+        <members>opportunityProductEntry_VFC</members>
+        <members>processBuider_CancelInvoiceLineItems</members>
+        <members>processBuilder_InsertInvoiceLineItems</members>
+        <members>processBuilder_UpdateInvoiceLineItems</members>
+        <name>ApexClass</name>
+    </types> 
+	
+	<types>
+        <members>InvoiceLineItemComp</members>
+        <members>OLIStatusHistoryComp</members>
+        <name>ApexComponent</name>
+    </types>
+	
+	<types>
+        <members>InvoiceAdjustment</members>
+        <members>OpportunityLineItemUSCP</members>
+        <members>OpportunityLineItemUSCPEdit</members>
+        <members>OpportunityLineItemUSCP_Cancelled</members>
+        <members>OpportunityPriceBook</members>
+        <members>OpportunityProductRouter</members>
+        <members>USCPOLIRelatedList</members>
+        <members>oppLineItem</members>
+        <members>opportunityProductEntry</members>
+        <members>UpdateAgreement</members>
+        <name>ApexPage</name>
+    </types> 	
+	
+<!-- 	<types>
+        <members>Opportunity-Wholesale Opportunity Finance Layout</members>
+        <members>Opportunity-Wholesale Opportunity Layout</members>
+        <members>Opportunity-Wholesale Opportunity Layout - GU</members>
+        <name>Layout</name>
+    </types>  -->
+		
+    <types>
+        <members>Automated_Rate_Calculation__c</members>
+        <members>Invoice_LineItem__c</members>
+        <name>CustomObject</name>
+    </types> 
+	
+	<types>
+        <members>Automated_Rate_Calculation__c.APIOnly_ExternalId__c</members>
+        <members>Automated_Rate_Calculation__c.Column_End_Range__c</members>
+        <members>Automated_Rate_Calculation__c.Column_Start_Range__c</members>
+        <members>Automated_Rate_Calculation__c.MatrixResult__c</members>
+        <members>Automated_Rate_Calculation__c.Price_Book__c</members>
+        <members>Automated_Rate_Calculation__c.Product__c</members>
+        <members>Automated_Rate_Calculation__c.Row_End_Range__c</members>
+        <members>Automated_Rate_Calculation__c.Row_Start_Range__c</members>
+        <members>Invoice_LineItem__c.Invoice_CreditOrDebit_Reason__c</members>
+        <members>Invoice_LineItem__c.Invoice_CreditOrDebit__c</members>
+        <members>Invoice_LineItem__c.Invoice_LineItemType__c</members>
+        <members>Invoice_LineItem__c.Invoice_PeriodEnd__c</members>
+        <members>Invoice_LineItem__c.Invoice_PeriodStart__c</members>
+        <members>Invoice_LineItem__c.Invoice_ScheduleDate__c</members>
+        <members>Invoice_LineItem__c.Mgmt_Fee__c</members>
+        <members>Invoice_LineItem__c.Number_of_Months__c</members>
+        <members>Invoice_LineItem__c.Number_of_Units__c</members>
+        <members>Invoice_LineItem__c.OLI_ID__c</members>
+        <members>Invoice_LineItem__c.Product_Price__c</members>
+        <members>Invoice_LineItem__c.TotalMonthlyCharge__c</members>
+        <members>Invoice_LineItem__c.isDeleted__c</members>
+        <members>Invoice_LineItem__c.isLocked__c</members>
+        <members>Opportunity.Contract_EndDate__c</members>
+        <members>Opportunity.Contract_StartDate__c</members>
+        <members>Opportunity.Count_of_OLI__c</members>
+        <members>Opportunity.Invoice_OrderNumber__c</members>
+        <members>Opportunity.Opportunity_IsReplicated__c</members>
+        <members>Opportunity.RecordTypeName__c</members>
+        <members>Opportunity.ReplicationOpp_SourceID__c</members>
+        <members>Opportunity.ReplicationOpp_TargetID__c</members>   
+		<members>OpportunityLineItem.CanCreateILI__c</members>        
+		<members>OpportunityLineItem.CancelType__c</members>
+		<members>OpportunityLineItem.Has_ILI__c</members>
+		<members>OpportunityLineItem.Invoice_CancelDate__c</members>
+		<members>OpportunityLineItem.Invoice_CancelFeePercent__c</members>
+		<members>OpportunityLineItem.Invoice_DayOfMonth__c</members>
+		<members>OpportunityLineItem.Invoice_PriceVariable__c</members>
+		<members>OpportunityLineItem.Invoice_ServiceEndDate__c</members>
+		<members>OpportunityLineItem.Invoice_ServiceStartDate__c</members>
+		<members>OpportunityLineItem.Invoice_Units__c</members>
+		<members>OpportunityLineItem.NumberOfHours__c</members>
+		<members>OpportunityLineItem.NumberOfLocations__c</members>
+		<members>OpportunityLineItem.Qty_ContractMonths__c</members>
+		<members>OpportunityLineItem.Qty_LineItems__c</members>
+		<members>OpportunityLineItem.Record_Type_Name__c</members>
+		<members>OpportunityLineItem.ReplicationOLI_SourceID__c</members>
+		<members>OpportunityLineItem.ReplicationOLI_TargetID__c</members>
+		<members>OpportunityLineItem.TotalMonthlyCharge__c</members>
+		<members>OpportunityLineItem.Waiting_Status_Options__c</members>
+		<members>OpportunityLineItem.Waiting_Status_Options_Before__c</members>
+		<members>OpportunityLineItem.OnBoard_Date__c</members>
+		<members>OpportunityLineItem.Mgmt_Fee_Percent__c</members>
+		<members>OpportunityLineItem.ReferenceID_OriginalNewSell__c</members>
+		
+		<members>OpportunityLineItem.Approved_by_Manager__c</members>
+		<members>OpportunityLineItem.Cancellation_Category__c</members>
+		<members>OpportunityLineItem.Cancellation_Reason__c</members>
+		<members>OpportunityLineItem.FulfillmentStatus__c</members>
+		<members>OpportunityLineItem.Notes__c</members>
+		<members>OpportunityLineItem.Notify_Email_1__c</members>
+		<members>OpportunityLineItem.Notify_Email_2__c</members>
+		<members>OpportunityLineItem.Notify_Email_3__c</members>
+		<members>OpportunityLineItem.Waiting_Status_Descr__c</members>
+		
+		
+		<members>PriceBook2.APIOnly_ExternalId__c</members> 
+		<members>PricebookEntry.APIOnly_ExternalId__c</members>
+		<members>PricebookEntry.Invoice_CancelFeePercent__c</members>
+		<members>PricebookEntry.MgmtFee_Percent__c</members>
+		<members>PricebookEntry.PriceRangeMax__c</members>
+		<members>PricebookEntry.PriceRangeMin__c</members>
+		<members>Product2.APIOnly_ExternalId__c</members>
+		<members>Product2.Edit_NumberOfHours__c</members>
+		<members>Product2.Edit_NumberOfLocations__c</members>
+		<members>Product2.Edit_Qty_ContractMonths__c</members>
+		<members>Product2.Edit_Qty_LineItems__c</members>
+		<members>Product2.HasMediaSpend__c</members>
+		<members>Product2.Invoice_Frequency__c</members>
+		<members>Product2.Invoice_StatusToCreateILI__c</members>
+		<members>Product2.MACTIVE_ProductCode__c</members>
+		<members>Product2.Product_Group__c</members>
+		<members>Product2.UseMatrix__c</members>
+		<members>Project__c.CanCreateILI__c</members>
+		<members>Project__c.Cancelled__c</members>
+		<members>Project__c.Count_Of_ILI__c</members>
+		<members>Project__c.Has_ILI__c</members>
+		<members>Project__c.Invoice_CancelDate__c</members>
+		<members>Project__c.Invoice_ServiceEndDate__c</members>
+		<members>Project__c.Invoice_ServiceStartDate__c</members>
+		<members>Project__c.Invoice_Units__c</members>
+		<members>Project__c.Mgmt_Fee_Percent__c</members>
+		<members>Project__c.Qty_ContractMonths__c</members>
+		<members>Project__c.Related_Product__c</members>
+		<members>Project__c.UnitPrice__c</members>
+		
+		
+		
+		<members>OpportunityLineItem.Email_Recipients_Qty__c</members>
+		<members>OpportunityLineItem.FulfillmentStatus__c</members>
+        <name>CustomField</name>
+    </types> 
+	
+	<!-- <types>
+        <members>USCP_Permissions_Client_Services</members>
+        <members>USCP_Permissions_Finance</members>
+        <members>USCP_Permissions_General_Business</members>
+        <members>USCP_Permissions_JumpStart</members>
+        <members>USCP_Permissions_Read_Only</members>
+        <name>PermissionSet</name>
+    </types>  -->
+	
+	
+    <types>
+		<!-- USCP_Permissions_Finance -->
+        <members>SML Customer Care %2FEncrypted Field Access</members>
+		<members>SML Customer Care</members>
+		<!-- USCP_Permissions_Client_Services -->
+        <members>Digital AM Team Manager</members>
+        <members>Digital Account Manager</members>
+        <members>Digital Project Manager</members>
+		<!-- USCP_Permissions_General_Business -->
+		<members>SML Account Manager</members>
+        <members>SML Accounts - Supervisor</members>
+		<!-- USCP_Permissions_JumpStart -->
+		<members>SML Accounts - Jump Start Managers</members>
+        <members>SML Accounts - Jump Start Managers TBTest</members>
+        <members>SML Accounts - Jump Start Specialist</members>
+        <members>SML Accounts - Jump Start Specialist TBTest</members>
+		<!-- USCP_Permissions_Read_Only -->
+        <members>ACQ Sales Rep IS</members>
+        <members>Adam Claypool</members>
+        <members>Admin</members>  
+        <members>Jira Agent</members>
+        <members>Knowledge Team</members>
+        <members>Lead Gen Supervisor</members>
+        <members>Lead Generation Specialists</members>
+        <members>Market Research</members>
+        <members>Marketing Analyst</members>
+        <members>MarketingProfile</members> 
+        <members>National Sales</members>
+        <members>President</members> 
+        <members>Production Administrator</members> 
+        <members>Read Only - Custom</members>
+        <members>ReadOnly</members>
+        <members>SML Standard Manager</members>  
+        <members>System Administrator Read Only</members>
+        <name>Profile</name>
+    </types>
+	
+    <types>
+        <members>Opportunity.USCP_Opportunity</members>
+        <name>RecordType</name>
+    </types>
+</Package>

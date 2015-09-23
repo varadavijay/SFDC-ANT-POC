@@ -1,0 +1,136 @@
+<project name="Developer Ant Targets" default="test" basedir="."  xmlns:sf="antlib:com.salesforce"> 
+
+    <property file="devbuild.properties"/>
+    <property environment="env"/>
+	<tstamp>
+		<format property="timestamp" pattern="yyyy-MM-dd_HHmm"/>
+	</tstamp>
+
+<!-- Retrieve changeset metadata for Changeset entered with '-Dchangeset=<...>' at the cmd line -->
+    <target name="dev_retrieveChangeset">
+		<echo message="Logging in to sandbox >>  ${dev.sf.username}"/> 
+		<property name="retrieveDir" value="Changesets\vvarada_code" />
+		<delete dir="${retrieveDir}" />
+		<echo message="Retrieviing Changeset ${changeset} to Folder: ${retrieveDir}" />
+	  	<mkdir dir="${retrieveDir}"/>
+		<sf:retrieve 	username="${dev.sf.username}"
+						password="${dev.sf.password}"
+						serverurl="${dev.sf.serverurl}"
+						retrieveTarget="${retrieveDir}"
+						packageNames="${changeset}"/>
+    </target>
+	
+	<target name="dev_retrieveCustomPackage">
+		<echo message="Logging in to sandbox >>  ${dev.sf.username}"/> 
+		<property name="retrieveDir" value="Changesets\vvarada_code" />
+		<delete dir="${retrieveDir}" />
+		<echo message="Retrieviing custompackage ${custompackage} to Folder: ${retrieveDir}" />
+	  	<mkdir dir="${retrieveDir}"/>
+		<sf:retrieve 	username="${dev.sf.username}"
+						password="${dev.sf.password}"
+						serverurl="${dev.sf.serverurl}"
+						retrieveTarget="${retrieveDir}"
+						unpackaged="${custompackage}"/>
+    </target>
+<!-- End Retrieve changeset -->
+ 
+<!-- BEGIN Retrieve all metadata -->
+    <target name="dev_retrieveAll">
+		<echo message="Logging in to sandbox >>  ${dev.sf.username}"/> 
+		<property name="retrieveDir" value="Snapshots\dev_snapshot_${timestamp}" />
+		<echo message="Retrieving all metadata to Folder: ${retrieveDir}" />
+	  	<mkdir dir="${retrieveDir}"/>
+		<sf:retrieve username="${dev.sf.username}"
+					 password="${dev.sf.password}"
+					 serverurl="${dev.sf.serverurl}"
+					 retrieveTarget="${retrieveDir}"
+					 unpackaged="Snapshots\GO_All_Nonfolder_Metadata.xml"/>
+		<echo message="finished with everything except reports, dashboards, email templates and documents. Retrieving those now" />
+		<sf:retrieve username="${dev.sf.username}"
+					 password="${dev.sf.password}"
+					 serverurl="${dev.sf.serverurl}"
+					 retrieveTarget="${retrieveDir}"
+					 unpackaged="Snapshots\GO_Reports_Emails_Documents_Metadata.xml"/>
+	</target>
+<!-- END Retrieve all metadata -->
+
+	<!-- START DEPLOY CHECK ONLY -->
+  <target name="dev_deployCheckOnly">
+	<echo message="Logging in to sandbox >>  ${dev.sf.username}"/>  
+    <sf:deploy 	checkOnly="true"
+				deployRoot="DeployRoot/src"
+				maxPoll="1000"
+				password="${dev.sf.password}"
+				pollWaitMillis="10000"
+				serverurl="${dev.sf.serverurl}"
+				username="${dev.sf.username}"
+				ignoreWarnings="true"/>
+  </target>
+  <!-- END DEPLOY CHECK ONLY -->
+  
+  <!-- START DEPLOY -->
+  <target name="dev_deploy">
+    <echo message="Logging in to sandbox >>  ${dev.sf.username}"/> 
+    <sf:deploy 	deployRoot="DeployRoot/src"
+				maxPoll="10000"
+				password="${dev.sf.password}"
+				pollWaitMillis="1000" 
+				serverurl="${dev.sf.serverurl}"
+				username="${dev.sf.username}"
+				ignoreWarnings="true"/>
+  </target>
+
+  <target name="devint_deploy">
+	<echo message="Logging in to sandbox >>  ${dev.sf.username}"/> 
+    <sf:deploy 	deployRoot="DeployRoot/src"
+				maxPoll="1000"
+				password="${devint.sf.password}"
+				pollWaitMillis="10000"
+				serverurl="${devint.sf.serverurl}"
+				username="${devint.sf.username}"/>
+  </target>
+  <!-- End Deploy Code -->
+  
+<!-- ${AllEmailTemplateFolders}-->
+  <loadfile
+	  property="AllEmailTemplateFolders"
+	  srcFile="Snapshots\GO_All_EmailTemplates.txt">
+	  <filterchain>
+		<striplinebreaks/>
+	  </filterchain>
+  </loadfile>
+  
+  <taskdef resource="net/sf/antcontrib/antlib.xml"/>
+  
+  <target name="prodEmailTemplates">
+      <echo> All Email Template Folders @{${AllEmailTemplateFolders} </echo>
+	  <for list="${AllEmailTemplateFolders}" param="oneemailfolder">
+		  <sequential>
+			<echo>Retrieving Email Templates from Folder @{oneemailfolder}</echo>
+		    <sf:bulkRetrieve 
+				username="${dev.sf.username}" 
+				password="${dev.sf.password}" 
+				serverurl="${dev.sf.serverurl}" 
+				retrieveTarget="Retrievals\EmailTemplatesFolder" 
+				metadataType="EmailTemplate"
+				containingFolder="@{oneemailfolder}"/>
+		  </sequential>
+	  </for>
+<!-- ${AllEmailTemplateFolders}-->
+ </target>
+ 
+ <target name="getReports">
+	<echo message="Logging in to sandbox >>  ${dev.sf.username}"/> 
+	<property name="retrieveDir" value="Changesets\vvarada_code" />
+	<delete dir="${retrieveDir}" />
+	<echo message="Retrieving All Reports: ${retrieveDir}" />
+	<mkdir dir="${retrieveDir}"/>
+	<sf:bulkRetrieve 
+		username="${dev.sf.username}" 
+		password="${dev.sf.password}" 
+		serverurl="${dev.sf.serverurl}"  
+		metadataType="EmailTemplate"
+		retrieveTarget="${retrieveDir}"/>
+ </target>
+ 
+</project>

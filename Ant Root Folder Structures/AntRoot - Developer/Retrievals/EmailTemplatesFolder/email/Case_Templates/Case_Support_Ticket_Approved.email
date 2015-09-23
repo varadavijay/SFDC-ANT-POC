@@ -1,0 +1,14 @@
+The following Support Ticket has been Approved by {!ApprovalRequest.Process_Approver}. 
+
+This Case has been submitted to the Salesforce Support Team for review and resolution. You will be notified upon its conclusion.
+
+
+Short Description:
+________________________________________________
+{!Case.Subject}
+{!Case.Description}
+________________________________________________
+
+
+To view the Case Record in Salesforce, click the link below. 
+{!Case.Link}

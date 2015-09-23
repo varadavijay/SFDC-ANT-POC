@@ -1,0 +1,11 @@
+Account Link  :  {!Opportunity.00NF0000008Np7b}<br><br>
+
+Opp Link  :         {!Opportunity.Link}
+<br><br>
+{!Opportunity.Name}<br>
+{!Opportunity.Amount}<br>
+{!Opportunity.RecordType}<br>
+<br>
+<br>
+Owner:     {!Opportunity.OwnerFullName}
+Market:     {!Opportunity.Market_Record__c}

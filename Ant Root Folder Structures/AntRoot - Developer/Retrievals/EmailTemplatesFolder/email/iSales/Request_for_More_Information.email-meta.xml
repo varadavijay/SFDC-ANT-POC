@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Approval</letterhead>
+    <name>Request for More Information</name>
+    <style>freeForm</style>
+    <subject>Re: Information you requested on  {Local Affiliate} and DealChicken.com</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+Thank you for taking the time to speak to me today. As mentioned on the call, I have heard great things about {!Lead.Company} and would like to feature you on our website, DealChicken.com as well as on [affiliate name ] out of [City].
+
+If  you choose to partner with us your business would be featured [on/in] the [affiliate] and on www.affiliatewebsite.com. All of this exposure would be granted to you for no cost.
+
+Click here to see what merchants are saying about DealChicken:
+
+http://merchants.dealchicken.com/successes/
+
+
+Let’s set up a time to speak so you can learn more about how to get this exposure. Do you have some time to talk tomorrow?
+
+
+
+Best,
+
+{!Lead.OwnerFullName}
+
+{!Lead.OwnerPhone}</textOnly>
+    <type>html</type>
+</EmailTemplate>

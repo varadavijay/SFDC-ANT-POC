@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>APIOnly_ExternalId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>APIOnly ExternalId</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_CancelFeePercent__c</fullName>
+        <externalId>false</externalId>
+        <label>Mgmt Fee % for Cancels</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>MgmtFee_Percent__c</fullName>
+        <description>USCP: MgmtFee_Percent</description>
+        <externalId>false</externalId>
+        <label>MgmtFee Percent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PriceRangeMax__c</fullName>
+        <externalId>false</externalId>
+        <label>Price Range Maximum</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PriceRangeMin__c</fullName>
+        <externalId>false</externalId>
+        <label>Price Range Minimum</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pricebook2Id</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product2Id</fullName>
+        <type>Lookup</type>
+    </fields>
+    <listViews>
+        <fullName>Products_Added_After_5_19_2015</fullName>
+        <columns>PRODUCT.NAME</columns>
+        <columns>PRODUCT.CUSTOMER_PRODUCT_ID</columns>
+        <columns>PRODUCT.ACTIVE</columns>
+        <columns>PRICEBOOK.ACTIVE</columns>
+        <columns>PRODUCT2.ACTIVE</columns>
+        <columns>PB_ENTRY.USE_STANDARD_PRICE</columns>
+        <columns>PRICEBOOK.NAME</columns>
+        <columns>PB_ENTRY.CREATED_DATE</columns>
+        <columns>PriceRangeMin__c</columns>
+        <columns>PriceRangeMax__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PRICEBOOK.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>PB_ENTRY.CREATED_DATE</field>
+            <operation>greaterThan</operation>
+            <value>5/1/2015 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>PRODUCT.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Products Added After 5/19/2015</label>
+    </listViews>
+    <searchLayouts>
+        <searchResultsAdditionalFields>PRODUCT.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PRODUCT2.DESCRIPTION</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PRODUCT.DEFAULT_PRICE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PRODUCT2.FAMILY_ENUM</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PRODUCT2.RECORD_TYPE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PRODUCT.CUSTOMER_PRODUCT_ID</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PRODUCT2.ACTIVE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields xsi:nil="true"/>
+        <searchResultsAdditionalFields xsi:nil="true"/>
+    </searchLayouts>
+</CustomObject>

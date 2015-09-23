@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>General overview - request for general information, not product specific</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Request for brochure or general info</name>
+    <style>none</style>
+    <subject>Gannett Local information</subject>
+    <type>text</type>
+</EmailTemplate>

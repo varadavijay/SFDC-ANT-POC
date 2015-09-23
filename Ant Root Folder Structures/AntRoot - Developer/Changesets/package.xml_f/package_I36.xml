@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sprint 34 Changes</fullName>
+    <description>Sprint 34 Changes</description>
+
+	<version>28.0</version>
+	
+	<types>
+        <members>OpportunityLineItem.Add_USCP_Products</members>
+        <name>WebLink</name>
+    </types> 
+</Package>

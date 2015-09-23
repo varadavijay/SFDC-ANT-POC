@@ -1,0 +1,45 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<font face="arial" style="font-size: 12pt; font-family: arial;"><font size="3">&nbsp;Hi&nbsp;</font>{!Opportunity.SA_Contact_Name__c}<font size="3">,</font></font><div style="font-size: 12pt; font-family: arial; color: rgb(0, 0, 0);"><br></div><div style="color: rgb(0, 0, 0);"><p class="MsoNormal" style="font-size: 12pt; font-family: arial;">Congratulations on the
+successful "hatching" of {!Opportunity.Account}’s DealChicken promotion. We appreciate
+your decision to partner with us and are sending this quick email to highlight <u>three</u>
+important DealChicken reminders. <o:p></o:p></p>
+
+<p class="MsoNormal" style="font-size: 12pt; font-family: arial;"><o:p>&nbsp;</o:p></p><p class="MsoNormal" style="font-size: 12pt; font-family: arial; text-indent: 0px;"><font face="arial" style="text-indent: -0.25in; font-size: 12pt;">1. It is because of businesses
+like yours that DealChicken is able to provide customers am</font><font face="Arial, sans-serif" style="text-indent: -0.25in; font-size: 12pt;">azing</font><font face="arial" style="text-indent: -0.25in; font-size: 12pt;"> savings. So, we want to remind you that as your Merchant Loyalty Team, we are here to assist
+you in any way possible.&nbsp;</font></p>
+
+<p class="MsoNormal" style="font-size: 12pt; font-family: arial;"><o:p>&nbsp;</o:p></p><p class="MsoNormal" style="font-size: 12pt; font-family: arial; text-indent: 0px;"><span style="font-size: 12pt; text-indent: -0.25in;">2. There are three ways to redeem DealChicken vouchers: &nbsp;</span></p><p class="MsoListParagraphCxSpFirst" style="font-size: 12pt; font-family: arial; text-indent: -0.25in;"><o:p></o:p></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="font-size: 12pt; font-family: arial;"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="font-size: 12pt; font-family: arial; margin-left: 1in; text-indent: -0.25in;"><!--[if !supportLists]-->a.<span style="font-size: 7pt; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><!--[endif]-->Online at <a href="https://www.dealchicken.com/redeem">https://www.admin.dealchicken.com</a>&nbsp;and type in voucher number<o:p></o:p></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="font-size: 12pt; font-family: arial; margin-left: 1in; text-indent: -0.25in;"><!--[if !supportLists]-->b.<span style="font-size: 7pt; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><!--[endif]-->Go to <a href="http://www.dealchicken.com/">www.dealchicken.com</a>,
+login and select the “vendor” option in the drop menu <o:p></o:p></p>
+
+<p class="MsoListParagraphCxSpLast" style="font-size: 12pt; font-family: arial; margin-left: 1in; text-indent: -0.25in;"><!--[if !supportLists]-->c.<span style="font-size: 7pt; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><!--[endif]-->Good ole’ pen and paper<o:p></o:p></p>
+
+<p class="MsoNormal" style="font-size: 12pt; font-family: arial;"><o:p>&nbsp;</o:p></p><p class="MsoNormal" style="font-size: 12pt; font-family: arial; text-indent: 0px;"><span style="font-size: 12pt; text-indent: -0.25in;">3. The DealChicken payment structure&nbsp;</span><span style="font-family: Arial, sans-serif; font-size: 12pt; line-height: 115%;">(which is outlined in the agreement form) is one of the most business
+friendly out there. As a reminder:</span></p><p class="MsoNormal" style="font-size: 12pt; font-family: arial; text-indent: 0px;"><span style="font-family: Arial, sans-serif; font-size: 12pt; line-height: 115%;"><br></span></p><div><p class="MsoNormal"><font face="arial">There are two different types of payments that are issued, Marketplace payments and Extended payments. We pay for the deals that sell during each particular period. The Marketplace Payment Period is the first 7 days the deal is live. If the deal runs longer, it enters the Extended Payment Period. The Extended Payments run until the 15th of the month, and start the next months on the 16th.</font></p><p class="MsoNormal"><font face="arial"><br></font></p><p class="MsoNormal"><font face="arial">Of the two payments, there is an Initial and Final Payment per each. There is also a 2.5% credit card fee issue per each payment period. If there are any refunds issued, the amount deducted is your split of that particular amount. Also, if payments are set for checks, the date issued is the date the check is generated. At most, it may take 5 to 10 business days to be received.</font></p><p class="MsoNormal"><font face="arial"><br></font></p></div><blockquote style="margin: 0px 0px 0px 40px; border: none; padding: 0px;"><p class="MsoNormal"><font face="arial">Initial Marketplace payments- 70% of your split per that particular deal, less the credit card fee are issued 5 business days after the end date of the Marketplace time frame.</font></p></blockquote><div><p class="MsoNormal"><font face="arial"><br></font></p></div><blockquote style="margin: 0px 0px 0px 40px; border: none; padding: 0px;"><p class="MsoNormal"><font face="arial">Final Marketplace Payments- The remaining 30% of your split per that particular deal, less your split of any refunds, is issued 25 business days after the end date of the Marketplace time frame.</font></p></blockquote><div><p class="MsoNormal"><font face="arial"><br></font></p></div><blockquote style="margin: 0px 0px 0px 40px; border: none; padding: 0px;"><p class="MsoNormal"><font face="arial">Initial Extended Payments- 90% of your split per that particular deal, less credit card fee, is issued on or about the 30th of that specific month.</font></p></blockquote><div><p class="MsoNormal"><font face="arial"><br></font></p></div><blockquote style="margin: 0px 0px 0px 40px; border: none; padding: 0px;"><p class="MsoNormal"><font face="arial">Final Extended Payments- The remaining 10% of your split per that particular deal, less your split of any refunds, is issued on or about the 30th of the following month.</font></p></blockquote>
+
+<p class="MsoNormal" style="font-size: 12pt; font-family: arial;"><br></p><p class="MsoNormal" style="font-size: 12pt; font-family: arial;"><br></p>
+
+<p class="MsoNormal" style="font-size: 12pt; font-family: arial;">It is our goal to provide
+you with <b>eggstra</b>ordinary merchant
+service. Please contact us if you have any questions.<o:p></o:p></p>
+
+<p class="MsoNormal" style="font-size: 12pt; font-family: arial;"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="font-size: 12pt; font-family: arial;"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="font-size: 12pt; font-family: arial;">Kind Regards,<o:p></o:p></p><p class="MsoNormal"><span style="background:white">The DealChicken Merchant
+Support Team<o:p></o:p></span></p><p class="MsoNormal" style="font-size: 12pt;">
+
+</p><p class="MsoNormal"><span style="background:white">866-509-7125, Option 3<o:p></o:p></span></p><p class="MsoNormal" style="font-size: 12pt; font-family: arial;"><br></p><p class="MsoNormal"><br></p></div>]]></td>
+</tr>
+</table>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Finance Notification Paused No Contract To Live</name>
+    <style>none</style>
+    <subject>{!Opportunity.Name} {!Product2.Name} Out of Paused:No Contract</subject>
+    <textOnly>Status changed from  Paused:No Contract to Live.
+
+Opp Name: {!Opportunity.Name}
+Product Name: {!Product2.Name}
+Opportunity Product Link:  {!OpportunityLineItem.Link}
+Date Changed: {!OpportunityLineItem.LastModifiedDate}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

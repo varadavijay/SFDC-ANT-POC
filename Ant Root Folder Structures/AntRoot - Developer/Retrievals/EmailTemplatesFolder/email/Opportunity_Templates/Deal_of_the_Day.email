@@ -1,0 +1,7 @@
+Hi There,
+
+This company recently ran a Deal of the Day with another vendor.  Check out the information on the Contact record, reach out ... and try to sell some Deal Chicken!
+
+{!Contact.Name}
+{!Account.Name}
+{!Contact.Site__c}

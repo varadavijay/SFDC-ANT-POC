@@ -1,0 +1,14 @@
+The following Support Ticket has had a change made by  {!Case.LastModifiedBy} that requires it to be approved again.
+
+The case will need to be submitted for approval again once all relevant updates have been saved. 
+
+
+Short Description:
+________________________________________________
+{!Case.Subject}
+{!Case.Description}
+________________________________________________
+
+
+To view the Case Record in Salesforce, click the link below. 
+{!Case.Link}

@@ -1,0 +1,3 @@
+ant -f releasebuild.xml qa_deploy > qa_deployresults.txt 2>&1
+ant -f releasebuild.xml prod_deployCheckonly
+ant -f releasebuild.xml prod_deploy > prod_deployresults.txt 2>&1

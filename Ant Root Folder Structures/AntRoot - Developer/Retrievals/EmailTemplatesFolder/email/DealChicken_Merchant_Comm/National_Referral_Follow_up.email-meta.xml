@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Template to follow-up with merchants whose referrals have been unresponsive</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>National - Referral Follow-up</name>
+    <style>none</style>
+    <subject>DealChicken - Referral Follow-up</subject>
+    <textOnly>Hi,
+
+Thank you again for your interest in partnering with DealChicken.  Unfortunately, we have been unable to get in contact with any of the business referrals you provided to us.
+
+We are very excited to develop a partnership, but will need a response from these referrals in order to move forward.
+
+At your earliest convenience, can you reach out to your referrals to remind them that we have been attempting to contact them?
+
+If you have additional business referrals, we can contact them as well.
+
+Thank you very much.
+
+The DealChicken team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MyChangeSet</fullName>
+    <description>MyChangeSet</description>
+
+	<!--  
+	<types>
+        <members>Account-Account Merge Layout</members>
+		<members>Account-Admin Temp Layout</members>
+		<members>Account-BLANK Account Layout</members>
+		<members>Account-Contract Manager</members>
+		<members>Account-DCSGv1</members>
+		<members>Account-DealChicken GL Radius</members>
+		<members>Account-DealChicken Nat Radius</members>
+		<members>Account-DealChicken Operations</members>
+		<members>Account-DealChickensGL with SG</members>
+		<members>Account-DealChickensGL</members>
+		<members>Account-Ext Market Logins</members>
+		<members>Account-Merge Layout</members>
+		<members>Account-OnBoarding Finance Layout</members>
+		<members>Account-Partner Market</members>
+		<members>Account-Print Fulfillment</members>
+		<members>Account-SML Account Manager</members>
+		<members>Account-SML Company Layout Admin</members>
+		<members>Account-SML Company Layout</members>
+        <name>Layout</name>
+    </types>
+	
+	<types>
+        <members>USCPOLIRelatedList</members>
+        <name>ApexPage</name>
+    </types>
+	
+	<types>
+        <members>USCPILIGenerator</members>
+        <members>AbstractInvoiceLineItemsClass</members>
+        <members>processBuilder_RegenInvoiceLineItems</members>
+		
+        <members>LeadBeforeInsertTriggerHandler</members>
+        <members>LeadBeforeUpdateTriggerHandler</members>
+        <members>OpportunityBeforeInsertTriggerHandler</members>
+        <members>OpportunityBeforeUpdateTriggerHandler</members>
+        <name>ApexClass</name>
+    </types>
+	
+	<types>
+		<members>Account.Gannett_Corporate</members>
+		<members>Account.OnBoarding</members>
+		<members>Account.PartnerMarket</members>
+		<members>Account.SML_Company</members>
+        <name>RecordType</name>
+    </types>
+	
+	<types>
+		<members>Account.Market_Health__c</members>
+		<members>Account.Market_Health_LastUpdated__c</members>
+        <name>CustomField</name>
+    </types>
+	-->
+	
+	<!--  
+	<types>
+        <members>PriceBook2</members>
+        <name>CustomObject</name>
+    </types>
+	
+ 	<types>
+		<members>Account.Market_Health_LastUpdated__c</members>
+		<members>Account.isActive__c</members>
+		<members>Account.OLI_Num_Active__c</members>
+		<members>Account.Opps_Num_Active__c</members>
+		<members>Opportunity.OLI_Num_Active__c</members>
+		<members>OpportunityLineItem.Active_Product__c</members>
+		<members>Project__c.Active_Product__c</members>
+		<members>OpportunityLineItem.Fulfillment_Specialist__c</members>
+		<members>Project__c.Fulfillment_Specialist__c</members>
+        <name>CustomField</name>
+    </types>
+	
+	<types>
+        <members>ACQ Sales Rep IS</members>
+		<members>Adam Claypool</members>
+		<members>Admin</members>
+		<members>Chatter Only User</members>
+		<members>ContractManager</members>
+		<members>Data Importer</members>
+		<members>DealChicken Operations</members>
+		<members>Digital Account Manager</members>
+		<members>Digital AM Team Manager</members>
+		<members>Digital Project Manager</members>
+		<members>DW Admin</members>
+		<members>GO Digital Data System</members>
+		<members>Guest User</members>
+		<members>Jira Agent</members>
+		<members>Knowledge Team</members>
+		<members>Lead Gen Supervisor</members>
+		<members>Lead Generation Specialists</members>
+		<members>Market Research</members>
+		<members>Marketing Analyst</members>
+		<members>MarketingProfile</members>
+		<members>Marketo Sync</members>
+		<members>National Sales</members>
+		<members>OrderHub API - OBFModel Only</members>
+		<members>President</members>
+		<members>Production Administrator</members>
+		<members>Read Only - Custom</members>
+		<members>ReadOnly</members>
+		<members>RETIRED USERS</members>
+		<members>SML Account Manager</members>
+		<members>SML Accounts - Jump Start Managers TBTest</members>
+		<members>SML Accounts - Jump Start Managers</members>
+		<members>SML Accounts - Jump Start Specialist TBTest</members>
+		<members>SML Accounts - Jump Start Specialist</members>
+		<members>SML Accounts - Supervisor</members>
+		<members>SML Customer Care %2FEncrypted Field Access</members>
+		<members>SML Customer Care</members>
+		<members>SML Standard Manager</members>
+		<members>SolutionManager</members>
+		<members>Standard</members>
+		<members>System Administrator Read Only</members>
+        <name>Profile</name>
+    </types>  
+	--> 
+    <version>33.0</version>
+</Package>

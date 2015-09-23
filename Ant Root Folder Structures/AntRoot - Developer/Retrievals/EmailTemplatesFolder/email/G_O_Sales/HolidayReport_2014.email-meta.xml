@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to send to prospects promoting the Holiday Report 2014</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>HolidayReport_2014</name>
+    <style>none</style>
+    <subject>Get more Holiday shoppers for {!Lead.Company}</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+The holiday season is almost here and as a retail small business, you have the opportunity to share in the 75% of holiday shopping that will be completed at a local/small business.  I wanted to provide you with a new report that could help provide digital marketing insights into how you can most effectively serve your customers.
+
+Here’s a free copy of the report, ‘Holiday Shopping With a Local Mobile Twist.’ In this report you’ll find out how it’s never too late to sell to procrastinating holiday shoppers and how mobile coupons reign supreme with them.
+
+If you would like to find out about how you can add digital marketing solutions to impact your revenue before the holiday season is over, please email me or call me today!
+
+Sincerely,
+
+{!Lead.OwnerFullName}
+
+{!Lead.OwnerPhone}
+
+{!Lead.OwnerEmail}
+
+
+
+Forward to a Friend
+G/O Digital | 225 N. Michigan Avenue | 16th Floor | Chicago, IL 60613</textOnly>
+    <type>custom</type>
+</EmailTemplate>

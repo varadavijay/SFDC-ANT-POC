@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Approval</letterhead>
+    <name>Appointment Request 1</name>
+    <style>freeForm</style>
+    <subject>You have new customers waiting</subject>
+    <textOnly>Hello {!Lead.FirstName}
+
+I hope you are well. My name is {!Lead.OwnerFirstName}, I’d like to introduce you to Dealchicken.com, brought to you by [Affiliate name]. We are looking for select [ Type of business] to partner up with us for a promotion.  I’ve read some great reviews about {!Lead.Company} and I think you match the criteria for our exclusive offers. With no upfront cost, DealChicken is a low-risk way for your business to be seen by [affiliate name]’s audience.
+
+When do you have 15 minutes to speak?
+
+
+
+Best,
+
+{!Lead.OwnerFullName}
+
+{!Lead.OwnerPhone}</textOnly>
+    <type>html</type>
+</EmailTemplate>

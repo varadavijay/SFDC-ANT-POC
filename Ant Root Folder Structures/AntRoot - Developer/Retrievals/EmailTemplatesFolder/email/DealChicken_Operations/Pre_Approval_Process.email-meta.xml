@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Approval</letterhead>
+    <name>Pre-Approval Process</name>
+    <style>freeForm</style>
+    <subject>New DealChicken Opportunity Needing Pre-Approval</subject>
+    <textOnly>Hi {!Opportunity.Market_Area_Manager__c},
+There is a new DealChicken opportunity needing pre-approval. Below you will find the details about the opportunity.
+Opportunity Name: {!Opportunity.Name}
+Opportunity Owner: {!Opportunity.OwnerFullName}
+Opportunity ID: {!Opportunity.Id}
+
+Market: {!Opportunity.DealChicken_Market__c}
+Total Value: {!Opportunity.DC_Total_Value__c}
+Sell Price: {!Opportunity.DC_Sell_Price__c}
+
+Thanks,
+Andrew</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,9 @@
+<br/>
+{!Opportunity.Name}
+<br/>
+Link To Opp : {!Opportunity.LinkToView__c}<br/>
+<br/>
+Assist Rep/s<br/>
+<br/>
+{!Opportunity.GL_Assisting_Rep__c}<br/>
+{!Opportunity.GL_Assist_Rep_2__c}

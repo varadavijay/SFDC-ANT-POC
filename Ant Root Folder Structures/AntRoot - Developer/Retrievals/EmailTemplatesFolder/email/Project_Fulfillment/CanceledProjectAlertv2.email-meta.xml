@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Canceled Project Alert v2</name>
+    <style>none</style>
+    <subject>{!Project__c.Product_Name__c} - Cancelled</subject>
+    <textOnly>Product/Project Cancelled By {!Project__c.LastModifiedBy}
+
+Opp Name: {!Project__c.Opportunity__c}
+Product Name : {!Project__c.Product_Name__c}
+Link To Opp : {!Project__c.JumpTo_Opp__c}
+Notes : {!Project__c.Waiting_Status_Descr_Last_Set__c}
+Cancellation Category : {!Project__c.Cancellation_Category__c}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

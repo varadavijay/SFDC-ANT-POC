@@ -1,0 +1,6 @@
+Great News!
+
+One of your leads has just filled out a request to receive a Social Media Success Kit for Local Businesses. In the coming weeks, we will be following up with folks after they've received their kits. We'll let you know more about that after kits have been mailed out. 
+
+{!Lead.Company}
+{!Lead.Link}

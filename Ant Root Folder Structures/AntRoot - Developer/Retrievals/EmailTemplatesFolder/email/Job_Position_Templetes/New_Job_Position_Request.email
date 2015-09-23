@@ -1,0 +1,7 @@
+Hello!
+
+A request has been submitted by {!Job_Position__c.OwnerFullName} to have a {!Job_Position__c.Job_Title__c} position be filled within the {!Job_Position__c.Fulfillment_Period__c}
+
+It is currently waiting on your approval.
+
+Please Click Here for more Details: {!Job_Position__c.Link}

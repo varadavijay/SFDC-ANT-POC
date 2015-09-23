@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Social Media Notice</name>
+    <style>none</style>
+    <subject>Social Media Opp Closed Won!</subject>
+    <textOnly>To View Opp : Jump To View
+
+{!Opportunity.Name}
+{!Opportunity.Amount}
+{!Opportunity.OwnerFullName}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

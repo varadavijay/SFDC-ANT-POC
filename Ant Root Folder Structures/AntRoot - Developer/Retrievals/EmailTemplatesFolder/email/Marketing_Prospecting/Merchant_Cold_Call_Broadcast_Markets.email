@@ -1,0 +1,45 @@
+<p id="text-placeholder" style="margin-top: 0px; margin-bottom: 0px;">
+{!Lead.FirstName},<br />
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px;">
+&nbsp;<br />
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px;">
+I’m reaching out because our customers have shown interest in local businesses like yours. 
+<br />
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px;">
+&nbsp;<br />
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px;">
+As an affiliate of {!User.newspaper_broadcast_affiliate__c}, DealChicken exposes your business to a highly engaged, quality audience and introduces new customers to your business.  Our integrated marketing package features your business to local consumers on our website, within our daily email and on-air. We connect consumers to the things they need and want, and encourage them to experience something new. Best of all, there are no out of pocket costs to your business.
+<br /> <br />
+I’d love 15 minutes of your time to share how a DealChicken promotion can deliver new customers.
+<br/> <br />
+I have time available on: <br /> <br />
+
+
+															</p>
+														
+															<a title="{!Lead.Appointment_Time_1__c}" href="mailto:{!Lead.OwnerEmail}?subject=I'd like to schedule an appointment for {!Lead.Appointment_Time_1__c}" alias="{!Lead.Appointment_Time_1__c}" conversion="undefined">{!Lead.Appointment_Time_1__c}</a> or<br />
+															</p>
+<br />
+															<a title="{!Lead.Appointment_Time_2__c} " href="mailto:{!Lead.OwnerEmail}?subject=I'd like to schedule an appointment for {!Lead.Appointment_Time_2__c}" alias="{!Lead.Appointment_Time_2__c} " conversion="undefined">{!Lead.Appointment_Time_2__c} </a><br />
+															</p>
+<br />
+
+Please contact me at {!Lead.OwnerEmail} or by phone at {!Lead.OwnerPhone} to let me know which time works best for you. <br /> <br />
+
+In the meantime, feel free to visit our <a href="http://merchants.dealchicken.com?source=em|sf|stoppedbyemail" title="merchant site" alias="merchant site" conversion="false">merchant site</a> for more information, or <a conversion="false" alias="download our information sheet" title="download our information sheet" href="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/DCH_04320-TV.pdf">download our information sheet</a>.<br /> <br />
+</p>
+Sincerely,<br />
+</p>
+<p>
+{!Lead.OwnerFirstName} {!Lead.OwnerLastName} <br />
+DealChicken<br />
+Account Executive<br />
+Social Commerce<br />
+Phone: {!Lead.OwnerPhone} <br />
+{!Lead.OwnerEmail} <br />
+www.dealchicken.com <br />
+</p>

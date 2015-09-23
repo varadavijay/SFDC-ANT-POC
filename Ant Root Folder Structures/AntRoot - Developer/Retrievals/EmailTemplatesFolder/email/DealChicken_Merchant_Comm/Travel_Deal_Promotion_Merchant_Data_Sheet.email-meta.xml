@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>An email sent to Travel merchants with a proof of their promotion</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Travel Proof Letter</name>
+    <style>none</style>
+    <subject>*IMPORTANT* DealChicken Promotion Details</subject>
+    <textOnly>Hi,
+
+Congratulations! Your promotion is scheduled to launch on {!Opportunity.DC_Run_Date__c} and end on {!Opportunity.DC_End_Date__c}.
+
+You are almost ready to run on DealChicken.
+
+Please review the promotional landing page and a sample of our voucher certificate below.
+
+Once you have reviewed these in their entirety, please send any and all change requests in one email.
+
+
+You can view the proof here:
+{!Opportunity.DC_Proof_Hyperlink__c}
+
+
+Our team will make sure everything you request is thoroughly reviewed, and we will let you know if there is anything we cannot change.
+
+Redemption Codes: If your promotion requires redemption codes, they are attached.  Please let us know if you have any issues uploading these codes on your end.
+
+Once we have your approval, your feature will go live on the above launch date and cannot be changed. If we do not have your approval 48 hours before the stated run date, we may have to reschedule your promotion.
+
+Thank you for partnering with DealChicken, and we are looking forward to launching your promotion!
+
+-The DealChicken Team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

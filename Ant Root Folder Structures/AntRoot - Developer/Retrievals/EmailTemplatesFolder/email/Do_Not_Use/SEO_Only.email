@@ -1,0 +1,13 @@
+Hi {!Contact.FirstName},
+
+Welcome to Gannett Local! I'll be your marketing specialist -- I'm here to make sure your campaign delivers results for {!Account.Name}.  If you ever have any questions – from how something works, to how to update your ads for a big sale – I'm here to help. 
+
+You can expect an important phone call from our tech team in the next two to three days: These digital experts will set up your online strategy, so when someone searches for your type of business in your neighborhood, you show up near the top. 
+
+Attached is a document called Gannett Local Digital Questionnaire which needs to be completed for your online campaign to get started successfully. If I did not gather these answers from you already, I will follow up with you again by phone. Or if you want your campaign to get a headstart, please feel free to type in the information and email back to me! 
+
+I'll be coordinating this whole process - so if you have any questions, give me a call or shoot an email. I'm here to make it simple! 
+
+{!Opportunity.OwnerFullName}
+{!User.X800_Number__c}
+{!Opportunity.OwnerEmail}

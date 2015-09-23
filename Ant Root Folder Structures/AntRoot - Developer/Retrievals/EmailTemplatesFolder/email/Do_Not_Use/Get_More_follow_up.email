@@ -1,0 +1,18 @@
+Hi {!Contact.OwnerFirstName}, 
+
+It was great to speak with you today. Attached is the Get More solution we discussed. Given you [SPECIALIZE IN A VARIETY OF SERVICES AND YOUR TARGET CUSTOMERS ARE IN MANY LOCATIONS], this package ensures your customers find you in all their online searches and your call to action is seen in their local Community Republic.
+
+As we spoke about today, our tech team will create a credible and Google-trusted business profile for you. We will submit it to 40+ different directories, including azcentral.com.  
+
+Next, our tech team will work daily to make sure your ad shows up on page 1 of Google. At the same time, our creative team will help you design a Community Print ad that will drive immediate traffic to your business 9 times a month.
+
+I am confident this print and digital combination is the most powerful way to reach all your customers in your target locations and that you are found for your most important searches. 
+
+Let me know a good chance to follow up with you and I will set up a time to talk.  Hope this helps and please let me know if you have any other questions in the meantime. 
+
+Thank you again,
+
+{!Lead.OwnerFullName}
+{!User.X800_Number__c}
+{!Lead.OwnerEmail}
+GannettLocal.com

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Basic_SimplyGifted</letterhead>
+    <name>TinderBoxSGSendForSign3</name>
+    <style>formalLetter</style>
+    <subject>SimplyGifted – Please Review And Accept Your Deal!</subject>
+    <textOnly>Hello {!Contact.Name},
+
+
+Congratulations, your Simply Gifted deal is almost ready to go.  A few clicks and you’ll be on your way to attracting lots of new customers. Simply click the link below to review and accept the agreement terms and tell us how you’d like to be paid. It’s that simple.
+
+
+When you click on the link below, you will be prompted to enter your First and Last Name.
+
+(Sales - Paste Tinderbox Link Here)
+
+When you reach our site, you’ll be able to review and sign your agreement, enter your W9 data and provide direct deposit information (it’s the fastest way to get paid) all in one place. The whole process only takes a few minutes. Once we get your approval we can get started.</textOnly>
+    <type>html</type>
+</EmailTemplate>

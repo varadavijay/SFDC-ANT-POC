@@ -1,0 +1,41 @@
+<p id="text-placeholder" style="margin-top: 0px; margin-bottom: 0px;">
+{!Contact.FirstName},<br />
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px;">
+&nbsp;<br />
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px;">
+Thank you for taking the time to speak with me today! You'd like to see new customers coming through your door and DealChicken has the tools to help. Our engaged audience and the benefits of a DealChicken promotion ensure proven results for your business.<br />
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px;">
+&nbsp;<br />
+</p>
+<p style="margin-top: 0px; margin-bottom: 0px;">
+The benefits of a DealChicken promotion include:<br />
+</p>
+<ul>
+	<li>Zero upfront costs</li>
+	<li>A unique, customized write up about your business which will be featured on the DealChicken homepage and in the mobile app</li>
+	<li>Your promotion is emailed to our exclusive (and growing) list of local subscribers</li>
+	<li>Promotion of your offer through our television station as well as through our social media sites</li>
+	<li>DealChicken provides you with assistance throughout all steps to make sure we craft the perfect promotion together</li>
+	<li>You get a check instead of writing one</li>
+</ul>
+<p>
+Visit our <a href="http://merchants.dealchicken.com?source=em|sf|stoppedbyemail" title="merchant site" alias="merchant site" conversion="false">merchant site</a> for more information, or <a conversion="false" alias="download our information sheet" title="download our information sheet" href="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/DCH_04320-TV.pdf">download our information sheet</a>.<br />
+</p>
+<p>
+I will be in contact in regards to crafting your promotion or feel free to contact me at {!Contact.OwnerFirstName} {!Contact.OwnerLastName} at {!Contact.OwnerEmail} or {!Contact.OwnerPhone}.<br />
+</p>
+<p>
+Sincerely,<br />
+</p>
+<p>
+{!Contact.OwnerFirstName} {!Contact.OwnerLastName}<br />
+DealChicken<br />
+Account Executive<br />
+Social Commerce<br />
+Phone: {!Contact.OwnerPhone} <br />
+{!Contact.OwnerEmail} <br />
+www.dealchicken.com <br />
+</p>

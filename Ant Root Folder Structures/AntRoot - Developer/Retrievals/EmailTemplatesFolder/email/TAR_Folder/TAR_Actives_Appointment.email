@@ -1,0 +1,24 @@
+Hello {!Lead.FirstName},
+ 
+ I’m your Local Marketing Navigator at G/O Digital: the Gannett division created especially for small- and medium-sized businesses like yours. I know that as a business owner, your time is very valuable, but I’d really like to schedule 30 minutes of your time in order to go over your existing local marketing campaigns and brainstorm the best solution for your industry, location and goals.
+ 
+I look forward to working with you to grow your business and get more customers. I will be reaching out to you in the next 48 hours to schedule a conversation about your needs and goals. Our call will only take 30 minutes and will be a great opportunity for you to ask any questions about this transition. In the meantime, if you have any concerns, please contact me at the phone number or email below. I am here to help.
+
+Best regards,
+
+{!Lead.OwnerFullName}
+{!Lead.OwnerPhone}
+{!Lead.OwnerEmail}
+
+
+
+This email was sent by:
+
+
+G/O Digital
+
+200 E. Van Buren, MC10
+
+Phoenix, Arizona 85003
+
+602.444.1700

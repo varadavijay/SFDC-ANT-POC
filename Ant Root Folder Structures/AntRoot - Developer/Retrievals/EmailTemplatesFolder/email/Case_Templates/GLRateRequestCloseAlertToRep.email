@@ -1,0 +1,12 @@
+{!Case.Affl_Sales_Rep__c},
+<br/>
+<br/>
+Rate Request ID: {!Case.CaseNumber} 
+<br/><br/>
+Your Rate Request has been processed, with the status of<br/>
+{!Case.Status}.
+<br/><br/>
+Summary:<br/>
+{!Case.Resolution_Summary__c}<br/><br/>
+
+Please reply to this email if you have further questions.

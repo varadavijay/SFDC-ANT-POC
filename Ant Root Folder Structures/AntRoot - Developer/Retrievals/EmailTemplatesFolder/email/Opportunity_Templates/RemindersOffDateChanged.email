@@ -1,0 +1,8 @@
+The dates of the reminders have changed and the reminders themselves have been de-scheduled to ensure correctness.
+
+Please reset the reminders by checking the reset reminders checkbox if desired.
+
+{!Payment_Processing__c.LastModifiedBy}
+
+See Record:
+{!Payment_Processing__c.Link}

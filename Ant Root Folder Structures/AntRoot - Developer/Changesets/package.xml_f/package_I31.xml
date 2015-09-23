@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MyChangeSet</fullName>
+    <description>MyChangeSet
+With new Contact Record Type
+Profile Changes
+Page Layout</description>
+
+	<version>33.0</version>
+	
+    <types>
+        <members>Case_Templates/Support_Case_Comment_Added</members>
+        <name>EmailTemplate</name>
+    </types>
+    
+	<types>
+        <members>Case.New_Support_Case_Comment_Added</members>
+        <name>WorkflowAlert</name>
+    </types>
+    
+	<types>
+        <members>CaseComment.Last_comment_update</members>
+        <name>WorkflowFieldUpdate</name>
+    </types>
+    
+	<types>
+        <members>Case.Support Case Comment</members>
+        <members>CaseComment.Support Case Comment Added</members>
+        <name>WorkflowRule</name>
+    </types>
+	
+	<types>
+        <members>OpportunityLineItem.Order_Form__c</members>
+        <name>CustomField</name>
+    </types> 
+	
+	
+    <types>
+		<members>Opportunity-Acquisitions IS Admin</members>
+		<members>Opportunity-Acquisitions IS Testing</members>
+		<members>Opportunity-Acquisitions IS</members>
+		<members>Opportunity-Acquisitions Layout</members>
+		<members>Opportunity-Contract Approval</members>
+		<members>Opportunity-Dig Ful - PHX</members>
+		<members>Opportunity-Digital Fulfillment Jump Start</members>
+		<members>Opportunity-Digital Fulfillment Sales</members>
+		<members>Opportunity-Opportunity Layout - FastCallTest</members>
+		<members>Opportunity-Opportunity Layout Admin</members>
+		<members>Opportunity-Opportunity Layout v2</members>
+		<members>Opportunity-Opportunity Layout</members>
+		<members>Opportunity-Print Fulfillment</members>
+		<members>Opportunity-SML Extension</members>
+		<name>Layout</name>
+    </types> 
+	 
+	  
+   <!--  <types>
+        <members>ACQ Outside Sales Rep</members>
+        <members>ACQ Sales Rep IS</members>
+        <members>Adam Claypool</members>
+        
+        <members>Chatter Only User</members>
+        <members>Contact Management Profile</members>
+        <members>ContractManager</members>
+        <members>Customer OnBoard Form Profile</members>
+        <members>Customer OnBoard Form v2 Profile</members>
+        <members>Customer Onboarding Profile</members>
+       
+        <members>Data Extractor</members>
+        <members>Data Importer</members>
+        <members>Data Reader</members>
+        <members>DealChicken Operations</members>
+        <members>Digital AM Team Manager</members>
+        <members>Digital Account Manager</members>
+        <members>Digital Audit Profile</members>
+        <members>Digital Audit Test Profile</members>
+        <members>Digital Project Manager</members>
+        <members>GL Care Profile</members>
+        <members>GL Care v2 Profile</members>
+        <members>GL Rate Profile</members>
+        
+        <members>GannettLocal Terms %26 Conditions Profile</members>
+        <members>Guest License User</members>
+        <members>Guest User</members>
+        <members>Jira Agent</members>
+        <members>Knowledge Team</members>
+        <members>Lead Gen Supervisor</members>
+        <members>Lead Generation Specialists</members>
+        <members>Marketing Analyst</members>
+        <members>MarketingProfile</members>
+        <members>National Sales</members>
+        <members>President</members>
+        <members>Product Enhancement Requests Profile</members>
+        
+        <members>RETIRED USERS</members>
+        <members>ReadOnly</members>
+        <members>SML Account Manager</members>
+        <members>SML Accounts - Supervisor</members>
+        <members>SML Customer Care</members>
+        <members>SML Customer Care %2FEncrypted Field Access</members>
+        <members>SML Standard Manager</members>
+        <members>SolutionManager</members>
+        <members>Standard</members>
+        
+        <members>VendorPortal Profile</members> 
+		
+		<members>DW Admin</members>
+		<members>GO Digital Data System</members>
+		<members>Production Administrator</members>
+		<members>Admin</members> 
+		<members>System Administrator Read Only</members> 
+        <members>SML Accounts - Jump Start Managers</members>
+        <members>SML Accounts - Jump Start Managers TBTest</members>
+        <members>SML Accounts - Jump Start Specialist</members>
+        <members>SML Accounts - Jump Start Specialist TBTest</members>
+        <name>Profile</name>
+    </types> -->
+</Package>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>MyChangeSet</fullName>
+    <description>MyChangeSet</description>
+	
+	<types>
+        <members>OpportunityAfterUpdateTriggerHandler</members>
+        <members>OpportunityBeforeUpdateTriggerHandler</members>
+        <members>OpportunityAfterInsertTriggerHandler</members>
+		<members>OpportunityBeforeInsertTriggerHandler</members>
+        <members>OpportunityTriggerTest</members>
+		
+        <members>TriggerHandlerBase</members>
+        <members>ITriggerHandler</members>
+        <members>TriggerDispatcherBase</members>
+        <name>ApexClass</name>
+    </types> 
+	
+<!--
+	
+	<types>
+        <members>xxxxxxxxxxxxxxx</members>
+        <name>ApexPage</name>
+    </types>  
+
+	<types>
+		<members>XXXXXXX</members> 
+        <name>Layout</name>
+    </types>
+
+ 	<types>
+		<members>Account.Billing_Address_Required</members>
+		<name>ValidationRule</name>
+	</types>
+	
+	<types>
+        <members>Opportunity.Conf_Number__c</members> 
+        <members>KPIRep__c.Conf_Number__c</members> 
+        <name>CustomField</name>
+    </types>
+	-->
+	
+ 	<types>
+		<members>afterUpdateOpportunityIsWonCheckAgreement</members>
+		<name>ApexTrigger</name>
+    </types>   
+	
+    <version>30.0</version>
+</Package>

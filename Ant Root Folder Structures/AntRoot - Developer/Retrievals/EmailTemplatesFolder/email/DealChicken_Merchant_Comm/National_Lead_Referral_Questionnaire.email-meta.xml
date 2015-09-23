@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Lead Referral Questionnaire</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>National - Lead Referral Questionnaire</name>
+    <style>none</style>
+    <subject>DealChicken - Referral Questionnaire</subject>
+    <textOnly>Hi,
+
+My name is Adam Bender with DealChicken.com.  I am reaching out to you because you were listed as a reference for {!Opportunity.Account}.
+
+We are in the process of determining if {!Opportunity.Account} is a fit as an advertiser with DealChicken.com and are looking to determine if {!Opportunity.Account} are in good standing with your company before we move forward.
+
+At your earliest convenience, could you please provide the following information on {!Opportunity.Account}:
+
+How long did you work with {!Opportunity.Account}?
+
+Have you had any customer service issues with {!Opportunity.Account}?
+
+Does {!Opportunity.Account} ship their products on time and how long does it take {!Opportunity.Account} to ship products?
+
+How were orders fulfilled (drop ship, voucher codes) and where were the products coming from?
+
+Would you recommend {!Opportunity.Account} to another business?
+
+Any additional information that you could provide would also be greatly appreciated.
+
+Thank you very much for your time.
+
+The DealChicken team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Valentine&apos;s Deals Binghamton</name>
+    <style>none</style>
+    <subject>Introducing 10 days of hometown Valentine&apos;s deals</subject>
+    <textOnly>This Valentine&apos;s Day, DealChicken will be hatching 10 days of hometown Valentine deals.
+
+From February 4-13, DealChicken&apos;s 10 days of hometown Valentine deals can help you share the love with your customers.  For more information, read our 10 days of hometown Valentine deals information sheet.
+
+To learn more about how your business can grow this Valentine&apos;s Day, contact  {!Contact.OwnerFullName} at {!Contact.OwnerEmail} or {!Contact.OwnerPhone}.
+
+
+
+
+DealChicken alerts consumers to great deals.
+Consumers purchase the deal on DealChicken.com and redeem at your location or website.
+Merchants receive 50% of total sales less a 2.5% credit card processing fee.
+
+Why try DealChicken?
+Hear how DealChicken can transform your business and bring in new, high-quality customers</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,4 @@
+It's time to charge the Customer below.  Please check their records.
+
+{!Account.Mactiv_Account__c}
+{!Payment_Processing__c.Link}

@@ -1,0 +1,43 @@
+ant -f devbuild.xml devint_deploy > deployresults.txt 2>&1
+****************************************************************************************** 
+ant -f devbuild.xml -Dcustompackage="Changesets\package_I45_Taxonomy.xml" dev_retrieveCustomPackage
+ant -f devbuild.xml -Dchangeset="MyChangeSet" dev_retrieveChangeset
+ant -f devbuild.xml -Dchangeset="Case Destructive Changes" dev_retrieveChangeset
+ant -f devbuild.xml getReports
+ant -f devbuild.xml -Dchangeset="Stage changes" dev_retrieveChangeset
+ant -f devbuild.xml -Dmetatype=Report listMetadata
+ant -f devbuild.xml prodEmailTemplates
+******************************************************************************************
+ant -f devbuild.xml dev_deployCheckOnly
+ant -f devbuild.xml dev_deploy
+ant -f devbuild.xml dev_runTests
+******************************************************************************************ant -f devbuild.xml dev_retrieveCommon
+ant -f devbuild.xml qa_retrieveCommon
+******************************************************************************************
+ant -f devbuild.xml qa_deployCheckOnly 
+ant -f devbuild.xml qa_deploy
+******************************************************************************************
+ant -f devbuild.xml devint_deployCheckOnly 
+ant -f devbuild.xml devint_deploy 
+******************************************************************************************
+ant -f devbuild.xml prod_retrieveAll
+******************************************************************************************
+ant -f devbuild.xml -Dcustompackage="Changesets\package_I42_Stage.xml" dev_retrieveCustomPackage 
+ant -f devbuild.xml -Dcustompackage="Changesets\package_I42.xml" dev_retrieveCustomPackage 
+ant -f devbuild.xml -Dcustompackage="Changesets\package_USCP.xml" dev_retrieveCustomPackage
+ant -f devbuild.xml -Dcustompackage="Changesets\package_profiles.xml" dev_retrieveCustomPackage
+ant -f devbuild.xml -Dcustompackage="Changesets\package_I33_OBF.xml" dev_retrieveCustomPackage
+ant -f devbuild.xml -Dcustompackage="Changesets\package_I31_OLI.xml" dev_retrieveCustomPackage
+ant -f devbuild.xml -Dcustompackage="Changesets\package_I29_TriggerArch.xml" dev_retrieveCustomPackage
+ant -f devbuild.xml -Dcustompackage="Changesets\package_I29.xml" dev_retrieveCustomPackage
+ant -f devbuild.xml -Dcustompackage="Changesets\package_I30_OBF.xml" dev_retrieveCustomPackage
+ant -f devbuild.xml -Dcustompackage="Changesets\package_I30.xml" dev_retrieveCustomPackage
+ant -f devbuild.xml -Dcustompackage="Changesets\package_I31.xml" dev_retrieveCustomPackage
+ant -f devbuild.xml -Dcustompackage="Changesets\package_I31_SOCADS.xml" dev_retrieveCustomPackage
+ant -f devbuild.xml -Dcustompackage="Changesets\package_Reports_From_Prod.xml" dev_retrieveCustomPackage
+java -cp schemaSpy_5.0.0.jar;force-metadata-jdbc-driver-2.2.jar net.sourceforge.schemaspy.Main -t force -u vvarada@gannet.com -p Welcome2 -font Arial -fontsize 8 -hq -norows -o doc -db https://login.salesforce.com -desc "Extracted from MyDbName on Force.com" -connprops custom\=false;standard\=false
+******************************************************************************************	
+https://c.cs7.visual.force.com/apex/OpportunityDetail_VF?id=006M000000CtjPu&sfdc.override=1
+https://c.cs7.visual.force.com/apex/NewSupportTicket
+******************************************************************************************
+

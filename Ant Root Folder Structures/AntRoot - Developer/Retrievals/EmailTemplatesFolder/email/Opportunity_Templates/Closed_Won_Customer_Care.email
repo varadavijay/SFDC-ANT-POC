@@ -1,0 +1,11 @@
+An Opportunity has been marked "Closed Won" and now requires Customer Care to complete the Order Fulfillment steps.
+
+Detail:
+Opp Name: {!Opportunity.Name}
+Opp Owner: {!Opportunity.OwnerFullName}
+Amount: {!Opportunity.Amount}
+Payment Processing: {!Payment_Processing__c.RecordType}
+{!Opportunity.StageName}
+
+Link:
+{!Opportunity.Link}

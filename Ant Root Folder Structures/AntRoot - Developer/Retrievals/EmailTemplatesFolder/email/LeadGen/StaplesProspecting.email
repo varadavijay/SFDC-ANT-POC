@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html bgcolor="#d2d2d2" style="margin: 0; padding: 0; background-color: #d2d2d2">
+<head>
+    <title>Your free online report from Staples and G/O Digital</title>
+        <style type="text/css">
+        /*<![CDATA[*/
+            /* iOS automatically adds a link to addresses */
+            /* Style the footer with the same color as the footer text */
+
+            #footer a {
+                color: #363636;
+                -webkit-text-size-adjust: none;
+                text-decoration: underline;
+                font-weight: normal
+            }
+            
+    		#main_body {
+                box-shadow: 0px 1px rgba(0, 0, 0, 0.1)
+            }
+            a {
+				color: #cc0000;
+				text-decoration: none;
+                font-weight: 600;
+			}
+            a:hover {
+    			color: #0092db;
+				text-decoration: none;
+                font-weight: bold;
+			}
+        /*]]>*/
+        </style>
+        <!-- http://www.emailonacid.com/blog/details/C13/ensure_that_your_entire_email_is_rendered_by_default_in_the_iphone_ipad -->
+        <!--                                                                                                                     -->
+        <!--                                                                                                                     -->
+        <!--                            _/    _/            _/          _/_/_/                        _/                         -->
+        <!--                           _/    _/  _/    _/  _/_/_/    _/        _/_/_/      _/_/    _/_/_/_/                      -->
+        <!--                          _/_/_/_/  _/    _/  _/    _/    _/_/    _/    _/  _/    _/    _/                           -->
+        <!--                         _/    _/  _/    _/  _/    _/        _/  _/    _/  _/    _/    _/                            -->
+        <!--                        _/    _/    _/_/_/  _/_/_/    _/_/_/    _/_/_/      _/_/        _/_/                         -->
+        <!--                                                               _/                                                    -->
+        <!--                                                              _/                                                     -->
+        <!--                                                                                                                     -->
+        <!--                                                 Extra White Space!                                                  -->
+        <!--                                                                                                                     -->
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+</head>
+<body bgcolor="#d2d2d2" style="margin: 0; padding: 0;  background-color: #d2d2d2" marginheight="0" marginwidth="0" topmargin="0">
+    <!-- start container 100% -->
+    <table bgcolor="#d2d2d2" style="background-color: #d2d2d2; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none" cellpadding="0" cellspacing="0" border="0" width="100%">
+            <!-- email body 640px -->
+                <tr><td>&nbsp;</td></tr>
+                <tr>
+                	<td bgcolor="#d2d2d2" style="background-color: #d2d2d2">
+                    	<div align="center">
+                        	<table cellpadding="0" cellspacing="0" border="0" width="640" style="font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 18px; color: #757675">
+                            	<tr>
+                                	<td width="100%" bgcolor="#ffffff" style="background-color: #ffffff; border: 1px solid #757675; border-radius: 4px">
+                                    	<div align="center">
+                                        <!-- start content -->
+                                            <table cellpadding="0" cellspacing="0" border="0" width="600" height"50">
+                                            	<tr><td>&nbsp;</td></tr>
+                                                <!-- start logo -->
+                                                <tr>
+                                                    <td valign="center" align="left" style=" background-color: #ffffff;"> 
+                                                    	<img src="http://cdn2.hubspot.net/hub/162877/file-35904490-jpg/images/StaplesGL-Logo.jpg" />
+                                                    </td>
+                                                </tr>
+                                                <tr><td>&nbsp;</td></tr>
+                                            </table>
+                                 			<!-- end logo -->
+                                 			<!-- end header -->
+                                            <!-- start header image -->
+                                            <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#cc0000" style="background-color: #cc0000;">
+                                                <tr>
+													<td valign="top">&nbsp;
+														
+                                                    </td>
+												</tr>
+											</table>
+                                            <!-- end header image --> 
+                                            <!-- start email body content -->
+                                            <table cellpadding="0" cellspacing="0" border="0" width="600">
+                                                <tr><td>&nbsp;</td></tr>
+                                                <tr>
+                                                	<td valign="top" style="text-align: left; font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 18px; color: #757675; background-color: #ffffff; border: none;">
+                                                        	<p>Hi {!Contact.FirstName},</p>
+ 
+<p>My name is {!Lead.OwnerFullName}, and I work for G/O Digital. Attached is your free digital marketing audit that tracks your performance for over 20 digital marketing categories and evaluates your competition.</p>
+ 
+<p>The audit is pretty in-depth, and I would like to know if you will be available to schedule a phone call to go over the results with you. Please let me know your availability, or you can contact me at any time from 8 a.m. to 5 p.m. MST. My direct phone number is: 866.618.6630</p>
+ 
+<p>You can also learn more about our current advertising packages to grow your business, take a look at <a href="http://hub.am/18OD3Et" target="_blank">these available cost-effective solutions</a>.</p>
+
+<p>Thank you again for your interest,</p>
+
+<p>{!Lead.Lead_Owner__c}<br />
+p: 866.618.6630<br/>
+e: <a href="mailto:{!User.Email}">{!Lead.Owner_Email__c}</a></p>
+                                                    </td>
+                                                </tr>
+                                                <tr><td>&nbsp;</td></tr>
+                                            </table>
+                                            <!-- end email body content -->
+                                        <!-- end content -->
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <!-- start footer -->
+                <tr>
+                    <td bgcolor="#d2d2d2" style="background-color: #d2d2d2;">
+                    <div align="center">
+                        <table cellpadding="0" width="600" cellspacing="0" border="0">
+                            <tr><td>&nbsp;</td></tr>
+                            <tr>
+                                <td align="center" bgcolor="#d2d2d2" style="background-color: #d2d2d2;">
+                                    <p id="footer" style="font-family: Helvetica, Arial, sans-serif; text-align: center; font-size: 9px; line-height: 12px; color: #363636; display: block">
+                                        Â© 2013 G/O Digital| 200 East Van Buren Street, Phoenix, AZ 85004
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr><td>&nbsp;</td></tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <!-- end footer -->
+	</table>
+    <!-- end container -->
+</body>
+</html>

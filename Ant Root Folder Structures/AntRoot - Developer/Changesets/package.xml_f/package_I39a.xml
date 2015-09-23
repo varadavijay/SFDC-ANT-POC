@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sprint 34 Changes</fullName>
+    <description>Sprint 34 Changes</description> 
+	<version>28.0</version> 
+	
+	<types>
+        <members>Opportunity-Wholesale Opportunity Finance Layout</members>
+        <members>Opportunity-Wholesale Opportunity Layout</members>
+        <members>Opportunity-Wholesale Opportunity Layout - GU</members>
+        <name>Layout</name>
+    </types> 
+	
+	<types>
+		<members>SML Customer Care</members>
+		<members>SML Customer Care %2FEncrypted Field Access</members>
+        <name>Profile</name>
+	</types>
+	
+	<types>
+        <members>Opportunity.USCP_Opportunity</members>
+        <name>RecordType</name>
+    </types>
+	
+	<types>
+        <members>OpportunityLineItemBeforeUpdateHandler</members>
+        <members>OpportunityLineItemBeforeInsertHandler</members>
+        <members>OpportunityAfterUpdateTriggerHandler</members>
+        <name>ApexClass</name>
+    </types>
+</Package>

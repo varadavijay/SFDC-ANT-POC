@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Follow-up Message</name>
+    <style>none</style>
+    <subject>GannettLocal Solutions</subject>
+    <textOnly>Dear {!Lead.FirstName}, 
+
+ Was great to talk with you today. As we discussed, attached is some information about Gannett Local. 
+
+We are a local marketing solutions company started by Gannett, the owner of USA Today, the Arizona Republic, and Careerbuilder.com. Our goal is help small and medium sized local businesses generate leads and drive traffic to their stores, for a small business price. 
+
+Our solutions harness the power of both the Internet and print:
+ 1. Get great placement on Google, Yahoo and Bing 
+ 2. Place your business in the top 10 Google Maps results 
+ 3. Create attention-grabbing advertisements in The Arizona Republic community newspapers, the locally-targeted papers filled with neighborhood news 
+ 
+ We target at the zip code level, to ensure your message is delivered to the places it will create results. 
+ I can be reached at {!User.X800_Number__c} to discuss the latest trends in community advertising, and how we can adapt these to your unique business needs. 
+
+Look forward to talking further, 
+{!Lead.OwnerFullName}
+{!User.X800_Number__c}
+{!Lead.OwnerEmail}
+ GannettLocal.com</textOnly>
+    <type>custom</type>
+</EmailTemplate>

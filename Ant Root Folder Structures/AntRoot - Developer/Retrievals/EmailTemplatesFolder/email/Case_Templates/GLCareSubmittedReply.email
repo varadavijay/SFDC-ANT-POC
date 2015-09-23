@@ -1,0 +1,12 @@
+Hello {!Case.Affl_Sales_Rep__c},
+
+Thank you for submitting your issue to G/O Digital. We will begin investigating immediately and will contact you within 48 hours!
+
+G/O Digital Care Team
+
+Reason Given For Care Request
+
+{!Case.GLC_Request_Reason__c}
+
+
+Account  - {!Case.Company_Name__c}

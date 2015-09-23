@@ -1,0 +1,10 @@
+<br/>
+{!Case.Affl_Sales_Rep__c}
+<br/>
+Your Care Request has been resolved.
+<br/><br/>
+
+Please contact {!Case.OwnerFullName} with any further questions.  Refer to Case Number {!Case.CaseNumber}.
+
+Resolution Summary:<br/>
+{!Case.Resolution_Summary__c}

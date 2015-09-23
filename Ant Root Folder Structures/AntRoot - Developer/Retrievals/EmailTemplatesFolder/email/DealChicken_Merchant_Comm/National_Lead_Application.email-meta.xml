@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Vendor Application</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>National - Vendor Application</name>
+    <style>none</style>
+    <subject>DealChicken - Vendor Application</subject>
+    <textOnly>Hi,
+
+Thank you for your interest in partnering with DealChicken. We are reviewing your information to ensure we can create a promotion that delivers measurable results and achieves your business goals.
+
+If you have not done so already, please make sure we have the following information to expedite review of your application:
+
+Company Name (please include your Corporation type)
+Address (No P.O. Boxes please)
+City
+State
+Zip
+Phone
+Business owner (full name please)
+
+We’ll be in touch soon.
+
+The DealChicken team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

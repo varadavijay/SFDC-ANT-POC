@@ -1,0 +1,59 @@
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="background-color:#ffffff; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; height:100% !important; margin:0; padding:0; width:100% !important" bgcolor="#ffffff" height="100% !important" width="100% !important">
+<div id="preview_text" style="display:none!important"></div>
+        <table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" height="100% !important" width="100% !important" id="backgroundTable" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important; background-color:#ffffff; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; height:100% !important; margin:0; padding:0; width:100% !important">
+    <tbody><tr>
+                <td align="center" valign="top" id="bodyCell" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; height:100% !important; margin:0; padding:0; width:100% !important" height="100% !important" width="100% !important">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="top" id="contentCell" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; padding:10px 20px; background-color:#ffffff" bgcolor="#ffffff">
+                                <table border="0" cellpadding="0" cellspacing="0" width="75%" id="contentTableOuter" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:separate !important; border-radius:4px; background-color:#ffffff; box-shadow:0px 1px rgba(0, 0, 0, 0.1); padding:30px; border:1px solid #d9d9d9; border-bottom:1px solid #b9b9b9" bgcolor="#ffffff">
+                                    <tbody><tr>
+                                        <td align="center" valign="top" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt">
+                                        
+                                                <tbody><tr>
+            <td align="left" valign="top" class="bodyContent" width="100%" colspan="12" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; color:#5b5d62; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:14px; line-height:150%; text-align:left">
+                <table cellpadding="20" cellspacing="0" border="0" align="center" width="75%" class="templateColumnWrapper" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important">
+                    <tbody><tr>
+                        <td align="center" valign="top" colspan="12" width="100.0%" class="column" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:center; padding-bottom: inherit; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:14px; line-height:1.5em; color:#5B5D62">
+                            <div class="widget-span widget-type-rich_text " style="" data-widget-type="rich_text">
+                                <div class="layout-widget-wrapper">
+                                <div id="hs_cos_wrapper_module_1401747764973862" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="color: inherit; font-size: inherit; line-height: inherit; margin: inherit; padding: 20px" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><div><a href="http://www.godigitalmarketing.com/local-businesses/" target="_blank"><img src="https://c.na10.content.force.com/servlet/servlet.ImageServer?id=015F0000003AkXy&oid=00DA0000000HEOt&lastMod=1410380129000" alt="G/O Digital" width="275" height="100" align="middle"/>
+                        
+                                </div></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" class="bodyContent" width="100%" colspan="12" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; color:#5b5d62; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:14px; line-height:150%; text-align:left">
+                <table cellpadding="0" cellspacing="0" border="0" align="center" width="75%" class="templateColumnWrapper" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important">
+                    <tbody><tr>
+                        <td align="left" valign="top" colspan="12" width="100.0%" class="column" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:left; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:14px; line-height:1.5em; color:#5B5D62">
+                            <div class="widget-span widget-type-email_body " style="" data-widget-type="email_body">
+                                
+<div id="hs_cos_wrapper_hs_email_body" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="color: inherit; font-size: inherit; line-height: inherit; margin: inherit; padding: inherit" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text">
+  <p style="margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%"><p>Hey {!Lead.FirstName},</p> 
+<p>Could you please refer me to the person in charge of marketing for {!Lead.Company}?</p>
+<p>If that is you, let’s talk about how G/O Digital can get you more local customers at the lowest cost using search, social, email and mobile marketing!</p>
+<p>Thanks for your time,</p>
+<p>{!Lead.OwnerFullName}</p>
+<p>{!Lead.OwnerPhone}</p>
+<p>{!Lead.OwnerEmail}</p>
+</p>
+<p style="margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%">&nbsp;</p>
+</div>
+                </div>
+                            <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:separate !important; border-spacing:0; -webkit-border-radius:6px; -moz-border-radius:6px; border-radius:6px; background-color:#f4f5f5" class=" columnContentTable" bgcolor="#f4f5f5">
+                              <tbody>
+                                <tr>
+                                  <td align="center" valign="top" class="columnContent widget-span widget-type-rich_text" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:left; padding:0; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:14px; line-height:1.5em; color:#5B5D62; text-align:center" data-widget-type="rich_text"><div style="margin: 0 auto;">
+                                    <p style="margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; font-family:Geneva, Verdana, Arial, Helvetica, sans-serif; text-align:center; font-size:12px; line-height:1.34em; color:#077CAF; display:block" align="center"><a href="#" style="-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%">Forward to a Friend</a><br />
+                                      G/O Digital | 225 N. Michigan Avenue | 16th Floor | Chicago, IL 60613</p>
+                                  </div></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                </tbody></table>

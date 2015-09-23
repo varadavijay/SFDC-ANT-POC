@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:sf="antlib:com.salesforce" basedir="." default="test" name="Salesforce Releases">
+  <!-- ANT VERSION 1.8.2 -->
+  <property file="releasebuild.properties"/>
+	<tstamp>
+		<format property="timestamp" pattern="yyyy-MM-dd_HHmm"/>
+	</tstamp>
+
+  <!-- START DEPLOY CHECK ONLY -->
+  <target name="qa_deployCheckOnly">
+    <echo message="Checking Deployment on Salesforce Server ${qa.sf.serverurl}${line.separator}${qa.sf.username}${line.separator}"/>
+    <sf:deploy 	checkOnly="true"
+				password="${qa.sf.password}"
+				serverurl="${qa.sf.serverurl}"
+				username="${qa.sf.username}"
+				deployRoot="src"
+				maxPoll="1000"
+				pollWaitMillis="100000"
+				/>
+  </target>
+  <target name="stage_deployCheckOnly">
+    <sf:deploy 	checkOnly="true"
+				password="${stage.sf.password}"
+				serverurl="${stage.sf.serverurl}"
+				username="${stage.sf.username}"
+				deployRoot="src"
+				maxPoll="1000"
+				pollWaitMillis="100000"
+				/>
+  </target>
+  <target name="prod_deployCheckOnly">
+    <sf:deploy 	checkOnly="true"
+				username="${prod.sf.username}"
+				password="${prod.sf.password}" 
+				serverurl="${prod.sf.serverurl}" 
+				deployRoot="src" 
+				maxPoll="1000" 
+				pollWaitMillis="100000" 
+				/>
+  </target>
+  <!-- END DEPLOY CHECK ONLY -->
+  
+  <!-- START DEPLOY -->
+  <target name="qa_deploy">
+    <sf:deploy 	username="${qa.sf.username}"
+				password="${qa.sf.password}"
+				serverurl="${qa.sf.serverurl}"
+				deployRoot="src"
+				maxPoll="1000"
+				pollWaitMillis="100000"
+				/>
+  </target>
+  <target name="stage_deploy">
+    <sf:deploy 	username="${stage.sf.username}"
+				password="${stage.sf.password}"
+				serverurl="${stage.sf.serverurl}"
+				deployRoot="src"
+				maxPoll="1000" 
+				pollWaitMillis="100000"
+				/>
+  </target>
+  <target name="prod_deploy">
+    <sf:deploy	username="${prod.sf.username}"
+				password="${prod.sf.password}"
+				serverurl="${prod.sf.serverurl}"
+				deployRoot="src" 
+				maxPoll="1000"
+				pollWaitMillis="100000"
+				/>
+  </target>
+  <!-- End Deploy Code -->
+  
+  <!-- Start Destructive Check Only -->
+  <target name="qa_DeleteCheckOnly">
+    <sf:deploy 	checkOnly="true"
+				username="${qa.sf.username}"
+				password="${qa.sf.password}"
+				serverurl="${qa.sf.serverurl}"
+				ignoreWarnings="true"
+				deployRoot="Destructive"
+				/>
+  </target>
+  <target name="stage_DeleteCheckOnly">
+    <sf:deploy 	checkOnly="true"
+				username="${stage.sf.username}"
+				password="${stage.sf.password}"
+				serverurl="${stage.sf.serverurl}"
+				deployRoot="Destructive"
+				/>
+  </target>
+  <target name="prod_DeleteCheckOnly">
+    <sf:deploy 	checkOnly="true"
+				username="${prod.sf.username}"
+				password="${prod.sf.password}"
+				serverurl="${prod.sf.serverurl}"
+				pollWaitMillis="100000"
+				deployRoot="Destructive"
+				/>
+  </target>
+  <!-- End Destructive Check Only -->
+  
+  <!-- Start Delete -->
+  <target name="qa_Delete">
+    <sf:deploy 	sername="${qa.sf.username}"
+				password="${qa.sf.password}"
+				serverurl="${qa.sf.serverurl}"
+				ignoreWarnings="true"
+				deployRoot="Destructive"
+				/>
+  </target>
+  <target name="stage_Delete">
+    <sf:deploy 	username="${stage.sf.username}"
+				password="${stage.sf.password}"
+				serverurl="${stage.sf.serverurl}"
+				deployRoot="Destructive"
+				/>
+  </target>
+  <target name="prod_Delete">
+    <sf:deploy 	username="${prod.sf.username}"
+	password="${prod.sf.password}"
+	pollWaitMillis="100000"
+	serverurl="${prod.sf.serverurl}"
+	deployRoot="Destructive"
+	/>
+  </target>
+  <!-- End Delete -->
+
+  <!-- Begin RunTests -->
+  <target name="qa_runTests">
+    <echo message="Executing tests on Salesforce Server ....."/>
+    <sf:compileAndTest username="${qa.sf.username}" password="${qa.sf.password}" serverurl="${qa.sf.serverurl}" >
+      <runTests allTests="true"/>
+    </sf:compileAndTest>
+    <echo message="Tests completed"/>
+  </target>
+  <target name="stage_runTests">
+    <echo message="Executing tests on Salesforce Server ....."/>
+    <sf:compileAndTest username="${stage.sf.username}" password="${stage.sf.password}" serverurl="${stage.sf.serverurl}" >
+      <runTests allTests="true"/>
+    </sf:compileAndTest>
+    <echo message="Tests completed"/>
+  </target>
+
+	<target name="prod_runTests">
+	  <echo message="Executing tests on Salesforce Server (PRODUCTION) ....."/>
+	  <sf:compileAndTest username="${prod.sf.username}" password="${prod.sf.password}" serverurl="${prod.sf.serverurl}">
+			<runTests allTests="true"/>
+	  </sf:compileAndTest>
+	  <echo message="PRODUCTION Tests completed" />
+	</target>
+  <!-- End RunTests -->
+
+<!-- BEGIN Retrieve most common metadata -->
+    <target name="qa_retrieveCommon">
+		<property name="retrieveDir" value="Retrievals\qa_retrieve_${timestamp}" />
+	  	<mkdir dir="${retrieveDir}"/>
+		<sf:retrieve username="${qa.sf.username}"
+					 password="${qa.sf.password}"
+					 serverurl="${qa.sf.serverurl}"
+					 retrieveTarget="${retrieveDir}"
+					 unpackaged="Retrievals\Common_Metadata.xml"/>
+	</target>
+    <target name="prod_retrieveCommon">
+		<property name="retrieveDir" value="Retrievals\prod_retrieve_${timestamp}" />
+	  	<mkdir dir="${retrieveDir}"/>
+		<sf:retrieve username="${prod.sf.username}"
+					 password="${prod.sf.password}"
+					 serverurl="${prod.sf.serverurl}"
+					 retrieveTarget="${retrieveDir}"
+					 unpackaged="Retrievals\Common_Metadata.xml"/>
+	 </target>
+<!-- END Retrieve most common metadata -->
+
+<!-- BEGIN Retrieve all metadata -->
+    <target name="qa_retrieveAll">
+		<property name="retrieveDir" value="Snapshots\qa_snapshot_${timestamp}" />
+		<echo message="Retrieving all metadata to Folder: ${retrieveDir}" />
+	  	<mkdir dir="${retrieveDir}"/>
+		<sf:retrieve username="${qa.sf.username}"
+					 password="${qa.sf.password}"
+					 serverurl="${qa.sf.serverurl}"
+					 retrieveTarget="${retrieveDir}"
+					 unpackaged="Snapshots\GO_All_Nonfolder_Metadata.xml"/>
+		<echo message="finished with everything except reports, dashboards, email templates and documents. Retrieving those now" />
+		<sf:retrieve username="${qa.sf.username}"
+					 password="${qa.sf.password}"
+					 serverurl="${qa.sf.serverurl}"
+					 retrieveTarget="${retrieveDir}"
+					 unpackaged="Snapshots\GO_Reports_Emails_Documents_Metadata.xml"/>
+	</target>
+    <target name="prod_retrieveAll">
+		<property name="retrieveDir" value="Snapshots\prod_snapshot_${timestamp}" />
+		<echo message="Retrieving all metadata to Folder: ${retrieveDir}" />
+	  	<mkdir dir="${retrieveDir}"/>
+		<sf:retrieve username="${prod.sf.username}"
+					 password="${prod.sf.password}"
+					 serverurl="${prod.sf.serverurl}"
+					 retrieveTarget="${retrieveDir}"
+					 unpackaged="Snapshots\GO_All_Nonfolder_Metadata.xml"/>
+		<echo message="finished with everything except reports, dashboards, email templates and documents. Retrieving those now" />
+		<sf:retrieve username="${prod.sf.username}"
+					 password="${prod.sf.password}"
+					 serverurl="${prod.sf.serverurl}"
+					 retrieveTarget="${retrieveDir}"
+					 unpackaged="Snapshots\GO_Reports_Emails_Documents_Metadata.xml"/>
+	</target>
+
+<!-- END Retrieve all metadata -->
+
+</project>

@@ -1,0 +1,17 @@
+<br/>
+{!Project__c.Affl_Sales_Rep__c},
+<br/><br/>
+This email is to alert you that the G/O Digital product<br/><br/>
+<strong>{!Project__c.Product_Name__c}</strong><br/><br/>is
+<br/><br/>
+<strong>{!Project__c.Project_Status__c} ({!Project__c.Waiting_Status_Descr_Last_Set__c}) </strong><br/><br/>as of
+<br/><br/>
+<strong>{!Project__c.Waiting_Since_Date__c}</strong>
+<br/><br/>
+Thank You,
+<br/><br/>
+Your GO Team
+<br/><br/><br/><br/>
+Account Id - {!Project__c.AccountId__c}<br/>
+Opportu Id - {!Project__c.OpportunityId__c}<br/>
+Product Id - {!Project__c.Id}

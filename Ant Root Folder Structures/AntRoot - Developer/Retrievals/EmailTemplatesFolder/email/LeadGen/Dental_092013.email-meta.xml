@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Dental_092013</name>
+    <style>none</style>
+    <subject>Here Is Additional Information About Online Marketing For Dentists</subject>
+    <textOnly>Your free online report from Staples and GannettLocal
+
+Dear {!Lead.FirstName},
+
+It was great speaking with you today. Here is the link I told you about to the additional information and a FREE copy of our ebook titled, Insider Tips and Tricks for Online Marketing. It is a quick and easy read about how to utilize the Internet to capture new clients and retain the ones you have. It covers a lot of information about the best online solutions for small businesses, but I think your practice will find the information very beneficial as well.
+
+I hope you enjoy the information. Please let me know if you have any questions, or if you would like to learn more about how you can grow your practice by marketing online.
+
+Thanks,
+
+{!Lead.Owner_First_Name__c} {!Lead.Owner_Last_Name__c}
+p: {!Lead.Owner_Phone__c}
+e: {!Lead.Owner_Email__c}
+
+© 2013 GannettLocal | 200 East Van Buren Street, Phoenix, AZ 85004</textOnly>
+    <type>custom</type>
+</EmailTemplate>

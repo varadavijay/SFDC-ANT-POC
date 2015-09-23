@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>DC Approval Request</name>
+    <style>none</style>
+    <subject>Please Approve My DealChicken</subject>
+    <textOnly>DC Run Date**: {!Opportunity.DC_Run_Date__c}
+
+Notes:
+{!Opportunity.Deal_Description__c}
+
+{!Opportunity.Link}
+
+{!Opportunity.OwnerFirstName}
+{!Opportunity.OwnerLastName}
+
+{!Opportunity.Account}
+{!Opportunity.Name}
+
+{!Opportunity.DC_Description__c}
+{!Opportunity.DC_Instr_Limits__c}
+{!Opportunity.DC_Expiration__c}
+{!Opportunity.DC_Sell_Price__c}
+{!Opportunity.DC_Total_Value__c}
+{!Opportunity.DC_Split_Perc__c} - (Split Perc)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

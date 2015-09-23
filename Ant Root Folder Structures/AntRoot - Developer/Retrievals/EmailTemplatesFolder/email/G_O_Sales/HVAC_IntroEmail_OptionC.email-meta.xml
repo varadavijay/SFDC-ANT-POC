@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Option C - Email to HVAC business trying to schedule a call</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>HVAC_IntroEmail_OptionC</name>
+    <style>none</style>
+    <subject>Tired of losing customers to your competition?</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+When it comes to HVAC marketing and advertising – it’s adapt to digital and mobile or continue to lose more customers to your competition.
+
+After searching for {!Lead.Company} online, I wanted to reach out because I know I can help you get more phone calls and appointments - all within a budget you can afford.  What time of day is best for me to reach you?
+
+Sincerely,
+
+{!Lead.OwnerFullName}
+
+{!Lead.OwnerPhone}
+
+{!Lead.OwnerEmail}
+
+
+Check out how we helped AC by J get 1700 leads in a very competitive market! Watch the Video.
+
+
+Forward to a Friend
+G/O Digital | 225 N. Michigan Avenue | 16th Floor | Chicago, IL 60613</textOnly>
+    <type>custom</type>
+</EmailTemplate>

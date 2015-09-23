@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Option C - Email to introduce G/O Digital with CTA to schedule a call, for leads only</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ColdCall_NoAnswer_IntroEmailC</name>
+    <style>none</style>
+    <subject>Does {!Lead.Company} Need More Customers?</subject>
+    <textOnly>Dear {!Lead.FirstName},
+
+I hope this email finds you well!  I saw {!Lead.Company} online and wanted to discuss your current digital and mobile marketing strategy.
+
+G/O Digital - the leader in digital marketing services for local businesses -  uses innovative technology to target and convert local customers across search, social, email and mobile at the lowest cost possible.
+
+When can we talk?  After looking for your business online, I think there are a few things we can do to get {!Lead.Company} ranked higher in Google searches. In the meantime, you can learn more about what we do in our new eBook The Small Business SEO &amp; PPC Blueprint.
+
+Cheers,
+
+{!Lead.OwnerFullName}
+
+{!Lead.OwnerPhone}
+
+{!Lead.OwnerEmail}
+
+
+
+Forward to a Friend
+G/O Digital | 225 N. Michigan Avenue | 16th Floor | Chicago, IL 60613</textOnly>
+    <type>custom</type>
+</EmailTemplate>

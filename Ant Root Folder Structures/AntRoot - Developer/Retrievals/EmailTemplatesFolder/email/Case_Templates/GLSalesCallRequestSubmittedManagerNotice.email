@@ -1,0 +1,10 @@
+Hello,
+
+{!Case.Affl_Sales_Rep__c} has submitted a GO Sales Call Request for this company with this description.
+
+{!Case.Description}
+
+G/O Digital Care Team
+
+Account  - {!Case.Company_Name__c}
+Media Partner - {!Case.Media_Partner__c}

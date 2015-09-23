@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Had a previous conversation, trying to reconnect but not answering your call</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TryingtoReconnect_EmailA</name>
+    <style>none</style>
+    <subject>Getting {!Account.Name} more customers</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+We spoke a while back about G/O Digital, the leader in digital marketing services for local businesses.
+
+In today’s competitive digital landscape, it’s important to see how you measure up. Our digital assessment will identify which digital marketing services can help take your local business to the next level – and it’s completely free.  Get started by requesting your free audit here.
+
+To ensure the assessment is perfectly tailored to your business, we will also need to schedule a quick 10-minute call. Please reply back to let me know what date and time is convenient for you and I’ll set one up!
+
+Sincerely,
+
+{!Lead.OwnerFullName}
+
+{!Lead.OwnerPhone}
+
+{!Lead.OwnerEmail}
+
+
+
+Forward to a Friend
+G/O Digital | 225 N. Michigan Avenue | 16th Floor | Chicago, IL 60613</textOnly>
+    <type>custom</type>
+</EmailTemplate>

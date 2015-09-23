@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Sales Call Request Alert</name>
+    <style>none</style>
+    <subject>Sales Call Request Received For - {!Case.Company_Name__c}</subject>
+    <textOnly>{!Case.Digital_Lead__c}
+{!Case.Link}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

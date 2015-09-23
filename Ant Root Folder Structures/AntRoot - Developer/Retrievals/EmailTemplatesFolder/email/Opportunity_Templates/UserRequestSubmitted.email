@@ -1,0 +1,10 @@
+A Salesforce User Request Has Been Submitted By {!
+
+RequestsIssues__c.CreatedBy}.
+
+Name:
+{!RequestsIssues__c.User_Name__c}
+
+To View The Issue Record, Click Here
+
+{!RequestsIssues__c.Link}

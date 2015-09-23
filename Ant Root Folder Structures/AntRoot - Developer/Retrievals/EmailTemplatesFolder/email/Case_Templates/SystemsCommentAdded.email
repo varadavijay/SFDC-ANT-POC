@@ -1,0 +1,12 @@
+New Comment Text:
+________________________________
+
+{!Comments__c.Comment__c} 
+
+________________________________
+
+Request Id: {!RequestsIssues__c.Name}
+Request Title:  {!RequestsIssues__c.Title_Short_Description__c}
+
+To View The Issue Record, Click Here
+{!RequestsIssues__c.Link}

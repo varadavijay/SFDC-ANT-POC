@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to introduce G/O Digital with CTA to schedule a call</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ColdCall_NoAnswer_IntroEmailA</name>
+    <style>none</style>
+    <subject>Need Marketing Help?</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+I hope this email finds you well!  I wanted to reach out to discuss how I can help your business get in front of more customers.
+
+Do you know how many customers you are losing to your competitors? Give me a call and let&apos;s talk about how you can get ahead of your competition for prime advertising spots on Google, Yahoo!, Bing and Facebook!
+
+Are you available for a quick call this week?
+
+Cheers,
+
+{!Lead.OwnerFullName}
+
+{!Lead.OwnerPhone}
+
+{!Lead.OwnerEmail}
+
+
+
+Forward to a Friend
+G/O Digital | 225 N. Michigan Avenue | 16th Floor | Chicago, IL 60613</textOnly>
+    <type>custom</type>
+</EmailTemplate>

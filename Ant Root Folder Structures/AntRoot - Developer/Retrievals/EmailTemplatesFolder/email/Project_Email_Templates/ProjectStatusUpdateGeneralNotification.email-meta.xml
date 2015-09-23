@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Project Status Update - General Notification</name>
+    <style>none</style>
+    <subject>Status Update - {!Project__c.Project_Account__c} - {!Project__c.Product_Name__c} - {!Project__c.Project_Status__c}</subject>
+    <textOnly>This email is to inform you that the below G/O Digital Project has been marked
+
+{!Project__c.Project_Status__c}.
+
+If you have questions regarding this product please contact your GO Digital Account Manager, noted below.
+
+Opportunity : {!Project__c.Opportunity__c}
+Project : {!Project__c.Product_Name__c}
+Sold Date : {!Project__c.Sold_Date__c}
+Sales Rep : {!Project__c.Affl_Sales_Rep__c}
+Customer : {!Project__c.Project_Account__c}
+Digital AM : {!Project__c.Digital_Account_Manager__c}
+Media Partner : {!Project__c.Media_Partner__c}
+
+Thank You,
+
+Your GO Team
+
+Project Id - {!Project__c.Project_Id__c}
+Update Time - {!Project__c.Waiting_Since_Date__c}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

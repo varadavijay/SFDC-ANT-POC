@@ -1,0 +1,7 @@
+Status changed from <b> Paused:No Contract</b> to <b>Live</b>.
+<br/><br/>
+Opp Name: {!Opportunity.Name} 
+<br/>
+Product Name: <a href={!OpportunityLineItem.Link}>{!Product2.Name}</a>
+<br/>
+Date Changed: {!OpportunityLineItem.LastModifiedDate}

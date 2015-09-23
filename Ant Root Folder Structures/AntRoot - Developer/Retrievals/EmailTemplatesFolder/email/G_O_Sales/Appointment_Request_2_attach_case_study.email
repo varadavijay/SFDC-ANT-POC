@@ -1,0 +1,12 @@
+Hello {!Lead.FirstName}, 
+
+I hope you are well. I left you a message the other day. I work with {!Lead.Industry_Specific__c}s, helping them obtain new customers online. You might be familiar with my company Gannett, we have been working with local business owners for over 100 years. 
+
+I had a chance to do some research on your company, and I believe you are in a terrific position to benefit from our services. It only takes about 30 minutes to learn how we are helping other {!Lead.Industry_Specific__c}s.
+
+ When do you have some time to speak?
+
+
+Meanwhile - check out this case study from one of our clients. 
+
+Best,

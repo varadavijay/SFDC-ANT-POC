@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MyChangeSet</fullName>
+    <description>MyChangeSet</description>
+     <types>
+        <members>Case.Support_Tickets_Share_with_All_Users</members>
+        <name>SharingCriteriaRule</name>
+    </types>
+    <version>33.0</version>
+</Package>

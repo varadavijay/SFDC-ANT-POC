@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>MyChangeSet</fullName>
+
+    <description>MyChangeSet</description>
+	
+	
+	<types>
+        <members>BatchUpdate_Industry_Focus_Picklist</members>
+        <members>MetadataService</members>
+        <members>MetadataServiceHelper</members>
+        <members>MetadataServiceTest</members>
+		<members>AMPRestService</members>
+        <members>OpportunityAfterUpdateTriggerHandler</members>
+        <members>OpportunityAfterInsertTriggerHandler</members>
+        <members>OpportunityTriggerTest</members>
+        <name>ApexClass</name>
+    </types> 
+	
+	<types>
+        <members>OpportunityAccountDetails</members>
+        <members>CaseAccountDetails</members>
+        <name>ApexPage</name>
+    </types>  
+	
+<!-- 	<types>
+		<members>beforeonAccount_trigger</members>
+		<members>afterUpdateOpportunityIsWonCheckAgreement</members>
+		<name>ApexTrigger</name>
+    </types>   -->
+	
+    <types>
+        <members>Account.Account_Primary_Focus__c</members>
+        <members>Account.Account_Primary_Industry__c</members>
+		<members>Account.Market_Health__c</members> 
+		<members>Account.Industry_General__c</members> 
+		<members>Account.Industry_Specific__c</members> 
+		<members>OpportunityLineItem.AMP_PPC_Start_Date__c</members> 
+        <name>CustomField</name>
+    </types>
+	
+	<types>
+		<members>Account-SML Company Layout</members>
+		<members>Account-SML Account Manager</members>
+		<members>Account-Account Merge Layout</members>
+		<members>Account-SML Company Layout Admin</members>
+		
+		<members>Case-Case Layout Care Request</members>
+		<members>Market__c-Market Layout</members>
+		<members>OpportunityLineItem-Opp Product Acquisitions</members>
+		<members>OpportunityLineItem-Opportunity Product Layout</members>
+		
+		<members>Opportunity-Acquisitions IS</members>
+		<members>Opportunity-Acquisitions Layout</members> 
+		<members>Opportunity-Opportunity Layout v2</members> 
+		<members>Opportunity-Opportunity Layout</members> 
+		<members>Opportunity-Digital Fulfillment Sales</members> 
+		<members>Opportunity-Digital Fulfillment Ops</members> 
+		
+		<members>Case-Case Layout DigitalAudit TB</members> 
+		<members>Case-Case Layout DigitalAudit</members> 
+		<members>Case-Case Layout OnBoard</members> 
+		<members>Case-Case Layout Website Audit</members> 
+		<members>Case-DC Audit Lead Gen TB</members> 
+		<members>Case-DC Audit Lead Gen</members> 
+		<members>Case-DigitalAudit SML</members> 
+		<members>Case-Website Audit SML</members> 
+        <name>Layout</name>
+    </types>
+	
+<!-- 	<types>
+		<members>Account.Billing_Address_Required</members>
+		<name>ValidationRule</name>
+	</types>
+	 -->
+	<types>
+	    <!-- Sales -->
+	    <members>ACQ Outside Sales Rep</members>
+		<members>ACQ Sales Rep IS</members>
+		
+		<!-- Client Services -->
+		<members>Digital Account Manager</members>
+		<members>Digital AM Team Manager</members>
+		<members>Digital Project Manager</members>
+		
+		<!-- Jump Start -->
+		<members>Market Relations Manager</members>
+		<members>SML Account Manager</members>
+		<members>SML Accounts - Jump Start Specialist</members>
+		<members>SML Accounts - Supervisor</members>
+		
+		<!-- Admin -->
+		<members>Admin</members>
+		
+		<members>Adam Claypool</members>
+		<members>Chatter Only User</members>
+		<members>ContractManager</members>
+		<members>Data Extractor</members>
+		<members>Data Importer</members>
+		<members>DealChicken Operations</members>
+		<members>DW Admin</members>
+		<members>GO Digital Data System</members>
+		<members>Knowledge Team</members>
+		<members>Lead Gen Supervisor</members>
+		<members>Lead Generation Specialists</members>
+		<members>Marketing Analyst</members>
+		<members>MarketingProfile</members>
+		<members>National Sales</members>
+		<members>President</members>
+		<members>Production Administrator</members>
+		<members>ReadOnly</members>
+		<members>RETIRED USERS</members>
+		<members>SML Customer Care %2FEncrypted Field Access</members>
+		<members>SML Customer Care</members>
+		<members>SML Standard Manager</members>
+		<members>SolutionManager</members>
+		<members>Standard</members>
+		<members>System Administrator Read Only</members>
+		<members>Data Reader</members>
+		<members>Jira Agent</members>
+
+        <name>Profile</name>
+    </types> 
+	
+    <version>30.0</version>
+</Package>

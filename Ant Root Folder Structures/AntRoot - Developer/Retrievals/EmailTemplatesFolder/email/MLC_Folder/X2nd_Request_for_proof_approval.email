@@ -1,0 +1,24 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0in 0in 12pt; background-color: white; background-position: initial initial; background-repeat: initial initial;"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Hello,<o:p></o:p></span></p>
+
+<p style="margin: 0in 0in 0.0001pt; background-color: white;"><span style="color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 12pt;">Your deal is currently scheduled to
+run on&nbsp;</span><font face="Arial, sans-serif">{!Opportunity.DC_Run_Date__c}</font><span style="color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 12pt;">&nbsp;and</span><span class="apple-converted-space" style="color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 12pt;">&nbsp;</span><span class="main1" style="color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 12pt;">your promotion is ready to proof. Please click on the link below
+for a preview of your offer. Respond with your approval by<b> today</b>. Double
+check that the deal details match what we have in the contract, including all
+mentions of price and restrictions. </span><span style="color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 12pt;">As stated on the original proof
+approval email, we can only make revisions if the information is inaccurate or
+could be perceived as false advertising.</span></p>
+
+<p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0in 0in 0.0001pt; background-color: white; background-position: initial initial; background-repeat: initial initial;"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">&nbsp;</span></p>
+
+<p style="margin: 0in 0in 0.0001pt; background-color: white;"><span class="main1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Here’s how it will appear on our
+site:&nbsp;</span></span><font face="Arial, sans-serif"><o:p></o:p>{!Opportunity.DC_Proof_Hyperlink__c}</font></p>
+
+<p class="main11" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0in 0in 0.0001pt; line-height: 12.25pt; background-color: white; background-position: initial initial; background-repeat: initial initial;"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">&nbsp;</span></p>
+
+<p class="main11" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0in 0in 0.0001pt; line-height: 12.25pt; background-color: white; background-position: initial initial; background-repeat: initial initial;"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><br>
+If you have any questions, please feel free to reach out to me at any time.&nbsp;</span></p><p class="main11" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0in 0in 0.0001pt; line-height: 12.25pt; background-color: white; background-position: initial initial; background-repeat: initial initial;"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><br></span></p><p class="main11" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0in 0in 0.0001pt; line-height: 12.25pt; background-color: white; background-position: initial initial; background-repeat: initial initial;"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Thanks!<o:p></o:p></span></p>]]></td>
+</tr>
+</table>

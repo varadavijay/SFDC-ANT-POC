@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>MyChangeSet</fullName>
+
+    <description>MyChangeSet</description>
+    <types>
+        <members>OnBoardFormModel__c.Template_Website_Package_Name__c</members>
+        <members>OpportunityLineItem.Opp_Product_Id__c</members>
+        <name>CustomField</name>
+    </types>	
+	
+	<types> 
+		<members>Account-DealChicken GL Radius</members>
+		<members>Account-DealChicken Nat Radius</members>
+		<members>Account-SML Account Manager</members>
+		<members>Account-SML Company Layout</members>
+		<members>Contact-DC Radius TB</members>
+		<members>Contact-SML Contact DealChicken GL Radius</members>
+		<members>Contact-SML Contact DealChicken Nat Radius</members>
+		<members>Lead-ACQ Starter Layout</members>
+		<members>Lead-DealChicken GL Radius</members>
+		<members>Lead-DealChicken Nat Radius</members>
+		<members>Opportunity-Admin DealChicken Outside ES %26 TB</members>
+		<members>Opportunity-Copy of DealChicken Inside - ES %26 TB %26 SG</members>
+		<members>Opportunity-Deal Chicken National Admin</members>
+		<members>Opportunity-Deal Chicken National</members>
+		<members>Opportunity-DealChicken Admin</members>
+		<members>Opportunity-DealChicken Inside - ES %26 TB</members>
+		<members>Opportunity-DealChicken National TB</members>
+		<members>Opportunity-DealChicken Outside ES %26 TB</members>
+
+	
+		<members>OpportunityLineItem-Copy of Opportunity Product Layout - Admin</members>
+		<members>OpportunityLineItem-Opp Product Acquisitions</members>
+		<members>OpportunityLineItem-Opp Product Admin</members>
+		<members>OpportunityLineItem-Opportunity Product Layout - Billing</members> 
+		<members>OpportunityLineItem-Opportunity Product Layout with Cancel Category</members> 
+		<members>OpportunityLineItem-Opportunity Product Layout</members> 
+        <name>Layout</name>
+    </types>
+	
+	<types>
+		<members>Account Manager Team Layout</members>
+		<members>Acq Sales Rep IS</members>
+		<members>DC Account Exec R</members>
+		<members>Five9 Home Softphone Layout Mgr</members>
+		<members>System Admin Home Page</members>
+		<name>HomePageLayout</name>
+	</types>
+	
+	<types>
+        <members>NewSupportTicket</members>
+        <name>ApexPage</name>
+    </types>  
+<!-- 	
+	<types>
+        <members>*</members>
+        <name>ApexClass</name>
+    </types>   
+	
+	<types>
+		<members>beforeonAccount_trigger</members>
+		<members>afterUpdateOpportunityIsWonCheckAgreement</members>
+		<name>ApexTrigger</name>
+    </types>   
+	
+    <types>
+        <members>Account.Account_Primary_Focus__c</members>
+        <members>Account.Account_Primary_Industry__c</members>
+		<members>Account.Market_Health__c</members> 
+		<members>Account.Industry_General__c</members> 
+		<members>Account.Industry_Specific__c</members> 
+		<members>OpportunityLineItem.AMP_PPC_Start_Date__c</members> 
+        <name>CustomField</name>
+    </types>
+	
+	<types>
+		<members>Account-SML Company Layout</members>
+		<members>Account-SML Account Manager</members>
+		<members>Account-Account Merge Layout</members>
+		<members>Account-SML Company Layout Admin</members>
+		
+		<members>Case-Case Layout Care Request</members>
+		<members>Market__c-Market Layout</members>
+		<members>OpportunityLineItem-Opp Product Acquisitions</members>
+		<members>OpportunityLineItem-Opportunity Product Layout</members>
+		
+		<members>Opportunity-Acquisitions IS</members>
+		<members>Opportunity-Acquisitions Layout</members> 
+		<members>Opportunity-Opportunity Layout v2</members> 
+		<members>Opportunity-Opportunity Layout</members> 
+		<members>Opportunity-Digital Fulfillment Sales</members> 
+		<members>Opportunity-Digital Fulfillment Ops</members> 
+		
+		<members>Case-Case Layout DigitalAudit TB</members> 
+		<members>Case-Case Layout DigitalAudit</members> 
+		<members>Case-Case Layout OnBoard</members> 
+		<members>Case-Case Layout Website Audit</members> 
+		<members>Case-DC Audit Lead Gen TB</members> 
+		<members>Case-DC Audit Lead Gen</members> 
+		<members>Case-DigitalAudit SML</members> 
+		<members>Case-Website Audit SML</members> 
+        <name>Layout</name>
+    </types>
+	
+	<types>
+		<members>Account.Billing_Address_Required</members>
+		<name>ValidationRule</name>
+	</types>
+	 
+	<types>
+	    
+	    <members>ACQ Outside Sales Rep</members>
+		<members>ACQ Sales Rep IS</members>
+		
+		
+		<members>Digital Account Manager</members>
+		<members>Digital AM Team Manager</members>
+		<members>Digital Project Manager</members>
+		
+		
+		<members>Market Relations Manager</members>
+		<members>SML Account Manager</members>
+		<members>SML Accounts - Jump Start Specialist</members>
+		<members>SML Accounts - Supervisor</members>
+		
+		
+		<members>Admin</members>
+		
+		<members>Adam Claypool</members>
+		<members>Chatter Only User</members>
+		<members>ContractManager</members>
+		<members>Data Extractor</members>
+		<members>Data Importer</members>
+		<members>DealChicken Operations</members>
+		<members>DW Admin</members>
+		<members>GO Digital Data System</members>
+		<members>Knowledge Team</members>
+		<members>Lead Gen Supervisor</members>
+		<members>Lead Generation Specialists</members>
+		<members>Marketing Analyst</members>
+		<members>MarketingProfile</members>
+		<members>National Sales</members>
+		<members>President</members>
+		<members>Production Administrator</members>
+		<members>ReadOnly</members>
+		<members>RETIRED USERS</members>
+		<members>SML Customer Care %2FEncrypted Field Access</members>
+		<members>SML Customer Care</members>
+		<members>SML Standard Manager</members>
+		<members>SolutionManager</members>
+		<members>Standard</members>
+		<members>System Administrator Read Only</members>
+		<members>Data Reader</members>
+		<members>Jira Agent</members>
+
+        <name>Profile</name>
+    </types> 
+-->	
+    <version>30.0</version>
+</Package>

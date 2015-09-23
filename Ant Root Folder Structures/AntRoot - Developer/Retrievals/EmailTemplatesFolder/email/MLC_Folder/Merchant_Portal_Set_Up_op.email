@@ -1,0 +1,106 @@
+<style type="text/css">
+<!--
+.fineprint {
+	font-size: 9px;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #666;
+}
+.main1 {	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #363636;
+	line-height: 18px;
+}
+.main1b {	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #ffffff;
+	line-height: 18px;
+}
+.main2 {	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #363636;
+	line-height: 18px;
+	font-weight: bold;
+}
+.main2a {	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #7a1b51;
+	line-height: 17px;
+	font-weight: bold;
+}
+.main3 {	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #f47734;
+	line-height: 16px;
+	font-weight: bold;
+}
+.main4 {	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #7a1b51;
+	line-height: 18px;
+}
+.style3 {	font-size: 12px;
+	line-height: 20px;
+	color: #666;
+}
+div, p, a, li, td { -webkit-text-size-adjust:none; }
+-->
+</style>
+<br />
+<table width="611" cellspacing="0" cellpadding="1" border="0" align="center">
+	<tbody>
+		<tr bgcolor="#cbcbcb">
+			<td width="609" style="-webkit-text-size-adjust: none;">
+			<table width="609" cellspacing="0" cellpadding="10" border="0">
+				<tbody>
+					<tr bgcolor="#ffffff">
+						<td width="589" style="-webkit-text-size-adjust: none;">
+						<table width="589" cellspacing="0" cellpadding="0" border="0" align="center">
+							<tbody>
+								<tr>
+									<td width="589" style="-webkit-text-size-adjust: none;">
+									<table width="589" cellspacing="0" cellpadding="0" border="0" align="center">
+										<tbody>
+											<tr>
+												<td width="590" style="font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px; -webkit-text-size-adjust: none;"><img src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/DCH_03712_HEADER.jpg?nocache=550" width="590" height="115" style="display: block;" /></td>
+											</tr>
+											<tr>
+												<td style="font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px; -webkit-text-size-adjust: none;">
+												<table width="590" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td width="20" style="-webkit-text-size-adjust: none;">
+															<p style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px; -webkit-text-size-adjust: none;">
+															<img width="20" height="20" src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/spacer-pthuron.gif" />
+															</p>
+															<p style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px; -webkit-text-size-adjust: none;">&nbsp;
+															
+															</p>
+															</td>
+															<td width="338" style="-webkit-text-size-adjust: none;"><p style="-webkit-text-size-adjust: none;"><span class="main4" style="font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; font-size: 18px; color: #7a1b51; line-height: 18px; font-weight:bold;">Hi {!Opportunity.SAPrimaryContact__c},
+
+<br/><br/>
+
+<span class="main2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px; font-weight:normal;">
+Thank you for approving your DealChicken proof. Now is the time to set up your Merchant Portal so you can pull the certificate report and redeem customers when they use their voucher. We can set that up for you if you would like.<br><br>
+
+If so, reply back and request us to enable your merchant account.<br><br>
+
+<span class="main2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px; font-weight:normal;">If you don’t have a DealChicken account please follow these steps:<br>
+
+<ol span class="main2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px; font-weight:normal;">
+
+<li>Visit www.dealchicken.com</li>
+<li>Scroll to the bottom of the page and under the “Calling All Shoppers” option, click “Sign Up and Start Getting Deals”</li>
+<li>Complete the form</li>
+<li>Send us an email from the email address associated with your account requesting us to enable your merchant account</li>
+
+</ol>
+<span class="main2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px; font-weight:normal;">We have also attached a document that details this process.<br><br>
+
+Once we receive your email request, we will enable your merchant account and send you an email confirmation. If you have any questions on this, feel free to reply back to us.<br>
+
+<span class="main2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px; font-weight:normal;"><span class="main2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #363636; line-height: 18px; font-weight:normal;">
+<br>The DealChicken Merchant Loyalty Team</br>
+
+<p style="line-height: 18px; font-family: Arial,Helvetica,sans-serif; color: rgb(102, 102, 102); font-size: 12px; -webkit-text-size-adjust: none;">&nbsp;</p></td>
+															<img width="20" height="20" alt="" src="http://image.e.dealchicken.com/lib/fe6915707666007e7713/m/1/spacer-pthuron.gif" /></span></td>

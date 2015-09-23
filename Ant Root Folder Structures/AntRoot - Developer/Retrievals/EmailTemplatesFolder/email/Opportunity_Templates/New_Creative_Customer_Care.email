@@ -1,0 +1,9 @@
+A new Community Print record has been created, associated to a Closed "Won" Opportunity. This indicates a change to existing creative. Please take appropriate action.
+
+Detail:
+Order ID: {!Order_Fulfillment__c.Name}
+Created by: {!Order_Fulfillment__c.CreatedBy}
+
+
+Link:
+{!Order_Fulfillment__c.Link}

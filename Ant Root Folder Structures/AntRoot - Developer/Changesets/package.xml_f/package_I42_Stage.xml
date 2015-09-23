@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage changes</fullName>
+    <description>effected classes and reports</description>
+    <types>
+        <members>ContractOriginalValue</members>
+        <members>ContractOriginalValueTest</members>
+        <members>OpportunityAfterInsertTriggerHandler</members>
+        <members>OpportunityAfterUndeleteTriggerHandler</members>
+        <members>OpportunityBeforeInsertTriggerHandler</members>
+        <members>OpportunityBeforeUpdateTriggerHandler</members>
+        <members>TestOpportunityLineItemTrigger</members>
+        <members>beforeonOpportunity_test</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>beforeonTask_Trigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>Adam_Claypool_s_Reports_and_Dashboards/Bookings_by_Product_GO_OUTSIDE</members>
+        <members>Adam_Claypool_s_Reports_and_Dashboards/Bookings_by_Product_P10</members>
+        <members>Adam_Claypool_s_Reports_and_Dashboards/GL_Split_Demos_Run</members>
+        <members>Adam_Claypool_s_Reports_and_Dashboards/GL_Split_Demos_Run_Sharer_FP</members>
+        <name>Report</name>
+    </types>
+    <version>30.0</version>
+</Package>
