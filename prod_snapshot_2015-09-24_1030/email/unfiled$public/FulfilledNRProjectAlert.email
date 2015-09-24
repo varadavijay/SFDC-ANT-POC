@@ -1,0 +1,11 @@
+<br/>
+Product/Project Last Updated By {!Project__c.LastModifiedBy} 
+<br/><br/>
+Opp Name: {!Project__c.Opportunity__c} 
+<br/>
+Product Name : {!Project__c.Product_Name__c} 
+<br/>
+Link To Opp : {!Project__c.JumpTo_Opp__c}
+<br/>
+Notes : {!Project__c.Waiting_Status_Descr_Last_Set__c}
+<br/>

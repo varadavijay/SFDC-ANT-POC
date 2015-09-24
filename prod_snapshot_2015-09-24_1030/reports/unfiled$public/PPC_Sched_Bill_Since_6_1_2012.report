@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_5890210</developerName>
+        <masterLabel>Amount Grouping</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Opportunity.OpportunityLineItems.OpportunityLineItemSchedules$Revenue</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>1,000</to>
+            </sourceValues>
+            <value>Up To 1000 Per Month</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>1,000</from>
+                <to>5,000</to>
+            </sourceValues>
+            <value>1000 to 5000 Per Month</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>5,000</from>
+                <to>10,000</to>
+            </sourceValues>
+            <value>5000 to 10000 Per Month</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>10,000</from>
+            </sourceValues>
+            <value>10000 Plus Per Month</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Opportunity$Account</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Id</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityLineItems$Product_Name__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityLineItems.OpportunityLineItemSchedules$ScheduleDate</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.OpportunityLineItems.OpportunityLineItemSchedules$Revenue</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity.OpportunityLineItems$Product_Name__c</column>
+            <operator>contains</operator>
+            <value>ppc</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$StageName</column>
+            <operator>equals</operator>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_5890210</column>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Paused_Or_Canceled__c</column>
+            <operator>notEqual</operator>
+            <value>Canceled,Paused : Billing,Paused : No Contact</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_5890210</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>PPC - Sched Bill Since 6/1/2012</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OppsProductsSchedules__c</reportType>
+    <roleHierarchyFilter>ExecutiveDirector</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Opportunity$Name</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Opportunity.OpportunityLineItems.OpportunityLineItemSchedules$ScheduleDate</dateColumn>
+        <endDate>2012-12-01</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2012-06-01</startDate>
+    </timeFrameFilter>
+</Report>

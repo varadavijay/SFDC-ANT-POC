@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomSite xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowHomePage>false</allowHomePage>
+    <allowStandardAnswersPages>false</allowStandardAnswersPages>
+    <allowStandardIdeasPages>false</allowStandardIdeasPages>
+    <allowStandardLookups>false</allowStandardLookups>
+    <allowStandardSearch>false</allowStandardSearch>
+    <authorizationRequiredPage>CustomErrorPage</authorizationRequiredPage>
+    <bandwidthExceededPage>BandwidthExceeded</bandwidthExceededPage>
+    <description>Customer Onboard Site to replace Customer OnBoard Form Site</description>
+    <fileNotFoundPage>FileNotFound</fileNotFoundPage>
+    <genericErrorPage>CustomErrorPage</genericErrorPage>
+    <inMaintenancePage>CustomErrorPage</inMaintenancePage>
+    <inactiveIndexPage>CustomErrorPage</inactiveIndexPage>
+    <indexPage>OnBoardForm</indexPage>
+    <masterLabel>Customer Onboarding</masterLabel>
+    <requireInsecurePortalAccess>false</requireInsecurePortalAccess>
+    <siteAdmin>vvarada@gannett.com</siteAdmin>
+    <siteTemplate>OnBoardSiteTemplate</siteTemplate>
+    <siteType>Visualforce</siteType>
+    <subdomain>gannettlocal</subdomain>
+    <urlPathPrefix>customeronboarding</urlPathPrefix>
+</CustomSite>

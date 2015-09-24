@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Lead.Lead_Owner_Role__c</field>
+    </columns>
+    <columns>
+        <field>OPP_OWNER</field>
+    </columns>
+    <columns>
+        <field>LEAD_OWNER</field>
+    </columns>
+    <columns>
+        <field>OPP_NAME</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>CREATED</column>
+            <operator>contains</operator>
+            <value>Wright,Dee,thorne,herlov,san marco,van west,mcbride,desgeorges,rivera,munye,carew,troy gibson,coleman,vega,case,jonathan collins,logue,bacher,bestwick,stull,maldonado,zachary crossman,fahey,kluge,victoria cooper,chicoine,tarbox,smail,clucas,andrea richard,fjerstad,cottle,moser,zachary peterson,fisk,milbrandt,dakota lewis,lullo,davis gray,zachary hineman</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CLOSED</column>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>WON</column>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CREATED</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Opps Closed Source By Lead Gens</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityLead</reportType>
+    <scope>org</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2011-09-01</startDate>
+    </timeFrameFilter>
+</Report>

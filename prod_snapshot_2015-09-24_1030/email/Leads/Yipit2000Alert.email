@@ -1,0 +1,5 @@
+Deal Id: {!Yipit__c.DealId__c}<br/>
+{!Yipit__c.Deal_Revenue__c}<br/>
+{!Yipit__c.DealSite__c}<br/>
+{!Yipit__c.Market__c}<br/>
+{!Yipit__c.Link}

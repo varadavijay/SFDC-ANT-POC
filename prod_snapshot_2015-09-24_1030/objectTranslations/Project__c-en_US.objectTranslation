@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Project</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Projects</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Active Product --></label>
+        <name>Active_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affl Sales Rep Email --></label>
+        <name>Affl_Sales_Rep_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affl Sales Rep First --></label>
+        <name>Affl_Sales_Rep_First__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affl Sales Rep Full --></label>
+        <name>Affl_Sales_Rep_Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affl Sales Rep OnOppId --></label>
+        <name>Affl_Sales_Rep_OnOppId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affl Sales Rep --></label>
+        <name>Affl_Sales_Rep__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Awaiting OnBoard Stamp --></label>
+        <name>Awaiting_OnBoard_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Can Create ILI&apos;s --></label>
+        <name>CanCreateILI__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cancellation Category --></label>
+        <name>Cancellation_Category__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled After Live</masterLabel>
+            <translation><!-- Cancelled After Live --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled Before Live</masterLabel>
+            <translation><!-- Cancelled Before Live --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fulfilled Non-Renewal</masterLabel>
+            <translation><!-- Fulfilled Non-Renewal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cancellation Detail --></label>
+        <name>Cancellation_Detail__c</name>
+        <picklistValues>
+            <masterLabel>AM Change</masterLabel>
+            <translation><!-- AM Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cannot pay/No budget/Business Closing</masterLabel>
+            <translation><!-- Cannot pay/No budget/Business Closing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client Unresponsive</masterLabel>
+            <translation><!-- Client Unresponsive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client billed incorrect amount</masterLabel>
+            <translation><!-- Client billed incorrect amount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client billed twice in one period</masterLabel>
+            <translation><!-- Client billed twice in one period --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client issue unresolved</masterLabel>
+            <translation><!-- Client issue unresolved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client not fully explained OB process, frustrated</masterLabel>
+            <translation><!-- Client not fully explained OB process, frustrated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client refused to give explanation</masterLabel>
+            <translation><!-- Client refused to give explanation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client unhappy with billing procedure (pause policy)</masterLabel>
+            <translation><!-- Client unhappy with billing procedure (pause policy) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entire spend moved to another G/O product</masterLabel>
+            <translation><!-- Entire spend moved to another G/O product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fulfilled Non Renewal</masterLabel>
+            <translation><!-- Fulfilled Non Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Platform/process</masterLabel>
+            <translation><!-- Internal Platform/process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lack of communication</masterLabel>
+            <translation><!-- Lack of communication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low Performance/Lack of, or irrelevant leads</masterLabel>
+            <translation><!-- Low Performance/Lack of, or irrelevant leads --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missed deadline</masterLabel>
+            <translation><!-- Missed deadline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moving marketing in house</masterLabel>
+            <translation><!-- Moving marketing in house --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New ‘decision maker’ unwilling to continue</masterLabel>
+            <translation><!-- New ‘decision maker’ unwilling to continue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No reason provided from affiliate rep</masterLabel>
+            <translation><!-- No reason provided from affiliate rep --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Over/Under Spend</masterLabel>
+            <translation><!-- Over/Under Spend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platform issue</masterLabel>
+            <translation><!-- Platform issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product down sell</masterLabel>
+            <translation><!-- Product down sell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product up sell</masterLabel>
+            <translation><!-- Product up sell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received better pricing from competitor</masterLabel>
+            <translation><!-- Received better pricing from competitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Responsiveness/Timeliness</masterLabel>
+            <translation><!-- Responsiveness/Timeliness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales communicated ‘opt out period’ to client</masterLabel>
+            <translation><!-- Sales communicated ‘opt out period’ to client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seasonality</masterLabel>
+            <translation><!-- Seasonality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set unrealistic or no performance expectations</masterLabel>
+            <translation><!-- Set unrealistic or no performance expectations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social: posts never change, eventually lose value</masterLabel>
+            <translation><!-- Social: posts never change, eventually lose value --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sold outside of deliverables</masterLabel>
+            <translation><!-- Sold outside of deliverables --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Undersold vs recommendation</masterLabel>
+            <translation><!-- Undersold vs recommendation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unrealistic expectations, never able to change, not enough time to prioritize</masterLabel>
+            <translation><!-- Unrealistic expectations, never able to change, not enough time to prioritize --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Work quality issue</masterLabel>
+            <translation><!-- Work quality issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong product for the client’s goals</masterLabel>
+            <translation><!-- Wrong product for the client’s goals --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cancellation Reason --></label>
+        <name>Cancellation_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Billing Issue</masterLabel>
+            <translation><!-- Billing Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client Unresponsive</masterLabel>
+            <translation><!-- Client Unresponsive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client/Business Issue</masterLabel>
+            <translation><!-- Client/Business Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fulfilled Non Renewal</masterLabel>
+            <translation><!-- Fulfilled Non Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>G/O Error</masterLabel>
+            <translation><!-- G/O Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance</masterLabel>
+            <translation><!-- Performance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reallocation</masterLabel>
+            <translation><!-- Reallocation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Expectation Mismatch</masterLabel>
+            <translation><!-- Sales Expectation Mismatch --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cancelled --></label>
+        <name>Cancelled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count Of ILI&apos;S --></label>
+        <name>Count_Of_ILI__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Stamp --></label>
+        <name>Created_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- D2GL Start Time Stamp --></label>
+        <name>D2GL_Start_Time_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- DigAM Email --></label>
+        <name>DigAM_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- DigAM Full --></label>
+        <name>DigAM_Full__c</name>
+    </fields>
+    <fields>
+        <label><!-- Digital Account Manager --></label>
+        <name>Digital_Account_Manager__c</name>
+        <relationshipLabel><!-- Projects (Digital Account Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Earliest Timestamp --></label>
+        <name>Earliest_Timestamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fulfillment Specialist --></label>
+        <name>Fulfillment_Specialist__c</name>
+        <relationshipLabel><!-- Projects (Fulfillment Specialist) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- GO Assisting Rep Email --></label>
+        <name>GO_Assisting_Rep_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- GO Asst Rep 2 Email --></label>
+        <name>GO_Asst_Rep_2_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Has Media Spend --></label>
+        <name>HasMediaSpend__c</name>
+    </fields>
+    <fields>
+        <label><!-- Has ILI&apos;S --></label>
+        <name>Has_ILI__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Awaiting Onboard Out Stamp --></label>
+        <name>In_Awaiting_Onboard_Out_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Awaiting Onboard Stamp --></label>
+        <name>In_Awaiting_Onboard_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Closed Won Out Stamp --></label>
+        <name>In_Closed_Won_Out_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Closed Won Stamp --></label>
+        <name>In_Closed_Won_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Fulfillment Out Stamp --></label>
+        <name>In_Fulfillment_Out_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Fulfillment Stamp --></label>
+        <name>In_Fulfillment_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Pending Out Stamp --></label>
+        <name>In_Pending_Out_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Pending Stamp --></label>
+        <name>In_Pending_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Waiting Approval Out Stamp --></label>
+        <name>In_Waiting_Approval_Out_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Waiting Approval Stamp --></label>
+        <name>In_Waiting_Approval_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Waiting Resource Out Stamp --></label>
+        <name>In_Waiting_Resource_Out_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Waiting Resource Stamp --></label>
+        <name>In_Waiting_Resource_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Cancel Date --></label>
+        <name>Invoice_CancelDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field contains different pricing variables such as CPM for Email, cost per location for Maps and cost per hours for Web Creative Fees. --></help>
+        <label><!-- Product Price Variable --></label>
+        <name>Invoice_PriceVariable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product End of Service Date --></label>
+        <name>Invoice_ServiceEndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Start of Service Date --></label>
+        <name>Invoice_ServiceStartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Units --></label>
+        <name>Invoice_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- JumpTo Opp --></label>
+        <name>JumpTo_Opp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Status Change From Won Date --></label>
+        <name>Last_Status_Change_From_Won_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Live Date --></label>
+        <name>Live_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Live Stamp --></label>
+        <name>Live_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Max ILI Scheduled Date --></label>
+        <name>Max_ILIScheduledDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Media Partner Id On Opp --></label>
+        <name>Media_Partner_Id_On_Opp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Media Partner Name --></label>
+        <name>Media_Partner_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Media Partner --></label>
+        <name>Media_Partner__c</name>
+        <relationshipLabel><!-- Projects (Media Partner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Mgmt Fee % --></label>
+        <name>Mgmt_Fee_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notify Email 1 --></label>
+        <name>Notify_Email_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notify Email 2 --></label>
+        <name>Notify_Email_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notify Email 3 --></label>
+        <name>Notify_Email_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- OppProd --></label>
+        <name>OppProd__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Name --></label>
+        <name>Opp_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Owner Email --></label>
+        <name>Opp_Owner_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Owner --></label>
+        <name>Opp_Owner__c</name>
+        <relationshipLabel><!-- Projects (Opp Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opp Record Type --></label>
+        <name>Opp_Record_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Status --></label>
+        <name>Opportunity_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PopulateTimestampNotes --></label>
+        <name>PopulateTimestampNotes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Id --></label>
+        <name>Product_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Account --></label>
+        <name>Project_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Id --></label>
+        <name>Project_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Status --></label>
+        <name>Project_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Qty Contract Months --></label>
+        <name>Qty_ContractMonths__c</name>
+    </fields>
+    <fields>
+        <label><!-- Regenerate ILIs --></label>
+        <name>RegenerateILIs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Product --></label>
+        <name>Related_Product__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sell Type --></label>
+        <name>Sell_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Delayed Notice --></label>
+        <name>Send_Delayed_Notice__c</name>
+        <picklistValues>
+            <masterLabel>Notice 0</masterLabel>
+            <translation><!-- Notice 0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Notice 1</masterLabel>
+            <translation><!-- Notice 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Notice 2</masterLabel>
+            <translation><!-- Notice 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Notice 3</masterLabel>
+            <translation><!-- Notice 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Notice 4</masterLabel>
+            <translation><!-- Notice 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Notice 5</masterLabel>
+            <translation><!-- Notice 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sold Date --></label>
+        <name>Sold_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Bus Days 3 --></label>
+        <name>Status_Bus_Days_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Bus Days 7 --></label>
+        <name>Status_Bus_Days_7__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status For Display --></label>
+        <name>Status_For_Display__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Notes --></label>
+        <name>Status_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Monthly Charge --></label>
+        <name>TotalMonthlyCharge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Price --></label>
+        <name>UnitPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Change Date --></label>
+        <name>Waiting_Since_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Waiting Status Descr - Last Set --></label>
+        <name>Waiting_Status_Descr_Last_Set__c</name>
+    </fields>
+    <fields>
+        <label><!-- Waiting Status Email Body --></label>
+        <name>Waiting_Status_Email_Body__c</name>
+    </fields>
+    <fields>
+        <label><!-- Waiting Status - Last Set Date --></label>
+        <name>Waiting_Status_Last_Set_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>Project Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Details --></label>
+            <section>Opportunity Details</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Product Details --></label>
+            <section>Opportunity Product Details</section>
+        </sections>
+        <sections>
+            <label><!-- Other Info (Remove?) --></label>
+            <section>Other Info (Remove?)</section>
+        </sections>
+        <sections>
+            <label><!-- USCP OLI Invoice Fields --></label>
+            <section>USCP OLI Invoice Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Project Layout - Read Only</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Details --></label>
+            <section>Opportunity Details</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Product Details --></label>
+            <section>Opportunity Product Details</section>
+        </sections>
+        <sections>
+            <label><!-- Other Info (Remove?) --></label>
+            <section>Other Info (Remove?)</section>
+        </sections>
+        <sections>
+            <label><!-- USCP OLI Invoice Fields --></label>
+            <section>USCP OLI Invoice Fields</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

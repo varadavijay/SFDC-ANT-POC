@@ -1,0 +1,8 @@
+Please process the credit card for the following Opportunity:
+
+{!Opportunity.Name}
+
+{!Payment_Processing__c.Name} - {!Payment_Processing__c.Link}
+
+
+Have a nice day!

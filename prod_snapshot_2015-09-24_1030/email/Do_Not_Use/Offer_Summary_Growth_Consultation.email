@@ -1,0 +1,15 @@
+Hi {!Lead.FirstName},
+
+It was great speaking with you today. I'm following up with more information on our current offer that expires May 31st. Before that date, we are offering Phoenix businesses like yours an opportunity to get a complimentary business growth consultation.  
+
+You'll get an individual consultation focused on your business objectives, along with tailored solutions designed to help you get the results you want.
+
+As your Personal Phoenix Marketing Consultant, I am here to provide you customized, locally-targeted marketing ideas for your business. If you have any questions or would like to schedule your free business growth consultation before the offer expires on May 31st, please reach out to me at {!User.X800_Number__c}. 
+
+I look forward to hearing from you.
+
+Best Regards,
+
+{!Lead.OwnerFullName}
+{!User.X800_Number__c}
+{!Lead.OwnerEmail}

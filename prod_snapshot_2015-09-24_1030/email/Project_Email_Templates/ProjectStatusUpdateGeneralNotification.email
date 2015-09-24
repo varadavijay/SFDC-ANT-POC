@@ -1,0 +1,19 @@
+<br/><br/>
+This email is to inform you that the below G/O Digital Project has been marked <br/><br/><strong>{!Project__c.Project_Status__c}</strong>.
+<br/><br/>
+If you have questions regarding this product please contact your GO Digital Account Manager, noted below.
+<br/><br/>
+Opportunity : <strong>{!Project__c.Opportunity__c}</strong><br/>
+Project : <strong>{!Project__c.Product_Name__c}</strong><br/>
+Sold Date : <strong>{!Project__c.Sold_Date__c}</strong><br/>
+Sales Rep : <strong>{!Project__c.Affl_Sales_Rep__c}</strong><br/>
+Customer : <strong>{!Project__c.Project_Account__c}</strong><br/>
+Digital AM : <strong>{!Project__c.Digital_Account_Manager__c}</strong><br/>
+Media Partner : <strong>{!Project__c.Media_Partner__c}</strong>
+<br/><br/>
+Thank You,
+<br/><br/>
+Your GO Team
+<br/><br/>
+Project Id - <strong>{!Project__c.Project_Id__c}</strong><br/>
+Update Time - <strong>{!Project__c.Waiting_Since_Date__c}</strong>

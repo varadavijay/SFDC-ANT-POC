@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>KPI Rep</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>KPI Reps</value>
+    </caseValues>
+    <fields>
+        <label><!-- Conf Number --></label>
+        <name>Conf_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Training --></label>
+        <name>Product_Training__c</name>
+        <picklistValues>
+            <masterLabel>Fail</masterLabel>
+            <translation><!-- Fail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pass</masterLabel>
+            <translation><!-- Pass --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rep Count --></label>
+        <name>Rep_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report To --></label>
+        <name>Report_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFDC License Approved --></label>
+        <name>SFDC_License_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Training --></label>
+        <name>Sales_Training__c</name>
+        <picklistValues>
+            <masterLabel>Caito Sales Training</masterLabel>
+            <translation><!-- Caito Sales Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Costigan Management Training</masterLabel>
+            <translation><!-- Costigan Management Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Costigan Phase 1</masterLabel>
+            <translation><!-- Costigan Phase 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Costigan Phase 2</masterLabel>
+            <translation><!-- Costigan Phase 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Costigan Phase 3</masterLabel>
+            <translation><!-- Costigan Phase 3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Score --></label>
+        <name>Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- UserIdFull --></label>
+        <name>UserIdFull__c</name>
+    </fields>
+    <fields>
+        <label><!-- UserId --></label>
+        <name>UserId__c</name>
+    </fields>
+    <fields>
+        <label><!-- UserIsActive --></label>
+        <name>UserIsActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Manager --></label>
+        <name>User_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Profile --></label>
+        <name>User_Profile__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- KPI Reps --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>KPI Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Training --></label>
+            <section>Training</section>
+        </sections>
+        <sections>
+            <label><!-- Training2 --></label>
+            <section>Training2</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Manager Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- ACQ --></label>
+        <name>ACQ</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

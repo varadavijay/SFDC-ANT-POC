@@ -1,0 +1,5 @@
+Account Name: 
+{!Opportunity.Account} 
+
+Opp Link: 
+{!Opportunity.Link}

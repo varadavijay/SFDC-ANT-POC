@@ -1,0 +1,956 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Account Manager Print Email --></label>
+        <name>Account_Manager_Print_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Manager Print FName --></label>
+        <name>Account_Manager_Print_FName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Manager Print HeShe --></label>
+        <name>Account_Manager_Print_HeShe__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Manager Print HimHer --></label>
+        <name>Account_Manager_Print_HimHer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Manager Print LName --></label>
+        <name>Account_Manager_Print_LName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Manager Print Phone --></label>
+        <name>Account_Manager_Print_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Manager Print Self --></label>
+        <name>Account_Manager_Print_Self__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Manager --></label>
+        <name>Account_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Market Id --></label>
+        <name>Account_Market_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Alternate Email --></label>
+        <name>Alternate_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Associate InActive --></label>
+        <name>Associate_InActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Associate --></label>
+        <name>Associate__c</name>
+        <relationshipLabel><!-- Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Auto Email - AM Assignment Alert --></label>
+        <name>Auto_Email_AM_Assignment_Alert__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Email - Call Request --></label>
+        <name>Auto_Email_Call_Request__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Email - Care Request Submit --></label>
+        <name>Auto_Email_Care_Request_Submit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Email - Digital Audit Submit --></label>
+        <name>Auto_Email_Digital_Audit_Submit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Email - Email Count Req --></label>
+        <name>Auto_Email_Email_Count_Req__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Email - Product Live Notice --></label>
+        <name>Auto_Email_Product_Live_Notice__c</name>
+    </fields>
+    <fields>
+        <help><!-- If you want this person to receive copies of new rates requests for this media partner. --></help>
+        <label><!-- Auto Email - Rate Request Submittal --></label>
+        <name>Auto_Email_Rate_Request_Submittal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Email - Website Audit Req --></label>
+        <name>Auto_Email_Website_Audit_Req__c</name>
+    </fields>
+    <fields>
+        <label><!-- Behavioral Score --></label>
+        <name>Behavioral_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Best Time To Call --></label>
+        <name>Best_Time_To_Call__c</name>
+        <picklistValues>
+            <masterLabel>Afternoon 4pm - 6pm</masterLabel>
+            <translation><!-- Afternoon 4pm - 6pm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Early Afternoon 12pm - 2pm</masterLabel>
+            <translation><!-- Early Afternoon 12pm - 2pm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Early Morning 6am - 9am</masterLabel>
+            <translation><!-- Early Morning 6am - 9am --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Evening 6pm - 8pm</masterLabel>
+            <translation><!-- Evening 6pm - 8pm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mid Afternoon 2pm - 4pm</masterLabel>
+            <translation><!-- Mid Afternoon 2pm - 4pm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Morning 9am - 12pm</masterLabel>
+            <translation><!-- Morning 9am - 12pm --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Business --></label>
+        <name>Business__c</name>
+        <picklistValues>
+            <masterLabel>Murfreesboro</masterLabel>
+            <translation><!-- Murfreesboro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Daily News Journal</masterLabel>
+            <translation><!-- The Daily News Journal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Jackson Sun</masterLabel>
+            <translation><!-- The Jackson Sun --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Leaf-Chronicle, Clarksville</masterLabel>
+            <translation><!-- The Leaf-Chronicle, Clarksville --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Tennessean, Nashville</masterLabel>
+            <translation><!-- The Tennessean, Nashville --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WBIR-TV, Knoxville</masterLabel>
+            <translation><!-- WBIR-TV, Knoxville --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Channel --></label>
+        <name>Channel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Status --></label>
+        <name>Contact_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Longer with Company</masterLabel>
+            <translation><!-- No Longer with Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Send Back To Marketing</masterLabel>
+            <translation><!-- Send Back To Marketing --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Deal Description --></label>
+        <name>Deal_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deal of the Day Capture Date --></label>
+        <name>Deal_of_the_Day_Capture_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demographic Score --></label>
+        <name>Demographic_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Do Not Call --></label>
+        <name>Do_Not_Call__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Post@ --></label>
+        <name>Email_PostAt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engagement Status --></label>
+        <name>Engagement_Status__c</name>
+        <picklistValues>
+            <masterLabel>Lead Gen Engaged</masterLabel>
+            <translation><!-- Lead Gen Engaged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Engaged</masterLabel>
+            <translation><!-- Sales Engaged --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Five9C2CCampaignName --></label>
+        <name>Five9C2CCampaignName__c</name>
+    </fields>
+    <fields>
+        <label><!-- GO Active --></label>
+        <name>GL_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- General Notes --></label>
+        <name>General_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Good Market Contact --></label>
+        <name>Good_Market_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- HubSpot Intelligence --></label>
+        <name>HubSpot_Inc__HubSpot_Intelligence__c</name>
+        <relationshipLabel><!-- Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SIC Code --></label>
+        <name>HubSpot_Inc__SICCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inactive --></label>
+        <name>InactiveStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI - Avg Time To Close --></label>
+        <name>KPI_Avg_Time_To_Close__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI - Dig Audit Closed 90 --></label>
+        <name>KPI_Dig_Audit_Closed_30__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI - Dig Audit Closed --></label>
+        <name>KPI_Dig_Audit_Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI - Dig Audit Converts --></label>
+        <name>KPI_Dig_Audit_Converts__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI - Dig Audit Requests 90 --></label>
+        <name>KPI_Dig_Audit_Requests_30__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI - Dig Audit Requests --></label>
+        <name>KPI_Dig_Audit_Requests__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI - Dig Audit Won Value 90 --></label>
+        <name>KPI_Dig_Audit_Won_Value_30__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI - Dig Audit Won Value --></label>
+        <name>KPI_Dig_Audit_Won_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI - Refresh --></label>
+        <name>KPI_Refresh__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Activity Datetime --></label>
+        <name>Last_Activity_Datetime__c</name>
+    </fields>
+    <fields>
+        <name>LeadSource</name>
+        <picklistValues>
+            <masterLabel>Account Transfer</masterLabel>
+            <translation><!-- Account Transfer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advertisement</masterLabel>
+            <translation><!-- Advertisement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Audit Request</masterLabel>
+            <translation><!-- Audit Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blog</masterLabel>
+            <translation><!-- Blog --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BuyerZone - Email Marketing Services</masterLabel>
+            <translation><!-- BuyerZone - Email Marketing Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deal of the Day Entry</masterLabel>
+            <translation><!-- Deal of the Day Entry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct Mail</masterLabel>
+            <translation><!-- Direct Mail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee Referral</masterLabel>
+            <translation><!-- Employee Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event</masterLabel>
+            <translation><!-- Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>External Referral</masterLabel>
+            <translation><!-- External Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GO Researcher Sourced List</masterLabel>
+            <translation><!-- GO Researcher Sourced List --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Market Rep</masterLabel>
+            <translation><!-- In Market Rep --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Gen Team</masterLabel>
+            <translation><!-- Lead Gen Team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Generator</masterLabel>
+            <translation><!-- Lead Generator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Online Advertising (Banner Ads)</masterLabel>
+            <translation><!-- Online Advertising (Banner Ads) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PPC (Pay Per Click)</masterLabel>
+            <translation><!-- PPC (Pay Per Click) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner/Channel/Affiliate Ref</masterLabel>
+            <translation><!-- Partner/Channel/Affiliate Ref --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physical Event (Tradeshows/Conf)</masterLabel>
+            <translation><!-- Physical Event (Tradeshows/Conf) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospecting</masterLabel>
+            <translation><!-- Prospecting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Relations</masterLabel>
+            <translation><!-- Public Relations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purchased List</masterLabel>
+            <translation><!-- Purchased List --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SEO (Organic Search)</masterLabel>
+            <translation><!-- SEO (Organic Search) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Internal</masterLabel>
+            <translation><!-- Seminar - Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Partner</masterLabel>
+            <translation><!-- Seminar - Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Simply Gifted Website</masterLabel>
+            <translation><!-- Simply Gifted Website --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social Media</masterLabel>
+            <translation><!-- Social Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telemarketing</masterLabel>
+            <translation><!-- Telemarketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trade Show</masterLabel>
+            <translation><!-- Trade Show --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Traditional Ads (Radio, TV, Print)</masterLabel>
+            <translation><!-- Traditional Ads (Radio, TV, Print) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WebForm</masterLabel>
+            <translation><!-- WebForm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Webinar/Virtual Event</masterLabel>
+            <translation><!-- Webinar/Virtual Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Word of Mouth/Client Referral</masterLabel>
+            <translation><!-- Word of Mouth/Client Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Word of mouth</masterLabel>
+            <translation><!-- Word of mouth --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Used by admins to describe the Lead Source in greater detail. --></help>
+        <label><!-- Lead Source Detail --></label>
+        <name>Lead_Source_Detail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>Lead__c</name>
+        <relationshipLabel><!-- Additional Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Market --></label>
+        <name>Market__c</name>
+        <relationshipLabel><!-- Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Marketing Decision Maker? --></label>
+        <name>Marketing_Decision_Maker__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Market Contact --></label>
+        <name>Primary_Market_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Enhancement Requestor --></label>
+        <name>Product_Enhancement_Requestor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Promotion Source --></label>
+        <name>Promotion_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send TB Contract --></label>
+        <name>Send_TB_Contract__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Test Email --></label>
+        <name>Send_Test_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+        <picklistValues>
+            <masterLabel>Buy With Me</masterLabel>
+            <translation><!-- Buy With Me --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Dealster</masterLabel>
+            <translation><!-- Daily Dealster --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deal Chicken</masterLabel>
+            <translation><!-- Deal Chicken --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Doozy of a Deal</masterLabel>
+            <translation><!-- Doozy of a Deal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Groupon</masterLabel>
+            <translation><!-- Groupon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Run</masterLabel>
+            <translation><!-- Home Run --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KGB Deals</masterLabel>
+            <translation><!-- KGB Deals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Living Social</masterLabel>
+            <translation><!-- Living Social --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LocalDines</masterLabel>
+            <translation><!-- LocalDines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Times</masterLabel>
+            <translation><!-- New Times --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Travel Zoo</masterLabel>
+            <translation><!-- Travel Zoo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly Plus</masterLabel>
+            <translation><!-- Weekly Plus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weforia</masterLabel>
+            <translation><!-- Weforia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yollar</masterLabel>
+            <translation><!-- Yollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>icoupon</masterLabel>
+            <translation><!-- icoupon --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Auto Email - Status Alert Options --></label>
+        <name>Status_Alert_Options__c</name>
+        <picklistValues>
+            <masterLabel>--Internal Use Only--</masterLabel>
+            <translation><!-- - - Internal Use Only- -  --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting OnBoard</masterLabel>
+            <translation><!-- Awaiting OnBoard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canceled</masterLabel>
+            <translation><!-- Canceled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fulfilled Non-Renewal</masterLabel>
+            <translation><!-- Fulfilled Non-Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fulfilled Renewed</masterLabel>
+            <translation><!-- Fulfilled Renewed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fulfilled-Complete</masterLabel>
+            <translation><!-- Fulfilled-Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Fulfillment</masterLabel>
+            <translation><!-- In Fulfillment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Live</masterLabel>
+            <translation><!-- Live --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paused:Billing</masterLabel>
+            <translation><!-- Paused:Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paused:No Contract</masterLabel>
+            <translation><!-- Paused:No Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting On Client Approval</masterLabel>
+            <translation><!-- Waiting On Client Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting On Client Resource</masterLabel>
+            <translation><!-- Waiting On Client Resource --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Survey Results --></label>
+        <name>Survey_Results__c</name>
+        <relationshipLabel><!-- Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sync With Marketo --></label>
+        <name>Sync_With_Marketo__c</name>
+    </fields>
+    <fields>
+        <label><!-- MatchKey --></label>
+        <name>TRIMEC__MatchKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Match Level --></label>
+        <name>TRIMEC__MatchLevel__c</name>
+    </fields>
+    <fields>
+        <label><!-- MatchScore --></label>
+        <name>TRIMEC__MatchScore__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Campaign --></label>
+        <name>Target_Campaign__c</name>
+    </fields>
+    <fields>
+        <label><!-- Web Submitter --></label>
+        <name>Web_Submitter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zendesk Result --></label>
+        <name>Zendesk__Result__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tags --></label>
+        <name>Zendesk__Tags__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zendesk_OutofSync --></label>
+        <name>Zendesk__Zendesk_OutofSync__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zendesk_oldTags --></label>
+        <name>Zendesk__Zendesk_oldTags__c</name>
+    </fields>
+    <fields>
+        <label><!-- isCreatedUpdatedFlag --></label>
+        <name>Zendesk__isCreatedUpdatedFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Zendesk__notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zendesk User Id --></label>
+        <name>Zendesk__zendesk_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Acquisition Date --></label>
+        <name>mkto2__Acquisition_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Acquisition Program Id --></label>
+        <name>mkto2__Acquisition_Program_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Acquisition Program --></label>
+        <name>mkto2__Acquisition_Program__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inferred City --></label>
+        <name>mkto2__Inferred_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inferred Company --></label>
+        <name>mkto2__Inferred_Company__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inferred Country --></label>
+        <name>mkto2__Inferred_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inferred Metropolitan Area --></label>
+        <name>mkto2__Inferred_Metropolitan_Area__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inferred Phone Area Code --></label>
+        <name>mkto2__Inferred_Phone_Area_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inferred Postal Code --></label>
+        <name>mkto2__Inferred_Postal_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inferred State Region --></label>
+        <name>mkto2__Inferred_State_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Score --></label>
+        <name>mkto2__Lead_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Referrer --></label>
+        <name>mkto2__Original_Referrer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Search Engine --></label>
+        <name>mkto2__Original_Search_Engine__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Search Phrase --></label>
+        <name>mkto2__Original_Search_Phrase__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Source Info --></label>
+        <name>mkto2__Original_Source_Info__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Source Type --></label>
+        <name>mkto2__Original_Source_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketo Segmentation --></label>
+        <name>mkto_Marketo_Segmentation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hide Date --></label>
+        <name>mkto_si__HideDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Interesting Moment Date --></label>
+        <name>mkto_si__Last_Interesting_Moment_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Interesting Moment Desc --></label>
+        <name>mkto_si__Last_Interesting_Moment_Desc__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Interesting Moment Source --></label>
+        <name>mkto_si__Last_Interesting_Moment_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Interesting Moment Type --></label>
+        <name>mkto_si__Last_Interesting_Moment_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Interesting Moment --></label>
+        <name>mkto_si__Last_Interesting_Moment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engagement --></label>
+        <name>mkto_si__Priority__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relative Score Value --></label>
+        <name>mkto_si__Relative_Score_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relative Score --></label>
+        <name>mkto_si__Relative_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Insight --></label>
+        <name>mkto_si__Sales_Insight__c</name>
+    </fields>
+    <fields>
+        <label><!-- Urgency Value --></label>
+        <name>mkto_si__Urgency_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Urgency --></label>
+        <name>mkto_si__Urgency__c</name>
+    </fields>
+    <fields>
+        <label><!-- View in Marketo --></label>
+        <name>mkto_si__View_in_Marketo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dials --></label>
+        <name>qbdialer__Dials__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Call Time --></label>
+        <name>qbdialer__LastCallTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Time --></label>
+        <name>qbdialer__ResponseTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- TimeZone Sid Key --></label>
+        <name>qbdialer__TimeZoneSidKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours --></label>
+        <name>radius__Hours__c</name>
+    </fields>
+    <layouts>
+        <layout>BLANK Contact Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DC Radius TB</layout>
+        <sections>
+            <label><!-- Deal of the Day --></label>
+            <section>Deal of the Day</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>DealChicken Operations</layout>
+        <sections>
+            <label><!-- Deal of the Day --></label>
+            <section>Deal of the Day</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Market Contact</layout>
+        <sections>
+            <label><!-- KPI Metrics --></label>
+            <section>KPI Metrics</section>
+        </sections>
+        <sections>
+            <label><!-- Notification/Alert Controls --></label>
+            <section>Notification/Alert Controls</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SML Account Manger-</layout>
+        <sections>
+            <label><!-- Deal of the Day --></label>
+            <section>Deal of the Day</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SML Contact DealChicken GL Radius</layout>
+        <sections>
+            <label><!-- Deal of the Day --></label>
+            <section>Deal of the Day</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SML Contact DealChicken Nat Radius</layout>
+        <sections>
+            <label><!-- Deal of the Day --></label>
+            <section>Deal of the Day</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SML Contact Layout</layout>
+        <sections>
+            <label><!-- Deal of the Day --></label>
+            <section>Deal of the Day</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SML Contact Standard Layout</layout>
+        <sections>
+            <label><!-- Contact Information --></label>
+            <section>Contact Information</section>
+        </sections>
+        <sections>
+            <label><!-- Deal of the Day --></label>
+            <section>Deal of the Day</section>
+        </sections>
+        <sections>
+            <label><!-- Marketo Information --></label>
+            <section>Marketo Information</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Affiliated --></label>
+        <name>Affiliated</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DealChicken ZenDesk Contact --></label>
+        <name>DealChicken_ZenDesk_Contact</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- G/O Digital --></label>
+        <name>Gannett_Local</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Inactive Affiliated Contact --></label>
+        <name>Inactive_Affiliated_Contact</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- SML Contact --></label>
+        <name>SML_Contact</name>
+    </recordTypes>
+    <webLinks>
+        <label><!-- Conga_Mail_Merge --></label>
+        <name>APXTConga4__Conga_Mail_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Add_New_Contact --></label>
+        <name>Add_New_Contact</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Call --></label>
+        <name>Call</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Re_subscribe_in_ExactTarget --></label>
+        <name>Re_subscribe_in_ExactTarget</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SendExactTargetEmail --></label>
+        <name>SendExactTargetEmail</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SendGmail --></label>
+        <name>SendGmail</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Sponsored_Accounts --></label>
+        <name>Sponsored_Accounts</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Merge --></label>
+        <name>TRIMEC__Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Contact --></label>
+        <name>TRIMEC__New_Contact</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- YahooMaps --></label>
+        <name>YahooMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- YahooWeather --></label>
+        <name>YahooWeather</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Add_to_Marketo_Campaign --></label>
+        <name>mkto_si__Add_to_Marketo_Campaign</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Add_to_Watch_List --></label>
+        <name>mkto_si__Add_to_Watch_List</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Marketo_Email --></label>
+        <name>mkto_si__Send_Marketo_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_List --></label>
+        <name>qbdialer__Create_List</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Launch_Click_to_Call --></label>
+        <name>qbdialer__Launch_Click_to_Call</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Manage_Lists --></label>
+        <name>qbdialer__Manage_Lists</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Add_Existing_Document --></label>
+        <name>tinderbox__Add_Existing_Document</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_TinderBox_Document --></label>
+        <name>tinderbox__New_TinderBox_Document</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Use this when an unhappy customer calls in to complain about their campaign or cancel</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>Unhappy, customer, complain, cancel,</keywords>
+    <name>Managing an unhappy customer - CUSTOMER CARE version</name>
+    <public>false</public>
+</Document>

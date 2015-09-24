@@ -1,0 +1,845 @@
+<apex:page standardController="Lead" title="Contact Us" showHeader="false" sidebar="false" extensions="DigitalAuditRequestExtension">
+<apex:includeScript value="{!URLFOR($Resource.ulPicklist, '/jquery-1.7.2.min.js')}"  />
+<apex:includeScript value="{!URLFOR($Resource.ulPicklist, '/ulPickList.js')}"  />
+<apex:includeScript value="{!URLFOR($Resource.poshytip, '/jquery.poshytip.js')}"  />
+<apex:stylesheet value="{!URLFOR($Resource.poshytip, '/tip-yellow/tip-yellow.css')}"/>
+<style>
+ul.container-list {
+    width: 200px;
+    min-heigth: 300px;
+    border: 1px solid gray;
+    overflow-x: auto;
+    overflow-y: scroll;
+    display: block;
+    list-style : none;
+    color : black;
+    padding : 0px;
+    background-color : white;
+    margin-right: 15px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+ul.container-list li {
+    padding : 2px;
+    margin : 0px;
+    cursor : pointer;
+    border-bottom : 1px #EEE solid;
+    font-size: 0.9em;
+}
+
+</style>
+
+ <apex:composition template="{!$Site.Template}"> 
+  <apex:define name="body"> 
+    <apex:pageMessages />
+    <apex:form >
+    <apex:messages id="error" styleClass="errorMsg" layout="table" style="margin-top:1em;"/>
+    <div style="text-align:right;"><a id="helpme" style="cursor:pointer;" target="#">What Great Thing Happened To My Audit Page? (Hover To Display Help)</a></div>
+        <apex:outputfield rendered="false" value="{!Lead.Website_Quote__c}"/>
+        <apex:outputfield rendered="false" value="{!Lead.Email_Count_Request__c}"/>
+        <apex:pageBlock mode="mainDetail">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Submit" action="{!saveRequest}"/>
+            </apex:pageBlockButtons>
+<table width="100%">
+<tr valign="top">
+<td width="50%">
+    <!-- Alphabetical Selection -->
+        <apex:actionRegion >
+            <apex:actionFunction name="redrawSalesRepSelect" action="{!null}" rerender="salesRepSelect"/> 
+                <br/>
+                <apex:pageBlockSection title="" columns="1" collapsible="true">
+                <apex:pageBlockSectionItem >
+                    <apex:outputPanel layout="block" style="width:300px;">Select The First Letter Of The First Name Of Sales Rep In Order To Filter The Sales Rep Names (Pick One)</apex:outputPanel>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList value="{!includeSalesReps}" multiselect="false" size="1"  required="true" onchange="redrawSalesRepSelect();">
+                            <apex:selectOptions value="{!items1}"/>
+                        </apex:selectList>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:actionRegion>
+        
+<apex:outputPanel id="salesRepSelect">
+    <apex:actionRegion >
+        <apex:actionFunction name="redrawNotInList" action="{!null}" rerender="salesRepNotInList"/>
+            <apex:pageBlocksection columns="1">
+                    
+                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'A'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'B'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList2" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions2}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem> 
+
+                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'C'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList3" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions3}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>    
+                
+                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'D'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList4" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions4}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>      
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'E'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList5" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions5}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'F'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList6" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions6}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'G'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList7" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions7}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'H'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepLis8" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions8}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'I'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList9" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions9}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'J'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList10" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions10}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'K'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList11" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions11}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'L'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList12" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions12}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'M'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList13" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions13}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'N'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList14" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions14}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'O'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList15" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions15}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'P'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList16" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions16}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'Q'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList17" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions17}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'R'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList18" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions18}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'S'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList19" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions19}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'T'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList20" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions20}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'U'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList21" value="{!includeLetter}" multiselect="false" size="1" required="false" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions21}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'V'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList22" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions22}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'W'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList23" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions23}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'X'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList24" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions24}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'Y'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList25" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions25}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'Z'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Sales Rep Name From The List</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList26" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions26}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+           </apex:pageBlockSection>
+    </apex:actionRegion>
+</apex:outputPanel>
+
+<apex:outputPanel id="salesRepNotInList">
+    <apex:pageBlockSection columns="1">
+        <apex:pageBlockSectionItem rendered="{!includeLetter == '003F000000y4o1V'}">
+        <apex:outputPanel layout="block" style="width:300px;">If Not In List, Type Sales Rep Name:</apex:outputPanel>
+            <apex:outputPanel layout="block" styleClass="requiredInput">
+            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+            <apex:inputField value="{!Lead.Affiliated_Sales_Rep__c}" required="true"/>
+        </apex:outputPanel>
+        </apex:pageBlockSectionItem>                  
+    </apex:pageBlockSection>
+</apex:outputPanel>
+</td>
+<td width="50%">
+<!--  THIS SECTION IS TO CONTROL THE ENTERING OF THE ADDITIONAL EMAIL NOTIFICATIONS -->
+        <apex:actionRegion >
+            <apex:actionFunction name="redrawAddlNotif" action="{!null}" rerender="AddlNotif"/> 
+                <apex:pageBlockSection title="" columns="1" collapsible="true">
+                <apex:pageBlockSectionItem >
+                    <apex:outputPanel layout="block" style="width:300px;">Do you wish to copy any others on this submittal request?</apex:outputPanel>
+                        <apex:selectList value="{!includeNotify}" multiselect="false" size="1" onchange="redrawAddlNotif();">
+                            <apex:selectOptions value="{!yesNoOptions}"/>
+                        </apex:selectList>
+                </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+        </apex:actionRegion>
+
+<apex:outputPanel id="AddlNotif">   
+    <apex:pageBlockSection columns="1" rendered="{!includeNotify == 'true'}">
+        <apex:outputText value="Enter Email Addresses Only Please" style="font-size:1em;font-weight:bold;color:#1C92D0"/>
+        <apex:outputText value="**Important - confirm and use @gannett.com addresses only." style="font-size:1em;font-weight:bold;color:#1C92D0"/>
+        <apex:inputText value="{!Notify1}" required="false" label="Email One:" style="width:100%; font-size:1em;" />
+        <apex:inputText value="{!Notify2}" required="false" label="Email Two:" style="width:100%; font-size:1em;" />
+        <apex:inputText value="{!Notify3}" required="false" label="Email Three:" style="width:100%; font-size:1em;" />
+    </apex:pageBlockSection>
+</apex:outputPanel>        
+         
+</td>
+</tr>
+</table>  
+
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->   
+         
+<table width="100%">
+<tr valign="top">
+<td width="50%">
+<apex:pageBlockSection title="Advertiser Information" collapsible="false" columns="1">
+
+                <!--<apex:inputField value="{!Lead.Affiliated_Sales_Rep__c}" label="Enter Sales Rep Name (If Not In List):" style="width:200px;" tabOrderHint="2"/><br/>-->
+
+                <!--<apex:inputField value="{!Lead.Dig_Aud_Notify__c}" label="Enter Additional Notifications For Audit Request (Email Adresses)" tabOrderHint="4" style="width:300px;"/>-->
+                
+                <apex:outputPanel layout="block" style="color:#1C92D0;font-weight:bold;">&nbsp;<br/>Company Name &amp; Contact Information</apex:outputPanel>
+                    
+                 <apex:inputField value="{!Lead.Company}" tabOrderHint="3" style="width:300px;" label="Company (Advertiser)"/>  
+                 <apex:inputField value="{!Lead.Seminar_Audit__c}" required="true" label="Did Advertiser Attend A Seminar?"/>               
+                 <apex:inputField value="{!Lead.LastName}" label="Name (Advertiser Contact)" tabOrderHint="4" style="width:300px;"/>
+                 <apex:inputField value="{!Lead.Phone}" label="Client's (Advertiser's) Phone" tabOrderHint="5" style="width:300px;" required="true"/>
+                 <apex:inputField value="{!Lead.Industry_AffiliatedMarkets__c}" tabOrderHint="6" style="width:300px;" required="true" label="Advertiser's Industry"/>
+            </apex:pageBlockSection>
+</td>
+<td width="50%">
+            <!-- Media Partners -->
+            
+            <apex:pageBlockSection columns="1" collapsible="false">
+                <apex:pageBlockSectionItem >
+                
+                <apex:outputPanel id="MediaPartnerChoose">
+                   <apex:pageBlockSection columns="1" title="Market Selection">
+                    <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Select Media Partner:</apex:outputlabel>
+                     <apex:outputPanel layout="block" styleClass="requiredInput">
+                     <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                      <apex:selectList value="{!Lead.Related_Company__c}" multiselect="false" size="1" style="width:300px;" required="true" tabindex="3">
+                        <apex:selectOptions value="{!itemsm}" id="moptions"/>
+                      </apex:selectList>
+                     </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                </apex:outputPanel>
+                <!--
+                    <apex:outputPanel >
+                    <apex:outputLabel value="Select Media Partner" style="color:#1C92D0; font-weight:bold;"/>                   
+                    <apex:outputPanel layout="block">                               
+                        <apex:selectList id="mediaPartners" value="{!selectedMediaPartners}" multiselect="true" size="10" required="false"  style="width:200px;">
+                            <apex:selectOptions value="{!mediaPartnerOptions}"/>
+                        </apex:selectList>
+                        <apex:panelGrid columns="2">
+                            <apex:outputpanel ><apex:outputLabel value="Available"  styleClass="boldLabel"/>&nbsp;<i>(Click Item to Add)</i></apex:outputpanel>
+                            <apex:outputpanel ><apex:outputLabel value="Chosen"  styleClass="boldLabel"/>&nbsp;<i>(Click Item to Remove)</i></apex:outputpanel>
+        
+                            <apex:outputPanel id="availableMediaPartners" />
+                            <apex:outputPanel id="selectedMediaPartners" />
+                        </apex:panelGrid>
+                    </apex:outputPanel> 
+                    </apex:outputPanel>
+                -->      
+                </apex:pageBlockSectionItem>  
+               
+            </apex:pageBlockSection>
+</td>
+</tr>
+</table>
+            <apex:outputPanel id="subSections">
+            <!-- Digital Audit -->
+                <apex:actionRegion >
+                    <apex:actionFunction name="redrawDigAudit" action="{!null}" rerender="digAudit"/>
+                    <apex:actionFunction name="redrawEmailCount" action="{!null}" rerender="emailCount"/>
+                    <apex:actionFunction name="redrawWebsiteQuote" action="{!null}" rerender="designType"/>
+                    <apex:actionFunction name="redrawCallRequest" action="{!null}" rerender="callRequest"/> 
+                    <apex:pageBlockSection title="AUDIT SELECTIONS" collapsible="false" columns="2" >
+
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel >Is a Digital Audit Needed?</apex:outputPanel>
+                            <apex:outputPanel layout="block" styleClass="requiredInput">
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                <apex:selectList value="{!includeDigitalAudit}" multiselect="false" size="1" onchange="redrawDigAudit();">
+                                    <apex:selectOptions value="{!yesNoOptions}"/>
+                                </apex:selectList>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel >Is an Email Blast Needed?</apex:outputPanel>
+                            <apex:outputPanel layout="block" styleClass="requiredInput">
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                <apex:selectList value="{!includeEmailCount}" multiselect="false" size="1" onchange="redrawEmailCount();">
+                                    <apex:selectOptions value="{!yesNoOptions}"/>
+                                </apex:selectList>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel >Is a Custom Website Quote Needed?</apex:outputPanel> 
+                            <apex:outputPanel layout="block" styleClass="requiredInput">
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                <apex:selectList value="{!includeWebsiteQuote}" multiselect="false" size="1" onchange="redrawWebsiteQuote();">
+                                    <apex:selectOptions value="{!yesNoOptions}"/>
+                                </apex:selectList>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel >Do You Need To Request A Knowledge Team Sales Call?</apex:outputPanel> 
+                            <apex:outputPanel layout="block" styleClass="requiredInput">
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                <apex:selectList value="{!includeCallRequest}" multiselect="false" size="1" onchange="redrawCallRequest();">
+                                    <apex:selectOptions value="{!yesNoOptions}"/>
+                                </apex:selectList>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>  
+
+                        <br/>
+                        <!--<apex:outputText >"*Sales Call Request - For Sales Opportunities $2000 Per Month And Above Only Please"</apex:outputText>-->
+                    </apex:pageBlockSection>
+                </apex:actionRegion>
+                <apex:outputPanel id="digAudit">
+                
+                    <apex:pageBlockSection title="Digital Audit Information" columns="1" rendered="{!includeDigitalAudit == 'true'}" collapsible="true">
+                        <apex:inputField value="{!Lead.Website}" label="Enter Website In Format (www.website.com)" style="width: 50%;" required="true"/>
+                 
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel layout="block" style="width:300px;">How do they define a lead?</apex:outputPanel>
+                             <apex:outputPanel >
+                             <apex:inputField value="{!Lead.Win_1__c}" required="true"/> 
+                             <apex:inputField value="{!Lead.Win_2__c}" required="true"/>
+                             </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!Lead.LeadDefinition__c}" label="Lead Definition" style="width: 100%;" />
+                        <apex:inputField value="{!Lead.List_Products_Services__c}" label="What Products/Services do they want to focus on promoting?" style="width: 100%;" required="true"/>
+                        <apex:inputField value="{!Lead.Select_New_Products__c}" label="Are there any specific products that you NEED to have?  If not, please leave blank and your Jumpstart Specialist will evaluate the best needs for your client." required="false"/>
+                        <!--<apex:inputField value="{!Lead.Select_Other_Products__c}" label="Other Products?" style="width: 75%;" required="false"/>-->
+                        <apex:inputField value="{!Lead.Budget_Range__c}" label="Monthly Digital Budget Range" style="width: 50%;"  required="true"/>
+                        <apex:inputField value="{!Lead.Geog_Serv_Area__c}" label="Geographical Area - Include City and Service Radius In Miles" required="true"/>
+        
+                        <apex:pageBlockSectionItem >
+                             <apex:outputLabel value="What are the client's top three competitors' Website URLs?"/>
+                             <apex:outputPanel >
+                             <apex:inputField value="{!Lead.Comp_1__c}" style="width: 50%;" required="true"/>
+                              <apex:inputField value="{!Lead.Comp_2__c}" style="width: 50%;" required="true"/>
+                              <apex:inputField value="{!Lead.Comp_3__c}" style="width: 50%;" required="true"/>
+                             </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+            
+                        <apex:inputField value="{!Lead.Avg_Cust_Val__c}" label="What is the average customer value?" required="true"/>
+                     
+                        <apex:inputField value="{!Lead.Curr_Adv__c}" label="What is their current advertising?" required="true"/>
+                        <apex:inputField value="{!Lead.BestWhy__c}" label="What medium works best and why?" style="width: 75%;"/>
+                    <apex:inputField value="{!Lead.General_Notes__c}" label="Other Comments Or Notes" style="width: 75%;"/>
+                  
+                    </apex:pageBlockSection>
+                </apex:outputPanel>
+                
+                <!-- Email Count 
+                <apex:actionRegion >
+                    <apex:actionFunction name="redrawEmailCount" action="{!null}" rerender="emailCount"/>
+                    <apex:pageBlockSection title="Email Count Request" collapsible="false" columns="1">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel layout="block" style="width:300px;">Is an Email Count Needed?</apex:outputPanel>
+                            
+                            <apex:outputPanel layout="block" styleClass="requiredInput">
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                <apex:selectList value="{!includeEmailCount}" multiselect="false" size="1" onchange="redrawEmailCount();">
+                                    <apex:selectOptions value="{!yesNoOptions}"/>
+                                </apex:selectList>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>    
+                    </apex:pageBlockSection>
+                </apex:actionRegion>style="color:#1C92D0;font-weight:bold;"-->
+                
+                <apex:outputPanel id="emailCount">
+                    <apex:pageBlockSection title="Email Blast Request Information" columns="1" rendered="{!includeEmailCount == 'true'}" collapsible="true">
+                          <apex:outputText style="color:#1C92D0;font-weight:bold;" value="**Please enter either a zipcode, county, state, or DMA.  We are UNABLE to pull by City.  We CAN pull based on a radius from a zip or cluster of zips."/>
+                          <apex:inputField value="{!Lead.EC_Target_Geographics__c}" label="What is the geographical target area?" style="width: 75%;" required="true"/> 
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection columns="2" rendered="{!includeEmailCount == 'true'}" collapsible="true">
+                    <apex:inputField value="{!Lead.EC_Target_Demographic__c}" label="What are the demographic targets?" style="width: 100%;" required="true"/> 
+                    <apex:outputText style="color:#1C92D0;" value="Choose A Link Based On Your Business Team To View Demographic Options"/>
+                    <apex:outputText >""</apex:outputText>
+                    <apex:outputLink value="https://wiki.gannettlocal.com/display/GLBC/Broadcast+Email+Database+Catalog" target="_blank" id="wikiLinkGOBC">Broadcast Wiki</apex:outputLink>      
+                    <apex:outputText >""</apex:outputText>
+                    <apex:outputLink value="https://wiki.gannettlocal.com/display/GLUSCP/USCP+Email+Database+Catalog" target="_blank" id="wikiLinkGOCP">USCP Wiki</apex:outputLink>
+                    <apex:outputText >""</apex:outputText>
+                    <apex:outputLink value="https://wiki.gannettlocal.com/display/CLIP/Clipper+Email+Database+Catalog" target="_blank" id="wikiLinkGOCR">Clipper Wiki</apex:outputLink>
+                    <apex:outputText >""</apex:outputText>
+                    <apex:outputLink value="https://wiki.gannettlocal.com/display/GANL/Direct+Email+Database+Catalog" target="_blank" id="wikiLinkGODR">Direct Wiki</apex:outputLink>
+                    <apex:outputText ></apex:outputText>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection columns="1" rendered="{!includeEmailCount == 'true'}" collapsible="true">
+                          <apex:inputField value="{!Lead.EC_Email_Quantity__c}" label="What is the quantity being requested? **10000 Minimum" style="width: 50%;" required="true"/> 
+                          <apex:inputField value="{!Lead.EC_Email_Budget__c}"  label="What is the budget for the campaign?" style="width: 50%;" required="true"/> 
+                          <apex:inputField value="{!Lead.Email_Count_Request_Notes__c}" label="Describe the campaign goals?" style="width: 100%;" required="true"/>
+                    </apex:pageBlockSection>
+                </apex:outputPanel>
+                
+                <!-- Website Quote -->
+                <!--<apex:actionRegion >
+                    <apex:actionFunction name="redrawWebsiteQuote" action="{!null}" rerender="websiteQuote"/>
+                    <apex:pageBlockSection title="Website Quote" collapsible="false" columns="1" >
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel layout="block" style="width:300px;">Is a Custom Website Quote Needed?</apex:outputPanel> 
+                            <apex:outputPanel layout="block" styleClass="requiredInput">
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                <apex:selectList value="{!includeWebsiteQuote}" multiselect="false" size="1" onchange="redrawWebsiteQuote();">
+                                    <apex:selectOptions value="{!yesNoOptions}"/>
+                                </apex:selectList>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>     
+                    </apex:pageBlockSection>
+                </apex:actionRegion>-->
+
+
+                <!-- Lead Capture Page Or Website -->
+                <apex:outputPanel id="designType">
+                    <apex:actionRegion >
+                        <apex:actionFunction name="redrawPageType" action="{!null}" rerender="pageType"/>
+                        <apex:pageBlockSection title="Website Quote Information" collapsible="false" columns="1" rendered="{!includeWebsiteQuote == 'true'}">
+                            <apex:pageBlockSectionItem >
+                                <apex:outputPanel layout="block" style="width:300px;">Do You Need A Lead Capture Page Or A Full Website?</apex:outputPanel>
+                                <apex:outputPanel layout="block" styleClass="requiredInput">
+                                <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                    <apex:selectList value="{!includeWebsiteType}" multiselect="false" size="1" onchange="redrawPageType();">
+                                        <apex:selectOptions value="{!pageTypeOptions}"/>
+                                    </apex:selectList>
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>    
+                        </apex:pageBlockSection>
+                    </apex:actionRegion>
+                </apex:outputPanel>     
+                
+                
+        <apex:outputPanel id="pageType">
+                <apex:actionRegion >
+                <apex:actionFunction name="redrawWebQuoteDetail" action="{!null}" rerender="websiteQuote"/>    
+                    <apex:pageBlocksection columns="2" rendered="{!(includeWebsiteType == 'lead capture' && includeWebsiteQuote == 'true')}">
+                        <!-- SJ 2014-07-09 US2807 Replace Landing page with Lead Capture page.
+                        <apex:outputText >"Template Landing Page"</apex:outputText>
+                        <apex:outputText >"Custom Landing Page"</apex:outputText>
+                        <apex:outputText >"We offer template landing pages which is a 2 page template based design. (Home and Contact). Insert your logo, images and content."<apex:outputLink value="http://data2.tennessean.com/clients/kohanahendersonville/index.php">Example</apex:outputLink></apex:outputText>
+
+                        <apex:outputText >"Custom Landing pages start at $750. Anything outside of a template landing page will need to be quoted on an individual basis."</apex:outputText>
+                        <apex:outputText >"$350 setup fee, $25 monthly hosting"</apex:outputText>
+                        <br/>
+                         -->
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel layout="block" style="width:300px;">Select Lead Capture Type</apex:outputPanel>
+                            <apex:outputPanel layout="block" styleClass="requiredInput">
+                                <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                <apex:selectList id="lpOptions" value="{!leadCaptureTypeOptions}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawWebQuoteDetail();">
+                                    <apex:selectOptions value="{!leadCapturePageType}"/>
+                                </apex:selectList>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                   </apex:pageBlockSection> 
+                   
+                    <apex:pageBlocksection columns="2" rendered="{!includeWebsiteType == 'full'}">      
+                        <apex:outputText >"Custom Website"</apex:outputText>
+                        <apex:outputText ></apex:outputText>
+                        <apex:outputText >"Most custom websites requests are typically in the 6-8k range, but can be much higher depending on needs and functionality."</apex:outputText>
+                        <apex:outputText ></apex:outputText>
+                        <apex:outputText >"Sample Pages/Functionality for a custom site in 6-8k range: Homepage, Media Gallery, Service pages (up to 10), Social Feeds, Contact Us (with interactive map), News/Blog, Special Offers, FAQs, About Us and up to 5 extra pages"</apex:outputText>
+                        <apex:outputText ></apex:outputText>
+                        <apex:outputText >"When adding more functionality, quote amount will increase. Examples: Event Calendar (with and without event registration/payment), Ecommerce, Product Catalog, MLS/IDX integrations, Live Chat, Membership/Listing Directory, Real Estate CRM, Custom Forms"</apex:outputText>
+                        <apex:outputText ></apex:outputText>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel layout="block" style="width:300px;">Choose Template Type Or Custom</apex:outputPanel>
+                            <apex:outputPanel layout="block" styleClass="requiredInput">
+                                <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                <apex:selectList id="fpOptions" value="{!fullPageTypeOptions}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawWebQuoteDetail();">
+                                    <apex:selectOptions value="{!fullPageOptions}"/>
+                                </apex:selectList>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                   </apex:pageBlockSection> 
+                </apex:actionRegion>
+     </apex:outputPanel>
+                
+                <apex:outputPanel id="websiteQuote">
+                    <!--  rendered="OR({!landingTypeOptions == 'custom'},{!fullPageTypeOptions == 'custom'})"  rendered="{!OR(Lead.Website_Search_Rank__c ='Important',Lead.Website_Search_Rank__c ='Very Important')}"-->
+                    <apex:pageBlockSection title="Enter Custom Site Details" columns="2" rendered="{!fullPageTypeOptions == 'custom'}" collapsible="true">
+                        <apex:inputField value="{!Lead.ECommerce_Website__c}" required="true" label="Is This An ECommerce Website?"/>
+                        <apex:inputField value="{!Lead.Custom_Website_Budget__c}" required="true" label="What is the Custom Website Budget Range?"/>
+                        <apex:inputField value="{!Lead.Website_Comp_Time__c}" required="true" label="What is the customer website completion timeframe?"/>
+                        <apex:inputField value="{!Lead.Write_Content__c}" required="true" label="Will the client need us to write content?"/>
+                                            
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel layout="block">Does the client have an existing URL?</apex:outputPanel> 
+                            <apex:outputPanel >
+                                <apex:actionRegion >
+                                    <apex:actionFunction name="updateRedesign" action="{!null}" rerender="newOrRedesign"/>
+                                    <apex:inputField value="{!Lead.Website_New_Or_Redesign__c}" required="true" onchange="updateRedesign();"/>
+                                </apex:actionRegion>
+                            </apex:outputPanel>
+                       </apex:pageBlockSectionItem>
+                                <apex:outputPanel id="newOrRedesign" >
+                                    <apex:outputPanel rendered="{!Lead.Website_New_Or_Redesign__c = 'Yes'}">
+                                        <apex:outputLabel value="Enter URL"/>
+                                        <apex:inputField value="{!Lead.Redesign_URL__c}" label="Enter URL" required="true" style="width: 90%;"/>
+                                    </apex:outputPanel>
+                            </apex:outputPanel>
+                        
+                        <apex:pageBlockSectionItem >
+                        <apex:outputPanel layout="block">Is Responsive Design Desired?</apex:outputPanel> 
+                        <apex:outputPanel >
+                                <apex:actionRegion >
+                                    <apex:actionFunction name="updateResponsiveDesign" action="{!null}" rerender="ResponsiveDesign"/>
+                                    <apex:inputField value="{!Lead.Is_Responsive_Design_Desired__c}" required="true" onchange="updateResponsiveDesign();"/>
+                                </apex:actionRegion>
+                        </apex:outputPanel>                       
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:outputPanel id="ResponsiveDesign" >
+                                    <apex:outputPanel rendered="{!Lead.Is_Responsive_Design_Desired__c= 'Yes'}">
+                                        <apex:outputLabel value="*Adding responsive design to a custom site adds additional costs in the 3-5k range for most builds"/>
+                                    </apex:outputPanel>
+                        </apex:outputPanel>
+                        <apex:inputField value="{!Lead.Registered_Domain__c}" required="true" label="Is there a registered domain?"/>
+                        <br/> 
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel >
+                                <apex:actionRegion >
+                                    <apex:actionFunction name="updateArtwork" action="{!null}" rerender="existingArtwork"/>
+                                    <br/><apex:outputLabel value="Do they have any existing artwork or corporate color schemes that they want incorporated into their site?"/><br/>
+                                    <apex:inputField value="{!Lead.Existing_Artwork__c}" required="true" onchange="updateArtwork();"/>
+                                </apex:actionRegion>
+                                <apex:outputPanel id="existingArtwork">
+                                
+                                    <apex:outputPanel rendered="{!Lead.Existing_Artwork__c = 'Yes'}">
+                                    <br/><apex:outputLabel value="Are they in digital format or will they need to be scanned?"/>
+                                    <apex:inputField value="{!Lead.Existing_Artwork_Format__c}" required="true" style="width:200px;"/>
+                                    </apex:outputPanel>
+                                    
+                                    <apex:outputPanel rendered="{!Lead.Existing_Artwork__c = 'Yes'}">
+                                    <br/><apex:outputLabel value="Is there a library of pictures that they will want to use in the new website or will they need to purchase stock imagery?"/><br/>
+                                    <apex:inputField value="{!Lead.Website_Images__c}" required="true" style="width:200px;"/>
+                                    </apex:outputPanel>
+                                    
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <br/>
+                        
+                        <!--<apex:pageBlockSectionItem >
+                            <apex:outputPanel layout="block" style="width:300px;">How important do you think it is for the new website to rank in the search engines vs. your competitors?</apex:outputPanel> 
+                            <apex:outputPanel >
+                                <apex:actionRegion >
+                                    <apex:actionFunction name="updateWebsiteRank" action="{!null}" rerender="websiteRank"/>
+                                    <apex:inputField value="{!Lead.Website_Search_Rank__c}" required="true" onchange="updateWebsiteRank();" style="width:200px;"/>
+                                </apex:actionRegion>
+                                <apex:outputPanel id="websiteRank" >
+                                    <apex:outputPanel rendered="{!OR(Lead.Website_Search_Rank__c ='Important',Lead.Website_Search_Rank__c ='Very Important')}">
+                                        <br/><apex:outputLabel value="What categories are most important? Please rank in order of importance with 1 being most important."/>
+                                            <br/><apex:inputField value="{!Lead.Website_Rank_Categories__c}" style="width: 50%;" />
+                                    </apex:outputPanel>
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>-->
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel >
+                            <apex:outputLabel value="If there are any websites that you like that we should consider as we assist in the planning of your new website, please list them here and briefly tell us why you like them."/><br/>
+                            <apex:inputField value="{!Lead.Website_Examples__c}" style="width: 100%;"/>
+                            </apex:outputPanel>  
+                        </apex:pageBlockSectionItem>                      
+                        <!--<apex:inputField value="{!Lead.Company_Competitive_Advantage__c}" style="width: 50%;" required="true" label="What key factors do you think sets the company apart from competitors that need to be communicated on the website?"/>-->
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel >
+                            <apex:outputLabel value="Who are the company’s top three target audiences?  Please be specific: What Locations, Markets, Business Size, Industry, Professional Roles, etc.?"/><br/>
+                            <apex:inputField value="{!Lead.Target_Audience__c}" style="width: 100%;" required="true"/>
+                            </apex:outputPanel> 
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel >
+                            <apex:outputLabel value="If your project requires any interactivity or special advanced features, please describe your needs specifically as possible below. Examples of advanced functionality are: login areas, employee access pages, etc."/><br/>
+                            <apex:inputField value="{!Lead.Website_Special_Features__c}" style="width: 100%;"/>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel >
+                            <apex:outputLabel value="Give us a brief overview of the project to help us determine how many pages the site will be. Please be as detailed as possible and focus on features, functionality and pages, not design aspects (This will be covered during the design phase of the project)."/><br/>
+                            <apex:inputField value="{!Lead.Website_Page_Map__c}" style="width: 100%;" required="true"/>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        
+                         
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Template With Add-Ons" columns="1" rendered="{!fullPageTypeOptions == 'eightmod'}" collapsible="true">
+                        <apex:inputField value="{!Lead.Website_Template_Additions__c}" required="true" style="width: 100%;" label="Enter The Requested Template Additions"/>
+                    </apex:pageBlockSection>
+                </apex:outputPanel>
+                
+                <!-- Sales Call Request -->
+                <!--<apex:actionRegion >
+                    <apex:actionFunction name="redrawCallRequest" action="{!null}" rerender="callRequest"/>
+                    <apex:pageBlockSection title="Call Request - For Sales Opportunities $2000 Per Month And Above Only" collapsible="false" columns="1" >
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel layout="block" style="width:300px;">Do You Need To Request A Knowledge Call?</apex:outputPanel> 
+                            <apex:outputPanel layout="block" styleClass="requiredInput">
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                <apex:selectList value="{!includeCallRequest}" multiselect="false" size="1" onchange="redrawCallRequest();">
+                                    <apex:selectOptions value="{!yesNoOptions}"/>
+                                </apex:selectList>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>     
+                    </apex:pageBlockSection>
+                </apex:actionRegion>-->
+                
+                <br/>
+               <apex:outputPanel id="callRequest">
+                    <apex:pageBlockSection title="Sales Call Request Information" columns="1" rendered="{!includeCallRequest == 'true'}">CALL DATE TIME ZONE INFORMATION
+                    <br/>
+                    <br/>
+                        <apex:inputField value="{!Lead.CR_Call_Date__c}" required="true" label="Enter Date"/>
+                        <apex:inputField value="{!Lead.CR_Call_Time__c}" required="true" label="Select Time"/>
+                        <apex:inputField value="{!Lead.CR_Call_Zone__c}" required="true" label="Enter Time Zone Of Customer"/>
+                    <br/>
+                    <br/>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="" columns="2" rendered="{!includeCallRequest == 'true'}">CALL INFORMATION FOR G/O DIGITAL
+                    <br/>
+                    <br/>
+                        <apex:inputField value="{!Lead.CR_Rep_Location__c}" required="true" label="Will The Local Rep Be On the Phone Or On Site?"/>
+                        <apex:inputField value="{!Lead.CR_Call_Direction__c}" required="true" label="How Would You Like GL To Interact?"/>
+                        <apex:inputField value="{!Lead.CR_Call_Format__c}" required="true" label="Is This A Webinar With A Presentation Or Just A Conference Call?"/>
+                        <apex:inputField value="{!Lead.CR_Call_Outcome__c}" required="true" label="What Is The Desired Outcome Of The Call?"/> 
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="" columns="1" rendered="{!includeCallRequest == 'true'}">
+                    <br/>
+                        <apex:inputField value="{!Lead.CR_Conf_Numb_Login__c}" required="true" style="width: 100%;" label="Enter Login And/Or Conference Number Here."/>
+                    <br/>    
+                    </apex:pageBlockSection>
+                    <br/>
+                    <apex:pageBlockSection title="" columns="1" rendered="{!includeCallRequest == 'true'}">UNDERSTANDING THE CLIENT
+                                                                        
+                        <apex:inputField value="{!Lead.CR_Client_Knowledge__c}" required="true" style="width: 75%;" label="How Savvy Is the Client With Digital Media?(SEO vs SEM)"/>
+                        <apex:inputField value="{!Lead.CR_Client_Dig_Spend__c}" required="true" style="width: 50%;" label="Has The Client Previously Or Are They Currently Spending On Digital Media?"/>
+                        <apex:inputField value="{!Lead.CR_Client_Spend_Type__c}" required="true" style="width: 50%;" label="Are They Spending In-House Or Using A Third Party?"/>
+                        <apex:inputField value="{!Lead.CR_Client_Products__c}" required="true" label="Are There Any Products In Particular That The Client Is Interested In?"/>
+                        <apex:inputField value="{!Lead.CR_Client_Emphasis_Points__c}" required="true" style="width: 75%;" label="Are There Any Particular Hot Buttons Or Pain Points We Can Use As Points Of Emphasis?"/>
+                        <apex:inputField value="{!Lead.CR_Client_Sensitivities__c}" required="true" style="width: 75%;" label="Are There Any Sensitive Areas That We Should Be Aware Of?"/>
+      
+                    </apex:pageBlockSection>
+                </apex:outputPanel>
+                
+                
+            </apex:outputPanel>
+        
+        </apex:pageBlock>
+
+        </apex:form>
+       <div id="tooltip" style="display:none;">
+        <apex:outputText value="{!$Label.Browser_Support + $Label.DigAudHelp}" escape="false"/>
+    </div> 
+      </apex:define> 
+ </apex:composition>  
+    <script type="text/javascript">
+           $j = jQuery.noConflict();
+           $j(document).ready(
+               function() {
+                    $j('select[id$=mediaPartners]').twinBoxMultiSelectList({
+                            availableList : 'span[id$=availableMediaPartners]',
+                            selectedList : 'span[id$=selectedMediaPartners]',
+                            searchBox : '#searchTextBox',
+                            styles: {
+                                width: '220px'
+                            }
+                        });
+           });
+    
+    
+        </script>
+         <script type="text/javascript">
+        $j = jQuery.noConflict();
+        var ctn = $j('#tooltip').html();
+        $j('#helpme').poshytip({content:ctn, alignTo:'target', alignX:'inner-right'});
+        </script>
+</apex:page>

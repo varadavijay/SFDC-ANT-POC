@@ -1,0 +1,17 @@
+Hello {!Case.Affl_Sales_Rep__c},
+
+Thank you for submitting your Rate Request to G/O Digital. We will begin investigating immediately and will contact you within 2 business days!
+
+Request Details: 
+
+Account Total Monthly Spend: {!Case.Monthly_Spend__c}
+Product: {!Case.Product__c}
+Reason/ Description: {!Case.Description}
+GOR Details: {!Case.GLR_Details__c}
+Company Name: {!Case.Company_Name__c}
+Contact Name: {!Case.Contact_Name__c}
+Contact Phone: {!Case.Contact_Phone__c}
+Affl Sales Rep Text: {!Case.Affl_Sales_Rep_Text__c}
+
+Thank you,
+G/O Channel Team

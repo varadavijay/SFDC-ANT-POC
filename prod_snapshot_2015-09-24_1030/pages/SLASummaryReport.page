@@ -1,0 +1,126 @@
+<apex:page controller="SLAPerformanceComparisonController" id="SLASummary"  title="SLA Summary Report" docType="html-5.0">  
+      <script type="text/javascript">
+         function setFocusOnLoad() {}
+     </script>
+     
+     <br/><br/>
+     <h1><B> SLA Summary Report</B></h1>
+     <br/><br/>
+     <apex:form id="Search">
+      <apex:pageBlock title="Search Filters for Products" id="theSearchPageBlock">
+       <apex:actionFunction name="setLiveDate" action="{!calcLiveDate}" rerender="LiveDateFilterSection"/>
+         <apex:pageBlockButtons location="Bottom">
+             <apex:outputPanel id="pbbutton">
+                 <apex:CommandButton value="Search" action="{!CompileSearchString}"/>
+                 <apex:CommandButton value="Export" action="{!ExportSLA}" />
+             </apex:outputPanel>                
+         </apex:pageBlockButtons>
+             <apex:pageBlockSection columns="3" id="LiveDateFilterSection">
+                  <apex:pageBlockSectionItem >
+                         <apex:outputLabel for="LiveDateFilters" value="Live Date Filter"/>
+                         <apex:selectList value="{!liveDatePeriod}"  multiselect="false" size="1" onchange="setLiveDate();">
+                            <apex:selectOptions value="{!LiveDateFilters}" id="LiveDateFilters"/>
+                         </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="liveStartDate" value="Live Start Date" />
+                    <c:hideCurrDate >
+                    <apex:inputField id="liveStartDate" value="{!StartDate.Filter_Date__c}"/>
+                    </c:hideCurrDate>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="liveEndDate" value="Live End Date"/>
+                    <c:hideCurrDate >
+                       <apex:inputField id="liveEndDate" value="{!EndDate.Filter_Date__c}"/>
+                    </c:hideCurrDate>
+                 </apex:pageBlockSectionItem>
+             </apex:pageBlockSection>
+          <apex:pageBlockSection columns="3"  rendered="{!if(contains($Profile.Name,'Admin'),true,false)}">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="productTypeFilterUsed" value="Filter by Product" />
+                    <apex:inputCheckbox id="productTypeFilterUsed" value="{!productTypeFilterUsed}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                         <apex:outputLabel for="stringOptions" value="Filter type"/>
+                     <apex:selectList value="{!productTypeFilterOperator}"  multiselect="false" size="1" label="Filter type" tabindex="1">
+                        <apex:selectOptions value="{!StringOperators}" id="stringOptions"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="ProductFilter" value="values" />
+                    <apex:input id="ProductFilter" value="{!productTypeFilter }" />
+                </apex:pageBlockSectionItem>
+         </apex:pageBlockSection>
+        <apex:pageBlockSection columns="1" id="OppProdCreateDateFilter">
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="** The results will only show {!OppProdStartFilterString}" />
+        </apex:pageBlockSectionItem>
+     </apex:pageBlockSection>
+      </apex:pageBlock>
+    </apex:form>
+
+     <apex:pagemessages id="pageMessages"/>
+     <apex:pageBlock rendered="{!(SummaryDisplay.size = 0)}"> 
+	     <apex:pageBlockSection columns="1" id="OppProdCreateDateFilter">
+	        <apex:pageBlockSectionItem >
+	            <apex:outputLabel value="The search yielded no results for the selected filter criteria."/>
+	        </apex:pageBlockSectionItem>
+	     </apex:pageBlockSection>
+     </apex:pageBlock>
+     <apex:pageBlock rendered="{!(SummaryDisplay.size > 0)}">     
+      <apex:pageBlockTable value="{!SummaryDisplay}" var="SLARow">        
+        <apex:column headerValue="Product Type" >
+            <apex:outputField value="{!SLARow.Product_Type__c}"/>
+        </apex:column>
+        
+        <apex:column headerValue="Product SLA" >
+          <apex:outputField value="{!SLARow.SLA__c}"/>
+        </apex:column>
+        
+        <apex:column headerValue="Products Live" >
+          <apex:outputField value="{!SLARow.Count__c}"/>
+        </apex:column>
+        
+        <apex:column headerValue="Closed - Won" >
+          <apex:outputField value="{!SLARow.Closed_Won__c}"/>
+        </apex:column>
+        
+        <apex:column headerValue="Awaiting On Board" >
+          <apex:outputField value="{!SLARow.Awaiting_On_Board__c}"/>
+        </apex:column>
+
+        <apex:column headerValue="Awaiting Client Asset" >
+          <apex:outputField value="{!SLARow.Awaiting_Client_Asset__c}"/>
+        </apex:column>
+        
+        <apex:column headerValue="Awaiting Client Approval" >
+          <apex:outputField value="{!SLARow.Awaiting_Client_Approval__c}"/>
+        </apex:column>
+        
+        <apex:column headerValue="Pending" >
+          <apex:outputField value="{!SLARow.Pending__c}"/>
+        </apex:column>
+        
+        <apex:column headerValue="In Fulfillment" >
+          <apex:outputField value="{!SLARow.In_Fulfillment__c}"/>
+        </apex:column>
+        
+        <apex:column headerValue=" SLA Hours" >
+          <apex:outputField value="{!SLARow.Total_SLA_Status__c}"/>
+        </apex:column>
+        
+        <apex:column headerValue="Non-SLA Hours" >
+          <apex:outputField value="{!SLARow.Total_Non_SLA_Status__c}"/>
+        </apex:column>
+        
+        <apex:column headerValue="Days to Go Live" >
+          <apex:outputField value="{!SLARow.Days_To_Go_Live__c}"/>
+        </apex:column>
+        
+         <apex:column headerValue="% of Campaigns Meeting SLA" >
+          <apex:outputField value="{!SLARow.Total_SLA_Status_Hours__c}"/>
+        </apex:column>
+        
+      </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

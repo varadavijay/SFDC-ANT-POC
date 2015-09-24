@@ -1,0 +1,9 @@
+Hi,
+
+A new System Issue case has been created and needs your attention.  Please check the Case queue and respond appropriately.
+
+Details:
+{!Case.Link}
+{!Case.Type}
+{!Case.Priority}
+{!Case.Description}

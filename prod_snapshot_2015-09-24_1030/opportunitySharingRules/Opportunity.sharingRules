@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpportunitySharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <criteriaBasedRules>
+        <fullName>GL_Assist_Sharing2</fullName>
+        <sharedTo>
+            <group>GL_Assists</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Digital Fulfillment</value>
+        </criteriaItems>
+        <name>GL Assist Sharing2</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Knowledge_Team_RW</fullName>
+        <sharedTo>
+            <role>Sales_Assist_Rep</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>DealChicken</value>
+        </criteriaItems>
+        <name>Knowledge Team RW</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <ownerRules>
+        <fullName>AM_Share_with_Seminar</fullName>
+        <sharedTo>
+            <role>JSSManager</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>AccountManagers</role>
+        </sharedFrom>
+        <name>AM Share with Seminar</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </ownerRules>
+    <ownerRules>
+        <fullName>AccountManagersA</fullName>
+        <sharedTo>
+            <role>AccountManagers</role>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+        <name>Account ManagersA</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </ownerRules>
+    <ownerRules>
+        <fullName>AdSupport</fullName>
+        <sharedTo>
+            <group>AdSupport</group>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+        <name>Ad Support</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </ownerRules>
+    <ownerRules>
+        <fullName>JumpStartSpecialistA</fullName>
+        <sharedTo>
+            <role>JSSManager</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>DirectorofAccountManagement</role>
+        </sharedFrom>
+        <name>Jump Start SpecialistA</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </ownerRules>
+    <ownerRules>
+        <fullName>Sales_Rep_Sharing</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Sales</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Sales</roleAndSubordinates>
+        </sharedFrom>
+        <name>Sales Rep Sharing</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </ownerRules>
+</OpportunitySharingRules>

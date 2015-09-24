@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This simple Proposal format provides some basic information about products and pricing.</description>
+    <internalUseOnly>false</internalUseOnly>
+    <name>Client Proposal (Simple)</name>
+    <public>false</public>
+</Document>

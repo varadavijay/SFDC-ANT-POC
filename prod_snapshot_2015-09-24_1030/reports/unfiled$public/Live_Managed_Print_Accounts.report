@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Amount</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Credit_Card_Processing__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Credit_Card_Processing__r.Entries__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Credit_Card_Processing__r.Entries__r$Date__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.Opportunities$IsWon</column>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$Account_Manager_Print_LName__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Live Managed Print Accounts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Company_Opp_PaymentP_PaymentE__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Account.Opportunities.Credit_Card_Processing__r.Entries__r$Date__c</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

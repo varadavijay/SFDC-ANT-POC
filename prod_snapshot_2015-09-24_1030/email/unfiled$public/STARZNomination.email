@@ -1,0 +1,9 @@
+<br>
+NOMINEE:&nbsp;&nbsp;&nbsp;{!STARZ__c.Nominee__c}<br>
+SPECIAL:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!STARZ__c.Special__c}<br><br>
+
+PRAISEWORTHY STORY:<br>{!STARZ__c.STARZ_Event__c}<br><br>
+
+
+Supervisor:&nbsp;&nbsp;{!STARZ__c.Supervisor__c}<br>
+Link:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {!STARZ__c.Link}

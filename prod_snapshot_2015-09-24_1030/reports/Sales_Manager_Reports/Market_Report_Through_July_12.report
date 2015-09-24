@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity.DC_Run_Date__c</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Ops_Stages__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <operator>equals</operator>
+            <value>Closed - Appr &amp; Sign</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.DealChicken_Market__c</column>
+            <operator>equals</operator>
+            <value>&quot;FL, Jacksonville&quot;,&quot;FL, Tallahassee&quot;,&quot;IN, Muncie&quot;,&quot;MI, Grand Rapids&quot;,&quot;NC, Asheville&quot;,&quot;NJ, Cumberland Cty&quot;,&quot;NJ, Monmouth Cty&quot;,&quot;NJ, Ocean Cty&quot;,&quot;OH, Coshocton/Holmes Cty&quot;,&quot;OH, Fairfield Cty&quot;,&quot;OH, Licking Cty&quot;,&quot;OH, Marion Cty&quot;,&quot;OH, Muskingum Valley&quot;,&quot;OH, North Central&quot;,&quot;OH, North Coast&quot;,&quot;OH, Scioto Valley&quot;,&quot;SD, Sioux Falls&quot;,&quot;VT, Northern Vermont&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.DealChicken_Market__c</column>
+            <operator>equals</operator>
+            <value>&quot;FL, Jacksonville&quot;,&quot;FL, Tallahassee&quot;,&quot;IN, Muncie&quot;,&quot;MI, Grand Rapids&quot;,&quot;NC, Asheville&quot;,&quot;NJ, Cumberland Cty&quot;,&quot;NJ, Monmouth Cty&quot;,&quot;NJ, Ocean Cty&quot;,&quot;OH, Coshocton/Holmes Cty&quot;,&quot;OH, Fairfield Cty&quot;,&quot;OH, Licking Cty&quot;,&quot;OH, Marion Cty&quot;,&quot;OH, Muskingum Valley&quot;,&quot;OH, North Central&quot;,&quot;OH, North Coast&quot;,&quot;OH, Scioto Valley&quot;,&quot;SD, Sioux Falls&quot;,&quot;VT, Northern Vermont&quot;</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.DealChicken_Market__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Market Report Through July 12</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Opportunity.DC_Run_Date__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Opportunity.DC_Run_Date__c</dateColumn>
+        <endDate>2013-07-12</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2013-06-28</startDate>
+    </timeFrameFilter>
+</Report>

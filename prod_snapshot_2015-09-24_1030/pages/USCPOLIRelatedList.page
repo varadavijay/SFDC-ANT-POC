@@ -1,0 +1,162 @@
+<apex:page standardController="Opportunity" extensions="USCPOLIRelatedListCntrl">
+ 
+  <apex:form >
+    <apex:pageBlock title="Products ({!pricebkname})" helpTitle="Products({!pricebkname})Help" helpUrl="https://help.salesforce.com/htviewhelpdoc?id=products_def.htm&siteLang=en_US">
+      <apex:pageBlockButtons location="top" >
+     <!-- <apex:commandButton action="{!addProduct}" value="Add USCP Products"/> -->
+       <apex:commandLink action="{!URLFOR($Action.OpportunityLineItem.Add_USCP_Products, Id)}" value="Add Line Item" style="text-decoration:none" styleClass="btn" target="_parent">
+       </apex:commandLink>    
+          
+      </apex:pageBlockButtons>
+    <apex:pageBlockSection collapsible="false" columns="1" id="pbTable">
+      <apex:pageBlockTable value="{!oliList}" var="oli" >
+        <apex:column width="50px">
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Action"/>  
+            </apex:outputPanel>
+           </apex:facet>
+            <apex:outputLink style="color:blue" value="/apex/OpportunityLineItemUSCPEdit?type=opp&id={!oli.id}" target="_parent" >Edit</apex:outputLink> &nbsp;&nbsp;
+            
+            <apex:commandLink style="color:blue" action="{!URLFOR(
+                $Action.OpportunityLineItem.Delete,
+                oli.Id,
+                [retURL='/'&oli.opportunityId]
+                )}"
+                target="_parent" rendered="{!oli.Waiting_Status__c == null}">Del
+            <apex:param name="oliid" value="{!oli.id}"/>
+            </apex:commandLink> 
+             
+          </apex:column>
+         <apex:column width="150px">
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Product"/>  
+            </apex:outputPanel>
+           </apex:facet>
+            <apex:outputLink value="/apex/OpportunityLineItemUSCP?id={!oli.id}" target="_parent" >{!oli.product2.name}</apex:outputLink>            
+         </apex:column>
+         
+         <apex:column width="200px">
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Notes"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputtext value="{!left(oli.Notes__c,30)+if(oli.Notes__c!= null,'...','')}"/>
+         </apex:column> 
+      	 
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Sell Type"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputtext value="{!oli.Sell_Type__c}"/>
+         </apex:column>
+          
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="# of Months"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputtext value="{!oli.Qty_ContractMonths__c}"/>
+         </apex:column>
+          
+          <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Units"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputtext value="{!oli.Invoice_Units__c}"/>
+         </apex:column>
+         
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Mgmt Fee %"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputtext value="{!oli.Mgmt_Fee_Percent__c}"/>
+         </apex:column>
+         
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Cost per Unit"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputtext value="{!oli.ListPrice}"/>
+         </apex:column>
+        
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Product Price"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputtext value="{!oli.UnitPrice}"/>
+         </apex:column>
+        
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Service Start"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputField value="{!oli.Invoice_ServiceStartDate__c}"/>
+         </apex:column>
+         
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Service End"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputField value="{!oli.Invoice_ServiceEndDate__c}"/>
+         </apex:column>
+         
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Status"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputField value="{!oli.Waiting_Status__c}"/>
+         </apex:column>
+         
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Live Date"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputField value="{!oli.Live_Date__c}"/>
+         </apex:column>
+         
+         <apex:column width="100px" >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Order Form"/>  
+            </apex:outputPanel>
+           </apex:facet>
+           <apex:outputLink rendered="{!IF(oli.Opportunity.CloseDate>DATE(2013,09,25) && oli.PricebookEntry.Product2.ProductCode=='SML-PPC Budgeted' && oli.Opportunity.StageName=='Closed Won',true,false)}" value="/apex/PPCOrderForm?OpportunityLineItemId={!LEFT(oli.id,15)}" target="_parent">PPC Order Form</apex:outputLink>
+         </apex:column>
+      </apex:pageBlockTable>   
+     <apex:outputPanel id="btns">
+       <div align="center">
+                    <!--apex:commandLink action="{!FirstPage}"  rendered="{!prev}" reRender="pbTable,btns,pb" status="sts">First</apex:commandlink>&nbsp;&nbsp; -->
+                    <apex:commandLink action="{!previous}" rendered="{!prev}" reRender="pbTable,btns" status="sts">Previous</apex:commandlink>&nbsp;&nbsp;
+                    Page {!pageNumber} of {!totalPages}&nbsp;&nbsp;
+                    <apex:commandLink action="{!next}" rendered="{!nxt}" reRender="pbTable,btns" status="sts">Next</apex:commandlink>&nbsp;&nbsp;
+                   <!--apex:commandLink action="{!LastPage}" rendered="{!nxt}" reRender="pbTable,btns" status="sts">Last</apex:commandlink>&nbsp;&nbsp; -->
+                   
+                   
+                </div>
+               </apex:outputPanel>  
+   </apex:pageBlockSection>   
+ </apex:pageBlock>  
+    </apex:form>
+</apex:page>

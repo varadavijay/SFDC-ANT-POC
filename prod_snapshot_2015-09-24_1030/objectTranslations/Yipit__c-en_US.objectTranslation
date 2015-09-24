@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Yipit</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Yipits</value>
+    </caseValues>
+    <fields>
+        <label><!-- Date Added --></label>
+        <name>Date_Added__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Ended --></label>
+        <name>Date_Ended__c</name>
+    </fields>
+    <fields>
+        <label><!-- DealId --></label>
+        <name>DealId__c</name>
+    </fields>
+    <fields>
+        <label><!-- DealSite --></label>
+        <name>DealSite__c</name>
+    </fields>
+    <fields>
+        <label><!-- DealURL --></label>
+        <name>DealURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deal Revenue --></label>
+        <name>Deal_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full Title --></label>
+        <name>Full_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Market --></label>
+        <name>Market__c</name>
+        <relationshipLabel><!-- Yipits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Merchant Address --></label>
+        <name>Merchant_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merchant Category --></label>
+        <name>Merchant_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merchant City --></label>
+        <name>Merchant_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merchant Id --></label>
+        <name>Merchant_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merchant Name --></label>
+        <name>Merchant_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merchant Phone --></label>
+        <name>Merchant_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merchant Postal --></label>
+        <name>Merchant_Postal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merchant Website --></label>
+        <name>Merchant_Website__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postal Group --></label>
+        <name>Postal_Group__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price --></label>
+        <name>Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rev Index --></label>
+        <name>Rev_Index__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Rate Per Day --></label>
+        <name>Sales_Rate_Per_Day__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sold --></label>
+        <name>Sold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value --></label>
+        <name>Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yipit URL --></label>
+        <name>Yipit_URL__c</name>
+    </fields>
+    <layouts>
+        <layout>Yipit Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

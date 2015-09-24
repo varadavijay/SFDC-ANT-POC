@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity.Market_Area_Manager__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.DealChicken_Market__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.DC_Date_Submitted__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Track_Date_Approved_Signed__c</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Ops_Stages__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <operator>equals</operator>
+            <value>Closed - Appr &amp; Sign,DC Submitted</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Market_Area_Manager__c</column>
+            <operator>contains</operator>
+            <value>Habib,Harrington,McCormick</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <name>DQ&amp;S | Approval Time | Adam&apos;s Team</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Opportunity.Market_Area_Manager__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Opportunity.DC_Date_Submitted__c</dateColumn>
+        <interval>INTERVAL_PREV1</interval>
+    </timeFrameFilter>
+</Report>

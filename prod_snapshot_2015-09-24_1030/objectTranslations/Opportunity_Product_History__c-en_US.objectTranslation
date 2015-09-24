@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Opportunity Product History</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunity Product Histories</value>
+    </caseValues>
+    <fields>
+        <label><!-- Current Product Stage --></label>
+        <name>Current_Product_Stage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duration --></label>
+        <name>Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Duration --></label>
+        <name>H2GL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- OLI Product SLA Type --></label>
+        <name>OLI_Product_SLA_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- OLI Product SLA --></label>
+        <name>OLI_Product_SLA__c</name>
+    </fields>
+    <fields>
+        <label><!-- OLI Product --></label>
+        <name>OLI_Product__c</name>
+        <relationshipLabel><!-- Opportunity Product Histories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- OLI Project --></label>
+        <name>OLI_Project__c</name>
+        <relationshipLabel><!-- Opportunity Product Histories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- OLI Stage --></label>
+        <name>OLI_Stage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Product Type --></label>
+        <name>Opportunity_Product_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Product --></label>
+        <name>Opportunity_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Sale Type --></label>
+        <name>Opportunity_Sale_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Won --></label>
+        <name>Opportunity_Won__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Opportunity Product Histories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Days To Go Live --></label>
+        <name>Product_Days_To_Go_Live__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Live DateTime --></label>
+        <name>Product_Live_DateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Live Date --></label>
+        <name>Product_Live_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Performance Query --></label>
+        <name>SLA_Performance_Query__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sell Type --></label>
+        <name>Sell_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time_In --></label>
+        <name>Time_In__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Out --></label>
+        <name>Time_Out__c</name>
+    </fields>
+    <layouts>
+        <layout>Opportunity Product History Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

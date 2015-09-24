@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sends out when new lead comes in from the Simply Gifted Website</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>SG_Header</letterhead>
+    <name>New Simply Gifted Lead</name>
+    <style>freeForm</style>
+    <subject>New Simply Gifted Lead</subject>
+    <textOnly>Hi Team,
+A new lead from the SimplyGifted site has come in.
+Below are the basics:
+
+Company: {!Lead.Company}
+Phone: {!Lead.Phone}
+Website: {!Lead.Website}
+
+First Name: {!Lead.FirstName}
+Last Name: {!Lead.LastName}
+Email: {!Lead.Email}
+City: {!Lead.City}
+State: {!Lead.State}
+Zipcode: {!Lead.PostalCode}
+
+Lead Link: https://na10.salesforce.com/{!Lead.Id}
+
+Thanks,
+Andrew</textOnly>
+    <type>html</type>
+</EmailTemplate>

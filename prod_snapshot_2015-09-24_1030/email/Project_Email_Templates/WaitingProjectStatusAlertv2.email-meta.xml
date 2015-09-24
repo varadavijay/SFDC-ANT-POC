@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email for Initial Waiting Notifications On Waiting Status</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Waiting Project Status Alert v2</name>
+    <style>none</style>
+    <subject>{!Project__c.Project_Account__c} - {!Project__c.Project_Status__c}</subject>
+    <textOnly>{!Project__c.Affl_Sales_Rep__c},
+
+This email is to alert you that the G/O Digital product
+
+{!Project__c.Product_Name__c}
+
+is
+
+{!Project__c.Project_Status__c} ({!Project__c.Waiting_Status_Descr_Last_Set__c})
+
+as of
+
+{!Project__c.Waiting_Since_Date__c}
+
+Please note that the campaign launch date will be delayed if there is not a response from the client.  Please reach out to help expedite this process.
+
+Thank You,
+
+Your GO Team
+
+
+
+Account Id - {!Project__c.AccountId__c}
+Opportu Id - {!Project__c.OpportunityId__c}
+Product Id - {!Project__c.Id}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,7 @@
+Account  : {!Opportunity.Account}
+Opport    : {!Opportunity.Name}
+Acct Mgr : {!Opportunity.00NF0000008NWMH}
+
+Won        : {!Opportunity.Closed_Won_Time_Stamp__c}
+
+Link         : {!Opportunity.Link}

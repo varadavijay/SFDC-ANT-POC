@@ -1,0 +1,48 @@
+<apex:page controller="InvoiceAdjustmentCntrl" tabStyle="Opportunity">
+  <Script>
+    function validateAmt(inputNumber) { 
+                      var inputNumberVal= document.getElementById(inputNumber).value;
+                      if(inputNumberVal <= 0){
+                          alert("Please enter a valid number");
+                         document.getElementById(inputNumber).value = null;
+                      }  
+                  }
+    function inputLimiter(e, allow) {
+        var AllowableCharacters = '';
+
+        if (allow == 'Numbers') {
+          AllowableCharacters = '1234567890.';
+        }
+
+        var k = document.all ? parseInt(e.keyCode) : parseInt(e.which);
+        if (k != 13 && k != 8 && k != 0) {
+          if ((e.ctrlKey == false) && (e.altKey == false)) {
+            return (AllowableCharacters.indexOf(String.fromCharCode(k)) != -1);
+          } else {
+            return true;
+          }
+        } else {
+          return true;
+        }
+    }
+  </Script>
+ <apex:form > 
+  <apex:pageMessages ></apex:pageMessages>   
+  <apex:pageBlock mode="edit" >
+     <apex:pageBlockButtons >
+       <apex:commandButton action="{!adjustInvoiceDetails}" value="Save"/>
+       <apex:commandButton action="{!cancel}" value="Cancel"/>  
+     </apex:pageBlockButtons> 
+    <apex:pageBlockSection title="Invoice Adjustment" columns="1">
+      <apex:inputField label="Is this an A/R Credit or Debit?" value="{!ili.Invoice_CreditOrDebit__c}"/>
+      <apex:inputField value="{!ili.Invoice_CreditOrDebit_Reason__c}"/>
+	  <apex:inputField label="Adjustment Amount:" id="adjustAmt" value="{!ili.TotalMonthlyCharge__c}" 
+                      onkeypress="return inputLimiter(event,'Numbers')" onchange="validateAmt('{!$Component.adjustAmt}');"/>
+      <apex:inputField value="{!ili.Invoice_AdjustmentDetails__c}" />
+        
+      
+   </apex:pageBlockSection>  
+    
+  </apex:pageBlock>  
+  </apex:form>    
+</apex:page>

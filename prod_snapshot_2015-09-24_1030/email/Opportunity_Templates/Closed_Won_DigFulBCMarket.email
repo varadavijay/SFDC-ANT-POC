@@ -1,0 +1,11 @@
+A Deal has been Closed-Won!  Please follow up with the sales rep.
+
+Station:  {!Opportunity.Media_Partner__c}
+Affl Rep:  {!Opportunity.Sales_Rep__c}
+
+{!Opportunity.Name}
+{!Opportunity.OwnerFullName}
+{!Opportunity.Amount}
+Payment Processing: {!Payment_Processing__c.RecordType}
+
+{!Opportunity.Link}

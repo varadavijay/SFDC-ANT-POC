@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SLA Snapshot</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SLA Snapshots</value>
+    </caseValues>
+    <fields>
+        <label><!-- SLA Met Percent --></label>
+        <name>SLA_Met_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Met --></label>
+        <name>SLA_Met__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Product Type --></label>
+        <name>SLA_Product_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Campaigns --></label>
+        <name>Total_Campaigns__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

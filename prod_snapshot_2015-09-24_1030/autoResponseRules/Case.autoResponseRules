@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>Case Auto-Responses</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>mlc2case</value>
+            </criteriaItems>
+            <replyToEmail>merchantsupport@2y4wawjl2mdl0beu5iczbivhwhez23tl6aeqxhegdku09rs27r.a-heotmao.f.c</replyToEmail>
+            <senderEmail>merchantsupport@2y4wawjl2mdl0beu5iczbivhwhez23tl6aeqxhegdku09rs27r.a-heotmao.f.c</senderEmail>
+            <senderName>The DealChicken Merchant Team</senderName>
+            <template>DealChicken_Merchant_Comm/New_MLC_Case</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>

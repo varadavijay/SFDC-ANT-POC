@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DashboardFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessType>Shared</accessType>
+    <name>Nashville Fulfillment</name>
+    <publicFolderAccess>ReadOnly</publicFolderAccess>
+    <sharedTo>
+        <role>ExecutiveDirector</role>
+        <role>Fulfillment_Manager_Nashville</role>
+        <role>Fulfillment_Nashville</role>
+    </sharedTo>
+</DashboardFolder>

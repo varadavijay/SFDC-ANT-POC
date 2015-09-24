@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used by Dev to request a QA deployment.</description>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <fields>
+        <fullName>Build_Number__c</fullName>
+        <description>The build number from the ReleaseInstructions to deploy.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Example: 1.0.7.189</inlineHelpText>
+        <label>Build Number</label>
+        <length>16</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Deployed_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The person who deployed this to QA</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Release Team member who deployed to QA</inlineHelpText>
+        <label>Deployed By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>RFQ_Deployed_By</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Detailed information about this deployment request</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This will be used for the release notes. The audience is the business</inlineHelpText>
+        <label>Description</label>
+        <length>10000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Level_of_Risk__c</fullName>
+        <description>How much Risk is involved in deploying this story?</description>
+        <externalId>false</externalId>
+        <label>Level of Risk</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Production_Deployment__c</fullName>
+        <description>List of RFQs which define the PD</description>
+        <externalId>false</externalId>
+        <label>Production Deployment</label>
+        <referenceTo>Production_Deployment__c</referenceTo>
+        <relationshipLabel>Requests for QA</relationshipLabel>
+        <relationshipName>Requests_for_QA</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Risk__c</fullName>
+        <description>If the Risk level is anything other than &quot;None&quot; This field should explain</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For Level of Risk other than &quot;None&quot;</inlineHelpText>
+        <label>Reason for Risk</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Requester__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Developer (usually) who is requesting this QA deployment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Usually the developer who implemented the change</inlineHelpText>
+        <label>Requester</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>RFQ_Requester</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Tracks the progress of this request through to it&apos;s deployment into the QA environment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Only QA can change to &quot;QA Accepted&quot;
+Only Release Team can change to &quot;Deployed to QA&quot;</inlineHelpText>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>In Development</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Request Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QA Accepted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deployed to QA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Tester__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The QA Engineer who will be testing this deployment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Who is testing this in QA?</inlineHelpText>
+        <label>Tester</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>RFQ_Tester</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <description>Should contain most relevant information, so that people know at a glance what it&apos;s about</description>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>100</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Request for QA</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Title__c</columns>
+        <columns>Requester__c</columns>
+        <columns>Tester__c</columns>
+        <columns>Status__c</columns>
+        <columns>Deployed_By__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>CRM_Sprint_1_0_18</fullName>
+        <columns>NAME</columns>
+        <columns>Title__c</columns>
+        <columns>Description__c</columns>
+        <columns>Requester__c</columns>
+        <columns>Tester__c</columns>
+        <columns>Status__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Production_Deployment__c</field>
+            <operation>equals</operation>
+            <value>PD-1020</value>
+        </filters>
+        <label>CRM Sprint 1.0.18</label>
+    </listViews>
+    <listViews>
+        <fullName>CRM_Sprint_1_0_19</fullName>
+        <columns>NAME</columns>
+        <columns>Title__c</columns>
+        <columns>Description__c</columns>
+        <columns>Requester__c</columns>
+        <columns>Tester__c</columns>
+        <columns>Status__c</columns>
+        <columns>Deployed_By__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Production_Deployment__c</field>
+            <operation>equals</operation>
+            <value>PD-1022</value>
+        </filters>
+        <label>CRM Sprint 1.0.19</label>
+    </listViews>
+    <listViews>
+        <fullName>CRM_Sprint_1_0_23</fullName>
+        <columns>NAME</columns>
+        <columns>Title__c</columns>
+        <columns>Description__c</columns>
+        <columns>Requester__c</columns>
+        <columns>Tester__c</columns>
+        <columns>Status__c</columns>
+        <columns>Deployed_By__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>Build_Number__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Production_Deployment__c</field>
+            <operation>equals</operation>
+            <value>PD-1028</value>
+        </filters>
+        <label>CRM Sprint 1.0.23</label>
+    </listViews>
+    <listViews>
+        <fullName>CRM_Sprint_1_0_23a</fullName>
+        <columns>NAME</columns>
+        <columns>Title__c</columns>
+        <columns>Description__c</columns>
+        <columns>Requester__c</columns>
+        <columns>Tester__c</columns>
+        <columns>Status__c</columns>
+        <columns>Deployed_By__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Production_Deployment__c</field>
+            <operation>equals</operation>
+            <value>PD-1029</value>
+        </filters>
+        <label>CRM Sprint 1.0.23a</label>
+    </listViews>
+    <listViews>
+        <fullName>CRM_Sprint_1_0_24</fullName>
+        <columns>NAME</columns>
+        <columns>Title__c</columns>
+        <columns>Description__c</columns>
+        <columns>Requester__c</columns>
+        <columns>Tester__c</columns>
+        <columns>Status__c</columns>
+        <columns>Deployed_By__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Production_Deployment__c</field>
+            <operation>equals</operation>
+            <value>PD-1030</value>
+        </filters>
+        <label>CRM Sprint 1.0.24</label>
+    </listViews>
+    <listViews>
+        <fullName>CRM_Sprint_1_0_25</fullName>
+        <columns>NAME</columns>
+        <columns>Title__c</columns>
+        <columns>Description__c</columns>
+        <columns>Requester__c</columns>
+        <columns>Tester__c</columns>
+        <columns>Status__c</columns>
+        <columns>Deployed_By__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Production_Deployment__c</field>
+            <operation>equals</operation>
+            <value>PD-1031</value>
+        </filters>
+        <label>CRM Sprint 1.0.25</label>
+    </listViews>
+    <listViews>
+        <fullName>Per_Sprint</fullName>
+        <columns>Production_Deployment__c</columns>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Title__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Build_Number__c</field>
+            <operation>startsWith</operation>
+            <value>1.0.21</value>
+        </filters>
+        <label>Per Sprint</label>
+    </listViews>
+    <nameField>
+        <displayFormat>RFQ-{0000}</displayFormat>
+        <label>RFQ Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Requests for QA</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

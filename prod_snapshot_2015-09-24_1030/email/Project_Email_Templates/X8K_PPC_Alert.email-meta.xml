@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>8K PPC Alert</name>
+    <style>none</style>
+    <subject>8K PPC! - {!Opportunity.Name}</subject>
+    <textOnly>Waiting Since - {!Opportunity.Waiting_Status_Last_Set_Date__c}
+
+{!Opportunity.Waiting_Status_Email_Body__c}
+
+Thank You,
+
+Your G/O Digital Team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

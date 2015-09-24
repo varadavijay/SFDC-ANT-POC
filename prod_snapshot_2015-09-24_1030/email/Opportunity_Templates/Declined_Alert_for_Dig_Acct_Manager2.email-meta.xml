@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Declined Alert for Dig Acct Manager2</name>
+    <style>none</style>
+    <subject>Payment Declined - {!Payment_Entries__c.Company__c}</subject>
+    <textOnly>A Charge for {!Payment_Entries__c.Company__c} was declined.
+
+Please take appropriate action regarding the fulfillments for this account.
+
+
+Opportunity : {!Payment_Entries__c.JumpToOpp__c}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

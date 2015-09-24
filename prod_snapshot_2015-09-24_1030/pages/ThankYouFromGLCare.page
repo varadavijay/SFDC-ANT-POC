@@ -1,0 +1,6 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <br></br>
+  <h3>Thank you for submitting your issue to G/O Digital. We will begin investigating immediately and will contact you within 1 business day!</h3><br></br>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

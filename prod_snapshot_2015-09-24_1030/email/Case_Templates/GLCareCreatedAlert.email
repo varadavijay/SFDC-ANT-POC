@@ -1,0 +1,17 @@
+Hello,
+
+Thank you for submitting to G/O Digital Care.  If this is a request for a Make-Good (Immediate Attention Required), the Care Team will begin reviewing immediately and will contact you within 1 business day.  Resolutions may take up to 3 business days from the time of submission.  
+
+If this is a Tracking case and the issue has been resolved or is in the process of being corrected, the Care Team will monitor this issue and communications and report on the resolution.  
+
+Request Details: 
+GOC Submission Type: {!Case.GLC_Submission_Type__c} 
+Company Entered: {!Case.Company_Name__c} 
+Media Partner:  {!Case.Media_Partner__c} 
+Sales Rep: {!Case.Affl_Sales_Rep__c}
+Reason/ Description:  {!Case.GLC_Request_Reason__c} 
+
+Link:{!Case.Link}
+
+Thank you,
+G/O Digital Care Team

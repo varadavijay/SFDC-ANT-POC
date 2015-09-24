@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BOOM CLUCKA LUCKA LOCAL!!</name>
+    <style>none</style>
+    <subject>BOOM CLUCKA LUCKA LOCAL!</subject>
+    <textOnly>A DealChicken Has Been Signed!
+
+
+
+Proposal Name  :  {!tinderbox__Proposal__c.Name}
+
+Opportunity  :  {!tinderbox__Proposal__c.tinderbox__Opportunity__c}
+
+Opportunity Owner  :  {!tinderbox__Proposal__c.Opp_Owner_Name__c}
+
+Opportunity Link  :  {!tinderbox__Proposal__c.Opportunity_Link__c}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

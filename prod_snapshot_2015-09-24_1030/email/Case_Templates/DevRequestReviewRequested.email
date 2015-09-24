@@ -1,0 +1,8 @@
+<br>
+Request Link: {!RequestsIssues__c.Link}
+<br>
+<br>
+Title:<br>
+{!RequestsIssues__c.Title_Short_Description__c}<br/><br/>
+Description:<br>
+{!RequestsIssues__c.Long_Description__c}<br/><br/>

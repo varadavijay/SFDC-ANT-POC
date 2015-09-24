@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.DealChicken_Market__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Ops_Stages__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <operator>equals</operator>
+            <value>Closed - Appr &amp; Sign</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.DealChicken_Market__c</column>
+            <operator>contains</operator>
+            <value>lafayette,Sheboygan,Iowa City,Mountain Home,Monroe,Montgomery,Little Rock,Des Moines,Shreveport,Cleveland,Oshkosh,Rochester,wisconsin,OH,Buffalo,central wisconsin</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.DealChicken_Market__c</column>
+            <operator>notContain</operator>
+            <value>county,cincinnati,IN</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.DC_Run_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Rebekah&apos;s Deals</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Opportunity.DC_Run_Date__c</dateColumn>
+        <interval>INTERVAL_NEXT30</interval>
+    </timeFrameFilter>
+</Report>

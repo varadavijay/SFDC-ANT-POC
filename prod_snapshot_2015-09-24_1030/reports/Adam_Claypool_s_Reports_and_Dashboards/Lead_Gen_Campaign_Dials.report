@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Campaign$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.LeadCampaignMembers$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.LeadCampaignMembers.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>Campaign.LeadCampaignMembers.Activities$ActivityDate</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Campaign.LeadCampaignMembers.Activities$ActivityDate</column>
+            <operator>greaterOrEqual</operator>
+            <value>7/25/2013 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Campaign.LeadCampaignMembers.Activities$Owner</column>
+            <operator>equals</operator>
+            <value>Jensen Ware,Brandon Johnson,Kara Polillo,Alexander Marcetich,Clifford Gries,Jesse Stefko,Ricardo Benton,Kristen Hageness,Mark Collver,Shaun Weatherly</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Campaign.LeadCampaignMembers.Activities$Subject</column>
+            <operator>equals</operator>
+            <value>call</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Campaign.LeadCampaignMembers.Activities$Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Campaign.LeadCampaignMembers$Company</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Lead Gen Campaign Dials</name>
+    <params>
+        <name>scopeid</name>
+        <value>701F0000000e4xP</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Campaigns_Leads_Activity__c</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Campaign.LeadCampaignMembers$LastActivityDate</dateColumn>
+        <endDate>2013-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2013-11-06</startDate>
+    </timeFrameFilter>
+</Report>

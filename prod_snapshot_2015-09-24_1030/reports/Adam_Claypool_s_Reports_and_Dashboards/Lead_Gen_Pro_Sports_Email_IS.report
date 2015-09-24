@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Campaign$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.LeadCampaignMembers$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.LeadCampaignMembers.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>Campaign.LeadCampaignMembers.Activities$ActivityDate</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Campaign.LeadCampaignMembers.Activities$Owner</column>
+            <operator>equals</operator>
+            <value>Sam Pewitt,Amanda Mclernon,Audra Anderson,Bryan Johnson,Peter Deluca,Clifford Gries</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Campaign.LeadCampaignMembers.Activities$Subject</column>
+            <operator>contains</operator>
+            <value>email</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Campaign.LeadCampaignMembers.Activities$Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Campaign.LeadCampaignMembers$Company</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Lead Gen Pro Sports_Email_IS</name>
+    <params>
+        <name>scopeid</name>
+        <value>701F0000000e0th</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Campaigns_Leads_Activity__c</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Campaign.LeadCampaignMembers.Activities$CreatedDate</dateColumn>
+        <endDate>2014-09-30</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2013-10-14</startDate>
+    </timeFrameFilter>
+</Report>

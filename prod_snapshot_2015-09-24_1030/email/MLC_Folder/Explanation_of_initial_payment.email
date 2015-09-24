@@ -1,0 +1,33 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<p class="MsoNormal">Hello&nbsp;{!Contact.Name},</p><p class="MsoNormal"><br></p>
+
+<p class="MsoNormal">Thank you for contacting us regarding your DealChicken
+payment. As a reminder, initial payments are based on sales of your promotion
+during its first 7 days on our site (referred to as the "initial"
+period). You will receive 70% of the payment for your week one sales in a
+single check, roughly 12 days after your promotion starts running. You will
+receive the remaining 30% approximately 25 business days after your first
+payment.&nbsp;<br>
+<br><br></p>
+
+<p class="MsoNormal">Our records indicate that you sold a total of [# of
+certificates] in the first week, for deal proceeds of [total proceeds for first
+7 days], of which [business name]&nbsp;receives a [split percentage] split for
+an initial payment of [initial payment amount before credit card fees] minus
+the 2.5% credit card fees [credit card fees total], for a payment of [initial
+check amount minus all fees]. </p><p class="MsoNormal"><br></p>
+
+<p class="MsoNormal">Your next payment of [2<sup>nd</sup> payment] will consist
+of the remaining 30% of the initial payment (minus any refunds) which will be
+dispersed in approximately 25 business days. </p><p class="MsoNormal"><br></p>
+
+<p class="MsoNormal">Hope this helps clarify your initial payment. Let me know if
+you have any additional questions.</p><p class="MsoNormal"><br></p>
+
+<p class="MsoNormal">Kind Regards,</p>
+
+<p class="MsoNormal"><br></p>]]></td>
+</tr>
+</table>

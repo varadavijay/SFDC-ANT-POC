@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>My_Calls</links>
+    <links>InboundTool_1</links>
+    <links>InboundTool_2</links>
+    <links>QuickTime</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

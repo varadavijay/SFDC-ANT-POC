@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DealChicken Contract</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DealChicken Contracts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- DealChicken Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Active Contract --></label>
+        <name>Active_Contract__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto-Renew --></label>
+        <name>Auto_Renew__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Department --></label>
+        <name>Contract_Department__c</name>
+        <picklistValues>
+            <masterLabel>Digital Marketing Operations</masterLabel>
+            <translation><!-- Digital Marketing Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive</masterLabel>
+            <translation><!-- Executive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product</masterLabel>
+            <translation><!-- Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Operations</masterLabel>
+            <translation><!-- Sales Operations --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contract Owner --></label>
+        <name>Contract_Owner__c</name>
+        <relationshipLabel><!-- DealChicken Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contract Value --></label>
+        <name>Contract_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Execution Date --></label>
+        <name>Execution_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monthly Costs --></label>
+        <name>Monthly_Costs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Negotiation Window Notice --></label>
+        <name>Negotiation_Window_Notice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Performance Based Costs --></label>
+        <name>Performance_Based_Costs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Renewal Date --></label>
+        <name>Renewal_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Renewal Notice --></label>
+        <name>Renewal_Notice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Set-up Costs --></label>
+        <name>Set_up_Costs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Term (Months) --></label>
+        <name>Term__c</name>
+    </fields>
+    <fields>
+        <label><!-- Termination Notice --></label>
+        <name>Termination_Notice__c</name>
+    </fields>
+    <layouts>
+        <layout>DealChicken Contract Layout</layout>
+        <sections>
+            <label><!-- Contract Financials --></label>
+            <section>Contract Financials</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Important Dates --></label>
+            <section>Important Dates</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

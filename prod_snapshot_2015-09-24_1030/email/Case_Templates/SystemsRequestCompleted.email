@@ -1,0 +1,14 @@
+A Systems Request Has Been Marked As Completed By 
+
+{!RequestsIssues__c.LastModifiedBy}.
+
+Short Description:
+
+________________________________________________
+{!RequestsIssues__c.Name}
+{!RequestsIssues__c.Title_Short_Description__c}
+________________________________________________
+
+
+To View The Issue Record, Click Here
+{!RequestsIssues__c.Link}

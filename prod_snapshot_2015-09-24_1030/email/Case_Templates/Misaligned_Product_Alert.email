@@ -1,0 +1,7 @@
+Marked By  :  {!Case.LastModifiedBy}
+Case Owner  :  {!Case.OwnerFullName}
+
+Market   :   {!Case.Media_Partner__c}
+Rep  :   {!Case.Affl_Sales_Rep__c}
+
+Misaligned Description  :   {!Case.DA_Misaligned_Product_Description__c}

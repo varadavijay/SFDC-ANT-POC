@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity.DealChicken_Market__c</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Ops_Stages__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <operator>equals</operator>
+            <value>Closed - Appr &amp; Sign</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Ops_Stages__c</column>
+            <operator>equals</operator>
+            <value>Proof out to Merchant,Start,Shell Created,Proof Approved,Merchant Phone Contact,Deal Pulled,MQ Sent,Revisions,Run date change proposed,Run date change approved,Rush,Repeat Deal - No MQ Needed,Info Needed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Market_Record__c</column>
+            <operator>notEqual</operator>
+            <value>&quot;US, National&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.DealChicken_Market__c</column>
+            <operator>contains</operator>
+            <value>Lafayette,Little Rock,Mountain Home,Montgomery,LA,Mountain,Cleveland,Oshkosh,WI,Des Moines,Iowa,Sheboygan,Rochester</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.DealChicken_Market__c</column>
+            <operator>notContain</operator>
+            <value>Delaware,FL,Michigan,Green,MD,Portland,Lansing,NJ,Marion,Fox,TN,GA,MN,MO</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.DC_Run_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Rebekah</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Opportunity.DC_Run_Date__c</dateColumn>
+        <interval>INTERVAL_NEXT30</interval>
+    </timeFrameFilter>
+</Report>

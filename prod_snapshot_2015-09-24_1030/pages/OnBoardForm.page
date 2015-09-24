@@ -1,0 +1,2953 @@
+<apex:page standardController="OnBoardFormModel__c"
+	extensions="OnBoardFormControllerExt" showHeader="false"
+	title="OnBoard Form" sidebar="true" standardStylesheets="true"
+	wizard="false" setup="false">
+	<!--  Styles -->
+	<apex:stylesheet value="{!URLFOR($Resource.poshytip, '/tip-yellow/tip-yellow.css')}" />
+	<style>
+.subsectionBlue {
+	font-size: 1em;
+	font-weight: bold;
+	color: #1C92D0
+}
+
+.dateFormat {
+	display: none;
+}
+
+.formData {
+	background: #ffffb0;
+}
+
+.spacer {
+	margin-right: 6px;
+}
+
+.colA {
+	width: 230px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.colB {
+	width: 65px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.colC {
+	width: 330px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.col0 {
+	width: 100px;
+	text-align: left;
+}
+
+.col1 {
+	width: 110px;
+	text-align: left;
+}
+
+.col2 {
+	width: 30px;
+	text-align: left;
+}
+
+.col3 {
+	width: 5px;
+	text-align: left;
+}
+
+.col4 {
+	width: 30px;
+	text-align: left;
+}
+
+.col5 {
+	width: 100px;
+	text-align: center;
+}
+
+.col6 {
+	width: 30px;
+	text-align: left;
+}
+
+.col7 {
+	width: 5px;
+	text-align: left;
+}
+
+.col8 {
+	width: 30px;
+	text-align: left;
+}
+
+.is-disabled {
+	opacity: .5;
+	pointer-events: none;
+}
+
+.detailList tr th,.detailList tr td {
+	border-bottom: none !important;
+}
+</style>
+	<Script>
+		function inputLimiter(e, allow) {
+			var AllowableCharacters = '';
+
+			if (allow == 'Letters') {
+				AllowableCharacters = ' ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+			}
+			if (allow == 'Numbers') {
+				AllowableCharacters = '1234567890';
+			}
+			if (allow == 'NameCharacters') {
+				AllowableCharacters = ' ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-.\'';
+			}
+			if (allow == 'NameCharactersAndNumbers') {
+				AllowableCharacters = '1234567890 ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-\'';
+			}
+			if (allow == 'Currency') {
+				AllowableCharacters = '1234567890.';
+			}
+
+			var k = document.all ? parseInt(e.keyCode) : parseInt(e.which);
+			if (k != 13 && k != 8 && k != 0) {
+				if ((e.ctrlKey == false) && (e.altKey == false)) {
+					return (AllowableCharacters.indexOf(String.fromCharCode(k)) != -1);
+				} else {
+					return true;
+				}
+			} else {
+				return true;
+			}
+		}
+
+		var j$ = jQuery.noConflict();
+
+		function showLoadingDiv() {
+			var newHeight = j$("[id$=onboardformId]").css("height");//Just shade the body, not the header
+			j$("[id$=loading-curtain-div]").css("background-color", "black")
+					.css("opacity", 0.35).css("height", newHeight).css("width",
+							"100%").css("display", "inline");
+		}
+		function hideLoadingDiv() {
+			j$("[id$=loading-curtain-div]").css("background-color", "black")
+					.css("opacity", "1").css("height", "0px").css("width",
+							"100%").css("display", "none");
+		}
+
+		var __sfdcSessionId = '{!GETSESSIONID()}';
+		//http://forceadventure.wordpress.com/2013/07/19/uploading-attachments-to-salesforce-using-javascript-remoting/
+		//Maximum String length of 6 million characters in apex code 
+		//This means a functional limit of a file size of about 4.3 MB
+		function uploadFile(inputFileId, attachmentNameId, attachmentBodyId,
+				attachmentContentTypeId) {
+			var input = document.getElementById(inputFileId);
+			var filesToUpload = input.files;
+			var maxStringSize = 6000000; //Maximum String size is 6,000,000 characters
+			var maxFileSize = 4500000; //After Base64 Encoding, this is the max file size
+
+			for ( var i = 0, onefile; onefile = filesToUpload[i]; i++) {
+				var reader = new FileReader();
+				// Keep a reference to the File in the FileReader so it can be accessed in callbacks
+				reader.file = onefile;
+
+				var ext = onefile.name
+						.substring(onefile.name.lastIndexOf('.') + 1);
+				if (ext.toLowerCase() == 'exe') {
+					alert('Sorry, Executable files cannot be uploaded');
+					input.value = '';
+					return false;
+				}
+
+				if (onefile.size > maxFileSize) {
+					alert('File must be under 4.3 MB in size.  Your file is too large.  Please try again.');
+					input.value = '';
+					return false;
+				}
+				reader.onerror = function(e) {
+					switch (e.target.error.code) {
+					case e.target.error.NOT_FOUND_ERR:
+						alert('File Not Found!');
+						break;
+					case e.target.error.NOT_READABLE_ERR:
+						alert('File is not readable');
+						break;
+					case e.target.error.ABORT_ERR:
+						break; // noop
+					default:
+						alert('An error occurred reading this file.');
+					}
+					;
+				};
+
+				reader.onabort = function(e) {
+					alert('File read cancelled');
+				};
+
+				reader.onload = function(e) {
+					document.getElementById(attachmentNameId).value = this.file.name;
+					document.getElementById(attachmentContentTypeId).value = this.file.type;
+					document.getElementById(attachmentBodyId).value = window
+							.btoa(this.result);
+					;
+				};
+				reader.readAsBinaryString(onefile);
+			}
+		}
+
+		//Clear attachment fields when something is attached and user didnot click on upload instead clicked on submit
+		function clearAttachments() {
+			//Clearing hidden controls that have html-clearfileattachment="true" attibute
+			j$('input[clearfileattachment="true"]').each(function() {
+				this.value = '';
+				//alert( this.value );
+			});
+
+			//Clearing all file attachments content
+			j$('input[type="file"]').each(function() {
+				this.value = '';
+				//alert( this.value );
+			});
+			return true;
+
+		}
+	</script>
+
+	<!-- java script -->
+	<apex:includeScript value="{!URLFOR($Resource.ulPicklist, '/jquery-1.7.2.min.js')}" />
+	<apex:includeScript value="{!URLFOR($Resource.poshytip, '/jquery.poshytip.js')}" />
+	<script src="/soap/ajax/29.0/connection.js" type="text/javascript"></script>
+
+	<!-- Page Starts Here -->
+	<apex:composition template="{!$Site.Template}">
+		<apex:define name="body">
+			<apex:form id="onboardformId">
+           <div style="text-align:left;float:right;">  Firefox is the supported and recommended browser for use with Salesforce.com.<br/> 
+                                          Internet Explorer is not widely supported for many Salesforce functions.<br/>
+                                          Safari or Chrome may be tried as back up options, however, some functionality may not be fully supported.</div>
+				<apex:outputpanel >
+					<apex:actionstatus id="status" onstart="showLoadingDiv();"
+						onstop="hideLoadingDiv();">
+						<apex:facet name="start">
+							<div class="waitingSearchDiv" id="loading-curtain-div"
+								style="display: none;">
+								<div class="waitingHolder">
+									<img class="waitingImage" src="/img/loading32.gif"
+										title="Please Wait..." /> <span class="waitingDescription">Please
+										Wait...</span>
+								</div>
+							</div>
+						</apex:facet>
+					</apex:actionstatus>
+				</apex:outputpanel>
+				<apex:messages id="error" styleClass="errorMsg"
+					style="margin-top:1em; color:red; font-style:italic;"
+					globalOnly="true" />
+				<apex:pageBlock id="mainPage" mode="mainDetail">
+					<apex:outputText value="CUSTOMER ONBOARDING SUBMITTAL"
+						style="font-size:2em;font-weight:bolder;color:#1C92D0" />
+
+					<apex:pageBlockButtons location="both">
+						<apex:commandButton value="Submit OnBoard"
+							action="{!saveOnBoardForm}" onclick="return clearAttachments()" />
+					</apex:pageBlockButtons>
+
+					<apex:pageBlocksection columns="1">
+						<!--  Gannett Information -->
+						<apex:pageBlocksection columns="1" title="Gannett Information"
+							collapsible="true">
+							<apex:pageBlocksection >
+								<apex:pageBlockSectionItem >
+									<apex:outputPanel layout="block" style="width:300px;">Select The First Letter Of The First Name Of Sales Rep</apex:outputPanel>
+									<apex:outputPanel layout="block" styleClass="requiredInput">
+										<apex:outputPanel layout="block" styleClass="requiredBlock" />
+										<apex:actionRegion >
+											<apex:actionFunction name="redrawSalesRepSelect"
+												action="{!null}"
+												rerender="salesRepSelect, salesRepNotInList" status="status" />
+											<apex:selectList id="SalesRepFirstLettertest"
+												value="{!selectedSalesRepLetter}" multiselect="false"
+												size="1" onchange="redrawSalesRepSelect();"
+												html-automationid="SelectFirstLetterAMID">
+												<apex:selectOptions value="{!Letters}" />
+											</apex:selectList>
+										</apex:actionRegion>
+									</apex:outputPanel>
+								</apex:pageBlockSectionItem>
+							</apex:pageBlocksection>
+
+							<apex:pageBlockSection id="salesRepSelect">
+								<apex:pageBlockSectionItem rendered="{!selectedSalesRepLetter <> '-'}">
+									<apex:outputPanel layout="block" style="width:300px;">Then Select Sales Rep Name From The List</apex:outputPanel>
+									<apex:outputPanel layout="block" styleClass="requiredInput">
+										<apex:outputPanel layout="block" styleClass="requiredBlock" />
+										<apex:actionRegion >
+											<apex:actionFunction name="redrawNotInList" action="{!null}"
+												rerender="salesRepNotInList" status="status" />
+
+											<apex:selectList id="RepList" value="{!selectedSalesRep}"
+												multiselect="false" size="1" required="true" tabIndex="1"
+												onchange="redrawNotInList();"
+												html-automationid="SelectRepNameFromListAMID">
+												<apex:selectOptions value="{!initialToContactSelectOptions[selectedSalesRepLetter]}" />
+											</apex:selectList>
+										</apex:actionRegion>
+									</apex:outputPanel>
+								</apex:pageBlockSectionItem>
+							</apex:pageBlockSection>
+
+							<apex:pageBlockSection id="salesRepNotInList">
+								<apex:pageBlockSectionItem rendered="{!AND(selectedSalesRep == DEFAULT_CONTACT_ID, selectedSalesRepLetter <> '-')}">
+									<apex:outputPanel layout="block" style="width:300px;">If Not In List, Type Sales Rep Name:</apex:outputPanel>
+									<apex:outputPanel layout="block" styleClass="requiredInput"
+										id="salesRepNotInList">
+										<apex:outputPanel layout="block" styleClass="requiredBlock" />
+										<apex:inputField value="{!OnBoardFormModel__c.Affl_Sales_Rep_Text__c}"
+											required="true" html-automationid="EnterRepNameNotInListAMID" />
+									</apex:outputPanel>
+								</apex:pageBlockSectionItem>
+							</apex:pageBlockSection>
+
+
+
+							<!--  Select Media Partner -->
+							<apex:pageBlockSection columns="1">
+								<apex:pageBlockSectionItem >
+									<apex:outputPanel layout="block" style="width:300px;">Select Media Partner:</apex:outputPanel>
+									<apex:outputPanel layout="block" styleClass="requiredInput">
+										<apex:outputPanel layout="block" styleClass="requiredBlock" />
+										<apex:selectList value="{!OnBoardFormModel__c.Media_Partner__c}"
+											multiselect="false" size="1" required="true" tabindex="3"
+											html-automationid="MediaPartnerAMID">
+											<apex:selectOptions value="{!mediaPartnerList}" id="moptions" />
+										</apex:selectList>
+									</apex:outputPanel>
+								</apex:pageBlockSectionItem>
+
+								<apex:inputField value="{!OnBoardFormModel__c.Select_if_G_O_Outside_Direct_Rep__c}"
+									required="true" taborderhint="16"
+									label="Select if G/O Outside Direct Rep:"
+									html-automationid="SelectOutsideDirectRepAMID" />
+								<apex:inputField value="{!OnBoardFormModel__c.Order_Number__c}"
+									required="false" taborderhint="9" style="width:20%;"
+									label="Enter Order Number:" html-automationid="OrderNumberAMID" />
+							</apex:pageBlockSection>
+						</apex:pageBlocksection>
+						<apex:pageBlocksection columns="2" title="Advertiser Information"
+							collapsible="true">
+							<!--  Additional Information -->
+							<apex:pageBlockSection columns="1">
+								<apex:PageBlockSection columns="1">
+									<apex:inputField value="{!OnBoardFormModel__c.Advertiser_Company_Name__c}"
+										required="true" taborderhint="4"
+										label="Advertiser Company Name:" style="width:100%"
+										html-automationid="AdvertiserCompanyNameAMID" />
+									<apex:inputField value="{!OnBoardFormModel__c.Advertiser_Contact_First_Name__c}"
+										required="true" taborderhint="5"
+										label="Advertiser Contact - First Name:" style="width:100%"
+										html-automationid="AdvertiserContactFirstNameAMID" />
+									<apex:inputField value="{!OnBoardFormModel__c.Advertiser_Contact_Last_Name__c}"
+										required="true" taborderhint="5"
+										label="Advertiser Contact - Last Name:" style="width:100%"
+										html-automationid="AdvertiserContactLastNameAMID" />
+									<apex:inputField value="{!OnBoardFormModel__c.Advertiser_Contact_Phone__c}"
+										required="true" taborderhint="6"
+										label="Advertiser Contact Phone:" style="width:100%"
+										html-automationid="AdvertiserContactPhoneAMID" />
+									<apex:inputField value="{!OnBoardFormModel__c.Advertiser_Web_Address__c}"
+										required="true" taborderhint="7"
+										label="Advertiser Web Address:" style="width:100%"
+										html-automationid="AdvertiserWebAddressAMID" />
+									<apex:inputField value="{!OnBoardFormModel__c.Advertiser_Email_Address__c}"
+										required="true" taborderhint="8"
+										label="Advertiser Email Address:" style="width:100%"
+										html-automationid="AdvertiserEmailAddressAMID" />
+								</apex:PageBlockSection>
+
+								<apex:PageBlockSection columns="1" id="advertiserinformation">
+									<apex:PageBlockSectionItem >
+										<apex:outputLabel >Advertiser Industry:</apex:outputlabel>
+											<apex:outputPanel layout="block" styleClass="requiredInput">
+												<apex:outputPanel layout="block" styleClass="requiredBlock" />
+												<apex:actionRegion >
+													<apex:actionFunction name="redrawIndustryFocus"
+														action="{!null}" rerender="advertiserinformation"
+														status="status" />
+													<apex:selectList value="{!selectedIndustryId}"
+														multiselect="false" size="1" required="true"
+														onchange="redrawIndustryFocus(this.value)"
+														style="width:100%;"
+														html-automationid="AdvertiserIndustryAMID">
+														<apex:selectOptions value="{!AdvertiserIndustry}"
+															id="industryOptions" />
+													</apex:selectList>
+												</apex:actionRegion>
+											</apex:outputPanel>
+									</apex:PageBlockSectionItem>
+
+									<apex:PageBlockSectionItem >
+										<apex:outputLabel >Advertiser Primary Focus:</apex:outputlabel>
+											<apex:outputPanel layout="block" styleClass="requiredInput">
+												<apex:outputPanel layout="block" styleClass="requiredBlock" />
+												<apex:actionRegion >
+													<apex:actionFunction name="redrawIndustryOther"
+														action="{!null}" rerender="advertiserinformation"
+														status="status" />
+													<apex:selectList value="{!selectedIndustryFocusId}"
+														multiselect="false" size="1"
+														onchange="redrawIndustryOther(this.value)" required="true"
+														style="width:100%;"
+														html-automationid="AdvertiserIndustryFocusAMID">
+														<apex:selectOptions value="{!AdvertiserIndustryFocus}"
+															id="industryFocusOptions" />
+													</apex:selectList>
+												</apex:actionRegion>
+											</apex:outputPanel>
+									</apex:PageBlockSectionItem>
+
+									<apex:pageBlockSectionItem rendered="{!OR(selectedIndustryId == OTHER,selectedIndustryFocusId == OTHER)}">
+										<apex:outputLabel value="Please provide an Advertiser Industry or Campaign Focus:" />
+										<apex:inputField value="{!OnBoardFormModel__c.Advertiser_Industry_Or_Focus_Other__c}"
+											required="true" style="width:100%;"
+											html-automationid="AdvertiserIndustryFocusOtherAMID" />
+									</apex:pageBlockSectionItem>
+								</apex:PageBlockSection>
+
+								<apex:PageBlockSection columns="1">
+									<apex:inputField value="{!OnBoardFormModel__c.Business_Description__c}"
+										required="true" taborderhint="9" label="Business Description:"
+										style="width:100%" html-automationid="BusinessDescriptionAMID" />
+									<apex:inputField value="{!OnBoardFormModel__c.Notes_Advertiser__c}"
+										required="false" label="Notes - Advertiser:"
+										style="width:100%" />
+								</apex:PageBlockSection>
+							</apex:pageBlockSection>
+							<!-- Hours of Operation (if applicable): -->
+							<apex:pageBlockSection columns="1">
+								<apex:outputText value="Hours of Operation (if applicable):"
+									style="font-size:1em;font-weight:bold;" />
+								<apex:pageBlockSectionItem >
+									<apex:panelGrid columns="3" columnClasses="colA, colB, colC">
+										<apex:outputPanel >
+											<span>Closed All Day</span>
+										</apex:outputPanel>
+										<apex:outputPanel >
+											<span>Open</span>
+										</apex:outputPanel>
+										<apex:outputPanel >
+											<span>Close</span>
+										</apex:outputPanel>
+									</apex:panelGrid>
+								</apex:pageBlockSectionItem>
+								<apex:pageBlockSectionItem >
+									<apex:actionRegion >
+										<apex:panelGrid columns="9"
+											columnClasses="col0, col1, col2, col3, col4, col5, col6, col7, col8"
+											id="refreshBusinessHours">
+											<!--Sunday-->
+											<apex:outputPanel >
+												<span>Sunday</span>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputCheckbox value="{!OnBoardFormModel__c.Sunday_Closed__c}">
+													<apex:actionSupport event="onchange"
+														action="{!setdefaultbusinesshoursmins}"
+														rerender="refreshBusinessHours" status="status" />
+												</apex:inputCheckbox>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField id="Sunday_Start_Hour__c"
+													value="{!OnBoardFormModel__c.Sunday_Start_Hour__c}"
+													styleClass="{!if(OnBoardFormModel__c.Sunday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel > : </apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Sunday_Start_Min__c}"
+													styleClass="{!if(OnBoardFormModel__c.Sunday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<span>to </span>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Sunday_End_Hour__c}"
+													styleClass="{!if(OnBoardFormModel__c.Sunday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel > : </apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Sunday_End_Min__c}"
+													styleClass="{!if(OnBoardFormModel__c.Sunday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<!--End-->
+											<!--Monday-->
+											<apex:outputPanel >
+												<span>Monday</span>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputCheckbox value="{!OnBoardFormModel__c.Monday_Closed__c}">
+													<apex:actionSupport event="onchange"
+														action="{!setdefaultbusinesshoursmins}"
+														rerender="refreshBusinessHours" status="status" />
+												</apex:inputCheckbox>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Monday_Start_Hour__c}"
+													styleClass="{!if(OnBoardFormModel__c.Monday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel > : </apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Monday_Start_Min__c}"
+													styleClass="{!if(OnBoardFormModel__c.Monday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<span>to </span>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Monday_End_Hour__c}"
+													styleClass="{!if(OnBoardFormModel__c.Monday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel > : </apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Monday_End_Min__c}"
+													styleClass="{!if(OnBoardFormModel__c.Monday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<!--End-->
+											<!--Tuesday-->
+											<apex:outputPanel >
+												<span>Tuesday</span>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputCheckbox value="{!OnBoardFormModel__c.Tuesday_Closed__c}">
+													<apex:actionSupport event="onchange"
+														action="{!setdefaultbusinesshoursmins}"
+														rerender="refreshBusinessHours" status="status" />
+												</apex:inputCheckbox>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Tuesday_Start_Hour__c}"
+													styleClass="{!if(OnBoardFormModel__c.Tuesday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel > : </apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Tuesday_Start_Min__c}"
+													styleClass="{!if(OnBoardFormModel__c.Tuesday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<span>to </span>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Tuesday_End_Hour__c}"
+													styleClass="{!if(OnBoardFormModel__c.Tuesday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel > : </apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Tuesday_End_Min__c}"
+													styleClass="{!if(OnBoardFormModel__c.Tuesday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<!--End-->
+											<!--Wednesday-->
+											<apex:outputPanel >
+												<span>Wednesday</span>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputCheckbox value="{!OnBoardFormModel__c.Wednesday_Closed__c}">
+													<apex:actionSupport event="onchange"
+														action="{!setdefaultbusinesshoursmins}"
+														rerender="refreshBusinessHours" status="status" />
+												</apex:inputCheckbox>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Wednesday_Start_Hour__c}"
+													styleClass="{!if(OnBoardFormModel__c.Wednesday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel > : </apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Wednesday_Start_Min__c}"
+													styleClass="{!if(OnBoardFormModel__c.Wednesday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<span>to </span>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Wednesday_End_Hour__c}"
+													styleClass="{!if(OnBoardFormModel__c.Wednesday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel > : </apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Wednesday_End_Min__c}"
+													styleClass="{!if(OnBoardFormModel__c.Wednesday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<!--End-->
+											<!--Thursday-->
+											<apex:outputPanel >
+												<span>Thursday</span>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputCheckbox value="{!OnBoardFormModel__c.Thursday_Closed__c}">
+													<apex:actionSupport event="onchange"
+														action="{!setdefaultbusinesshoursmins}"
+														rerender="refreshBusinessHours" status="status" />
+												</apex:inputCheckbox>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Thursday_Start_Hour__c}"
+													styleClass="{!if(OnBoardFormModel__c.Thursday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel > : </apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Thursday_Start_Min__c}"
+													styleClass="{!if(OnBoardFormModel__c.Thursday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<span>to </span>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Thursday_End_Hour__c}"
+													styleClass="{!if(OnBoardFormModel__c.Thursday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel > : </apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Thursday_End_Min__c}"
+													styleClass="{!if(OnBoardFormModel__c.Thursday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<!--End-->
+											<!--Friday-->
+											<apex:outputPanel >
+												<span>Friday</span>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputCheckbox value="{!OnBoardFormModel__c.Friday_Closed__c}">
+													<apex:actionSupport event="onchange"
+														action="{!setdefaultbusinesshoursmins}"
+														rerender="refreshBusinessHours" status="status" />
+												</apex:inputCheckbox>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Friday_Start_Hour__c}"
+													styleClass="{!if(OnBoardFormModel__c.Friday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel > : </apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Friday_Start_Min__c}"
+													styleClass="{!if(OnBoardFormModel__c.Friday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<span>to </span>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Friday_End_Hour__c}"
+													styleClass="{!if(OnBoardFormModel__c.Friday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel > : </apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Friday_End_Min__c}"
+													styleClass="{!if(OnBoardFormModel__c.Friday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<!--End-->
+											<!--Saturday-->
+											<apex:outputPanel >
+												<span>Saturday</span>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputCheckbox value="{!OnBoardFormModel__c.Saturday_Closed__c}">
+													<apex:actionSupport event="onchange"
+														action="{!setdefaultbusinesshoursmins}"
+														rerender="refreshBusinessHours" status="status" />
+												</apex:inputCheckbox>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Saturday_Start_Hour__c}"
+													styleClass="{!if(OnBoardFormModel__c.Saturday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel > : </apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Saturday_Start_Min__c}"
+													styleClass="{!if(OnBoardFormModel__c.Saturday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<span>to </span>
+											</apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Saturday_End_Hour__c}"
+													styleClass="{!if(OnBoardFormModel__c.Saturday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<apex:outputPanel > : </apex:outputPanel>
+											<apex:outputPanel >
+												<apex:inputField value="{!OnBoardFormModel__c.Saturday_End_Min__c}"
+													styleClass="{!if(OnBoardFormModel__c.Saturday_Closed__c, 'is-disabled', '')}"
+													required="true" style="width:60px;" />
+											</apex:outputPanel>
+											<!--End-->
+										</apex:panelGrid>
+									</apex:actionRegion>
+								</apex:pageBlockSectionItem>
+								<apex:pageBlock mode="mainDetail">
+									<apex:inputField value="{!OnBoardFormModel__c.Hours_of_Operation__c}"
+										id="Location_validation" style="display: none;" />
+									<apex:message for="Location_validation"
+										styleClass="employeeError" />
+								</apex:pageBlock>
+							</apex:pageBlockSection>
+						</apex:pageBlocksection>
+
+						<!--  Advertiser Lead Notification -->
+						<apex:pageBlockSection title="Advertiser Lead Notification"
+							collapsible="true" columns="2">
+							<apex:pageBlockSection columns="1">
+								<apex:inputField value="{!OnBoardFormModel__c.Lead_Capture_Email__c}"
+									required="false" taborderhint="13"
+									label="Lead Capture Email Address:" style="width:100%"
+									html-automationid="LeadCaptureEmailAMID" />
+								<apex:inputField value="{!OnBoardFormModel__c.Lead_Capture_Target_Phone__c}"
+									required="false" taborderhint="13"
+									label="Lead Capture Target Phone:" style="width:100%"
+									html-automationid="LeadCaptureTargetPhonelAMID" />
+							</apex:pageBlockSection>
+							<apex:pageBlockSection >
+							</apex:pageBlockSection>
+						</apex:pageBlockSection>
+
+						<!--  Add Business Location -->
+						<apex:pageBlockSection title="Add Business Location"
+							collapsible="true" columns="2">
+							<apex:pageBlockSection columns="1">
+								<apex:inputField value="{!OnBoardFormModel__c.Location_Name__c}"
+									required="true" taborderhint="9" label="Location Name:"
+									style="width:100%" />
+								<apex:inputField value="{!OnBoardFormModel__c.Address_1__c}"
+									required="true" taborderhint="9" label="Address 1:"
+									style="width:100%" />
+								<apex:inputField value="{!OnBoardFormModel__c.State__c}"
+									required="true" taborderhint="9" label="State:"
+									style="width:100%" />
+								<apex:inputField value="{!OnBoardFormModel__c.Phone__c}"
+									required="true" taborderhint="9" label="Phone:"
+									style="width:100%" />
+							</apex:pageBlockSection>
+
+							<apex:pageBlockSection columns="1">
+								<br />
+								<apex:inputField value="{!OnBoardFormModel__c.Address_2__c}"
+									required="false" taborderhint="9" label="Address 2:"
+									style="width:100%" />
+								<apex:inputField value="{!OnBoardFormModel__c.City__c}"
+									required="true" taborderhint="9" label="City:"
+									style="width:100%" />
+								<apex:inputField value="{!OnBoardFormModel__c.Postal_Code__c}"
+									required="true" taborderhint="9" label="Postal Code:"
+									style="width:100%" />
+							</apex:pageBlockSection>
+						</apex:pageBlockSection>
+
+						<apex:pageBlockSection title="Competitor Information"
+							collapsible="true" columns="2">
+							<apex:pageBlockSection columns="1">
+								<apex:inputField value="{!OnBoardFormModel__c.Competitor1__c}"
+									required="true" taborderhint="13"
+									label="Competitor URL (1 of 3)" style="width:100%" />
+
+								<apex:inputField value="{!OnBoardFormModel__c.Competitor2__c}"
+									required="false" taborderhint="13" label="(2 of 3)"
+									style="width:100%" />
+
+								<apex:inputField value="{!OnBoardFormModel__c.Competitor3__c}"
+									required="false" taborderhint="13" label="(3 of 3)"
+									style="width:100%" />
+							</apex:pageBlockSection>
+
+							<apex:pageBlockSection columns="1">
+								<br />
+							</apex:pageBlockSection>
+						</apex:pageBlockSection>
+						<!--  Media Kit -->
+						<apex:pageBlockSection title="Media Kit" collapsible="true"
+							columns="2">
+							<apex:pageBlockSection columns="1" id="LogoUploadSection">
+								<apex:pageBlockSectionItem >
+									<apex:outputLabel value="" />
+									<apex:outputLabel value="Max attachment size is 4Mb" />
+								</apex:pageBlockSectionItem>
+								<apex:pageBlockSectionItem id="LogoUploadSectionItem1">
+									<apex:outputLabel value="Logo Upload" />
+									<apex:outputPanel >
+										<apex:inputFile Id="MediaKitFileUpload"
+											filename="{!logoUploadAttachment.AttachmentName}"
+											contentType="{!logoUploadAttachment.AttachmentContentType}"
+											value="{!logoUploadAttachment.AttachmentBody}"
+											onchange="uploadFile('{!$Component.MediaKitFileUpload}',  '{!$Component.LogoUploadSection.LogoUploadSectionItem2.logoattachmentName}', '{!$Component.LogoUploadSection.LogoUploadSectionItem2.logoattachmentBody}', '{!$Component.LogoUploadSection.LogoUploadSectionItem2.logoattachmentContentType}');" />
+									</apex:outputPanel>
+								</apex:pageBlockSectionItem>
+
+								<apex:pageBlockSectionItem Id="LogoUploadSectionItem2">
+									<apex:outputLabel value="-" />
+									<apex:outputPanel >
+										<apex:actionRegion >
+											<apex:commandButton action="{!logoUploadAttachment.uploadAttachment}"
+												value="Upload Attachment"
+												reRender="logoattachmentId, displayMediaFileAttachmentLink, logoattachmentBody"
+												status="status" />
+											<apex:inputHidden value="{!logoUploadAttachment.AttachmentBody}"
+												html-clearfileattachment="true" id="logoattachmentBody" />
+											<apex:inputHidden value="{!logoUploadAttachment.AttachmentName}"
+												id="logoattachmentName" />
+											<apex:inputHidden value="{!logoUploadAttachment.AttachmentContentType}"
+												id="logoattachmentContentType" />
+											<apex:inputHidden value="{!logoUploadAttachment.AttachmentId}"
+												Id="logoattachmentId" />
+											<apex:outputLink Id="displayMediaFileAttachmentLink"
+												value="/servlet/servlet.FileDownload?file={!logoUploadAttachment.AttachmentId}"
+												target="_blank">{!IF(logoUploadAttachment.AttachmentId == NULL, '' ,logoUploadAttachment.AttachmentName)}</apex:outputLink>
+										</apex:actionRegion>
+									</apex:outputPanel>
+								</apex:pageBlockSectionItem>
+							</apex:pageBlockSection>
+
+							<apex:pageBlockSection columns="1" id="ImagesCreativeFileSection">
+								<apex:pageBlockSectionItem >
+									<apex:outputLabel value="" />
+									<apex:outputLabel value="Max attachment size is 4Mb" />
+								</apex:pageBlockSectionItem>
+								<apex:pageBlockSectionItem Id="ImagesCreativeSectionItem1">
+									<apex:outputLabel value="Images/Creative Upload" />
+									<apex:inputFile Id="ImagesCreativeFileUpload"
+										filename="{!imagesCreativeFileAttachment.AttachmentName}"
+										contentType="{!imagesCreativeFileAttachment.AttachmentContentType}"
+										value="{!imagesCreativeFileAttachment.AttachmentBody}"
+										onchange="uploadFile('{!$Component.ImagesCreativeFileUpload}',  '{!$Component.ImagesCreativeFileSection.ImagesCreativeSectionItem2.ImagesCreativeattachmentName}', '{!$Component.ImagesCreativeFileSection.ImagesCreativeSectionItem2.ImagesCreativeattachmentBody}', '{!$Component.ImagesCreativeFileSection.ImagesCreativeSectionItem2.ImagesCreativeattachmentContentType}');" />
+								</apex:pageBlockSectionItem>
+
+								<apex:pageBlockSectionItem Id="ImagesCreativeSectionItem2">
+									<apex:outputLabel value="-" />
+									<apex:outputPanel >
+										<apex:actionRegion >
+											<apex:commandButton action="{!imagesCreativeFileAttachment.uploadAttachment}"
+												value="Upload Attachment"
+												reRender="ImagesCreativeattachmentId, displayImagesCreativeAttachmentLink, ImagesCreativeattachmentBody"
+												status="status" />
+											<apex:inputHidden value="{!imagesCreativeFileAttachment.AttachmentBody}"
+												html-clearfileattachment="true"
+												id="ImagesCreativeattachmentBody" />
+											<apex:inputHidden value="{!imagesCreativeFileAttachment.AttachmentName}"
+												id="ImagesCreativeattachmentName" />
+											<apex:inputHidden value="{!imagesCreativeFileAttachment.AttachmentContentType}"
+												id="ImagesCreativeattachmentContentType" />
+											<apex:inputHidden value="{!imagesCreativeFileAttachment.AttachmentId}"
+												Id="ImagesCreativeattachmentId" />
+											<apex:outputLink Id="displayImagesCreativeAttachmentLink"
+												value="/servlet/servlet.FileDownload?file={!imagesCreativeFileAttachment.AttachmentId}"
+												target="_blank">{!IF(imagesCreativeFileAttachment.AttachmentId == NULL, '' ,imagesCreativeFileAttachment.AttachmentName)}</apex:outputLink>
+										</apex:actionRegion>
+									</apex:outputPanel>
+								</apex:pageBlockSectionItem>
+							</apex:pageBlockSection>
+						</apex:pageBlockSection>
+
+
+						<!--  Copy Notifications On Fulfillment Progress -->
+						<apex:pageBlockSection title="Copy Notifications On Fulfillment Progress"
+							collapsible="false" columns="2">
+							<apex:pageBlockSectionItem >
+								<apex:outputText value="Do You Want Any Others To Be Copied On Fulfillment Notifications?"
+									styleClass="subsectionBlue" />
+								<apex:actionRegion >
+									<apex:actionFunction name="redrawnotify" action="{!null}"
+										rerender="notify" status="status" />
+									<apex:selectList value="{!includenotify}" multiselect="false"
+										size="1" onchange="redrawnotify();">
+										<apex:selectOptions value="{!yesNoOptions}"
+											html-automationid="IncludeNotifyAMID" />
+									</apex:selectList>
+								</apex:actionRegion>
+							</apex:pageBlockSectionItem>
+						</apex:pageBlockSection>
+
+						<!--  Enter Up To Three Email Addresses To Receive Fulfillment Updates -->
+						<apex:outputPanel id="notify">
+							<apex:pageBlockSection collapsible="false" columns="1"
+								rendered="{!includenotify == 'true'}">
+								<apex:outputText value="Enter Up To Three Email Addresses To Receive Fulfillment Updates"
+									style="font-size:1em;font-weight:bold;color:#1C92D0" />
+								<apex:panelGrid columns="3" id="theFirstGrid">
+									<apex:outputLabel >First Email Address:</apex:outputlabel>
+										<apex:outputLabel >Second Email Address:</apex:outputlabel>
+											<apex:outputLabel >Third Email Address:</apex:outputlabel>
+												<apex:inputField value="{!OnBoardFormModel__c.First_Email_Address__c}"
+													required="true" style="width:300px;" />
+												<apex:inputField value="{!OnBoardFormModel__c.Second_Email_Address__c}"
+													required="false" style="width:300px;" />
+												<apex:inputField value="{!OnBoardFormModel__c.Third_Email_Address__c}"
+													required="false" style="width:300px;" />
+								</apex:panelGrid>
+							</apex:pageBlockSection>
+						</apex:outputPanel>
+
+						<!--  Contract Information -->
+						<apex:pageBlockSection title="Contract Information"
+							collapsible="false" columns="2">
+							<apex:pageBlockSection columns="1" id="ContractFileSection">
+								<apex:pageBlockSectionItem >
+									<apex:outputLabel value="" />
+									<apex:outputLabel value="Max attachment size is 4Mb" />
+								</apex:pageBlockSectionItem>
+								<apex:pageBlockSectionItem Id="ContractSectionItem1">
+									<apex:outputLabel value="Contract" />
+									<apex:outputPanel layout="block" styleClass="requiredInput">
+										<apex:outputPanel layout="block" styleClass="requiredBlock" />
+										<apex:inputFile Id="ContractFileUpload"
+											filename="{!ContractFileAttachment.AttachmentName}"
+											contentType="{!ContractFileAttachment.AttachmentContentType}"
+											value="{!ContractFileAttachment.AttachmentBody}"
+											onchange="uploadFile('{!$Component.ContractFileUpload}',  '{!$Component.ContractFileSection.ContractSectionItem2.ContractattachmentName}', '{!$Component.ContractFileSection.ContractSectionItem2.ContractattachmentBody}', '{!$Component.ContractFileSection.ContractSectionItem2.ContractattachmentContentType}');" />
+									</apex:outputPanel>
+
+								</apex:pageBlockSectionItem>
+								<apex:pageBlockSectionItem Id="ContractSectionItem2">
+									<apex:outputLabel value="-" />
+									<apex:outputPanel >
+										<apex:actionRegion >
+											<apex:commandButton action="{!ContractFileAttachment.uploadAttachment}"
+												value="Upload Attachment"
+												reRender="ContractattachmentId, displayContractAttachmentLink, ContractattachmentBody"
+												status="status" />
+											<apex:inputHidden value="{!ContractFileAttachment.AttachmentBody}"
+												html-clearfileattachment="true" id="ContractattachmentBody" />
+											<apex:inputHidden value="{!ContractFileAttachment.AttachmentName}"
+												id="ContractattachmentName" />
+											<apex:inputHidden value="{!ContractFileAttachment.AttachmentContentType}"
+												id="ContractattachmentContentType" />
+											<apex:inputHidden value="{!ContractFileAttachment.AttachmentId}"
+												Id="ContractattachmentId" />
+											<apex:outputLink Id="displayContractAttachmentLink"
+												value="/servlet/servlet.FileDownload?file={!ContractFileAttachment.AttachmentId}"
+												target="_blank">{!IF(ContractFileAttachment.AttachmentId == NULL, '' ,ContractFileAttachment.AttachmentName)}</apex:outputLink>
+										</apex:actionRegion>
+									</apex:outputPanel>
+								</apex:pageBlockSectionItem>
+							</apex:pageBlockSection>
+							<apex:pageBlockSection columns="1" >
+							   <apex:pageBlockSection columns="1" >
+								  <apex:inputField value="{!OnBoardFormModel__c.Rate_Request_ID__c}"
+									 required="false" taborderhint="13"
+									 label="Rate Request ID (if a rate request has been submitted and approved):"
+									 style="width:100%"/>
+							   	</apex:pageBlockSection>				
+								<apex:inputField value="{!OnBoardFormModel__c.Audit__c}"
+									required="false" taborderhint="13" label="Audit:"
+									style="width:100%" />
+								<apex:inputField value="{!OnBoardFormModel__c.Do_Not_Start_Before__c}"
+									required="true" taborderhint="13"
+									label="Do Not Start Before Date:" style="width:100%" />
+							</apex:pageBlockSection>
+						</apex:pageBlockSection>
+
+						<!-- PPC Order Info -->
+						<apex:pageBlockSection title="Product Order Information"
+							collapsible="false" columns="2">
+							<apex:outputText value=""
+								style="font-size:1em;font-weight:bolder;color:#1C92D0" />
+							<apex:outputText value="****Please Enter Numbers Only In Budgets (No Dollar Signs)****"
+								style="font-size:1em;font-weight:bolder;color:#1C92D0" />
+							<!-- **** PPC Info **** -->
+							<apex:pageBlockSectionItem >
+								<apex:outputLabel value="PPC:" />
+								<apex:actionRegion >
+									<apex:inputField value="{!OnBoardFormModel__c.PPC__c}"
+										required="false" taborderhint="14" label="PPC:"
+										style="width:25%" html-automationid="PPCSelectionAMID">
+										<apex:actionSupport event="onchange"
+											rerender="ppcSection,ppcFieldsRequired" status="status" />
+									</apex:inputField>
+								</apex:actionRegion>
+							</apex:pageBlockSectionItem>
+
+							<apex:pageBlockSection columns="1" id="ppcFieldsRequired">
+								<apex:pageBlockSection columns="1"
+									rendered="{!OnBoardFormModel__c.PPC__c}" html-class="formData">
+									<apex:pageBlockSectionItem >
+										<apex:outputLabel value="PPC Budget:" />
+										<apex:actionRegion >
+											<apex:inputField value="{!OnBoardFormModel__c.PPC_Budget__c}"
+												required="true" taborderhint="15" label="PPC Budget:"
+												onkeypress="return inputLimiter(event,'Numbers')"
+												style="width:50%" id="ppcBudgetId"
+												html-automationid="PPCBudgetAMID">
+												<apex:actionSupport event="onchange"
+													action="{!ppcBudgetAmountEntered}"
+													rerender="ppcGeoDetails, SummaryCountsRefreshId"
+													status="status" />
+											</apex:inputField>
+										</apex:actionRegion>
+									</apex:pageBlockSectionItem>
+
+									<apex:pageBlockSectionItem >
+										<apex:outputLabel value="Contract Length (months):" />
+										<apex:actionRegion >
+											<apex:inputField value="{!OnBoardFormModel__c.Contract_Length_Months_PPC__c}"
+												required="true" taborderhint="15"
+												label="Contract Length (months):" style="width:50%"
+												html-automationid="PPCContractLengthAMID">
+												<apex:actionSupport event="onchange"
+													rerender="SummaryCountsRefreshId" status="status" />
+											</apex:inputField>
+										</apex:actionRegion>
+									</apex:pageBlockSectionItem>
+								</apex:pageBlockSection>
+							</apex:pageBlockSection>
+
+							<apex:pageBlockSection title="" collapsible="false" columns="1">
+							</apex:pageBlockSection>
+							<br />
+							<!-- **** SEO Info **** -->
+							<apex:pageBlockSectionItem >
+								<apex:outputLabel value="SEO:" />
+								<apex:actionRegion >
+									<apex:inputField value="{!OnBoardFormModel__c.SEO__c}"
+										required="false" taborderhint="16" style="width:25%">
+										<apex:actionSupport event="onchange"
+											rerender="seoSection,seoFieldsRequired" status="status" />
+									</apex:inputField>
+								</apex:actionRegion>
+							</apex:pageBlockSectionItem>
+
+							<apex:pageBlockSection columns="1" id="seoFieldsRequired">
+								<apex:pageBlockSection columns="1"
+									rendered="{!OnBoardFormModel__c.SEO__c}" html-class="formData">
+
+									<apex:pageBlockSectionItem >
+										<apex:outputLabel value="SEO Package:" />
+										<apex:actionRegion >
+											<apex:inputField value="{!OnBoardFormModel__c.SEO_Package__c}"
+												required="true" taborderhint="17" label="SEO Package:"
+												style="width:50%">
+												<apex:actionSupport event="onchange"
+                                                    action="{!seoFormulaBudget}" rerender="seoFieldsRequired,campaignTargetSection"
+                                                    status="status" />
+											</apex:inputField>
+										</apex:actionRegion>
+									</apex:pageBlockSectionItem>
+
+									<apex:inputField value="{!OnBoardFormModel__c.SEO_Budget__c}"
+										required="true" taborderhint="13" label="SEO Budget:"
+										style="width:50%"
+										onkeypress="return inputLimiter(event,'Numbers')"
+										rendered="{!NOT(seoFormulaBudgetDisabled)}" />
+
+									<apex:OutputField value="{!OnBoardFormModel__c.SEO_Budget__c}"
+										label="SEO Budget:" style="width:50%"
+										rendered="{!seoFormulaBudgetDisabled}" />
+
+									<apex:inputField value="{!OnBoardFormModel__c.Contract_Length_Months_SEO__c}"
+										required="true" taborderhint="13"
+										label="Contract Length (months):" style="width:50%" />
+
+								</apex:pageBlockSection>
+							</apex:pageBlockSection>
+
+
+							<apex:pageBlockSection title="" collapsible="false" columns="1">
+							</apex:pageBlockSection>
+							<br />
+
+							<!-- **** Maps & Reputation **** -->
+							<apex:pageBlockSectionItem >
+								<apex:outputLabel value="Maps & Reputation:" />
+								<apex:actionRegion >
+									<apex:inputField value="{!OnBoardFormModel__c.Local_Places_Reputation__c}"
+										required="false" taborderhint="16" style="width:25%">
+										<apex:actionSupport event="onchange"
+											rerender="lprSection,lprFieldsRequired" status="status" />
+									</apex:inputField>
+								</apex:actionRegion>
+							</apex:pageBlockSectionItem>
+
+							<apex:pageBlockSection columns="1" id="lprFieldsRequired">
+								<apex:pageBlockSection columns="1"
+									rendered="{!OnBoardFormModel__c.Local_Places_Reputation__c}"
+									html-class="formData">
+									<apex:inputField value="{!OnBoardFormModel__c.Local_Places_Reputation_Option__c}"
+										required="true" taborderhint="13"
+										label="Maps & Reputation Option:" style="width:50%" />
+
+			                                    <apex:pageBlockSectionItem >
+			                                        <apex:outputLabel value="Number of Locations:" />
+			                                        <apex:actionRegion >
+			                                            <apex:inputField value="{!OnBoardFormModel__c.Number_of_Locations__c}"
+			                                                required="true" taborderhint="15"
+			                                                label="Number of Locations:" style="width:50%"
+			                                                onkeypress="return inputLimiter(event,'Numbers')">
+			                                                <apex:actionSupport event="onchange"
+			                                                    action="{!setLPRBudgetFormula}" rerender="formulaLprBudget,FirstLoacationBudget"
+			                                                    status="status" />
+			                                            </apex:inputField>
+			                                        </apex:actionRegion>
+			                                    </apex:pageBlockSectionItem>
+			                                    <apex:OutputField value="{!OnBoardFormModel__c.Maps_Budget1__c}"
+			                                        label="1st Location Budget"
+			                                        style="width:50%" Id="FirstLoacationBudget" />
+			                                    <apex:OutputField value="{!OnBoardFormModel__c.Local_Places_Reputation_Budget__c}"
+			                                        label="Additional Location(s) Budget"
+			                                        style="width:50%" Id="formulaLprBudget" />
+
+									<apex:inputField value="{!OnBoardFormModel__c.Contract_Length_Months_LocalPlaces__c}"
+										required="true" taborderhint="13"
+										label="Contract Length (months):" style="width:50%" />
+								</apex:pageBlockSection>
+							</apex:pageBlockSection>
+
+							<apex:pageBlockSection title="" collapsible="false" columns="1">
+							</apex:pageBlockSection>
+							<br />
+
+							<!-- Lead Capture Pages(lcp) -->
+							<apex:pageBlockSectionItem >
+								<apex:outputLabel value="Lead Capture Pages:" />
+								<apex:actionRegion >
+									<apex:inputField value="{!OnBoardFormModel__c.Lead_Capture_Pages__c}"
+										required="false" taborderhint="16" style="width:25%">
+										<apex:actionSupport event="onchange"
+											rerender="lcpFieldsRequired,leadCaptureSection"
+											status="status" />
+									</apex:inputField>
+								</apex:actionRegion>
+							</apex:pageBlockSectionItem>
+
+							<apex:pageBlockSection columns="1" id="lcpFieldsRequired">
+								<apex:pageBlockSection columns="1"
+									rendered="{!OnBoardFormModel__c.Lead_Capture_Pages__c}"
+									html-class="formData">
+
+									<apex:pageBlockSectionItem >
+										<apex:outputLabel value="Lead Capture Page Option:" />
+										<apex:actionRegion >
+											<apex:inputField value="{!OnBoardFormModel__c.Lead_Capture_Page_Option__c}"
+												required="true" taborderhint="13"
+												label="Lead Capture Page Option:" style="width:50%">
+												<apex:actionSupport event="onchange"
+													action="{!setLCPFormulaBudget}"
+													rerender="lcpFieldsRequired,leadCaptureSection1"
+													status="status" />
+											</apex:inputField>
+										</apex:actionRegion>
+									</apex:pageBlockSectionItem>
+
+									<apex:OutPutField value="{!OnBoardFormModel__c.Lead_Capture_Page_Budget__c}"
+										label="Lead Capture Page Budget:" style="width:50%" />
+
+									<apex:inputField value="{!OnBoardFormModel__c.Contract_Length_Months_LCP__c}"
+										required="true" taborderhint="13"
+										rendered="{!NOT(OnBoardFormModel__c.Lead_Capture_Page_Option__c == 'Single')}"
+										label="Contract Length (months):" style="width:50%" />
+
+									<apex:OutputField value="{!OnBoardFormModel__c.Contract_Length_Months_LCP__c}"
+										rendered="{!OnBoardFormModel__c.Lead_Capture_Page_Option__c == 'Single'}"
+										label="Contract Length (months):" style="width:50%" />
+								</apex:pageBlockSection>
+							</apex:pageBlockSection>
+
+							<apex:pageBlockSection title="" collapsible="false" columns="1">
+							</apex:pageBlockSection>
+							<br />
+
+							<!-- Websites -->
+							<apex:pageBlockSectionItem >
+								<apex:outputLabel value="Websites:" />
+								<apex:actionRegion >
+									<apex:inputField value="{!OnBoardFormModel__c.Websites__c}"
+										required="false" taborderhint="19" style="width:25%"
+										id="dependentWebsiteCheckbox">
+										<apex:actionSupport event="onchange"
+											rerender="websiteFieldsRequired, WebsiteSection"
+											status="status" />
+									</apex:inputField>
+								</apex:actionRegion>
+							</apex:pageBlockSectionItem>
+
+							<apex:pageBlockSection columns="1" id="websiteFieldsRequired">
+								<apex:pageBlockSection columns="1"
+									rendered="{!OnBoardFormModel__c.Websites__c}"
+									html-class="formData">
+									<apex:pageBlockSectionItem >
+										<apex:outputLabel value="Website Option:" />
+										<apex:actionRegion >
+											<apex:inputField value="{!OnBoardFormModel__c.Website_Option__c}"
+												required="{!OnBoardFormModel__c.Websites__c}"
+												label="Website Option:" taborderhint="20" style="width:50%">
+												<apex:actionSupport event="onchange"
+													action="{!SetWebSiteBudgetAndQuote}"
+													rerender="websiteFieldsRequired, WebsiteSection"
+													status="status" />
+											</apex:inputField>
+										</apex:actionRegion>
+									</apex:pageBlockSectionItem>
+
+									<apex:OutPutField value="{!OnBoardFormModel__c.Website_Budget_template_or_mobile_only__c}"
+										rendered="{!NOT(OR(OnBoardFormModel__c.Website_Option__c == 'Website Maintenance' , OnBoardFormModel__c.Website_Option__c == ''))}"
+										label="Website Budget (template or mobile only):"
+										style="width:50%" />
+
+									<apex:inputField value="{!OnBoardFormModel__c.Email_Hosting_sel__c}"
+										required="true"
+										rendered="{!OnBoardFormModel__c.Website_Option__c == 'Custom Website'}"
+										taborderhint="21" label="Email Hosting?" />
+
+									<apex:inputField value="{!OnBoardFormModel__c.Link_to_Proposal__c}"
+										required="true"
+										rendered="{!OnBoardFormModel__c.Website_Option__c == 'Custom Website'}"
+										taborderhint="21" label="Link to Proposal:" style="width:50%" />
+
+									<apex:OutputField value="{!OnBoardFormModel__c.Website_Quote_Cost_Custom__c}"
+										rendered="{!OnBoardFormModel__c.Website_Option__c == 'Website Maintenance'}"
+										label="Website Quote Cost (custom):" style="width:50%" />
+
+									<apex:inputField value="{!OnBoardFormModel__c.Website_Quote_Cost_Custom__c}"
+										required="true"
+										rendered="{!OnBoardFormModel__c.Website_Option__c == 'Custom Website'}"
+										taborderhint="21" label="Website Quote Cost (custom):"
+										style="width:50%"
+										onkeypress="return inputLimiter(event,'Numbers')" />
+
+									<apex:inputField value="{!OnBoardFormModel__c.Contract_Length_Months_Websites__c}"
+										required="{!OnBoardFormModel__c.Websites__c}"
+										taborderhint="13" label="Contract Length (months):"
+										style="width:50%" />
+								</apex:pageBlockSection>
+							</apex:pageBlockSection>
+
+							<apex:pageBlockSection title="" collapsible="false" columns="1">
+							</apex:pageBlockSection>
+							<br />
+
+							<!-- Social Advertising -->
+							<apex:pageBlockSectionItem >
+								<apex:outputLabel value="Social Advertising:" />
+								<apex:actionRegion >
+									<apex:inputField value="{!OnBoardFormModel__c.Social_Advertising__c}"
+										required="false" taborderhint="25" style="width:25%">
+										<apex:actionSupport event="onchange"
+											rerender="socialAdvertisingFieldsRequired,socialAdvertisingSection"
+											status="status" />
+									</apex:inputField>
+								</apex:actionRegion>
+							</apex:pageBlockSectionItem>
+
+							<apex:pageBlockSection columns="1"
+								id="socialAdvertisingFieldsRequired">
+								<apex:pageBlockSection columns="1"
+									rendered="{!OnBoardFormModel__c.Social_Advertising__c}"
+									html-class="formData">
+									<apex:inputField value="{!OnBoardFormModel__c.Social_Ads_Option__c}"
+										required="true" taborderhint="26" label="Social Ads Option"
+										style="width:50%" />
+
+									<apex:pageBlockSectionItem >
+										<apex:outputLabel value="Social Ads Package" />
+										<apex:actionRegion >
+											<apex:inputField value="{!OnBoardFormModel__c.Social_Ads_Package__c}"
+												required="true" taborderhint="26" label="Social Ads Package"
+												style="width:50%">
+												<apex:actionSupport event="onchange"
+													rerender="socialAdvertisingSection1, socialAdvertisingSection2, socialAdvertisingSection3, socialAdvertisingSection4" status="status" />
+											</apex:inputField>
+										</apex:actionRegion>
+									</apex:pageBlockSectionItem>
+
+									<apex:inputField value="{!OnBoardFormModel__c.Social_Ads_Budget_Month__c}"
+										required="true" taborderhint="26"
+										label="Social Ads Budget/Month" style="width:50%"
+										onkeypress="return inputLimiter(event,'Numbers')" />
+									<apex:inputField value="{!OnBoardFormModel__c.Contract_Length_Months_SocialAds__c}"
+										required="true" taborderhint="13"
+										label="Contract Length (months):" style="width:50%" />
+								</apex:pageBlockSection>
+							</apex:pageBlockSection>
+
+							<apex:pageBlockSection title="" collapsible="false" columns="1">
+							</apex:pageBlockSection>
+							<br />
+
+							<!-- Managed Email -->
+							<!--  Commenting Out as per US3308 
+							<apex:pageBlockSectionItem >
+								<apex:outputLabel value="Managed Email:" />
+								<apex:actionRegion >
+									<apex:inputField value="{!OnBoardFormModel__c.Managed_Email__c}"
+										required="false" taborderhint="27" style="width:25%">
+										<apex:actionSupport event="onchange"
+											rerender="managedEmailFieldsRequired,optionInEmailSystemSection"
+											status="status" />
+									</apex:inputField>
+								</apex:actionRegion>
+							</apex:pageBlockSectionItem>
+
+							<apex:pageBlockSection columns="1"
+								id="managedEmailFieldsRequired">
+								<apex:pageBlockSection columns="1"
+									rendered="{!OnBoardFormModel__c.Managed_Email__c}"
+									html-class="formData">
+
+									<apex:pageBlockSectionItem >
+										<apex:outputLabel value="Email Subscribers:" />
+										<apex:actionRegion >
+											<apex:inputField value="{!OnBoardFormModel__c.Email_Subscribers__c}"
+												required="true" taborderhint="29" label="Email Subscribers:"
+												style="width:50%">
+												<apex:actionSupport event="onchange"
+													action="{!setManagedEmailBudget}"
+													rerender="managedEmailFieldsRequired,optionInEmailSystemSection"
+													status="status" />
+											</apex:inputField>
+										</apex:actionRegion>
+									</apex:pageBlockSectionItem>
+
+									<apex:outputField value="{!OnBoardFormModel__c.Managed_Email_Budget__c}"
+										label="Managed Email Budget:" style="width:50%" />
+									<apex:inputField value="{!OnBoardFormModel__c.Contract_Length_Months_ManagedEmail__c}"
+										required="true" taborderhint="13"
+										label="Contract Length (months):" style="width:50%" />
+								</apex:pageBlockSection>
+							</apex:pageBlockSection>
+
+							<apex:pageBlockSection title="" collapsible="false" columns="1">
+							</apex:pageBlockSection>
+							<br />
+							-->
+							<!-- Targeted Email -->
+							<apex:pageBlockSectionItem >
+								<apex:outputLabel value="Targeted Email:" />
+								<apex:actionRegion >
+									<apex:inputField value="{!OnBoardFormModel__c.Targeted_Email__c}"
+										required="false" taborderhint="27" style="width:25%">
+										<apex:actionSupport event="onchange"
+											rerender="targettedEmailFieldsRequired,targettedEmailBlastSection"
+											status="status" />
+									</apex:inputField>
+								</apex:actionRegion>
+							</apex:pageBlockSectionItem>
+
+                            <apex:pageBlockSection columns="1"
+                                id="targettedEmailFieldsRequired">
+                                <apex:pageBlockSection columns="1"
+                                    rendered="{!OnBoardFormModel__c.Targeted_Email__c}"
+                                    html-class="formData">
+                                    <apex:pageBlockSection columns="1">
+	                                          <apex:pageBlockSectionItem >
+	                                            <apex:outputLabel value="Qty of Recipients per Email Blast:" />
+	                                            <apex:actionRegion >
+	                                                <apex:inputField value="{!OnBoardFormModel__c.Email_Recipients_per_Blast__c}"
+	                                                    required="true" taborderhint="29"
+	                                                    label="Qty of Recipients per Email Blast:"
+	                                                    onkeypress="return inputLimiter(event,'Numbers')"
+	                                                    style="width:50%">
+	                                                    <apex:actionSupport event="onchange"
+	                                                        action="{!targettedEmailFormulaBudget}"
+	                                                        rerender="targettedSubSection1,targettedSubSection2" status="status" />
+	                                                </apex:inputField>
+	                                            </apex:actionRegion>
+	                                        </apex:pageBlockSectionItem>
+                                       </apex:pageBlockSection>
+                                       
+                                       <apex:pageBlockSection columns="1"
+                                        Id="targettedEmailCreativeOption">
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel value="Email Creative Option:" />
+                                            <apex:actionRegion >
+                                                <apex:inputField value="{!OnBoardFormModel__c.TargetedEmail_CreativeOption__c}"
+                                                    required="true" taborderhint="13" style="width:50%">
+                                                    <apex:actionSupport event="onchange"
+                                                        action="{!targettedEmailHtmlFee}"
+                                                        rerender="targettedHTMLFee,targettedAutoTemplate" status="status" />
+                                                </apex:inputField>
+                                            </apex:actionRegion>
+                                        </apex:pageBlockSectionItem>
+                                       </apex:pageBlockSection>
+                                       
+                                      <apex:pageBlockSection columns="1">
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel value="Number of Total Standard Email Blasts:" />
+                                            <apex:actionRegion >
+                                                <apex:inputField value="{!OnBoardFormModel__c.Quantity_of_Email_Blasts_per_60_Days__c}"
+                                                    required="true" taborderhint="29"
+                                                    label="Number of Total Standard Email Blasts:"
+                                                    style="width:50%">
+                                                    <apex:actionSupport event="onchange"
+                                                        action="{!targettedEmailFormulaBudget}"
+                                                        rerender="targettedSubSection1,targetedEmailBroadCastDatesSection, targettedEmailCreativeOption,targettedHTMLFee"
+                                                        status="status" />
+                                                </apex:inputField>
+                                            </apex:actionRegion>
+                                        </apex:pageBlockSectionItem>
+                                       </apex:pageBlockSection>
+                                       
+                                      <apex:pageBlockSection columns="1">
+	                                      <apex:pageBlockSectionItem >
+	                                        <apex:outputLabel value="Number of Total Reminder Email Blasts:" />
+	                                            <apex:actionRegion >
+	                                                <apex:inputField value="{!OnBoardFormModel__c.TargetedEmail_BlastReminder__c}"
+	                                                    required="false" taborderhint="30"
+	                                                    label="Number of Total Reminder Email Blasts:"
+	                                                    onkeypress="return inputLimiter(event,'Numbers')"
+	                                                    style="width:50%">
+	                                                    <apex:actionSupport event="onchange"
+	                                                        action="{!targettedEmailFormulaBudget}"
+	                                                        rerender="targettedSubSection2" status="status" />
+	                                                </apex:inputField>
+	                                            </apex:actionRegion>
+	                                          </apex:pageBlockSectionItem>
+	                                         </apex:pageBlockSection>                                 
+                                        
+	                                    <apex:pageBlockSection id="targettedSubSection1" columns="1">
+	                                        <apex:OutputField value="{!OnBoardFormModel__c.Targeted_Email_Budget__c}"
+	                                            label="Cost per Standard Blast:"
+	                                            style="width:50%" />
+	                                    </apex:pageBlockSection>
+	                                      
+	                                    
+	                                    <apex:pageBlockSection id="targettedSubSection2" columns="1">
+	                                        <apex:OutputField value="{!OnBoardFormModel__c.TargetedEMail_BlastReminderBudget__c}"
+	                                            label="Cost per Reminder Blast:"
+	                                            style="width:50%" />
+	                                    </apex:pageBlockSection>
+	                                                
+	                                    <apex:pageBlockSection id="targettedHTMLFee">
+	                                        <apex:OutputField value="{!OnBoardFormModel__c.TargetedEmail_HTMLFee__c}"
+	                                            label="HTML Fee:" style="width:50%" />
+	                                    </apex:pageBlockSection>
+	
+	                                    
+	                                </apex:pageBlockSection>
+	                            </apex:pageBlockSection>
+
+							<apex:pageBlockSection title="" collapsible="false" columns="1">
+							</apex:pageBlockSection>
+							<br />
+
+							<!-- Social Media Management -->
+							<apex:pageBlockSectionItem >
+								<apex:outputLabel value="Social Media Management:" />
+								<apex:actionRegion >
+									<apex:inputField value="{!OnBoardFormModel__c.Social_Media_Management__c}"
+										required="false" taborderhint="13" style="width:25%">
+										<apex:actionSupport event="onchange"
+											rerender="socialMediaFieldsRequired,socialMediaManagementSection"
+											status="status" />
+									</apex:inputField>
+								</apex:actionRegion>
+							</apex:pageBlockSectionItem>
+
+							<apex:pageBlockSection columns="1" id="socialMediaFieldsRequired">
+								<apex:pageBlockSection columns="1"
+									rendered="{!OnBoardFormModel__c.Social_Media_Management__c}"
+									html-class="formData">
+
+									<apex:pageBlockSectionItem >
+										<apex:outputLabel value="Social Option:" />
+										<apex:actionRegion >
+											<apex:inputField value="{!OnBoardFormModel__c.Social_Option__c}"
+												required="true" taborderhint="13" label="Social Option:"
+												style="width:50%">
+												<apex:actionSupport event="onchange"
+													action="{!setSocialBudget}"
+													rerender="socialMediaFieldsRequired, googlePlusSectionHeader, googlePlusSectionId, twitterSectionId"
+													status="status" />
+											</apex:inputField>
+										</apex:actionRegion>
+									</apex:pageBlockSectionItem>
+
+									<apex:OutputField value="{!OnBoardFormModel__c.Social_Budget__c}"
+										rendered="{!NOT(OR(OnBoardFormModel__c.Social_Option__c == 'Custom Social Package', OnBoardFormModel__c.Social_Option__c == 'Social Mgmt - Reach Ad Spend'))}"
+										label="Social Budget" style="width:50%" />
+
+									<apex:inputField value="{!OnBoardFormModel__c.Social_Budget__c}"
+										required="true" taborderhint="13" label="Social Budget"
+										rendered="{!OR(OnBoardFormModel__c.Social_Option__c == 'Custom Social Package', OnBoardFormModel__c.Social_Option__c == 'Social Mgmt - Reach Ad Spend')}"
+										style="width:50%" />
+
+									<apex:inputField value="{!OnBoardFormModel__c.Contract_Length_Months_SocialMedia__c}"
+										required="true" taborderhint="13"
+										label="Contract Length (months):" style="width:50%" />
+								</apex:pageBlockSection>
+							</apex:pageBlockSection>
+						</apex:pageBlockSection>
+
+						<apex:pageBlockSection columns="1">
+							<!-- Summary 
+							<apex:pageBlockSection columns="1" title="Summary"
+								id="SummaryCountsRefreshId">
+								<apex:pageBlockSectionItem >
+									<apex:outputText value="Monthly Contract Value"
+										style="width:100%;" />
+									<apex:outputText value="{0, number, currency}"
+										label="Monthly Contract Value" style="width:100%;">
+										<apex:param value="{!IF(ISBLANK(OnBoardFormModel__c.PPC_Budget__c), 0, OnBoardFormModel__c.PPC_Budget__c)}" />
+									</apex:outputText>
+								</apex:pageBlockSectionItem>
+
+								<apex:pageBlockSectionItem >
+									<apex:outputText value="Total Contract Value"
+										style="width:100%;" />
+									<apex:outputText value="{0, number, currency}"
+										label="Total Contract Value" style="width:100%;">
+										<apex:param value="{!(IF(ISBLANK(OnBoardFormModel__c.PPC_Budget__c), 0, OnBoardFormModel__c.PPC_Budget__c) 
+															* IF(ISBLANK(OnBoardFormModel__c.Contract_Length_Months_PPC__c), 1, 
+															IF(OnBoardFormModel__c.Contract_Length_Months_PPC__c == 'Evergreen', 3, VALUE(OnBoardFormModel__c.Contract_Length_Months_PPC__c))))}" />
+									</apex:outputText>
+								</apex:pageBlockSectionItem>
+							</apex:pageBlockSection>
+							-->
+						</apex:pageBlockSection>
+
+						<!-- PPC Section the need to Hide and show -->
+						<apex:outputPanel id="ppcSection">
+							<apex:pageBlockSection title="PPC" collapsible="true" columns="1"
+								rendered="{!OnBoardFormModel__c.PPC__c}">
+								<apex:pageBlockSection columns="2" html-class="formData">
+									<apex:pageBlockSection columns="1">
+										<!-- Campaign Information Part I-->
+										<apex:outputLabel value="Campaign Information"
+											styleClass="subsectionBlue" />
+										<apex:inputField value="{!OnBoardFormModel__c.Campaign_Goals__c}"
+											required="true" taborderhint="13"
+											label="Primary Campaign Goal" style="width:100%" />
+
+										<apex:inputField value="{!OnBoardFormModel__c.Products_Services_to_Advertise_For__c}"
+											required="true" taborderhint="13"
+											label="Products/Services to Advertise For" style="width:100%" />
+
+										<apex:inputField value="{!OnBoardFormModel__c.Special_Offers__c}"
+											required="true" taborderhint="13" label="Special Offers"
+											style="width:100%" />
+
+										<apex:inputField value="{!OnBoardFormModel__c.Ad_Copy__c}"
+											required="false" taborderhint="13"
+											label="Is Ad Copy Review Required (Medical, Legal, Finanical Only)"
+											style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Business_Differentiators__c}"
+											required="true" taborderhint="13"
+											label="Business Differentiators" style="width:100%" />
+									    <apex:pageBlockSection columns="1" >
+					 					   <apex:inputField value="{!OnBoardFormModel__c.Notes_PPC__c}"
+											required="false" label="Notes - PPC:" style="width:100%" />
+									    </apex:pageBlockSection>
+									</apex:pageBlockSection>
+
+									<apex:pageBlockSection columns="1">
+										<!-- Campaign Information Part II-->
+										<apex:pageBlockSection columns="1">
+											<apex:inputField value="{!OnBoardFormModel__c.Products_Services_Not_to_Advertise_For__c}"
+												required="true" taborderhint="13"
+												label="Products/Services Not to Advertise For"
+												style="width:100%" />
+										</apex:pageBlockSection>
+
+										<apex:pageBlockSection id="ppcGeoDetails" columns="1">
+											<apex:pageBlockSectionItem helpText="{!$ObjectType.OnBoardFormModel__c.Fields.Target_Geographical_Location__c.inlineHelpText}"
+												Id="PPCtargetGeoLocation">
+												<apex:outputLabel value="Target Geographical Location" />
+												<apex:actionRegion >
+													<apex:inputField value="{!OnBoardFormModel__c.Target_Geographical_Location__c}"
+														required="true" taborderhint="13" style="width:100%"
+														id="picklistPPCTargetDetails"
+														rendered="{!NOT(ppcTargetGeoPickListDisabled)}">
+														<apex:actionSupport event="onchange"
+															rerender="ppcGeoDetails" status="status" />
+													</apex:inputField>
+													<apex:OutputField value="{!OnBoardFormModel__c.Target_Geographical_Location__c}"
+														style="width:50%"
+														rendered="{!ppcTargetGeoPickListDisabled}" />
+												</apex:actionRegion>
+											</apex:pageBlockSectionItem>
+
+											<apex:inputField value="{!OnBoardFormModel__c.Target_State__c}"
+												required="{!OnBoardFormModel__c.Target_Geographical_Location__c == 'State'}"
+												rendered="{!OnBoardFormModel__c.Target_Geographical_Location__c == 'State'}"
+												taborderhint="13" style="width:100%" label="Target State" />
+											<apex:inputField value="{!OnBoardFormModel__c.Target_Radius__c}"
+												required="{!OnBoardFormModel__c.Target_Geographical_Location__c == 'Radius'}"
+												rendered="{!OnBoardFormModel__c.Target_Geographical_Location__c == 'Radius'}"
+												taborderhint="13" label="Target Radius (miles)"
+												style="width:100%" />
+										</apex:pageBlockSection>
+									</apex:pageBlockSection>
+								</apex:pageBlockSection>
+							</apex:pageBlockSection>
+						</apex:outputPanel>
+
+						<!-- SEO Section the need to Hide and show -->
+						<apex:outputPanel id="seoSection">
+							<apex:pageBlockSection title="SEO" collapsible="true" columns="1"
+								rendered="{!OnBoardFormModel__c.SEO__c}">
+								<apex:pageBlockSection columns="2" html-class="formData">
+									<!-- Website Information -->
+									<apex:pageBlockSection columns="1" id="websiteinformationId">
+										<apex:outputLabel value="Website Information"
+											styleClass="subsectionBlue" />
+
+										<apex:pageBlockSectionItem >
+											<apex:outputLabel value="Was SEO done prior?" />
+											<apex:actionRegion >
+												<apex:inputField value="{!OnBoardFormModel__c.Was_SEO_Done_Prior__c}"
+													required="true" taborderhint="17"
+													label="Was SEO done prior?" style="width:100%">
+													<apex:actionSupport event="onchange"
+														rerender="websiteinformationId" status="status" />
+												</apex:inputField>
+											</apex:actionRegion>
+										</apex:pageBlockSectionItem>
+
+										<apex:pageBlockSectionItem rendered="{!OnBoardFormModel__c.Was_SEO_Done_Prior__c == 'Yes'}">
+											<apex:outputLabel value="Who was doing it prior?" />
+											<apex:inputField value="{!OnBoardFormModel__c.Who_Was_Prior_SEO_Provider__c}"
+												required="false" taborderhint="13" style="width:100%" />
+										</apex:pageBlockSectionItem>
+
+										<apex:pageBlockSectionItem >
+											<apex:outputLabel value="Website Access" />
+											<apex:outputPanel Id="refreshWebsiteAccessOptions">
+												<apex:actionRegion >
+													<apex:inputField value="{!OnBoardFormModel__c.Website_Access__c}"
+														required="true" taborderhint="13" label=""
+														style="width:100%">
+														<apex:actionSupport event="onchange"
+															rerender="websiteaccessSubSection, refreshWebsiteAccessOptions"
+															status="status" />
+													</apex:inputField>
+												</apex:actionRegion>
+											</apex:outputPanel>
+										</apex:pageBlockSectionItem>
+									</apex:pageBlockSection>
+
+									<!-- Google Analytics -->
+									<apex:pageBlockSection columns="1" id="googleAnalytics">
+										<apex:outputLabel value="Google Analytics"
+											styleClass="subsectionBlue" />
+										<apex:pageBlockSectionItem >
+											<apex:outputLabel value="Do you have Google Analytics Installed?" />
+											<apex:actionRegion >
+												<apex:inputField value="{!OnBoardFormModel__c.SEO_Google_Analytics_Installed__c}"
+													required="false" taborderhint="13">
+													<apex:actionSupport event="onchange"
+														rerender="googleAnalytics" status="status" />
+												</apex:inputField>
+											</apex:actionRegion>
+										</apex:pageBlockSectionItem>
+										<apex:inputField value="{!OnBoardFormModel__c.SEO_Google_Analytics_Admin_Confirmed__c}"
+											required="false" taborderhint="13"
+											label="I confirm that the client has granted admin access to gannettlocalmasterseo@gmail.com."
+											rendered="{!if(OnBoardFormModel__c.SEO_Google_Analytics_Installed__c=='Yes',true,false)}" />
+									</apex:pageBlockSection>
+
+									<!-- Show/Hide based on dropdown values -->
+									<apex:outputPanel >
+										<apex:outputPanel id="websiteaccessSubSection">
+											<apex:outputPanel Id="cmsUsedSubSection">
+												<apex:pageBlockSection columns="1"
+													rendered="{!OnBoardFormModel__c.Website_Access__c == 'FTP/CMS'}">
+													<!-- CMS/Content Management System Access (Admin Access Required) -->
+													<apex:pageBlockSectionItem >
+														<apex:outputLabel value="CMS/Content Management System Access (Admin Access Required)"
+															styleClass="subsectionBlue" />
+													</apex:pageBlockSectionItem>
+
+													<apex:pageBlockSectionItem >
+														<apex:outputLabel value="CMS Used" for="cmsUsed" />
+														<apex:actionRegion >
+															<apex:inputField id="cmsUsed"
+																value="{!OnBoardFormModel__c.CMS_Used__c}"
+																required="true" taborderhint="13" style="width:100%">
+																<apex:actionSupport event="onchange"
+																	rerender="cmsUsedSubSection" status="status" />
+															</apex:inputField>
+														</apex:actionRegion>
+													</apex:pageBlockSectionItem>
+
+													<apex:pageBlockSectionItem rendered="{!OnBoardFormModel__c.CMS_Used__c == 'Other'}">
+														<apex:outputLabel value="CMS Used(Other)" />
+														<apex:inputField value="{!OnBoardFormModel__c.CMS_Used_Other__c}"
+															required="true" taborderhint="13" style="width:100%" />
+													</apex:pageBlockSectionItem>
+												</apex:pageBlockSection>
+											</apex:outputPanel>
+
+											<apex:pageBlockSection columns="1"
+												rendered="{!OnBoardFormModel__c.Website_Access__c == 'FTP/CMS'}">
+												<apex:pageBlockSectionItem >
+													<apex:outputLabel value="CMS Login URL" for="cmsLogin" />
+													<apex:inputField id="cmsLogin"
+														value="{!OnBoardFormModel__c.CMS_Login_URL__c}"
+														required="true" taborderhint="13" style="width:100%" />
+												</apex:pageBlockSectionItem>
+
+												<apex:pageBlockSectionItem >
+													<apex:outputLabel value="Username" for="cmsUsername" />
+													<apex:inputField id="cmsUsername"
+														value="{!OnBoardFormModel__c.Username__c}" required="true"
+														taborderhint="13" style="width:100%" />
+												</apex:pageBlockSectionItem>
+
+												<apex:pageBlockSectionItem >
+													<apex:outputLabel value="Password" for="cmsPword" />
+													<apex:inputField id="cmsPword"
+														value="{!OnBoardFormModel__c.Password__c}" required="true"
+														taborderhint="13" style="width:100%" />
+												</apex:pageBlockSectionItem>
+												<br />
+												<!-- Host Provider/FTP Access (Read Write Access is required) -->
+												<apex:pageBlockSectionItem >
+													<apex:outputLabel value="Host Provider/FTP Access (Read Write Access is required)"
+														styleClass="subsectionBlue" />
+												</apex:pageBlockSectionItem>
+
+												<apex:pageBlockSectionItem >
+													<apex:outputLabel value="Host URL (typically URL to site)"
+														for="hostUrl" />
+													<apex:inputField id="hostUrl"
+														value="{!OnBoardFormModel__c.Host_URL__c}" required="true"
+														taborderhint="13" style="width:100%" />
+												</apex:pageBlockSectionItem>
+
+												<apex:pageBlockSectionItem >
+													<apex:outputLabel value="Username" for="hostUname" />
+													<apex:inputField id="hostUname"
+														value="{!OnBoardFormModel__c.Host_Provider_Username__c}"
+														required="true" taborderhint="13" style="width:100%" />
+												</apex:pageBlockSectionItem>
+
+												<apex:pageBlockSectionItem >
+													<apex:outputLabel value="Password" for="hostPword" />
+													<apex:inputField id="hostPword"
+														value="{!OnBoardFormModel__c.Host_Provider_Password__c}"
+														required="true" taborderhint="13" style="width:100%" />
+												</apex:pageBlockSectionItem>
+											</apex:pageBlockSection>
+
+											<!-- Website Developer Contact Info (Company or Individual) -->
+											<apex:pageBlockSection columns="1"
+												rendered="{!OnBoardFormModel__c.Website_Access__c == 'Web Developer'}">
+												<apex:pageBlockSectionItem >
+													<apex:outputLabel value="Website Developer Contact Info (Company or Individual)"
+														styleClass="subsectionBlue" />
+												</apex:pageBlockSectionItem>
+
+												<apex:pageBlockSectionItem >
+													<apex:outputLabel value="First Name" for="fname" />
+													<apex:inputField id="fname"
+														value="{!OnBoardFormModel__c.First_Name__c}"
+														required="true" taborderhint="13" style="width:100%" />
+												</apex:pageBlockSectionItem>
+
+												<apex:pageBlockSectionItem >
+													<apex:outputLabel value="Last Name" for="lname" />
+													<apex:inputField id="lname"
+														value="{!OnBoardFormModel__c.Last_Name__c}"
+														required="true" taborderhint="13" style="width:100%" />
+												</apex:pageBlockSectionItem>
+
+												<apex:pageBlockSectionItem >
+													<apex:outputLabel value="Phone" for="phone" />
+													<apex:inputField id="phone"
+														value="{!OnBoardFormModel__c.Web_Developer_Contact_Phone__c}"
+														required="true" taborderhint="13" style="width:100%" />
+												</apex:pageBlockSectionItem>
+
+												<apex:pageBlockSectionItem >
+													<apex:outputLabel value="Email Address" for="email" />
+													<apex:inputField id="email"
+														value="{!OnBoardFormModel__c.Web_Developer_Email_Address__c}"
+														required="true" taborderhint="13" style="width:100%" />
+												</apex:pageBlockSectionItem>
+											</apex:pageBlockSection>
+										</apex:outputPanel>
+										<apex:pageBlockSection columns="1">
+											<apex:inputField value="{!OnBoardFormModel__c.Notes_SEO__c}"
+												required="false" label="Notes - SEO:" style="width:100%" />
+										</apex:pageBlockSection>
+									</apex:outputPanel>
+
+									<!-- Campaign Targeting -->
+                                     <apex:pageBlockSection columns="1">
+									<apex:pageBlockSection columns="1" id="campaignTargetSection">
+										<apex:outputLabel value="Campaign Targeting"
+											styleClass="subsectionBlue" />
+										<apex:pageBlockSectionItem >
+											<apex:outputLabel value="Geographic area to Target" />
+											<apex:actionRegion >
+												<apex:inputField value="{!OnBoardFormModel__c.Campaign_Target_Geographical_Location__c}"
+													required="true" taborderhint="13"
+													label="Geographic area to Target" style="width:100%">
+													<apex:actionSupport event="onchange"
+														rerender="campaignTargetSection" status="status" />
+												</apex:inputField>
+											</apex:actionRegion>
+										</apex:pageBlockSectionItem>
+										<apex:inputField value="{!OnBoardFormModel__c.Campaign_Target_State__c}"
+											rendered="{!OnBoardFormModel__c.Campaign_Target_Geographical_Location__c == 'State'}"
+											required="true" taborderhint="13" label="Target State"
+											style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Campaign_Target_City__c}"
+											rendered="{!OnBoardFormModel__c.Campaign_Target_Geographical_Location__c == 'City'}"
+											required="true" taborderhint="13" label="Target City"
+											style="width:100%" />
+                                       </apex:pageBlockSection>
+                                       <apex:pageBlockSection columns="1">
+										<apex:inputField value="{!OnBoardFormModel__c.Products_Services_to_Focus_On__c}"
+											required="true" taborderhint="13"
+											label="Products/Services to focus on" style="width:100%" />
+                                    </apex:pageBlockSection>
+									</apex:pageBlockSection>
+								</apex:pageBlockSection>
+							</apex:pageBlockSection>
+						</apex:outputPanel>
+
+						<!-- Maps & Reputation(lpr) Section the need to Hide and Show  -->
+						<apex:outputPanel id="lprSection">
+							<apex:pageBlockSection title="Maps & Reputation"
+								collapsible="true" columns="1"
+								rendered="{!OnBoardFormModel__c.Local_Places_Reputation__c}">
+
+								<apex:pageBlockSection columns="2" html-class="formData">
+									<!-- Account Login Information -->
+									<apex:outputPanel id="lprAccountLoginSection">
+										<apex:pageBlockSection columns="1">
+											<apex:outputLabel value="Account Login Information"
+												styleClass="subsectionBlue" />
+
+											<apex:pageBlockSectionItem >
+												<apex:outputLabel value="Has Google Maps listing been claimed previously?" />
+												<apex:actionRegion >
+													<apex:inputField value="{!OnBoardFormModel__c.Has_Google_Maps_Listing_Been_Claimed__c}"
+														required="{!OnBoardFormModel__c.Local_Places_Reputation__c}"
+														taborderhint="13" style="width:100%">
+														<apex:actionSupport event="onchange"
+															rerender="lprAccountLoginSection" status="status" />
+													</apex:inputField>
+												</apex:actionRegion>
+											</apex:pageBlockSectionItem>
+
+											<apex:inputField value="{!OnBoardFormModel__c.Local_Places_Username__c}"
+												required="{!OnBoardFormModel__c.Has_Google_Maps_Listing_Been_Claimed__c == 'Yes'}"
+												rendered="{!OnBoardFormModel__c.Has_Google_Maps_Listing_Been_Claimed__c == 'Yes'}"
+												taborderhint="13" label="Username" style="width:100%" />
+											<apex:inputField value="{!OnBoardFormModel__c.Local_Places_Password__c}"
+												required="{!OnBoardFormModel__c.Has_Google_Maps_Listing_Been_Claimed__c == 'Yes'}"
+												rendered="{!OnBoardFormModel__c.Has_Google_Maps_Listing_Been_Claimed__c == 'Yes'}"
+												taborderhint="13" label="Password" style="width:100%" />
+											<apex:inputField value="{!OnBoardFormModel__c.Recovery_Email_or_Phone_Number__c}"
+												required="{!OnBoardFormModel__c.Has_Google_Maps_Listing_Been_Claimed__c == 'Yes'}"
+												rendered="{!OnBoardFormModel__c.Has_Google_Maps_Listing_Been_Claimed__c == 'Yes'}"
+												taborderhint="13" label="Recovery Email or Phone Number"
+												style="width:100%" />
+										</apex:pageBlockSection>
+									</apex:outputPanel>
+									<!-- Core Business Information Required -->
+									<apex:pageBlockSection columns="1">
+										<apex:outputLabel value="Core Business Information Required"
+											styleClass="subsectionBlue" />
+										<apex:inputField value="{!OnBoardFormModel__c.Legal_Business_Name_DBA__c}"
+											required="{!OnBoardFormModel__c.Local_Places_Reputation__c}"
+											taborderhint="13"
+											label="Legal business name DBA (Doing Business As)"
+											style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.If_Medical_Dental_Legal_License_Name__c}"
+											required="{!OnBoardFormModel__c.Local_Places_Reputation__c}"
+											taborderhint="13"
+											label="If medical, dental, legal, the name on the license"
+											style="width:100%" />
+									</apex:pageBlockSection>
+
+									<!-- Additional Business Information -->
+									<apex:pageBlockSection columns="1">
+										<apex:outputLabel value="Additional Business Information"
+											styleClass="subsectionBlue" />
+										<apex:inputField value="{!OnBoardFormModel__c.Publishable_Email_Address__c}"
+											required="false" taborderhint="13"
+											label="Publishable business email address (will show live on listing)"
+											style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Business_Payment_Methods_Accepted__c}"
+											required="false" taborderhint="13"
+											label="Business Payment Methods Accepted" />
+										<apex:inputField value="{!OnBoardFormModel__c.Is_Business_Brick_Mortar_or_Mobile__c}"
+											required="false" taborderhint="13"
+											label="Is your business brick and mortor, mobile or both?"
+											style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Notes_MapsRep__c}"
+											required="false" label="Notes - Maps & Reputation:"
+											style="width:100%" />
+									</apex:pageBlockSection>
+
+									<!-- Maps/Reputation Dashboard Information -->
+									<apex:pageBlockSection columns="1">
+										<apex:outputLabel value="Maps/Reputation Dashboard Information"
+											styleClass="subsectionBlue" />
+										<apex:inputField value="{!OnBoardFormModel__c.Top_Products_Services_You_Offer_1__c}"
+											required="true" taborderhint="13"
+											label="Top Products/Services you offer (Max of 3)(1 of 3)"
+											style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Top_Products_Services_You_Offer_2__c}"
+											required="false" taborderhint="13" label="(2 of 3)"
+											style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Top_Products_Services_You_Offer_3__c}"
+											required="false" taborderhint="13" label="(3 of 3)"
+											style="width:100%" />
+									</apex:pageBlockSection>
+								</apex:pageBlockSection>
+							</apex:pageBlockSection>
+						</apex:outputPanel>
+
+						<!-- Lead Capture Show/Hide sections -->
+						<apex:outputPanel id="leadCaptureSection">
+							<apex:pageBlockSection title="Lead Capture Page"
+								collapsible="true" columns="1"
+								rendered="{!OnBoardFormModel__c.Lead_Capture_Pages__c}">
+								<apex:pageBlockSection html-class="formData" columns="2">
+									<apex:pageBlockSection columns="1">
+										<apex:pageBlockSection columns="1" id="leadCaptureSection1">
+											<apex:inputField value="{!OnBoardFormModel__c.Desired_URL_Domain_Name__c}"
+												required="false" taborderhint="13"
+												rendered="{!AND(OnBoardFormModel__c.Lead_Capture_Pages__c, OnBoardFormModel__c.Lead_Capture_Page_Option__c == 'Signature')}"
+												label="Desired URL/Domain Name" style="width:100%" />
+										</apex:pageBlockSection>
+										<apex:pageBlockSection columns="1">
+											<apex:inputField value="{!OnBoardFormModel__c.Notes_LeadCapture__c}"
+												required="false" label="Notes - Lead Capture:"
+												style="width:100%" />
+										</apex:pageBlockSection>
+									</apex:pageBlockSection>
+								</apex:pageBlockSection>
+							</apex:pageBlockSection>
+						</apex:outputPanel>
+
+						<!-- Website Show/Hide Section-->
+						<apex:outputPanel id="WebsiteSection">
+							<!-- Template Website Show/Hide Section-->
+							<apex:pageBlockSection title="Template Website"
+								collapsible="true" columns="1"
+								rendered="{!AND(OnBoardFormModel__c.Websites__c, OR(OnBoardFormModel__c.Website_Option__c == 'Start Template (5 Page Website)', OnBoardFormModel__c.Website_Option__c == 'Professional Template (15 Page Website)'))}">
+								<apex:pageBlockSection columns="2" html-class="formData">
+									<!--  Template Website Package Information  -->
+									<apex:pageBlockSection columns="1">
+										<apex:outputLabel value="Template Website Package Information"
+											styleClass="subsectionBlue" />
+										<apex:inputField value="{!OnBoardFormModel__c.Template_Website_Package_Name__c}"
+											required="false" taborderhint="13" label="Template Name"
+											style="width:100%" />
+									</apex:pageBlockSection>
+
+									<!-- URL/Domain Name -->
+									<apex:pageBlockSection columns="1">
+										<apex:pageBlockSection columns="1">
+											<apex:outputLabel value="URL/Domain Name"
+												styleClass="subsectionBlue" />
+											<apex:inputField value="{!OnBoardFormModel__c.TWDesired_URL_Domain_Name__c}"
+												required="true" taborderhint="13"
+												label="Desired URL/Domain Name" style="width:100%" />
+										</apex:pageBlockSection>
+									</apex:pageBlockSection>
+
+									<!-- Email Hosting -->
+									<apex:pageBlockSection columns="1" Id="emailhostingTWSection">
+										<apex:outputLabel value="Email Hosting"
+											styleClass="subsectionBlue" />
+										<apex:pageBlockSectionItem >
+											<apex:outputLabel value="Are we hosting email at same URL/domain?" />
+											<apex:actionRegion >
+												<apex:inputField value="{!OnBoardFormModel__c.Are_We_Hosting_Email_at_Same_URL_Domain__c}"
+													required="true" taborderhint="13"
+													label="Are we hosting email at same URL/domain?">
+													<apex:actionSupport event="onchange"
+														rerender="emailhostingTWSection" status="status" />
+												</apex:inputField>
+											</apex:actionRegion>
+										</apex:pageBlockSectionItem>
+										<apex:inputField value="{!OnBoardFormModel__c.Email_Hosting_Desired_Email1__c}"
+											required="true" taborderhint="13"
+											rendered="{!OnBoardFormModel__c.Are_We_Hosting_Email_at_Same_URL_Domain__c == 'Yes'}"
+											label="If yes, please provide a list of all email addresses desired(1 of 5)"
+											style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Email_Hosting_Desired_Email2__c}"
+											required="false" taborderhint="13"
+											rendered="{!OnBoardFormModel__c.Are_We_Hosting_Email_at_Same_URL_Domain__c == 'Yes'}"
+											label="(2 of 5)" style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Email_Hosting_Desired_Email3__c}"
+											required="false" taborderhint="13"
+											rendered="{!OnBoardFormModel__c.Are_We_Hosting_Email_at_Same_URL_Domain__c == 'Yes'}"
+											label="(3 of 5)" style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Email_Hosting_Desired_Email4__c}"
+											required="false" taborderhint="13"
+											rendered="{!OnBoardFormModel__c.Are_We_Hosting_Email_at_Same_URL_Domain__c == 'Yes'}"
+											label="(4 of 5)" style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Email_Hosting_Desired_Email5__c}"
+											required="false" taborderhint="13"
+											rendered="{!OnBoardFormModel__c.Are_We_Hosting_Email_at_Same_URL_Domain__c == 'Yes'}"
+											label="(5 of 5)" style="width:100%" />
+									</apex:pageBlockSection>
+
+									<!-- Domain Name -->
+									<apex:pageBlockSection columns="1"
+										id="useExistingURLSectionInTemplateWebsite">
+
+										<apex:pageBlockSection columns="1">
+											<apex:pageBlockSectionItem >
+												<apex:outputLabel value="Use Existing URL?" />
+												<apex:actionRegion >
+													<apex:inputField value="{!OnBoardFormModel__c.Use_Existing_URL__c}"
+														required="true" taborderhint="13">
+														<apex:actionSupport event="onchange"
+															rerender="useExistingURLSectionInTemplateWebsite"
+															status="status" />
+													</apex:inputField>
+												</apex:actionRegion>
+											</apex:pageBlockSectionItem>
+										</apex:pageBlockSection>
+
+										<apex:pageBlockSection columns="1">
+											<apex:inputField value="{!OnBoardFormModel__c.Domain_Name__c}"
+												required="true" taborderhint="13" label="Domain Name"
+												rendered="{!OnBoardFormModel__c.Use_Existing_URL__c == 'Yes'}"
+												style="width:100%" />
+										</apex:pageBlockSection>
+
+										<apex:pageBlockSection columns="1"
+											id="refreshTemplateWebsiteDomain">
+											<apex:pageBlockSectionItem >
+												<apex:outputLabel value="Domain Registrar"
+													rendered="{!OnBoardFormModel__c.Use_Existing_URL__c == 'Yes'}" />
+												<apex:actionRegion >
+													<apex:inputField value="{!OnBoardFormModel__c.Domain_Registrar__c}"
+														required="true"
+														rendered="{!OnBoardFormModel__c.Use_Existing_URL__c == 'Yes'}"
+														taborderhint="13" label="Domain Registrar"
+														style="width:100%">
+														<apex:actionSupport event="onchange"
+															rerender="refreshTemplateWebsiteDomain" status="status" />
+													</apex:inputField>
+												</apex:actionRegion>
+											</apex:pageBlockSectionItem>
+
+											<apex:inputField value="{!OnBoardFormModel__c.Domain_Registrar_Other__c}"
+												required="true"
+												rendered="{!AND(OnBoardFormModel__c.Use_Existing_URL__c == 'Yes' , OnBoardFormModel__c.Domain_Registrar__c == 'Other')}"
+												taborderhint="13" label="Domain Registrar(Other)"
+												style="width:100%" />
+
+											<apex:inputField value="{!OnBoardFormModel__c.Domain_Registrar_Username__c}"
+												required="true"
+												rendered="{!OnBoardFormModel__c.Use_Existing_URL__c == 'Yes'}"
+												taborderhint="13" label="Domain Registrar Username"
+												style="width:100%" />
+											<apex:inputField value="{!OnBoardFormModel__c.Domain_Registrar_Password__c}"
+												required="true"
+												rendered="{!OnBoardFormModel__c.Use_Existing_URL__c == 'Yes'}"
+												taborderhint="13" label="Domain Registrar Password"
+												style="width:100%" />
+										</apex:pageBlockSection>
+									</apex:pageBlockSection>
+
+									<!-- Notes -->
+									<apex:pageBlockSection columns="1">
+										<apex:inputField value="{!OnBoardFormModel__c.Notes_Websites__c}"
+											required="false" label="Notes - Websites:" style="width:100%" />
+									</apex:pageBlockSection>
+								</apex:pageBlockSection>
+							</apex:pageBlockSection>
+
+							<!-- Custom Website Show/Hide Section-->
+							<apex:pageBlockSection title="Custom Website" collapsible="true"
+								columns="1"
+								rendered="{!AND(OnBoardFormModel__c.Websites__c, OnBoardFormModel__c.Website_Option__c == 'Custom Website')}">
+								<apex:pageBlockSection columns="2" html-class="formData">
+									<!-- Email Hosting -->
+									<apex:pageBlockSection columns="1" id="emailhostingCWSection">
+										<apex:outputLabel value="Email Hosting"
+											styleClass="subsectionBlue" />
+
+										<apex:pageBlockSectionItem >
+											<apex:outputLabel value="Are we hosting email at same URL/domain?" />
+											<apex:actionRegion >
+												<apex:inputField value="{!OnBoardFormModel__c.Are_We_Hosting_Email_at_Same_URL_Domain__c}"
+													required="true" taborderhint="13"
+													label="Are we hosting email at same URL/domain?">
+													<apex:actionSupport event="onchange"
+														rerender="emailhostingCWSection" status="status" />
+												</apex:inputField>
+											</apex:actionRegion>
+										</apex:pageBlockSectionItem>
+
+										<apex:inputField value="{!OnBoardFormModel__c.Client_Email_Provider_Name__c}"
+											required="true" taborderhint="13"
+											rendered="{!NOT(OnBoardFormModel__c.Are_We_Hosting_Email_at_Same_URL_Domain__c == 'Yes')}"
+											label="Client Email Provider Name" style="width:100%" />
+
+										<apex:inputField value="{!OnBoardFormModel__c.Email_Hosting_Desired_Email1__c}"
+											required="true" taborderhint="13"
+											rendered="{!OnBoardFormModel__c.Are_We_Hosting_Email_at_Same_URL_Domain__c == 'Yes'}"
+											label="If yes, please provide a list of all email addresses desired(1 of 10)"
+											style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Email_Hosting_Desired_Email2__c}"
+											required="false" taborderhint="13"
+											rendered="{!OnBoardFormModel__c.Are_We_Hosting_Email_at_Same_URL_Domain__c == 'Yes'}"
+											label="(2 of 10)" style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Email_Hosting_Desired_Email3__c}"
+											required="false" taborderhint="13"
+											rendered="{!OnBoardFormModel__c.Are_We_Hosting_Email_at_Same_URL_Domain__c == 'Yes'}"
+											label="(3 of 10)" style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Email_Hosting_Desired_Email4__c}"
+											required="false" taborderhint="13"
+											rendered="{!OnBoardFormModel__c.Are_We_Hosting_Email_at_Same_URL_Domain__c == 'Yes'}"
+											label="(4 of 10)" style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Email_Hosting_Desired_Email5__c}"
+											required="false" taborderhint="13"
+											rendered="{!OnBoardFormModel__c.Are_We_Hosting_Email_at_Same_URL_Domain__c == 'Yes'}"
+											label="(5 of 10)" style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Email_Hosting_Desired_Email6__c}"
+											required="false" taborderhint="13"
+											rendered="{!OnBoardFormModel__c.Are_We_Hosting_Email_at_Same_URL_Domain__c == 'Yes'}"
+											label="(6 of 10)" style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Email_Hosting_Desired_Email7__c}"
+											required="false" taborderhint="13"
+											rendered="{!OnBoardFormModel__c.Are_We_Hosting_Email_at_Same_URL_Domain__c == 'Yes'}"
+											label="(7 of 10)" style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Email_Hosting_Desired_Email8__c}"
+											required="false" taborderhint="13"
+											rendered="{!OnBoardFormModel__c.Are_We_Hosting_Email_at_Same_URL_Domain__c == 'Yes'}"
+											label="(8 of 10)" style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Email_Hosting_Desired_Email9__c}"
+											required="false" taborderhint="13"
+											rendered="{!OnBoardFormModel__c.Are_We_Hosting_Email_at_Same_URL_Domain__c == 'Yes'}"
+											label="(9 of 10)" style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Email_Hosting_Desired_Email10__c}"
+											required="false" taborderhint="13"
+											rendered="{!OnBoardFormModel__c.Are_We_Hosting_Email_at_Same_URL_Domain__c == 'Yes'}"
+											label="(10 of 10)" style="width:100%" />
+									</apex:pageBlockSection>
+
+									<!-- WebSite Stucture Pages -->
+									<apex:pageBlockSection columns="1">
+										<apex:pageBlockSection columns="1"
+											id="websiteStructurePagesId">
+											<apex:pageBlockSection columns="1">
+												<apex:pageBlockSectionItem >
+													<apex:outputPanel layout="block">Website Structure/Pages</apex:outputPanel>
+													<apex:outputPanel layout="block" styleClass="requiredInput">
+														<apex:outputPanel layout="block"
+															styleClass="requiredBlock" />
+														<apex:actionRegion >
+															<apex:inputField value="{!OnBoardFormModel__c.Website_Structure_Pages__c}"
+																required="false" taborderhint="13"
+																label="Website Structure/Pages">
+																<apex:actionSupport event="onchange"
+																	rerender="websiteStructurePagesOtherId" status="status" />
+															</apex:inputField>
+														</apex:actionRegion>
+													</apex:outputPanel>
+												</apex:pageBlockSectionItem>
+											</apex:pageBlockSection>
+
+											<apex:pageBlockSection columns="1"
+												Id="websiteStructurePagesOtherId">
+												<apex:inputField value="{!OnBoardFormModel__c.Website_Structure_Pages_Other__c}"
+													rendered="{!AND(NOT(ISBLANK(OnBoardFormModel__c.Website_Structure_Pages__c)), CONTAINS(OnBoardFormModel__c.Website_Structure_Pages__c, 'Other'))}"
+													required="true" taborderhint="13"
+													label="Website Structure/Pages Other" style="width:100%" />
+											</apex:pageBlockSection>
+										</apex:pageBlockSection>
+
+										<!-- URL/Domain Name -->
+										<apex:pageBlockSection columns="1"
+											id="useExistingURLSectionInCustomWebsite">
+											<apex:pageBlockSection columns="1">
+												<apex:outputLabel value="URL/Domain Name"
+													styleClass="subsectionBlue" />
+												<apex:pageBlockSectionItem >
+													<apex:outputLabel value="Use Existing URL?" />
+													<apex:actionRegion >
+														<apex:inputField value="{!OnBoardFormModel__c.Use_Existing_URL__c}"
+															required="true" taborderhint="13">
+															<apex:actionSupport event="onchange"
+																rerender="useExistingURLSectionInCustomWebsite"
+																status="status" />
+														</apex:inputField>
+													</apex:actionRegion>
+												</apex:pageBlockSectionItem>
+
+												<apex:inputField value="{!OnBoardFormModel__c.Domain_Name__c}"
+													required="true" taborderhint="13" label="Domain Name"
+													style="width:100%" />
+											</apex:pageBlockSection>
+											<apex:pageBlockSection columns="1"
+												id="refreshCustomWebsiteDomain">
+												<apex:pageBlockSectionItem >
+													<apex:outputLabel value="Domain Registrar"
+														rendered="{!OnBoardFormModel__c.Use_Existing_URL__c == 'Yes'}" />
+													<apex:actionRegion >
+														<apex:inputField value="{!OnBoardFormModel__c.Domain_Registrar__c}"
+															required="true"
+															rendered="{!OnBoardFormModel__c.Use_Existing_URL__c == 'Yes'}"
+															taborderhint="13" label="Domain Registrar"
+															style="width:100%">
+															<apex:actionSupport event="onchange"
+																rerender="refreshCustomWebsiteDomain" status="status" />
+														</apex:inputField>
+													</apex:actionRegion>
+												</apex:pageBlockSectionItem>
+
+												<apex:inputField value="{!OnBoardFormModel__c.Domain_Registrar_Other__c}"
+													required="true"
+													rendered="{!AND(OnBoardFormModel__c.Use_Existing_URL__c == 'Yes' , OnBoardFormModel__c.Domain_Registrar__c == 'Other')}"
+													taborderhint="13" label="Domain Registrar(Other)"
+													style="width:100%" />
+
+												<apex:inputField value="{!OnBoardFormModel__c.Domain_Registrar_Username__c}"
+													required="true"
+													rendered="{!OnBoardFormModel__c.Use_Existing_URL__c == 'Yes'}"
+													taborderhint="13" label="Domain Registrar Username"
+													style="width:100%" />
+												<apex:inputField value="{!OnBoardFormModel__c.Domain_Registrar_Password__c}"
+													required="true"
+													rendered="{!OnBoardFormModel__c.Use_Existing_URL__c == 'Yes'}"
+													taborderhint="13" label="Domain Registrar Password"
+													style="width:100%" />
+											</apex:pageBlockSection>
+										</apex:pageBlockSection>
+									</apex:pageBlockSection>
+									<!-- Notes -->
+									<apex:pageBlockSection columns="1">
+										<apex:inputField value="{!OnBoardFormModel__c.Notes_Websites__c}"
+											required="false" label="Notes - Websites:" style="width:100%" />
+									</apex:pageBlockSection>
+								</apex:pageBlockSection>
+							</apex:pageBlockSection>
+							
+							<!-- General Information Section for Web Options 'Mobile Only', 'Website Maintenance' -->
+							<apex:pageBlockSection title="General Information"
+								collapsible="true" columns="1"
+								rendered="{!AND(OnBoardFormModel__c.Websites__c, OR(OnBoardFormModel__c.Website_Option__c == 'Mobile Only', OnBoardFormModel__c.Website_Option__c == 'Website Maintenance'))}">
+								<apex:pageBlockSection columns="2" html-class="formData">
+									<!-- Notes -->
+									<apex:pageBlockSection columns="1">
+										<apex:inputField value="{!OnBoardFormModel__c.Notes_Websites__c}"
+											required="false" label="Notes - Websites:" style="width:100%" />
+									</apex:pageBlockSection>
+								</apex:pageBlockSection>
+							</apex:pageBlockSection>
+						</apex:outputPanel>
+						<!-- Social Media Management Show/Hide Section -->
+						<apex:outputPanel id="socialMediaManagementSection">
+							<apex:pageBlockSection title="Social Media Management"
+								collapsible="true" columns="1"
+								rendered="{!OnBoardFormModel__c.Social_Media_Management__c}">
+								<apex:pageBlockSection columns="2" html-class="formData">
+									<!-- Facebook Information -->
+									<apex:pageBlockSection columns="1" id="FBSectionId">
+										<apex:outputLabel value="Facebook Information"
+											styleClass="subsectionBlue" />
+
+										<apex:pageBlockSectionItem >
+											<apex:outputLabel value="Has Facebook Page?" />
+											<apex:actionRegion >
+												<apex:inputField value="{!OnBoardFormModel__c.Has_Facebook_Page__c}"
+													required="true" taborderhint="13"
+													label="Has Facebook Page?">
+													<apex:actionSupport event="onchange" rerender="FBSectionId"
+														status="status" />
+												</apex:inputField>
+											</apex:actionRegion>
+										</apex:pageBlockSectionItem>
+
+										<apex:inputField value="{!OnBoardFormModel__c.Current_Facebook_URL__c}"
+											required="true"
+											rendered="{!OnBoardFormModel__c.Has_Facebook_Page__c == 'Yes'}"
+											taborderhint="13" label="Current Facebook URL"
+											style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Confirm_Manager_Level_Admin_Access__c}"
+											required="true"
+											rendered="{!OnBoardFormModel__c.Has_Facebook_Page__c == 'Yes'}"
+											taborderhint="13"
+											label="Client understands they are required to grant Manager Level Admin Access to glsocial@gannett.com when requested (instructions provided)." />
+									</apex:pageBlockSection>
+
+									<!-- Twitter Information -->
+									<apex:pageBlockSection columns="1" id="twitterSectionId">
+										<apex:outputPanel rendered="{!OR(OnBoardFormModel__c.Social_Option__c == 'Social Mgmt - Engage', OnBoardFormModel__c.Social_Option__c=='Social Mgmt - Expand')}">
+											<apex:outputLabel value="Twitter Information"
+												styleClass="subsectionBlue" />
+											<apex:pageBlockSection columns="1">
+												<apex:pageBlockSectionItem rendered="{!OR(OnBoardFormModel__c.Social_Option__c == 'Social Mgmt - Engage', OnBoardFormModel__c.Social_Option__c=='Social Mgmt - Expand')}">
+													<apex:outputLabel value="Has Twitter Profile?" />
+													<apex:actionRegion >
+														<apex:inputField id="hasTwitter"
+															value="{!OnBoardFormModel__c.Has_Twitter_Profile__c}"
+															required="true" taborderhint="13"
+															rendered="{!OR(OnBoardFormModel__c.Social_Option__c == 'Social Mgmt - Engage', OnBoardFormModel__c.Social_Option__c=='Social Mgmt - Expand')}"
+															label="Has Twitter Profile?">
+															<apex:actionSupport event="onchange"
+																rerender="twitterSectionId" status="status" />
+														</apex:inputField>
+													</apex:actionRegion>
+												</apex:pageBlockSectionItem>
+
+												<apex:inputField id="twitterUname"
+													value="{!OnBoardFormModel__c.Twitter_Username__c}"
+													rendered="{!AND(OnBoardFormModel__c.Has_Twitter_Profile__c, OR(OnBoardFormModel__c.Social_Option__c == 'Social Mgmt - Engage', OnBoardFormModel__c.Social_Option__c=='Social Mgmt - Expand'))}"
+													required="true" taborderhint="13" style="width:100%" />
+
+												<apex:inputField id="twitterPassword"
+													value="{!OnBoardFormModel__c.Twitter_Password__c}"
+													rendered="{!AND(OnBoardFormModel__c.Has_Twitter_Profile__c, OR(OnBoardFormModel__c.Social_Option__c == 'Social Mgmt - Engage', OnBoardFormModel__c.Social_Option__c=='Social Mgmt - Expand'))}"
+													required="true" taborderhint="13" style="width:100%" />
+											</apex:pageBlockSection>
+										</apex:outputPanel>
+									</apex:pageBlockSection>
+
+									<!-- Campaign Information -->
+									<apex:pageBlockSection columns="1" Id="AssetImageLogo">
+										<apex:outputLabel value="Campaign Information"
+											styleClass="subsectionBlue" />
+										<apex:inputField value="{!OnBoardFormModel__c.Campaign_Contact_Email__c}"
+											required="true" taborderhint="13"
+											label="Campaign Contact Email (Where contest entries/sign-ups should be delivered)"
+											style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Campaign_Goal__c}"
+											required="true" taborderhint="13" label="Campaign Goal"
+											style="width:100%" />
+
+										<!-- Attachment 1 of 4 -->
+										<apex:pageBlockSectionItem >
+											<apex:outputLabel value="" />
+											<apex:outputLabel value="Max attachment size is 4Mb" />
+										</apex:pageBlockSectionItem>
+										<apex:pageBlockSectionItem Id="AssetImageLogo1SectionItem1">
+											<apex:outputLabel value="Asset/Image/Logo Upload(1 of 4)" />
+											<apex:outputPanel >
+												<apex:inputFile Id="AssetImageLogo1FileUpload"
+													filename="{!AssetImageLogo1FileAttachment.AttachmentName}"
+													contentType="{!AssetImageLogo1FileAttachment.AttachmentContentType}"
+													value="{!AssetImageLogo1FileAttachment.AttachmentBody}"
+													onchange="uploadFile('{!$Component.AssetImageLogo1FileUpload}',  '{!$Component.AssetImageLogo1attachmentName}', '{!$Component.AssetImageLogo1attachmentBody}', '{!$Component.AssetImageLogo1attachmentContentType}');" />
+
+												<apex:actionRegion >
+													<apex:commandButton action="{!AssetImageLogo1FileAttachment.uploadAttachment}"
+														value="Upload Attachment"
+														reRender="AssetImageLogo1attachmentId, displayAssetImageLogo1AttachmentLink, AssetImageLogo1attachmentBody"
+														status="status" />
+													<apex:inputHidden value="{!AssetImageLogo1FileAttachment.AttachmentBody}"
+														html-clearfileattachment="true"
+														id="AssetImageLogo1attachmentBody" />
+													<apex:inputHidden value="{!AssetImageLogo1FileAttachment.AttachmentName}"
+														id="AssetImageLogo1attachmentName" />
+													<apex:inputHidden value="{!AssetImageLogo1FileAttachment.AttachmentContentType}"
+														id="AssetImageLogo1attachmentContentType" />
+													<apex:inputHidden value="{!AssetImageLogo1FileAttachment.AttachmentId}"
+														Id="AssetImageLogo1attachmentId" />
+													<apex:outputLink Id="displayAssetImageLogo1AttachmentLink"
+														value="/servlet/servlet.FileDownload?file={!AssetImageLogo1FileAttachment.AttachmentId}"
+														target="_blank">{!IF(AssetImageLogo1FileAttachment.AttachmentId == NULL, '' ,AssetImageLogo1FileAttachment.AttachmentName)}</apex:outputLink>
+												</apex:actionRegion>
+											</apex:outputPanel>
+										</apex:pageBlockSectionItem>
+
+										<!-- Attachment 2 of 4 -->
+										<apex:pageBlockSectionItem Id="AssetImageLogo2SectionItem1">
+											<apex:outputLabel value="(2 of 4)" />
+											<apex:outputPanel >
+												<apex:inputFile Id="AssetImageLogo2FileUpload"
+													filename="{!AssetImageLogo2FileAttachment.AttachmentName}"
+													contentType="{!AssetImageLogo2FileAttachment.AttachmentContentType}"
+													value="{!AssetImageLogo2FileAttachment.AttachmentBody}"
+													onchange="uploadFile('{!$Component.AssetImageLogo2FileUpload}',  '{!$Component.AssetImageLogo2attachmentName}', '{!$Component.AssetImageLogo2attachmentBody}', '{!$Component.AssetImageLogo2attachmentContentType}');" />
+
+												<apex:actionRegion >
+													<apex:commandButton action="{!AssetImageLogo2FileAttachment.uploadAttachment}"
+														value="Upload Attachment"
+														reRender="AssetImageLogo2attachmentId, displayAssetImageLogo2AttachmentLink, AssetImageLogo2attachmentBody"
+														status="status" />
+													<apex:inputHidden value="{!AssetImageLogo2FileAttachment.AttachmentBody}"
+														html-clearfileattachment="true"
+														id="AssetImageLogo2attachmentBody" />
+													<apex:inputHidden value="{!AssetImageLogo2FileAttachment.AttachmentName}"
+														id="AssetImageLogo2attachmentName" />
+													<apex:inputHidden value="{!AssetImageLogo2FileAttachment.AttachmentContentType}"
+														id="AssetImageLogo2attachmentContentType" />
+													<apex:inputHidden value="{!AssetImageLogo2FileAttachment.AttachmentId}"
+														Id="AssetImageLogo2attachmentId" />
+													<apex:outputLink Id="displayAssetImageLogo2AttachmentLink"
+														value="/servlet/servlet.FileDownload?file={!AssetImageLogo2FileAttachment.AttachmentId}"
+														target="_blank">{!IF(AssetImageLogo2FileAttachment.AttachmentId == NULL, '' ,AssetImageLogo2FileAttachment.AttachmentName)}</apex:outputLink>
+												</apex:actionRegion>
+											</apex:outputPanel>
+										</apex:pageBlockSectionItem>
+
+										<!-- Attachment 3 of 4 -->
+										<apex:pageBlockSectionItem Id="AssetImageLogo3SectionItem1">
+											<apex:outputLabel value="(3 of 4)" />
+											<apex:outputPanel >
+												<apex:inputFile Id="AssetImageLogo3FileUpload"
+													filename="{!AssetImageLogo3FileAttachment.AttachmentName}"
+													contentType="{!AssetImageLogo3FileAttachment.AttachmentContentType}"
+													value="{!AssetImageLogo3FileAttachment.AttachmentBody}"
+													onchange="uploadFile('{!$Component.AssetImageLogo3FileUpload}',  '{!$Component.AssetImageLogo3attachmentName}', '{!$Component.AssetImageLogo3attachmentBody}', '{!$Component.AssetImageLogo3attachmentContentType}');" />
+
+												<apex:actionRegion >
+													<apex:commandButton action="{!AssetImageLogo3FileAttachment.uploadAttachment}"
+														value="Upload Attachment"
+														reRender="AssetImageLogo3attachmentId, displayAssetImageLogo3AttachmentLink, AssetImageLogo3attachmentBody"
+														status="status" />
+													<apex:inputHidden value="{!AssetImageLogo3FileAttachment.AttachmentBody}"
+														html-clearfileattachment="true"
+														id="AssetImageLogo3attachmentBody" />
+													<apex:inputHidden value="{!AssetImageLogo3FileAttachment.AttachmentName}"
+														id="AssetImageLogo3attachmentName" />
+													<apex:inputHidden value="{!AssetImageLogo3FileAttachment.AttachmentContentType}"
+														id="AssetImageLogo3attachmentContentType" />
+													<apex:inputHidden value="{!AssetImageLogo3FileAttachment.AttachmentId}"
+														Id="AssetImageLogo3attachmentId" />
+													<apex:outputLink Id="displayAssetImageLogo3AttachmentLink"
+														value="/servlet/servlet.FileDownload?file={!AssetImageLogo3FileAttachment.AttachmentId}"
+														target="_blank">{!IF(AssetImageLogo3FileAttachment.AttachmentId == NULL, '' ,AssetImageLogo3FileAttachment.AttachmentName)}</apex:outputLink>
+												</apex:actionRegion>
+											</apex:outputPanel>
+										</apex:pageBlockSectionItem>
+
+										<!-- Attachment 4 of 4 -->
+										<apex:pageBlockSectionItem Id="AssetImageLogo4SectionItem1">
+											<apex:outputLabel value="(4 of 4)" />
+											<apex:outputPanel >
+												<apex:inputFile Id="AssetImageLogo4FileUpload"
+													filename="{!AssetImageLogo4FileAttachment.AttachmentName}"
+													contentType="{!AssetImageLogo4FileAttachment.AttachmentContentType}"
+													value="{!AssetImageLogo4FileAttachment.AttachmentBody}"
+													onchange="uploadFile('{!$Component.AssetImageLogo4FileUpload}',  '{!$Component.AssetImageLogo4attachmentName}', '{!$Component.AssetImageLogo4attachmentBody}', '{!$Component.AssetImageLogo4attachmentContentType}');" />
+
+												<apex:actionRegion >
+													<apex:commandButton action="{!AssetImageLogo4FileAttachment.uploadAttachment}"
+														value="Upload Attachment"
+														reRender="AssetImageLogo4attachmentId, displayAssetImageLogo4AttachmentLink, AssetImageLogo4attachmentBody"
+														status="status" />
+													<apex:inputHidden value="{!AssetImageLogo4FileAttachment.AttachmentBody}"
+														html-clearfileattachment="true"
+														id="AssetImageLogo4attachmentBody" />
+													<apex:inputHidden value="{!AssetImageLogo4FileAttachment.AttachmentName}"
+														id="AssetImageLogo4attachmentName" />
+													<apex:inputHidden value="{!AssetImageLogo4FileAttachment.AttachmentContentType}"
+														id="AssetImageLogo4attachmentContentType" />
+													<apex:inputHidden value="{!AssetImageLogo4FileAttachment.AttachmentId}"
+														Id="AssetImageLogo4attachmentId" />
+													<apex:outputLink Id="displayAssetImageLogo4AttachmentLink"
+														value="/servlet/servlet.FileDownload?file={!AssetImageLogo4FileAttachment.AttachmentId}"
+														target="_blank">{!IF(AssetImageLogo4FileAttachment.AttachmentId == NULL, '' ,AssetImageLogo4FileAttachment.AttachmentName)}</apex:outputLink>
+												</apex:actionRegion>
+											</apex:outputPanel>
+										</apex:pageBlockSectionItem>
+										<apex:inputField value="{!OnBoardFormModel__c.Copy_Theme_Ideas__c}"
+											required="false" taborderhint="13" label="Social Voice"
+											style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Notes_SMM__c}"
+											required="false" label="Notes - Social Media Management:"
+											style="width:100%" />
+									</apex:pageBlockSection>
+
+									<apex:pageBlockSection columns="1" Id="googlePlusSectionHeader">
+										<!-- Google+ Information -->
+										<apex:outputPanel rendered="{!OR(OnBoardFormModel__c.Social_Option__c == 'Social Mgmt - Engage', OnBoardFormModel__c.Social_Option__c=='Social Mgmt - Expand', OnBoardFormModel__c.Social_Option__c=='Custom Social Package')}">
+											<apex:outputLabel value="Google+ Information"
+												styleClass="subsectionBlue" />
+
+											<apex:pageBlockSection columns="1" id="googlePlusSectionId">
+												<apex:pageBlockSectionItem >
+													<apex:outputLabel value="Has Google+ Profile?" />
+													<apex:actionRegion >
+														<apex:inputField id="hasGooglePlus"
+															value="{!OnBoardFormModel__c.Has_GooglePlus_Profile__c}"
+															required="true" taborderhint="13"
+															label="Has Google+ Profile?">
+															<apex:actionSupport event="onchange"
+																rerender="googlePlusSectionId" status="status" />
+														</apex:inputField>
+													</apex:actionRegion>
+												</apex:pageBlockSectionItem>
+
+												<apex:inputField id="googlePlusUname"
+													value="{!OnBoardFormModel__c.GooglePlus_Username__c}"
+													rendered="{!OnBoardFormModel__c.Has_GooglePlus_Profile__c  == 'Yes'}"
+													required="true" taborderhint="13" style="width:100%" />
+
+												<apex:inputField id="googlePlusPassword"
+													value="{!OnBoardFormModel__c.GooglePlus_Password__c}"
+													rendered="{!OnBoardFormModel__c.Has_GooglePlus_Profile__c  == 'Yes'}"
+													required="true" taborderhint="13" style="width:100%" />
+											</apex:pageBlockSection>
+										</apex:outputPanel>
+
+										<br />
+										<apex:outputLabel value="Campaign Audience (Who we are speaking to)"
+											styleClass="subsectionBlue" />
+										<apex:pageBlockSection columns="1" id="FBTargetStateRadius">
+											<apex:pageBlockSectionItem >
+												<apex:outputLabel value="Target Geographical Location" />
+												<apex:actionRegion >
+													<apex:inputField value="{!OnBoardFormModel__c.FB_Target_Geographical_Location__c}"
+														required="true" taborderhint="13"
+														label="Target Geographical Location" style="width:100%">
+														<apex:actionSupport event="onchange"
+															rerender="FBTargetStateRadius" status="status" />
+													</apex:inputField>
+												</apex:actionRegion>
+											</apex:pageBlockSectionItem>
+											<apex:inputField value="{!OnBoardFormModel__c.FB_Target_State__c}"
+												required="{!OnBoardFormModel__c.FB_Target_Geographical_Location__c == 'State'}"
+												rendered="{!OnBoardFormModel__c.FB_Target_Geographical_Location__c == 'State'}"
+												taborderhint="13" label="Target State" style="width:100%" />
+											<apex:inputField value="{!OnBoardFormModel__c.FB_Target_Radius__c}"
+												required="{!OnBoardFormModel__c.FB_Target_Geographical_Location__c == 'Radius'}"
+												rendered="{!OnBoardFormModel__c.FB_Target_Geographical_Location__c == 'Radius'}"
+												taborderhint="13" label="Target Radius" style="width:100%" />
+										</apex:pageBlockSection>
+										<apex:pageBlockSection columns="1">
+											<apex:inputField value="{!OnBoardFormModel__c.FB_Targeting_Demographics_Age__c}"
+												required="true" taborderhint="13"
+												label="Target Demographics - Age" style="width:100%" />
+											<apex:inputField value="{!OnBoardFormModel__c.FB_Targeting_Demographics_Gender__c}"
+												required="false" taborderhint="13"
+												label="Target Demographics - Gender" style="width:100%" />
+										</apex:pageBlockSection>
+									</apex:pageBlockSection>
+								</apex:pageBlockSection>
+							</apex:pageBlockSection>
+						</apex:outputPanel>
+
+						<!-- Social Advertising Show/Hide Section -->
+						<apex:outputPanel id="socialAdvertisingSection">
+							<apex:pageBlockSection title="Social Advertising"
+								collapsible="true" columns="1"
+								rendered="{!OnBoardFormModel__c.Social_Advertising__c}">
+								<apex:pageBlockSection columns="2" html-class="formData">
+									<!-- Facebook Information -->
+									<apex:pageBlockSection columns="1" id="socialAdvertisingSection1">
+										<apex:outputLabel value="Facebook Information"
+											styleClass="subsectionBlue" />
+										<apex:inputField value="{!OnBoardFormModel__c.SA_Current_Facebook_Page_URL__c}"
+											required="true" taborderhint="13"
+											label="Current Facebook Page URL" style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.Facebook_Ads_Landing_Page_URL__c}"
+											required="true" taborderhint="13"
+											rendered="{!NOT(OnBoardFormModel__c.Social_Ads_Package__c == 'Start')}"
+											label="Facebook Ads - Landing Page URL" style="width:100%" />
+										<apex:inputField value="{!OnBoardFormModel__c.SA_Manager_Level_Admin_Access__c}"
+											required="true" taborderhint="13"
+											label="Client understands they are required to grant Manager Level Admin Access to gannettlocalmaster@gmail.com when requested (instructions provided)." />
+									</apex:pageBlockSection>
+
+									<!-- Campaign Goals -->
+									<apex:pageBlockSection columns="1" id="socialAdvertisingSection2">
+										<apex:outputLabel value="Campaign Goals"
+											styleClass="subsectionBlue" />
+
+										<apex:pageBlockSectionItem >
+											<apex:outputLabel value="Campaign Goal" />
+											<apex:actionRegion >
+												<apex:inputField value="{!OnBoardFormModel__c.SA_Campaign_Goal__c}"
+													required="true" taborderhint="13" label="Campaign Goal"
+													style="width:100%">
+													<apex:actionSupport event="onchange"
+														rerender="SAOfferDescription1, SAOfferDescription2"
+														status="status" />
+												</apex:inputField>
+											</apex:actionRegion>
+										</apex:pageBlockSectionItem>
+
+										<apex:pageBlockSectionItem >
+											<apex:outputLabel value="Second Campaign Goal"
+												rendered="{!OnBoardFormModel__c.Social_Ads_Package__c == 'Grow'}" />
+											<apex:actionRegion >
+												<apex:inputField value="{!OnBoardFormModel__c.SA_Campaign_Goal2__c}"
+													required="false" taborderhint="13"
+													label="Second Campaign Goal" style="width:100%"
+													rendered="{!OnBoardFormModel__c.Social_Ads_Package__c == 'Grow'}">
+													<apex:actionSupport event="onchange"
+														rerender="SAOfferDescription1, SAOfferDescription2"
+														status="status" />
+												</apex:inputField>
+											</apex:actionRegion>
+										</apex:pageBlockSectionItem>
+
+										<apex:pageBlockSectionItem >
+											<apex:outputPanel Id="SAOfferDescription1">
+												<apex:outputLabel value="Offer Description"
+													rendered="{!OR(OnBoardFormModel__c.SA_Campaign_Goal__c == 'In-Store Sales', OnBoardFormModel__c.SA_Campaign_Goal2__c == 'In-Store Sales')}" />
+											</apex:outputPanel>
+											<apex:outputPanel Id="SAOfferDescription2">
+												<apex:inputField value="{!OnBoardFormModel__c.Offer_Description__c}"
+													required="true" taborderhint="13" label="Offer Description"
+													rendered="{!OR(OnBoardFormModel__c.SA_Campaign_Goal__c == 'In-Store Sales', OnBoardFormModel__c.SA_Campaign_Goal2__c == 'In-Store Sales')}"
+													style="width:100%" />
+											</apex:outputPanel>
+										</apex:pageBlockSectionItem>
+									</apex:pageBlockSection>
+
+									<!-- General Campaign Information -->
+									<apex:pageBlockSection columns="1">
+										<apex:pageBlockSection columns="1" id="socialAdvertisingSection3">
+											<apex:outputLabel value="General Campaign Information"
+												styleClass="subsectionBlue"
+												rendered="{!NOT(OnBoardFormModel__c.Social_Ads_Package__c == 'Start')}" />
+											<apex:inputField value="{!OnBoardFormModel__c.SA_Copy_Theme_Ideas__c}"
+												required="true" taborderhint="13" label="Copy Themes/Ideas"
+												style="width:100%"
+												rendered="{!NOT(OnBoardFormModel__c.Social_Ads_Package__c == 'Start')}" />
+										</apex:pageBlockSection>
+										<apex:pageBlockSection columns="1">
+											<apex:inputField value="{!OnBoardFormModel__c.Notes_SocialAds__c}"
+												required="false" label="Notes - Social Advertising:"
+												style="width:100%" />
+										</apex:pageBlockSection>
+									</apex:pageBlockSection>
+
+
+
+									<!-- Campaign Targeting -->
+									<apex:outputPanel id="socialAdvertisingSection4">
+										<apex:pageBlockSection columns="1"
+											rendered="{!OR(OnBoardFormModel__c.Social_Ads_Package__c == 'Build', OnBoardFormModel__c.Social_Ads_Package__c == 'Grow')}">
+											<apex:outputLabel value="Campaign Targeting"
+												styleClass="subsectionBlue" />
+
+											<apex:pageBlockSectionItem >
+												<apex:outputLabel value="Target Geographical Location" />
+												<apex:actionRegion >
+													<apex:inputField value="{!OnBoardFormModel__c.SA_Target_Geographical_Location__c}"
+														required="true" taborderhint="13"
+														label="Target Geographical Location" style="width:100%">
+														<apex:actionSupport event="onchange"
+															rerender="SATargetGEOLocation" status="status" />
+													</apex:inputField>
+												</apex:actionRegion>
+											</apex:pageBlockSectionItem>
+
+
+											<apex:pageBlockSection columns="1" id="SATargetGEOLocation">
+												<apex:inputField value="{!OnBoardFormModel__c.SA_Target_State__c}"
+													required="{!OnBoardFormModel__c.SA_Target_Geographical_Location__c == 'State'}"
+													rendered="{!OnBoardFormModel__c.SA_Target_Geographical_Location__c == 'State'}"
+													taborderhint="13" label="Target State" style="width:100%" />
+												<apex:inputField value="{!OnBoardFormModel__c.SA_Target_Radius__c}"
+													required="{!OnBoardFormModel__c.SA_Target_Geographical_Location__c == 'Radius'}"
+													rendered="{!OnBoardFormModel__c.SA_Target_Geographical_Location__c == 'Radius'}"
+													taborderhint="13" label="Target Radius" style="width:100%" />
+											</apex:pageBlockSection>
+
+											<apex:inputField value="{!OnBoardFormModel__c.SA_Target_Demographics_Age__c}"
+												required="true" taborderhint="13"
+												label="Targeting Demographics - Age" style="width:100%" />
+											<apex:inputField value="{!OnBoardFormModel__c.SA_Target_Demographics_Gender__c}"
+												required="true" taborderhint="13"
+												label="Targeting Demographics - Gender" style="width:100%" />
+										</apex:pageBlockSection>
+									</apex:outputPanel>
+								</apex:pageBlockSection>
+							</apex:pageBlockSection>
+						</apex:outputPanel>
+
+                        <!-- Targeted Email Blast Show/Hide Section -->
+                        <apex:outputPanel id="targettedEmailBlastSection">
+                            <apex:pageBlockSection title="Targeted Email Blast"
+                                collapsible="true" columns="1"
+                                rendered="{!OnBoardFormModel__c.Targeted_Email__c}">
+                                <apex:pageBlockSection columns="2" html-class="formData">
+                                    <!-- All Fields except clicthrough URLS -->
+                                    <apex:pageBlockSection columns="1">
+                                        <!-- Up to 12 broacast date and time fields -->
+                                        
+                                        <apex:pageBlockSection >
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel value="Have you had an email count pulled in the last 60 days?" />
+                                            <apex:actionRegion >
+                                                <apex:inputField value="{!OnBoardFormModel__c.Email_Count_Pulled_in_Last_60_Days__c}"
+                                                    required="true" taborderhint="13" style="width:50%">
+                                                    <apex:actionSupport event="onchange"
+                                                        rerender="targettedSubSection2" status="status" />
+                                                </apex:inputField>
+                                            </apex:actionRegion>
+                                        </apex:pageBlockSectionItem>
+                                    </apex:pageBlockSection>
+
+                                    <apex:pageBlockSection id="targettedSubSection2" columns="1">
+                                        <apex:inputField value="{!OnBoardFormModel__c.Count_ID__c}"
+                                            required="{!OnBoardFormModel__c.Email_Count_Pulled_in_Last_60_Days__c == 'Yes'}"
+                                            rendered="{!OnBoardFormModel__c.Email_Count_Pulled_in_Last_60_Days__c == 'Yes'}"
+                                            taborderhint="13" label="Count ID(s):"
+                                            style="width:50%" />
+                                        <apex:outputLink value="{!Target_Email_Link}" target="_blank"
+                                            rendered="{!OnBoardFormModel__c.Email_Count_Pulled_in_Last_60_Days__c == 'No'}">If not, please fill out form here</apex:outputLink>
+                                     </apex:pageBlockSection>
+                                            
+                                        <apex:pageBlockSection columns="1">
+                                            
+                                            <apex:inputField value="{!OnBoardFormModel__c.TargetedEmail_CreativeAnalysis__c}"
+                                                required="true" taborderhint="13"
+                                                label="Add Creative Analysis?" style="width:50%"/>
+                                            <apex:inputField value="{!OnBoardFormModel__c.TargetedEmail_AssetsURL__c}"
+                                                required="false" taborderhint="13"
+                                                label="Link to Images/Assets:" style="width:100%"/>
+                                            <apex:inputField value="{!OnBoardFormModel__c.TargetedEmail_Notes__c}"
+                                                required="false" taborderhint="9"
+                                                label="Notes - Targeted Email" style="width:100%"
+                                                html-automationid="TargettedEmailNotesAMID" />
+                                        </apex:pageBlockSection>
+
+										<!-- Commneted out below Section as part of DEV-1073 -->
+										<!-- 
+										<apex:pageBlockSection columns="1"
+											id="ArtworksubmittedbyclientRefreshId">
+											<apex:pageBlockSectionItem Id="ClientUploadSectionItem1">
+												<apex:outputLabel value="If creative supplied by client upload" />
+												<apex:outputPanel layout="block" styleClass="requiredInput">
+													<apex:outputPanel layout="block" styleClass="requiredBlock" />
+													<apex:inputFile Id="ClientUploadFileUpload"
+														filename="{!ClientUploadFileAttachment.AttachmentName}"
+														contentType="{!ClientUploadFileAttachment.AttachmentContentType}"
+														value="{!ClientUploadFileAttachment.AttachmentBody}"
+														onchange="uploadFile('{!$Component.ClientUploadFileUpload}',  '{!$Component.ArtworksubmittedbyclientRefreshId.ClientUploadSectionItem2.ClientUploadattachmentName}', '{!$Component.ArtworksubmittedbyclientRefreshId.ClientUploadSectionItem2.ClientUploadattachmentBody}', '{!$Component.ArtworksubmittedbyclientRefreshId.ClientUploadSectionItem2.ClientUploadattachmentContentType}');" />
+												</apex:outputPanel>
+											</apex:pageBlockSectionItem>
+
+											<apex:pageBlockSectionItem Id="ClientUploadSectionItem2">
+												<apex:outputLabel value="-" />
+												<apex:outputPanel >
+													<apex:actionRegion >
+														<apex:commandButton action="{!ClientUploadFileAttachment.uploadAttachment}"
+															value="Upload Attachment"
+															reRender="ClientUploadattachmentId, displayClientUploadAttachmentLink, ClientUploadattachmentBody"
+															status="status" />
+														<apex:inputHidden value="{!ClientUploadFileAttachment.AttachmentBody}"
+															html-clearfileattachment="true"
+															id="ClientUploadattachmentBody" />
+														<apex:inputHidden value="{!ClientUploadFileAttachment.AttachmentName}"
+															id="ClientUploadattachmentName" />
+														<apex:inputHidden value="{!ClientUploadFileAttachment.AttachmentContentType}"
+															id="ClientUploadattachmentContentType" />
+														<apex:inputHidden value="{!ClientUploadFileAttachment.AttachmentId}"
+															Id="ClientUploadattachmentId" />
+														<apex:outputLink Id="displayClientUploadAttachmentLink"
+															value="/servlet/servlet.FileDownload?file={!ClientUploadFileAttachment.AttachmentId}"
+															target="_blank">{!IF(ClientUploadFileAttachment.AttachmentId == NULL, '' ,ClientUploadFileAttachment.AttachmentName)}</apex:outputLink>
+													</apex:actionRegion>
+												</apex:outputPanel>
+											</apex:pageBlockSectionItem>
+
+                                        </apex:pageBlockSection>
+                                        
+                                        -->
+                                    </apex:pageBlockSection>
+                                    
+                                    <apex:pageBlockSection id="targettedAutoTemplate" columns="1">
+                                               <apex:inputField value="{!OnBoardFormModel__c.TargetedEmail_AutoTemplate_Brand__c}"
+                                                rendered="{!OnBoardFormModel__c.TargetedEmail_CreativeOption__c == 'Automotive Template'}"
+                                                required="true" taborderhint="13" label="Auto Template Brand:"
+                                                style="width:50%" />
+                                               <apex:inputField value="{!OnBoardFormModel__c.TargetedEmail_AutoTemplate_Persona__c}"
+                                                 rendered="{!OnBoardFormModel__c.TargetedEmail_CreativeOption__c == 'Automotive Template'}"
+                                                 required="true" taborderhint="13" label="Auto Template Persona:"
+                                                 style="width:50%" />
+                                               <apex:inputField value="{!OnBoardFormModel__c.TargetedEmail_AutoTemplate_Specific__c}" 
+                                                 rendered="{!OnBoardFormModel__c.TargetedEmail_CreativeOption__c == 'Automotive Template'}"
+                                                 required="true" taborderhint="13" label="Auto Template Option:"
+                                                 style="width:50%" />
+                                       </apex:pageBlockSection>
+                                </apex:pageBlockSection>
+                            </apex:pageBlockSection>
+                        </apex:outputPanel>
+
+
+						<!-- Opt-In Email System Show/Hide Section-->
+						<!-- Managed Email Checkbox brings this section -->
+						<apex:outputPanel id="optionInEmailSystemSection">
+							<apex:pageBlockSection title="Opt-In Email System"
+								collapsible="true" columns="1"
+								rendered="{!AND(OnBoardFormModel__c.Managed_Email__c, NOT(ISBLANK(OnBoardFormModel__c.Email_Subscribers__c)))}">
+								<apex:pageBlockSection columns="2" html-class="formData">
+									<!-- no titles fields -->
+									<apex:pageBlockSection columns="1"
+										Id="refreshbyLayoutSelection">
+
+										<apex:pageBlockSection columns="1">
+											<apex:pageBlockSectionItem >
+												<apex:outputLabel value="Will the email use template or custom layout?" />
+												<apex:actionRegion >
+													<apex:inputField value="{!OnBoardFormModel__c.Email_Use_Template_or_Custom_Layout__c}"
+														required="true" taborderhint="13"
+														label="Will the email use template or custom layout?"
+														style="width:100%">
+														<apex:actionSupport event="onchange"
+															rerender="refreshbyLayoutSelection" status="status" />
+													</apex:inputField>
+												</apex:actionRegion>
+											</apex:pageBlockSectionItem>
+											<apex:inputField value="{!OnBoardFormModel__c.Template_Name__c}"
+												required="true"
+												rendered="{!OnBoardFormModel__c.Email_Use_Template_or_Custom_Layout__c == 'Template'}"
+												taborderhint="13" label="Template Name" style="width:100%" />
+										</apex:pageBlockSection>
+
+										<apex:pageBlockSection columns="1"
+											Id="refreshEmailCampaignOther">
+											<apex:pageBlockSectionItem >
+												<apex:outputLabel value="Email Campaign Type" />
+												<apex:actionRegion >
+													<apex:inputField value="{!OnBoardFormModel__c.Email_Campaign_Type__c}"
+														required="true" taborderhint="13"
+														label="Email Campaign Type" style="width:100%">
+														<apex:actionSupport event="onchange"
+															rerender="refreshEmailCampaignOther" status="status" />
+													</apex:inputField>
+												</apex:actionRegion>
+											</apex:pageBlockSectionItem>
+											<apex:inputField value="{!OnBoardFormModel__c.Email_Campaign_Type_Other__c}"
+												required="true"
+												rendered="{!OnBoardFormModel__c.Email_Campaign_Type__c == 'Other'}"
+												taborderhint="13" label="Email Campaign Type(Other)"
+												style="width:100%" />
+										</apex:pageBlockSection>
+										<apex:pageBlockSection columns="1">
+											<apex:inputField value="{!OnBoardFormModel__c.Client_From_Name__c}"
+												required="true" taborderhint="13" label="Client from name"
+												style="width:100%" />
+											<apex:inputField value="{!OnBoardFormModel__c.Client_From_Email_Address__c}"
+												required="true" taborderhint="13"
+												label="Client from email address" style="width:100%" />
+										</apex:pageBlockSection>
+									</apex:pageBlockSection>
+
+									<!-- Upload Assets -->
+									<apex:pageBlockSection columns="1" id="UpLoadAssets">
+										<apex:outputLabel value="Upload Assets"
+											styleClass="subsectionBlue" />
+										<apex:pageBlockSectionItem >
+											<apex:outputLabel value="" />
+											<apex:outputLabel value="Max attachment size is 4Mb" />
+										</apex:pageBlockSectionItem>
+										<apex:pageBlockSectionItem Id="DatabaselistSectionItem1">
+											<apex:outputLabel value="Database list upload (in excel or csv)" />
+											<apex:inputFile Id="DatabaselistFileUpload"
+												filename="{!DatabaselistFileAttachment.AttachmentName}"
+												contentType="{!DatabaselistFileAttachment.AttachmentContentType}"
+												value="{!DatabaselistFileAttachment.AttachmentBody}"
+												onchange="uploadFile('{!$Component.DatabaselistFileUpload}',  '{!$Component.UpLoadAssets.DatabaselistSectionItem2.DatabaselistattachmentName}', '{!$Component.UpLoadAssets.DatabaselistSectionItem2.DatabaselistattachmentBody}', '{!$Component.UpLoadAssets.DatabaselistSectionItem2.DatabaselistattachmentContentType}');" />
+										</apex:pageBlockSectionItem>
+
+										<apex:pageBlockSectionItem Id="DatabaselistSectionItem2">
+											<apex:outputLabel value="-" />
+											<apex:outputPanel >
+												<apex:actionRegion >
+													<apex:commandButton action="{!DatabaselistFileAttachment.uploadAttachment}"
+														value="Upload Attachment" reRender="UpLoadAssets"
+														status="status" />
+													<apex:inputHidden value="{!DatabaselistFileAttachment.AttachmentBody}"
+														html-clearfileattachment="true"
+														id="DatabaselistattachmentBody" />
+													<apex:inputHidden value="{!DatabaselistFileAttachment.AttachmentName}"
+														id="DatabaselistattachmentName" />
+													<apex:inputHidden value="{!DatabaselistFileAttachment.AttachmentContentType}"
+														id="DatabaselistattachmentContentType" />
+													<apex:inputHidden value="{!DatabaselistFileAttachment.AttachmentId}"
+														Id="DatabaselistattachmentId" />
+													<apex:outputLink Id="displayDatabaselistAttachmentLink"
+														value="/servlet/servlet.FileDownload?file={!DatabaselistFileAttachment.AttachmentId}"
+														target="_blank">{!IF(DatabaselistFileAttachment.AttachmentId == NULL, '' ,DatabaselistFileAttachment.AttachmentName)}</apex:outputLink>
+												</apex:actionRegion>
+											</apex:outputPanel>
+										</apex:pageBlockSectionItem>
+
+										<apex:pageBlockSectionItem >
+											<apex:outputLabel value="" />
+											<apex:outputLabel value="Max attachment size is 4Mb" />
+										</apex:pageBlockSectionItem>
+										<apex:pageBlockSectionItem Id="LiabilityFormSectionItem1">
+											<apex:outputLabel value="Attach signed Opt-in Liability Form" />
+											<apex:outputPanel layout="block" styleClass="requiredInput">
+												<apex:outputPanel id="LiablityFormRequiredAttachment"
+													layout="block" styleClass="requiredBlock"
+													rendered="{!NOT(ISBLANK(DatabaselistFileAttachment.AttachmentId))}" />
+												<apex:inputFile Id="LiabilityFormFileUpload"
+													filename="{!LiabilityFormFileAttachment.AttachmentName}"
+													contentType="{!LiabilityFormFileAttachment.AttachmentContentType}"
+													value="{!LiabilityFormFileAttachment.AttachmentBody}"
+													onchange="uploadFile('{!$Component.LiabilityFormFileUpload}',  '{!$Component.UpLoadAssets.LiabilityFormSectionItem2.LiabilityFormattachmentName}', '{!$Component.UpLoadAssets.LiabilityFormSectionItem2.LiabilityFormattachmentBody}', '{!$Component.UpLoadAssets.LiabilityFormSectionItem2.LiabilityFormattachmentContentType}');" />
+											</apex:outputPanel>
+										</apex:pageBlockSectionItem>
+
+										<apex:pageBlockSectionItem Id="LiabilityFormSectionItem2">
+											<apex:outputLabel value="-" />
+											<apex:outputPanel >
+												<apex:actionRegion >
+													<apex:commandButton action="{!LiabilityFormFileAttachment.uploadAttachment}"
+														value="Upload Attachment"
+														reRender="LiabilityFormattachmentId, displayLiabilityFormAttachmentLink, LiabilityFormattachmentBody"
+														status="status" />
+													<apex:inputHidden value="{!LiabilityFormFileAttachment.AttachmentBody}"
+														html-clearfileattachment="true"
+														id="LiabilityFormattachmentBody" />
+													<apex:inputHidden value="{!LiabilityFormFileAttachment.AttachmentName}"
+														id="LiabilityFormattachmentName" />
+													<apex:inputHidden value="{!LiabilityFormFileAttachment.AttachmentContentType}"
+														id="LiabilityFormattachmentContentType" />
+													<apex:inputHidden value="{!LiabilityFormFileAttachment.AttachmentId}"
+														Id="LiabilityFormattachmentId" />
+													<apex:outputLink Id="displayLiabilityFormAttachmentLink"
+														value="/servlet/servlet.FileDownload?file={!LiabilityFormFileAttachment.AttachmentId}"
+														target="_blank">{!IF(LiabilityFormFileAttachment.AttachmentId == NULL, '' ,LiabilityFormFileAttachment.AttachmentName)}</apex:outputLink>
+												</apex:actionRegion>
+											</apex:outputPanel>
+										</apex:pageBlockSectionItem>
+									</apex:pageBlockSection>
+								</apex:pageBlockSection>
+							</apex:pageBlockSection>
+						</apex:outputPanel>
+					</apex:pageBlocksection>
+				</apex:pageBlock>
+			</apex:form>
+			<div id="tooltip" style="display: none;">
+				<apex:outputText value="{!$Label.GLRateHelp}" escape="false" />
+			</div>
+		</apex:define>
+	</apex:composition>
+	<script type="text/javascript">
+		$j = jQuery.noConflict();
+		var ctn = $j('#tooltip').html();
+		$j('#helpme').poshytip({
+			content : ctn,
+			alignTo : 'target',
+			alignX : 'inner-right'
+		});
+	</script>
+</apex:page>

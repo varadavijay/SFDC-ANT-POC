@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Credit_Card_Processing__r$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity$RecordType</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Credit_Card_Processing__r$RecordType</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Credit_Card_Processing__r$LastModifiedBy</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Credit_Card_Processing__r$Reminder_Target__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Tomorrow&apos;s Charges</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opps_With_Payments__c</reportType>
+    <roleHierarchyFilter>ExecutiveDirector</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

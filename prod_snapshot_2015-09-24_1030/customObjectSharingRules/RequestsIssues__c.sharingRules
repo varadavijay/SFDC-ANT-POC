@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectSharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <ownerRules>
+        <fullName>DealChickens</fullName>
+        <sharedTo>
+            <group>DealChickens</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>DealChickens</group>
+        </sharedFrom>
+        <accessLevel>Read</accessLevel>
+        <name>Deal Chickens</name>
+    </ownerRules>
+</CustomObjectSharingRules>

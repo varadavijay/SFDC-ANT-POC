@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is a list of all company contacts by phone number in the SalesForce system; the x&apos;s next to the contacts indicate that duplicate company contacts were merged together.</description>
+    <internalUseOnly>true</internalUseOnly>
+    <name>Duplicate Company Cleanup</name>
+    <public>false</public>
+</Document>

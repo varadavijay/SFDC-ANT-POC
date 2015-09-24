@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Ownership Transfer settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Ownership Transfer settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- MaxDaysNoTouch --></label>
+        <name>MaxDaysNoTouch__c</name>
+    </fields>
+    <fields>
+        <label><!-- MinDaysNoTouch --></label>
+        <name>MinDaysNoTouch__c</name>
+    </fields>
+    <fields>
+        <label><!-- ObjectType --></label>
+        <name>ObjectType__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

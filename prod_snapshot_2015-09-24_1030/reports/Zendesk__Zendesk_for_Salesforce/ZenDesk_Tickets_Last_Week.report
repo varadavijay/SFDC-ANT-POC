@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_ID</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Zendesk__Zendesk_Ticket__c.Zendesk__Date_Time_created__c</field>
+    </columns>
+    <columns>
+        <field>Zendesk__Zendesk_Ticket__c.Zendesk__Description__c</field>
+    </columns>
+    <columns>
+        <field>Zendesk__Zendesk_Ticket__c.Zendesk__Assignee_Name__c</field>
+    </columns>
+    <columns>
+        <field>Zendesk__Zendesk_Ticket__c.Request_Type__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Zendesk__Zendesk_Ticket__c.Request_Type__c</column>
+            <operator>contains</operator>
+            <value>unable_to_purchase,site_error,how_to_find_voucher,forgot_password,business_closure,shipping_concerns,refund_request</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Zendesk__Zendesk_Ticket__c.Zendesk__Date_Time_solved__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>ZenDesk Tickets Last Week</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Zendesk__Zendesk_Ticket__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Zendesk__Zendesk_Ticket__c.Zendesk__Date_Time_solved__c</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

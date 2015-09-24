@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SLA Performance</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SLA Performance</value>
+    </caseValues>
+    <fields>
+        <label><!-- Awaiting OnBoard --></label>
+        <name>Awaiting_OnBoard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed Won --></label>
+        <name>Closed_Won__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count --></label>
+        <name>Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Source --></label>
+        <name>Data_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fulfilled --></label>
+        <name>Fulfilled__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Fulfillment --></label>
+        <name>In_Fulfillment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Live --></label>
+        <name>Live__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pending --></label>
+        <name>Pending__c</name>
+    </fields>
+    <fields>
+        <label><!-- Period Live Date --></label>
+        <name>Period_Live_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product SLA --></label>
+        <name>Product_SLA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>Product_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report Sort --></label>
+        <name>Report_Sort__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Met --></label>
+        <name>SLA_Met__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sell Type --></label>
+        <name>Sell_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Summary Id --></label>
+        <name>Summary_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Waiting On Approval --></label>
+        <name>Waiting_On_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Waiting On Resource --></label>
+        <name>Waiting_On_Resource__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

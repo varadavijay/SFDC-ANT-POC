@@ -1,0 +1,8 @@
+Hi,
+
+A new Testimonial case has been created and needs your attention.  Please check the Case queue and respond appropriately.
+
+Details:
+{!Case.Link}
+{!Case.Contact}
+{!Case.CreatedBy}

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Deal Calendar</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Deal Calendar</value>
+    </caseValues>
+    <fields>
+        <label><!-- Category Match Numeric --></label>
+        <name>Category_Match_Numeric__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category Needed Text --></label>
+        <name>Category_Needed_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category Needed --></label>
+        <name>Category_Needed__c</name>
+        <picklistValues>
+            <masterLabel>Bar/Nightclub or Restaurants &amp; Food</masterLabel>
+            <translation><!-- Bar/Nightclub or Restaurants &amp; Food --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beauty &amp; Health: Day Spa</masterLabel>
+            <translation><!-- Beauty &amp; Health: Day Spa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beauty &amp; Health: Hair Removal</masterLabel>
+            <translation><!-- Beauty &amp; Health: Hair Removal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beauty &amp; Health: Massage</masterLabel>
+            <translation><!-- Beauty &amp; Health: Massage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beauty &amp; Health: Nails</masterLabel>
+            <translation><!-- Beauty &amp; Health: Nails --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beauty &amp; Health: Salon Services</masterLabel>
+            <translation><!-- Beauty &amp; Health: Salon Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beauty &amp; Health: Skin Care</masterLabel>
+            <translation><!-- Beauty &amp; Health: Skin Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Classes: Experiences</masterLabel>
+            <translation><!-- Classes: Experiences --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment: Adventure</masterLabel>
+            <translation><!-- Entertainment: Adventure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment: Bowling</masterLabel>
+            <translation><!-- Entertainment: Bowling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment: Concerts</masterLabel>
+            <translation><!-- Entertainment: Concerts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment: Family Fun</masterLabel>
+            <translation><!-- Entertainment: Family Fun --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment: Haunted House</masterLabel>
+            <translation><!-- Entertainment: Haunted House --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment: Show</masterLabel>
+            <translation><!-- Entertainment: Show --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment: Skydiving</masterLabel>
+            <translation><!-- Entertainment: Skydiving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment: Sports Tickets</masterLabel>
+            <translation><!-- Entertainment: Sports Tickets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grocery</masterLabel>
+            <translation><!-- Grocery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Improvement/Services</masterLabel>
+            <translation><!-- Home Improvement/Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical &amp; Dental: Lasik</masterLabel>
+            <translation><!-- Medical &amp; Dental: Lasik --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical &amp; Dental: Teeth Whitening</masterLabel>
+            <translation><!-- Medical &amp; Dental: Teeth Whitening --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Museum</masterLabel>
+            <translation><!-- Museum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restaurants &amp; Food</masterLabel>
+            <translation><!-- Restaurants &amp; Food --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restaurants &amp; Food: Quick Serve</masterLabel>
+            <translation><!-- Restaurants &amp; Food: Quick Serve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail: Fabric Store</masterLabel>
+            <translation><!-- Retail: Fabric Store --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail: Kids Shoestore</masterLabel>
+            <translation><!-- Retail: Kids Shoestore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail: Women&apos;s Clothing</masterLabel>
+            <translation><!-- Retail: Women&apos;s Clothing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Specialty Food</masterLabel>
+            <translation><!-- Specialty Food --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>beauty &amp; Health: Facial</masterLabel>
+            <translation><!-- beauty &amp; Health: Facial --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Category Received Text --></label>
+        <name>Category_Received_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category Recieved --></label>
+        <name>Category_Recieved__c</name>
+        <picklistValues>
+            <masterLabel>Bar/Nightclub or Restaurants &amp; Food</masterLabel>
+            <translation><!-- Bar/Nightclub or Restaurants &amp; Food --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beauty &amp; Health: Day Spa</masterLabel>
+            <translation><!-- Beauty &amp; Health: Day Spa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beauty &amp; Health: Hair Removal</masterLabel>
+            <translation><!-- Beauty &amp; Health: Hair Removal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beauty &amp; Health: Massage</masterLabel>
+            <translation><!-- Beauty &amp; Health: Massage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beauty &amp; Health: Nails</masterLabel>
+            <translation><!-- Beauty &amp; Health: Nails --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beauty &amp; Health: Salon Services</masterLabel>
+            <translation><!-- Beauty &amp; Health: Salon Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beauty &amp; Health: Skin Care</masterLabel>
+            <translation><!-- Beauty &amp; Health: Skin Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Classes: Experiences</masterLabel>
+            <translation><!-- Classes: Experiences --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment: Adventure</masterLabel>
+            <translation><!-- Entertainment: Adventure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment: Bowling</masterLabel>
+            <translation><!-- Entertainment: Bowling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment: Concerts</masterLabel>
+            <translation><!-- Entertainment: Concerts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment: Family Fun</masterLabel>
+            <translation><!-- Entertainment: Family Fun --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment: Haunted House</masterLabel>
+            <translation><!-- Entertainment: Haunted House --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment: Show</masterLabel>
+            <translation><!-- Entertainment: Show --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment: Skydiving</masterLabel>
+            <translation><!-- Entertainment: Skydiving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment: Sports Tickets</masterLabel>
+            <translation><!-- Entertainment: Sports Tickets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grocery</masterLabel>
+            <translation><!-- Grocery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Improvement/Services</masterLabel>
+            <translation><!-- Home Improvement/Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical &amp; Dental: Lasik</masterLabel>
+            <translation><!-- Medical &amp; Dental: Lasik --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical &amp; Dental: Teeth Whitening</masterLabel>
+            <translation><!-- Medical &amp; Dental: Teeth Whitening --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Museum</masterLabel>
+            <translation><!-- Museum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restaurants &amp; Food</masterLabel>
+            <translation><!-- Restaurants &amp; Food --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restaurants &amp; Food: Quick Serve</masterLabel>
+            <translation><!-- Restaurants &amp; Food: Quick Serve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail: Fabric Store</masterLabel>
+            <translation><!-- Retail: Fabric Store --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail: Kids Shoestore</masterLabel>
+            <translation><!-- Retail: Kids Shoestore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail: Women&apos;s Clothing</masterLabel>
+            <translation><!-- Retail: Women&apos;s Clothing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Specialty Food</masterLabel>
+            <translation><!-- Specialty Food --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>beauty &amp; Health: Facial</masterLabel>
+            <translation><!-- beauty &amp; Health: Facial --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Day --></label>
+        <name>Day__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI Date --></label>
+        <name>KPI_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Market --></label>
+        <name>Market__c</name>
+        <relationshipLabel><!-- Deal Calendar --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Category Match --></label>
+        <name>Match__c</name>
+    </fields>
+    <fields>
+        <label><!-- Period --></label>
+        <name>Period__c</name>
+    </fields>
+    <layouts>
+        <layout>Deal Calendar Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Create_DC_Opportunity --></label>
+        <name>Create_DC_Opportunity</name>
+    </webLinks>
+</CustomObjectTranslation>

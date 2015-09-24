@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Application Log</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Application Logs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Class Name --></label>
+        <name>Class_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Message --></label>
+        <name>Error_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Number --></label>
+        <name>Line_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Log Level --></label>
+        <name>Log_Level__c</name>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Info</masterLabel>
+            <translation><!-- Info --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warn</masterLabel>
+            <translation><!-- Warn --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Method Name --></label>
+        <name>Method_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- SalesforceId --></label>
+        <name>SalesforceId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Email --></label>
+        <name>Send_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- StackTrace --></label>
+        <name>StackTrace__c</name>
+    </fields>
+    <fields>
+        <label><!-- TransactionID --></label>
+        <name>TransactionID__c</name>
+    </fields>
+    <layouts>
+        <layout>Application Log Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

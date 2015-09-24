@@ -1,0 +1,18 @@
+<apex:page standardController="OpportunityLineItem" extensions="OpportunityLineItemExt">
+    <table border="0" >
+        <tr>
+            <th width="220px">Order of Occurrence</th>
+            <th width="353px">Status</th>
+            <th width="353px">Time In</th>
+            <th width="353px">Updated By</th>
+        </tr>
+        <apex:repeat var="histRec" value="{!HistoryTrackRecords}">
+           <tr>
+            <td width="220px">{!histRec.orderOfOccurence}</td>
+            <td width="353px">{!histRec.record.OLI_Stage__c}</td>
+            <td  width="353px">{!histRec.TimeInFormatted}</td>
+            <td  width="353px">{!histRec.record.CreatedBy.Name}</td>
+          </tr>
+        </apex:repeat> 
+    </table>
+</apex:page>

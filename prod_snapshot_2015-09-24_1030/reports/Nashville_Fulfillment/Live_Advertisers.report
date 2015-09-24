@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Number</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Opportunity.Monthly_Total__c:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Value</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_98673236</developerName>
+        <masterLabel>Product Type</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>PRODUCT_NAME</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>SEO-10 Keywords</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SEO-10 Pages</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SEO-15 Keywords</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SEO-15+ Keywords</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>5 KW SEO</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Custom SEO</sourceValue>
+            </sourceValues>
+            <value>SEO</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Custom Website</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Exposure Website</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Landing Page</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mobile Enabled MicroSite</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mobile Landing Page</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Web Hosting</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Website Maintenance</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Presence Website</sourceValue>
+            </sourceValues>
+            <value>Website</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Social Media Presence (with Ad Spend)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Presence (no FB ads)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Presence</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Loyalty</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Engagement</sourceValue>
+            </sourceValues>
+            <value>Social</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>PPC</sourceValue>
+            </sourceValues>
+            <value>PPC</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Retargeting</sourceValue>
+            </sourceValues>
+            <value>Retargeting</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Maps/Reputation Dashboard</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>MapsPlus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mobile Presence</sourceValue>
+            </sourceValues>
+            <value>Maps</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Facebook Ads</sourceValue>
+            </sourceValues>
+            <value>Facebook Ads</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Opt-In Semi-Custom Email</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Opt-In Custom Email</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Email Blast</sourceValue>
+            </sourceValues>
+            <value>Email</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA1</column>
+        </chartSummaries>
+        <chartType>Pie</chartType>
+        <enableHoverLabels>true</enableHoverLabels>
+        <expandOthers>false</expandOthers>
+        <groupingColumn>Product2.Product_Type__c</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Large</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>SERVICE_MONTH</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Dig_Account_Manager__c</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>QUANTITY</field>
+    </columns>
+    <columns>
+        <field>UNIT_PRICE</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>TOTAL_PRICE</field>
+    </columns>
+    <columns>
+        <field>SERVICE_DATE</field>
+    </columns>
+    <columns>
+        <field>PRODUCT_DESCRIPTION</field>
+    </columns>
+    <columns>
+        <field>FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <description>All live advertisers</description>
+    <filter>
+        <criteriaItems>
+            <column>OpportunityLineItem.Waiting_Status__c</column>
+            <operator>equals</operator>
+            <value>Live,Fulfilled Renewed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OpportunityLineItem.Expiration_Date__c</column>
+            <operator>greaterOrEqual</operator>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_98673236</column>
+            <operator>equals</operator>
+            <value>SEO,Website,Social,PPC,Retargeting,Maps,Facebook Ads,Email,Other</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Product2.Product_Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>PRODUCT_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Live Advertisers</name>
+    <params>
+        <name>open</name>
+        <value>closedwon</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityProduct</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>OPPORTUNITY_NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

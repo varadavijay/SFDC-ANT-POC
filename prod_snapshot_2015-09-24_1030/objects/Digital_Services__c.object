@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Affiliated_Sales_Rep__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Affl Sales Rep</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Digital Services</relationshipLabel>
+        <relationshipName>SponsoredDigitalServices</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Avg_Cust_Val__c</fullName>
+        <externalId>false</externalId>
+        <label>Avg Cust Val</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BestWhy__c</fullName>
+        <externalId>false</externalId>
+        <label>BestWhy</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Comp_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Comp 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comp_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Comp 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comp_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Comp 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Company__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Company</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Digital Services</relationshipLabel>
+        <relationshipName>Digital_Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Digital Services (Contact)</relationshipLabel>
+        <relationshipName>Digital_Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Curr_Adv__c</fullName>
+        <externalId>false</externalId>
+        <label>Curr Adv</label>
+        <picklist>
+            <picklistValues>
+                <fullName>TV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Print</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Billboards</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SEO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pay-Per-Click</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maps</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Radio</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Coupons/Specials</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Deals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Custom_Website_Budget__c</fullName>
+        <externalId>false</externalId>
+        <label>Custom Website Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Custom_Website_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Custom Website Description</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Dig_Aud_Req__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Digital Audit Request</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Digital Services</relationshipLabel>
+        <relationshipName>Digital_Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ECommerce_Website__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>ECommerce Website</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Email_Count_Request_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Email Count Request Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Existing_URL__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Existing URL</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>General_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>General Notes</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Write_Content__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Write Content</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>d_List_Products_Services__c</fullName>
+        <externalId>false</externalId>
+        <label>List Products/Services</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>d_budgetrange__c</fullName>
+        <externalId>false</externalId>
+        <label>Budget Range</label>
+        <picklist>
+            <picklistValues>
+                <fullName>$500-$999</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>$1,000-$1,999</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>$2,000-$4,999</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>$5,000+</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>d_geogservarea__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe the Geographical Area to Which This Audit Applies</inlineHelpText>
+        <label>Geog Serv Area</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>d_monthlypotsales__c</fullName>
+        <externalId>false</externalId>
+        <label>Monthly Potential</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>d_website__c</fullName>
+        <description>Digital Audit Request Section - Website URL</description>
+        <externalId>false</externalId>
+        <label>Website</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>d_win_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Win 1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Coupon Usage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email Capture</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foot Traffic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Form Fills</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone Calls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web Traffic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>d_win_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Win 2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Coupon Usage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email Capture</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foot Traffic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Form Fills</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone Calls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web Traffic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Digital Services</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Digital Services Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Digital Services</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Digital_Audit</fullName>
+        <active>true</active>
+        <label>Digital Audit</label>
+        <picklistValues>
+            <picklist>Curr_Adv__c</picklist>
+            <values>
+                <fullName>Billboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coupons%2FSpecials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daily Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pay-Per-Click</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Radio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TV</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>d_budgetrange__c</picklist>
+            <values>
+                <fullName>%241%2C000-%241%2C999</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%242%2C000-%244%2C999</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%245%2C000%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%24500-%24999</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>d_win_1__c</picklist>
+            <values>
+                <fullName>Coupon Usage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Capture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foot Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Form Fills</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Calls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Traffic</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>d_win_2__c</picklist>
+            <values>
+                <fullName>Coupon Usage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Capture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foot Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Form Fills</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Calls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Traffic</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Email_Count</fullName>
+        <active>true</active>
+        <label>Email Count</label>
+        <picklistValues>
+            <picklist>Curr_Adv__c</picklist>
+            <values>
+                <fullName>Billboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coupons%2FSpecials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daily Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pay-Per-Click</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Radio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TV</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>d_budgetrange__c</picklist>
+            <values>
+                <fullName>%241%2C000-%241%2C999</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%242%2C000-%244%2C999</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%245%2C000%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%24500-%24999</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>d_win_1__c</picklist>
+            <values>
+                <fullName>Coupon Usage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Capture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foot Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Form Fills</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Calls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Traffic</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>d_win_2__c</picklist>
+            <values>
+                <fullName>Coupon Usage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Capture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foot Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Form Fills</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Calls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Traffic</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Website_Audit</fullName>
+        <active>true</active>
+        <label>Website Audit</label>
+        <picklistValues>
+            <picklist>Curr_Adv__c</picklist>
+            <values>
+                <fullName>Billboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coupons%2FSpecials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daily Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pay-Per-Click</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Radio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TV</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>d_budgetrange__c</picklist>
+            <values>
+                <fullName>%241%2C000-%241%2C999</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%242%2C000-%244%2C999</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%245%2C000%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%24500-%24999</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>d_win_1__c</picklist>
+            <values>
+                <fullName>Coupon Usage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Capture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foot Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Form Fills</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Calls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Traffic</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>d_win_2__c</picklist>
+            <values>
+                <fullName>Coupon Usage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Capture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foot Traffic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Form Fills</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Calls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Traffic</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

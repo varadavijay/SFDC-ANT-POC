@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DealChicken KPI&apos;s</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DealChicken KPI&apos;s</value>
+    </caseValues>
+    <fields>
+        <label><!-- Average Revenue Split --></label>
+        <name>Average_Revenue_Split__c</name>
+    </fields>
+    <fields>
+        <label><!-- Average # of Days for proof approval --></label>
+        <name>Average_of_Days_for_proof_approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Avg. Hours First Reply --></label>
+        <name>Avg_Hours_First_Reply__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Closure --></label>
+        <name>Business_Closure__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forgot Password --></label>
+        <name>Forgot_Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- How to find Voucher --></label>
+        <name>How_to_find_Voucher__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI Run Date --></label>
+        <name>KPI_Run_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local Deals In System to run --></label>
+        <name>Local_Deals_In_System_to_run__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local Deals Produced  w/Run Date This We --></label>
+        <name>Local_Deals_Produced_w_Run_Date_This_We__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local Deals w/Run Dates next 30 days --></label>
+        <name>Local_Deals_w_Run_Dates_next_30_days__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Tickets --></label>
+        <name>New_Tickets__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Filler Deals Used --></label>
+        <name>Number_of_Filler_Deals_Used__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of deals pulled --></label>
+        <name>Number_of_deals_pulled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of deals that need revisions --></label>
+        <name>Number_of_deals_that_need_revisions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of proofs out to merchants --></label>
+        <name>Number_of_proofs_out_to_merchants__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percent of Proofs Approved --></label>
+        <name>Percent_of_Proofs_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percent of deals that need revisions --></label>
+        <name>Percent_of_deals_that_need_revisions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Refund Request --></label>
+        <name>Refund_Request__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFDC Opportunities Approved --></label>
+        <name>SFDC_Opportunities_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFDC Opportunities Rejected --></label>
+        <name>SFDC_Opportunities_Rejected__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFDC Opportunities Submitted --></label>
+        <name>SFDC_Opportunities_Submitted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Satisfaction Rating --></label>
+        <name>Satisfaction_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Issues --></label>
+        <name>Shipping_Issues__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Error --></label>
+        <name>Site_Error__c</name>
+    </fields>
+    <fields>
+        <label><!-- Solved Tickets --></label>
+        <name>Solved_Tickets__c</name>
+    </fields>
+    <fields>
+        <label><!-- Splits Under 40% --></label>
+        <name>Splits_Under_40__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ticket Backlog --></label>
+        <name>Ticket_Backlog__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Percent Approved --></label>
+        <name>Total_Percent_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unable To Purchase --></label>
+        <name>Unable_To_Purchase__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wild Cards Invoked --></label>
+        <name>Wild_Cards_Invoked__c</name>
+    </fields>
+    <layouts>
+        <layout>DC Operations KPI&apos;S Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Customer Loyalty Ticket Summary --></label>
+            <section>Customer Loyalty Ticket Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Local Operations --></label>
+            <section>Local Operations</section>
+        </sections>
+        <sections>
+            <label><!-- Merchant Loyalty --></label>
+            <section>Merchant Loyalty</section>
+        </sections>
+        <sections>
+            <label><!-- Ticket Reasons --></label>
+            <section>Ticket Reasons</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

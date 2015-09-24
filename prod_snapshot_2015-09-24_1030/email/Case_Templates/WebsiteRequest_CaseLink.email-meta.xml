@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>GO DA Website Audit Case Link</name>
+    <style>none</style>
+    <subject>Custom Website Audit Request Submitted - Case Link</subject>
+    <type>text</type>
+</EmailTemplate>

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AssignBtn</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AssignBtn</shortDescription>
+        <value>Assign</value>
+    </labels>
+    <labels>
+        <fullName>AssignSuccessSummary</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AssignSuccessSummary</shortDescription>
+        <value>The opportunities you selected and their attached open activities have successfully been reassigned.</value>
+    </labels>
+    <labels>
+        <fullName>AssignSuccessTitle</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AssignSuccessTitle</shortDescription>
+        <value>Reassignment successfully completed!</value>
+    </labels>
+    <labels>
+        <fullName>AssignToBtn</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AssignToBtn</shortDescription>
+        <value>Assign to:</value>
+    </labels>
+    <labels>
+        <fullName>AssigningBtn</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AssigningBtn</shortDescription>
+        <value>In progress ...</value>
+    </labels>
+    <labels>
+        <fullName>Browser_Support</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Browser Support</shortDescription>
+        <value>Firefox is the supported and recommended browser for use with Salesforce.com.  Internet Explorer is not widely supported for many Salesforce functions.  Safari or Chrome may be tried as back up options, however, some functionality may not be fully supported.
+&lt;br/&gt;&lt;br/&gt;</value>
+    </labels>
+    <labels>
+        <fullName>CloseDateCriteriaLabel</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CloseDateCriteriaLabel</shortDescription>
+        <value>Closed Date</value>
+    </labels>
+    <labels>
+        <fullName>CreatedDateCriteriaLabel</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CreatedDateCriteriaLabel</shortDescription>
+        <value>Created date:</value>
+    </labels>
+    <labels>
+        <fullName>CriteriaSearchSection</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CriteriaSearchSection</shortDescription>
+        <value>Search with a search criteria</value>
+    </labels>
+    <labels>
+        <fullName>DefaultWebsitePageMap</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DefaultWebsitePageMap</shortDescription>
+        <value>A - HOME PAGE 
+--Slideshow of Images 
+--Call To Action For Locations 
+--Most recent 5 blog posts 
+--Coupons/Special Offers 
+B - COMPANY PROFILE 
+--Company History 
+--Management Team 
+C - OUR PRODUCTS 
+--Product 1 
+--Product 2… 
+D – SERVICES 
+--Service 1 
+--Service 2 
+E – SPECIAL OFFERS 
+--Coupons 
+F – LOCATIONS 
+--Find Nearest Location 
+G – FAQ’s 
+H – CONTACT US</value>
+    </labels>
+    <labels>
+        <fullName>DigAudHelp</fullName>
+        <categories>Digital Audit Help</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DigAudHelp</shortDescription>
+        <value>&lt;span style=&quot;color:blue;&quot;&gt;We Have Made Some Great Changes To The Digital Audit Request Site! &lt;/span&gt; 
+&lt;br/&gt;There are now Four Sections
+&lt;ul&gt; 
+&lt;li&gt;Partner &amp; Client - Basic Info Required To Help Us Identify The Parties Involved&lt;/li&gt; 
+&lt;li&gt;Digital Audit - If &apos;Yes&apos; Is Selected, Expansion Will Reveal Entry Form&lt;/li&gt; 
+&lt;li&gt;Email Count Request - If &apos;Yes&apos; Is Selected, Expansion Will Reveal Entry Form&lt;/li&gt; 
+&lt;li&gt;Website Quote - If &apos;Yes&apos; Is Selected, Expansion Will Reveal Entry Form&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;span style=&quot;color:blue;&quot;&gt;Additional Functionality&lt;/span&gt; 
+&lt;ul&gt; 
+&lt;li&gt;Anything With A Red Marker Is Required&lt;/li&gt; 
+&lt;li&gt;Clicking The Media Partner Will Move It Between The &apos;Available&apos; and &apos;Chosen&apos; Lists&lt;/li&gt; 
+&lt;li&gt;&apos;Enter Notifications&apos; - Names Of Additional People To Contact&lt;/li&gt; 
+&lt;li&gt;In The Three Categories, Choosing &apos;Yes&apos; On Some Items Will Show Additional Questions&lt;/li&gt; 
+&lt;li&gt;Contact Courtney Vix With Any Issues&lt;/li&gt; 
+&lt;/ul&gt;</value>
+    </labels>
+    <labels>
+        <fullName>DisplayViewLabel</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DisplayViewLabel</shortDescription>
+        <value>Display:</value>
+    </labels>
+    <labels>
+        <fullName>GLCareHelp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GOCareHelp</shortDescription>
+        <value>&lt;p&gt;To facilitate faster resolution of requests please use the guidelines outlined below to determine the best escalation path for your issue:&lt;/p&gt;&lt;span style=color:green&gt;&lt;b&gt;Yes, we can help&lt;/b&gt;&lt;/span&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;Error Discovered by G/O:&lt;/b&gt; The G/O Team is working to resolve all issues (or issues have been corrected)&lt;/li&gt;&lt;li&gt;&lt;b&gt;Request for Make Good or Credit: Make-goods will not be considered or provided except via Care.&lt;/b&gt; Funds have been spent incorrectly due to a mistake made by G/O or there errors in billing.&lt;/li&gt;&lt;/ul&gt;&lt;span style=color:red&gt;&lt;b&gt;Sorry, please contact your Account Managers (including Email Coordinators, Web Project Managers and Jumpstart Specialists)&lt;/b&gt;&lt;/span&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;Performance Inquiry&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;Market / Client Discovered Error or Concerns&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;Campaign Change&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;Additional Revision&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;Expedite SLA&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;Custom Reporting&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;Product Asset Request&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;Outside of Deliverables&lt;/b&gt;&lt;/li&gt;&lt;/ul&gt;</value>
+    </labels>
+    <labels>
+        <fullName>GLRateHelp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GORateHelp</shortDescription>
+        <value>&lt;span style=&quot;color:green;&quot;&gt;Your Rate Request Is Important &lt;/span&gt; 
+&lt;br/&gt;
+&lt;ul&gt; 
+&lt;li&gt;Please use this process when requesting a rate that is below rate card pricing or when requesting a shorter time period than indicated on the rate card.&lt;/li&gt; 
+&lt;/ul&gt;</value>
+    </labels>
+    <labels>
+        <fullName>HeaderText</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>HeaderText</shortDescription>
+        <value>Mass reassign opportunities</value>
+    </labels>
+    <labels>
+        <fullName>NewViewLinkLabel</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NewViewLinkLabel</shortDescription>
+        <value>Create new view</value>
+    </labels>
+    <labels>
+        <fullName>NoResultSummary</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NoResultSummary</shortDescription>
+        <value>Please modify your search criteria</value>
+    </labels>
+    <labels>
+        <fullName>NoResultTitle</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NoResultTitle</shortDescription>
+        <value>No results</value>
+    </labels>
+    <labels>
+        <fullName>NoViewSelection</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NoViewSelection</shortDescription>
+        <value>- None -</value>
+    </labels>
+    <labels>
+        <fullName>ResultBlockTitle</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ResultBlockTitle</shortDescription>
+        <value>Results</value>
+    </labels>
+    <labels>
+        <fullName>SearchBlockTitle</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchBlockTitle</shortDescription>
+        <value>Search opportunities</value>
+    </labels>
+    <labels>
+        <fullName>SearchBtn</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchBtn</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>SearchingBtn</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchingBtn</shortDescription>
+        <value>Searching ...</value>
+    </labels>
+    <labels>
+        <fullName>TooManyRowsError</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TooManyRowsError</shortDescription>
+        <value>The total number of open activities on the opportunities you selected is greater than the system can handle. Please reduce the number of opportunities to reassign</value>
+    </labels>
+    <labels>
+        <fullName>TooManyRowsSummary</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TooManyRowsSummary</shortDescription>
+        <value>The view you selected returned more than 1000 rows. Only the 1000 first ones will be displayed</value>
+    </labels>
+    <labels>
+        <fullName>TooManyRowsTitle</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TooManyRowsTitle</shortDescription>
+        <value>Too many rows returned</value>
+    </labels>
+    <labels>
+        <fullName>TotalFooterLabel</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TotalFooterLabel</shortDescription>
+        <value>Number</value>
+    </labels>
+    <labels>
+        <fullName>ViewSearchSection</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ViewSearchSection</shortDescription>
+        <value>Search with a view</value>
+    </labels>
+</CustomLabels>

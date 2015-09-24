@@ -1,0 +1,3 @@
+Account - {!Project__c.Project_Account__c}
+Status - {!Project__c.Project_Status__c}
+Sales Rep - {!Project__c.Affl_Sales_Rep__c}

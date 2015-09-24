@@ -1,0 +1,5 @@
+<br>
+A Charge for {!Payment_Entries__c.Company__c} was declined.<br><br>
+Please take appropriate action regarding the fulfillments for this account. <br><br><br>
+
+Opportunity : {!Payment_Entries__c.JumpToOpp__c}

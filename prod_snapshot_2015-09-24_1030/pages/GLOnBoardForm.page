@@ -1,0 +1,144 @@
+<apex:page standardController="Account" extensions="myWebToCompanyExtension" title="OnBoarding" showHeader="false" standardStylesheets="true">
+ <apex:composition template="{!$Site.Template}"> 
+  <apex:define name="body"> 
+   <apex:form >
+    <apex:messages id="error" styleClass="errorMsg" layout="table" style="margin-top:1em;"/>
+      <apex:pageBlock title="" mode="edit">
+        <apex:pageBlockButtons >
+           <apex:commandButton value="Save" action="{!saveCompany}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection title="Sales Information" collapsible="false" columns="2">
+         <apex:inputField value="{!Account.Affiliated_Sales_Rep__c}" required="true"/>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Select Market:</apex:outputlabel> 
+          <apex:inputField value="{!Account.Market_List__c}" required="true"/>
+         </apex:pageBlockSectionItem>
+         </apex:pageBlockSection>
+         <apex:pageBlockSection title="Advertiser - Company Information" collapsible="false" columns="2">
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Company Name:</apex:outputlabel> 
+          <apex:inputField value="{!Account.Name}"/>
+         </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Street Address:</apex:outputlabel> 
+          <apex:inputField value="{!Account.BillingStreet}" style="width: 50%;" required="true"/>
+         </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Company Phone:</apex:outputlabel> 
+          <apex:inputField value="{!Account.Phone}" required="true"/>
+         </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >City:</apex:outputlabel> 
+          <apex:inputField value="{!Account.BillingCity}" required="true" style="width: 50%;"/>
+         </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Company Website:</apex:outputlabel> 
+          <apex:inputField value="{!Account.Website}" required="true"/>
+         </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Company Postal Code:</apex:outputlabel> 
+          <apex:inputField value="{!Account.BillingPostalCode}"/>
+         </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Genesys Order Number (G2/G3):</apex:outputlabel> 
+          <apex:inputField value="{!Account.Order_Number__c}"/>
+         </apex:pageBlockSectionItem>
+         </apex:pageBlockSection>
+         <apex:pageBlockSection title="Advertiser - Contact Information" collapsible="false" columns="2">
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Contact Name:</apex:outputlabel> 
+          <apex:inputField value="{!Account.Primary_Contact_Name__c}" required="true"/>
+         </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Contact Email:</apex:outputlabel> 
+          <apex:inputField value="{!Account.Primary_Contact_Email__c}" required="true"/>
+         </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Contact Phone:</apex:outputlabel> 
+          <apex:inputField value="{!Account.Primary_Contact_Phone__c}" required="true"/>
+         </apex:pageBlockSectionItem>
+         <apex:inputField value="{!Account.Budget_Range__c}" required="true"/>
+         </apex:pageBlockSection>
+         <apex:pageBlockSection title="Products" collapsible="true" columns="1">
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >PPC:</apex:outputlabel> 
+          <apex:inputField value="{!Account.PPC__c}" style="width: 3%;"/>
+         </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >PPC Budget:</apex:outputlabel> 
+          <apex:inputField value="{!Account.PPC_Budget__c}" style="width: 15%;"/>
+         </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >SEO:</apex:outputlabel> 
+          <apex:inputField value="{!Account.SEO__c}" style="width: 3%;"/>
+         </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >SEO Keywords:</apex:outputlabel> 
+          <apex:inputField value="{!Account.SEO_Keywords__c}" style="width: 15%;"/>
+         </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Website:</apex:outputlabel> 
+          <apex:inputField value="{!Account.Website__c}" style="width: 3%;"/>
+         </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Website Options:</apex:outputlabel> 
+          <apex:inputField value="{!Account.Website_Options__c}" style="width: 15%;"/>
+         </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Social Media:</apex:outputlabel> 
+          <apex:inputField value="{!Account.Social_Media__c}" style="width: 3%;"/>
+         </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Facebook Ads:</apex:outputlabel> 
+          <apex:inputField value="{!Account.Facebook_Ads__c}" style="width: 3%;"/>
+         </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Facebook Ads $:</apex:outputlabel> 
+          <apex:inputField value="{!Account.Facebook_Amount__c}" style="width: 10%;"/>
+         </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Email:</apex:outputlabel> 
+          <apex:inputField value="{!Account.Email__c}" style="width: 3%;"/>
+         </apex:pageBlockSectionItem>
+         </apex:pageBlockSection>
+         <apex:pageBlockSection title="Business Objectives" collapsible="true" columns="2">
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Pick One Or More</apex:outputlabel> 
+          <apex:inputField value="{!Account.Business_Objectives__c}" required="true"/>
+         </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Others</apex:outputlabel> 
+          <apex:inputField value="{!Account.Business_Objectives_Other__c}" style="width: 75%;" />
+         </apex:pageBlockSectionItem>
+         </apex:pageBlockSection>
+         <apex:pageBlockSection title="Expectations and Success Metrics" collapsible="true" columns="1">
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel ></apex:outputlabel> 
+          <apex:inputField value="{!Account.Expectations_Success_Metrics__c}" style="width: 75%;"/>
+         </apex:pageBlockSectionItem>
+         </apex:pageBlockSection>
+         <apex:pageBlockSection title="Special Contract Terms GannettLocal Should Know" collapsible="true" columns="1">
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel ></apex:outputlabel> 
+          <apex:inputField value="{!Account.Special_Terms__c}" style="width: 75%;"/>
+         </apex:pageBlockSectionItem>
+         </apex:pageBlockSection>
+         <br></br>
+         <apex:pageBlock mode="edit" title="Choose file to attach (5 Meg Limit On Each)" id="AttachFile" rendered="{!OR(NOT(submitted),(fileName != null))}">
+        <apex:pageblockSection title="ATTACH CONTRACT"  collapsible="false">
+            <apex:inputFile value="{!file}" filename="{!fileName}" contentType="{!contentType}" rendered="{!NOT(submitted)}" required="true"/>
+            <apex:outputText value="{!fileName}" rendered="{!submitted}"/>
+        </apex:pageblockSection>
+       </apex:pageBlock>  
+       <br></br>
+         <apex:pageBlock mode="edit" title="Choose other file to attach" id="AttachFile2" rendered="{!OR(NOT(submitted),(fileName2 != null))}">
+        <apex:pageblockSection title="ATTACH OTHER"  collapsible="false">
+            <apex:inputFile value="{!file2}" filename="{!fileName2}" contentType="{!contentType}" rendered="{!NOT(submitted)}" required="false"/>
+            <apex:outputText value="{!fileName2}" rendered="{!submitted}"/>
+        </apex:pageblockSection>
+       </apex:pageBlock>   
+     </apex:pageBlock>
+   </apex:form>
+  </apex:define> 
+ </apex:composition>  
+</apex:page>

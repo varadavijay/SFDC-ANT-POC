@@ -1,0 +1,422 @@
+<apex:page standardController="Case" extensions="myWeb2CareExtension_v2" title="G/O Care" showHeader="false" sidebar="false">
+ <apex:includeScript value="{!URLFOR($Resource.ulPicklist, '/jquery-1.7.2.min.js')}"  />
+<apex:includeScript value="{!URLFOR($Resource.poshytip, '/jquery.poshytip.js')}"  />
+<apex:stylesheet value="{!URLFOR($Resource.poshytip, '/tip-yellow/tip-yellow.css')}"/>
+
+ 
+ <apex:composition template="{!$Site.Template}"> 
+  <apex:define name="body">
+   
+   <apex:form >
+   
+    <apex:messages id="error" styleClass="errorMsg" layout="table" style="margin-top:1em;"/>
+    <div style="text-align:right;"><a id="helpme" style="cursor:pointer;" target="#">When should I use the G/O Care Team? (Hover To Display)</a></div>
+
+      <apex:pageBlock mode="mainDetail">
+      
+        <apex:pageBlockButtons location="top">
+           <apex:commandButton value="Send To G/O Care" action="{!saveCase}"/>
+        </apex:pageBlockButtons>
+        
+<table width="100%">
+<tr valign="top">
+<td width="50%">
+    <!-- Alphabetical Selection -->
+        <apex:actionRegion >
+            <apex:actionFunction name="redrawSalesRepSelect" action="{!null}" rerender="salesRepSelect"/> 
+                <br/>
+                <apex:pageBlockSection title="Sales Rep & Media Partner Selection" columns="1" collapsible="false">
+                <apex:pageBlockSectionItem >
+                    <apex:outputPanel layout="block" style="width:300px;">Select The First Letter Of The First Name Of Sales Rep</apex:outputPanel>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList value="{!includeSalesReps}" multiselect="false" size="1"  required="true" onchange="redrawSalesRepSelect();">
+                            <apex:selectOptions value="{!items1}"/>
+                        </apex:selectList>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:actionRegion>
+        
+<apex:outputPanel id="salesRepSelect">
+    <apex:actionRegion >
+        <apex:actionFunction name="redrawNotInList" action="{!null}" rerender="salesRepNotInList"/>
+            <apex:pageBlocksection columns="1" collapsible="false">
+                    
+                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'A'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'B'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList2" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions2}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem> 
+
+                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'C'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList3" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions3}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>    
+                
+                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'D'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList4" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions4}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>      
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'E'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList5" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions5}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'F'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList6" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions6}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'G'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList7" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions7}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'H'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepLis8" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions8}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'I'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList9" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions9}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'J'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList10" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions10}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'K'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList11" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions11}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'L'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList12" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions12}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'M'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList13" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions13}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'N'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList14" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions14}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'O'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList15" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions15}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'P'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList16" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions16}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'Q'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList17" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions17}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'R'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList18" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions18}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'S'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList19" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions19}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'T'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList20" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions20}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'U'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList21" value="{!includeLetter}" multiselect="false" size="1" required="false" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions21}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'V'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList22" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions22}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'W'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList23" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions23}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'X'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList24" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions24}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'Y'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Team Member</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList25" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions25}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                                <apex:pageBlockSectionItem rendered="{!includeSalesReps == 'Z'}">
+                <apex:outputPanel layout="block" style="width:300px;">Then Select Sales Rep Name From The List</apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList id="RepList26" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1" onchange="redrawNotInList();">
+                            <apex:selectOptions value="{!salesRepOptions26}"/>
+                        </apex:selectList>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+           </apex:pageBlockSection>
+    </apex:actionRegion>
+</apex:outputPanel>
+
+<apex:outputPanel id="salesRepNotInList">
+    <apex:pageBlockSection columns="1">
+        <apex:pageBlockSectionItem rendered="{!includeLetter == '003F000000y4o1V'}">
+        <apex:outputPanel layout="block" style="width:300px;">If Not In List, Type Sales Rep Name:</apex:outputPanel>
+            <apex:outputPanel layout="block" styleClass="requiredInput">
+            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+            <apex:inputField value="{!Case.Affl_Sales_Rep_Text__c}" required="true"/>
+        </apex:outputPanel>
+        </apex:pageBlockSectionItem>                  
+    </apex:pageBlockSection>
+</apex:outputPanel>
+<br/>
+<apex:outputPanel id="MediaPartnerChoose">
+        <apex:pageBlockSection columns="1">
+        <apex:pageBlockSectionItem >
+        <apex:outputLabel >Select Media Partner:</apex:outputlabel>
+         <apex:outputPanel layout="block" styleClass="requiredInput">
+         <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+          <apex:selectList value="{!Case.Media_Partner__c}" multiselect="false" size="1" style="width:300px;" required="true" tabindex="3" >
+            <apex:selectOptions value="{!itemsm}" id="moptions"/>
+          </apex:selectList>
+         </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+</apex:outputPanel>
+</td>
+<td width="50%"> 
+
+<!--  THIS SECTION IS TO CONTROL THE ENTERING OF THE ADDITIONAL EMAIL NOTIFICATIONS -->
+        <apex:actionRegion >
+            <apex:actionFunction name="redrawAddlNotif" action="{!null}" rerender="AddlNotif"/> 
+                <apex:pageBlockSection title="Copy Request" columns="1" collapsible="false">
+                <apex:pageBlockSectionItem >
+                    <apex:outputPanel layout="block" style="width:300px;">Do you wish to copy any others on this submittal request?</apex:outputPanel>
+                        <apex:selectList value="{!includeNotify}" multiselect="false" size="1" onchange="redrawAddlNotif();">
+                            <apex:selectOptions value="{!yesNoOptions}"/>
+                        </apex:selectList>
+                </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+        </apex:actionRegion>
+
+<apex:outputPanel id="AddlNotif">   
+    <apex:pageBlockSection columns="1" rendered="{!includeNotify == 'true'}">
+        <apex:outputText value="Enter Email Addresses Only Please" style="font-size:1em;font-weight:bold;color:#1C92D0"/>
+        <apex:inputText value="{!Notify1}" required="false" label="Email One:" style="width:100%; font-size:1em;" />
+        <apex:inputText value="{!Notify2}" required="false" label="Email Two:" style="width:100%; font-size:1em;" />
+        <apex:inputText value="{!Notify3}" required="false" label="Email Three:" style="width:100%; font-size:1em;" />
+    </apex:pageBlockSection>
+</apex:outputPanel>        
+
+        <apex:pageBlockSection title="Advertiser/Client Information" collapsible="false" columns="1" showHeader="true">
+        <apex:outputText value="Company Name & Contact Phone " style="font-size:1em;font-weight:bold;color:#1C92D0"/>
+
+        <apex:inputField value="{!Case.Company_Name__c}" required="true" taborderhint="4" label="Advertiser/Client Company Name:" style="width:100%;"/>
+        <apex:inputField value="{!Case.Contact_Phone__c}" required="true" taborderhint="6" label="Advertiser/Client Phone(Important!!):" style="width:100%;"/>
+
+        </apex:pageBlockSection>
+    
+
+</td>
+</tr>
+</table> 
+
+
+<table width="100%">
+<tr valign="top">
+<td width="50%"> 
+        <apex:pageBlockSection title="G/O Care Request Information" collapsible="true" columns="2">
+          <apex:outputText value="Request Info" style="font-size:1em;font-weight:bolder;color:#1C92D0"/>
+          <apex:inputField value="{!Case.GLC_Submission_Type__c}" required="true" taborderhint="7" label="Please Select The Care Case Type" />
+          <apex:inputField value="{!Case.GLC_Request_Reason__c}" style="width: 90%;" required="true" taborderhint="7" label="Reason for Care Request: (limited to 500 characters)" />
+          <apex:inputField value="{!Case.CR__c}" required="true" taborderhint="7" label="Is This In Reference To An Audit?:"/>
+          <apex:inputField value="{!Case.Product__c}" required="true" taborderhint="8" label="G/O Care Request - Product/s Of Concern:"/>
+          <apex:inputField value="{!Case.Monthly_Spend__c}" style="width: 100%;" required="true" taborderhint="9" label="Account Total Monthly Spend:"/>
+          <br/><!-- style="width:25%"  style="width:300px;"  -->
+        </apex:pageBlockSection>
+</td>
+<td width="50%"> 
+            <apex:pageBlockSection title="Supporting Documents" columns="1" collapsible="true">
+            <apex:outputText value="Document Submission" style="font-size:1em;font-weight:bolder;color:#1C92D0"/>
+          <apex:pageBlockSectionItem rendered="{!NOT(submitted)}">
+             <apex:outputLabel value="Doc/File That Supports The Escalation"/>
+             <apex:inputFile value="{!file}" filename="{!fileName}" contentType="{!contentType}" required="false"/>
+          </apex:pageBlockSectionItem>
+          <apex:outputText value="{!fileName}" rendered="{!submitted}"/> 
+          
+          <apex:pageBlockSectionItem rendered="{!NOT(submitted)}" >
+             <apex:outputLabel value="Second File If Needed"/>
+             <apex:inputFile value="{!file2}" filename="{!fileName2}" contentType="{!contentType}" required="false"/>
+          </apex:pageBlockSectionItem>
+          <apex:outputText value="{!fileName2}" rendered="{!submitted}"/> 
+          </apex:pageBlockSection>
+</td>
+</tr>
+</table> 
+
+          
+</apex:pageBlock>
+
+
+       
+   </apex:form>
+   <div id="tooltip" style="display:none;">
+        <apex:outputText value="{!$Label.Browser_Support + $Label.GLCareHelp}" escape="false"/>
+    </div>
+  </apex:define> 
+ </apex:composition> 
+ <script type="text/javascript">
+        $j = jQuery.noConflict();
+        var ctn = $j('#tooltip').html();
+        $j('#helpme').poshytip({content:ctn, alignTo:'target', alignX:'inner-right'});
+</script> 
+</apex:page>

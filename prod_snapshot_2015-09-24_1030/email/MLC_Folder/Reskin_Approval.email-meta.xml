@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Basic_DealChicken</letterhead>
+    <name>Reskin Approval</name>
+    <style>freeForm</style>
+    <subject>Please approve your AZ Central Reskin</subject>
+    <textOnly>Hi {!Opportunity.SA_Contact_Name__c},
+
+Your banner ad for AZ central is currently scheduled to run on [insert date] and is ready to be approved. Please click on the link below for a preview of what your ad will look like. To run this re-skin we require an approval response within 48 hours.
+
+
+Please note, we can only make factual changes to the re-skin. We appreciate your assistance and approval and look forward to promoting your ad on AZCentral.com
+
+
+Click the link to view your ad:
+
+
+If you have any questions about your ad or deal, please feel free to reach out to me at anytime.
+
+
+Best,
+
+Katrina</textOnly>
+    <type>html</type>
+</EmailTemplate>

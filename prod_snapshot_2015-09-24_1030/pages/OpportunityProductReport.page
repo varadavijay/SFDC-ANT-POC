@@ -1,0 +1,60 @@
+<apex:page controller="OpportunityProductReportController" readonly="true">
+
+	<script>
+	function setFocusOnLoad() {} 
+	</script>
+	
+	<apex:form >
+		<apex:pageBlock >
+			<apex:pageBlockSection title="Reporting Filters" columns="2">
+					<apex:pageBlockSection columns="1" showHeader="false">
+						<apex:pageBlockSectionItem >
+				    		<apex:outputLabel value="Product Status" for="productStatuses"/>
+					      	<apex:selectList size="1" id="productStatuses" value="{!selectedProductStatus}">
+					          <apex:selectOptions value="{!getProductStatuses}"></apex:selectOptions> 
+					      	</apex:selectList>  
+				      	</apex:pageBlockSectionItem>
+						<apex:pageBlockSectionItem >
+				    		<apex:outputLabel value="Product Type" for="productTypes"/>
+					      	<apex:selectList size="1" id="productTypes" value="{!selectedProductType}">
+					          <apex:selectOptions value="{!getProductTypes}"></apex:selectOptions> 
+					      	</apex:selectList>  
+				      	</apex:pageBlockSectionItem>
+				      	<apex:pageBlockSectionItem >
+				    		<apex:outputLabel value="Start Date Range" for="stateDateRange"/>
+				      		<apex:inputText id="stateDateRange" value="{!selectedStartDate}" size="10" onfocus="DatePicker.pickDate(false, this , false);">
+				      		</apex:inputText> 
+			      		</apex:pageBlockSectionItem>
+			    		<apex:pageBlockSectionItem >
+				    		<apex:outputLabel value="End Date Range" for="endDateRange"/>
+				      		<apex:inputText id="endDateRange" value="{!selectedEndDate}" size="10" onfocus="DatePicker.pickDate(false, this , false);">
+				      		</apex:inputText> 
+			      		</apex:pageBlockSectionItem>
+					</apex:pageBlockSection>
+					<apex:pageBlockSection columns="1" showHeader="false">
+						<apex:pageBlockSectionItem >
+				   			<c:MultiselectPicklist leftLabel="Available Products" leftOptions="{!allProducts}"
+							    rightLabel="Selected Products" rightOptions="{!selectedProducts}"
+							    size="14" width="150px"/> 
+			      		</apex:pageBlockSectionItem>
+					</apex:pageBlockSection>
+			</apex:pageBlockSection>
+	   		<apex:commandButton action="{!runReport}" value="Run Report" id="runReportBtn" reRender="viewResults" /> 
+	 	</apex:pageBlock>
+		<apex:pageBlock id="viewResults">
+			<apex:pageBlockSection title="Results" columns="1" >
+				<apex:chart height="400" width="100%" data="{!chartDataJSON}" theme="Salesforce">
+			   	    <apex:axis type="Numeric" position="left" fields="data1" title="Time in Business Hours" grid="true"> </apex:axis>
+			   	    <apex:axis type="Category" position="bottom" fields="name" title="Opportunity Product Waiting Stage">
+			   	    	<apex:chartLabel display="under" rotate="270"/>
+			   	    </apex:axis>
+			   		<apex:barSeries title="OLI Stage Track" orientation="vertical" 
+			    					axis="left" xField="name" yField="{!dataFieldDepth}"
+			    					colorsProgressWithinSeries="true" stacked="true">
+				        <apex:chartTips height="20" width="120"/>
+				    </apex:barSeries>
+			   </apex:chart>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

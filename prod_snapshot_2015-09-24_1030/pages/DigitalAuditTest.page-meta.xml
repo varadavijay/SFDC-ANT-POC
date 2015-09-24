@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>23.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>&lt;apex:pageBlockSectionItem&gt;
+                         &lt;apex:outputLabel value=&quot;Addl Document/File&quot;/&gt;
+                         &lt;apex:inputFile value=&quot;{!file}&quot; filename=&quot;{!fileName}&quot; contentType=&quot;{!contentType}&quot; required=&quot;false&quot;/&gt;
+                      &lt;/apex:pageBlockSectionItem&gt;
+                      &lt;apex:outputText value=&quot;{!fileName}&quot; rendered=&quot;{!submitted}&quot;/&gt;</description>
+    <label>DigitalAuditTest</label>
+</ApexPage>

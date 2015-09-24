@@ -1,0 +1,42 @@
+<apex:page showHeader="false" title="{!$Label.site.error2}"
+	cache="false" controller="SiteExceptionsController" action="{!doLogError}">
+	<apex:composition template="{!$Site.Template}">
+		<apex:define name="body">
+			<center>
+				<apex:panelGrid bgcolor="white" columns="1" style="align: center;">
+					<br />
+					<br />
+					<apex:panelGrid width="758" cellpadding="0" cellspacing="0"
+						bgcolor="white" columns="1" styleClass="topPanelContainer">
+						<br />
+						<apex:outputPanel layout="block" styleClass="topPanel">
+							<apex:panelGrid width="758" cellpadding="0" cellspacing="0"
+								bgcolor="white" columns="3">
+								<apex:image url="{!URLFOR($Resource.SiteSamples, 'img/clock.png')}" />
+								<apex:image url="{!URLFOR($Resource.SiteSamples, 'img/warning.gif')}" />
+								<apex:panelGroup >
+									<apex:outputText value="We are experiencing technical issues which are preventing this form from being submitted." />
+									<br />
+									<br />
+									<span>Please notify us by emailing <a
+										href="mailto:godigitalcrmteam-snr@gannett.com" target="_top">
+											godigitalcrmteam-snr@gannett.com</a> from your @gannett.com
+										address. Include your full name and the name of the form you
+										were attempting to submit.
+									</span>
+									<br />
+									<br />
+									<apex:outputText value="Thank you for your patience while we look into this matter." />
+								</apex:panelGroup>
+							</apex:panelGrid>
+						</apex:outputPanel>
+						<c:SitePoweredBy />
+					</apex:panelGrid>
+					<br />
+					<apex:messages />
+					<br />
+				</apex:panelGrid>
+			</center>
+		</apex:define>
+	</apex:composition>
+</apex:page>

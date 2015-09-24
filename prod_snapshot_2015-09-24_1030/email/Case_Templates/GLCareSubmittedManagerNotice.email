@@ -1,0 +1,14 @@
+Hello,
+
+{!Case.Affl_Sales_Rep__c} has submitted a GO Care case for this company with this description. 
+
+Account  - {!Case.Company_Name__c}
+Media Partner - {!Case.Media_Partner__c}
+GOC Submission Type: {!Case.GLC_Submission_Type__c}
+Reason/ Description: {!Case.GLC_Request_Reason__c} 
+
+If this is a request for a Make-Good (Immediate Attention Required), the Care Team will begin reviewing immediately and will contact you within 1 business day.  Resolutions may take up to 3 business days from the time of submission.  
+
+If this is a Tracking case and the issue has been resolved or is in the process of being corrected, the Care Team will monitor this issue and communications and report on the resolution.  
+
+G/O Digital Care Team

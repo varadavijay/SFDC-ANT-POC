@@ -1,0 +1,5 @@
+Hello!
+
+Good News! Your Request for a new {!Job_Position__c.Job_Title__c} postion to be filled has been cleared and submitted to {!Job_Position__c.Final_Approver__c} for Final Approval
+
+{!Job_Position__c.Link}

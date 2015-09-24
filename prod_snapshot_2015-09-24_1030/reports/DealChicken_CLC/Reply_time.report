@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Zendesk__Zendesk_Ticket__c.Zendesk__Reply_Time_Calendar__c</field>
+    </columns>
+    <columns>
+        <field>Zendesk__Zendesk_Ticket__c.Zendesk__Date_Time_created__c</field>
+    </columns>
+    <columns>
+        <field>Zendesk__Zendesk_Ticket__c.Zendesk__Date_Time_solved__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Reply time</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Zendesk__Zendesk_Ticket__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Zendesk__Zendesk_Ticket__c.Zendesk__Date_Time_solved__c</dateColumn>
+        <interval>INTERVAL_LAST7</interval>
+    </timeFrameFilter>
+</Report>

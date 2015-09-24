@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <description>Link to submit the support ticket.</description>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Submit a Support Ticket</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/apex/NewSupportTicket</url>
+</CustomPageWebLink>

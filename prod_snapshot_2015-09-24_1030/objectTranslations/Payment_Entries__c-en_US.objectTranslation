@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Payment Entry</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Payment Entries</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billed Amt --></label>
+        <name>Billed_Amt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Book Amount --></label>
+        <name>Book_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- CC --></label>
+        <name>CC__c</name>
+        <relationshipLabel><!-- Payment Entries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Code Period --></label>
+        <name>Code_Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company --></label>
+        <name>Company__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed --></label>
+        <name>Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Confirmation # --></label>
+        <name>Confirmation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Custom Set --></label>
+        <name>Custom_Set__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Declined Amt --></label>
+        <name>Declined_Amt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Declined --></label>
+        <name>Declined__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delayed Amt --></label>
+        <name>Delayed_Amt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dig Account Manager --></label>
+        <name>DigAccountManager__c</name>
+        <relationshipLabel><!-- Payment Entries (Dig Account Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dig Acct Manager Id --></label>
+        <name>Dig_Acct_Man_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entry Count --></label>
+        <name>Entry_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- JumpToOpp --></label>
+        <name>JumpToOpp__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI Calender --></label>
+        <name>KPI_Calender__c</name>
+        <relationshipLabel><!-- Payment Entries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opp Bill Status --></label>
+        <name>Opp_Bill_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Close Date --></label>
+        <name>Opp_Close_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Status --></label>
+        <name>Opp_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pay Type --></label>
+        <name>Pay_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Period --></label>
+        <name>Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Planned Amt --></label>
+        <name>Planned_Amt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Processor --></label>
+        <name>Processor__c</name>
+        <relationshipLabel><!-- Payment Entries (Processor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Rep Role --></label>
+        <name>Sales_Rep_Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Rep --></label>
+        <name>Sales_Rep__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Set --></label>
+        <name>System_Set__c</name>
+    </fields>
+    <layouts>
+        <layout>Payment Entry Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Reporting --></label>
+            <section>Reporting</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You may only assign Processing status to yourself.  Please contact the person you wish to assign so they can update accordingly. --></errorMessage>
+        <name>Can_Only_Assign_To_Self</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Enter a Processor --></errorMessage>
+        <name>Required_Fields_Processor</name>
+    </validationRules>
+</CustomObjectTranslation>

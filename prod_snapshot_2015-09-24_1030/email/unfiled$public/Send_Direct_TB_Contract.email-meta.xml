@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Gannett_Local_2012</letterhead>
+    <name>Send Direct TB Contract</name>
+    <style>freeForm</style>
+    <subject>Important Confirmation Agreement</subject>
+    <textOnly>Hello {!Contact.Name},
+
+Congratulations on your new campaign! The G/O Digital team is just about ready to begin fulfilling your digital advertising campaign, there’s just one more thing we need from you. But don’t worry – it’s very simple! Please click the link below to accept and confirm the online agreement.
+
+[[link goes here]]
+
+When you click the link, you will be prompted to confirm your contract, enter some key information and you will need to sign off on the agreement terms. 
+This process will only take a few minutes, we appreciate your cooperation. 
+
+Thank you,
+The G/O Digital Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

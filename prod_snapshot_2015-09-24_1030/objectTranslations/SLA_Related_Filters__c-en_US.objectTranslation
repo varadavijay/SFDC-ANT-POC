@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SLA Related Filters</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SLA Related Filters</value>
+    </caseValues>
+    <fields>
+        <help><!-- Whether the record should be considered or not during the filtering processes.  Needs to be reset for the BatchProductSLARecalculation before every run. --></help>
+        <label><!-- Is Active --></label>
+        <name>Is_Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Only include Opportunity Products that went live after this date. --></help>
+        <label><!-- Live After --></label>
+        <name>Live_After__c</name>
+    </fields>
+    <fields>
+        <help><!-- Only include Opportunity Products that went live before this date. --></help>
+        <label><!-- Live Before --></label>
+        <name>Live_Before__c</name>
+    </fields>
+    <fields>
+        <help><!-- A list of status&apos; that contribute to Live. These should also set the live date. Comma Separated. --></help>
+        <label><!-- Live Status --></label>
+        <name>Live_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Process Opportunity Products created after this date. Date in this field should be on or after 12/8/2013, since that&apos;s when the Opportunity Product History object started gathering data. --></help>
+        <label><!-- Opportunity Product Created After --></label>
+        <name>Opportunity_Product_Created_After__c</name>
+    </fields>
+    <fields>
+        <help><!-- Process Opportunity Products created before this date. Date in this field should be after 12/8/2013, since that&apos;s when the Opportunity Product History object started gathering data. --></help>
+        <label><!-- Opportunity Product Created Before --></label>
+        <name>Opportunity_Product_Created_Before__c</name>
+    </fields>
+    <fields>
+        <help><!-- SLA Products Types excluded for the SLA Summary Report / Product IDs included for updates in batchProductSLARecalc --></help>
+        <label><!-- Product Filters --></label>
+        <name>Product_Filters__c</name>
+    </fields>
+    <fields>
+        <help><!-- The order of the products displayed on the report. --></help>
+        <label><!-- Product Type Sort Order --></label>
+        <name>Product_Type_Sort_Order__c</name>
+    </fields>
+    <fields>
+        <help><!-- A list of status&apos; that are to be counted toward the Days to Go Live calculation. --></help>
+        <label><!-- SLA Status --></label>
+        <name>SLA_Status__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

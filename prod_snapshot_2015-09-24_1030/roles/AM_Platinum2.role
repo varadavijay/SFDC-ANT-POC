@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Edit</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>AM-Platinum2</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>AM-Platinum2</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>CSD_Platinum2</parentRole>
+</Role>

@@ -1,0 +1,8 @@
+A deal has been Closed-Won
+
+{!Opportunity.Name}
+
+{!Opportunity.OwnerFullName}
+{!Opportunity.Amount}
+
+{!Opportunity.Link}

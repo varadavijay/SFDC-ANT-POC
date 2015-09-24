@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Issue List View</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>https://na7.salesforce.com/a0Q?fcf=00BA00000063wTU&amp;rolodexIndex=-1&amp;page=1</url>
+</CustomPageWebLink>

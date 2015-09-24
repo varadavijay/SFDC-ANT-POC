@@ -1,0 +1,6 @@
+<br/>
+A Simply Gifted Deal Has Been Signed!<br/><br/><br/><br/>
+Proposal Name  :  {!tinderbox__Proposal__c.Name}<br/><br/>
+Opportunity  :  {!tinderbox__Proposal__c.tinderbox__Opportunity__c}<br/><br/>
+Opportunity Owner  :  {!tinderbox__Proposal__c.Opp_Owner_Name__c}<br/><br/>
+Opportunity Link  :  {!tinderbox__Proposal__c.Opportunity_Link__c}

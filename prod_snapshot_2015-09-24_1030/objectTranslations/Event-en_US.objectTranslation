@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Appointment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Appointments</value>
+    </caseValues>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Calendar Appointment</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Calendar Appointments</value>
+        </caseValues>
+        <name>calendar_event</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Calendar Appointment Edit</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Calendar Appointment Edit</value>
+        </caseValues>
+        <name>calendar_event_edit</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Calendar Appointment Subject</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Calendar Appointment Subject</value>
+        </caseValues>
+        <name>calendar_event_subject</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Appointment Attendee</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Appointment Attendee</value>
+        </caseValues>
+        <name>event_attendee</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Appointment Data</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Appointment Data</value>
+        </caseValues>
+        <name>event_data</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Appointment Detail</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Appointment Details</value>
+        </caseValues>
+        <name>event_detail</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Appointment Detail Page</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Appointment Detail Page</value>
+        </caseValues>
+        <name>event_detail_page</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Appointment Information</value>
+        </caseValues>
+        <name>event_information</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Appointment Invitation</value>
+        </caseValues>
+        <name>event_invitation</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Appointment Occurrence</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Appointment Occurrences</value>
+        </caseValues>
+        <name>event_occurrence</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Appointment Record Type</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Appointment Record Types</value>
+        </caseValues>
+        <name>event_record_type</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Group Calendar Appointment</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Group Calendar Appointment</value>
+        </caseValues>
+        <name>group_calendar_event</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Group Calendar Appointment Edit</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Group Calendar Appointment Edit</value>
+        </caseValues>
+        <name>group_calendar_event_edit</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Group Appointment</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Groups Appointments</value>
+        </caseValues>
+        <name>group_event</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Group Appointment Type</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Groups Appointment Types</value>
+        </caseValues>
+        <name>group_event_type</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <label><!-- Activity Type --></label>
+        <name>Activity_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actype --></label>
+        <name>Actype__c</name>
+    </fields>
+    <fields>
+        <label><!-- Appt Set By --></label>
+        <name>Appt_Set_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Archived Recording2 --></label>
+        <name>Archived_Recording2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Archived Recording --></label>
+        <name>Archived_Recording__c</name>
+    </fields>
+    <fields>
+        <label><!-- Blog --></label>
+        <name>Blog__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Completed --></label>
+        <name>Call_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Date --></label>
+        <name>Call_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Len Mins --></label>
+        <name>Call_Len_Mins__c</name>
+    </fields>
+    <fields>
+        <label><!-- Class --></label>
+        <name>Class__c</name>
+    </fields>
+    <fields>
+        <label><!-- Code Created Week --></label>
+        <name>Code_CreatedWeek__c</name>
+    </fields>
+    <fields>
+        <label><!-- Code Created Week Of --></label>
+        <name>Code_Created_Week_Of__c</name>
+    </fields>
+    <fields>
+        <label><!-- Code Run Week Of --></label>
+        <name>Code_Run_Week_Of__c</name>
+    </fields>
+    <fields>
+        <label><!-- Code Run Week --></label>
+        <name>Code_Run_Week__c</name>
+    </fields>
+    <fields>
+        <label><!-- Code Week --></label>
+        <name>Code_Week__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed --></label>
+        <name>Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count --></label>
+        <name>Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created By Role Name --></label>
+        <name>Created_By_Role_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Date Time --></label>
+        <name>Created_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Scheduled --></label>
+        <name>Date_Scheduled__c</name>
+    </fields>
+    <fields>
+        <label><!-- DayOfWeek --></label>
+        <name>DayOfWeek__c</name>
+    </fields>
+    <fields>
+        <label><!-- FA Action --></label>
+        <name>FA_Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- GO Care - Contacted --></label>
+        <name>GL_Care_Contacted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Has 30 Second --></label>
+        <name>Has_30_Second__c</name>
+    </fields>
+    <fields>
+        <label><!-- Guid --></label>
+        <name>HubSpot_Inc__Guid__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Contract Send --></label>
+        <name>Is_Contract_Send__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ran Count --></label>
+        <name>Ran_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denotes that a task has been accounted for in Lead calculations for the Call Dialer Initiative and can be archived without fear of loss of data --></help>
+        <label><!-- Ready To Archive --></label>
+        <name>Ready_To_Archive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason for Call --></label>
+        <name>Reason_for_Call__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report To --></label>
+        <name>Report_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score Action --></label>
+        <name>Score_Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Set Count --></label>
+        <name>Set_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Set Date --></label>
+        <name>Set_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <fields>
+        <name>Type</name>
+        <picklistValues>
+            <masterLabel>Call</masterLabel>
+            <translation><!-- Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meeting</masterLabel>
+            <translation><!-- Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- General Steps To Take To Prepare For Upsell Call --></help>
+        <label><!-- Upsell Instructions --></label>
+        <name>Upsell_Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Week Of Run --></label>
+        <name>Week_Of_Run__c</name>
+    </fields>
+    <fields>
+        <label><!-- Week Of --></label>
+        <name>Week_Of__c</name>
+    </fields>
+    <fields>
+        <label><!-- 30 Sec Action --></label>
+        <name>X30_Sec_Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Recording --></label>
+        <name>qbdialer__CallRecordingURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Date/Time --></label>
+        <name>qbdialer__Call_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Dial Number --></label>
+        <name>qbdialer__Call_Dial_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Hour --></label>
+        <name>qbdialer__Call_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Lead Status --></label>
+        <name>qbdialer__Call_Lead_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Ring Time --></label>
+        <name>qbdialer__Call_Ring_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Time Zone --></label>
+        <name>qbdialer__Call_Time_Zone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Callback Date/Time --></label>
+        <name>qbdialer__Callback_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Impression ID --></label>
+        <name>qbdialer__ImpressionId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Text message reminders will be sent to all attendees at the set reminder time. --></help>
+        <label><!-- Send text msg reminder to all attendees --></label>
+        <name>qbdialer__SMSReminder__c</name>
+    </fields>
+    <layouts>
+        <layout>DC Apt Set</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Event Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Appointment Set --></label>
+        <name>Appointment_Set</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- DealChicken --></label>
+        <name>DealChicken</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- SML --></label>
+        <name>SML</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+    <webLinks>
+        <label><!-- DCSetAppoint --></label>
+        <name>DCSetAppoint</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- FA_Acct --></label>
+        <name>FA_Acct</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- FA_Business_Name --></label>
+        <name>FA_Business_Name</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- FA_Cntc --></label>
+        <name>FA_Cntc</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SA_Acct --></label>
+        <name>SA_Acct</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SA_Business_Name --></label>
+        <name>SA_Business_Name</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SA_Cntc --></label>
+        <name>SA_Cntc</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,6 @@
+<br/>
+To View Opp : <a href="{!Opportunity.Link}">Jump To View</a><br/><br/>
+
+{!Opportunity.Name}<br/>
+{!Opportunity.Amount}<br/>
+{!Opportunity.OwnerFullName}

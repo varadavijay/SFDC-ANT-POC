@@ -1,0 +1,2848 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>AccountName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Number</label>
+        <length>15</length>
+        <maskChar>asterisk</maskChar>
+        <maskType>lastFour</maskType>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Payment Processing</relationshipLabel>
+        <relationshipName>Payment_Processing</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Options__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Options</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Bill Monthly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bill Total</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bill Weekly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bi-Weekly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Invoice/Credit Terms</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Memo Bill</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Card_2_Exp_Month__c</fullName>
+        <externalId>false</externalId>
+        <label>Card #2 Exp Month</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Card_2_Exp_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Card #2 Exp Year</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2009</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2010</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2018</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2019</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2020</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Card_2_Holder_First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Card #2 Holder First Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Card_2_Holder_Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Card #2 Holder Last Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Card_2_Security_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Card #2 Security Code</label>
+        <length>4</length>
+        <maskChar>asterisk</maskChar>
+        <maskType>all</maskType>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
+        <fullName>Card_Holder_First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Card #1 Holder First Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Card_Holder_Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Card #1 Holder Last Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Charge_Date_Code__c</fullName>
+        <description>IF(
+
+AND(MONTH( X1st_Charge_Date__c ) = MONTH(TODAY()),YEAR(X1st_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X1st_Charge_Date__c),
+
+AND
+(MONTH( X2nd_Charge_Date__c ) = MONTH(TODAY()),YEAR(X2nd_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X2nd_Charge_Date__c),&quot;NO CHARGE&quot;)</description>
+        <externalId>false</externalId>
+        <formula>IF(
+
+AND(MONTH( X1st_Charge_Date__c ) = MONTH(TODAY()),YEAR(X1st_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X1st_Charge_Date__c),
+
+IF(
+
+AND
+(MONTH( X2nd_Charge_Date__c ) = MONTH(TODAY()),YEAR(X2nd_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X2nd_Charge_Date__c),
+
+
+IF(
+
+AND
+(MONTH( X3rd_Charge_Date__c ) = MONTH(TODAY()),YEAR(X3rd_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X3rd_Charge_Date__c),
+
+IF(
+
+AND
+(MONTH( X4th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X4th_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X4th_Charge_Date__c),
+
+IF(
+
+AND
+(MONTH( X5th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X5th_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X5th_Charge_Date__c),
+
+IF(
+
+AND
+(MONTH( X6th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X6th_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X6th_Charge_Date__c),
+
+IF(
+
+AND
+(MONTH( X7th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X7th_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X7th_Charge_Date__c),
+
+IF(
+
+AND
+(MONTH( X8th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X8th_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X8th_Charge_Date__c),
+
+IF(
+
+AND
+(MONTH( X9th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X9th_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X9th_Charge_Date__c),
+
+IF(
+
+AND
+(MONTH( X10th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X10th_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X10th_Charge_Date__c),
+
+IF(
+
+AND
+(MONTH( X11th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X11th_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X11th_Charge_Date__c),
+
+IF(
+
+AND
+(MONTH( X12th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X12th_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X12th_Charge_Date__c),
+
+IF(
+
+AND
+(MONTH( X13th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X13th_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X13th_Charge_Date__c),
+
+IF(
+
+AND
+(MONTH( X14th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X14th_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X14th_Charge_Date__c),
+
+IF(
+
+AND
+(MONTH( X15th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X15th_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X15th_Charge_Date__c),
+
+IF(
+
+AND
+(MONTH( X16th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X16th_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X16th_Charge_Date__c),
+
+IF(
+
+AND
+(MONTH( X17th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X17th_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X17th_Charge_Date__c),
+
+IF(
+
+AND
+(MONTH( X18th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X18th_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X18th_Charge_Date__c),
+
+IF(
+
+AND
+(MONTH( X19th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X19th_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X19th_Charge_Date__c),
+
+IF(
+
+AND
+(MONTH( X20th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X20th_Charge_Date__c) = YEAR(TODAY())),
+
+TEXT(X20th_Charge_Date__c),
+
+&quot;NO CHARGE&quot;))))))))))))))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Charge Date Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Charge_Date_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+
+AND(MONTH( X1st_Charge_Date__c ) = MONTH(TODAY()),YEAR(X1st_Charge_Date__c) = YEAR(TODAY())), 
+
+X1st_Charge_Date__c, 
+
+IF( 
+
+AND 
+(MONTH( X2nd_Charge_Date__c ) = MONTH(TODAY()),YEAR(X2nd_Charge_Date__c) = YEAR(TODAY())), 
+
+X2nd_Charge_Date__c, 
+
+
+IF( 
+
+AND 
+(MONTH( X3rd_Charge_Date__c ) = MONTH(TODAY()),YEAR(X3rd_Charge_Date__c) = YEAR(TODAY())), 
+
+X3rd_Charge_Date__c, 
+
+IF( 
+
+AND 
+(MONTH( X4th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X4th_Charge_Date__c) = YEAR(TODAY())), 
+
+X4th_Charge_Date__c, 
+
+IF( 
+
+AND 
+(MONTH( X5th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X5th_Charge_Date__c) = YEAR(TODAY())), 
+
+X5th_Charge_Date__c, 
+
+IF( 
+
+AND 
+(MONTH( X6th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X6th_Charge_Date__c) = YEAR(TODAY())), 
+
+X6th_Charge_Date__c, 
+
+IF( 
+
+AND 
+(MONTH( X7th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X7th_Charge_Date__c) = YEAR(TODAY())), 
+
+
+X7th_Charge_Date__c, 
+
+IF( 
+
+AND 
+(MONTH( X8th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X8th_Charge_Date__c) = YEAR(TODAY())), 
+
+X8th_Charge_Date__c, 
+
+IF( 
+
+AND 
+(MONTH( X9th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X9th_Charge_Date__c) = YEAR(TODAY())), 
+
+X9th_Charge_Date__c, 
+
+IF( 
+
+AND 
+(MONTH( X10th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X10th_Charge_Date__c) = YEAR(TODAY())), 
+
+X10th_Charge_Date__c, 
+
+IF( 
+
+AND 
+(MONTH( X11th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X11th_Charge_Date__c) = YEAR(TODAY())), 
+
+X11th_Charge_Date__c, 
+
+IF( 
+
+AND 
+(MONTH( X12th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X12th_Charge_Date__c) = YEAR(TODAY())), 
+
+X12th_Charge_Date__c, 
+
+IF( 
+
+AND 
+(MONTH( X13th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X13th_Charge_Date__c) = YEAR(TODAY())), 
+
+X13th_Charge_Date__c, 
+
+IF( 
+
+AND 
+(MONTH( X14th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X14th_Charge_Date__c) = YEAR(TODAY())), 
+
+X14th_Charge_Date__c, 
+
+IF( 
+
+AND 
+(MONTH( X15th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X15th_Charge_Date__c) = YEAR(TODAY())), 
+
+X15th_Charge_Date__c, 
+
+IF( 
+
+AND 
+(MONTH( X16th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X16th_Charge_Date__c) = YEAR(TODAY())), 
+
+X16th_Charge_Date__c, 
+
+IF( 
+
+AND 
+(MONTH( X17th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X17th_Charge_Date__c) = YEAR(TODAY())), 
+
+X17th_Charge_Date__c, 
+
+IF( 
+
+AND 
+(MONTH( X18th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X18th_Charge_Date__c) = YEAR(TODAY())), 
+
+X18th_Charge_Date__c, 
+
+IF( 
+
+AND 
+(MONTH( X19th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X19th_Charge_Date__c) = YEAR(TODAY())), 
+
+X19th_Charge_Date__c, 
+
+IF( 
+
+AND 
+(MONTH( X20th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X20th_Charge_Date__c) = YEAR(TODAY())), 
+
+X20th_Charge_Date__c, 
+
+DATE(1900,01,01)))))))))))))))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Charge Date Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Charge_Date_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Charge_Month_YesorNo__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF
+(
+OR
+(
+AND(MONTH( X1st_Charge_Date__c ) = MONTH(TODAY()),YEAR(X1st_Charge_Date__c) = YEAR(TODAY())),
+AND(MONTH( X2nd_Charge_Date__c ) = MONTH(TODAY()),YEAR(X2nd_Charge_Date__c) = YEAR(TODAY())),
+AND(MONTH( X3rd_Charge_Date__c ) = MONTH(TODAY()),YEAR(X3rd_Charge_Date__c) = YEAR(TODAY())),
+AND(MONTH( X4th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X4th_Charge_Date__c) = YEAR(TODAY())),
+AND(MONTH( X5th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X5th_Charge_Date__c) = YEAR(TODAY())),
+AND(MONTH( X6th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X6th_Charge_Date__c) = YEAR(TODAY())),
+AND(MONTH( X7th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X7th_Charge_Date__c) = YEAR(TODAY())),
+AND(MONTH( X8th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X8th_Charge_Date__c) = YEAR(TODAY())),
+AND(MONTH( X9th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X9th_Charge_Date__c) = YEAR(TODAY())),
+AND(MONTH( X10th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X10th_Charge_Date__c) = YEAR(TODAY())),
+AND(MONTH( X11th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X11th_Charge_Date__c) = YEAR(TODAY())),
+AND(MONTH( X12th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X12th_Charge_Date__c) = YEAR(TODAY())),
+AND(MONTH( X13th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X13th_Charge_Date__c) = YEAR(TODAY())),
+AND(MONTH( X14th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X14th_Charge_Date__c) = YEAR(TODAY())),
+AND(MONTH( X15th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X15th_Charge_Date__c) = YEAR(TODAY())),
+AND(MONTH( X16th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X16th_Charge_Date__c) = YEAR(TODAY())),
+AND(MONTH( X17th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X17th_Charge_Date__c) = YEAR(TODAY())),
+AND(MONTH( X18th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X18th_Charge_Date__c) = YEAR(TODAY())),
+AND(MONTH( X19th_Charge_Date__c ) = MONTH(TODAY()),YEAR(X19th_Charge_Date__c) = YEAR(TODAY())),
+AND(MONTH( X20th_Charge_Date__c ) = MONTH(TODAY())),YEAR(X20th_Charge_Date__c) = YEAR(TODAY())),
+&quot;Yes&quot;,&quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Charge Month Yes or No</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Check_by_Phone__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Check by Phone?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Completed_Payments__c</fullName>
+        <description>Sum of completed, non-declined payment Entries</description>
+        <externalId>false</externalId>
+        <label>Completed Payments</label>
+        <summarizedField>Payment_Entries__c.Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>Payment_Entries__c.Completed__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Payment_Entries__c.Declined__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Payment_Entries__c.CC__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Card_2_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Card #2 Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Visa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mastercard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Discover</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>American Express</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Card_2__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter numbers only, no dashes</inlineHelpText>
+        <label>Credit Card #2 Number</label>
+        <length>16</length>
+        <maskChar>asterisk</maskChar>
+        <maskType>creditCard</maskType>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Card_Number__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter numbers only, no dashes</inlineHelpText>
+        <label>Credit Card #1 Number</label>
+        <length>16</length>
+        <maskChar>asterisk</maskChar>
+        <maskType>creditCard</maskType>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Card_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Card #1 Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Visa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mastercard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Discover</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>American Express</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Current_Month_Charged__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Current Month Charged</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Cycles__c</fullName>
+        <externalId>false</externalId>
+        <label>Cycles</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>13</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>14</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>15</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>16</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>17</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>18</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>19</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>20</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>21</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>22</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>23</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>24</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>26</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>27</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>28</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>29</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>30</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>31</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>32</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>33</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>34</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>35</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>36</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>37</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>38</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>39</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>40</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>41</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>42</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>43</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>44</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>45</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>46</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>47</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>48</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>49</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>51</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>52</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>53</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Digital_Account__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Opportunity__r.Digital_Products_Notice__c = True,&quot;Yes&quot;,&quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Digital Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date After Which Charges Will No Longer Be Applied.</inlineHelpText>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Entry_Cycle__c</fullName>
+        <externalId>false</externalId>
+        <label>Entry Cycle</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bi-Weekly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Entry_Payment_Total__c</fullName>
+        <externalId>false</externalId>
+        <label>Entry Payment Total</label>
+        <summarizedField>Payment_Entries__c.Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>Payment_Entries__c.Declined__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Payment_Entries__c.CC__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Entry_Processor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Entry Processor</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Payment_Processing</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Exp_Month__c</fullName>
+        <externalId>false</externalId>
+        <label>Card #1 Exp Month</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Exp_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Card #1 Exp Year</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2009</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2010</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2018</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2019</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2020</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>First_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>First Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>First_Charge_Day__c</fullName>
+        <externalId>false</externalId>
+        <label>First Charge Day</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_Payment_Made_On__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Payment Made On</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Next_Month_Day__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(MONTH(TODAY()) &lt;= 11, DATE(YEAR(TODAY()),MONTH(TODAY()) + 1,1),DATE(YEAR(TODAY()) + 1, 1,1))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Next Month Day</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Opp_Owner__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.OwnerId</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opp Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opp_Total_Value__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Amount</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opp Total Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Payment Processing</relationshipLabel>
+        <relationshipName>Credit_Card_Processing</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Package_Duration__c</fullName>
+        <externalId>false</externalId>
+        <label>Package Duration</label>
+        <picklist>
+            <picklistValues>
+                <fullName>3 Month</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6 Month</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Notes</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Policy__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;&apos;The length of your contract is determined by the package selected. Your credit card will be charged on a monthly basis during this period and you will receive confirmation by mail.  Should you decide to cancel, you will be charged the next month before cancellation takes effect.  Package upgrades are allowed any time.&apos;&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Policy</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Processing_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Processing Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Captured</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reminder_Target__c</fullName>
+        <externalId>false</externalId>
+        <label>Reminder Target</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reset_Charge_Reminders__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this box to have the Charge reminders &apos;FROM&apos; sent in your name.</inlineHelpText>
+        <label>Reset Charge Reminders</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reset_Entries__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Reset Entries</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Routing_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Routing Number</label>
+        <length>9</length>
+        <maskChar>asterisk</maskChar>
+        <maskType>all</maskType>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
+        <fullName>Security_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Card #1 Security Code</label>
+        <length>4</length>
+        <maskChar>asterisk</maskChar>
+        <maskType>all</maskType>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
+        <fullName>X10th_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>10th Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X10th_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>10th Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X11th_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>11th Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X11th_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>11th Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X12th_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>12th Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X12th_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>12th Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X13th_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>13th Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X13th_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>13th Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X14th_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>14th Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X14th_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>14th Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X15th_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>15th Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X15th_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>15th Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X16th_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>16th Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X16th_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>16th Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X17th_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>17th Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X17th_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>17th Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X18th_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>18th Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X18th_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>18th Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X19th_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>19th Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X19th_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>19th Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X1st_Charge_Date__c</fullName>
+        <description>The first time the customer&apos;s card is charged</description>
+        <externalId>false</externalId>
+        <label>1st Charge Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X1st_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>1st Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X20th_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>20th Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X20th_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>20th Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X2nd_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>2nd Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X2nd_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>2nd Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X3rd_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>3rd Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X3rd_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>3rd Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X4th_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>4th Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X4th_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>4th Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X5th_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>5th Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X5th_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>5th Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X6th_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>6th Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X6th_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>6th Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X7th_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>7th Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X7th_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>7th Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X8th_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>8th Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X8th_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>8th Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X9th_Charge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>9th Charge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X9th_Check_Charge__c</fullName>
+        <externalId>false</externalId>
+        <label>9th Check Charge</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Payment Processing</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CC-{00000}</displayFormat>
+        <label>Credit Card Processing</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Payment Processing</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Check_Processing</fullName>
+        <active>true</active>
+        <description>This is for processing checks</description>
+        <label>Check Processing</label>
+        <picklistValues>
+            <picklist>Billing_Options__c</picklist>
+            <values>
+                <fullName>Bi-Weekly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bill Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bill Total</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bill Weekly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invoice%2FCredit Terms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Memo Bill</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Card_2_Exp_Month__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Card_2_Exp_Year__c</picklist>
+            <values>
+                <fullName>2009</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2018</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2019</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2020</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Credit_Card_2_Type__c</picklist>
+            <values>
+                <fullName>American Express</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Discover</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mastercard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Credit_Card_Type__c</picklist>
+            <values>
+                <fullName>Discover</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mastercard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cycles__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>17</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>19</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>21</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>22</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>26</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>27</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>28</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>31</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>33</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>34</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>37</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>38</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>39</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>41</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>42</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>43</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>44</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>46</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>47</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>48</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>49</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>51</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>52</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>53</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Entry_Cycle__c</picklist>
+            <values>
+                <fullName>Bi-Weekly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Exp_Month__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Exp_Year__c</picklist>
+            <values>
+                <fullName>2009</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2018</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2019</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2020</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Package_Duration__c</picklist>
+            <values>
+                <fullName>3 Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 Month</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Processing_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Captured</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Credit_Card_Processing</fullName>
+        <active>true</active>
+        <description>This is for processing credit cards</description>
+        <label>Credit Card Processing</label>
+        <picklistValues>
+            <picklist>Billing_Options__c</picklist>
+            <values>
+                <fullName>Bi-Weekly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bill Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bill Total</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bill Weekly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invoice%2FCredit Terms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Memo Bill</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Card_2_Exp_Month__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Card_2_Exp_Year__c</picklist>
+            <values>
+                <fullName>2009</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2018</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2019</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2020</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Credit_Card_2_Type__c</picklist>
+            <values>
+                <fullName>American Express</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Discover</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mastercard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Credit_Card_Type__c</picklist>
+            <values>
+                <fullName>American Express</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Discover</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mastercard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cycles__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>17</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>19</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>21</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>22</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>26</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>27</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>28</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>31</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>33</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>34</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>37</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>38</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>39</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>41</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>42</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>43</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>44</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>46</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>47</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>48</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>49</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>51</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>52</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>53</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Entry_Cycle__c</picklist>
+            <values>
+                <fullName>Bi-Weekly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Exp_Month__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Exp_Year__c</picklist>
+            <values>
+                <fullName>2009</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2010</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2011</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2012</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2018</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2019</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2020</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Package_Duration__c</picklist>
+            <values>
+                <fullName>3 Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 Month</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Processing_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Captured</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>End_Date_OR_Cycle_Count</fullName>
+        <active>true</active>
+        <description>Requires that only one or the other is selected.</description>
+        <errorConditionFormula>AND(NOT(ISNULL(End_Date__c)), NOT(TEXT(Cycles__c) = Null))</errorConditionFormula>
+        <errorDisplayField>Cycles__c</errorDisplayField>
+        <errorMessage>You Need To Enter EITHER An End Date OR A Cycle Count, But Not Both.  Please Clear One Or The Other.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PackageDateForce</fullName>
+        <active>false</active>
+        <errorConditionFormula>OR(
+
+AND( 
+ISPICKVAL(Package_Duration__c ,&quot;&quot;), 
+NOT(ISNULL(First_Charge_Date__c ))),
+
+AND(
+NOT(ISPICKVAL(Package_Duration__c,&quot;&quot;)),
+ISNULL(First_Charge_Date__c ))
+
+)</errorConditionFormula>
+        <errorMessage>Package Duration can&apos;t be blank if First Charge Date is not blank and vice versa.</errorMessage>
+    </validationRules>
+</CustomObject>

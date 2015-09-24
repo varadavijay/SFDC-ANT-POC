@@ -1,0 +1,9 @@
+<apex:page showHeader="false" sidebar="false" >
+<apex:composition template="{!$Site.Template}"> 
+  <apex:define name="body">
+    <br/>
+    <h1>Congratulations</h1><br></br>
+      Your Audit Form Has Been Successfully Submitted!
+    </apex:define>
+</apex:composition>
+</apex:page>

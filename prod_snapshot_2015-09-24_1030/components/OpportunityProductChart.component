@@ -1,0 +1,22 @@
+<apex:component >
+
+	<apex:attribute name="yTitle" description="This is the Y-Axis Label" type="String" required="true"/>
+	<apex:attribute name="xTitle" description="This is the X-Axis Label" type="String" required="true"/>
+	<apex:attribute name="chartData" description="This is the account's ID" type="String"  required="true"/>
+	<apex:attribute name="chartFieldDepth" description="This is the account's ID" type="String"  required="true"/>
+		
+
+	<apex:chart height="400" width="100%" data="{!chartData}" theme="Salesforce">
+   	    <apex:axis type="Numeric" position="left" fields="data1" title="{!yTitle}" grid="true"> </apex:axis>
+   	    <apex:axis type="Category" position="bottom" fields="name" title="{!xTitle}">
+   	    	<apex:chartLabel display="under" rotate="315"/>
+   	    </apex:axis>
+   		<apex:barSeries title="OLI Stage Track" orientation="vertical" 
+    					axis="left" xField="name" yField="{!chartFieldDepth}"
+    					colorsProgressWithinSeries="true" stacked="true">
+	        <apex:chartTips height="20" width="120"/>
+	    </apex:barSeries>
+   </apex:chart>
+
+
+</apex:component>

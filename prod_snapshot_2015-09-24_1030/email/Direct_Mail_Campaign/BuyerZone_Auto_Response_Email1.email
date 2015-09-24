@@ -1,0 +1,31 @@
+<font face="verdana" size="2" color="#444444">
+
+Hi {!Lead.FirstName},<br><br>
+
+Thank you for your inquiry about email marketing at BuyerZone.com. We are G/O Digital, the one-stop shop for small business marketing solutions, and one of our Local Marketing Navigators will be following up within 24 hours to provide you an initial quote and discuss any remaining information needed to provide you finalized pricing.<br><br> 
+
+In the coming days, you will be contacted by other email vendors looking to earn your business, but I wanted to point a few unique things about G/O Digital that make us the best fit for your direct marketing needs:<br>
+<ul>
+<li>We are owned by Gannett Media, a Fortune 500 company that's been in business for over 100 years, so we have the credibility and stability you're looking for.</li>
+<li>We were created to serve small businesses like {!Lead.Company}, so we are used to developing solutions for your industry and budget. Plus, we offer full campaign management and art development so you are free to focus on running your business.</li>
+<li>We are different from other email technology providers because of our database. In addition to being able to design and create your email campaign, we can create a list for you using relevant geographic, behavioral and demographic targeting to your desired audience.</li>
+<li>While we offer email marketing services, we also provide a full range of local marketing services, including website optimization and online advertising. So, when you're ready to try something new, we'll be ready for you.</li></ul>
+
+We look forward to the opportunity to help you grow your business and find new customers. Again, someone will be in touch soon to provide you an initial quote and find out more about your needs and goals.<br><br>
+
+Best regards,<br><br>
+Christine Olivas<br>
+Local Marketing Manager<br>
+602-44-1742<br>
+christine.olivas@gannett.com<br>
+<br><br><br><br><br>
+
+
+</font>
+
+<table cellpadding="2" cellspacing="0" width="600" ID="Table5" Border=0><tr><td><font face="verdana" size="1" color="#444444">This email was sent by: G/O Digital<br>200 E. Van Buren, MC 10<br>Phoenix, Arizona 85003<br></font></td></tr></table>
+
+<table cellpadding="2" cellspacing="0" width="600" ID="Table5" Border=0><tr><td><font face="verdana" size="1" color="#444444">To unsubscribe from future emails, <a href="mailto:christine@gannettlocal.com?subject=Unsubscribe">click here</a>.
+
+
+</font></td></tr></table>

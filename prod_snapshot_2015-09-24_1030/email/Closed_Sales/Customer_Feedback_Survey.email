@@ -1,0 +1,19 @@
+Give Us Feedback on G/O Digital
+and Enter to Win a $25 Amazon Gift Card
+
+Hi {!Contact.FirstName},
+
+Thank you for your time today. I'm following up with a link to the survey we discussed: http://www.tfaforms.com/159013. This brief survey will only take a few minutes and will help ensure that you receive the best possible service. 
+
+Also, by participating, you will be entered in our monthly drawing to win a $25 Amazon gift card.
+
+TAKE THE SURVEY NOW: 
+http://www.tfaforms.com/159013
+
+I also wanted to remind you that if you have any questions about your account, do not hesitate to reach out to me. As your Local Marketing Specialist, I am happy to go over your campaign results, suggest new local marketing ideas or share best practices for making the most of your current programs. 
+
+Best Regards,
+
+{!Contact.OwnerFullName}
+{!User.X800_Number__c}
+{!Contact.OwnerEmail

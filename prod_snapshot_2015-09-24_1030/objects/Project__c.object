@@ -1,0 +1,1393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Projects</relationshipLabel>
+        <relationshipName>Projects</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Active_Product__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS( &quot;Live:Fulfilled-Complete:Fulfilled Renewed&quot;,Project_Status__c), true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Active Product</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Affl_Sales_Rep_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Affl_Sales_Rep__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Affl Sales Rep Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Affl_Sales_Rep_First__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(Opportunity__r.Sales_Rep__r.FirstName=Null),Opportunity__r.Sales_Rep__r.FirstName, Opportunity__r.Sales_Rep_II__r.FirstName)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Affl Sales Rep First</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Affl_Sales_Rep_Full__c</fullName>
+        <externalId>false</externalId>
+        <formula>Affl_Sales_Rep__r.FirstName &amp; &quot; &quot; &amp;  Affl_Sales_Rep__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Affl Sales Rep Full</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Affl_Sales_Rep_OnOppId__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Sales_Rep__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Affl Sales Rep OnOppId</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Affl_Sales_Rep__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Affl Sales Rep</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Projects</relationshipLabel>
+        <relationshipName>Projects</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Awaiting_OnBoard_Stamp__c</fullName>
+        <externalId>false</externalId>
+        <label>Awaiting OnBoard Stamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CanCreateILI__c</fullName>
+        <externalId>false</externalId>
+        <formula>Project_Status__c== Related_Product__r.Invoice_StatusToCreateILI__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Can Create ILI&apos;s</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Cancellation_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancellation Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Cancelled Before Live</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled After Live</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fulfilled Non-Renewal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Cancellation_Detail__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancellation Detail</label>
+        <picklist>
+            <controllingField>Cancellation_Reason__c</controllingField>
+            <picklistValues>
+                <fullName>Sold outside of deliverables</fullName>
+                <controllingFieldValues>Sales Expectation Mismatch</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Set unrealistic or no performance expectations</fullName>
+                <controllingFieldValues>Sales Expectation Mismatch</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client not fully explained OB process, frustrated</fullName>
+                <controllingFieldValues>Sales Expectation Mismatch</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Undersold vs recommendation</fullName>
+                <controllingFieldValues>Sales Expectation Mismatch</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wrong product for the client’s goals</fullName>
+                <controllingFieldValues>Sales Expectation Mismatch</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales communicated ‘opt out period’ to client</fullName>
+                <controllingFieldValues>Sales Expectation Mismatch</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No reason provided from affiliate rep</fullName>
+                <controllingFieldValues>Sales Expectation Mismatch</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cannot pay/No budget/Business Closing</fullName>
+                <controllingFieldValues>Client/Business Issue</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unrealistic expectations, never able to change, not enough time to prioritize</fullName>
+                <controllingFieldValues>Client/Business Issue</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seasonality</fullName>
+                <controllingFieldValues>Client/Business Issue</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moving marketing in house</fullName>
+                <controllingFieldValues>Client/Business Issue</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client refused to give explanation</fullName>
+                <controllingFieldValues>Client/Business Issue</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Received better pricing from competitor</fullName>
+                <controllingFieldValues>Client/Business Issue</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New ‘decision maker’ unwilling to continue</fullName>
+                <controllingFieldValues>Client/Business Issue</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lack of communication</fullName>
+                <controllingFieldValues>G/O Error</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Responsiveness/Timeliness</fullName>
+                <controllingFieldValues>G/O Error</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client issue unresolved</fullName>
+                <controllingFieldValues>G/O Error</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AM Change</fullName>
+                <controllingFieldValues>G/O Error</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low Performance/Lack of, or irrelevant leads</fullName>
+                <controllingFieldValues>Performance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Work quality issue</fullName>
+                <controllingFieldValues>Performance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Over/Under Spend</fullName>
+                <controllingFieldValues>Performance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Missed deadline</fullName>
+                <controllingFieldValues>Performance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Social: posts never change, eventually lose value</fullName>
+                <controllingFieldValues>Performance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Platform issue</fullName>
+                <controllingFieldValues>Performance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client billed incorrect amount</fullName>
+                <controllingFieldValues>Billing Issue</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client billed twice in one period</fullName>
+                <controllingFieldValues>Billing Issue</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client unhappy with billing procedure (pause policy)</fullName>
+                <controllingFieldValues>Billing Issue</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Entire spend moved to another G/O product</fullName>
+                <controllingFieldValues>Reallocation</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product down sell</fullName>
+                <controllingFieldValues>Reallocation</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product up sell</fullName>
+                <controllingFieldValues>Reallocation</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Internal Platform/process</fullName>
+                <controllingFieldValues>Reallocation</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fulfilled Non Renewal</fullName>
+                <controllingFieldValues>Fulfilled Non Renewal</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client Unresponsive</fullName>
+                <controllingFieldValues>Client Unresponsive</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Cancellation_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancellation Reason</label>
+        <picklist>
+            <controllingField>Cancellation_Category__c</controllingField>
+            <picklistValues>
+                <fullName>Sales Expectation Mismatch</fullName>
+                <controllingFieldValues>Cancelled After Live</controllingFieldValues>
+                <controllingFieldValues>Cancelled Before Live</controllingFieldValues>
+                <controllingFieldValues>Fulfilled Non-Renewal</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>G/O Error</fullName>
+                <controllingFieldValues>Cancelled After Live</controllingFieldValues>
+                <controllingFieldValues>Cancelled Before Live</controllingFieldValues>
+                <controllingFieldValues>Fulfilled Non-Renewal</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client/Business Issue</fullName>
+                <controllingFieldValues>Cancelled After Live</controllingFieldValues>
+                <controllingFieldValues>Cancelled Before Live</controllingFieldValues>
+                <controllingFieldValues>Fulfilled Non-Renewal</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Billing Issue</fullName>
+                <controllingFieldValues>Cancelled After Live</controllingFieldValues>
+                <controllingFieldValues>Cancelled Before Live</controllingFieldValues>
+                <controllingFieldValues>Fulfilled Non-Renewal</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client Unresponsive</fullName>
+                <controllingFieldValues>Cancelled Before Live</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Performance</fullName>
+                <controllingFieldValues>Cancelled After Live</controllingFieldValues>
+                <controllingFieldValues>Fulfilled Non-Renewal</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reallocation</fullName>
+                <controllingFieldValues>Cancelled After Live</controllingFieldValues>
+                <controllingFieldValues>Cancelled Before Live</controllingFieldValues>
+                <controllingFieldValues>Fulfilled Non-Renewal</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fulfilled Non Renewal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Cancelled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Cancelled</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Count_Of_ILI__c</fullName>
+        <externalId>false</externalId>
+        <label>Count Of ILI&apos;S</label>
+        <summaryFilterItems>
+            <field>Invoice_LineItem__c.IsSystemGenerated__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Invoice_LineItem__c.ProjectRef__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Created_Stamp__c</fullName>
+        <externalId>false</externalId>
+        <label>Created Stamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>D2GL_Start_Time_Stamp__c</fullName>
+        <description>•	Days to Go Live Start Time = 
+o	If AwaitingOnboardStamp != null, AwaitingOnboardStamp
+o	Elseif ClosedWonStamp != null, ClosedWonStamp
+o	Else OLI.CreatedStamp</description>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <label>D2GL Start Time Stamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>DigAM_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Digital_Account_Manager__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DigAM Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DigAM_Full__c</fullName>
+        <externalId>false</externalId>
+        <formula>Digital_Account_Manager__r.FirstName &amp; &quot; &quot; &amp;  Digital_Account_Manager__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DigAM Full</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Digital_Account_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Digital Account Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Projects</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Earliest_Timestamp__c</fullName>
+        <description>Should not fall through to the last NULL, so if it does, investigate</description>
+        <externalId>false</externalId>
+        <formula>IF(Not(ISNULL(In_Awaiting_Onboard_Stamp__c)) &amp;&amp;
+   (ISNULL(In_Fulfillment_Stamp__c ) || In_Awaiting_Onboard_Stamp__c &lt; In_Fulfillment_Stamp__c) &amp;&amp;
+   (ISNULL(In_Waiting_Approval_Stamp__c ) || In_Awaiting_Onboard_Stamp__c &lt; In_Waiting_Approval_Stamp__c) &amp;&amp;
+   (ISNULL(In_Waiting_Resource_Stamp__c ) || In_Awaiting_Onboard_Stamp__c &lt; In_Waiting_Resource_Stamp__c) &amp;&amp;
+   (ISNULL(In_Pending_Stamp__c) || In_Awaiting_Onboard_Stamp__c &lt; In_Pending_Stamp__c),
+       In_Awaiting_Onboard_Stamp__c,
+IF(Not(ISNULL(In_Fulfillment_Stamp__c)) &amp;&amp;
+   (ISNULL(In_Awaiting_Onboard_Stamp__c ) || In_Fulfillment_Stamp__c &lt; In_Awaiting_Onboard_Stamp__c) &amp;&amp;
+   (ISNULL(In_Waiting_Approval_Stamp__c ) || In_Fulfillment_Stamp__c &lt; In_Waiting_Approval_Stamp__c) &amp;&amp;
+   (ISNULL(In_Waiting_Resource_Stamp__c ) || In_Fulfillment_Stamp__c &lt; In_Waiting_Resource_Stamp__c) &amp;&amp;
+   (ISNULL(In_Pending_Stamp__c ) || In_Fulfillment_Stamp__c &lt; In_Pending_Stamp__c),
+       In_Fulfillment_Stamp__c,
+IF(Not(ISNULL(In_Waiting_Approval_Stamp__c)) &amp;&amp;
+   (ISNULL(In_Awaiting_Onboard_Stamp__c ) || In_Waiting_Approval_Stamp__c &lt; In_Awaiting_Onboard_Stamp__c) &amp;&amp;
+   (ISNULL(In_Fulfillment_Stamp__c ) || In_Waiting_Approval_Stamp__c &lt; In_Fulfillment_Stamp__c) &amp;&amp;
+   (ISNULL(In_Waiting_Resource_Stamp__c ) || In_Waiting_Approval_Stamp__c &lt; In_Waiting_Resource_Stamp__c) &amp;&amp;
+   (ISNULL(In_Pending_Stamp__c ) || In_Waiting_Approval_Stamp__c &lt; In_Pending_Stamp__c),
+       In_Waiting_Approval_Stamp__c ,
+IF(Not(ISNULL(In_Waiting_Resource_Stamp__c)) &amp;&amp;
+   (ISNULL(In_Awaiting_Onboard_Stamp__c ) || In_Waiting_Resource_Stamp__c &lt; In_Awaiting_Onboard_Stamp__c) &amp;&amp;
+   (ISNULL(In_Fulfillment_Stamp__c ) || In_Waiting_Resource_Stamp__c &lt; In_Fulfillment_Stamp__c) &amp;&amp;
+   (ISNULL(In_Waiting_Approval_Stamp__c ) || In_Waiting_Resource_Stamp__c &lt; In_Waiting_Approval_Stamp__c) &amp;&amp;
+   (ISNULL(In_Pending_Stamp__c ) || In_Waiting_Resource_Stamp__c &lt; In_Pending_Stamp__c),
+       In_Waiting_Resource_Stamp__c ,
+IF(NOT(ISNULL(In_Pending_Stamp__c)) &amp;&amp;
+   (ISNULL(In_Awaiting_Onboard_Stamp__c ) || In_Pending_Stamp__c&lt; In_Awaiting_Onboard_Stamp__c) &amp;&amp;
+   (ISNULL(In_Fulfillment_Stamp__c ) || In_Pending_Stamp__c&lt; In_Fulfillment_Stamp__c) &amp;&amp;
+   (ISNULL(In_Waiting_Approval_Stamp__c ) || In_Pending_Stamp__c&lt; In_Waiting_Approval_Stamp__c) &amp;&amp;
+   (ISNULL(In_Waiting_Resource_Stamp__c ) || In_Pending_Stamp__c&lt; In_Waiting_Resource_Stamp__c),
+       In_Pending_Stamp__c,NULL
+)))))</formula>
+        <label>Earliest Timestamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Fulfillment_Specialist__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Fulfillment Specialist</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Projects2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>GO_Assisting_Rep_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.GL_Assisting_Rep__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>GO Assisting Rep Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GO_Asst_Rep_2_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.GL_Assist_Rep_2__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>GO Asst Rep 2 Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HasMediaSpend__c</fullName>
+        <externalId>false</externalId>
+        <formula>Related_Product__r.HasMediaSpend__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Has Media Spend</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Has_ILI__c</fullName>
+        <externalId>false</externalId>
+        <formula>Count_Of_ILI__c  &gt;= 1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Has ILI&apos;S</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>In_Awaiting_Onboard_Out_Stamp__c</fullName>
+        <externalId>false</externalId>
+        <label>In Awaiting Onboard Out Stamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>In_Awaiting_Onboard_Stamp__c</fullName>
+        <externalId>false</externalId>
+        <label>In Awaiting Onboard Stamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>In_Closed_Won_Out_Stamp__c</fullName>
+        <description>Datetime Stamp when the OLI goes from “Closed Won” status to any other status
+Populated by Workflow: &quot;Update Closed Won Out Stamp&quot;</description>
+        <externalId>false</externalId>
+        <label>In Closed Won Out Stamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>In_Closed_Won_Stamp__c</fullName>
+        <description>Datetime Stamp when the OLI goes into “Closed Won” status
+Populated by Workflow: &quot;Update Closed Won Stamp&quot;</description>
+        <externalId>false</externalId>
+        <label>In Closed Won Stamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>In_Fulfillment_Out_Stamp__c</fullName>
+        <externalId>false</externalId>
+        <label>In Fulfillment Out Stamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>In_Fulfillment_Stamp__c</fullName>
+        <externalId>false</externalId>
+        <label>In Fulfillment Stamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>In_Pending_Out_Stamp__c</fullName>
+        <externalId>false</externalId>
+        <label>In Pending Out Stamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>In_Pending_Stamp__c</fullName>
+        <externalId>false</externalId>
+        <label>In Pending Stamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>In_Waiting_Approval_Out_Stamp__c</fullName>
+        <externalId>false</externalId>
+        <label>In Waiting Approval Out Stamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>In_Waiting_Approval_Stamp__c</fullName>
+        <externalId>false</externalId>
+        <label>In Waiting Approval Stamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>In_Waiting_Resource_Out_Stamp__c</fullName>
+        <externalId>false</externalId>
+        <label>In Waiting Resource Out Stamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>In_Waiting_Resource_Stamp__c</fullName>
+        <externalId>false</externalId>
+        <label>In Waiting Resource Stamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_CancelDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoice Cancel Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_PriceVariable__c</fullName>
+        <description>Stores pricing information while creating new OLI</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains different pricing variables such as CPM for Email, cost per location for Maps and cost per hours for Web Creative Fees.</inlineHelpText>
+        <label>Product Price Variable</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_ServiceEndDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Product End of Service Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_ServiceStartDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Start of Service Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Units__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Units</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>JumpTo_Opp__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;https://na10.salesforce.com/&quot; &amp;  Opportunity__r.Id , &quot;JumpToView Opp&quot;,&quot;_self&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>JumpTo Opp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Status_Change_From_Won_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Status Change From Won Date</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Live_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Live Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Live_Stamp__c</fullName>
+        <externalId>false</externalId>
+        <label>Live Stamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Max_ILIScheduledDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Max ILI Scheduled Date</label>
+        <summarizedField>Invoice_LineItem__c.Invoice_ScheduleDate__c</summarizedField>
+        <summaryFilterItems>
+            <field>Invoice_LineItem__c.Invoice_LineItemType__c</field>
+            <operation>equals</operation>
+            <value>Standard</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Invoice_LineItem__c.ProjectRef__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Media_Partner_Id_On_Opp__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Media_Partner__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Media Partner Id On Opp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Media_Partner_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Media_Partner__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Media Partner Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Media_Partner__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Media Partner</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Projects (Media Partner)</relationshipLabel>
+        <relationshipName>Projects1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Mgmt_Fee_Percent__c</fullName>
+        <externalId>false</externalId>
+        <label>Mgmt Fee %</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Notify_Email_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Notify Email 1</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Notify_Email_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Notify Email 2</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Notify_Email_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Notify Email 3</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OppProd__c</fullName>
+        <description>Unique Identifier for the Record</description>
+        <externalId>true</externalId>
+        <label>OppProd</label>
+        <length>36</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opp_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opp Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opp_Owner_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Sales_Rep_II__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opp Owner Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opp_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opp Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Projects1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Opp_Record_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.RecordTypeId</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opp Record Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Opportunity__r.Paused_Or_Canceled__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Projects</relationshipLabel>
+        <relationshipName>Projects</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PopulateTimestampNotes__c</fullName>
+        <description>Notes for the fixing of the Awaiting Approval status</description>
+        <externalId>false</externalId>
+        <label>PopulateTimestampNotes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Account__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Id__c</fullName>
+        <displayFormat>GLP-{0000000000}</displayFormat>
+        <externalId>true</externalId>
+        <label>Project Id</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Project_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Status</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Qty_ContractMonths__c</fullName>
+        <externalId>false</externalId>
+        <label>Qty Contract Months</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RegenerateILIs__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Regenerate ILIs</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Related_Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Related Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Projects</relationshipLabel>
+        <relationshipName>Projects</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sell_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Sell Type</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Send_Delayed_Notice__c</fullName>
+        <externalId>false</externalId>
+        <label>Send Delayed Notice</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Notice 0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Notice 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Notice 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Notice 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Notice 4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Notice 5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sold_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.CloseDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sold Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status_Bus_Days_3__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+MOD(DATEVALUE(Waiting_Since_Date__c ) - DATE(2000,1,4),7)=0,Waiting_Since_Date__c +6, 
+IF(MOD(DATEVALUE(Waiting_Since_Date__c ) - DATE(2000,1,5),7)=0,Waiting_Since_Date__c +6, 
+IF(MOD(DATEVALUE(Waiting_Since_Date__c ) - DATE(2000,1,6),7)=0,Waiting_Since_Date__c +6, 
+IF(MOD(DATEVALUE(Waiting_Since_Date__c ) - DATE(2000,1,7),7)=0,Waiting_Since_Date__c +6, 
+IF(MOD(DATEVALUE(Waiting_Since_Date__c ) - DATE(2000,1,8),7)=0,Waiting_Since_Date__c +5, 
+IF(MOD(DATEVALUE(Waiting_Since_Date__c ) - DATE(2000,1,9),7)=0,Waiting_Since_Date__c +4, 
+Waiting_Since_Date__c +4 
+) ) 
+) 
+) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status Bus Days 3</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status_Bus_Days_7__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+MOD(DATEVALUE(Waiting_Since_Date__c ) - DATE(2000,1,4),7)=0,Waiting_Since_Date__c +10, 
+IF(MOD(DATEVALUE(Waiting_Since_Date__c ) - DATE(2000,1,5),7)=0,Waiting_Since_Date__c +10, 
+IF(MOD(DATEVALUE(Waiting_Since_Date__c ) - DATE(2000,1,6),7)=0,Waiting_Since_Date__c +10, 
+IF(MOD(DATEVALUE(Waiting_Since_Date__c ) - DATE(2000,1,7),7)=0,Waiting_Since_Date__c +10, 
+IF(MOD(DATEVALUE(Waiting_Since_Date__c ) - DATE(2000,1,8),7)=0,Waiting_Since_Date__c +9, 
+IF(MOD(DATEVALUE(Waiting_Since_Date__c ) - DATE(2000,1,9),7)=0,Waiting_Since_Date__c +8, 
+Waiting_Since_Date__c +8 
+) 
+) 
+) 
+) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status Bus Days 7</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status_For_Display__c</fullName>
+        <description>IF(AND(Project_Status__c = &quot;Fulfilled Ineligible-Renewal&quot;,Product_Name__c = &quot;Email Blast&quot;),&quot;Product Launched, Fulfillment Complete!&quot;,
+IF(Project_Status__c = &quot;Fulfilled Complete&quot;,&quot;Fulfilled-Complete: Live! GL Onboard Fulfillment Complete&quot;,
+IF(Project_Status__c = &quot;Fulfilled Renewed&quot;,&quot;Fulfilled-Renewed: Contract Complete and Renewal!&quot;,
+IF(Project_Status__c = &quot;Fulfilled Non-Renewal&quot;,&quot;Fulfilled Non-Renewal: Contract Complete, No Renewal&quot;,
+ Project_Status__c 
+))))</description>
+        <externalId>false</externalId>
+        <formula>IF(AND(Project_Status__c = &quot;Pending&quot;,Product_Name__c = &quot;Email Blast&quot;),&quot;Pending: OnBoard Call Complete, Future Launch Date Scheduled&quot;,
+
+IF(Project_Status__c = &quot;Fulfilled-Complete&quot;,&quot;Fulfilled-Complete: Live! GL Onboard Fulfillment Complete&quot;,
+IF(Project_Status__c = &quot;Fulfilled Renewed&quot;,&quot;Fulfilled-Renewed: Contract Complete and Renewed!&quot;,
+IF(Project_Status__c = &quot;Fulfilled Non-Renewal&quot;,&quot;Fulfilled Non-Renewal: Contract Complete, No Renewal&quot;,
+IF(Project_Status__c = &quot;Canceled&quot;,&quot;Canceled: Contract Not Completed&quot;,
+Project_Status__c 
+)))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status For Display</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Status Notes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TotalMonthlyCharge__c</fullName>
+        <description>OLI total Monthly Charge Amount</description>
+        <externalId>false</externalId>
+        <label>Total Monthly Charge</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>UnitPrice__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Waiting_Since_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Status Change Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Waiting_Status_Descr_Last_Set__c</fullName>
+        <externalId>false</externalId>
+        <label>Waiting Status Descr - Last Set</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Waiting_Status_Email_Body__c</fullName>
+        <externalId>false</externalId>
+        <label>Waiting Status Email Body</label>
+        <length>1000</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Waiting_Status_Last_Set_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Waiting Status - Last Set Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <label>Project</label>
+    <listViews>
+        <fullName>AllDigifullswoMediaPartner</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>Media_Partner__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Opp_Record_Type__c</columns>
+        <columns>NAME</columns>
+        <columns>Product_Name__c</columns>
+        <columns>Project_Status__c</columns>
+        <columns>Status_For_Display__c</columns>
+        <columns>Notify_Email_1__c</columns>
+        <columns>Affl_Sales_Rep__c</columns>
+        <columns>OppProd__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Product_Id__c</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>Waiting_Status_Descr_Last_Set__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Media_Partner__c</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>Opp_Record_Type__c</field>
+            <operation>equals</operation>
+            <value>Opportunity.Digital_Fulfillment</value>
+        </filters>
+        <label>All DigiFulls W/O Media Partner</label>
+    </listViews>
+    <listViews>
+        <fullName>All_ModToday</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>Media_Partner__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Opp_Record_Type__c</columns>
+        <columns>NAME</columns>
+        <columns>Product_Name__c</columns>
+        <columns>Project_Status__c</columns>
+        <columns>Status_For_Display__c</columns>
+        <columns>Notify_Email_1__c</columns>
+        <columns>Affl_Sales_Rep__c</columns>
+        <columns>OppProd__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Product_Id__c</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>Waiting_Status_Descr_Last_Set__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LAST_UPDATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>Opp_Record_Type__c</field>
+            <operation>equals</operation>
+            <value>Opportunity.Digital_Fulfillment</value>
+        </filters>
+        <label>All - ModToday</label>
+    </listViews>
+    <listViews>
+        <fullName>All_My_Projects</fullName>
+        <columns>LAST_UPDATE</columns>
+        <columns>Notify_Email_1__c</columns>
+        <columns>Affl_Sales_Rep_OnOppId__c</columns>
+        <columns>Affl_Sales_Rep__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OppProd__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Product_Id__c</columns>
+        <columns>NAME</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>Waiting_Status_Descr_Last_Set__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Mine</filterScope>
+        <label>All-My Projects</label>
+    </listViews>
+    <listViews>
+        <fullName>Project_By_Id</fullName>
+        <columns>Waiting_Since_Date__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Notify_Email_1__c</columns>
+        <columns>Affl_Sales_Rep_OnOppId__c</columns>
+        <columns>Affl_Sales_Rep__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OppProd__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Product_Id__c</columns>
+        <columns>NAME</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>Waiting_Status_Descr_Last_Set__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OppProd__c</field>
+            <operation>contains</operation>
+            <value>00kF000000QajGpIAJ</value>
+        </filters>
+        <label>Project By Id</label>
+    </listViews>
+    <nameField>
+        <label>Project Updates Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Projects</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

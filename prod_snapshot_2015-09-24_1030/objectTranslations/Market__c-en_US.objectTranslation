@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Market</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Markets</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active BC --></label>
+        <name>Active_BC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active CLP --></label>
+        <name>Active_CLP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active CP --></label>
+        <name>Active_CP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active DC --></label>
+        <name>Active_DC__c</name>
+    </fields>
+    <fields>
+        <help><!-- Other Details of Import --></help>
+        <label><!-- Additional Notes --></label>
+        <name>Additional_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Threshold --></label>
+        <name>Approval_Threshold__c</name>
+    </fields>
+    <fields>
+        <label><!-- City/Area --></label>
+        <name>City_Area__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count --></label>
+        <name>Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- DC Appr Active --></label>
+        <name>DC_Appr_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- DC Area Manager Location --></label>
+        <name>DC_Area_Manager_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- DC Pro Hidden --></label>
+        <name>DC_Pro_Hidden__c</name>
+    </fields>
+    <fields>
+        <help><!-- Operations Coordinator....Deal Quality &amp; Selection - Approves Deals Per Market Assigned --></help>
+        <label><!-- DealChicken DQS --></label>
+        <name>DealChicken_Approver__c</name>
+        <relationshipLabel><!-- Markets (DealChicken DQS) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- 1 - vchu@dealchicken.com
+2 - apamplin@dealchicken.com
+3 - anmorales@dealchicken.com
+4 - dgosnell@dealchicken.com
+5 - mhabib@dealchicken.com --></help>
+        <label><!-- DealChicken MLC Group --></label>
+        <name>DealChicken_MLC_Group__c</name>
+        <picklistValues>
+            <masterLabel>0</masterLabel>
+            <translation><!-- 0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11</masterLabel>
+            <translation><!-- 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12</masterLabel>
+            <translation><!-- 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13</masterLabel>
+            <translation><!-- 13 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14</masterLabel>
+            <translation><!-- 14 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15</masterLabel>
+            <translation><!-- 15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Merchant Loyalty Coordinator - Post Sale Account Manager For DealChicken --></help>
+        <label><!-- DealChicken MLC --></label>
+        <name>DealChicken_MLC__c</name>
+        <relationshipLabel><!-- Markets (DealChicken MLC) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The DealChicken Production Manager --></help>
+        <label><!-- DealChicken PRO --></label>
+        <name>DealChicken_PRO__c</name>
+        <relationshipLabel><!-- Markets (DealChicken PRO) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- DealChicken ROM --></label>
+        <name>DealChicken_ROM__c</name>
+        <relationshipLabel><!-- Markets (DealChicken ROM) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- DealChicken RSD --></label>
+        <name>DealChicken_RSM__c</name>
+        <relationshipLabel><!-- Markets (DealChicken RSD) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- DealChicken Specs --></label>
+        <name>DealChicken_Specs__c</name>
+    </fields>
+    <fields>
+        <label><!-- DealChicken AE Head Count --></label>
+        <name>Deal_Chicken_AE_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- MLC Full Name --></label>
+        <name>MLC_Full_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Show Run --></label>
+        <name>Market_30_Day_DC_Review__c</name>
+    </fields>
+    <fields>
+        <label><!-- Market Abbrev --></label>
+        <name>Market_Abbrev__c</name>
+    </fields>
+    <fields>
+        <help><!-- Supplemental attributes defining the market. Initial set up is to define Main and Bantam markets. You can select multiple values as they best describe the market. --></help>
+        <label><!-- Market Attributes --></label>
+        <name>Market_Attribute__c</name>
+        <picklistValues>
+            <masterLabel>Bantam</masterLabel>
+            <translation><!-- Bantam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Main</masterLabel>
+            <translation><!-- Main --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- My Market --></label>
+        <name>My_Market__c</name>
+    </fields>
+    <fields>
+        <label><!-- DC Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>Broadcast - North</masterLabel>
+            <translation><!-- Broadcast - North --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Broadcast - South</masterLabel>
+            <translation><!-- Broadcast - South --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inside Sales</masterLabel>
+            <translation><!-- Inside Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National</masterLabel>
+            <translation><!-- National --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newspaper - Central</masterLabel>
+            <translation><!-- Newspaper - Central --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newspaper - Midwest</masterLabel>
+            <translation><!-- Newspaper - Midwest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newspaper - Northeast</masterLabel>
+            <translation><!-- Newspaper - Northeast --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newspaper - South</masterLabel>
+            <translation><!-- Newspaper - South --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newspaper - West</masterLabel>
+            <translation><!-- Newspaper - West --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Renewal Threshold --></label>
+        <name>Renewal_Threshold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Sell Through Next Two Weeks --></label>
+        <name>Sell_Through_Next_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Show Market Spec --></label>
+        <name>Show_Market_Spec__c</name>
+    </fields>
+    <fields>
+        <label><!-- Show Yipit --></label>
+        <name>Show_Yipit__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Sell Through --></label>
+        <name>Target_Sell_Through__c</name>
+    </fields>
+    <fields>
+        <label><!-- UI Market --></label>
+        <name>UI_Market__c</name>
+        <picklistValues>
+            <masterLabel>ACADIANA-LA</masterLabel>
+            <translation><!-- ACADIANA-LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APPLETON-WI</masterLabel>
+            <translation><!-- APPLETON-WI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ASHEVILLE-NC</masterLabel>
+            <translation><!-- ASHEVILLE-NC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ATLANTA-GA</masterLabel>
+            <translation><!-- ATLANTA-GA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BANGOR-ME</masterLabel>
+            <translation><!-- BANGOR-ME --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BANTAM</masterLabel>
+            <translation><!-- BANTAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BATTLE-CREEK-MI</masterLabel>
+            <translation><!-- BATTLE-CREEK-MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BINGHAMTON-NY</masterLabel>
+            <translation><!-- BINGHAMTON-NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BUFFALO-NY</masterLabel>
+            <translation><!-- BUFFALO-NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BURLINGTON-VT</masterLabel>
+            <translation><!-- BURLINGTON-VT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CENTRAL-JERSEY-NJ</masterLabel>
+            <translation><!-- CENTRAL-JERSEY-NJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CENTRAL-WISCONSIN-WI</masterLabel>
+            <translation><!-- CENTRAL-WISCONSIN-WI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CINCINNATI-OH</masterLabel>
+            <translation><!-- CINCINNATI-OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CLARKSVILLE-TN</masterLabel>
+            <translation><!-- CLARKSVILLE-TN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CLEVELAND-OH</masterLabel>
+            <translation><!-- CLEVELAND-OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COLUMBIA-SC</masterLabel>
+            <translation><!-- COLUMBIA-SC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COSHOCTON-OH</masterLabel>
+            <translation><!-- COSHOCTON-OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CUMBERLAND-COUNTY-NJ</masterLabel>
+            <translation><!-- CUMBERLAND-COUNTY-NJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DENVER-CO</masterLabel>
+            <translation><!-- DENVER-CO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DES-MOINES-IA</masterLabel>
+            <translation><!-- DES-MOINES-IA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DETROIT-MI</masterLabel>
+            <translation><!-- DETROIT-MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EAST-VALLEY-AZ</masterLabel>
+            <translation><!-- EAST-VALLEY-AZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ELMIRA-NY</masterLabel>
+            <translation><!-- ELMIRA-NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAIRFIELD-COUNTY-OH</masterLabel>
+            <translation><!-- FAIRFIELD-COUNTY-OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FONDDULAC-OSHKOSH-WI</masterLabel>
+            <translation><!-- FONDDULAC-OSHKOSH-WI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FORT-MYERS-FL</masterLabel>
+            <translation><!-- FORT-MYERS-FL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GOLF</masterLabel>
+            <translation><!-- GOLF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GRAND-RAPIDS-MI</masterLabel>
+            <translation><!-- GRAND-RAPIDS-MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GREAT-FALLS-MT</masterLabel>
+            <translation><!-- GREAT-FALLS-MT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GREEN-BAY-WI</masterLabel>
+            <translation><!-- GREEN-BAY-WI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GREENVILLE-SC</masterLabel>
+            <translation><!-- GREENVILLE-SC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GUAM</masterLabel>
+            <translation><!-- GUAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HATTIESBURG-MS</masterLabel>
+            <translation><!-- HATTIESBURG-MS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INDIANAPOLIS-IN</masterLabel>
+            <translation><!-- INDIANAPOLIS-IN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IOWA-CITY-IA</masterLabel>
+            <translation><!-- IOWA-CITY-IA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ITHACA-NY</masterLabel>
+            <translation><!-- ITHACA-NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JACKSON-MS</masterLabel>
+            <translation><!-- JACKSON-MS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JACKSON-TN</masterLabel>
+            <translation><!-- JACKSON-TN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JACKSONVILLE-FL</masterLabel>
+            <translation><!-- JACKSONVILLE-FL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JERSEY-SHORE-NJ</masterLabel>
+            <translation><!-- JERSEY-SHORE-NJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KNOXVILLE-TN</masterLabel>
+            <translation><!-- KNOXVILLE-TN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LAFAYETTE-IN</masterLabel>
+            <translation><!-- LAFAYETTE-IN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LANSING-MI</masterLabel>
+            <translation><!-- LANSING-MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LICKING-COUNTY-OH</masterLabel>
+            <translation><!-- LICKING-COUNTY-OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LITTLE-ROCK-AR</masterLabel>
+            <translation><!-- LITTLE-ROCK-AR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LIVINGSTON-COUNTY-MI</masterLabel>
+            <translation><!-- LIVINGSTON-COUNTY-MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LOUISVILLE-KY</masterLabel>
+            <translation><!-- LOUISVILLE-KY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MACON-GA</masterLabel>
+            <translation><!-- MACON-GA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MARION-COUNTY-OH</masterLabel>
+            <translation><!-- MARION-COUNTY-OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MONMOUTH-NJ</masterLabel>
+            <translation><!-- MONMOUTH-NJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MONROE-LA</masterLabel>
+            <translation><!-- MONROE-LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MONTGOMERY-AL</masterLabel>
+            <translation><!-- MONTGOMERY-AL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MONTGOMERY-MD</masterLabel>
+            <translation><!-- MONTGOMERY-MD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MOUNTAIN-HOME-AR</masterLabel>
+            <translation><!-- MOUNTAIN-HOME-AR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MUNCIE-IN</masterLabel>
+            <translation><!-- MUNCIE-IN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MURFREESBORO-TN</masterLabel>
+            <translation><!-- MURFREESBORO-TN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MUSKINGUM-VALLEY-OH</masterLabel>
+            <translation><!-- MUSKINGUM-VALLEY-OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NASHVILLE-TN</masterLabel>
+            <translation><!-- NASHVILLE-TN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NATIONAL</masterLabel>
+            <translation><!-- NATIONAL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NORTH-CENTRAL-OH</masterLabel>
+            <translation><!-- NORTH-CENTRAL-OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NORTH-COAST-OH</masterLabel>
+            <translation><!-- NORTH-COAST-OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NORTH-JERSEY-NJ</masterLabel>
+            <translation><!-- NORTH-JERSEY-NJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NORTHERN-COLORADO-CO</masterLabel>
+            <translation><!-- NORTHERN-COLORADO-CO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NORTHERN-VIRGINIA-VA</masterLabel>
+            <translation><!-- NORTHERN-VIRGINIA-VA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OZARKS-MO</masterLabel>
+            <translation><!-- OZARKS-MO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PALM-SPRINGS-CA</masterLabel>
+            <translation><!-- PALM-SPRINGS-CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PENSACOLA-FL</masterLabel>
+            <translation><!-- PENSACOLA-FL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PHOENIX-AZ</masterLabel>
+            <translation><!-- PHOENIX-AZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PORT-HURON-MI</masterLabel>
+            <translation><!-- PORT-HURON-MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PORTLAND-ME</masterLabel>
+            <translation><!-- PORTLAND-ME --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>POUGHKEEPSIE-NY</masterLabel>
+            <translation><!-- POUGHKEEPSIE-NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RENO-NV</masterLabel>
+            <translation><!-- RENO-NV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RICHMOND-IN</masterLabel>
+            <translation><!-- RICHMOND-IN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ROCHESTER-NY</masterLabel>
+            <translation><!-- ROCHESTER-NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SACRAMENTO-CA</masterLabel>
+            <translation><!-- SACRAMENTO-CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SALEM-OR</masterLabel>
+            <translation><!-- SALEM-OR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SALINAS-CA</masterLabel>
+            <translation><!-- SALINAS-CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SALISBURY-MD</masterLabel>
+            <translation><!-- SALISBURY-MD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SCIOTO-VALLEY-OH</masterLabel>
+            <translation><!-- SCIOTO-VALLEY-OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SHEBOYGAN-WI</masterLabel>
+            <translation><!-- SHEBOYGAN-WI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SHREVEPORT-LA</masterLabel>
+            <translation><!-- SHREVEPORT-LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SIOUX-FALLS-SD</masterLabel>
+            <translation><!-- SIOUX-FALLS-SD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOUTH-JERSEY-NJ</masterLabel>
+            <translation><!-- SOUTH-JERSEY-NJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOUTHERN-UTAH-UT</masterLabel>
+            <translation><!-- SOUTHERN-UTAH-UT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SPACE-COAST-FL</masterLabel>
+            <translation><!-- SPACE-COAST-FL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ST-CLOUD-MN</masterLabel>
+            <translation><!-- ST-CLOUD-MN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ST-LOUIS-MO</masterLabel>
+            <translation><!-- ST-LOUIS-MO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STAUNTON-VA</masterLabel>
+            <translation><!-- STAUNTON-VA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TALLAHASSEE-FL</masterLabel>
+            <translation><!-- TALLAHASSEE-FL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TAMPA-BAY-FL</masterLabel>
+            <translation><!-- TAMPA-BAY-FL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>THE-TRIAD-NC</masterLabel>
+            <translation><!-- THE-TRIAD-NC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TRAVEL</masterLabel>
+            <translation><!-- TRAVEL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TWIN-CITIES-MN</masterLabel>
+            <translation><!-- TWIN-CITIES-MN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VISALIA-CA</masterLabel>
+            <translation><!-- VISALIA-CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WASHINGTON-DC</masterLabel>
+            <translation><!-- WASHINGTON-DC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WEST-VALLEY-AZ</masterLabel>
+            <translation><!-- WEST-VALLEY-AZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WESTCHESTER-NY</masterLabel>
+            <translation><!-- WESTCHESTER-NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WILMINGTON-DE</masterLabel>
+            <translation><!-- WILMINGTON-DE --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>DealChicken Market Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- DealChicken Specific Items --></label>
+            <section>DealChicken Specific Items</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Market Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- DealChicken Specific Items --></label>
+            <section>DealChicken Specific Items</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

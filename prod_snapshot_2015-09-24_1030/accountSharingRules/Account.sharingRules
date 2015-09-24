@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AccountSharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <criteriaBasedRules>
+        <fullName>Company_Share</fullName>
+        <sharedTo>
+            <role>SeminarTeam</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Partner Market</value>
+        </criteriaItems>
+        <accountAccessLevel>Edit</accountAccessLevel>
+        <caseAccessLevel>None</caseAccessLevel>
+        <contactAccessLevel>Edit</contactAccessLevel>
+        <name>Company Share</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>GL_Sharing_For_Accounts</fullName>
+        <sharedTo>
+            <group>All_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Owner__c</field>
+            <operation>equals</operation>
+            <value>005A0000000cnyO</value>
+        </criteriaItems>
+        <accountAccessLevel>Edit</accountAccessLevel>
+        <caseAccessLevel>Edit</caseAccessLevel>
+        <contactAccessLevel>Edit</contactAccessLevel>
+        <name>GL Sharing For Accounts</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <ownerRules>
+        <fullName>AccountManagersA</fullName>
+        <sharedTo>
+            <role>AccountManagers</role>
+        </sharedTo>
+        <sharedFrom>
+            <group>AdSupport</group>
+        </sharedFrom>
+        <accountAccessLevel>Edit</accountAccessLevel>
+        <caseAccessLevel>Edit</caseAccessLevel>
+        <contactAccessLevel>Edit</contactAccessLevel>
+        <name>Account ManagersA</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </ownerRules>
+    <ownerRules>
+        <fullName>AdSupport</fullName>
+        <sharedTo>
+            <group>AdSupport</group>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+        <accountAccessLevel>Edit</accountAccessLevel>
+        <caseAccessLevel>None</caseAccessLevel>
+        <contactAccessLevel>Edit</contactAccessLevel>
+        <name>Ad Support</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </ownerRules>
+    <ownerRules>
+        <fullName>CommunityArchitectA</fullName>
+        <sharedTo>
+            <role>CommunityArchitect</role>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+        <accountAccessLevel>Edit</accountAccessLevel>
+        <caseAccessLevel>Edit</caseAccessLevel>
+        <contactAccessLevel>Edit</contactAccessLevel>
+        <name>Community ArchitectA</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </ownerRules>
+    <ownerRules>
+        <fullName>SocialMediaA</fullName>
+        <sharedTo>
+            <role>SocialMedia</role>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+        <accountAccessLevel>Edit</accountAccessLevel>
+        <caseAccessLevel>Edit</caseAccessLevel>
+        <contactAccessLevel>Edit</contactAccessLevel>
+        <name>Social MediaA</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </ownerRules>
+</AccountSharingRules>

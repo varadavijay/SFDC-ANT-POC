@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LeadSharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <ownerRules>
+        <fullName>AccountManagersA320341</fullName>
+        <sharedTo>
+            <role>AccountManagers</role>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+        <leadAccessLevel>Edit</leadAccessLevel>
+        <name>Account ManagersA</name>
+    </ownerRules>
+    <ownerRules>
+        <fullName>AdSupport</fullName>
+        <sharedTo>
+            <group>AdSupport</group>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+        <leadAccessLevel>Edit</leadAccessLevel>
+        <name>Ad Support</name>
+    </ownerRules>
+    <ownerRules>
+        <fullName>Alll_Sales_View_All_Sales</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Sales</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Sales</roleAndSubordinates>
+        </sharedFrom>
+        <leadAccessLevel>Read</leadAccessLevel>
+        <name>Alll Sales View All Sales</name>
+    </ownerRules>
+    <ownerRules>
+        <fullName>GannettLoca_lAccountShare</fullName>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <sharedFrom>
+            <group>GannettLocalAccount</group>
+        </sharedFrom>
+        <leadAccessLevel>Edit</leadAccessLevel>
+        <name>GannettLoca lAccountShare</name>
+    </ownerRules>
+    <ownerRules>
+        <fullName>New_Lead_Queue_to_AMs</fullName>
+        <sharedTo>
+            <role>AccountManagers</role>
+        </sharedTo>
+        <sharedFrom>
+            <queue>NewLeadQueue</queue>
+        </sharedFrom>
+        <leadAccessLevel>Edit</leadAccessLevel>
+        <name>New Lead Queue to AMs</name>
+    </ownerRules>
+    <ownerRules>
+        <fullName>NonDCPersonnel</fullName>
+        <sharedTo>
+            <group>NonDCPersonnel</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>NonDCPersonnel</group>
+        </sharedFrom>
+        <leadAccessLevel>Edit</leadAccessLevel>
+        <name>Non-DC Personnel</name>
+    </ownerRules>
+    <ownerRules>
+        <fullName>Open_Acq_Leads_RW_Sales</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Sales</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <queue>OpenAcqLeads</queue>
+        </sharedFrom>
+        <leadAccessLevel>Edit</leadAccessLevel>
+        <name>Open Acq Leads shared with All Sales</name>
+    </ownerRules>
+    <ownerRules>
+        <fullName>Share</fullName>
+        <sharedTo>
+            <role>Fulfillment_Nashville</role>
+        </sharedTo>
+        <sharedFrom>
+            <queue>JSS_Queue</queue>
+        </sharedFrom>
+        <leadAccessLevel>Edit</leadAccessLevel>
+        <name>Share</name>
+    </ownerRules>
+    <ownerRules>
+        <fullName>SharingLeadsAllNewLeads</fullName>
+        <sharedTo>
+            <group>SharingLeadsAllNewLeads</group>
+        </sharedTo>
+        <sharedFrom>
+            <queue>NewLeadQueue</queue>
+        </sharedFrom>
+        <leadAccessLevel>Edit</leadAccessLevel>
+        <name>Sharing Leads - All New Leads</name>
+    </ownerRules>
+    <ownerRules>
+        <fullName>TempGroupForSharing</fullName>
+        <sharedTo>
+            <group>TempGroupForSharing</group>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+        <leadAccessLevel>Edit</leadAccessLevel>
+        <name>Temp Group For Sharing</name>
+    </ownerRules>
+</LeadSharingRules>

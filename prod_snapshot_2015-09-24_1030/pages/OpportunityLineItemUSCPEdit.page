@@ -1,0 +1,138 @@
+<apex:page standardController="OpportunityLineItem" tabStyle="OpportunityLineItem" extensions="OpportunityLineItemUSCPExt"  action="{!redirectSysAdmin}">
+    <apex:form >  
+    <apex:sectionHeader Title="USCP Oppportunity Product" subtitle="{!subtxt}"/>
+        <apex:pageMessages escape="false"></apex:pageMessages>
+    <apex:pageBlock title="USCP Opportunity Product Edit" mode="edit">        
+     <apex:pageBlockButtons >
+       <apex:commandButton action="{!save}" value="Save"/>  
+       <apex:commandButton action="{!cancel}" value="Cancel"/>  
+     </apex:pageBlockButtons>   
+     <apex:pageBlockSection collapsible="false" title="Product Information" columns="2">
+      <apex:outputField value="{!OpportunityLineItem.opportunityid}" />
+      <apex:inputField value="{!OpportunityLineItem.Sell_Type__c}" 
+				rendered="{!OR($Profile.Name=='SML Customer Care /Encrypted Field Access', $Profile.Name=='SML Customer Care')}"/> 
+	  <apex:outputField value="{!OpportunityLineItem.Sell_Type__c}"
+				rendered="{!NOT(OR($Profile.Name=='SML Customer Care /Encrypted Field Access', $Profile.Name=='SML Customer Care'))}"/> 
+      <apex:outputField value="{!OpportunityLineItem.Opp_Product_Id__c}"/>
+      <apex:outputField value="{!OpportunityLineItem.Product_OriginalValue__c}"/> 
+      <apex:outputText label="Product" value="{!ProdName}"/>
+      <apex:outputField value="{!OpportunityLineItem.Product_CurrentValue__c}"/>
+      <apex:inputField value="{!OpportunityLineItem.Notes__c}"/>
+      <apex:outputField value="{!OpportunityLineItem.UnitPrice}"/>
+      <apex:outputField value="{!OpportunityLineItem.SLA_Product_Type__c}"/>
+      <apex:outputField value="{!OpportunityLineItem.TotalPrice}"/>
+      <apex:inputField value="{!OpportunityLineItem.Fulfillment_Specialist__c}"/>
+            
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection collapsible="false" title="Price Calculation Information" columns="2">
+		<apex:inputField value="{!OpportunityLineItem.Qty_ContractMonths__c}"
+				rendered="{!OR($Profile.Name=='SML Customer Care /Encrypted Field Access', $Profile.Name=='SML Customer Care')}"/> 
+        <apex:outputField value="{!OpportunityLineItem.Qty_ContractMonths__c}"
+				rendered="{!NOT(OR($Profile.Name=='SML Customer Care /Encrypted Field Access', $Profile.Name=='SML Customer Care'))}"/> 
+        <apex:outputField value="{!OpportunityLineItem.Mgmt_Fee_Percent__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.NumberOfHours__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Invoice_CancelFeePercent__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.NumberOfLocations__c}"/>
+        <apex:outputText value="" />
+        <apex:outputField value="{!OpportunityLineItem.Email_Recipients_Qty__c}"/>
+        <apex:outputText value="" />
+        <apex:outputField value="{!OpportunityLineItem.Invoice_PriceVariable__c}"/>
+        <apex:outputText value="" />
+    </apex:pageBlockSection>
+        
+    <apex:pageBlockSection collapsible="false"  title="Fulfillment Information" columns="2">
+        <apex:outputField value="{!OpportunityLineItem.Project_Initiation_Date__c}"/>
+            <apex:inputField id="statusField" value="{!OpportunityLineItem.Waiting_Status__c}"/>
+        
+            <apex:outputField value="{!OpportunityLineItem.Invoice_ServiceStartDate__c}"/>
+            <apex:inputField rendered="{!IF(OpportunityLineItem.Waiting_Status__c!=null,true,false)}" value="{!OpportunityLineItem.Waiting_Status_Options__c}"/>
+            <apex:inputField rendered="{!IF(ISNULL(OpportunityLineItem.Waiting_Status__c) || (OpportunityLineItem.Waiting_Status__c ==''), true,false)}" value="{!OpportunityLineItem.Waiting_Status_Options_Before__c}"/>
+            <apex:outputField value="{!OpportunityLineItem.Invoice_ServiceEndDate__c}"/>
+            <apex:inputField value="{!OpportunityLineItem.FulfillmentStatus__c}"/>
+            <apex:inputField value="{!OpportunityLineItem.OnBoard_Date__c}"/>
+            <apex:outputField value="{!OpportunityLineItem.AMP_PPC_Start_Date__c}"/>
+            <apex:outputField value="{!OpportunityLineItem.Fulfilled_Date__c}"/>
+            <apex:inputField value="{!OpportunityLineItem.Waiting_Status_Descr__c}"/>
+            <apex:outputField value="{!OpportunityLineItem.Live_Date__c}"/>
+            <apex:inputField value="{!OpportunityLineItem.Approved_by_Manager__c}"/>
+            <apex:outputField value="{!OpportunityLineItem.Days_To_Live__c}"/>
+            <apex:outputText label="Last Modified By" value="{!LastMod}"/>
+            <apex:outputField value="{!OpportunityLineItem.Date_Delivered__c}"/>
+            <apex:outputText value=""/>
+            <apex:inputField value="{!OpportunityLineItem.ServiceDate}"/>
+            <apex:outputText value="" />
+            <apex:inputField value="{!OpportunityLineItem.End_Date__c}"/>
+            <apex:outputText value=""/>
+            <apex:inputField value="{!OpportunityLineItem.Expiration_Date__c}"/>
+        <script> document.getElementById('{!$Component.statusField}').disabled=true; </script>
+    </apex:pageBlockSection>
+        
+    <apex:pageBlockSection collapsible="false" title="Cancel Information" columns="2">
+        <apex:outputField value="{!OpportunityLineItem.Canceled__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Cancellation_Category__c}"/> 
+        <apex:outputField value="{!OpportunityLineItem.Product_PorC_Date__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Cancellation_Reason__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Invoice_CancelDate__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Cancellation_Detail__c}"/>
+        
+    </apex:pageBlockSection>
+        
+    <apex:pageBlockSection collapsible="false" title="Additional Information" columns="2">
+        <apex:outputField value="{!OpportunityLineItem.Company_Name__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Opp_Owner__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Opp_Acct_Id__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Dig_Account_Manager__c}"/>
+        <apex:outputText label="Created By" value="{!CreatdBy}"/>
+        <apex:outputField value="{!OpportunityLineItem.Media_Partner_Name__c}"/>
+        <apex:outputText value=""/>
+        <apex:outputField value="{!OpportunityLineItem.Affl_Sales_Rep_Name__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Project__c}"/>
+        <apex:inputField value="{!OpportunityLineItem.Notify_Email_1__c}"/>
+        <apex:outputText value="" />
+        <apex:inputField value="{!OpportunityLineItem.Notify_Email_2__c}"/>
+        <apex:outputText value="" />
+        <apex:inputField value="{!OpportunityLineItem.Notify_Email_3__c}"/>
+    </apex:pageBlockSection>
+        
+    <apex:pageBlockSection collapsible="false" title="Legacy Finance Information" columns="2">
+        <apex:outputField value="{!OpportunityLineItem.Payment_Processing__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Last_Schedule_Bill_Date__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Periods2__c}"/>
+        <apex:outputText value="" />
+        <apex:outputField value="{!OpportunityLineItem.End_Of_Service_Date__c}"/>
+    </apex:pageBlockSection>
+        
+    <apex:pageBlockSection collapsible="false" title="No, Dupe or Old Data" columns="2">
+        <apex:outputField value="{!OpportunityLineItem.Account__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Digital_No_Start_Date_Req__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Product_Name__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Test_Workflow_Box__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.ProductCode}"/>
+        <apex:outputField value="{!OpportunityLineItem.Ad_ID__c}"/>
+        <apex:outputText value="" />
+        <apex:outputField value="{!OpportunityLineItem.Days_To_Go_Live__c}"/>
+    </apex:pageBlockSection>
+        
+    <apex:pageBlockSection collapsible="false" title="Unknown Purpose Fields" columns="2">
+        <apex:outputField value="{!OpportunityLineItem.Social_Media_Notice__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Opp_Sales_Rep_Id__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Month_1_Charge__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Digital_Product__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Full_Charge_Amt__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Default_Include_In_Monthly_Total__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Term__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Print_Product__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Count_SEO__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.ExpireNoticeDate__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Count_Web__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Live_Timer__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Count_Social__c}"/>
+        <apex:outputText value="" />
+        <apex:outputField value="{!OpportunityLineItem.Earliest_Timestamp__c}"/>
+    </apex:pageBlockSection>
+    
+    
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

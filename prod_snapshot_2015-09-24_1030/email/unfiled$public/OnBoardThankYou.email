@@ -1,0 +1,12 @@
+<br/>
+<br/>
+Company : {!Case.Company_Name__c}<br/>
+Submitted By : {!Case.Affl_Sales_Rep__c}<br/>
+Media Partner : {!Case.Media_Partner__c}<br/>
+<br/>
+<br/>
+Please contact answers@godigitalmarketing.com with any questions or concerns regarding this submission.  Please refer to case number {!Case.CaseNumber} when doing so.
+<br/><br/>
+Thank You!<br/>
+
+G/O Digital

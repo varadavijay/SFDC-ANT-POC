@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.DC_Run_Date__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.DC_Net_Revenue2__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Adam&apos;s P1+P2 rev report</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity@Opportunity.DealChicken_Market__c</reportType>
+    <scope>team</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Opportunity.DC_Run_Date__c</dateColumn>
+        <endDate>2013-03-03</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2012-12-31</startDate>
+    </timeFrameFilter>
+</Report>

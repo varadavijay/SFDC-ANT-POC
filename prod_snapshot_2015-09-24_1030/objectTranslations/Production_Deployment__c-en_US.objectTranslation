@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Production Deployment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Production Deployments</value>
+    </caseValues>
+    <fields>
+        <help><!-- Who is releasing to Production? --></help>
+        <label><!-- Deployed By --></label>
+        <name>Deployed_By__c</name>
+        <relationshipLabel><!-- Production Deployments (Deployed By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Deployment Date --></label>
+        <name>Deployment_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Where is the Release Instructions Document? --></help>
+        <label><!-- Deployment Instructions Link --></label>
+        <name>Deployment_Instructions_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- This will be used for the release notes. The audience is the Business --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Who owns this release from Development? --></help>
+        <label><!-- Development Lead --></label>
+        <name>Development_Lead__c</name>
+        <relationshipLabel><!-- Production Deployments (Development Lead) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Who owns this deployment from QA? --></help>
+        <label><!-- QA Lead --></label>
+        <name>QA_Lead__c</name>
+        <relationshipLabel><!-- Production Deployments (QA Lead) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- example: 1.0.7 --></help>
+        <label><!-- Sprint --></label>
+        <name>Sprint__c</name>
+    </fields>
+    <fields>
+        <help><!-- Only QA can mark a PD &quot;QA Verified&quot;
+Only Release can mark a PD &quot;Deployed to Production&quot; --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Deployed to Production</masterLabel>
+            <translation><!-- Deployed to Production --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QA Verified</masterLabel>
+            <translation><!-- QA Verified --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Example: CRM Sprint 1.0.6 Release Date: 01/30/2014 --></help>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <layouts>
+        <layout>Production Deployment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,8 @@
+A DigFul deal has been Closed-Won By G/O Digital in {!Opportunity.Market_Record__c}, please follow up.
+
+{!Opportunity.Name}
+{!Opportunity.OwnerFullName}
+{!Opportunity.Amount}
+Payment Processing: {!Payment_Processing__c.RecordType}
+
+{!Opportunity.Link}

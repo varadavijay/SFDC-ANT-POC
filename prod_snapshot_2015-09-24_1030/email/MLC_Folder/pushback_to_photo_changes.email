@@ -1,0 +1,58 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="color: rgb(54, 54, 54); font-family: Arial, sans-serif; font-size: 8pt;">Hi&nbsp;</span><font color="#363636" face="Arial, sans-serif"><span style="font-size: 11px;">{!Contact.Name},</span></font></p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-size:8.0pt;mso-bidi-font-size:11.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#363636"><br></span></p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-size:8.0pt;mso-bidi-font-size:11.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#363636">Thank you for providing feedback on your DealChicken proof but I
+regret to inform you that we will be unable to make the requested photo changes
+due to our strict proofing policies.<o:p></o:p></span></p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-size:8.0pt;mso-bidi-font-size:11.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#363636"><br></span></p>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-size:8.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#363636;background:white">We want to use the best possible photos for
+your promotion however all photos that we use must be accompanied by <b>copyright permission</b> and comply with
+our system quality and sizing requirements. </span><span style="font-size:8.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#363636"><br>
+<!--[if !supportLineBreakNewLine]--><br>
+<!--[endif]--><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><b><span style="font-size:8.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#363636">Sizing
+and Quality Requirements:</span></b><span style="font-size:8.0pt;font-family:
+&quot;Arial&quot;,&quot;sans-serif&quot;;color:#363636"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-size:8.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#363636;background:white">Images to be used on DealChicken will need to
+be no smaller than 1000 pixels wide or 400 pixels tall. For the photos to be
+potentially used in the print ad then the picture will need to be no smaller
+than 1400 pixels wide or 1000 pixels tall in addition to being shot at 300 dpi.&nbsp;</span><span style="font-size:8.0pt;font-family:
+&quot;Arial&quot;,&quot;sans-serif&quot;;color:#363636"><br>
+<br>
+<span style="background:white">In addition to the size requirements we have a
+few guidelines we follow to ensure the most visually-appealing deal possible.
+Photos need to be horizontal in layout to be able to fit on our website due do
+our size constraints. We also cannot use photos taken by camera phone or photos
+that were scanned from a printed copy.&nbsp;</span><br>
+<!--[if !supportLineBreakNewLine]--><br>
+<!--[endif]--><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-size:8.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#363636;mso-bidi-font-weight:bold">Please keep in mind we have extensive
+experience in creating proofs that sell deals. Therefore, we ask that you<b> </b></span><span style="font-size:8.0pt;mso-bidi-font-size:11.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:#363636"><u>please take another look at the proof and provide your
+written proof approval.</u></span><span style="font-size:8.0pt;font-family:
+&quot;Arial&quot;,&quot;sans-serif&quot;;color:#363636"><o:p></o:p></span></p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-size:8.0pt;mso-bidi-font-size:11.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:#363636"><br></span></p><p class="MsoNormal"><font color="#363636" face="Arial, sans-serif"><span style="font-size: 11px;"><b>You can view your proof again by clicking here:&nbsp;{!Opportunity.DC_Proof_Hyperlink__c}</b></span></font></p>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><br></p>
+
+<span style="color: rgb(54, 54, 54); font-family: Arial, sans-serif; font-size: 8pt; line-height: 115%;">Thanks for your understanding in this matter. &nbsp;</span><span style="color: rgb(54, 54, 54); font-family: Arial, sans-serif; font-size: 8pt; line-height: 115%;"><br>
+<br>
+</span><span style="color: rgb(54, 54, 54); font-family: Arial, sans-serif; font-size: 8pt; line-height: 115%;">My best,&nbsp;</span><span style="color: rgb(54, 54, 54); font-family: Arial, sans-serif; font-size: 8pt; line-height: 115%;"><br>
+<br>
+<!--[if !supportLineBreakNewLine]--><br>
+<!--[endif]--></span>]]></td>
+</tr>
+</table>

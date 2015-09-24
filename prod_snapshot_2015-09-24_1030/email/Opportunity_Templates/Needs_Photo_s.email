@@ -1,0 +1,9 @@
+Hello,
+It appears photo's are needed for the opportunity below.
+
+Opportunity Name: {!Opportunity.Name}
+
+Opportunity ID: {!Opportunity.Id}
+
+Thanks,
+Andrew

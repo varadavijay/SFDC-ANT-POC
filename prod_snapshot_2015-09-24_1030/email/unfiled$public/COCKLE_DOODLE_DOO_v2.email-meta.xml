@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>COCKLE DOODLE DOO v2</name>
+    <style>none</style>
+    <subject>COCKLE DOODLE DOO!</subject>
+    <textOnly>A DealChicken Has Been Signed!
+
+Event:                                - {!echosign_dev1__SIGN_AgreementEvent__c.echosign_dev1__Description__c}
+
+Account :                           - {!echosign_dev1__SIGN_AgreementEvent__c.Account_Name__c}
+Market :                             - {!echosign_dev1__SIGN_AgreementEvent__c.Market_Name__c}
+Area Manager :                  - {!echosign_dev1__SIGN_AgreementEvent__c.Area_Manager__c}
+
+
+Opportunity Owner :          - {!echosign_dev1__SIGN_AgreementEvent__c.Sales_Rep__c}
+
+Opportunity Link :              - {!echosign_dev1__SIGN_AgreementEvent__c.Opportunity_Page__c}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

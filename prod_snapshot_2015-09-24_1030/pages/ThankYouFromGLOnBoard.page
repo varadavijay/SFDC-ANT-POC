@@ -1,0 +1,6 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <br></br>
+  <h3>Thank you for submitting your OnBoard Form to G/O Digital. We will begin reviewing the OnBoard immediately and will contact you within 2 business days!</h3><br></br>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

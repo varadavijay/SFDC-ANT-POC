@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>An email sent to Merchants with their Merchant Portal log in information</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Merchant Portal Set Up</name>
+    <style>none</style>
+    <subject>*IMPORTANT* DealChicken Promotion Details</subject>
+    <textOnly>Hi,
+
+Thank you for partnering with DealChicken.com to provide customers a great offer. I am the DealChicken area manager that will be handling your promotion and I’ll be your contact to ensure your feature goes smoothly.
+
+
+You&apos;re deal is scheduled to run {!echosign_dev1__SIGN_Agreement__c.DC_Run_Date__c}
+
+
+Next Steps:
+
+Our professional writing team will carefully craft the language of your promotion to get you great results based on our research and experience as a media company.
+Once your proof is ready, we’ll need you to approve the proof within 24 hours so we can finalize your offer and supporting promotion.
+If you are running a promotion with another daily deal site, please let me know. We want to make sure that both deals can perform their best.
+
+Prior to your offer going live, you can visit our merchant site for guidance on preparing for a successful promotion. Please let me know if you have any questions.
+
+Have a great day!
+
+{!DealChicken_Project__c.Handler__c}
+{!echosign_dev1__SIGN_Agreement__c.DC_MLC_Name__c},  {!echosign_dev1__SIGN_Agreement__c.DC_MLC_Location__c}
+{!echosign_dev1__SIGN_Agreement__c.DC_MLC_Email__c}
+{!echosign_dev1__SIGN_Agreement__c.DC_MLC_Phone__c}
+
+
+How will I know who purchases my deal?
+After your deal starts, you&apos;ll receive a full report with the number of deals sold, a checklist of buyers and 		total revenue.
+
+When will I receive payment?
+Expect your first payment70% of your share of the deal&apos;s revenuefive business days after the deal ends if you&apos;ve chosen direct-deposit. If you&apos;ve chosen to receive a check, this process can take up to three weeks. The balance payment (excluding refunds, if any) will be processed 25 business days after your deal closes.
+
+
+Merchant Site : About | Successes | Resources | Coop News</textOnly>
+    <type>custom</type>
+</EmailTemplate>

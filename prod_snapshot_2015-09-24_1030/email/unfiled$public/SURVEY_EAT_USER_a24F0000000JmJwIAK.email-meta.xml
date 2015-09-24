@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This is the default email invitation template for survey: Merchant Satisfaction Survey</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>[Send using Workflow User] Merchant Satisfaction Survey</name>
+    <style>none</style>
+    <subject>Please complete this survey: Merchant Satisfaction Survey</subject>
+    <textOnly>Please complete this survey at:&lt;br/&gt;{!IF(User.Id != null,IF(Case.Id != null,&apos;https://timbasurveys.na10.visual.force.com/apex/timbasurveys__survey?id=a24F0000000JmJwIAK&amp;uId=&apos; + User.Id + &apos;&amp;case_id=&apos; + Case.Id + &apos;&amp;wf=yes&apos;,&apos;https://timbasurveys.na10.visual.force.com/apex/timbasurveys__survey?id=a24F0000000JmJwIAK&amp;uId=&apos; + User.Id + &apos;&amp;wf=yes&apos;),&apos;&apos;)}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

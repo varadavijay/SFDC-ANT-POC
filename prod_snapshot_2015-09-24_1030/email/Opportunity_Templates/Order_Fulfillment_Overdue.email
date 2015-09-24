@@ -1,0 +1,5 @@
+An Opportunity has overdue Order Fulfillment records associated to it. Take action.
+
+Opportunity: {!Opportunity.Name}
+Close Date: {!Opportunity.CloseDate}
+Link: {!Opportunity.Link}

@@ -1,0 +1,17 @@
+Hello {!Case.Affl_Sales_Rep__c}
+
+Your Email Count Request Is Received.  Please contact G/O Digital at "answers@godigitalmarketing.com" with any questions or updates regarding the fulfillment of the audit or any changes and additions that need to be made.  The audit will be completed and returned within 48 business hours.
+
+***“Any counts that require a breakdown above 50 different counts will be a 72 Hour SLA. Please plan accordingly
+
+
+INFORMATION RECEIVED:
+
+Company                -  {!Case.Company_Name__c}
+Media Partner          - {!Case.Media_Partner__c}
+Industry               - {!Case.Industry_General__c}
+Sales Rep              - {!Case.Affl_Sales_Rep__c}
+
+General                 - {!Case.EC_General_Notes__c}
+Budget                   - {!Case.EC_Email_Budget__c}
+Quantity                 - {!Case.EC_Email_Quantity__c}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>Reg_S_A_CurrP</links>
+    <links>Reg_S_A_PrevP</links>
+    <links>RegDaily_Calls</links>
+    <links>Reg_Daily_Appts_Ran</links>
+    <links>Reg_Daily_Comp_Calls</links>
+    <links>SF_User_Req_DC</links>
+    <links>InActive_Acct_Owner</links>
+    <links>InActive_Lead_Owner</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

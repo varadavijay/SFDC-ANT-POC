@@ -1,0 +1,3972 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddContact</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>AddToCampaign</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CallHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EmailHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EnableCustomerPortal</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EnablePartnerPortalUser</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EnableSelfService</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ListClean</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Merge</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewContact</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>RequestUpdate</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewCustomerPortal</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewPartnerPortalUser</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewSelfService</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <fields>
+        <fullName>AccountId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_Manager_Print_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(Account.Account_Manager_Print__c)), Account.Account_Manager_Print__r.Email, Account.Account_Manager__r.Email)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Manager Print Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Manager_Print_FName__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(Account.Account_Manager_Print__c)), Account.Account_Manager_Print__r.FirstName , Account.Account_Manager__r.FirstName )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Manager Print FName</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Manager_Print_HeShe__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(Account.Account_Manager_Print__c)),  TEXT(Account.Account_Manager_Print__r.SheHe__c)  ,  TEXT(Account.Account_Manager__r.SheHe__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Manager Print HeShe</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Manager_Print_HimHer__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(Account.Account_Manager_Print__c)), Account.Account_Manager_Print__r.HerHim__c, Account.Account_Manager__r.HerHim__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Manager Print HimHer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Manager_Print_LName__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(Account.Account_Manager_Print__c)), Account.Account_Manager_Print__r.LastName , Account.Account_Manager__r.LastName )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Manager Print LName</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Manager_Print_Phone__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(Account.Account_Manager_Print__c)), Account.Account_Manager_Print__r.Phone , Account.Account_Manager__r.Phone )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Manager Print Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Manager_Print_Self__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(Account.Account_Manager_Print__c)), Account.Account_Manager_Print__r.herselfhimself__c, Account.Account_Manager__r.herselfhimself__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Manager Print Self</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Manager__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(Account.Account_Manager_Print__c)), Account.Account_Manager_Print_FName__c + &quot; &quot; +  Account.Account_Manager_Print_LName__c, Account.Account_Manager__r.FirstName + &quot; &quot; +  Account.Account_Manager__r.LastName )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Manager</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Market_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.DC_Market__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Market Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Alternate_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Alternate Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Associate_InActive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Associate InActive</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Associate__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Associate</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contacts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Auto_Email_AM_Assignment_Alert__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Auto Email - AM Assignment Alert</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Auto_Email_Call_Request__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Auto Email - Call Request</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Auto_Email_Care_Request_Submit__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Auto Email - Care Request Submit</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Auto_Email_Digital_Audit_Submit__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Auto Email - Digital Audit Submit</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Auto_Email_Email_Count_Req__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Auto Email - Email Count Req</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Auto_Email_Product_Live_Notice__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Auto Email - Product Live Notice</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Auto_Email_Rate_Request_Submittal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>If you want this person to receive copies of new rates requests for this media partner.</inlineHelpText>
+        <label>Auto Email - Rate Request Submittal</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Auto_Email_Website_Audit_Req__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Auto Email - Website Audit Req</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Behavioral_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Behavioral Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Best_Time_To_Call__c</fullName>
+        <externalId>false</externalId>
+        <label>Best Time To Call</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Early Morning 6am - 9am</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Morning 9am - 12pm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Early Afternoon 12pm - 2pm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mid Afternoon 2pm - 4pm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Afternoon 4pm - 6pm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evening 6pm - 8pm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Business__c</fullName>
+        <externalId>false</externalId>
+        <label>Business</label>
+        <picklist>
+            <picklistValues>
+                <fullName>The Leaf-Chronicle, Clarksville</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>The Jackson Sun</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>The Daily News Journal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Murfreesboro</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>The Tennessean, Nashville</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WBIR-TV, Knoxville</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Channel__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Account.Partner_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Channel</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Longer with Company</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Send Back To Marketing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Deal_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Deal Description</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Deal_of_the_Day_Capture_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Deal of the Day Capture Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Demographic_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Demographic Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Do_Not_Call__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Do_Not_Call__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Do Not Call</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Email_PostAt__c</fullName>
+        <externalId>false</externalId>
+        <formula>MID(Email, (FIND(&quot;@&quot;, Email)),255)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Email Post@</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Engagement_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Engagement Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Lead Gen Engaged</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales Engaged</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Five9C2CCampaignName__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;Click-To-Call&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Five9C2CCampaignName</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GL_Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>GO Active</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>General_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>General Notes</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Good_Market_Contact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Good Market Contact</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HubSpot_Inc__HubSpot_Intelligence__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>HubSpot Intelligence</label>
+        <referenceTo>HubSpot_Inc__HubSpot_Intelligence__c</referenceTo>
+        <relationshipLabel>Contacts</relationshipLabel>
+        <relationshipName>Contacts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HubSpot_Inc__SICCode__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SIC Code</label>
+        <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InactiveStatus__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used to mark Affiliated contacts as inactive in the system.  By Marking this field inactive the record type is switched to Inactive Affiliated Contact</description>
+        <externalId>false</externalId>
+        <label>Inactive</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>KPI_Avg_Time_To_Close__c</fullName>
+        <externalId>false</externalId>
+        <label>KPI - Avg Time To Close</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_Dig_Audit_Closed_30__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>KPI - Dig Audit Closed 90</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_Dig_Audit_Closed__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>KPI - Dig Audit Closed</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_Dig_Audit_Converts__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>KPI - Dig Audit Converts</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_Dig_Audit_Requests_30__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>KPI - Dig Audit Requests 90</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_Dig_Audit_Requests__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>KPI - Dig Audit Requests</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_Dig_Audit_Won_Value_30__c</fullName>
+        <externalId>false</externalId>
+        <label>KPI - Dig Audit Won Value 90</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>KPI_Dig_Audit_Won_Value__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>KPI - Dig Audit Won Value</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>KPI_Refresh__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>KPI - Refresh</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Last_Activity_Datetime__c</fullName>
+        <description>Notes the datetime of the most recently added activity.</description>
+        <externalId>false</externalId>
+        <label>Last Activity Datetime</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LeadSource</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Account Transfer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Audit Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blog</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BuyerZone - Email Marketing Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deal of the Day Entry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GO Researcher Sourced List</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Market Rep</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lead Generator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lead Gen Team</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Online Advertising (Banner Ads)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner/Channel/Affiliate Ref</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Physical Event (Tradeshows/Conf)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PPC (Pay Per Click)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prospecting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SEO (Organic Search)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Simply Gifted Website</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Telemarketing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Traditional Ads (Radio, TV, Print)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WebForm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Webinar/Virtual Event</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Word of Mouth/Client Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Source_Detail__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Used by admins to describe the Lead Source in greater detail.</inlineHelpText>
+        <label>Lead Source Detail</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Additional Contacts</relationshipLabel>
+        <relationshipName>ContactsOnLead</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Market__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Market</label>
+        <referenceTo>Market__c</referenceTo>
+        <relationshipLabel>Contacts</relationshipLabel>
+        <relationshipName>Contacts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Marketing_Decision_Maker__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Marketing Decision Maker?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Market_Contact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Primary Market Contact</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Product_Enhancement_Requestor__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to Determine Who Is Allowed to Submit Product Enhancements</description>
+        <externalId>false</externalId>
+        <label>Product Enhancement Requestor</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Promotion_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Promotion Source</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReportsToId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Send_TB_Contract__c</fullName>
+        <description>HYPERLINK(&quot;https://na10.salesforce.com/email/author/emailauthor.jsp?retURL=/&amp;p24_lkid=&amp;rtype=003&amp;p2_lkid=Id&amp;p2=FirstName&amp;template_id=00XF0000001QXsu&amp;p5=neil.wingate@gannett.com&quot;,&quot;DC Proposal&quot;)</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/email/author/emailauthor.jsp?p24_lkid=&amp;rtype=003&amp;p2_lkid=&quot;+Id+&quot;&amp;p2=&quot;+FirstName+&quot;&amp;template_id=00XF0000001QXsu&amp;p5=neil.wingate@gannett.com&quot;,&quot;DC Proposal&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Send TB Contract</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Send_Test_Email__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Send Test Email</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Site__c</fullName>
+        <externalId>false</externalId>
+        <label>Site</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Buy With Me</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Dealster</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deal Chicken</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Doozy of a Deal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home Run</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>icoupon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KGB Deals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Living Social</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LocalDines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Times</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Travel Zoo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Weekly Plus</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Weforia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yollar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Status_Alert_Options__c</fullName>
+        <externalId>false</externalId>
+        <label>Auto Email - Status Alert Options</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Awaiting OnBoard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Fulfillment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waiting On Client Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waiting On Client Resource</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Live</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Canceled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fulfilled Renewed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fulfilled Non-Renewal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fulfilled-Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>--Internal Use Only--</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paused:Billing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paused:No Contract</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Survey_Results__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Survey Results</label>
+        <referenceTo>Survey_Results__c</referenceTo>
+        <relationshipLabel>Contacts</relationshipLabel>
+        <relationshipName>Contacts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sync_With_Marketo__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Sync With Marketo</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>TRIMEC__MatchKey__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>FirstName &amp; LastName &amp; Email &amp; Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MatchKey</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TRIMEC__MatchLevel__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Match Level</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TRIMEC__MatchScore__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>MatchScore</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Target_Campaign__c</fullName>
+        <externalId>false</externalId>
+        <label>Target Campaign</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Web_Submitter__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Web Submitter</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Zendesk__Result__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Zendesk Result</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Zendesk__Tags__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Tags</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Zendesk__Zendesk_OutofSync__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Zendesk_OutofSync</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Zendesk__Zendesk_oldTags__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Zendesk_oldTags</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Zendesk__isCreatedUpdatedFlag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Used in trigger to prevent looping of after insert and update. This flag is used to stop the contact that came for creation to get updated again thereby preventing the loop</description>
+        <externalId>false</externalId>
+        <label>isCreatedUpdatedFlag</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Zendesk__notes__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Zendesk__zendesk_id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Zendesk User Id</label>
+        <length>70</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto2__Acquisition_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Acquisition Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>mkto2__Acquisition_Program_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Acquisition Program Id</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto2__Acquisition_Program__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Acquisition Program</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto2__Inferred_City__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Inferred City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto2__Inferred_Company__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Inferred Company</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto2__Inferred_Country__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Inferred Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto2__Inferred_Metropolitan_Area__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Inferred Metropolitan Area</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto2__Inferred_Phone_Area_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Inferred Phone Area Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto2__Inferred_Postal_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Inferred Postal Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto2__Inferred_State_Region__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Inferred State Region</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto2__Lead_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Lead Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto2__Original_Referrer__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Original Referrer</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto2__Original_Search_Engine__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Original Search Engine</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto2__Original_Search_Phrase__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Original Search Phrase</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto2__Original_Source_Info__c</fullName>
+        <defaultValue>&quot;Contact&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Original Source Info</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>mkto2__Original_Source_Type__c</fullName>
+        <defaultValue>&quot;salesforce.com&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Original Source Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto_Marketo_Segmentation__c</fullName>
+        <externalId>false</externalId>
+        <label>Marketo Segmentation</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>mkto_si__HideDate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Hide Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>mkto_si__Last_Interesting_Moment_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Last Interesting Moment Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>mkto_si__Last_Interesting_Moment_Desc__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Last Interesting Moment Desc</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>mkto_si__Last_Interesting_Moment_Source__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Last Interesting Moment Source</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto_si__Last_Interesting_Moment_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Last Interesting Moment Type</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto_si__Last_Interesting_Moment__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(!ISNULL(mkto_si__Last_Interesting_Moment_Date__c), 
+HYPERLINK(&quot;/apex/mkto_si__Contact_Full_List?view=IM&amp;id=&quot; &amp; Id, mkto_si__Last_Interesting_Moment_Type__c &amp; &quot; -- &quot; &amp; mkto_si__Last_Interesting_Moment_Desc__c ), &quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Last Interesting Moment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto_si__Priority__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engagement</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto_si__Relative_Score_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Relative Score Value</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto_si__Relative_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASE( MIN(MAX(mkto_si__Relative_Score_Value__c, 0), 3),
+    0, IMAGE(&quot;https://app.marketo.com/images/icons/star0.png&quot;,&quot;0&quot;),
+    1, IMAGE(&quot;https://app.marketo.com/images/icons/star1.png&quot;,&quot;1&quot;),
+    2, IMAGE(&quot;https://app.marketo.com/images/icons/star2.png&quot;,&quot;2&quot;),
+    3, IMAGE(&quot;https://app.marketo.com/images/icons/star3.png&quot;,&quot;3&quot;),
+    &quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Relative Score</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto_si__Sales_Insight__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>HYPERLINK (&quot;/apex/Contact_Full_List?id=&quot; &amp; Id, IMAGE(&quot;https://www.marketo.com/salesforce/images/applicationLink.png&quot;,&quot;Sales Insight&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sales Insight</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto_si__Urgency_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Urgency Value</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto_si__Urgency__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASE( MIN(MAX(mkto_si__Urgency_Value__c, 0),3),
+    0, IMAGE(&quot;https://app.marketo.com/images/icons/fire0.png&quot;,&quot;0&quot;),
+    1, IMAGE(&quot;https://app.marketo.com/images/icons/fire1.png&quot;,&quot;1&quot;),
+    2, IMAGE(&quot;https://app.marketo.com/images/icons/fire2.png&quot;,&quot;2&quot;),
+    3, IMAGE(&quot;https://app.marketo.com/images/icons/fire3.png&quot;,&quot;3&quot;),
+    &quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Urgency</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto_si__View_in_Marketo__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>HYPERLINK (&quot;/apex/mkto_si__Marketo_Lead_Detail?objType=Contact&amp;objId=&quot; &amp; Id, IMAGE(&quot;https://app.marketo.com/images/icons16/marketo16.png&quot;,&quot;View in Marketo&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>View in Marketo</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>qbdialer__Dials__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Dials</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>qbdialer__LastCallTime__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The field should not be modified by users, it is intended for use in the filters of the Seek Initiatives.</description>
+        <externalId>false</externalId>
+        <label>Last Call Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>qbdialer__ResponseTime__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field will store the number of seconds between record creation time and first call time (via the PowerDialer).</description>
+        <externalId>false</externalId>
+        <label>Response Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>qbdialer__TimeZoneSidKey__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field will store the TimeZoneSidKey for the Contact.</description>
+        <externalId>false</externalId>
+        <label>TimeZone Sid Key</label>
+        <length>24</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>radius__Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Hours</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <listViews>
+        <fullName>AffiliatesAwaitingOnboard</fullName>
+        <columns>CONTACT.LAST_UPDATE</columns>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Status_Alert_Options__c</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTACT.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Contact.Affiliated</value>
+        </filters>
+        <filters>
+            <field>CONTACT.EMAIL</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>Status_Alert_Options__c</field>
+            <operation>includes</operation>
+            <value>Awaiting OnBoard</value>
+        </filters>
+        <label>Affiliates Awaiting Onboard</label>
+    </listViews>
+    <listViews>
+        <fullName>AffiliateswAutoEmailLive</fullName>
+        <columns>CONTACT.LAST_UPDATE</columns>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Auto_Email_Product_Live_Notice__c</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTACT.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Contact.Affiliated</value>
+        </filters>
+        <filters>
+            <field>CONTACT.EMAIL</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>Auto_Email_Product_Live_Notice__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Affiliates w/ Auto Email Live</label>
+    </listViews>
+    <listViews>
+        <fullName>AffiliateswAutoEmailLiveAlert</fullName>
+        <columns>CONTACT.LAST_UPDATE</columns>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Auto_Email_Product_Live_Notice__c</columns>
+        <columns>Status_Alert_Options__c</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTACT.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Contact.Affiliated</value>
+        </filters>
+        <filters>
+            <field>Auto_Email_Product_Live_Notice__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Affiliates w/ Live Alert</label>
+    </listViews>
+    <listViews>
+        <fullName>AffiliateswAutoEmailStatus</fullName>
+        <columns>CONTACT.LAST_UPDATE</columns>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Status_Alert_Options__c</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTACT.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Contact.Affiliated</value>
+        </filters>
+        <filters>
+            <field>CONTACT.EMAIL</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>Status_Alert_Options__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Affiliates w/Auto Email Status</label>
+    </listViews>
+    <listViews>
+        <fullName>AllContacts</fullName>
+        <columns>CONTACT.RECORDTYPE</columns>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CONTACT.ADDRESS2_CITY</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Contacts</label>
+    </listViews>
+    <listViews>
+        <fullName>BirthdaysThisMonth</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CONTACT.BIRTHDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTACT.BIRTHDATE</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>Birthdays This Month</label>
+    </listViews>
+    <listViews>
+        <fullName>NewThisWeek</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTACT.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>New This Week</label>
+    </listViews>
+    <namedFilters>
+        <fullName>Account_00NF0000008Or74MAC</fullName>
+        <active>true</active>
+        <field>Account.Affl_Sales_Rep__c</field>
+        <filterItems>
+            <field>Contact.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Affiliated</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+        <name>Account_Affl Sales Rep</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>Lead_00NF0000008MK9lMAG</fullName>
+        <active>false</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <field>Lead.SalesRep__c</field>
+        <filterItems>
+            <field>Contact.AccountId</field>
+            <operation>equals</operation>
+            <valueField>$Source.Related_Company__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Contact.Market__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Gannett_Market__c</valueField>
+        </filterItems>
+        <isOptional>true</isOptional>
+        <name>Lead_Sales Rep</name>
+        <sourceObject>Lead</sourceObject>
+    </namedFilters>
+    <namedFilters>
+        <fullName>OpportunityLineItem_00NF0000008Ow2UMAS</fullName>
+        <active>true</active>
+        <field>OpportunityLineItem.Add_Notice_1__c</field>
+        <filterItems>
+            <field>Contact.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Affiliated</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+        <name>Opportunity Product_Add Notice 1</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>OpportunityLineItem_00NF0000008Ow2ZMAS</fullName>
+        <active>true</active>
+        <field>OpportunityLineItem.Add_Notice_2__c</field>
+        <filterItems>
+            <field>Contact.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Affiliated</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+        <name>Opportunity Product_Add Notice 2</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>OpportunityLineItem_00NF0000008Ow2eMAC</fullName>
+        <active>true</active>
+        <field>OpportunityLineItem.Add_Notice_3__c</field>
+        <filterItems>
+            <field>Contact.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Affiliated</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+        <name>Opportunity Product_Add Notice 3</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>Opportunity_00NF0000008MKnHMAW</fullName>
+        <active>true</active>
+        <field>Opportunity.Sales_Rep__c</field>
+        <filterItems>
+            <field>Contact.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Affiliated</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+        <name>Opportunity_Affl Sales Rep</name>
+    </namedFilters>
+    <namedFilters>
+        <fullName>Opportunity_00NF0000008NPDIMA4</fullName>
+        <active>true</active>
+        <field>Opportunity.SAPrimaryContact__c</field>
+        <filterItems>
+            <field>Contact.AccountId</field>
+            <operation>equals</operation>
+            <valueField>$Source.AccountId</valueField>
+        </filterItems>
+        <infoMessage>This Contact is Not Listed on This Account.  You May Add, But Be Sure It Is The Correct One.</infoMessage>
+        <isOptional>true</isOptional>
+        <name>Opportunity_SA Primary Contact</name>
+        <sourceObject>Opportunity</sourceObject>
+    </namedFilters>
+    <namedFilters>
+        <fullName>nf_01IF0000002CKXuMAO_00NF000000Cca35MAB</fullName>
+        <active>true</active>
+        <field>OnBoardFormModel__c.Affl_Sales_Rep__c</field>
+        <filterItems>
+            <field>Contact.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Affiliated</value>
+        </filterItems>
+        <filterItems>
+            <field>Contact.LastName</field>
+            <operation>notEqual</operation>
+            <value>In List</value>
+        </filterItems>
+        <filterItems>
+            <field>Contact.Email</field>
+            <operation>notEqual</operation>
+            <value>EMPTY</value>
+        </filterItems>
+        <filterItems>
+            <field>Contact.Web_Submitter__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+        <name>nf_01IF0000002CKXuMAO_00NF000000Cca35MAB</name>
+    </namedFilters>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Affiliated</fullName>
+        <active>true</active>
+        <description>Contacts That Are Associated With Gannett Properties (Sales Reps) But Do Not Have A GL SF Login</description>
+        <label>Affiliated</label>
+        <picklistValues>
+            <picklist>Best_Time_To_Call__c</picklist>
+            <values>
+                <fullName>Afternoon 4pm - 6pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Early Afternoon 12pm - 2pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Early Morning 6am - 9am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evening 6pm - 8pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mid Afternoon 2pm - 4pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morning 9am - 12pm</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business__c</picklist>
+            <values>
+                <fullName>Murfreesboro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Daily News Journal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Jackson Sun</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Leaf-Chronicle%2C Clarksville</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Tennessean%2C Nashville</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WBIR-TV%2C Knoxville</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Engagement_Status__c</picklist>
+            <values>
+                <fullName>Lead Gen Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Engaged</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Account Transfer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BuyerZone - Email Marketing Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deal of the Day Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Market Rep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Gen Team</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Generator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WebForm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Name</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prof%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Site__c</picklist>
+            <values>
+                <fullName>Buy With Me</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daily Dealster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deal Chicken</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Doozy of a Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Run</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KGB Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Living Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LocalDines</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Times</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel Zoo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weforia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>icoupon</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_Alert_Options__c</picklist>
+            <values>
+                <fullName>--Internal Use Only--</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting OnBoard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canceled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfilled Non-Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfilled Renewed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfilled-Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Fulfillment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Live</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paused%3ABilling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paused%3ANo Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting On Client Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting On Client Resource</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DealChicken_ZenDesk_Contact</fullName>
+        <active>true</active>
+        <label>DealChicken ZenDesk Contact</label>
+        <picklistValues>
+            <picklist>Best_Time_To_Call__c</picklist>
+            <values>
+                <fullName>Afternoon 4pm - 6pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Early Afternoon 12pm - 2pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Early Morning 6am - 9am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evening 6pm - 8pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mid Afternoon 2pm - 4pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morning 9am - 12pm</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business__c</picklist>
+            <values>
+                <fullName>Murfreesboro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Daily News Journal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Jackson Sun</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Leaf-Chronicle%2C Clarksville</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Tennessean%2C Nashville</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WBIR-TV%2C Knoxville</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Engagement_Status__c</picklist>
+            <values>
+                <fullName>Lead Gen Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Engaged</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Account Transfer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Audit Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BuyerZone - Email Marketing Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deal of the Day Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Market Rep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Gen Team</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Generator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WebForm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Name</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prof%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Site__c</picklist>
+            <values>
+                <fullName>Buy With Me</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daily Dealster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deal Chicken</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Doozy of a Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Run</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KGB Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Living Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LocalDines</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Times</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel Zoo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weforia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>icoupon</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_Alert_Options__c</picklist>
+            <values>
+                <fullName>--Internal Use Only--</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting OnBoard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canceled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfilled Non-Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfilled Renewed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfilled-Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Fulfillment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Live</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paused%3ABilling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paused%3ANo Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting On Client Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting On Client Resource</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Gannett_Local</fullName>
+        <active>true</active>
+        <label>G/O Digital</label>
+        <picklistValues>
+            <picklist>Best_Time_To_Call__c</picklist>
+            <values>
+                <fullName>Afternoon 4pm - 6pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Early Afternoon 12pm - 2pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Early Morning 6am - 9am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evening 6pm - 8pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mid Afternoon 2pm - 4pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morning 9am - 12pm</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business__c</picklist>
+            <values>
+                <fullName>Murfreesboro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Daily News Journal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Jackson Sun</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Leaf-Chronicle%2C Clarksville</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Tennessean%2C Nashville</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WBIR-TV%2C Knoxville</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Engagement_Status__c</picklist>
+            <values>
+                <fullName>Lead Gen Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Engaged</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Account Transfer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BuyerZone - Email Marketing Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deal of the Day Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Market Rep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Gen Team</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Generator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WebForm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Name</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prof%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Site__c</picklist>
+            <values>
+                <fullName>Buy With Me</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daily Dealster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deal Chicken</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Doozy of a Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Run</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KGB Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Living Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LocalDines</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Times</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel Zoo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weforia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>icoupon</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_Alert_Options__c</picklist>
+            <values>
+                <fullName>Awaiting OnBoard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canceled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfilled-Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Fulfillment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Live</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting On Client Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting On Client Resource</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Inactive_Affiliated_Contact</fullName>
+        <active>true</active>
+        <description>Inactive Affiliated Contacts</description>
+        <label>Inactive Affiliated Contact</label>
+        <picklistValues>
+            <picklist>Best_Time_To_Call__c</picklist>
+            <values>
+                <fullName>Afternoon 4pm - 6pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Early Afternoon 12pm - 2pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Early Morning 6am - 9am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evening 6pm - 8pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mid Afternoon 2pm - 4pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morning 9am - 12pm</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business__c</picklist>
+            <values>
+                <fullName>Murfreesboro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Daily News Journal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Jackson Sun</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Leaf-Chronicle%2C Clarksville</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Tennessean%2C Nashville</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WBIR-TV%2C Knoxville</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Engagement_Status__c</picklist>
+            <values>
+                <fullName>Lead Gen Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Engaged</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Account Transfer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BuyerZone - Email Marketing Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deal of the Day Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Market Rep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Gen Team</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Generator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WebForm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Name</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prof%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Site__c</picklist>
+            <values>
+                <fullName>Buy With Me</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daily Dealster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deal Chicken</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Doozy of a Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Run</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KGB Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Living Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LocalDines</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Times</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel Zoo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weforia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>icoupon</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_Alert_Options__c</picklist>
+            <values>
+                <fullName>--Internal Use Only--</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting OnBoard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canceled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfilled Non-Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfilled Renewed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfilled-Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Fulfillment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Live</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paused%3ABilling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paused%3ANo Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting On Client Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting On Client Resource</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>SML_Contact</fullName>
+        <active>true</active>
+        <label>SML Contact</label>
+        <picklistValues>
+            <picklist>Best_Time_To_Call__c</picklist>
+            <values>
+                <fullName>Afternoon 4pm - 6pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Early Afternoon 12pm - 2pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Early Morning 6am - 9am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evening 6pm - 8pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mid Afternoon 2pm - 4pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morning 9am - 12pm</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business__c</picklist>
+            <values>
+                <fullName>Murfreesboro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Daily News Journal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Jackson Sun</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Leaf-Chronicle%2C Clarksville</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Tennessean%2C Nashville</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WBIR-TV%2C Knoxville</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contact_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Longer with Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Back To Marketing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Engagement_Status__c</picklist>
+            <values>
+                <fullName>Lead Gen Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Engaged</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Account Transfer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Audit Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GO Researcher Sourced List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online Advertising %28Banner Ads%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PPC %28Pay Per Click%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner%2FChannel%2FAffiliate Ref</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Physical Event %28Tradeshows%2FConf%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospecting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SEO %28Organic Search%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telemarketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Traditional Ads %28Radio%2C TV%2C Print%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar%2FVirtual Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Word of Mouth%2FClient Referral</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Name</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prof%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Site__c</picklist>
+            <values>
+                <fullName>Buy With Me</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daily Dealster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deal Chicken</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Doozy of a Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Run</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KGB Deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Living Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LocalDines</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Times</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel Zoo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weforia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>icoupon</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_Alert_Options__c</picklist>
+            <values>
+                <fullName>Awaiting OnBoard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canceled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfilled-Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Fulfillment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Live</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting On Client Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting On Client Resource</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CONTACT.PHONE1</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CONTACT.LAST_NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CONTACT.ADDRESS2_CITY</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTACT.EMAIL</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTACT.PHONE1</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTACT.TITLE</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>FULL_NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.SITE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.PHONE1</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.PHONE3</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.PHONE4</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.PHONE5</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.PHONE6</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>CONTACT.LAST_NAME</searchFilterFields>
+        <searchFilterFields>ACCOUNT.NAME</searchFilterFields>
+        <searchFilterFields>CONTACT.ADDRESS2_CITY</searchFilterFields>
+        <searchResultsAdditionalFields>FULL_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.SITE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CONTACT.PHONE1</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CONTACT.EMAIL</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CONTACT.RECORDTYPE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <webLinks>
+        <fullName>APXTConga4__Conga_Mail_Merge</fullName>
+        <availability>online</availability>
+        <description>*** This is an example of a simple Conga Composer button. *** 
+
+Copy the URL from this button and paste it into your own custom button or link. Then add optional parameters to finely tune the button&apos;s behavior. See the Conga Configuration Guide for details.</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>450</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Conga Composer</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://www.appextremes.com/apps/Conga/Composer.aspx
+?sessionId={!API.Session_ID}
+&amp;serverUrl={!API.Partner_Server_URL_80}
+&amp;id={!Contact.Id}</url>
+        <width>625</width>
+    </webLinks>
+    <webLinks>
+        <fullName>Add_New_Contact</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Add New Contact</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>https://na10.salesforce.com/003/e?CF00NF0000008MKnC={!Lead.FirstName}+{!Lead.LastName}&amp;CF00NF0000008MKnC_lkid={!Lead.Id}&amp;retURL={!Lead.Id}&amp;RecordType=012A0000000PKOA&amp;ent=Contact</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Call</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Call</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!requireScript(&apos;https://fastcall411.s3.amazonaws.com/lib/js/fc.js&apos;)}
+{!requireScript(&apos;/apex/FC411BeLocalPkg__BeLocalScriptLoadJS&apos;)}
+
+if(FC.App == undefined) { 
+alert (&quot;The FastCall Click2Call Widget is loading, please wait a few seconds and click &apos;Call&apos; again.&quot;); 
+} 
+else {
+FC.App.fcClickToCall({
+&apos;Office&apos; : &apos;{!$User.Phone}{!IF(ISBLANK($User.Extension),&apos;&apos;,&apos;x&apos; + $User.Extension)}&apos;,
+&apos;Mobile&apos; : &apos;{!$User.MobilePhone}&apos;
+},
+&apos;{!Contact.Id}&apos;, 
+&apos;contact&apos;, 
+&apos;{!$User.Email}&apos;, 
+{ 
+&apos;Phone&apos; : &apos;{!Contact.Phone}&apos;, 
+&apos;Mobile&apos; : &apos;{!Contact.MobilePhone}&apos; 
+});
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleMaps</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google Maps</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://maps.google.com/maps?f=q&amp;hl=en&amp;q={!Contact_MailingStreet}+{!Contact_MailingCity}+{!Contact_MailingState}&amp;om=1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleSearch</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google Search</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://www.google.com/search?q={!Contact_FirstName} {!Contact_LastName}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Re_subscribe_in_ExactTarget</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Re-subscribe in ExactTarget</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>https://members.exacttarget.com/Integration/SalesforceUI/SFResubscribe.aspx?subtype=Contact&amp;sfid={!Contact.Id}&amp;sessid={!API.Session_ID}&amp;sessurl={!API.Partner_Server_URL_60}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SendExactTargetEmail</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Send ExactTarget Email</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>https://members.exacttarget.com/Integration/SalesforceUI/EmailSend.aspx?sendtype=Contact&amp;sfid={!Contact.Id}&amp;sessid={!API.Session_ID}&amp;sessurl={!API.Partner_Server_URL_60}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SendGmail</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Send Gmail</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://mail.google.com/mail?view=cm&amp;tf=0&amp;to={!Contact_Email}&lt;{!Contact_LastName}, {!Contact_FirstName}&gt;&amp;tf=1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Sponsored_Accounts</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Sponsored Accounts</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://na10.salesforce.com/00OF0000004ARPh?pv0={!Contact.Name}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>TRIMEC__Merge</fullName>
+        <availability>online</availability>
+        <description>Merge Button for Contact List views</description>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Merge</masterLabel>
+        <openType>sidebar</openType>
+        <page>TRIMEC__TRIM_MergeSelected_Contact</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>TRIMEC__New_Contact</fullName>
+        <availability>online</availability>
+        <description>New Contact Button (Entry Check) to be replacing the New contact button on the Contact Related List in the Account Page Layout</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Contact</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/TRIMEC__DataTrim_EntryCheck?company={!Account.Name}&amp;accid={!Account.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>YahooMaps</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>true</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>true</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Yahoo! Maps</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>true</showsLocation>
+        <showsStatus>true</showsStatus>
+        <url>http://maps.yahoo.com/py/maps.py?cn={!Contact_MailingCountry}&amp;csz={!Contact_MailingCity}+{!Contact_MailingState}+{!Contact_MailingPostalCode}+&amp;addr={!Contact_MailingAddress}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>YahooWeather</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Yahoo! Weather</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://weather.yahoo.com/search/weather2?p={!Contact_MailingPostalCode}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>mkto_si__Add_to_Marketo_Campaign</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Add to Marketo Campaign</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+
+var idArr = {!GETRECORDIDS($ObjectType.Contact)};
+if (idArr[0] == null){
+	alert(&apos;Please select at least one row&apos;);
+} else {
+	var value = new Array();
+	value[0] = new String(idArr);
+	var name = new Array();
+	name[0] = &quot;contactIds&quot;;  //This is the default for all id arrays in controller, though confusing	
+	try {
+		var key = sforce.apex.execute(&quot;mkto_si.LongGetMethodArguHandler&quot;, &quot;putArgus&quot;, { name:name, value:value, contactType:&quot;Contact&quot; }); 
+		window.top.location = &quot;/apex/mkto_si__Add_to_Marketo_Campaign?contactType=Contact&amp;key=&quot; + key +&quot;&amp;retUrl=&quot; + encodeURIComponent(document.location.href);	
+	} 
+	catch(err) {
+		window.top.location = &quot;/apex/mkto_si__Add_to_Marketo_Campaign?contactType=Contact&amp;contactIds=&quot; + idArr +&quot;&amp;retUrl=&quot; + encodeURIComponent(document.location.href);
+	}
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>mkto_si__Add_to_Watch_List</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Add to Watch List</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+
+var idArr = {!GETRECORDIDS($ObjectType.Contact)};
+if (idArr[0] == null){
+	alert(&apos;Please select at least one row&apos;);
+} else {
+	var value = new Array();
+	value[0] = new String(idArr);
+	var name = new Array();
+	name[0] = &quot;contactIds&quot;;  //This is the default for all id arrays in controller, though confusing	
+	try {
+		var key = sforce.apex.execute(&quot;mkto_si.LongGetMethodArguHandler&quot;, &quot;putArgus&quot;, { name:name, value:value, contactType:&quot;Contact&quot; }); 
+		window.top.location = &quot;/apex/mkto_si__Add_to_Watch_List?contactType=Contact&amp;key=&quot; + key +&quot;&amp;retUrl=&quot; + encodeURIComponent(document.location.href);	
+	} 
+	catch(err) {
+		window.top.location = &quot;/apex/mkto_si__Add_to_Watch_List?contactType=Contact&amp;contactIds=&quot; + idArr +&quot;&amp;retUrl=&quot; + encodeURIComponent(document.location.href);
+	}
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>mkto_si__Send_Marketo_Email</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send Marketo Email</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+
+var idArr = {!GETRECORDIDS($ObjectType.Contact)};
+if (idArr[0] == null){
+	alert(&apos;Please select at least one row&apos;);
+} else {
+	var value = new Array();
+	value[0] = new String(idArr);
+	var name = new Array();
+	name[0] = &quot;contactIds&quot;;  //This is the default for all id arrays in controller, though confusing	
+	try {
+		var key = sforce.apex.execute(&quot;mkto_si.LongGetMethodArguHandler&quot;, &quot;putArgus&quot;, { name:name, value:value, contactType:&quot;Contact&quot; }); 
+		window.top.location = &quot;/apex/mkto_si__Send_Marketo_Email?contactType=Contact&amp;key=&quot; + key +&quot;&amp;retUrl=&quot; + encodeURIComponent(document.location.href);	
+	} 
+	catch(err) {
+		window.top.location = &quot;/apex/mkto_si__Send_Marketo_Email?contactType=Contact&amp;contactIds=&quot; + idArr +&quot;&amp;retUrl=&quot; + encodeURIComponent(document.location.href);
+	}
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>qbdialer__Create_List</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create List</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&apos;https://sforce.insidesales.com/js/json.js&apos;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/11.1/connection.js&quot;)}
+
+var getTabClass = function() {
+	var bodytags = document.getElementsByTagName(&quot;body&quot;);
+	var classes  = bodytags[0].className.split(&apos; &apos;);
+	var hostname = window.location.hostname;
+	try {
+		try {
+			sforce.connection.sessionId=&quot;{!$Api.Session_ID}&quot;;
+		} catch (e) {
+			//
+		}
+		user  = sforce.connection.getUserInfo();
+		var theme = user.userUiSkin;
+		return {
+			&quot;css_base&quot;  : &quot;https://&quot;+window.location.hostname,
+			&quot;css_theme&quot; : theme,
+			&quot;css_class&quot; : classes[0]};
+	} catch (e) {
+		return {
+			&quot;css_base&quot; : &quot;https://&quot;+window.location.hostname,
+			&quot;css_class&quot; : classes[0],
+			&quot;css_theme&quot; : false
+		};
+	}
+};
+var getTabClassString = function() {
+	var css_info = getTabClass();
+	var tmp_url = &quot;&quot;;
+	tmp_url += &apos;&amp;css_base=&apos;+encodeURIComponent(css_info.css_base);
+	if (css_info.css_theme) {
+		tmp_url += &apos;&amp;css_theme=&apos;+encodeURIComponent(css_info.css_theme);
+	}
+	tmp_url += &apos;&amp;css_class=&apos;+encodeURIComponent(css_info.css_class);
+	return tmp_url;
+};
+
+openPopup = function(){
+
+var html = &quot;&lt;form name=&apos;createList&apos; method=&apos;post&apos; action=&apos;https://{!$User.qbdialer__is_subdomain__c}.insidesales.com/noauth/create_sf_list?&quot;;
+html += &quot;organization_id={!$Organization.Id}&amp;type=Account&quot;;
+html += &quot;&amp;token={!User.qbdialer__is_token__c}&quot;;
+html += &quot;&amp;agent_phone={!User.Phone}&quot;;
+html += &quot;&amp;salesforce_package_version=6.13.0&quot;;
+html += getTabClassString();
+html += &quot;&apos;&gt;&lt;input type=&apos;submit&apos; style=&apos;visibility:hidden&apos;&gt;&quot;; 
+var data = &quot;&quot;;
+for (var i=0; i &lt; idArray.length; i++)
+{
+data = {Id:idArray[i]};
+data = JSON.stringify(data);
+html += &quot;&lt;input type=&apos;hidden&apos; name=&apos;leads[]&apos; value=&apos;&quot;+data+&quot;&apos;&gt;&quot;;
+}
+html += &quot;&lt;&quot;+&quot;/form&gt;&quot;;
+html += &quot;&lt;script&gt;document.createList.submit();&lt;&quot;+&quot;/script&gt;&quot;;
+var host = document.location.protocol+&quot;//&quot;+
+document.location.hostname;
+var w = window.open(host, &quot;_blank&quot;, &quot;height=700,width=800,menubar=0,resizable=1,scrollbars=1,status=0,titlebar=0,toolbar=0,location=0&quot;);
+w.document.write(html);
+}
+
+var user_oauth_token = &apos;{!JSENCODE($User.qbdialer__is_token__c)}&apos;;
+if (!user_oauth_token) {
+	window.location.href=&quot;/apex/InsideSales_OAuth_Setup&quot;;
+} else {
+var idArray = {!GETRECORDIDS($ObjectType.Contact)};
+if(idArray.length == 0){
+alert(&quot;Please select at least one row&quot;);
+}
+else{
+openPopup();
+	}
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>qbdialer__Launch_Click_to_Call</fullName>
+        <availability>online</availability>
+        <description>For Beta</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Launch Click-to-Call</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>var th = window.top.document.body;
+			var s = window.top.document.createElement(&apos;script&apos;);
+			s.setAttribute(&apos;type&apos;,&apos;text/javascript&apos;);
+			s.setAttribute(&apos;src&apos;,&quot;/resource/qbdialer__c2c_resources/20150716033139/c2c_console.js&quot;);
+			th.appendChild(s);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>qbdialer__Manage_Lists</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Manage Lists</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&apos;/js/functions.js&apos;)}
+openPopup = function(){
+var html = &quot;&lt;html&gt;&lt;body&gt;&lt;form id=&apos;createList&apos; name=&apos;createList&apos; method=&apos;post&apos; action=&apos;https://{!$User.qbdialer__is_subdomain__c}.insidesales.com/noauth/manage_sf_lists?&quot;+
+&quot;organization_id={!$Organization.Id}&quot;+
+&quot;&amp;token={!User.qbdialer__is_token__c}&quot;+
+&quot;&amp;salesforce_package_version=6.13.0&quot;+
+&quot;&amp;agent_phone={!User.Phone}&apos;&gt;&quot;;
+html += &quot;&lt;input type=&apos;submit&apos; style=&apos;visibility:hidden&apos;&gt;&lt;&quot;+&quot;/form&gt;&quot;;
+html += &quot;&lt;script&gt;document.createList.submit();&lt;&quot;+&quot;/script&gt;&lt;/body&gt;&lt;/html&gt;&quot;;
+var host = document.location.protocol+&quot;//&quot;+
+document.location.hostname;
+var w = window.open(host, &quot;&quot;, &quot;height=200,width=600,menubar=0,resizable=1,scrollbars=1,status=0,titlebar=0,toolbar=0,location=0&quot;);
+w.document.write(html);
+}
+
+var user_oauth_token = &apos;{!JSENCODE($User.qbdialer__is_token__c)}&apos;;
+if (!user_oauth_token) {
+	window.location.href=&quot;/apex/InsideSales_OAuth_Setup&quot;;
+} else {
+	openPopup();
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>tinderbox__Add_Existing_Document</fullName>
+        <availability>online</availability>
+        <description>Add existing TinderBox Document to Contact</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Add Existing Document</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/tinderbox__add_document?&amp;sObjectType=Contact&amp;recordId={!Contact.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>tinderbox__New_TinderBox_Document</fullName>
+        <availability>online</availability>
+        <description>Create new TinderBox Document from Contact</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New TinderBox Document</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/tinderbox__create_document?sObjectType=Contact&amp;recordId={!Contact.Id}</url>
+    </webLinks>
+</CustomObject>

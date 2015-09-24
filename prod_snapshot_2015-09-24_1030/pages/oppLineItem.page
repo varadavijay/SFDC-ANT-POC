@@ -1,0 +1,6 @@
+<apex:page standardController="OpportunityLineItem" extensions="OppLineItemCntrl">
+	<head>
+		<c:OpportunityLineItemCSS />
+	</head>
+	<apex:detail inlineEdit="true" rerender="oliHistory" oncomplete="location.reload(true)"/>
+</apex:page>

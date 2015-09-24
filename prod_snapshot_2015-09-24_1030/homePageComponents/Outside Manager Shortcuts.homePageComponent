@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>Executive_Summary_Outside</links>
+    <links>My_KPIs_Outside</links>
+    <links>G_O_Digital_Outside_Dashboard</links>
+    <links>West_Region</links>
+    <links>East_Region</links>
+    <links>South_Region</links>
+    <links>Southwest_Region</links>
+    <links>Clipper_Region</links>
+    <links>Products_Prices</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

@@ -1,0 +1,5 @@
+Name:       {!Lead.Name}
+
+Market:      {!Lead.Market__c}
+
+Budget:     {!Lead.Budget_Range__c}

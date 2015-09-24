@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Market__c.DealChicken_RSM__c</field>
+    </columns>
+    <columns>
+        <field>Market__c.Target_Sell_Through__c</field>
+    </columns>
+    <columns>
+        <field>Market__c.Region__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Market__c.DealChicken_Approver__c</column>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_NAME</column>
+            <operator>notContain</operator>
+            <value>greensboro,collins,cloud,minneapolis</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Market__c.Market_Abbrev__c</column>
+            <operator>notEqual</operator>
+            <value>MnR,JkS</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>RSM to Market</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Market__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

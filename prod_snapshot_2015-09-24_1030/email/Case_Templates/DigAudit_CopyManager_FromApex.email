@@ -1,0 +1,10 @@
+An Audit Request has been submitted for your Market.  Please contact Courtney Vix with any questions or updates regarding the fulfillment of the audit or any changes and additions that need to be made. (courtney.vix@gannett.com)
+
+INFORMATION RECEIVED:
+
+Sales Rep              - {!Case.Affl_Sales_Rep__c}
+Company                - {!Case.Company_Name__c}
+Budget                 - {!Case.DA_Budget_Range__c}
+Products/Services      - {!Case.DA_List_Products_Services__c}
+Media Partner          - {!Case.Media_Partner__c}
+Industry               - {!Case.Industry_General__c}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Automated Rate Calculation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Automated Rate Calculation</value>
+    </caseValues>
+    <fields>
+        <label><!-- APIOnly ExternalId --></label>
+        <name>APIOnly_ExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Column End Range --></label>
+        <name>Column_End_Range__c</name>
+    </fields>
+    <fields>
+        <label><!-- Column Start Range --></label>
+        <name>Column_Start_Range__c</name>
+    </fields>
+    <fields>
+        <label><!-- MatrixResult --></label>
+        <name>MatrixResult__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Book --></label>
+        <name>Price_Book__c</name>
+        <relationshipLabel><!-- Automated Rate Calculation --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- Automated Rate Calculation --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Row End Range --></label>
+        <name>Row_End_Range__c</name>
+    </fields>
+    <fields>
+        <label><!-- Row Start Range --></label>
+        <name>Row_Start_Range__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

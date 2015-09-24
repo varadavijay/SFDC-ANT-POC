@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Newspaper History</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Newspaper History</value>
+    </caseValues>
+    <fields>
+        <label><!-- AZ Magazine --></label>
+        <name>AZ_Magazine__c</name>
+    </fields>
+    <fields>
+        <label><!-- AZ Society --></label>
+        <name>AZ_Society__c</name>
+    </fields>
+    <fields>
+        <label><!-- Buyer&apos;s Edge --></label>
+        <name>Buyer_s_Edge__c</name>
+    </fields>
+    <fields>
+        <label><!-- CareerBuilder Weekly --></label>
+        <name>CareerBuilder_Weekly__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classified --></label>
+        <name>Classified__c</name>
+    </fields>
+    <fields>
+        <label><!-- Custom ND --></label>
+        <name>Custom_ND__c</name>
+    </fields>
+    <fields>
+        <label><!-- DSM Moms --></label>
+        <name>DSM_Moms__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fifties Plus --></label>
+        <name>Fifties_Plus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Homestyle --></label>
+        <name>Homestyle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Juice --></label>
+        <name>Juice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>Lead__c</name>
+        <relationshipLabel><!-- Newspaper History --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Local Pre-Prints --></label>
+        <name>Local_Pre_Prints__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non-Daily Local Buyer&apos;s Edge --></label>
+        <name>Non_Daily_Local_Buyer_s_Edge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non-Daily Local La Voz, TV y Mas --></label>
+        <name>Non_Daily_Local_La_Voz_TV_y_Mas__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non-Daily Local La Voz --></label>
+        <name>Non_Daily_Local_La_Voz__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non-Daily Local Republic Direct --></label>
+        <name>Non_Daily_Local_Republic_Direct__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non-Daily Local Valley Values --></label>
+        <name>Non_Daily_Local_Valley_Values__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non-Daily Mags- Arizona Magazine --></label>
+        <name>Non_Daily_Mags_Arizona_Magazine__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non-Daily Mags- Custom Non-Daily --></label>
+        <name>Non_Daily__c</name>
+    </fields>
+    <fields>
+        <label><!-- Online Local- Banner Ads --></label>
+        <name>Online_Local_Banner_Ads__c</name>
+    </fields>
+    <fields>
+        <label><!-- Online Local- Email --></label>
+        <name>Online_Local_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Online Local- Other --></label>
+        <name>Online_Local_Other__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Advertising --></label>
+        <name>Other_Advertising__c</name>
+    </fields>
+    <fields>
+        <label><!-- Republic Direct --></label>
+        <name>Republic_Direct__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retail Preprints --></label>
+        <name>Retail_Preprints__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retail ROP- Zone --></label>
+        <name>Retail_ROP_Zone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retail ROP --></label>
+        <name>Retail_ROP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stick Its --></label>
+        <name>Stick_Its__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valley Values --></label>
+        <name>Valley_Values__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weekly- Altoona --></label>
+        <name>Weekly_Altoona__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weekly- Indianola --></label>
+        <name>Weekly_Indianola__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weekly- Press Citizen --></label>
+        <name>Weekly_Press_Citizen__c</name>
+    </fields>
+    <layouts>
+        <layout>Des Moines</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Product History --></label>
+            <section>Product History</section>
+        </sections>
+        <sections>
+            <label><!-- System Data --></label>
+            <section>System Data</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Newspaper History Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Product History --></label>
+            <section>Product History</section>
+        </sections>
+        <sections>
+            <label><!-- System Data --></label>
+            <section>System Data</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Des Moines --></label>
+        <name>Des_Moines</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

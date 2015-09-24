@@ -1,0 +1,6 @@
+Hello Team!,
+
+A Rate Request has been submitted to us by {!Case.Affl_Sales_Rep__c} of {!Case.Media_Partner__c}.
+
+Case Number : {!Case.CaseNumber}
+{!Case.Link}

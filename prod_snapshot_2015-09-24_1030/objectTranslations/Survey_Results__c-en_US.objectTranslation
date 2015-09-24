@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Survey Results</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Survey Results</value>
+    </caseValues>
+    <fields>
+        <help><!-- The business goals I want to drive are: --></help>
+        <label><!-- Business Goals --></label>
+        <name>Business_Goals__c</name>
+        <picklistValues>
+            <masterLabel>Ensure a Consistent Stream of Customers</masterLabel>
+            <translation><!-- Ensure a Consistent Stream of Customers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Excel During My High Season</masterLabel>
+            <translation><!-- Excel During My High Season --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Get New Customers</masterLabel>
+            <translation><!-- Get New Customers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Increase Awareness of my Brand</masterLabel>
+            <translation><!-- Increase Awareness of my Brand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Promote an Event or Sale</masterLabel>
+            <translation><!-- Promote an Event or Sale --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Survey Results --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Coupon Code --></label>
+        <name>Coupon_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Based upon the location above, my customers are within: --></help>
+        <label><!-- Customers Within --></label>
+        <name>Customers_within__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Google Places --></label>
+        <name>Google_Places__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>Lead__c</name>
+        <relationshipLabel><!-- Survey Results --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- What is your monthly budget? --></help>
+        <label><!-- Monthly Budget --></label>
+        <name>Monthly_Budget__c</name>
+        <picklistValues>
+            <masterLabel>$0</masterLabel>
+            <translation><!-- $0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$1,000</masterLabel>
+            <translation><!-- $1,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$2,000</masterLabel>
+            <translation><!-- $2,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$3,000</masterLabel>
+            <translation><!-- $3,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$500</masterLabel>
+            <translation><!-- $500 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PPC --></label>
+        <name>PPC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Print --></label>
+        <name>Print__c</name>
+    </fields>
+    <fields>
+        <label><!-- SEO --></label>
+        <name>SEO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Social Media --></label>
+        <name>Social_Media_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Field 2 --></label>
+        <name>Test_Field_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- How much time per week can you spend on marketing activities? --></help>
+        <label><!-- Time on Marketing --></label>
+        <name>Time_spent_weekly_on_marketing_activitie__c</name>
+        <picklistValues>
+            <masterLabel>1 hour</masterLabel>
+            <translation><!-- 1 hour --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10 hours</masterLabel>
+            <translation><!-- 10 hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20 hours</masterLabel>
+            <translation><!-- 20 hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 hours</masterLabel>
+            <translation><!-- 5 hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Time</masterLabel>
+            <translation><!-- No Time --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What kind of business do you have? --></help>
+        <label><!-- Type of Business --></label>
+        <name>Type_of_Business__c</name>
+        <picklistValues>
+            <masterLabel>Contracting and repair</masterLabel>
+            <translation><!-- Contracting and repair --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Services</masterLabel>
+            <translation><!-- Financial Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health services</masterLabel>
+            <translation><!-- Health services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home furniture and equipment stores</masterLabel>
+            <translation><!-- Home furniture and equipment stores --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal</masterLabel>
+            <translation><!-- Legal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufacturing</masterLabel>
+            <translation><!-- Manufacturing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real estate</masterLabel>
+            <translation><!-- Real estate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recreation and organizations</masterLabel>
+            <translation><!-- Recreation and organizations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restaurant and bars</masterLabel>
+            <translation><!-- Restaurant and bars --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation><!-- Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service - B2B</masterLabel>
+            <translation><!-- Service - B2B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service - B2C</masterLabel>
+            <translation><!-- Service - B2C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transportation shops and repair</masterLabel>
+            <translation><!-- Transportation shops and repair --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wholesale</masterLabel>
+            <translation><!-- Wholesale --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please enter the URL for your website --></help>
+        <label><!-- URL --></label>
+        <name>URL_for_website__c</name>
+    </fields>
+    <fields>
+        <help><!-- I use/would use my website for: --></help>
+        <label><!-- Use/Would use website for --></label>
+        <name>Use_Would_use_website_for__c</name>
+        <picklistValues>
+            <masterLabel>E-Commerce</masterLabel>
+            <translation><!-- E-Commerce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Gen</masterLabel>
+            <translation><!-- Lead Gen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provide Info</masterLabel>
+            <translation><!-- Provide Info --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Website Development --></label>
+        <name>Website_Development__c</name>
+    </fields>
+    <fields>
+        <help><!-- The customers I want to reach are in or around: --></help>
+        <label><!-- Zip of Target Customers --></label>
+        <name>Zip_of_Target_Customers__c</name>
+    </fields>
+    <fields>
+        <help><!-- Do you have a website? --></help>
+        <label><!-- Website --></label>
+        <name>website__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Decision Engine Data</layout>
+        <sections>
+            <label><!-- Coupon Code --></label>
+            <section>Coupon Code</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Recommendations --></label>
+            <section>Recommendations</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Cancellation Survey --></label>
+        <name>Cancellation_Survey</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Decision Engine --></label>
+        <name>Decision_Engine</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

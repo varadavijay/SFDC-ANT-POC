@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>PPC Order Detail Temp</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>PPC Order Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Additional Notes --></label>
+        <name>AdditionalNotes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Description --></label>
+        <name>BusinessDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Differentiators --></label>
+        <name>BusinessDifferentiators__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Website --></label>
+        <name>BusinessWebsite__c</name>
+    </fields>
+    <fields>
+        <label><!-- Campaign Goals --></label>
+        <name>CampaignGoals__c</name>
+    </fields>
+    <fields>
+        <label><!-- Competitors --></label>
+        <name>Competitors__c</name>
+    </fields>
+    <fields>
+        <label><!-- Copy Instructions --></label>
+        <name>CopyInstructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Design Instructions --></label>
+        <name>DesignInstructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enable AdWords --></label>
+        <name>EnableAdWords__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enable BingAds --></label>
+        <name>EnableBingAds__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ad Copy Approval Required --></label>
+        <name>IsAdCopyApprovalRequired__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Ready For Fullfilment --></label>
+        <name>IsReadyForFullfilment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Focus Category --></label>
+        <name>KTFocusCategoryId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Focus Category Name --></label>
+        <name>KTFocusCategoryName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Industry Category --></label>
+        <name>KTIndustryCategoryId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Industry Category Name --></label>
+        <name>KTIndustryCategoryName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason For Other Industry or Focus --></label>
+        <name>KTReasonForOther__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Capture Email --></label>
+        <name>LeadCaptureEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Management Fee --></label>
+        <name>ManagementFee__c</name>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10.5</masterLabel>
+            <translation><!-- 10.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11</masterLabel>
+            <translation><!-- 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11.5</masterLabel>
+            <translation><!-- 11.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12</masterLabel>
+            <translation><!-- 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12.5</masterLabel>
+            <translation><!-- 12.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13</masterLabel>
+            <translation><!-- 13 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13.5</masterLabel>
+            <translation><!-- 13.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14</masterLabel>
+            <translation><!-- 14 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14.5</masterLabel>
+            <translation><!-- 14.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15</masterLabel>
+            <translation><!-- 15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15.5</masterLabel>
+            <translation><!-- 15.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16</masterLabel>
+            <translation><!-- 16 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16.5</masterLabel>
+            <translation><!-- 16.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>17</masterLabel>
+            <translation><!-- 17 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>17.5</masterLabel>
+            <translation><!-- 17.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18</masterLabel>
+            <translation><!-- 18 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18.5</masterLabel>
+            <translation><!-- 18.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19</masterLabel>
+            <translation><!-- 19 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19.5</masterLabel>
+            <translation><!-- 19.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20</masterLabel>
+            <translation><!-- 20 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20.5</masterLabel>
+            <translation><!-- 20.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>21</masterLabel>
+            <translation><!-- 21 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>21.5</masterLabel>
+            <translation><!-- 21.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>22</masterLabel>
+            <translation><!-- 22 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>22.5</masterLabel>
+            <translation><!-- 22.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>23</masterLabel>
+            <translation><!-- 23 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>23.5</masterLabel>
+            <translation><!-- 23.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24</masterLabel>
+            <translation><!-- 24 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24.5</masterLabel>
+            <translation><!-- 24.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25</masterLabel>
+            <translation><!-- 25 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25.5</masterLabel>
+            <translation><!-- 25.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>26</masterLabel>
+            <translation><!-- 26 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>26.5</masterLabel>
+            <translation><!-- 26.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>27</masterLabel>
+            <translation><!-- 27 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>27.5</masterLabel>
+            <translation><!-- 27.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>28</masterLabel>
+            <translation><!-- 28 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>28.5</masterLabel>
+            <translation><!-- 28.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>29</masterLabel>
+            <translation><!-- 29 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>29.5</masterLabel>
+            <translation><!-- 29.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30</masterLabel>
+            <translation><!-- 30 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Negative Terms --></label>
+        <name>NegativeTerms__c</name>
+    </fields>
+    <fields>
+        <label><!-- OpportunityLineItemId --></label>
+        <name>OpportunityLineItemId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Products &amp; Services --></label>
+        <name>ProductsAndServices__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proxy Eligible --></label>
+        <name>ProxyEligible__c</name>
+    </fields>
+    <fields>
+        <label><!-- Specials And Offers --></label>
+        <name>SpecialsAndOffers__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

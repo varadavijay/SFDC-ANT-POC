@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Tracking Record</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Tracking Records</value>
+    </caseValues>
+    <fields>
+        <label><!-- Action Owner Id --></label>
+        <name>Action_Owner_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action Owner Role --></label>
+        <name>Action_Owner_Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action Owner --></label>
+        <name>Action_Owner__c</name>
+        <relationshipLabel><!-- Tracking Records --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Associate --></label>
+        <name>Associate__c</name>
+        <relationshipLabel><!-- Tracking Records --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Code Period --></label>
+        <name>Code_Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- DC Sharer Id --></label>
+        <name>DC_Sharer_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event --></label>
+        <name>Event__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved &amp; Signed</masterLabel>
+            <translation><!-- Approved &amp; Signed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Booked Appointment</masterLabel>
+            <translation><!-- Booked Appointment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Created</masterLabel>
+            <translation><!-- Created --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GL Assist</masterLabel>
+            <translation><!-- GL Assist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lost</masterLabel>
+            <translation><!-- Lost --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pitched</masterLabel>
+            <translation><!-- Pitched --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent</masterLabel>
+            <translation><!-- Sent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signed</masterLabel>
+            <translation><!-- Signed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Won</masterLabel>
+            <translation><!-- Won --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- GO Calender Id --></label>
+        <name>GL_Calender_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- GO Calender --></label>
+        <name>GL_Calender__c</name>
+        <relationshipLabel><!-- Tracking Records --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- KPI Rep Id --></label>
+        <name>KPI_Rep_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI Rep --></label>
+        <name>KPI_Rep__c</name>
+        <relationshipLabel><!-- Tracking Records --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Move Approve Date --></label>
+        <name>Move_Approve_Date__c</name>
+        <picklistValues>
+            <masterLabel>-1</masterLabel>
+            <translation><!-- -1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-10</masterLabel>
+            <translation><!-- -10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-2</masterLabel>
+            <translation><!-- -2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-3</masterLabel>
+            <translation><!-- -3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-4</masterLabel>
+            <translation><!-- -4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-5</masterLabel>
+            <translation><!-- -5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-6</masterLabel>
+            <translation><!-- -6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-7</masterLabel>
+            <translation><!-- -7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-8</masterLabel>
+            <translation><!-- -8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>-9</masterLabel>
+            <translation><!-- -9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0</masterLabel>
+            <translation><!-- 0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opp Close Date --></label>
+        <name>Opp_Close_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Created --></label>
+        <name>Opp_Created__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Id --></label>
+        <name>Opp_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Owner --></label>
+        <name>Opp_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Stage --></label>
+        <name>Opp_Stage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Tracking Records --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Period --></label>
+        <name>Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Stamp Code --></label>
+        <name>Time_Stamp_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Stamp --></label>
+        <name>Time_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Credit --></label>
+        <name>Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Week Code --></label>
+        <name>Week_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Week Of --></label>
+        <name>Week_Of__c</name>
+    </fields>
+    <layouts>
+        <layout>Tracking Record Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

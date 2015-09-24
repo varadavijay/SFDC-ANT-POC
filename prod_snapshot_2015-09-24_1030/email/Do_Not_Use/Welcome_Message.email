@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.main {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #333333;
+}
+ul {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	list-style-type: square;
+	line-height: 1.5;
+}
+.style3 {font-size: 16px; color: #4E5BA7; font-family: Geneva, Arial, Helvetica, sans-serif;}
+-->
+</style>
+</head>
+
+<body>
+<table width="600" border="0" cellspacing="0" cellpadding="0">
+  <tr valign="top">
+    <td height="60" colspan="5"><img src="https://na7.salesforce.com/servlet/servlet.ImageServer?oid=00DA0000000HEOt&id=015A0000000MAND" alt="Gannett Local" width="285" height="49" /></td>
+  </tr>
+  <tr>
+    <td colspan="5" bgcolor="#FCBA63">&nbsp;</td>
+  </tr>
+  <tr valign="top">
+    <td width="1" bgcolor="#999999"><img src="images/spacer.gif" alt=" " width="1" height="1" /></td>
+    <td width="200"><table width="400" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td><p class="main">Hi {!Contact.FirstName},</p>
+          <p class="main">Welcome to Gannett Local! I'll be your marketing specialist -- I'm here to make sure your campaign delivers results for {!Opportunity.Account}.  If you ever have any questions – from how something works, to how to update your ads for a big sale – I'm here to help.</p>
+          <p class="main">You can expect two important phone calls in the next two days:</p>
+          <p class="main"><b>First, our customer care team will call to help design and place your print ads.</b> They know tons about ad design and promotions, but want your ads to capture your business's personality too.  They'll be asking about any business information, discounts or logo images you'd like to include. They'll also confirm the zip codes you'd like to target, to make sure we reach the right customers.</p>
+          <p class="main"><b>Second, expect a call from our tech team. </b>These digital experts will set up your online strategy, so when someone searches for your type of business in your neighborhood, you show up near the top.</p>
+          <p class="main">I'll be coordinating this whole process - so if you have any questions, give me a call or shoot an email.  I'm here to make it simple!</p>
+          <p class="main">{!Opportunity.OwnerFullName}<br />
+{!User.X800_Number__c}<br />
+{!Opportunity.OwnerEmail}<br />
+            <a href="http://GannettLocal.com">GannettLocal.com </a></p>
+          </td>
+      </tr>
+    </table></td>
+    <td width="1" bgcolor="#999999"><img src="images/spacer.gif" alt=" " width="1" height="1" /></td>
+    <td width="99" bgcolor="#FEE1BD"><table width="199" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td class="main"><p>&nbsp;</p>
+          </td>
+      </tr>
+    </table></td>
+    <td width="1" bgcolor="#999999"><img src="images/spacer.gif" alt=" " width="1" height="1" /></td>
+  </tr>
+  <tr>
+    <td colspan="5" bgcolor="#FCBA63">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

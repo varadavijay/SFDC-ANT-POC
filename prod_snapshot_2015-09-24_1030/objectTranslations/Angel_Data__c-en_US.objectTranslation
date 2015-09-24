@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Angel Queue Activity</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Angel&apos;s Queue Activity</value>
+    </caseValues>
+    <fields>
+        <label><!-- Agent Name --></label>
+        <name>Agent_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Direction --></label>
+        <name>Call_Direction__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Notes --></label>
+        <name>Call_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dialed Number --></label>
+        <name>Dialed_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Month --></label>
+        <name>Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outcome --></label>
+        <name>Outcome__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requested Skill --></label>
+        <name>Requested_Skill__c</name>
+    </fields>
+    <fields>
+        <label><!-- Talk Time (Minutes) --></label>
+        <name>Talk_Time_Minutes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Talk Time (Seconds) --></label>
+        <name>Talk_Time_Seconds__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Enter Queue --></label>
+        <name>Time_Enter_Queue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Time (Minutes) --></label>
+        <name>Total_Time_Minutes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Time (Seconds) --></label>
+        <name>Total_Time_Seconds__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transfer Time (Minutes) --></label>
+        <name>Transfer_Time_Minutes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transfer Time (Seconds) --></label>
+        <name>Transfer_Time_Seconds__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wait Time (Minutes) --></label>
+        <name>Wait_Time_Minutes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wait Time (Seconds) --></label>
+        <name>Wait_Time_Seconds__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZenDesk Ticket Link --></label>
+        <name>ZenDesk_Ticket_Link__c</name>
+    </fields>
+    <layouts>
+        <layout>Angel Data Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

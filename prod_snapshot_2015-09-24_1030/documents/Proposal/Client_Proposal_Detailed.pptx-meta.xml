@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This proposal breaks down each product individually. Delete the pages unnecessary for your proposal and provide your client with a quick and detailed proposal.</description>
+    <internalUseOnly>false</internalUseOnly>
+    <name>Client Proposal (Detailed)</name>
+    <public>false</public>
+</Document>

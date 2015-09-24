@@ -1,0 +1,33 @@
+<apex:page standardController="Contact" extensions="myWeb2GLPeopleExtension" title="GL People" showHeader="false" sidebar="false">
+    <apex:composition template="{!$Site.Template}"> 
+        <apex:define name="body">
+            <apex:form >
+                <apex:pageBlock mode="mainDetail">
+                    <apex:pageBlockButtons location="top">
+                    <apex:commandButton value="Submit" action="{!saveContact}"/>
+                    </apex:pageBlockButtons>
+                    <apex:pageBlockSection title="New Person Details" collapsible="false" columns="2" showHeader="true">
+                    
+                        <apex:inputField value="{!Contact.FirstName}" required="true" taborderhint="1" label="First Name:"/>
+                        <apex:inputField value="{!Contact.Email}" required="true" taborderhint="4" label="Email:"/>
+                        <apex:inputField value="{!Contact.LastName}" required="true" taborderhint="2" label="Last Name:"/>
+                        <apex:inputField value="{!Contact.Phone}" required="true" taborderhint="5" label="Phone:"/>
+                        <apex:inputField value="{!Contact.Title}" required="true" taborderhint="3" label="Title:"/>
+                        
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel >Select The Primary Media Partner:</apex:outputlabel>
+                            <apex:outputPanel layout="block" styleClass="requiredInput">
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                            <apex:selectList value="{!Contact.AccountId}" multiselect="false" size="1" style="width:75%; font-size:1em;" required="true" tabindex="6" >
+                            <apex:selectOptions value="{!itemsm}" id="moptions"/>
+                            </apex:selectList>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:form>
+        </apex:define> 
+    </apex:composition>
+  <!-- Begin Default Content REMOVE THIS -->
+</apex:page>

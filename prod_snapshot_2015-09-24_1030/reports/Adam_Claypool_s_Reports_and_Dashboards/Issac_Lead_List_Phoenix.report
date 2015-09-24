@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>Lead.Gannett_Market__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Market__c</field>
+    </columns>
+    <columns>
+        <field>TITLE</field>
+    </columns>
+    <columns>
+        <field>COMPANY</field>
+    </columns>
+    <columns>
+        <field>LEAD_SOURCE</field>
+    </columns>
+    <columns>
+        <field>RATING</field>
+    </columns>
+    <columns>
+        <field>STREET</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <filter>
+        <booleanFilter>(1 AND 2 AND 3 AND (4 OR 5)) AND 6</booleanFilter>
+        <criteriaItems>
+            <column>OWNER</column>
+            <operator>notEqual</operator>
+            <value>susan spier</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <operator>notEqual</operator>
+            <value>trisha daniels</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <operator>notEqual</operator>
+            <value>jeanette lare</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Market__c</column>
+            <operator>contains</operator>
+            <value>Phoenix</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Gannett_Market__c</column>
+            <operator>contains</operator>
+            <value>phoenix</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <operator>equals</operator>
+            <value>Lead.Deal_Chicken</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Issac Lead List_Phoenix</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_PREVCUR2FY</interval>
+    </timeFrameFilter>
+</Report>

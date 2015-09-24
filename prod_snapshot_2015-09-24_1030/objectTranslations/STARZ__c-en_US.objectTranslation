@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>STARZ</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>STARZ</value>
+    </caseValues>
+    <fields>
+        <label><!-- Nominee --></label>
+        <name>Nominee__c</name>
+        <relationshipLabel><!-- STARZ (Nominee) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Describe the particular scenario or event that triggered your nomination. --></help>
+        <label><!-- STARZ Event --></label>
+        <name>STARZ_Event__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the general feeling you receive from this person when working with them. Not specific to any particular accomplishment, but rather how they contribute to the atmosphere of the workplace. --></help>
+        <label><!-- Category --></label>
+        <name>Special__c</name>
+        <picklistValues>
+            <masterLabel>Energetic</masterLabel>
+            <translation><!-- Energetic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Helpful</masterLabel>
+            <translation><!-- Helpful --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Persistent</masterLabel>
+            <translation><!-- Persistent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Positive</masterLabel>
+            <translation><!-- Positive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Supervisor --></label>
+        <name>Supervisor__c</name>
+        <relationshipLabel><!-- STARZ (Supervisor) --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>STARZ Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

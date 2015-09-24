@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Campaign$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.LeadCampaignMembers$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.LeadCampaignMembers.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>Campaign.LeadCampaignMembers.Activities$ActivityDate</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Campaign.LeadCampaignMembers.Activities$ActivityDate</column>
+            <operator>greaterOrEqual</operator>
+            <value>7/25/2013 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Campaign.LeadCampaignMembers.Activities$Owner</column>
+            <operator>equals</operator>
+            <value>Amira Davis,Kamala Elliott,Nicole Cantone,Michelle Buccione,Anne Haffey,Charles May,Chris Stamm,David Swick,John Keninger,Killian McKiernan,La&apos;Nae Norwood,Noa Gibson,Tuck Rossmiller,Wendy McDaniel,Amanda Rebello,Brett Sutter,Matt Payne,Jon Heyermann,Carolyn Stittgen,Tiffany Archibald,Dana Santini,Kelley Milner,Quentin Mathews,Beth Peterson,Robert Craft,Doug Dittamore,Ed Hutchins,Stefan Seaborn,Josh Jackson,Nicole Calhoun,Elizabeth Nolan,Terry Noll,Todd Bosteder,Neil Roony,Justin Sekerak,Ricardo Benton,James Barner,Matt Vitiello,Jesse Stefko,Kristen Hageness,Amanda McLernon</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Campaign.LeadCampaignMembers.Activities$Subject</column>
+            <operator>contains</operator>
+            <value>email</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Campaign.LeadCampaignMembers.Activities$Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Campaign.LeadCampaignMembers$Company</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Lead Gen Accountants_Email_OS</name>
+    <params>
+        <name>scopeid</name>
+        <value>701F0000000e8xF</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Campaigns_Leads_Activity__c</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Campaign.LeadCampaignMembers$LastActivityDate</dateColumn>
+        <endDate>2013-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2013-12-02</startDate>
+    </timeFrameFilter>
+</Report>

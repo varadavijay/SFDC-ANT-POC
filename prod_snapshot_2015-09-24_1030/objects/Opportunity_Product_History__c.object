@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>History object used to track status changes in Opportunity Products</description>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Current_Product_Stage__c</fullName>
+        <externalId>false</externalId>
+        <formula>OLI_Project__r.Project_Status__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current Product Stage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Duration__c</fullName>
+        <externalId>false</externalId>
+        <label>Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>H2GL__c</fullName>
+        <description>Calculated as a sum of the duration for an OLI in different stages (The &apos;Days To Go Live&apos; is not included in this calculation).</description>
+        <externalId>false</externalId>
+        <label>Total Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>OLI_Product_SLA_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(OLI_Product__r.SLA_Product_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>OLI Product SLA Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OLI_Product_SLA__c</fullName>
+        <externalId>false</externalId>
+        <formula>OLI_Product__r.SLA_Bus_Days__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>OLI Product SLA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OLI_Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>OLI Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Opportunity Product Histories</relationshipLabel>
+        <relationshipName>Opportunity_Product_Histories</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OLI_Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>OLI Project</label>
+        <referenceTo>Project__c</referenceTo>
+        <relationshipLabel>Opportunity Product Histories</relationshipLabel>
+        <relationshipName>Opportunity_Product_Histories</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OLI_Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>OLI Stage</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Product_Type__c</fullName>
+        <description>Type of product</description>
+        <externalId>false</externalId>
+        <label>Opportunity Product Type</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Product__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity Product</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Sale_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Opportunity__r.Type)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Sale Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Won__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.IsWon</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Won</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Opportunity Product Histories</relationshipLabel>
+        <relationshipName>Opportunity_Product_Histories</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Days_To_Go_Live__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Days To Go Live</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Live_DateTime__c</fullName>
+        <externalId>false</externalId>
+        <formula>OLI_Project__r.Live_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Live DateTime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Product_Live_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Live Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SLA_Performance_Query__c</fullName>
+        <description>OR(CONTAINS(Current_Product_Stage__c,&apos;Live&apos;),CONTAINS(Current_Product_Stage__c,&apos;Fulfilled&apos;))</description>
+        <externalId>false</externalId>
+        <formula>IF(
+AND(
+NOT(ISNULL( Product_Live_DateTime__c)),
+OR(NOT(ISNULL(Time_Out__c)),CONTAINS(Current_Product_Stage__c,&apos;Live&apos;),CONTAINS(Current_Product_Stage__c,&apos;Fulfilled&apos;)),
+OR(CONTAINS(Current_Product_Stage__c,&apos;Live&apos;),CONTAINS(Current_Product_Stage__c,&apos;Fulfilled&apos;))
+)
+,true,false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SLA Performance Query</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sell_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>OLI_Project__r.Sell_Type__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sell Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_In__c</fullName>
+        <externalId>false</externalId>
+        <label>Time_In</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Time_Out__c</fullName>
+        <externalId>false</externalId>
+        <label>Time Out</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <label>Opportunity Product History</label>
+    <listViews>
+        <fullName>All</fullName>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5)</booleanFilter>
+        <columns>LAST_UPDATE</columns>
+        <columns>OLI_Product__c</columns>
+        <columns>Opportunity_Product_Type__c</columns>
+        <columns>Product_Live_DateTime__c</columns>
+        <columns>Opportunity_Product__c</columns>
+        <columns>Current_Product_Stage__c</columns>
+        <columns>OLI_Project__c</columns>
+        <columns>OLI_Stage__c</columns>
+        <columns>Time_In__c</columns>
+        <columns>Time_Out__c</columns>
+        <columns>Duration__c</columns>
+        <columns>H2GL__c</columns>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LAST_UPDATE</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:100</value>
+        </filters>
+        <filters>
+            <field>Product_Live_DateTime__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>Current_Product_Stage__c</field>
+            <operation>contains</operation>
+            <value>Live,Fulfilled</value>
+        </filters>
+        <filters>
+            <field>OLI_Stage__c</field>
+            <operation>equals</operation>
+            <value>Awaiting Onboard,In Fulfillment,Waiting On Client Resource</value>
+        </filters>
+        <filters>
+            <field>OLI_Stage__c</field>
+            <operation>equals</operation>
+            <value>Closed Won,Waiting On Client Approval,Pending</value>
+        </filters>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Filter_by_OppProd</fullName>
+        <columns>NAME</columns>
+        <columns>OLI_Stage__c</columns>
+        <columns>Time_In__c</columns>
+        <columns>Time_Out__c</columns>
+        <columns>Duration__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>Current_Product_Stage__c</columns>
+        <columns>Opportunity_Product__c</columns>
+        <columns>Opportunity_Product_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Opportunity_Product__c</field>
+            <operation>contains</operation>
+            <value>00kF000000XTnl0IAD</value>
+        </filters>
+        <label>Filter by OppProd</label>
+        <sharedTo>
+            <group>SystemAdminstrators</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>SLA-{00000000}</displayFormat>
+        <label>Opportunity Product History Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Opportunity Product Histories</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+</CustomObject>

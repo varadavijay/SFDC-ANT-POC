@@ -1,0 +1,21 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<div><p class="MsoNormal"><font face="Arial, sans-serif" size="2" color="#666666">Hi&nbsp;<font>{!Contact.Name},</font></font></p><p class="MsoNormal"><font face="Arial, sans-serif" size="2" color="#666666"><br></font></p><p class="MsoNormal"><font face="Arial, sans-serif" size="2" color="#666666">Thank you for providing your requested changes to the
+DealChicken proof. Unfortunately we will be unable to make the
+requested changes because it falls outside of our proofing guidelines.<o:p></o:p></font></p><p class="MsoNormal"><font face="Arial, sans-serif" size="2" color="#666666"><br></font></p>
+
+<p class="MsoNormal"><span style="line-height: 115%;"><font face="Arial, sans-serif" size="2" color="#666666">As stated on the proof approval email, we can only make
+revisions if the information is inaccurate or could be perceived as false
+advertising. Your request is considered a marketing change, rather than a
+factual change.&nbsp;<o:p></o:p></font></span></p><p class="MsoNormal"><font face="Arial, sans-serif" size="2" color="#666666"><br></font></p>
+
+<p class="MsoNormal"><font face="Arial, sans-serif" size="2" color="#666666">Our professional writers craft a
+message in a manner to ensure your business is the star of our site and the
+proof in its original form does just that!&nbsp;</font><span style="line-height: 115%;"><font face="Arial, sans-serif" size="2" color="#666666">Remember that it’s in
+our best interest to help you sell as many deals as possible</font></span><span style="font-family: Arial, sans-serif; font-size: 12pt; line-height: 115%;">.</span><span style="color: rgb(102, 102, 102); font-family: Arial, sans-serif; font-size: small;">&nbsp;Please take another look at the proof and if all deal details (fine
+print and company details) are accurate, </span><u style="color: rgb(102, 102, 102); font-family: Arial, sans-serif; font-size: small;">please provide your written approval.</u></p><p class="MsoNormal"><font face="Arial, sans-serif" size="2" color="#666666"><br></font></p><p class="MsoNormal"><font face="Arial, sans-serif" size="2" color="#666666"><b>You can preview the proof again by clicking here:&nbsp;{!Opportunity.DC_Proof_Hyperlink__c}</b></font></p></div><div><font face="Arial, sans-serif" size="2" color="#666666"><br></font></div><div><font face="Arial, sans-serif" size="2" color="#666666"><span style="line-height: 115%;">Thanks for your understanding in this matter. &nbsp;</span><span style="line-height: 115%;"><br>
+<br>
+</span><span style="line-height: 115%;">My best,&nbsp;</span></font></div>]]></td>
+</tr>
+</table>

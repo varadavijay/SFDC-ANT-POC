@@ -1,0 +1,12 @@
+Hello {!Opportunity.Sales_Rep__c},
+
+This email is to inform you that the below G/O Digital Product has gone live! Please communicate to your billing department accordingly.  If you have questions regarding this product please contact your GO Digital Account Manager, noted below. 
+
+Thank You!   --   Your GO Team
+
+
+Customer      :     {!Opportunity.Account}
+
+Product       :     {!Product2.Name}
+
+Digital AM    :     {!Opportunity.Dig_Account_Manager__c}

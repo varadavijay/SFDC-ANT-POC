@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <description>Holds the different threshold levels for the Tier Levels</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Lower_Limit__c</fullName>
+        <description>The upper limit of the monthly Unit Price (Total \ Quantity) of an Opportunity Product</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The upper limit of the monthly Unit Price (Total \ Quantity) of an Opportunity Product</inlineHelpText>
+        <label>Lower Limit</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Upper_Limit__c</fullName>
+        <description>The upper limit of the monthly Unit Price (Total \ Quantity) of an Opportunity Product</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The upper limit of the monthly Unit Price (Total \ Quantity) of an Opportunity Product</inlineHelpText>
+        <label>Upper Limit</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>true</unique>
+    </fields>
+    <label>PPC Order Form TierThresholds</label>
+</CustomObject>

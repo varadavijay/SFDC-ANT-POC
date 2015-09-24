@@ -1,0 +1,28 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<font style="background-color: rgb(255, 255, 255);">&nbsp;Hi&nbsp;</font><span style="background-color: rgb(255, 255, 255);">{!Opportunity.SA_Contact_Name__c}</span><font style="background-color: rgb(255, 255, 255);">,</font><div><font style="background-color: rgb(255, 255, 255);"><br></font></div><div><font style="background-color: rgb(255, 255, 255);"><p class="MsoNormal">Your banner ad for AZ central is currently scheduled to run
+on [insert date] and is ready to be approved. Please click on the link below
+for a preview of what your ad will look like. To run this re-skin we require an
+approval response within 48 hours.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Please note, we can only make factual changes to the
+re-skin. We appreciate your assistance and approval and look forward to
+promoting your ad on AZCentral.com</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Click the link to view your ad:</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">If you have any questions about your ad or deal, please feel
+free to reach out to me at anytime.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Best,</p><p class="MsoNormal">Katrina</p></font></div>]]></td>
+</tr>
+</table>

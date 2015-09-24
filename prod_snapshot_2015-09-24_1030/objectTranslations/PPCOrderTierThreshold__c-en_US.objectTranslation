@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>PPC Order Form TierThresholds</value>
+    </caseValues>
+    <fields>
+        <help><!-- The upper limit of the monthly Unit Price (Total \ Quantity) of an Opportunity Product --></help>
+        <label><!-- Lower Limit --></label>
+        <name>Lower_Limit__c</name>
+    </fields>
+    <fields>
+        <help><!-- The upper limit of the monthly Unit Price (Total \ Quantity) of an Opportunity Product --></help>
+        <label><!-- Upper Limit --></label>
+        <name>Upper_Limit__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

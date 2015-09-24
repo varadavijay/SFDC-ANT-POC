@@ -1,0 +1,221 @@
+<apex:page standardController="Opportunity" extensions="OpportunityPriceBookController" id="pgId">
+ <apex:form >
+ <apex:actionstatus id="sts">
+            <apex:facet name="start">
+                <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb; height:100%;opacity:0.65;width:100%;">
+                    <div class="waitingHolder" style="top: 100px; width: 91px;">
+                    <img class="waitingImage" src="/img/loading.gif" title="Please Wait..." />
+                    <span class="waitingDescription">Loading...</span>
+                    </div>
+                </div>
+            </apex:facet>
+  </apex:actionstatus>
+  <apex:sectionHeader Title="Product selection for" subtitle="{!oppty.Name}"/>
+   <div align="center">
+     <apex:commandButton value="Select" action="{!redirectOpty}" reRender="selectMsg"/> &nbsp;&nbsp;
+     <apex:commandButton value="Cancel" action="{!Cancel}" reRender="pgId"/>    
+ </div><br/>
+  <apex:pageBlock title="Search Product" id="pb">
+  
+     <script type="text/javascript">
+      function fetchTypedString() {    
+          searchProducts(
+             document.getElementById('{!$Component.pgblockSec.pgblockSecIt.productName}').value
+          );
+      }
+     </script>
+     
+      <apex:actionFunction name="searchProducts" action="{!createQueryString}" rerender="pbSect">
+        <apex:param name="productName" value="" />
+      </apex:actionFunction>
+      
+      <apex:pageBlockSection columns="1" id="pgblockSec">
+          <apex:pageBlockSectionItem id="pgblockSecIt">
+              <apex:outputLabel style="font-weight:bold;">Product Name :  </apex:outputLabel>
+              <apex:inputText onkeyup="fetchTypedString();" id="productName"/>
+          </apex:pageBlockSectionItem>
+      </apex:pageBlockSection> 
+     </apex:pageBlock><br/>
+     
+   <!--  <apex:outputPanel id="btns">
+     <div align="right">
+         <apex:commandButton value="First" action="{!FirstPage}"  disabled="{!prev}" reRender="pbTable,btns" status="sts"/> &nbsp;&nbsp;
+         <apex:commandButton value="Previous" action="{!previous}" disabled="{!prev}" reRender="pbTable,btns" status="sts"/> &nbsp;&nbsp;
+         <apex:commandButton value="Next" action="{!next}" disabled="{!nxt}" reRender="pbTable,btns" status="sts"/> &nbsp;&nbsp;
+         <apex:commandButton value="Last" action="{!LastPage}" disabled="{!nxt}" reRender="pbTable,btns" status="sts"/> &nbsp;&nbsp;
+     </div>
+     </apex:outputPanel> -->
+     
+     <apex:outputPanel id="selectMsg">
+      <apex:pageMessages />
+     </apex:outputPanel>
+     
+     <apex:inputCheckbox value="{!ShowProducts}" id="sProdId"> Show All Selected Products
+     <apex:actionSupport event="onclick"  reRender="Sprod" status="sts"/>
+     </apex:inputCheckbox><br/>
+     
+     <apex:outputPanel id="Sprod">
+     <apex:pageBlock title="Selected Products" rendered="{!ShowProducts && selectedProducts.size !=0}">
+     <apex:pageBlockSection columns="2"> 
+         <apex:pageBlockTable value="{!selectedProducts}" var="price" rendered="{!selectedProducts.size !=0}">
+    
+     <apex:column value="{!price.Product2.name}"/>
+     <apex:column value="{!price.UnitPrice}" headerValue="List Price"/>
+     <!-- DEV-2415
+     <apex:column value="{!price.Product2.family}"/>
+     
+     
+     <apex:column value="{!price.Product2.RecordType.Name}" headerValue="Record Type"/>
+     <apex:column value="{!price.productcode}"/>
+     <apex:column value="{!price.Product2.isActive}" headerValue="Active(Product)"/>
+     -->  
+          
+    </apex:pageBlockTable>
+    </apex:pageBlockSection>
+     </apex:pageBlock>
+     </apex:outputPanel>
+     
+     <apex:pageBlock id="pbTable">
+     <apex:pageBlockSection columns="1" id="pbSect">   
+     <apex:pageMessages rendered="{!!HideTable}"></apex:pageMessages>   
+     <apex:pageBlockTable value="{!wrapPriceBkList}" var="prodWrap" title="All Price Book" rendered="{!HideTable}">
+        <apex:column >
+            <apex:facet name="header">
+                <apex:outputText > Select</apex:outputText>
+            </apex:facet>
+            
+            <apex:inputCheckbox value="{!prodWrap.selected}" >
+             <apex:actionSupport event="onclick" action="{!productSelected}" reRender="pbSect,Sprod,sProdId" status="sts" >
+             <apex:param value="{!prodWrap.priceBook.Id}" name="ProductId" assignTo="{!ProductId}" />
+             </apex:actionSupport>
+            </apex:inputCheckbox>
+        </apex:column>        
+        <apex:column value="{!prodWrap.priceBook.Product2.name}">
+         <apex:facet name="header">   
+           <apex:commandLink action="{!createQueryString}" value="Product Name{!IF(sortExpression=='Product2.name',IF(sortDirection='ASC','▼','▲'),'')}" reRender="pbTable">
+             <apex:param value="Product2.name" name="column" assignTo="{!sortExpression}" ></apex:param>
+           </apex:commandLink>
+         </apex:facet>
+         </apex:column>
+         <!-- DEV-2415
+         <apex:column value="{!prodWrap.priceBook.Product2.Description}" width="26%">
+         <apex:facet name="header">   
+           <apex:commandLink action="{!createQueryString}" value="Product Description {!IF(sortExpression=='Product2.Description',IF(sortDirection='ASC','▼','▲'),'')}" reRender="pbTable">
+             <apex:param value="Product2.Description" name="column" assignTo="{!sortExpression}" ></apex:param>
+           </apex:commandLink>
+         </apex:facet>
+         </apex:column>
+          -->
+         <apex:column value="{!prodWrap.priceBook.UnitPrice}">
+         <apex:facet name="header">   
+           <apex:commandLink action="{!createQueryString}" value="List Price{!IF(sortExpression=='UnitPrice',IF(sortDirection='ASC','▼','▲'),'')}" reRender="pbTable">
+             <apex:param value="UnitPrice" name="column" assignTo="{!sortExpression}" ></apex:param>
+           </apex:commandLink>
+         </apex:facet>
+         </apex:column>
+         
+         <!-- DEV-2415
+         <apex:column value="{!prodWrap.priceBook.Product2.family}">
+         <apex:facet name="header">   
+           <apex:commandLink action="{!createQueryString}" value="Product Family{!IF(sortExpression=='Product2.family',IF(sortDirection='ASC','▼','▲'),'')}" reRender="pbTable">
+             <apex:param value="Product2.family" name="column" assignTo="{!sortExpression}" ></apex:param>
+           </apex:commandLink>
+         </apex:facet>
+         </apex:column>
+         
+         <apex:column value="{!prodWrap.priceBook.Product2.Components__c}">
+         <apex:facet name="header"> 
+         </apex:facet>  
+         </apex:column>
+         
+         <apex:column value="{!prodWrap.priceBook.Product2.RecordType.Name}" >
+         <apex:facet name="header">   
+           <apex:commandLink action="{!createQueryString}" value="Record Type {!IF(sortExpression=='Product2.RecordType.Name',IF(sortDirection='ASC','▼','▲'),'')}" reRender="pbTable">
+             <apex:param value="Product2.RecordType.Name" name="column" assignTo="{!sortExpression}" ></apex:param>
+           </apex:commandLink>
+         </apex:facet>
+         </apex:column>
+         
+         <apex:column value="{!prodWrap.priceBook.productcode}">
+         <apex:facet name="header">   
+           <apex:commandLink action="{!createQueryString}" value="Product Code {!IF(sortExpression=='productcode',IF(sortDirection='ASC','▼','▲'),'')}" reRender="pbTable">
+             <apex:param value="productcode" name="column" assignTo="{!sortExpression}" ></apex:param>
+           </apex:commandLink>
+         </apex:facet>
+         </apex:column>
+         
+         <apex:column value="{!prodWrap.priceBook.Product2.isActive}" headerValue="Active(Product)"/>  
+         -->
+         
+         <apex:column value="{!prodWrap.priceBook.Product2.HasMediaSpend__c}">
+	         <apex:facet name="header">   
+	           <apex:commandLink action="{!createQueryString}" value="Media Spend {!IF(sortExpression=='Product2.HasMediaSpend__c',IF(sortDirection='ASC','▼','▲'),'')}" reRender="pbTable">
+	             <apex:param value="Product2.HasMediaSpend__c" name="column" assignTo="{!sortExpression}" ></apex:param>
+	           </apex:commandLink>
+	         </apex:facet>
+         </apex:column>
+         
+         <apex:column value="{!prodWrap.priceBook.PriceRangeMin__c}">
+	         <apex:facet name="header">   
+	           <apex:commandLink action="{!createQueryString}" value="Min $ {!IF(sortExpression=='PriceRangeMin__c',IF(sortDirection='ASC','▼','▲'),'')}" reRender="pbTable">
+	             <apex:param value="PriceRangeMin__c" name="column" assignTo="{!sortExpression}" ></apex:param>
+	           </apex:commandLink>
+	         </apex:facet>
+         </apex:column>
+      	 
+      	 <apex:column value="{!prodWrap.priceBook.PriceRangeMax__c}">
+	         <apex:facet name="header">   
+	           <apex:commandLink action="{!createQueryString}" value="Max $ {!IF(sortExpression=='PriceRangeMax__c',IF(sortDirection='ASC','▼','▲'),'')}" reRender="pbTable">
+	             <apex:param value="PriceRangeMax__c" name="column" assignTo="{!sortExpression}" ></apex:param>
+	           </apex:commandLink>
+	         </apex:facet>
+         </apex:column>
+         
+         <apex:column value="{!prodWrap.priceBook.Product2.Product_Group__c}">
+	         <apex:facet name="header">   
+	           <apex:commandLink action="{!createQueryString}" value="Product Group {!IF(sortExpression=='Product2.Product_Group__c',IF(sortDirection='ASC','▼','▲'),'')}" reRender="pbTable">
+	             <apex:param value="Product2.Product_Group__c" name="column" assignTo="{!sortExpression}" ></apex:param>
+	           </apex:commandLink>
+	         </apex:facet>
+         </apex:column>
+         
+         <apex:column value="{!prodWrap.priceBook.Product2.SLA_Bus_Days__c}">
+	         <apex:facet name="header">   
+	           <apex:commandLink action="{!createQueryString}" value="SLA Days {!IF(sortExpression=='Product2.SLA_Bus_Days__c',IF(sortDirection='ASC','▼','▲'),'')}" reRender="pbTable">
+	             <apex:param value="Product2.SLA_Bus_Days__c" name="column" assignTo="{!sortExpression}" ></apex:param>
+	           </apex:commandLink>
+	         </apex:facet>
+         </apex:column>
+         
+         <apex:column value="{!prodWrap.priceBook.Product2.SLA_Product_Type__c}">
+	         <apex:facet name="header">   
+	           <apex:commandLink action="{!createQueryString}" value="SLA Product {!IF(sortExpression=='Product2.SLA_Product_Type__c',IF(sortDirection='ASC','▼','▲'),'')}" reRender="pbTable">
+	             <apex:param value="Product2.SLA_Product_Type__c" name="column" assignTo="{!sortExpression}" ></apex:param>
+	           </apex:commandLink>
+	         </apex:facet>
+         </apex:column>
+         
+         <apex:column value="{!prodWrap.priceBook.Product2.Invoice_Frequency__c}">
+	         <apex:facet name="header">   
+	           <apex:commandLink action="{!createQueryString}" value="Invoice Frequency {!IF(sortExpression=='Product2.Invoice_Frequency__c',IF(sortDirection='ASC','▼','▲'),'')}" reRender="pbTable">
+	             <apex:param value="Product2.Invoice_Frequency__c" name="column" assignTo="{!sortExpression}" ></apex:param>
+	           </apex:commandLink>
+	         </apex:facet>
+         </apex:column>
+      </apex:pageBlockTable>
+      
+       <apex:outputPanel id="btns">
+       <div align="center">
+                    <apex:commandLink action="{!FirstPage}"  rendered="{!prev}" reRender="pbTable,btns,pb" status="sts">First</apex:commandlink>&nbsp;&nbsp;
+                    <apex:commandLink action="{!previous}" rendered="{!prev}" reRender="pbTable,btns" status="sts">Previous</apex:commandlink>&nbsp;&nbsp;
+                    Page {!pageNumber} of {!totalPages}&nbsp;&nbsp;
+                    <apex:commandLink action="{!next}" rendered="{!nxt}" reRender="pbTable,btns" status="sts">Next</apex:commandlink>&nbsp;&nbsp;
+                    <apex:commandLink action="{!LastPage}" rendered="{!nxt}" reRender="pbTable,btns" status="sts">Last</apex:commandlink>&nbsp;&nbsp;
+                   
+                   
+                </div>
+               </apex:outputPanel>   
+   </apex:pageBlockSection>
+  </apex:pageBlock>
+ </apex:form> 
+</apex:page>

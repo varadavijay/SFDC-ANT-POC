@@ -1,0 +1,13 @@
+Agreement:
+<br>
+{!echosign_dev1__SIGN_AgreementEvent__c.echosign_dev1__SIGN_Agreement__c}
+<br>
+<br>
+{!echosign_dev1__SIGN_Agreement__c.Link}
+<br>
+Recipient:
+{!echosign_dev1__SIGN_Agreement__c.echosign_dev1__Recipient__c}
+<br>
+
+Sales Rep:
+{!echosign_dev1__SIGN_AgreementEvent__c.Sales_Rep__c}

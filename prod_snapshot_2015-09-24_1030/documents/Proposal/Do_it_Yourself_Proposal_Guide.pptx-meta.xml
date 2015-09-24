@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Overview of the resources available for creating a proposal and the process to do it</description>
+    <internalUseOnly>true</internalUseOnly>
+    <keywords>proposal, training, overview, guide, under 750</keywords>
+    <name>Do it Yourself Proposal Guide</name>
+    <public>false</public>
+</Document>

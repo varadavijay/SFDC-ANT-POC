@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessType>Shared</accessType>
+    <name>DigitalTeamReports</name>
+    <publicFolderAccess>ReadOnly</publicFolderAccess>
+    <sharedTo>
+        <role>AccountManagers</role>
+        <role>DirectorofAccountManagement</role>
+        <role>ExecutiveDirector</role>
+        <role>JSSManager</role>
+        <role>JSS_Team</role>
+        <role>SocialMedia</role>
+        <roleAndSubordinates>DirectorofAccountManagement</roleAndSubordinates>
+    </sharedTo>
+</ReportFolder>

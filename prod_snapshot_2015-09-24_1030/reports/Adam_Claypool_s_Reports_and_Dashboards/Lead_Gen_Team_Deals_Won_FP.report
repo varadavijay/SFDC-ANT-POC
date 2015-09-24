@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>AMOUNT:SUM + Opportunity.DC_Net_Revenue2__c:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Calculates TCV + DC Net Revenue</description>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Revenue</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>LEAD_SOURCE</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Lead_Source_Detail_Text__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AMOUNT</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.DC_Net_Revenue2__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.DC_Run_Date__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Deal_ID__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>((1 OR 2) AND 3) AND 4</booleanFilter>
+        <criteriaItems>
+            <column>Opportunity.Appointment_Setter__c</column>
+            <operator>equals</operator>
+            <value>Isaac Rivera,Victoria Cooper,Janice Vega,Paige Coleman,Christine Chicoine,Blythe Tarbox,Caitlin Smail,Chase Clucas,Andrea Richard,Caece Fjerstad,Krystal Cottle,Kathryn Moser,Zachary Peterson,Robert Fisk,Chauncy Milbrandt,Annalise Lullo,Dakota Lewis,Davis Gray,Zachary Hineman</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Lead_Gen_Rep__c</column>
+            <operator>equals</operator>
+            <value>Isaac Rivera,Victoria Cooper,Janice Vega,Paige Coleman,Christine Chicoine,Blythe Tarbox,Caitlin Smail,Chase Clucas,Andrea Richard,Caece Fjerstad,Krystal Cottle,Kathryn Moser,Zachary Peterson,Robert Fisk,Chauncy Milbrandt,Annalise Lullo,Dakota Lewis,Davis Gray,Zachary Hineman</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <operator>equals</operator>
+            <value>Closed - Appr &amp; Sign,Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Opp_Owner_Role__c</column>
+            <operator>notEqual</operator>
+            <value>executive director</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.Lead_Gen_Rep__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Lead Gen Team_Deals Won_FP</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>THIS_FISCALPERIOD</interval>
+    </timeFrameFilter>
+</Report>

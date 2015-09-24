@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Record Transfer Request</name>
+    <style>none</style>
+    <subject>Record Transfer Request From {!RequestsIssues__c.LastModifiedBy}</subject>
+    <textOnly>{!RequestsIssues__c.Link}
+{!RequestsIssues__c.Name}
+
+Here are the details of the request:
+
+Submitted By : {!RequestsIssues__c.CreatedBy}
+Transfer From : {!RequestsIssues__c.Transfer_From_Txt__c}
+Transfer To : {!RequestsIssues__c.Transfer_To_Txt__c}
+Records To Transfer : {!RequestsIssues__c.Transfer_Object__c}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

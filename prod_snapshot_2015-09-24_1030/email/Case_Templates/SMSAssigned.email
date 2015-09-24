@@ -1,0 +1,5 @@
+<br/><br/>
+Specialist - {!Account.SocialMediaSpecialist__c}
+<br/><br/>
+Account - {!Account.Name}<br/>
+{!Account.Link}

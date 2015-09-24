@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Prod List</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Prod List</value>
+    </caseValues>
+    <fields>
+        <label><!-- Charge Cycle --></label>
+        <name>Charge_Cycle__c</name>
+        <picklistValues>
+            <masterLabel>1x Charge</masterLabel>
+            <translation><!-- 1x Charge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hourly</masterLabel>
+            <translation><!-- Hourly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Charge Rate --></label>
+        <name>Charge_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Conditions --></label>
+        <name>Conditions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Digital Product --></label>
+        <name>Digital_Product__c</name>
+        <relationshipLabel><!-- Prod List --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Includes --></label>
+        <name>Includes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Long Description Of Product --></help>
+        <label><!-- Product Description --></label>
+        <name>Product_Description__c</name>
+    </fields>
+    <layouts>
+        <layout>Market Product List Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

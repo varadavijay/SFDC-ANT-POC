@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Digital Services</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Digital Services</value>
+    </caseValues>
+    <fields>
+        <label><!-- Affl Sales Rep --></label>
+        <name>Affiliated_Sales_Rep__c</name>
+        <relationshipLabel><!-- Digital Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Avg Cust Val --></label>
+        <name>Avg_Cust_Val__c</name>
+    </fields>
+    <fields>
+        <label><!-- BestWhy --></label>
+        <name>BestWhy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comp 1 --></label>
+        <name>Comp_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comp 2 --></label>
+        <name>Comp_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comp 3 --></label>
+        <name>Comp_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company --></label>
+        <name>Company__c</name>
+        <relationshipLabel><!-- Digital Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Digital Services (Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Curr Adv --></label>
+        <name>Curr_Adv__c</name>
+        <picklistValues>
+            <masterLabel>Billboards</masterLabel>
+            <translation><!-- Billboards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coupons/Specials</masterLabel>
+            <translation><!-- Coupons/Specials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Deals</masterLabel>
+            <translation><!-- Daily Deals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Display</masterLabel>
+            <translation><!-- Display --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maps</masterLabel>
+            <translation><!-- Maps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pay-Per-Click</masterLabel>
+            <translation><!-- Pay-Per-Click --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Print</masterLabel>
+            <translation><!-- Print --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radio</masterLabel>
+            <translation><!-- Radio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SEO</masterLabel>
+            <translation><!-- SEO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social Media</masterLabel>
+            <translation><!-- Social Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TV</masterLabel>
+            <translation><!-- TV --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Custom Website Budget --></label>
+        <name>Custom_Website_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Custom Website Description --></label>
+        <name>Custom_Website_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Digital Audit Request --></label>
+        <name>Dig_Aud_Req__c</name>
+        <relationshipLabel><!-- Digital Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ECommerce Website --></label>
+        <name>ECommerce_Website__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Count Request Notes --></label>
+        <name>Email_Count_Request_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Existing URL --></label>
+        <name>Existing_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- General Notes --></label>
+        <name>General_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Write Content --></label>
+        <name>Write_Content__c</name>
+    </fields>
+    <fields>
+        <label><!-- List Products/Services --></label>
+        <name>d_List_Products_Services__c</name>
+    </fields>
+    <fields>
+        <label><!-- Budget Range --></label>
+        <name>d_budgetrange__c</name>
+        <picklistValues>
+            <masterLabel>$1,000-$1,999</masterLabel>
+            <translation><!-- $1,000-$1,999 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$2,000-$4,999</masterLabel>
+            <translation><!-- $2,000-$4,999 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$5,000+</masterLabel>
+            <translation><!-- $5,000+ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$500-$999</masterLabel>
+            <translation><!-- $500-$999 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Describe the Geographical Area to Which This Audit Applies --></help>
+        <label><!-- Geog Serv Area --></label>
+        <name>d_geogservarea__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monthly Potential --></label>
+        <name>d_monthlypotsales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Website --></label>
+        <name>d_website__c</name>
+    </fields>
+    <fields>
+        <label><!-- Win 1 --></label>
+        <name>d_win_1__c</name>
+        <picklistValues>
+            <masterLabel>Coupon Usage</masterLabel>
+            <translation><!-- Coupon Usage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email Capture</masterLabel>
+            <translation><!-- Email Capture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foot Traffic</masterLabel>
+            <translation><!-- Foot Traffic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Form Fills</masterLabel>
+            <translation><!-- Form Fills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone Calls</masterLabel>
+            <translation><!-- Phone Calls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web Traffic</masterLabel>
+            <translation><!-- Web Traffic --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Win 2 --></label>
+        <name>d_win_2__c</name>
+        <picklistValues>
+            <masterLabel>Coupon Usage</masterLabel>
+            <translation><!-- Coupon Usage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email Capture</masterLabel>
+            <translation><!-- Email Capture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foot Traffic</masterLabel>
+            <translation><!-- Foot Traffic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Form Fills</masterLabel>
+            <translation><!-- Form Fills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone Calls</masterLabel>
+            <translation><!-- Phone Calls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web Traffic</masterLabel>
+            <translation><!-- Web Traffic --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <label><!-- Digital Audit --></label>
+        <name>Digital_Audit</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Email Count --></label>
+        <name>Email_Count</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Website Audit --></label>
+        <name>Website_Audit</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

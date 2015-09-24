@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Dev(System)Request</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://na7.salesforce.com/a0Q/e?retURL=%2Fa0Q%2Fo&amp;RecordType=012F0000000yG6q&amp;ent=01IA0000001nf2R&amp; CF00NA0000007iczy_lkid={!$User.Id}&amp;CF00NA0000007iczy={!$User.FirstName}</url>
+</CustomPageWebLink>

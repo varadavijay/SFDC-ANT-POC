@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>APXTConga4__Conga_Email_Letterhead</letterhead>
+    <name>Post Proof Approval Thanks</name>
+    <style>freeForm</style>
+    <subject>Follow up to proof approval</subject>
+    <textOnly>Hello {!Contact.Name},
+ 
+Thank you for approving the {!Opportunity.Account} DealChicken proof. Your deal is currently scheduled to run on {!Opportunity.DC_Run_Date__c}. 
+ 
+As a reminder, I am your Merchant Loyalty Coordinator and here to guide you through each step of your DealChicken promotion. If you have any questions, please feel free to reach out to me at any time.
+
+Thanks!</textOnly>
+    <type>html</type>
+</EmailTemplate>

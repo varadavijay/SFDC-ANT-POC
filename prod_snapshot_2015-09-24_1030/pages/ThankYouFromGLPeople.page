@@ -1,0 +1,6 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <br></br>
+  <h3>Thank You For Submitting Your New Peeps!. The New Contact Should Appear In Approximately 5 Minutes!</h3><br></br>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

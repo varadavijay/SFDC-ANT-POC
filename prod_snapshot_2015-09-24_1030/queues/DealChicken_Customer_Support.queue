@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>anwilliams@1noff28c2a9rh9bj7aalym4dv7lla6on9kuiu59rkiwg7130xi.a-heotmao.f.case.salesforce.com</email>
+    <name>DealChicken Customer Support</name>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

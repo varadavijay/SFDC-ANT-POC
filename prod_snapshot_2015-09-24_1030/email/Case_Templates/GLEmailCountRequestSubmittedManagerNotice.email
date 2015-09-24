@@ -1,0 +1,16 @@
+Hello and Thank You!,
+
+{!Case.Affl_Sales_Rep__c} has submitted a GO Email Count Request for this company with this description.
+
+Account  - {!Case.Company_Name__c}
+Media Partner - {!Case.Media_Partner__c}
+
+Quantity - {!Case.EC_Email_Quantity__c}
+Budget - {!Case.EC_Email_Budget__c}
+Target Demographics - {!Case.EC_Target_Demographic__c}
+Target Geographics - {!Case.EC_Target_Geographics__c}
+
+Other Notes - {!Case.EC_General_Notes__c}
+
+Thank You!
+Your G/O Digital Team

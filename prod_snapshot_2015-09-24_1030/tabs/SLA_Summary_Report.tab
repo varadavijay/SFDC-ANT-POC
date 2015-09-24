@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SLA Summary Report represents a Visual Force Page with the URL SLAPerformanceComparison that queries on Product_SLA__c object.  This report represents lifecycle of a product before it goes live in the specified status&apos;.</description>
+    <label>SLA Summary Report</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom95: Stopwatch</motif>
+    <page>SLAPerformanceComparison</page>
+</CustomTab>

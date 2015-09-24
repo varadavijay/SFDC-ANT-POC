@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>COMPANY</field>
+    </columns>
+    <columns>
+        <field>LEAD_SOURCE</field>
+    </columns>
+    <columns>
+        <field>Lead.Related_Company__c</field>
+    </columns>
+    <columns>
+        <field>Lead.SalesRep__c</field>
+    </columns>
+    <columns>
+        <field>STATUS</field>
+    </columns>
+    <columns>
+        <field>Lead.Budget_Range__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Expected_Prod_Mix__c</field>
+    </columns>
+    <columns>
+        <field>CREATED</field>
+    </columns>
+    <description>Audit requests for the AZ Republic Only</description>
+    <filter>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <operator>equals</operator>
+            <value>Lead.Digital_Fulfillment</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Related_Company__c</column>
+            <operator>equals</operator>
+            <value>&quot;Arizona Republic, Phoenix AZ&quot;</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CREATED_DATE</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OWNER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>JSS Audit Request - AZ Republic</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2012-03-26</startDate>
+    </timeFrameFilter>
+</Report>

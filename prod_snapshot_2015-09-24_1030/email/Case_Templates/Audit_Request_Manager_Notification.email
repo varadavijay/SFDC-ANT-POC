@@ -1,0 +1,33 @@
+An Audit Request Has Been Submitted by the below Sales Rep.  Please send any questions to "answers@godigitalmarketing.com" for any updates regarding the fulfillment of the audit or any changes and additions that need to be made. Reference Audit Number {!Case.CaseNumber}.
+
+INFORMATION RECEIVED:
+
+Request #             -  {!Case.CaseNumber}
+
+Company                -  {!Case.Company_Name__c}
+Budget                 - {!Case.DA_Budget_Range__c}
+Products/Services      - {!Case.DA_List_Products_Services__c}
+Media Partner          - {!Case.Media_Partner__c}
+Industry               - {!Case.Industry_General__c}
+Sales Rep              - {!Case.Affl_Sales_Rep__c}
+
+Audit Data Submitted
+
+Website                     - {!Case.DA_Website__c}
+Client Win 1                - {!Case.DA_Win_1__c}
+Client Win 1                - {!Case.DA_Win_2__c}
+Client Products/Services    - {!Case.DA_List_Products_Services__c}
+Requested Products          - {!Case.DA_Select_New_Products__c}
+Monthly Dig Budget          - {!Case.DA_Budget_Range__c}
+Geographical Area           - {!Case.DA_Geog_Serv_Area__c}
+
+Top three Competitors
+-{!Case.DA_Comp_1__c}
+-{!Case.DA_Comp_2__c}
+-{!Case.DA_Comp_3__c}
+
+Avg Cust Val $          - {!Case.DA_Avg_Cust_Value__c}
+Current Advert          - {!Case.DA_Current_Adv__c}
+What Works              - {!Case.DA_Best_Medium__c}
+
+Other Comments           - {!Case.DA_General_Notes__c}

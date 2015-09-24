@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>TITLE</field>
+    </columns>
+    <columns>
+        <field>COMPANY</field>
+    </columns>
+    <columns>
+        <field>LEAD_SOURCE</field>
+    </columns>
+    <columns>
+        <field>RATING</field>
+    </columns>
+    <columns>
+        <field>STREET</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>LEAD_ID</field>
+    </columns>
+    <columns>
+        <field>Lead.Primary_SIC_Description__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Primary_SIC_Description_Plural__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Vertical__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
+        <criteriaItems>
+            <column>EMAIL</column>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Web_Form_Completed__c</column>
+            <operator>contains</operator>
+            <value>Signed Up for Newsletter</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Web_Form_Completed__c</column>
+            <operator>notContain</operator>
+            <value>Completed Decision Engine,Downloaded Whitepaper - 7 Keys,Downloaded Whitepaper- DM,General Sales Request,Requested 30-Percent Discount,Requested 30-Percent Discount- DM,Requested Demo,Requested Needs Assessment,Requested Needs Assessment- DM,Downloaded Whitepaper - SEO,Downloaded Whitepaper - PPC,Requested Marketing Kit</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Vertical__c</column>
+            <operator>contains</operator>
+            <value>furniture,contracting</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.Email_Activity__c</column>
+            <operator>notContain</operator>
+            <value>Opened,Opened and Clicked</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OWNER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Newsletter Opt Ins - Remodeling</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

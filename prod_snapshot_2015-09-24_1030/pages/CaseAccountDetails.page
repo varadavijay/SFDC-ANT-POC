@@ -1,0 +1,9 @@
+<apex:page standardController="Case" standardStylesheets="false">
+	<apex:pageBlock mode="mainDetail">
+		<apex:pageBlockSection columns="2">
+			<apex:outputField value="{!Case.Account.Account_Primary_Industry__c}" />
+			<br />
+			<apex:outputField value="{!Case.Account.Account_Primary_Focus__c}" />
+		</apex:pageBlockSection>
+	</apex:pageBlock>
+</apex:page>

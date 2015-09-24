@@ -1,0 +1,5 @@
+A Setup Fee line item has been created with a variance between Monthly List Price and Actual Price. Please review for approval:
+
+{!Opportunity.Link}
+Opp Name: {!Opportunity.Name}
+Opp Owner: {!Opportunity.OwnerFullName}

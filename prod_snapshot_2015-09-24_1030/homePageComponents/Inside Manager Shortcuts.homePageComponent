@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>Executive_Summary_Inside</links>
+    <links>My_KPIs_Inside</links>
+    <links>G_O_iSales_Billings_Bookings_PTD</links>
+    <links>G_O_iSales_Master_Tracker</links>
+    <links>G_O_iSales_Manager_Master_Tracker</links>
+    <links>Dials_Talk_Time_Report</links>
+    <links>Inside_Sales_Team_By_Team_Throwdown</links>
+    <links>Products_Prices</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

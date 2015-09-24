@@ -1,0 +1,130 @@
+<apex:page standardController="Case" extensions="myWeb2CareExtension_v2" title="GL Care" showHeader="false" sidebar="false">
+ <apex:includeScript value="{!URLFOR($Resource.ulPicklist, '/jquery-1.7.2.min.js')}"  />
+<apex:includeScript value="{!URLFOR($Resource.poshytip, '/jquery.poshytip.js')}"  />
+<apex:stylesheet value="{!URLFOR($Resource.poshytip, '/tip-yellow/tip-yellow.css')}"/>
+
+ 
+ <apex:composition template="{!$Site.Template}"> 
+  <apex:define name="body">
+   
+   <apex:form >
+   
+    <apex:messages id="error" styleClass="errorMsg" layout="table" style="margin-top:1em;"/>
+    <div style="text-align:right;"><a id="helpme" style="cursor:pointer;" target="#">When should I use the GL Care Team? (Hover To Display)</a></div>
+
+      <apex:pageBlock mode="mainDetail">
+      
+        <apex:pageBlockButtons location="top">
+           <apex:commandButton value="Send To GL Care" action="{!saveCase}"/>
+        </apex:pageBlockButtons>
+        
+        <apex:pageBlockSection title="Step 1 - Partner & Client Information" collapsible="false" columns="2" showHeader="true">
+        <apex:outputText value="Sales Rep & Media Partner" style="font-size:1em;font-weight:bold;color:green"/>
+        <apex:outputText value="Company & Contact" style="font-size:1em;font-weight:bold;color:green"/>
+        <!--
+        <apex:pageBlockSectionItem >
+        <apex:outputLabel >Select Sales Rep:</apex:outputlabel>
+         <apex:outputPanel layout="block" styleClass="requiredInput">
+         <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+          <apex:selectList value="{!Case.Affl_Sales_Rep__c}"  multiselect="false" size="1" style="width:75%; font-size:1em;" label="Select Sales Rep:" required="true" tabindex="1">
+            <apex:selectOptions value="{!items}" id="options"/>
+          </apex:selectList>
+         </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+        -->
+        <apex:inputField value="{!Case.Company_Name__c}" required="true" taborderhint="4" label="Client Company Name:"/>
+        <apex:inputField value="{!Case.Affl_Sales_Rep_Text__c}" required="false" taborderhint="2" label="Enter Sales Rep Name (If Not In List):" style="width:200px;"/>
+        <apex:inputField value="{!Case.Contact_Name__c}" required="false" taborderhint="5" label="Client Contact - First And Last Name:"/>
+
+         
+       <!--  
+       <apex:pageBlockSectionItem >
+        <apex:outputLabel >Select Media Partner:</apex:outputlabel>
+         <apex:outputPanel layout="block" styleClass="requiredInput">
+         <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+          <apex:selectList value="{!Case.Media_Partner__c}" multiselect="false" size="1" style="width:75%; font-size:1em;" required="true" tabindex="3" >
+            <apex:selectOptions value="{!itemsm}" id="moptions"/>
+          </apex:selectList>
+         </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+        -->
+        
+
+        <apex:inputField value="{!Case.Contact_Phone__c}" required="true" taborderhint="6" label="Contact Or Client Phone:"/>
+
+         
+         </apex:pageBlockSection>
+         
+         <apex:outputPanel id="subSections">
+            <!-- Digital Audit 
+                <apex:actionRegion >
+                    <apex:actionFunction name="redrawGLCare" action="{!null}" rerender="glcare"/> 
+                    <br/>
+                    <apex:pageBlockSection title="Step 2 - Choose Submittal Type To Enter Request Detail" collapsible="false" columns="2" >
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel layout="block" style="width:300px;">Care Request Or Call Request </apex:outputPanel>
+                            <apex:outputPanel layout="block" styleClass="requiredInput">
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                <apex:selectList value="{!selectSubmitType}" multiselect="false" size="1" onchange="redrawGLCare();" tabindex="7">
+                                    <apex:selectOptions value="{!GLCareOptions}"/>
+                                </apex:selectList>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <br/>
+                    </apex:pageBlockSection>
+                </apex:actionRegion>-->
+                
+                <apex:outputPanel id="glcare">
+         
+                    <apex:pageBlockSection title="GL Care Request Information" collapsible="false" columns="2" rendered="{!selectSubmitType == '012F0000000yDXzIAM'}">
+                         <apex:outputText value="Client Info" style="font-size:1em;font-weight:bolder;color:green"/>
+                         <apex:outputText value="Document Submission" style="font-size:1em;font-weight:bolder;color:green"/>
+                         <apex:inputField value="{!Case.Description}" required="true" taborderhint="8" label="Reason for Care Request:" style="width:100%"/>
+          <!--
+                         <apex:pageBlockSectionItem rendered="{!NOT(submitted)}" >
+                             <apex:outputLabel value="Doc/File That Supports The Escalation"/>
+                             <apex:inputFile value="{!file}" filename="{!fileName}" contentType="{!contentType}" required="false"/>
+                         </apex:pageBlockSectionItem>
+                         <apex:outputText value="{!fileName}" rendered="{!submitted}"/>
+          -->
+                         <apex:inputField value="{!Case.Product__c}" required="true" taborderhint="9" label="GL Care Request - Product/s Of Concern:"/>
+                         <br/>
+                         <apex:inputField value="{!Case.Monthly_Spend__c}" style="width: 30%;" required="true" taborderhint="10" label="Account Total Monthly Spend:"/>
+                         <br/>
+                    </apex:pageBlockSection>
+ 
+              <!--        <apex:pageBlockSection title="GL Call Request Information" collapsible="false" columns="2" rendered="{!selectSubmitType == '012F0000000yDthIAE'}">
+                         <apex:outputText value="Client's Situation Description" style="font-size:1em;font-weight:bolder;color:green"/>
+                         <apex:outputText value="Document Submission" style="font-size:1em;font-weight:bolder;color:green"/>
+                         <apex:inputField value="{!Case.Description}" required="true" taborderhint="11" label="Reason for Call Request:" style="width:100%"/>
+         
+                         <apex:pageBlockSectionItem rendered="{!NOT(submitted)}" >
+                             <apex:outputLabel value="Doc/File That Supports The Call"/>
+                             <apex:inputFile value="{!file}" filename="{!fileName}" contentType="{!contentType1}" required="false"/>
+                         </apex:pageBlockSectionItem>
+                         <apex:outputText value="{!fileName}" rendered="{!submitted}"/>
+                         <apex:inputField value="{!Case.CR_Call_Date__c}" style="width: 50%;" required="true" taborderhint="12" label="Requested Date & Time:"/>
+                         <br/>
+                         <apex:inputField value="{!Case.Call_Request_Length__c}" style="width: 30%;" required="true" taborderhint="13" label="Requested Length:"/>
+                    </apex:pageBlockSection>
+                    -->
+                           
+                </apex:outputPanel>
+         </apex:outputPanel>       
+       </apex:pageBlock>
+
+       
+       <br></br>
+       
+   </apex:form>
+   <div id="tooltip" style="display:none;">
+        <apex:outputText value="{!$Label.GLCareHelp}" escape="false"/>
+    </div>
+  </apex:define> 
+ </apex:composition> 
+ <script type="text/javascript">
+        $j = jQuery.noConflict();
+        var ctn = $j('#tooltip').html();
+        $j('#helpme').poshytip({content:ctn, alignTo:'target', alignX:'inner-right'});
+</script> 
+</apex:page>

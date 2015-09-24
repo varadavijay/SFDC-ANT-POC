@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Market__c.Opportunities__r$Name</field>
+    </columns>
+    <columns>
+        <field>Market__c.Opportunities__r$DC_Run_Date__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>(1 OR 4 ) AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <column>Market__c.Opportunities__r$DC_Run_Date__c</column>
+            <operator>equals</operator>
+            <value>THIS_WEEK</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Market__c.Opportunities__r$RecordType</column>
+            <operator>equals</operator>
+            <value>Opportunity.Deal_Chicken</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Market__c.Opportunities__r$IsWon</column>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Market__c.Opportunities__r$DC_Run_Date__c</column>
+            <operator>equals</operator>
+            <value>TODAY</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Market__c$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Click Markets and Opps Next 30 Days</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Markets_With_Or_Without_Their_Opportunities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Market__c.Opportunities__r$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,9 @@
+<br>
+Area Manager:&nbsp;&nbsp;{!Opportunity.Market_AM_Name__c}
+<br>
+<br>
+Company:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!Opportunity.Account}
+<br>
+Sales Rep:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!Opportunity.OwnerFullName}
+<br>
+Market:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!Opportunity.Market_Record__c}

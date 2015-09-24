@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to send to any lead to summarize the businss consultation offer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Offer Summary - Growth Consultation</name>
+    <style>none</style>
+    <subject>Complimentary Business Growth Consultation</subject>
+    <type>text</type>
+</EmailTemplate>

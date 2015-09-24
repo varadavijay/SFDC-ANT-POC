@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Basic_DealChicken</letterhead>
+    <name>8 day follow up email *TESTING*</name>
+    <style>freeForm</style>
+    <subject>Follow up to your DealChicken.com promotion</subject>
+    <textOnly>Time sure does fly when you’re a DealChicken merchant! Congratulations on [Business Name] successful completion of seven days in the DealChicken market. We do hope your deal has been running smoothly and I called you today to answer any questions you may have. 
+
+Our records indicate that you sold [# of deals] in the first seven days. As previously discussed, your initial payments will be based upon this number. Unfortunately, I will not be able to give you additional payment informtion until our finance department processes your first payment in five more days.
+
+Here’s how it works:
+
+Initial payments are based on sales of your promotion during its first 7 days on our site (referred to as the &quot;initial&quot; period). You will receive 70% of the payment for your week one sales in a single check, roughly 12 days after your promotion starts running. You will receive the remaining 30% approximately 25 business days after your first payment. 
+
+For promotions running longer than 7 days, you will receive a monthly payment on or about the 15th of the following calendar month, less a 10% holdback. The holdback will be paid (excluding any refunds) as part of your next month&apos;s payment, until there is no longer a balance. 
+
+
+We appreciate your business and ask that you please take a moment to provide us feedback on your overall DealChicken experience. We look forward to hatching another deal together in the future.
+
+Kind Regards,</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,8 @@
+Dear {!Contact.FirstName},  
+
+I really enjoyed speaking with you today.  I think that Gannett Small Business has a lot to offer your business and I look forward to our next meeting.  
+
+As we spoke about today, 
+
+
+Regards,  {!User.FirstName}

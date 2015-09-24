@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CaseSharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <criteriaBasedRules>
+        <fullName>BC_South_RSM_Share</fullName>
+        <sharedTo>
+            <role>RSMBCSouth</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RSM_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>BC South</value>
+        </criteriaItems>
+        <caseAccessLevel>Read</caseAccessLevel>
+        <name>BC - South RSM Share</name>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Support_Tickets_Share_with_All_Users</fullName>
+        <sharedTo>
+            <group>All_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Support Ticket</value>
+        </criteriaItems>
+        <caseAccessLevel>Edit</caseAccessLevel>
+        <name>Support Tickets Share with All Users</name>
+    </criteriaBasedRules>
+</CaseSharingRules>

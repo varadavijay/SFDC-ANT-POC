@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Lead$Name</field>
+    </columns>
+    <columns>
+        <field>Lead$Company</field>
+    </columns>
+    <columns>
+        <field>Lead$LastActivityDate</field>
+    </columns>
+    <columns>
+        <field>Lead.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>Lead$Status</field>
+    </columns>
+    <columns>
+        <field>Lead$Email</field>
+    </columns>
+    <columns>
+        <field>Lead$Owner</field>
+    </columns>
+    <description>Public Report</description>
+    <filter>
+        <criteriaItems>
+            <column>Lead$LeadSource</column>
+            <operator>contains</operator>
+            <value>trade show</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$Lead_Source_Detail_Text__c</column>
+            <operator>contains</operator>
+            <value>nada</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$IsConverted</column>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <name>NADA/DMSC Lead Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Lead_with_or_without_activity__c</reportType>
+    <scope>useronly</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Lead$ConvertedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

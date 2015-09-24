@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CTI List Rec</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CTI List Recs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Lead Record --></label>
+        <name>Lead_Record__c</name>
+        <relationshipLabel><!-- CTI List Recs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- List Name --></label>
+        <name>List_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- company --></label>
+        <name>company__c</name>
+    </fields>
+    <fields>
+        <label><!-- first_name --></label>
+        <name>first_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- last_name --></label>
+        <name>last_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- number1 --></label>
+        <name>number1__c</name>
+    </fields>
+    <fields>
+        <label><!-- number2 --></label>
+        <name>number2__c</name>
+    </fields>
+    <fields>
+        <label><!-- number3 --></label>
+        <name>number3__c</name>
+    </fields>
+    <layouts>
+        <layout>CTI List Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

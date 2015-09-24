@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SSRS Emails</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SSRS Emails</value>
+    </caseValues>
+    <fields>
+        <label><!-- Click Count --></label>
+        <name>Click_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Click Through Rate --></label>
+        <name>Click_Through_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Daily Send Name --></label>
+        <name>Daily_Send_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivered Count --></label>
+        <name>Delivered_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivered Date --></label>
+        <name>Delivered_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Filler or Local Deal --></label>
+        <name>Filler_or_Local_Deal__c</name>
+        <picklistValues>
+            <masterLabel>Filler</masterLabel>
+            <translation><!-- Filler --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local</masterLabel>
+            <translation><!-- Local --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Market --></label>
+        <name>Market__c</name>
+        <relationshipLabel><!-- SSRS Emails --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Open Rate --></label>
+        <name>Open_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner --></label>
+        <name>Owner__c</name>
+        <relationshipLabel><!-- SSRS Emails --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Send ID --></label>
+        <name>Send_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sent Count --></label>
+        <name>Sent_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unsubscribed Count --></label>
+        <name>Unsubscribed_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- View Count --></label>
+        <name>View_Count__c</name>
+    </fields>
+    <layouts>
+        <layout>SSRS Emails Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

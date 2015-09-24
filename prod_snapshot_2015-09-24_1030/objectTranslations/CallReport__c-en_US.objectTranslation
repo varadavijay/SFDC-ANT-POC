@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CallReport</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CallReports</value>
+    </caseValues>
+    <fields>
+        <label><!-- Publisher Name --></label>
+        <name>affiliate_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affiliate Payout --></label>
+        <name>affiliate_payout__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Quality --></label>
+        <name>call_quality_description_detail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>call_source_description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Caller ID --></label>
+        <name>calling_phone_number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Campaign --></label>
+        <name>campaign_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>city__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duration --></label>
+        <name>duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Keypresses --></label>
+        <name>keypresses__c</name>
+    </fields>
+    <fields>
+        <label><!-- Media Type --></label>
+        <name>media_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Type --></label>
+        <name>mobile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Promo Number Description --></label>
+        <name>promo_line_description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recorded --></label>
+        <name>recorded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date / Time --></label>
+        <name>start_time_utc__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction ID --></label>
+        <name>transaction_id__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

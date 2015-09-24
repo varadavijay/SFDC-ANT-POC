@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object represents a deployment to production. It should contain at least one RFQ which describes the work required to go into QA, and therefore production.</description>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <fields>
+        <fullName>Deployed_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Person who did the Production deployment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Who is releasing to Production?</inlineHelpText>
+        <label>Deployed By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>PD_Deployed_By</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Deployment_Date__c</fullName>
+        <description>Date of the Deployment</description>
+        <externalId>false</externalId>
+        <label>Deployment Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Deployment_Instructions_Link__c</fullName>
+        <description>URL (usually in SVN) of the release Instructions document</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Where is the Release Instructions Document?</inlineHelpText>
+        <label>Deployment Instructions Link</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Any relevant information about this deployment should go here</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This will be used for the release notes. The audience is the Business</inlineHelpText>
+        <label>Description</label>
+        <length>10000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Development_Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The owner of this release from Development</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Who owns this release from Development?</inlineHelpText>
+        <label>Development Lead</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>PD_Dev_Lead</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>QA_Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The owner of this release from QA.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Who owns this deployment from QA?</inlineHelpText>
+        <label>QA Lead</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>PD_QA_Lead</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sprint__c</fullName>
+        <description>The name of the Sprint that relates to this deployment, e.g. &quot;1.0.7&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>example: 1.0.7</inlineHelpText>
+        <label>Sprint</label>
+        <length>16</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Describes the current status of this PD</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Only QA can mark a PD &quot;QA Verified&quot;
+Only Release can mark a PD &quot;Deployed to Production&quot;</inlineHelpText>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QA Verified</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deployed to Production</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <description>Brief Description including at minimum Team, Sprint# and release Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Example: CRM Sprint 1.0.6 Release Date: 01/30/2014</inlineHelpText>
+        <label>Title</label>
+        <length>100</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Production Deployment</label>
+    <listViews>
+        <fullName>Last_3_Months</fullName>
+        <columns>NAME</columns>
+        <columns>Title__c</columns>
+        <columns>Status__c</columns>
+        <columns>Description__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>LAST_N_MONTHS:3</value>
+        </filters>
+        <label>Last 3 Months</label>
+        <sharedTo>
+            <group>CRM_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Open_Deployments</fullName>
+        <columns>NAME</columns>
+        <columns>Title__c</columns>
+        <columns>Status__c</columns>
+        <columns>Description__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Deployed to Production</value>
+        </filters>
+        <label>Open Deployments</label>
+        <sharedTo>
+            <group>CRM_Team</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>PD-{0000}</displayFormat>
+        <label>PD Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Production Deployments</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

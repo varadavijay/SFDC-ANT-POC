@@ -1,0 +1,28 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<p class="MsoNormal">Hello {!Contact.Name},</p>
+
+<p class="MsoNormal" style="text-indent:.5in"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Congratulations on your new campaign! The&nbsp;G/O Digital&nbsp;team
+is just about ready to&nbsp;begin fulfilling your digital advertising campaign,
+there’s just one more thing we need from you. But don’t worry – it’s very
+simple! Please click the link below to accept and confirm the online agreement.<br><br></p>
+
+<p class="MsoNormal">[[link goes here]]</p>
+
+<p class="MsoNormal"><br>When you click the link, you will be prompted to confirm
+your contract, enter some key information and you will need to sign off on the
+agreement terms. </p>
+
+<p class="MsoNormal">This process will only take a few minutes, we appreciate
+your cooperation. </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Thank you,</p>
+
+<p class="MsoNormal">The G/O Digital Team</p>]]></td>
+</tr>
+</table>

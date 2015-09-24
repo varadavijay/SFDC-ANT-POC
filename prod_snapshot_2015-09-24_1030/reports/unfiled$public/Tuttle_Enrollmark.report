@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Lead$Name</field>
+    </columns>
+    <columns>
+        <field>Lead$Status</field>
+    </columns>
+    <columns>
+        <field>Lead$Has_Activity__c</field>
+    </columns>
+    <columns>
+        <field>Lead$ConvertedAccount</field>
+    </columns>
+    <columns>
+        <field>Lead.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>Lead.Activities$ActivityDate</field>
+    </columns>
+    <description>Activity Report</description>
+    <filter>
+        <criteriaItems>
+            <column>Lead$Owner</column>
+            <operator>equals</operator>
+            <value>Matthew Tuttle</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$RecordType</column>
+            <operator>equals</operator>
+            <value>Lead.Verticals</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Lead$Company</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Tuttle - Enrollmark</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Lead_with_or_without_activity__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Lead$ConvertedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

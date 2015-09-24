@@ -1,0 +1,16 @@
+Hello {!Case.Affl_Sales_Rep__c} 
+<br/><br/>
+Your Website Request Is Complete. Please contact G/O Digital at "answers@godigitalmarketing.com" with any questions or updates regarding the fulfillment of the audit or any changes and additions that need to be made. 
+<br/><br/>
+INFORMATION SUMMARY: 
+<br/><br/>
+Case Number - {!Case.CaseNumber}<br/>
+Company - {!Case.Company_Name__c} <br/>
+Media Partner - {!Case.Media_Partner__c} <br/>
+Industry - {!Case.Industry_General__c} <br/>
+Sales Rep - {!Case.Affl_Sales_Rep__c} <br/>
+Link To Proposal - {!Case.Link_To_Proposal__c}<br/>
+Proposal Notes - {!Case.GLW_Proposal_Notes__c}<br/>
+<br/><br/>
+ECommerce Site? - {!Case.GLW_ECommerce_Site__c} <br/>
+New Or Redesign? - {!Case.GLW_Website_New_Or_Redesign__c}<br/>

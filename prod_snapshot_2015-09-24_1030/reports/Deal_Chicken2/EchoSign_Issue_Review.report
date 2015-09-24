@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>RequestsIssues__c.Submitter__c</field>
+    </columns>
+    <columns>
+        <field>RequestsIssues__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>RequestsIssues__c.Title_Short_Description__c</field>
+    </columns>
+    <columns>
+        <field>RequestsIssues__c.System_s_Involved__c</field>
+    </columns>
+    <columns>
+        <field>RequestsIssues__c.Last_Comment__c</field>
+    </columns>
+    <columns>
+        <field>RequestsIssues__c.Admin_Comments__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>RequestsIssues__c.System_s_Involved__c</column>
+            <operator>includes</operator>
+            <value>EchoSign</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>EchoSign Issue Review</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$RequestsIssues__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>RequestsIssues__c.Date_Completed__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

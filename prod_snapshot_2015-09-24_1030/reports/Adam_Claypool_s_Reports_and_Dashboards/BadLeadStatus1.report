@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>STATUS</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>STATUS</column>
+            <operator>notEqual</operator>
+            <value>Uncontacted - New,Duplicate,Disconnected#/Bad Info,Pursuing DM/VM/Several Attempts,Contacted - Not Interested,Contacted - In Dialogue,Lead Gen Qualified,Franchise,DNC/Remove From List,Awaiting Assignment,Awaiting Audit Call,Awaiting Close,Closed Won,Closed Lost,Contract Signed,DC – ineligible/unqualified lead,Uncontacted New</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <name>BadLeadStatus</name>
+    <params>
+        <name>scopeid</name>
+        <value>701F0000000e1DK</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignLeadLifetime</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+</Report>

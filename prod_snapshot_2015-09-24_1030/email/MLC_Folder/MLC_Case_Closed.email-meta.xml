@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Basic_DealChicken</letterhead>
+    <name>MLC Case Closed</name>
+    <style>freeForm</style>
+    <subject>Follow up to your recent request</subject>
+    <textOnly>Hi{!Case.Contact_Name__c},
+
+We wanted to take the time to reach out and thank you for working with us. We wanted to give you a quick update on the issue you brought to our attention. You will see the details listed below.
+
+
+
+Your comments:
+
+Subject: {!Case.Subject}
+
+Description: {!Case.Description}
+
+
+
+Our response:
+
+Case Number: {!Case.CaseNumber}
+
+Resolution: {!Case.Resolution_Summary__c}
+
+
+
+If you still have questions, please reach out to us and we will be happy to help.
+
+
+
+Kind Regards,
+
+
+The DealChicken Merchant Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

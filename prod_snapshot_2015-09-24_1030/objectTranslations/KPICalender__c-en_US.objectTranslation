@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>KPI Calender</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>KPIs Calender</value>
+    </caseValues>
+    <fields>
+        <label><!-- Code Day Of Week --></label>
+        <name>Code_Day_Of_Week__c</name>
+    </fields>
+    <fields>
+        <label><!-- Code Period --></label>
+        <name>Code_Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Code Week --></label>
+        <name>Code_Week__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count --></label>
+        <name>Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentPeriod2 --></label>
+        <name>CurrentPeriod2__c</name>
+    </fields>
+    <fields>
+        <label><!-- CurrentPeriod --></label>
+        <name>CurrentPeriod__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fiscal Week --></label>
+        <name>Fiscal_Week__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fiscal Year --></label>
+        <name>Fiscal_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsToday --></label>
+        <name>IsToday__c</name>
+    </fields>
+    <fields>
+        <label><!-- Period Offset --></label>
+        <name>Period_Offset__c</name>
+    </fields>
+    <fields>
+        <label><!-- Period --></label>
+        <name>Period__c</name>
+        <picklistValues>
+            <masterLabel>P01</masterLabel>
+            <translation><!-- P01 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P02</masterLabel>
+            <translation><!-- P02 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P03</masterLabel>
+            <translation><!-- P03 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P04</masterLabel>
+            <translation><!-- P04 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P05</masterLabel>
+            <translation><!-- P05 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P06</masterLabel>
+            <translation><!-- P06 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P07</masterLabel>
+            <translation><!-- P07 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P08</masterLabel>
+            <translation><!-- P08 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P09</masterLabel>
+            <translation><!-- P09 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P10</masterLabel>
+            <translation><!-- P10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P11</masterLabel>
+            <translation><!-- P11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P12</masterLabel>
+            <translation><!-- P12 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- YearPeriod --></label>
+        <name>YearPeriod__c</name>
+    </fields>
+    <layouts>
+        <layout>Calender Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

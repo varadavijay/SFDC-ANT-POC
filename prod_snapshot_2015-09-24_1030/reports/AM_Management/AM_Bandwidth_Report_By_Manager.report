@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Products</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Account.Count__c:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Companies</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>UNIT_PRICE:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA3</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Avg. Monthly Value</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_58063816</developerName>
+        <masterLabel>Clock Status</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>OpportunityLineItem.Bus_Days_SLA__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>-1</to>
+            </sourceValues>
+            <value>At Risk</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>-1</from>
+                <to>0</to>
+            </sourceValues>
+            <value>Due</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>0</from>
+            </sourceValues>
+            <value>Delayed</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_24248557</developerName>
+        <masterLabel>Manager</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Opportunity.Dig_Account_Manager__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Andrea Joubert</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Amanda Brown</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Isabel Ross</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jenny Patterson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>John Badalamenti</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>John Barron</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ryan Bush</sourceValue>
+            </sourceValues>
+            <value>Tara Quarrick</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Amanda Straus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ayesha DeJournett</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Chase McLaughlin</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Christy Lubrano</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Cori Hawes</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ellen Turner</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Gabrielle Williams</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jessica Johnson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jon Pathuis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lauren Meronk</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lisa Hovis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ryan Deller</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Margi Woodyard</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Monica Horne</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Paul Turck</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Michael Bartolotta</sourceValue>
+            </sourceValues>
+            <value>Ray Castro</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Amanda Radloff</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Angel Soria</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Austin Pierce</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Brienne Chance</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Heath Ellison</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kaitlin Crossman</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kyle Huard</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lorie Albert</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mallory Witthar</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bailey Young</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kristin Leszczynski</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Max Twietmeyer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Steven Dulisse</sourceValue>
+            </sourceValues>
+            <value>Ben Lane</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_63522926</developerName>
+        <masterLabel>Status</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>OpportunityLineItem.Waiting_Status__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Awaiting Onboard</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>In Fulfillment</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Waiting On Client Approval</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Waiting On Client Resource</sourceValue>
+            </sourceValues>
+            <value>Non-Live Accounts</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Live</sourceValue>
+            </sourceValues>
+            <value>Live Accounts</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Pending</sourceValue>
+            </sourceValues>
+            <value>Pending</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA2</column>
+        </chartSummaries>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA1</column>
+        </chartSummaries>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA3</column>
+        </chartSummaries>
+        <chartType>HorizontalBar</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>Opportunity.Dig_Account_Manager__c</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Waiting_Status__c</field>
+    </columns>
+    <columns>
+        <field>PRODUCT_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Dig_OnB_Call__c</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Waiting_Status_Descr__c</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Notes__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Dig_On_B_Call_Date__c</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Time_In_Current_Status_Days__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>UNIT_PRICE</field>
+    </columns>
+    <columns>
+        <field>QUANTITY</field>
+    </columns>
+    <columns>
+        <field>AMOUNT</field>
+    </columns>
+    <description>Non-Live Active Accounts (less than 10 days in status) filtered by Manager</description>
+    <filter>
+        <criteriaItems>
+            <column>PRODUCT_NAME</column>
+            <operator>notContain</operator>
+            <value>email,hosting,setup,miscellaneous,fee</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OpportunityLineItem.Time_In_Current_Status_Days__c</column>
+            <operator>lessOrEqual</operator>
+            <value>10</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OpportunityLineItem.Waiting_Status__c</column>
+            <operator>equals</operator>
+            <value>Closed Won,Awaiting Onboard,In Fulfillment,Waiting On Client Approval,Waiting On Client Resource,Pending</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Role_Dig_Acct_Man__c</column>
+            <operator>contains</operator>
+            <value>AM-</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.Dig_Account_Manager__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ACCOUNT_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>AM Bandwidth Report</name>
+    <params>
+        <name>open</name>
+        <value>closedwon</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityProduct</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <sortColumn>OpportunityLineItem.Waiting_Status__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Opportunity.Dig_On_B_Call_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

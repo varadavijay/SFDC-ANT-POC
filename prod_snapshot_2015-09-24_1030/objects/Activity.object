@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ComposeGmail</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>LogCall</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>MailMerge</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>RequestUpdate</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SendEmail</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewAll</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Activity_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+OR(CONTAINS(Subject, &quot;30 sec&quot;),CONTAINS(Subject,&quot;30 Sec&quot;)),&quot;30 Second&quot;,IF( AND(IsTask = False,ISPICKVAL(Status__c,&quot;Ran&quot;)), &quot;Appoint Ran&quot;, IF( AND(IsTask = False,ISPICKVAL(Status__c,&quot;Set&quot;)), &quot;Appoint Set&quot;, &quot;Call&quot;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Activity Type</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actype__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( IsTask = True,&quot;Task&quot;,&quot;Appt&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Actype</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Appt_Set_By__c</fullName>
+        <description>The DealChicken Appointment Setter</description>
+        <externalId>false</externalId>
+        <label>Appt Set By</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Archived_Recording2__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;K:/Common/GLIS/Recordings/&quot; &amp; TEXT(YEAR(DATEVALUE(qbdialer__Call_Date_Time__c))) 
+
+&amp; 
+
+IF(MONTH(DATEVALUE(qbdialer__Call_Date_Time__c)) &lt; 10,&quot;0&quot; &amp; TEXT(MONTH(DATEVALUE(qbdialer__Call_Date_Time__c))),TEXT(MONTH(DATEVALUE(qbdialer__Call_Date_Time__c))))
+
+&amp; 
+
+IF(DAY(DATEVALUE(qbdialer__Call_Date_Time__c)) &lt; 10,&quot;0&quot; &amp; TEXT(DAY(DATEVALUE(qbdialer__Call_Date_Time__c))),TEXT(DAY(DATEVALUE(qbdialer__Call_Date_Time__c))))
+
+
+&amp; &quot;_&quot; &amp; CASESAFEID(Id) &amp; &quot;.gsm&quot;,&quot;Right Click, Copy Link, Paste In New Browser&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Archived Recording2</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Archived_Recording__c</fullName>
+        <externalId>false</externalId>
+        <label>Archived Recording</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Blog__c</fullName>
+        <defaultValue>&quot;No Comment&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Blog</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Completed__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Completed</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Conversation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Call_Date__c</fullName>
+        <defaultValue>NOW()</defaultValue>
+        <externalId>false</externalId>
+        <label>Call Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Call_Len_Mins__c</fullName>
+        <externalId>false</externalId>
+        <formula>CallDurationInSeconds / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Call Len Mins</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Class__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(IsTask = True, &quot;Calls/Commercials&quot;,&quot;Appointments&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Class</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Code_CreatedWeek__c</fullName>
+        <externalId>false</externalId>
+        <formula>((
+(TODAY() + CASE(MOD(TODAY() - DATE(1900, 1, 7), 7),
+0, 6,
+1, 5,
+2, 4,
+3, 3,
+4, 2,
+5, 1,
+6, 0, 0))
+
+
+- (DATEVALUE(Call_Date__c) + CASE(MOD(TODAY() - DATE(1900, 1, 7), 7),
+0, 6,
+1, 5,
+2, 4,
+3, 3,
+4, 2,
+5, 1,
+6, 0, 0))
+)/7)*(-1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Code Created Week</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Code_Created_Week_Of__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATEVALUE(Call_Date__c) + CASE(MOD(DATEVALUE(Call_Date__c) - DATE(1900, 1, 7), 7),
+0, 1,
+1, 0,
+2, -1,
+3, -2,
+4, -3,
+5, -4,
+6, -5, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Code Created Week Of</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Code_Run_Week_Of__c</fullName>
+        <externalId>false</externalId>
+        <formula>Date_Scheduled__c  + CASE(MOD( Date_Scheduled__c  - DATE(1900, 1, 7), 7), 
+0, 1, 
+1, 0, 
+2, -1, 
+3, -2, 
+4, -3, 
+5, -4, 
+6, -5, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Code Run Week Of</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Code_Run_Week__c</fullName>
+        <externalId>false</externalId>
+        <formula>((
+(TODAY() + CASE(MOD(TODAY() - DATE(1900, 1, 7), 7),
+0, 6,
+1, 5,
+2, 4,
+3, 3,
+4, 2,
+5, 1,
+6, 0, 0))
+
+
+- ( Date_Scheduled__c  + CASE(MOD(TODAY() - DATE(1900, 1, 7), 7),
+0, 6,
+1, 5,
+2, 4,
+3, 3,
+4, 2,
+5, 1,
+6, 0, 0))
+)/7)*(-1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Code Run Week</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Code_Week__c</fullName>
+        <description>IF(TODAY()=DATEVALUE(Completed__c),
+(-1*(((TODAY() - DATEVALUE(Completed__c))-(7-(MOD(TODAY()-DATE(2000,1,2),7))))/7))-1
+,
+
+-1*(((TODAY() - DATEVALUE(Completed__c))-(7-(MOD(TODAY()-DATE(2000,1,2),7))))/7))</description>
+        <externalId>false</externalId>
+        <formula>IF(TODAY()=DATEVALUE(Completed__c),
+(-1*(((TODAY() - DATEVALUE(Completed__c))-(7-(MOD(TODAY()-DATE(2000,1,2),7))))/7))-1
+,
+
+-1*(((TODAY() - DATEVALUE(Completed__c))-(7-(MOD(TODAY()-DATE(2000,1,2),7))))/7))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Code Week</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Completed__c</fullName>
+        <externalId>false</externalId>
+        <label>Completed</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Created_By_Role_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.UserRole.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Created By Role Name</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Created_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Created Date Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_Scheduled__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Scheduled</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DayOfWeek__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( 
+MOD(  DateValue(Call_Date__c)  - DATE(2000, 1, 7), 7), 
+0, &quot;5-Friday&quot;, 
+1, &quot;6-Saturday&quot;, 
+2, &quot;7-Sunday&quot;, 
+3, &quot;1-Monday&quot;, 
+4, &quot;2-Tuesday&quot;, 
+5, &quot;3-Wednesday&quot;, 
+6, &quot;4-Thursday&quot;, &quot;Error&quot;)</formula>
+        <label>DayOfWeek</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FA_Action__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(CONTAINS(Subject, &quot;fa&quot;),CONTAINS(Subject, &quot;FA&quot;),CONTAINS(Subject, &quot;first appoint&quot;)),
+
+
+
+1,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FA Action</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GL_Care_Contacted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>GO Care - Contacted</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Has_30_Second__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(CONTAINS(Subject, &quot;30 second&quot;),CONTAINS(Subject, &quot;30 Second&quot;)),&quot;Yes&quot;,&quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Has 30 Second</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HubSpot_Inc__Guid__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Unique ID for HubSpot related Tasks</description>
+        <externalId>false</externalId>
+        <label>Guid</label>
+        <length>200</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Contract_Send__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(CONTAINS(Subject,&quot;Email: DealChicken&quot;),CONTAINS(Subject,&quot;Email: SimplyGifted&quot;)),&quot;Yes&quot;,&quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Contract Send</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ran_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(  ISPICKVAL(Status__c, &quot;Ran&quot;), 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ran Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ready_To_Archive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Denotes that a task has been accounted for in Lead calculations for the Call Dialer Initiative and can be archived without fear of loss of data. - FAR Astadia</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Denotes that a task has been accounted for in Lead calculations for the Call Dialer Initiative and can be archived without fear of loss of data</inlineHelpText>
+        <label>Ready To Archive</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Call__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for Call</label>
+        <picklist>
+            <picklistValues>
+                <fullName>7 day after run</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Day after run</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment Issues</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proof approval- approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proof approval- contact</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proof approval- no contact</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proof approval- revision</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proof approval sent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vendor Portal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CLC Requested Follow Up</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Report_To__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.Role_Report_To__r.FirstName &amp; &quot; &quot; &amp;  CreatedBy.Role_Report_To__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Report To</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Score_Action__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Subject = &quot;Survey Completed&quot;,1,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Score Action</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Set_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Set Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Set_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATEVALUE(CreatedDate)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Set Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Set</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ran</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Subject = &quot;Call&quot;,&quot;1-Call&quot;,IF(CONTAINS(Subject,&quot;Conversation&quot;),&quot;2-Conv&quot;,IF(CONTAINS(Subject,&quot;Contract&quot;),&quot;5-Cont&quot;,IF( BEGINS(Subject,&quot;FA&quot;),&quot;3-FirApt&quot;,IF( BEGINS(Subject,&quot;SA&quot;),&quot;4-SecApt&quot;,&quot;No Type&quot;)))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Type</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Upsell_Instructions__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>General Steps To Take To Prepare For Upsell Call</inlineHelpText>
+        <label>Upsell Instructions</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Week_Of_Run__c</fullName>
+        <externalId>false</externalId>
+        <formula>Code_Run_Week_Of__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Week Of Run</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Week_Of__c</fullName>
+        <externalId>false</externalId>
+        <formula>Code_Created_Week_Of__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Week Of</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X30_Sec_Action__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS(Subject, &quot;30 sec&quot;),1,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>30 Sec Action</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>qbdialer__CallRecordingURL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Link to the call recording</description>
+        <externalId>false</externalId>
+        <label>Call Recording</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>qbdialer__Call_Date_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Call Date/Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>qbdialer__Call_Dial_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total number of dials on the record being called</description>
+        <externalId>false</externalId>
+        <label>Call Dial Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>qbdialer__Call_Hour__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Hour in which the call was placed from the record&apos;s perspective</description>
+        <externalId>false</externalId>
+        <label>Call Hour</label>
+        <length>8</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>qbdialer__Call_Lead_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Lead Status of the record called</description>
+        <externalId>false</externalId>
+        <label>Call Lead Status</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>qbdialer__Call_Ring_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Ring Time of the phone call</description>
+        <externalId>false</externalId>
+        <label>Call Ring Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>qbdialer__Call_Time_Zone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Time zone of the number being called</description>
+        <externalId>false</externalId>
+        <label>Call Time Zone</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>qbdialer__Callback_Date_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Callback Date/Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>qbdialer__ImpressionId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Impression ID</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>qbdialer__SMSReminder__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Text message reminders will be sent to all attendees at the set reminder time.</inlineHelpText>
+        <label>Send text msg reminder to all attendees</label>
+        <type>Checkbox</type>
+    </fields>
+    <listViews>
+        <fullName>MyDelegatedActivities</fullName>
+        <filterScope>Delegated</filterScope>
+        <label>My Delegated Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>MyOpenActivities</fullName>
+        <columns>ACTIVITY.TASK</columns>
+        <columns>TASK.SUBJECT</columns>
+        <columns>Completed__c</columns>
+        <columns>TASK.WHAT_NAME</columns>
+        <columns>TASK.DUE_DATE</columns>
+        <columns>TASK.CREATED_DATE</columns>
+        <columns>TASK.CLOSED</columns>
+        <columns>TASK.STATUS</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Open Activities</label>
+        <sharedTo>
+            <role>AccountManagers</role>
+            <role>DirectorofAccountManagement</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>MyTeamsActivities</fullName>
+        <filterScope>Team</filterScope>
+        <label>My Team&apos;s Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>PersonView</fullName>
+        <columns>qbdialer__Call_Date_Time__c</columns>
+        <columns>Created_Date_Time__c</columns>
+        <columns>qbdialer__CallRecordingURL__c</columns>
+        <columns>TASK.SUBJECT</columns>
+        <columns>Call_Len_Mins__c</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>TASK.WHAT_NAME</columns>
+        <columns>TASK.WHO_NAME</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>TASK.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>3/21/2012 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>qbdialer__Call_Date_Time__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Person View</label>
+    </listViews>
+    <listViews>
+        <fullName>SalesRepUpsellTasks</fullName>
+        <columns>TASK.LAST_UPDATE</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>TASK.CREATED_DATE</columns>
+        <columns>Blog__c</columns>
+        <columns>TASK.DUE_DATE</columns>
+        <columns>TASK.WHAT_NAME</columns>
+        <columns>TASK.SUBJECT</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Blog__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Sales Rep Upsell Tasks</label>
+        <sharedTo>
+            <role>AcquisitionTeam1MgrRicoChild</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>UpcomingEvents</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>ACTIVITY.TASK</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>greaterThan</operation>
+            <value>YESTERDAY</value>
+        </filters>
+        <label>Upcoming Events</label>
+    </listViews>
+    <listViews>
+        <fullName>WeeklyActivity</fullName>
+        <booleanFilter>(1 OR 2 OR 3) AND (4 AND 5)</booleanFilter>
+        <columns>TASK.WHAT_NAME</columns>
+        <columns>TASK.WHO_NAME</columns>
+        <columns>Status__c</columns>
+        <columns>TASK.SUBJECT</columns>
+        <columns>TASK.DUE_DATE</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>TASK.SUBJECT</field>
+            <operation>equals</operation>
+            <value>Call</value>
+        </filters>
+        <filters>
+            <field>TASK.SUBJECT</field>
+            <operation>equals</operation>
+            <value>Call Completed - Conversation</value>
+        </filters>
+        <filters>
+            <field>TASK.SUBJECT</field>
+            <operation>equals</operation>
+            <value>FA</value>
+        </filters>
+        <filters>
+            <field>TASK.CREATED_DATE</field>
+            <operation>greaterThan</operation>
+            <value>12/1/2011 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>TASK.CREATED_DATE</field>
+            <operation>lessThan</operation>
+            <value>12/12/2011 12:00 AM</value>
+        </filters>
+        <label>Weekly Activity</label>
+    </listViews>
+    <searchLayouts>
+        <searchResultsAdditionalFields>TASK.SUBJECT</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TASK.WHO_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TASK.WHAT_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TASK.DUE_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+    </searchLayouts>
+    <webLinks>
+        <fullName>qbdialer__Launch_Click_to_Call</fullName>
+        <availability>online</availability>
+        <description>For Beta</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Launch Click-to-Call</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>var th = window.top.document.body;
+			var s = window.top.document.createElement(&apos;script&apos;);
+			s.setAttribute(&apos;type&apos;,&apos;text/javascript&apos;);
+			s.setAttribute(&apos;src&apos;,&quot;/resource/qbdialer__c2c_resources/20150716033139/c2c_console.js&quot;);
+			th.appendChild(s);</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,1548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Start Date</value>
+        </caseValues>
+        <name>date_opportunitylineitem</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Monthly List</value>
+        </caseValues>
+        <name>list_price_opportunitylineitem</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Periods</value>
+        </caseValues>
+        <name>quantity_opportunitylineitem</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Product Price</value>
+        </caseValues>
+        <name>sales_price_opportunitylineitem</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <label><!-- AMP PPC Start Date --></label>
+        <name>AMP_PPC_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Opportunity Product --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Active Product --></label>
+        <name>Active_Product__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mactive Ad Number, controlled by Ad Ops --></help>
+        <label><!-- Ad ID --></label>
+        <name>Ad_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Add Notice 1 --></label>
+        <name>Add_Notice_1__c</name>
+        <relationshipLabel><!-- Opportunity Product (Add Notice 1) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Add Notice 2 --></label>
+        <name>Add_Notice_2__c</name>
+        <relationshipLabel><!-- Opportunity Product (Add Notice 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Add Notice 3 --></label>
+        <name>Add_Notice_3__c</name>
+        <relationshipLabel><!-- Opportunity Product (Add Notice 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Affl Sales Rep Name --></label>
+        <name>Affl_Sales_Rep_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affl Sales Rep --></label>
+        <name>Affl_Sales_Rep__c</name>
+        <relationshipLabel><!-- Opportunity Product --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Approved by Manager --></label>
+        <name>Approved_by_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bus Days 10 --></label>
+        <name>Bus_Days_10__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bus Days 3 --></label>
+        <name>Bus_Days_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bus Days (OnBoarded) --></label>
+        <name>Bus_Days_OnBoarded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bus Days (SLA) --></label>
+        <name>Bus_Days_SLA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Can Create ILI&apos;s --></label>
+        <name>CanCreateILI__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type of Cancel --></label>
+        <name>CancelType__c</name>
+        <picklistValues>
+            <masterLabel>Cancel</masterLabel>
+            <translation><!-- Cancel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hard Cancel</masterLabel>
+            <translation><!-- Hard Cancel --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cancelled --></label>
+        <name>Canceled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cancellation Category --></label>
+        <name>Cancellation_Category__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled After Live</masterLabel>
+            <translation><!-- Cancelled After Live --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled Before Live</masterLabel>
+            <translation><!-- Cancelled Before Live --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fulfilled Non-Renewal</masterLabel>
+            <translation><!-- Fulfilled Non-Renewal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cancellation Detail --></label>
+        <name>Cancellation_Detail__c</name>
+        <picklistValues>
+            <masterLabel>AM Change</masterLabel>
+            <translation><!-- AM Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cannot pay/No budget/Business Closing</masterLabel>
+            <translation><!-- Cannot pay/No budget/Business Closing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client Unresponsive</masterLabel>
+            <translation><!-- Client Unresponsive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client billed incorrect amount</masterLabel>
+            <translation><!-- Client billed incorrect amount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client billed twice in one period</masterLabel>
+            <translation><!-- Client billed twice in one period --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client issue unresolved</masterLabel>
+            <translation><!-- Client issue unresolved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client not fully explained OB process, frustrated</masterLabel>
+            <translation><!-- Client not fully explained OB process, frustrated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client refused to give explanation</masterLabel>
+            <translation><!-- Client refused to give explanation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client unhappy with billing procedure (pause policy)</masterLabel>
+            <translation><!-- Client unhappy with billing procedure (pause policy) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entire spend moved to another G/O product</masterLabel>
+            <translation><!-- Entire spend moved to another G/O product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fulfilled Non Renewal</masterLabel>
+            <translation><!-- Fulfilled Non Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Platform/process</masterLabel>
+            <translation><!-- Internal Platform/process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lack of communication</masterLabel>
+            <translation><!-- Lack of communication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low Performance/Lack of, or irrelevant leads</masterLabel>
+            <translation><!-- Low Performance/Lack of, or irrelevant leads --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missed deadline</masterLabel>
+            <translation><!-- Missed deadline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moving marketing in house</masterLabel>
+            <translation><!-- Moving marketing in house --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New ‘decision maker’ unwilling to continue</masterLabel>
+            <translation><!-- New ‘decision maker’ unwilling to continue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No reason provided from affiliate rep</masterLabel>
+            <translation><!-- No reason provided from affiliate rep --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Over/Under Spend</masterLabel>
+            <translation><!-- Over/Under Spend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platform issue</masterLabel>
+            <translation><!-- Platform issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product down sell</masterLabel>
+            <translation><!-- Product down sell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product up sell</masterLabel>
+            <translation><!-- Product up sell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received better pricing from competitor</masterLabel>
+            <translation><!-- Received better pricing from competitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Responsiveness/Timeliness</masterLabel>
+            <translation><!-- Responsiveness/Timeliness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales communicated ‘opt out period’ to client</masterLabel>
+            <translation><!-- Sales communicated ‘opt out period’ to client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seasonality</masterLabel>
+            <translation><!-- Seasonality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set unrealistic or no performance expectations</masterLabel>
+            <translation><!-- Set unrealistic or no performance expectations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social: posts never change, eventually lose value</masterLabel>
+            <translation><!-- Social: posts never change, eventually lose value --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sold outside of deliverables</masterLabel>
+            <translation><!-- Sold outside of deliverables --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Undersold vs recommendation</masterLabel>
+            <translation><!-- Undersold vs recommendation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unrealistic expectations, never able to change, not enough time to prioritize</masterLabel>
+            <translation><!-- Unrealistic expectations, never able to change, not enough time to prioritize --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Work quality issue</masterLabel>
+            <translation><!-- Work quality issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong product for the client’s goals</masterLabel>
+            <translation><!-- Wrong product for the client’s goals --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cancellation Reason --></label>
+        <name>Cancellation_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Billing Issue</masterLabel>
+            <translation><!-- Billing Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client Unresponsive</masterLabel>
+            <translation><!-- Client Unresponsive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client/Business Issue</masterLabel>
+            <translation><!-- Client/Business Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fulfilled Non Renewal</masterLabel>
+            <translation><!-- Fulfilled Non Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>G/O Error</masterLabel>
+            <translation><!-- G/O Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance</masterLabel>
+            <translation><!-- Performance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reallocation</masterLabel>
+            <translation><!-- Reallocation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Expectation Mismatch</masterLabel>
+            <translation><!-- Sales Expectation Mismatch --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Code Service End Date --></label>
+        <name>Code_Service_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Name --></label>
+        <name>Company_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count SEO --></label>
+        <name>Count_SEO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count Social --></label>
+        <name>Count_Social__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count Web --></label>
+        <name>Count_Web__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count --></label>
+        <name>Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Delivered --></label>
+        <name>Date_Delivered__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Field For Testing --></label>
+        <name>Date_Field_For_Testing__c</name>
+    </fields>
+    <fields>
+        <label><!-- DaysInStatus Awaiting OnBoard --></label>
+        <name>DaysInStatus_Awaiting_OnBoard__c</name>
+    </fields>
+    <fields>
+        <label><!-- DaysInStatus InFulfillment2 --></label>
+        <name>DaysInStatus_InFulfillment2__c</name>
+    </fields>
+    <fields>
+        <label><!-- DaysInStatus InFulfillment --></label>
+        <name>DaysInStatus_InFulfillment__c</name>
+    </fields>
+    <fields>
+        <label><!-- DaysInStatus Pending --></label>
+        <name>DaysInStatus_Pending__c</name>
+    </fields>
+    <fields>
+        <label><!-- DaysInStatus WaitingApproval --></label>
+        <name>DaysInStatus_WaitingApproval__c</name>
+    </fields>
+    <fields>
+        <label><!-- DaysInStatus WaitingResource --></label>
+        <name>DaysInStatus_WaitingResource__c</name>
+    </fields>
+    <fields>
+        <label><!-- DaysInStatus Waiting Approval2 --></label>
+        <name>DaysInStatus_Waiting_Approval2__c</name>
+    </fields>
+    <fields>
+        <label><!-- DaysIn Status Awaiting Onboard2 --></label>
+        <name>DaysIn_Status_Awaiting_Onboard2__c</name>
+    </fields>
+    <fields>
+        <label><!-- DaysIn Status Pending2 --></label>
+        <name>DaysIn_Status_Pending2__c</name>
+    </fields>
+    <fields>
+        <label><!-- DaysIn Status Waiting Resource2 --></label>
+        <name>DaysIn_Status_Waiting_Resource2__c</name>
+    </fields>
+    <fields>
+        <label><!-- DaysWithGOErr --></label>
+        <name>DaysWithGLErr__c</name>
+    </fields>
+    <fields>
+        <label><!-- DaysWithGO --></label>
+        <name>DaysWithGL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days In Status CW To DigAM --></label>
+        <name>Days_In_Status_CWtoDigAM__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Days To Go Live --></label>
+        <name>Days_To_Go_Live__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days To Live --></label>
+        <name>Days_To_Live__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Formula Field that displays &quot;true&quot; or &quot;false&quot; based on the value on the related Product --></help>
+        <label><!-- Default Include In Monthly Total --></label>
+        <name>Default_Include_In_Monthly_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dig Account Manager --></label>
+        <name>Dig_Account_Manager__c</name>
+        <relationshipLabel><!-- Opportunity Product (Dig Account Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Digital No Start Date Req --></label>
+        <name>Digital_No_Start_Date_Req__c</name>
+    </fields>
+    <fields>
+        <label><!-- Digital Product --></label>
+        <name>Digital_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Earliest Timestamp --></label>
+        <name>Earliest_Timestamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email - CPM --></label>
+        <name>Email_CPM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email - Recipients Qty --></label>
+        <name>Email_Recipients_Qty__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Of Service Date --></label>
+        <name>End_Of_Service_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date the Contract Expires (Go Live Date plus Number of Payment Periods) --></help>
+        <label><!-- Expiration Date --></label>
+        <name>Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- ExpireNoticeDate --></label>
+        <name>ExpireNoticeDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- If/When product newly enters a Fulfilled status, a value of that present moment will be placed here. --></help>
+        <label><!-- Fulfillment Date --></label>
+        <name>Fulfilled_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fulfillment Status --></label>
+        <name>FulfillmentStatus__c</name>
+        <picklistValues>
+            <masterLabel>AMP</masterLabel>
+            <translation><!-- AMP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual</masterLabel>
+            <translation><!-- Manual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WaitingOnLandingPage</masterLabel>
+            <translation><!-- WaitingOnLandingPage --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Fulfillment Specialist --></label>
+        <name>Fulfillment_Specialist__c</name>
+        <relationshipLabel><!-- Opportunity Product (Fulfillment Specialist) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Full Charge Amt --></label>
+        <name>Full_Charge_Amt__c</name>
+    </fields>
+    <fields>
+        <label><!-- HTML Fee --></label>
+        <name>HTML_Fee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Has ILI&apos;S --></label>
+        <name>Has_ILI__c</name>
+    </fields>
+    <fields>
+        <label><!-- InStatus Awaiting OnBoard --></label>
+        <name>InStatus_Awaiting_OnBoard__c</name>
+    </fields>
+    <fields>
+        <label><!-- InStatus In Fulfillment --></label>
+        <name>InStatus_In_Fulfillment__c</name>
+    </fields>
+    <fields>
+        <label><!-- InStatus Pending --></label>
+        <name>InStatus_Pending__c</name>
+    </fields>
+    <fields>
+        <label><!-- InStatus TimeIn --></label>
+        <name>InStatus_TimeIn__c</name>
+    </fields>
+    <fields>
+        <label><!-- InStatus WaitingApproval --></label>
+        <name>InStatus_WaitingApproval__c</name>
+    </fields>
+    <fields>
+        <label><!-- InStatus WaitingResource --></label>
+        <name>InStatus_WaitingResource__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Fulfillment Out Stamp --></label>
+        <name>In_Fulfillment_Out_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Fulfillment Stamp --></label>
+        <name>In_Fulfillment_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Cancel Date --></label>
+        <name>Invoice_CancelDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cancellation Fee Percent --></label>
+        <name>Invoice_CancelFeePercent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Anniversary Day --></label>
+        <name>Invoice_DayOfMonth__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field contains different pricing variables such as CPM for Email, cost per location for Maps and cost per hours for Web Creative Fees. --></help>
+        <label><!-- Product Price Variable --></label>
+        <name>Invoice_PriceVariable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product End of Service Date --></label>
+        <name>Invoice_ServiceEndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Start of Service Date --></label>
+        <name>Invoice_ServiceStartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Units --></label>
+        <name>Invoice_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Schedule Bill Date --></label>
+        <name>Last_Schedule_Bill_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>Lead__c</name>
+        <relationshipLabel><!-- Opportunity Product --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Link Edit --></label>
+        <name>Link_Edit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link View --></label>
+        <name>Link_View__c</name>
+    </fields>
+    <fields>
+        <label><!-- Live Date --></label>
+        <name>Live_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Live Last Set DateTime --></label>
+        <name>Live_Last_Set_DateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Live Last Set Person --></label>
+        <name>Live_Last_Set_Person__c</name>
+    </fields>
+    <fields>
+        <label><!-- Live Last Set Prev Val --></label>
+        <name>Live_Last_Set_Prev_Val__c</name>
+    </fields>
+    <fields>
+        <label><!-- Live Last Set Value --></label>
+        <name>Live_Last_Set_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Live Timer --></label>
+        <name>Live_Timer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Live --></label>
+        <name>Live__c</name>
+    </fields>
+    <fields>
+        <label><!-- Media Partner Name --></label>
+        <name>Media_Partner_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Media Partner --></label>
+        <name>Media_Partner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meets_SLA --></label>
+        <name>Meets_SLA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mgmt Fee % --></label>
+        <name>Mgmt_Fee_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Month 1 Charge --></label>
+        <name>Month_1_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notify Email 1 --></label>
+        <name>Notify_Email_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notify Email 2 --></label>
+        <name>Notify_Email_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notify Email 3 --></label>
+        <name>Notify_Email_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number Of Hours --></label>
+        <name>NumberOfHours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number Of Locations --></label>
+        <name>NumberOfLocations__c</name>
+    </fields>
+    <fields>
+        <label><!-- OnBoard Date --></label>
+        <name>OnBoard_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Acct Id --></label>
+        <name>Opp_Acct_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Affl Sales Rep --></label>
+        <name>Opp_Affl_Sales_Rep__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Date --></label>
+        <name>Opp_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Dig Acct Man Id --></label>
+        <name>Opp_Dig_Acct_Man_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Last Sched Bill Date --></label>
+        <name>Opp_Last_Sched_Bill_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Name --></label>
+        <name>Opp_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Owner Id --></label>
+        <name>Opp_Owner_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Owner --></label>
+        <name>Opp_Owner__c</name>
+        <relationshipLabel><!-- Opportunity Product (Opp Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Product ID --></label>
+        <name>Opp_Product_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Sales Rep Id --></label>
+        <name>Opp_Sales_Rep_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Form --></label>
+        <name>Order_Form__c</name>
+    </fields>
+    <fields>
+        <label><!-- P.P.C.I. --></label>
+        <name>P_P_C_I__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Processing --></label>
+        <name>Payment_Processing__c</name>
+        <relationshipLabel><!-- Opportunity Product --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Periods/Cycles --></label>
+        <name>Periods2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Print Product --></label>
+        <name>Print_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Category --></label>
+        <name>Product_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Product Value --></label>
+        <name>Product_CurrentValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Description --></label>
+        <name>Product_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Id --></label>
+        <name>Product_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Product Value --></label>
+        <name>Product_OriginalValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product P or C Date --></label>
+        <name>Product_PorC_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Awaiting Onboard to today --></label>
+        <name>Project_Awaiting_Onboard_to_today__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Closed Won To Live --></label>
+        <name>Project_Completion_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project InFulfill To Live --></label>
+        <name>Project_Fulfill_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project In Fulfill Date --></label>
+        <name>Project_In_Fulfill_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Awaiting OnBoard To Live --></label>
+        <name>Project_In_Pipe_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Closed Won Date --></label>
+        <name>Project_Initiation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Start Date --></label>
+        <name>Project_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Story - Review Needed --></label>
+        <name>Project_Story_Review_Needed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Opportunity Product --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Property Product --></label>
+        <name>Property_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Contract Months --></label>
+        <name>Qty_ContractMonths__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Line Items --></label>
+        <name>Qty_LineItems__c</name>
+    </fields>
+    <fields>
+        <label><!-- ROP Height (Inch) --></label>
+        <name>ROP_Height__c</name>
+        <picklistValues>
+            <masterLabel>0.5</masterLabel>
+            <translation><!-- 0.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1.0</masterLabel>
+            <translation><!-- 1.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1.5</masterLabel>
+            <translation><!-- 1.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10.0</masterLabel>
+            <translation><!-- 10.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10.5</masterLabel>
+            <translation><!-- 10.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11.0</masterLabel>
+            <translation><!-- 11.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11.5</masterLabel>
+            <translation><!-- 11.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12.0</masterLabel>
+            <translation><!-- 12.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12.5</masterLabel>
+            <translation><!-- 12.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13.0</masterLabel>
+            <translation><!-- 13.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13.5</masterLabel>
+            <translation><!-- 13.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14.0</masterLabel>
+            <translation><!-- 14.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14.5</masterLabel>
+            <translation><!-- 14.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15.0</masterLabel>
+            <translation><!-- 15.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15.5</masterLabel>
+            <translation><!-- 15.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16.0</masterLabel>
+            <translation><!-- 16.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16.5</masterLabel>
+            <translation><!-- 16.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>17.0</masterLabel>
+            <translation><!-- 17.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>17.5</masterLabel>
+            <translation><!-- 17.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18.0</masterLabel>
+            <translation><!-- 18.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18.5</masterLabel>
+            <translation><!-- 18.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19.0</masterLabel>
+            <translation><!-- 19.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19.5</masterLabel>
+            <translation><!-- 19.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.0</masterLabel>
+            <translation><!-- 2.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.5</masterLabel>
+            <translation><!-- 2.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20.0</masterLabel>
+            <translation><!-- 20.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20.5</masterLabel>
+            <translation><!-- 20.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>21.0</masterLabel>
+            <translation><!-- 21.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>21.5</masterLabel>
+            <translation><!-- 21.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3.0</masterLabel>
+            <translation><!-- 3.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3.5</masterLabel>
+            <translation><!-- 3.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.0</masterLabel>
+            <translation><!-- 4.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.5</masterLabel>
+            <translation><!-- 4.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5.0</masterLabel>
+            <translation><!-- 5.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5.5</masterLabel>
+            <translation><!-- 5.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6.0</masterLabel>
+            <translation><!-- 6.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6.5</masterLabel>
+            <translation><!-- 6.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7.0</masterLabel>
+            <translation><!-- 7.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7.5</masterLabel>
+            <translation><!-- 7.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8.0</masterLabel>
+            <translation><!-- 8.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8.5</masterLabel>
+            <translation><!-- 8.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9.0</masterLabel>
+            <translation><!-- 9.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9.5</masterLabel>
+            <translation><!-- 9.5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ROP Section --></label>
+        <name>ROP_Section__c</name>
+        <picklistValues>
+            <masterLabel>AZ LIVING (Monday, Tuesday &amp; Sundays)</masterLabel>
+            <translation><!-- AZ LIVING (Monday, Tuesday &amp; Sundays) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AZ LIVING – EXPLORE AZ (SATURDAY)</masterLabel>
+            <translation><!-- AZ LIVING – EXPLORE AZ (SATURDAY) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AZ LIVING – HEALTH &amp; WELLNESS (FRIDAY)</masterLabel>
+            <translation><!-- AZ LIVING – HEALTH &amp; WELLNESS (FRIDAY) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AZ LIVING – THINGS TO DO (THURS)</masterLabel>
+            <translation><!-- AZ LIVING – THINGS TO DO (THURS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AZ Living – FOOD &amp; DRINK (WEDS)</masterLabel>
+            <translation><!-- AZ Living – FOOD &amp; DRINK (WEDS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BUSINESS</masterLabel>
+            <translation><!-- BUSINESS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MAIN NEWS</masterLabel>
+            <translation><!-- MAIN NEWS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SPORTS</masterLabel>
+            <translation><!-- SPORTS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ROP Visual --></label>
+        <name>ROP_Visual__c</name>
+        <picklistValues>
+            <masterLabel>BL&amp;WT</masterLabel>
+            <translation><!-- BL&amp;WT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COLOR</masterLabel>
+            <translation><!-- COLOR --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ROP Columns --></label>
+        <name>ROP__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Record Type Name --></label>
+        <name>Record_Type_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original NewSell OLI ID --></label>
+        <name>ReferenceID_OriginalNewSell__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Case - Result --></label>
+        <name>Related_Case_Result__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Case --></label>
+        <name>Related_Case__c</name>
+        <relationshipLabel><!-- Opportunity Product --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Renewable --></label>
+        <name>Renewable__c</name>
+    </fields>
+    <fields>
+        <label><!-- RenewalText --></label>
+        <name>RenewalText__c</name>
+    </fields>
+    <fields>
+        <label><!-- Originating OLI ID --></label>
+        <name>ReplicationOLI_SourceID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Replicated OLI ID --></label>
+        <name>ReplicationOLI_TargetID__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Met --></label>
+        <name>SLA_Met__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Product Type --></label>
+        <name>SLA_Product_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA --></label>
+        <name>SLA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sell Type --></label>
+        <name>Sell_Type__c</name>
+        <picklistValues>
+            <masterLabel>Auto Extension</masterLabel>
+            <translation><!-- Auto Extension --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CrossSell</masterLabel>
+            <translation><!-- CrossSell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DownSell</masterLabel>
+            <translation><!-- DownSell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NewSell</masterLabel>
+            <translation><!-- NewSell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewal</masterLabel>
+            <translation><!-- Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UpSell</masterLabel>
+            <translation><!-- UpSell --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Service End Date --></label>
+        <name>Service_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Setup Fee Amt --></label>
+        <name>Setup_Fee_Amt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Setup Fee Required --></label>
+        <name>Setup_Fee_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Setup Fee --></label>
+        <name>Setup_Fee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Social Media Notice --></label>
+        <name>Social_Media_Notice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Bus Days 3 --></label>
+        <name>Status_Bus_Days_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Bus Days 7 --></label>
+        <name>Status_Bus_Days_7__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Change Date --></label>
+        <name>Status_Change_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wait Set Date --></label>
+        <name>Status_Last_Waiting_Set_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wait UnSet Date --></label>
+        <name>Status_Last_Waiting_UnSet_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Text --></label>
+        <name>Status_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Waiting Check --></label>
+        <name>Status_Waiting_Check__c</name>
+    </fields>
+    <fields>
+        <label><!-- Term --></label>
+        <name>Term__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Workflow Box --></label>
+        <name>Test_Workflow_Box__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bus Days (In Status) --></label>
+        <name>Time_In_Current_Status_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time To Deliver --></label>
+        <name>Time_To_Deliver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Monthly Charge --></label>
+        <name>TotalMonthlyCharge__c</name>
+    </fields>
+    <fields>
+        <help><!-- The formula is Actual Price * Probability --></help>
+        <label><!-- Forecast Formula --></label>
+        <name>TotalPrice_Probability_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Upsell? --></label>
+        <name>Upsell__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Waiting Age --></label>
+        <name>Waiting_Age__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Descr/Notes --></label>
+        <name>Waiting_Status_Descr__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Options --></label>
+        <name>Waiting_Status_Options_Before__c</name>
+        <picklistValues>
+            <masterLabel>Closed Won</masterLabel>
+            <translation><!-- Closed Won --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status Options --></label>
+        <name>Waiting_Status_Options__c</name>
+        <picklistValues>
+            <masterLabel>Awaiting Onboard</masterLabel>
+            <translation><!-- Awaiting Onboard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fulfilled Non-Renewal</masterLabel>
+            <translation><!-- Fulfilled Non-Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fulfilled Renewed</masterLabel>
+            <translation><!-- Fulfilled Renewed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fulfilled-Complete</masterLabel>
+            <translation><!-- Fulfilled-Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Fulfillment</masterLabel>
+            <translation><!-- In Fulfillment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Live</masterLabel>
+            <translation><!-- Live --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting On Client Approval</masterLabel>
+            <translation><!-- Waiting On Client Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting On Client Resource</masterLabel>
+            <translation><!-- Waiting On Client Resource --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Waiting_Status__c</name>
+        <picklistValues>
+            <masterLabel>--Internal Use Only--</masterLabel>
+            <translation><!-- - - Internal Use Only- -  --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting Onboard</masterLabel>
+            <translation><!-- Awaiting Onboard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed Won</masterLabel>
+            <translation><!-- Closed Won --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fulfilled Non-Renewal</masterLabel>
+            <translation><!-- Fulfilled Non-Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fulfilled Renewed</masterLabel>
+            <translation><!-- Fulfilled Renewed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fulfilled-Complete</masterLabel>
+            <translation><!-- Fulfilled-Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hard Cancel</masterLabel>
+            <translation><!-- Hard Cancel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Fulfillment</masterLabel>
+            <translation><!-- In Fulfillment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Live</masterLabel>
+            <translation><!-- Live --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paused:Billing</masterLabel>
+            <translation><!-- Paused:Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paused:No Contact</masterLabel>
+            <translation><!-- Paused:No Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting On Client Approval</masterLabel>
+            <translation><!-- Waiting On Client Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting On Client Resource</masterLabel>
+            <translation><!-- Waiting On Client Resource --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Field to indicate in Monthly total Field whether or not to include this prdouct.  Updated automatically based on DEFAULT INCLUDE IN MONTHLY Text field --></help>
+        <label><!-- Include In Monthly Total --></label>
+        <name>chk_Include_in_Monthly__c</name>
+    </fields>
+    <fields>
+        <label><!-- Include Content --></label>
+        <name>tinderbox__Include_Content__c</name>
+    </fields>
+    <layouts>
+        <layout>BLANK OpportunityLineItem Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Opp Product Acquisitions</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- ROP Specifications --></label>
+            <section>ROP Specifications</section>
+        </sections>
+        <sections>
+            <label><!-- Status History --></label>
+            <section>Status History</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Opp Product Admin</layout>
+        <sections>
+            <label><!-- Other --></label>
+            <section>Other</section>
+        </sections>
+        <sections>
+            <label><!-- Project Status --></label>
+            <section>Project Status</section>
+        </sections>
+        <sections>
+            <label><!-- Quick Links --></label>
+            <section>Quick Links</section>
+        </sections>
+        <sections>
+            <label><!-- ROP Specifications --></label>
+            <section>ROP Specifications</section>
+        </sections>
+        <sections>
+            <label><!-- Status History --></label>
+            <section>Status History</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Opportunity Product Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- ROP Specifications --></label>
+            <section>ROP Specifications</section>
+        </sections>
+        <sections>
+            <label><!-- Status History --></label>
+            <section>Status History</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Opportunity Product Layout - Billing</layout>
+        <sections>
+            <label><!-- Billing Tools --></label>
+            <section>Billing Tools</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- ROP Specifications --></label>
+            <section>ROP Specifications</section>
+        </sections>
+        <sections>
+            <label><!-- Status History --></label>
+            <section>Status History</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Opportunity Product Layout with Cancel Category</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- ROP Specifications --></label>
+            <section>ROP Specifications</section>
+        </sections>
+        <sections>
+            <label><!-- Status History --></label>
+            <section>Status History</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage><!-- Please select a Cancellation Reason from the picklist --></errorMessage>
+        <name>CancelReason_Required_On_Cancel</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cancelled or Non-Renewal requires a Cancellation Category selection and Status Descr/Notes --></errorMessage>
+        <name>Cancel_NonRenew_Status_Requirements</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Clear Cancellation Category if there is not A Canceled or Non-Renewal Status --></errorMessage>
+        <name>Cancel_Removal</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Notes Are Required For A Cancelled Status --></errorMessage>
+        <name>Cancel_Requires_Notes</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Opportunity Products can not be Cancelled if the Opportunity is in a stage other than Closed Won. Please mark the Opportunity as Closed Won in order to cancel the Opportunity Products or contact your manager. --></errorMessage>
+        <name>Cancelled_Status_needs_Closed_Won_Stage</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot back date a Live Date Value.  Please refer to your manager to set prior Live Dates --></errorMessage>
+        <name>Cannot_Back_Date_Live_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must check the &apos;Live&apos; checkbox to set the Live Date. --></errorMessage>
+        <name>Cannot_Enter_Live_Date_Unchecked</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You Must Have A Digital Account Manager Assigned To The Opportunity Prior To Assigning A Status To Any Product. --></errorMessage>
+        <name>Dig_AM_Requirement_for_Status</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Enter a Description of the Cancelation Reason/s --></errorMessage>
+        <name>IssueNotes_Required_On_Cancel</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Enter a Description of the Waiting Reason --></errorMessage>
+        <name>IssueNotes_Required_On_Waiting</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Sorry, pricing modifications are only allowed on setup or components.  Contact your manager. --></errorMessage>
+        <name>List_Change_Permissions</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Fields involved in Invoice processing cannot be updated once the ILI&apos;s have been generated. Please contact Salesforce Support via support ticket for further assistance. --></errorMessage>
+        <name>Lock_Fields_Update_on_ILI_Gen</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This Opportunity Product has been replicated and can no longer be edited --></errorMessage>
+        <name>Lock_OLI_After_Replication</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Hard Cancel is not a valid option for this Opportunity type --></errorMessage>
+        <name>Non_USCP_Cannot_Select_HardCancel</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only Admins have access to change the live date. --></errorMessage>
+        <name>Only_Admin_change_Live_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Notes Are Required For A Pending Status. --></errorMessage>
+        <name>Pending_Requires_Notes</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a whole number for Periods. --></errorMessage>
+        <name>Quantity_Must_Be_An_Integer</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Sorry, pricing modifications are not allowed on items that are not components or setup up fees. Contact your manager. --></errorMessage>
+        <name>Setup_Fee_List_Change_OK_Nothing_Else</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Start Date cannot be less than 7 days from Today --></errorMessage>
+        <name>Seven_Days_Start_Date_Force</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a Start Date --></errorMessage>
+        <name>Start_Date_Force</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a Start Date --></errorMessage>
+        <name>Start_Date_Force_Old</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please clear the selected Cancellation Reason, Cancellation Category  and Cancellation Detail. --></errorMessage>
+        <name>USCP_CancelDate_Removal</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter data in all fields. --></errorMessage>
+        <name>USCP_CancelDate_Requires_Notes_Category</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot change the status of this Opportunity Product because it has been cancelled --></errorMessage>
+        <name>USCP_Cancel_Or_HardCancel_Removal</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cancel Date must be less than or equal to the Service End Date. --></errorMessage>
+        <name>USCP_InvoiceCancelDate_Max_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Enter a date of today or in the future. --></errorMessage>
+        <name>USCP_InvoiceCancelDate_Min_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only Finance Users are able to update the Status to &apos;Closed Won&apos; Please contact your manager or Finance for further assistance. --></errorMessage>
+        <name>USCP_OLIStatusToClosedWon_OnlyFinance</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Enter a Valid Number --></errorMessage>
+        <name>Validate_Number_Of_Contract_Months</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Enter A Valid Number --></errorMessage>
+        <name>Validate_Number_Of_Locations</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Enter a Valid Number --></errorMessage>
+        <name>Validate_Number_of_Line_Items</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Add_USCP_Products --></label>
+        <name>Add_USCP_Products</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Payment_Entries --></label>
+        <name>Create_Payment_Entries</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Status_History_Review --></label>
+        <name>Status_History_Review</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- TestButt --></label>
+        <name>TestButt</name>
+    </webLinks>
+</CustomObjectTranslation>

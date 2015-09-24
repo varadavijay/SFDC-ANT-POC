@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessType>Shared</accessType>
+    <name>Reports for WLC</name>
+    <publicFolderAccess>ReadWrite</publicFolderAccess>
+    <sharedTo>
+        <group>SystemAdminstrators</group>
+        <role>AdSupportGLA</role>
+        <role>ExecutiveDirector</role>
+    </sharedTo>
+</ReportFolder>

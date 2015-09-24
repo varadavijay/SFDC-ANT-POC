@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessType>Shared</accessType>
+    <name>Acquisition Management</name>
+    <publicFolderAccess>ReadWrite</publicFolderAccess>
+    <sharedTo>
+        <role>AcquisitionTeam1MgrRicoChild</role>
+        <role>DirectorofAccountManagement</role>
+    </sharedTo>
+</ReportFolder>

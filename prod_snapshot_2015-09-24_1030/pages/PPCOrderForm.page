@@ -1,0 +1,280 @@
+<apex:page controller="PPCOrderForm" tabStyle="Account">
+<apex:stylesheet value="{!$Resource.PPCOrderFormCSS}"/>
+    <apex:form >
+        <apex:stylesheet value="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery.ui.base.css" />
+        <apex:stylesheet value="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery.ui.theme.css" />        
+        <apex:includeScript value="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></apex:includeScript>
+        <apex:includeScript value="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></apex:includeScript>
+        <apex:includeScript value="{!$Resource.PPCOrderFormJS}"/>
+        <!--<apex:messages id="messages" />-->
+        <apex:pageBlock title="Salesforce PPC Order Form" id="ppcBlock">
+        <div id="ppcBlockDiv">
+        <apex:outputLink value="/{!ppcOrderDetail.Id}" rendered="{!debugShow}">View PPC Order Detail Record</apex:outputLink>
+        <apex:outputLabel rendered="{!duplicateShow}" styleClass="duplicateMessage">
+        <p>The order you attempted to save has been saved by another person.</p>
+        <span> 
+        Your changes have been discarded and you have been redirected to the saved version of this order.
+        </span>
+        </apex:outputLabel>
+        <input type="hidden" id="ppcFormStatus" value="{!isSubmitted}"/>
+        <div class="ppc-section">
+            <input id="hiddenElementId" type="hidden" />
+            <div class="ppc-section-title requiredfield" id="formStatus"><apex:outputLabel value="{!lastSavedOn}" /></div>
+            <div class="ppc-section-title">Advertiser Information</div>
+            <div class="ppc-section-break"></div>
+            <div class="ppc-section-content">
+                <div class="ppc-field-label"><apex:outputLabel value="PPC Business Name" for="accountName" /></div>
+                <div class="ppc-field-label"><apex:outputLabel value="Advertiser Industry" for="industryGeneral" /></div>
+                <div class="ppc-field-label"><apex:outputLabel value="Campaign Focus"/></div>
+                <div class="ppc-field-content newline graybox"><apex:outputField id="accountName" value="{!account.Name}" /></div>
+                <div class="ppc-field-content">
+                    <select class="ppc-input-normal" id="ktIndustryCategoryId" onchange="ppcOrderForm.updateIndustryCategoryId('{!$Component.KTIndustryCategoryId__c}','{!$Component.KTIndustryCategoryName__c}','{!$Component.KTFocusCategoryId__c}','{!$Component.KTFocusCategoryName__c}');"></select>
+                    <input type="hidden" id="ktIndustryCategoryIdField" value="{!$Component.KTIndustryCategoryId__c}" />
+                    <input type="hidden" id="ktIndustryCategoryNameField" value="{!$Component.KTIndustryCategoryName__c}" />
+                    <apex:inputHidden id="ktIndustryCategoryId__c" value="{!ppcOrderDetail.KTIndustryCategoryId__c}" />
+                    <apex:inputHidden id="ktIndustryCategoryName__c" value="{!ppcOrderDetail.KTIndustryCategoryName__c}" />
+                    <input type="hidden" id="initialKtIndustryCategoryId" value="{!ppcOrderDetail.KTIndustryCategoryId__c}"/>
+                </div>
+                <div class="ppc-field-content">
+                    <select class="ppc-input-normal" id="ktFocusCategoryId" onchange="ppcOrderForm.updateFocusCategoryId('{!$Component.KTFocusCategoryId__c}','{!$Component.KTFocusCategoryName__c}');"></select>
+                    <input type="hidden" id="ktFocusCategoryIdField" value="{!$Component.KTFocusCategoryId__c}" />
+                    <input type="hidden" id="ktFocusCategoryNameField" value="{!$Component.KTFocusCategoryName__c}" />
+                    <apex:inputHidden id="ktFocusCategoryId__c" value="{!ppcOrderDetail.KTFocusCategoryId__c}" />
+                    <apex:inputHidden id="ktFocusCategoryName__c" value="{!ppcOrderDetail.KTFocusCategoryName__c}" />
+                    <input type="hidden" id="initialKtFocusCategoryId" value="{!ppcOrderDetail.KTFocusCategoryId__c}"/>
+                </div>
+                <div id="reasonForOtherDiv" style="display:none">
+                <div class="ppc-field-label biggerfont spacermargin ppc-input-full newline"><apex:outputLabel value="Please provide an Advertiser Industry or Campaign Focus " for="ktReasonForOther__c" /></div>
+                <div class="ppc-field-content newline">
+                <div class="requiredInput">
+                <div class="requiredBlock"></div>
+                <apex:inputField required="false" styleClass="ppc-input-full" id="ktReasonForOther__c" value="{!ppcOrderDetail.KTReasonForOther__c}" />
+                </div></div>
+                </div>              
+                <div class="ppc-field-label newline"><apex:outputLabel value="Opportunity Name" for="opportunityName" /></div>
+                <div class="ppc-field-label"><apex:outputLabel value="Lead Capture Email" for="leadCaptureEmail__c" /></div>
+                <div class="ppc-field-label"><apex:outputLabel value="Business Website" for="businessWebsite__c" /></div>
+                <div class="ppc-field-content newline graybox"><apex:outputField id="opportunityName" value="{!opportunity.Name}" /></div>
+                <div class="ppc-field-content"><apex:inputField styleClass="ppc-input-normal" id="leadCaptureEmail__c" value="{!ppcOrderDetail.LeadCaptureEmail__c}" /></div>
+                <div class="ppc-field-content"><apex:inputField styleClass="ppc-input-normal" id="businessWebsite__c" value="{!ppcOrderDetail.BusinessWebsite__c}" /></div>
+                <div class="ppc-field-label biggerfont spacermargin newline"><apex:outputLabel value="Business Description" for="businessDescription__c" /></div>
+                <div class="ppc-field-content newline"><apex:inputField styleClass="ppc-input-full" id="businessDescription__c" value="{!ppcOrderDetail.BusinessDescription__c}" /></div>
+                
+                <div class="ppc-field-label spacermargin newline"><apex:outputLabel value="Is this advertiser proxy eligible?" for="proxyEligible" /></div>
+                <div class="ppc-field-label newline">
+                     <apex:selectRadio id="proxyEligible"  value="{!ppcOrderDetail.ProxyEligible__c}">
+                        <apex:selectOption itemLabel="Yes" itemValue="true"/>
+                        <apex:selectOption itemLabel="No" itemValue="false"/> 
+                    </apex:selectRadio>   
+                </div>
+                <div class="ppc-field-label newline bigmargin biggerfont">Business Locations</div>
+                <div class="ppc-field-content bigmargin2"><apex:commandButton action="{!addLocation}" value="Add New" disabled="{!isSubmitted}"/></div>
+                <div class="ppc-field-label newline bigmargin"><apex:outputText style="label" value="**The default name of the first location will be the Advertiser's name for which the order is placed.  Please modify as helpful for descriptive purposes.  Also, be sure to create a unique name for each additional location."></apex:outputText></div>
+                <div class="ppc-locations newline">
+                    <apex:pageMessages />
+                    <apex:variable value="{!1}" var="locIndex"/>
+                    <apex:repeat value="{!PPCOrderDetailLocations}" var="loc">
+                        <div class="ppc-location">
+                            <div class="ppc-field-label smallerlabel newline">
+                                <apex:outputText style="label" value="Location Name {!locIndex}"></apex:outputText>
+                            </div>  
+                            <div class="ppc-field-content smallercontent">
+                                <apex:inputtext id="name" styleClass="ppc-input-small" value="{!loc.LocationName__c}" />
+                            </div>
+                            <div class="ppc-field-label smallerlabel newline">
+                                <apex:outputText style="label" value="Address 1"></apex:outputText>
+                            </div>  
+                            <div class="ppc-field-content smallercontent">
+                                <apex:inputField styleClass="ppc-input-small" value="{!loc.Address1__c}" />
+                            </div>
+                            
+                            <div class="ppc-field-label smallerlabel newline">
+                                <apex:outputText style="label" value="Address 2"></apex:outputText>
+                            </div>  
+                            <div class="ppc-field-content smallercontent">
+                                <apex:inputField styleClass="ppc-input-small" value="{!loc.Address2__c}" />
+                            </div>
+                            
+                            <div class="ppc-field-label smallerlabel newline">
+                                <apex:outputText style="label" value="City"></apex:outputText>
+                            </div>  
+                            <div class="ppc-field-content smallercontent">
+                                <apex:inputField styleClass="ppc-input-small" value="{!loc.City__c}" />
+                            </div>
+                            
+                            <div class="ppc-field-label smallerlabel newline">
+                                <apex:outputText style="label" value="State"></apex:outputText>
+                            </div>  
+                            <div class="ppc-field-content smallercontent">
+                                <apex:inputField id="twochar" styleClass="ppc-input-small" value="{!loc.State__c}" />
+                            </div>
+                            
+                            <div class="ppc-field-label smallerlabel newline">
+                                <apex:outputText style="label" value="Zip"></apex:outputText>
+                            </div>  
+                            <div class="ppc-field-content smallercontent">
+                                <apex:inputField styleClass="ppc-input-small" value="{!loc.PostalCode__c}" />
+                            </div>
+                            
+                            <div class="ppc-field-label smallerlabel newline">
+                                <apex:outputText style="label" value="Target Phone {!locIndex}"></apex:outputText>
+                            </div>  
+                            <div class="ppc-field-content smallercontent">
+                                <apex:inputField id="phone" styleClass="ppc-input-small" value="{!loc.Phone__c}" />
+                            </div>
+                            
+                            <div class="ppc-field-label smallerlabel newline">
+                                <apex:outputText style="label" value="Proxy Phone {!locIndex}"></apex:outputText>
+                            </div>  
+                            <div class="ppc-field-content smallercontent">
+                                <apex:inputField styleClass="ppc-input-small" value="{!loc.ProxyPhone__c}" />
+                            </div>                          
+                                                        
+                            <div class="ppc-field-label smallerlabel newline">
+                                <apex:outputText style="label" value="Mobile/Call Ext Phone {!locIndex}"></apex:outputText>
+                            </div>  
+                            <div class="ppc-field-content smallercontent">
+                                <apex:inputField styleClass="ppc-input-small" value="{!loc.CallExtPhone__c}" />
+                            </div>                          
+                                                        
+                            <div class="ppc-field-label smallerlabel newline">
+                                <apex:outputText style="label" value="Geo Targets"></apex:outputText>
+                            </div>  
+                            <div class="ppc-field-content smallercontent">
+                                <apex:inputField styleClass="ppc-input-small" value="{!loc.GeoTargets__c}" />
+                            </div>                          
+                            <div class="ppc-field-label smallerlabel newline">
+                                <apex:outputText style="label" value="Website"></apex:outputText>
+                            </div>  
+                            <div class="ppc-field-content smallercontent">
+                                <apex:inputField id="url" styleClass="ppc-input-small" value="{!loc.Website__c}" />
+                            </div>
+                            <div class="ppc-field-label smallerlabel newline">
+                                <apex:outputText style="label" value="Website Type"></apex:outputText>
+                            </div>  
+                            <div class="ppc-field-content smallercontent">
+                                 <apex:selectRadio value="{!loc.WebsiteType__c}">
+                                    <apex:selectOption itemLabel="Client (No Proxy)" itemValue="Client"/>
+                                    <apex:selectOption itemLabel="New (In-House)" itemValue="New"/>
+                                    <apex:selectOption itemLabel="Proxy (Marchex)" itemValue="Proxy"/> 
+                                </apex:selectRadio>   
+                            </div>
+                            <div class="ppc-field-label smallerlabel newline">
+                                <apex:outputText style="label" value="">&nbsp;</apex:outputText>
+                            </div>
+                            <div class="ppc-field-content alignright smallercontent">
+                                <apex:commandLink value="Delete Location" rendered="{!locIndex>1}" immediate="true" onclick="return confirm('Are you sure?');" action="{!deleteLocation}">
+                                    <apex:param name="locIndexParam" value="{!locIndex -1}" assignTo="{!locIndexSelected}"/>
+                                </apex:commandLink>
+                            </div>                          
+                        </div>
+                        <apex:variable var="locIndex" value="{!locIndex + 1}"/>
+                    </apex:repeat>
+                </div>
+            </div>
+        </div>
+        <div class="ppc-section">       
+            <div class="ppc-section-title">Budget Information</div>
+            <div class="ppc-section-break"></div>
+            <div class="ppc-section-content">   
+                <table id="ppcSpendTable" class="ppc-spend-schedule-table">
+                <tbody>
+                <tr>
+                    <th class="aligncenter">Total Retail Amount</th>
+                    <th class="aligncenter">Management Fee Percent</th>
+                    <th class="aligncenter">PPC Campaign Duration</th>
+                    <th class="aligncenter">PPC Monthly Spend</th>
+                </tr>
+                <tr>
+                    <td class="aligncenter">
+                        <apex:outputText value="{0,number,#,##0}">$    
+                            <apex:param value="{!totalRetailAmount}"/>
+                        </apex:outputText>
+                    </td>
+                    <td style="text-align:center;">
+                        <input id="quantity" value="{!opportunityLineItem.Quantity}" type="hidden"/>
+                        <input id="totalRetail" value="{!totalRetailAmount}" type="hidden"/>
+                        <input id="managementFee" value="{!ppcOrderDetail.ManagementFee__c}" type="hidden"/>
+                        <apex:actionRegion immediate="true">
+                            <apex:inputField id="managementFee__c" required="true" value="{!ppcOrderDetail.ManagementFee__c}" label="{!ppcOrderDetail.ManagementFee__c} %" onchange="ppcOrderForm.updateSpendSchedule('{!$Component.managementFee__c}','{!opportunityLineItem.Quantity}','{!totalRetailAmount}');">
+                            </apex:inputField>
+                            <script>document.getElementById('{!$Component.managementFee__c}').disabled = {!disablePPCManagementFeeInput}; </script>
+                        </apex:actionRegion>
+                    </td>
+                    <td class="aligncenter">
+                        <apex:outputText value="{0,number,#,##0.0}">    
+                            <apex:param value="{!opportunityLineItem.Quantity}"/>
+                        </apex:outputText>&nbsp;Month(s)
+                    </td>
+                    <td class="aligncenter" id="ppcMonthlySpendCell">
+                        <apex:outputText value="{0,number,#,##0}">$    
+                            <apex:param value="{!ppcMonthlySpend}"/>
+                        </apex:outputText>
+                    </td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="ppc-section">       
+            <div class="ppc-section-title">Campaign Information</div>
+            <div class="ppc-section-break"></div>
+            <div class="ppc-section-content">       
+                <div class="ppc-field-label biggerfont newline"><apex:outputLabel value="Campaign Goals" for="campaignGoals__c" /></div>
+                <div class="ppc-field-content newline"><apex:inputField styleClass="ppc-input-full" id="campaignGoals__c" value="{!ppcOrderDetail.CampaignGoals__c}" /></div>
+                <div class="ppc-field-label spacermargin newline"><apex:outputLabel value="Search Engines" for="searchEngines" /></div>
+                <div class="ppc-field-label newline"><apex:inputField id="searchEngines" value="{!ppcOrderDetail.EnableAdWords__c}" onchange="ppcOrderForm.validateSearchEngine('{!$Component.searchEngines}');"/> Google <apex:inputField id="searchEngines2" value="{!ppcOrderDetail.EnableBingAds__c}" onchange="ppcOrderForm.validateSearchEngine('{!$Component.searchEngines2}');"/> Bing </div>
+
+                <div class="ppc-field-label biggerfont spacermargin newline"><apex:outputLabel value="Business Differentiators" for="businessDifferentiators__c" /></div>
+                <div class="ppc-field-content newline"><apex:inputField styleClass="ppc-input-full" id="businessDifferentiators__c" value="{!ppcOrderDetail.BusinessDifferentiators__c}" /></div>
+                <div class="ppc-field-label biggerfont biggerlabel spacermargin newline"><apex:outputLabel value="Products & Services to Advertise For" for="productsAndServices__c" /></div>
+                <div class="ppc-field-content newline"><apex:inputField styleClass="ppc-input-full" id="productsAndServices__c" value="{!ppcOrderDetail.ProductsAndServices__c}" /></div>
+                <div class="ppc-field-label biggerfont biggerlabel spacermargin newline"><apex:outputLabel value="Products & Services Not to Advertise For" for="negativeTerms__c" /></div>
+                <div class="ppc-field-content newline"><apex:inputField styleClass="ppc-input-full" id="negativeTerms__c" value="{!ppcOrderDetail.NegativeTerms__c}" /></div>
+                <div class="ppc-field-label biggerfont biggerlabel spacermargin newline"><apex:outputLabel value="Specials and Offers" for="specialsAndOffers__c" /></div>
+                <div class="ppc-field-content newline"><apex:inputField styleClass="ppc-input-full" id="specialsAndOffers__c" value="{!ppcOrderDetail.SpecialsAndOffers__c}" /></div>
+                <div class="ppc-field-label biggerfont spacermargin newline"><apex:outputLabel value="Competitors" for="competitors__c" /></div>
+                <div class="ppc-field-content newline"><apex:inputField styleClass="ppc-input-full" id="competitors__c" value="{!ppcOrderDetail.Competitors__c}" /></div>
+                
+                <div class="ppc-field-label spacermargin newline"><apex:outputLabel value="Is Ad copy approval required?" for="isAdCopyApprovalRequired__c" /></div>
+                <div class="ppc-field-label newline">
+                     <apex:selectRadio id="isAdCopyApprovalRequired__c"  value="{!ppcOrderDetail.IsAdCopyApprovalRequired__c}">
+                        <apex:selectOption itemLabel="Yes" itemValue="true"/>
+                        <apex:selectOption itemLabel="No" itemValue="false"/> 
+                    </apex:selectRadio>   
+                </div>              
+            </div>
+        </div>      
+        <div class="ppc-section">       
+            <div class="ppc-section-title">Other Information</div>
+            <div class="ppc-section-break"></div>
+            <div class="ppc-section-content">
+                <div class="ppc-field-label spacermargin biggerfont newline"><apex:outputLabel value="Copy Instructions" for="copyInstructions__c" /></div>
+                <div class="ppc-field-content newline"><apex:inputField styleClass="ppc-input-full" id="copyInstructions__c" value="{!ppcOrderDetail.CopyInstructions__c}" /></div>
+                <div class="ppc-field-label spacermargin biggerfont newline"><apex:outputLabel value="Design Instructions" for="designInstructions__c" /></div>
+                <div class="ppc-field-content newline"><apex:inputField styleClass="ppc-input-full" id="designInstructions__c" value="{!ppcOrderDetail.DesignInstructions__c}" /></div>
+                <div class="ppc-field-label spacermargin biggerfont newline"><apex:outputLabel value="Notes" for="additionalNotes__c" /></div>
+                <div class="ppc-field-content newline"><apex:inputField styleClass="ppc-input-full" id="additionalNotes__c" value="{!ppcOrderDetail.AdditionalNotes__c}" /></div>
+            </div>
+        </div>      
+        <div class="ppc-section">       
+            <div class="ppc-section-title smallfont">Once you submit this form the order will be placed with the Paid Media team.</div>
+            <div class="ppc-section-content ppc-input-full alignright">
+                 <apex:commandbutton action="{!ClickSave}" onClick=" return ppcOrderForm.validateReasonForOther('{!$Component.KTReasonForOther__c}','{!$Component.KTIndustryCategoryId__c}','{!$Component.KTFocusCategoryId__c}');" value="Save Order Form" disabled="{!isSubmitted}"/>
+                <apex:commandbutton action="{!ClickSubmit}" onClick="return ppcOrderForm.validateReasonForOther('{!$Component.KTReasonForOther__c}','{!$Component.KTIndustryCategoryId__c}','{!$Component.KTFocusCategoryId__c}');" value="Submit Order Form" disabled="{!isSubmitted}"/>
+            </div>
+        </div>
+        <div class="ppc-section" style="display:none;">     
+            <div class="ppc-section-title">Hidden - Debug Fields</div>
+            <div class="ppc-section-break"></div>
+            <div class="ppc-section-content">
+                <div class="ppc-field-label"><apex:outputLabel value="Is Ready for Fullfilment" for="isReadyForFullfilment__c" /></div>
+                <div class="ppc-field-label newline"><apex:outputLabel value="Opportunity Line Item Id" for="opportunityLineItemId__c" /></div>
+                <div class="ppc-field-content"><apex:outputField id="isReadyForFullfilment__c" value="{!ppcOrderDetail.IsReadyForFullfilment__c}" /></div>
+                <div class="ppc-field-content newline"><apex:outputField id="opportunityLineItemId__c" value="{!ppcOrderDetail.OpportunityLineItemId__c}" /></div>
+            </div>
+        </div>
+        </div>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,4 @@
+Case - {!Case.Link}
+Case Number - {!Case.CaseNumber}
+Affl Sales Rep - {!Case.Dev_Affl_Sales_Rep__c}
+Affl Sales Rep Text - {!Case.Affl_Sales_Rep_Text__c}

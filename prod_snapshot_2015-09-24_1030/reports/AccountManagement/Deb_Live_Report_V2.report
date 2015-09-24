@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Dig_Account_Manager__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityLineItems$Live__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityLineItems$Live_Date__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Market_Record__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityLineItems$Product_Name__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Media_Partner__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$StageName</column>
+            <operator>equals</operator>
+            <value>Closed Won</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Deb Live Report V2</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opps_With_Products_With_Or_Without_Schedules__c</reportType>
+    <roleHierarchyFilter>ExecutiveDirector</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Opportunity.OpportunityLineItems$Live_Date__c</dateColumn>
+        <endDate>2013-03-12</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2013-03-11</startDate>
+    </timeFrameFilter>
+</Report>

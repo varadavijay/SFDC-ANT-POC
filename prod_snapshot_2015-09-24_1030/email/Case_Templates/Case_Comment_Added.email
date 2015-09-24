@@ -1,0 +1,10 @@
+Hi, 
+
+A new Case Comment has been added, please review it and respond if necessary.
+
+Thanks!
+
+{!Case.Account}
+{!Case.Contact}
+{!Case.Type}
+{!Case.Link}

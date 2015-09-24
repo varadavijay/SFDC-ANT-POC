@@ -1,0 +1,103 @@
+<apex:page standardController="Case" extensions="myWeb2CareExtension" title="G/O Care" showHeader="false" sidebar="false">
+ <apex:includeScript value="{!URLFOR($Resource.ulPicklist, '/jquery-1.7.2.min.js')}"  />
+<apex:includeScript value="{!URLFOR($Resource.poshytip, '/jquery.poshytip.js')}"  />
+<apex:stylesheet value="{!URLFOR($Resource.poshytip, '/tip-yellow/tip-yellow.css')}"/>
+
+ 
+ <apex:composition template="{!$Site.Template}"> 
+  <apex:define name="body">
+   
+   <apex:form >
+   
+    <apex:messages id="error" styleClass="errorMsg" layout="table" style="margin-top:1em;"/>
+    <div style="text-align:right;"><a id="helpme" style="cursor:pointer;" target="#">When should I use the G/O Care Team? (Hover To Display)</a></div>
+
+      <apex:pageBlock mode="mainDetail">
+      
+        <apex:pageBlockButtons location="top">
+           <apex:commandButton value="Send To G/O Care" action="{!saveCase}"/>
+        </apex:pageBlockButtons>
+        
+        <apex:pageBlockSection title="Partner & Client Information" collapsible="false" columns="2" showHeader="true">
+        <apex:outputText value="Sales Rep & Media Partner" style="font-size:1em;font-weight:bold;color:#1C92D0"/>
+        <apex:outputText value="Company & Contact" style="font-size:1em;font-weight:bold;color:#1C92D0"/>
+        <apex:pageBlockSectionItem >
+        <apex:outputLabel >Select Sales Rep:</apex:outputlabel>
+         <apex:outputPanel layout="block" styleClass="requiredInput">
+         <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+          <apex:selectList value="{!Case.Affl_Sales_Rep__c}"  multiselect="false" size="1" style="width:75%; font-size:1em;" label="Select Sales Rep:" required="true" tabindex="1">
+            <apex:selectOptions value="{!items}" id="options"/>
+          </apex:selectList>
+         </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+
+        <apex:inputField value="{!Case.Company_Name__c}" required="true" taborderhint="4" label="Client Company Name:"/>
+        <apex:inputField value="{!Case.Affl_Sales_Rep_Text__c}" required="false" taborderhint="2" label="Enter Sales Rep Name (If Not In Above List):" style="width:200px;"/>
+        <!-- <apex:inputField value="{!Case.Contact_Name__c}" required="false" taborderhint="5" label="Client Contact - First And Last Name:"/> -->
+        <apex:inputField value="{!Case.Contact_Phone__c}" required="true" taborderhint="6" label="Company Phone(Important!!):"/>
+        
+          
+       <apex:pageBlockSectionItem >
+        <apex:outputLabel >Select Media Partner:</apex:outputlabel>
+         <apex:outputPanel layout="block" styleClass="requiredInput">
+         <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+          <apex:selectList value="{!Case.Media_Partner__c}" multiselect="false" size="1" style="width:75%; font-size:1em;" required="true" tabindex="3" >
+            <apex:selectOptions value="{!itemsm}" id="moptions"/>
+          </apex:selectList>
+         </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+        
+        <br></br>
+        <!--<apex:inputField value="{!Case.Contact_Phone__c}" required="true" taborderhint="6" label="Company Phone(Important!!):"/>-->
+        <apex:pageBlockSection title="Others To Notify Of Care Request And Progress" collapsible="false" columns="1">
+          <apex:outputText value="Enter Email Addresses Only Please" style="font-size:1em;font-weight:bold;color:#1C92D0"/>
+          <apex:inputField value="{!Case.Notify_Email_1__c}" required="false" taborderhint="8" label="Email One:" style="width:100%; font-size:1em;" />
+          <apex:inputField value="{!Case.Notify_Email_2__c}" required="false" taborderhint="8" label="Email Two:" style="width:100%; font-size:1em;" />
+          <apex:inputField value="{!Case.Notify_Email_3__c}" required="false" taborderhint="8" label="Email Three:" style="width:100%; font-size:1em;" />
+        </apex:pageBlockSection>
+         
+         </apex:pageBlockSection>
+         
+         
+        <apex:pageBlockSection title="G/O Care Request Information" collapsible="false" columns="2">
+             <apex:outputText value="Client Info" style="font-size:1em;font-weight:bolder;color:#1C92D0"/>
+            <apex:outputText value="Document Submission" style="font-size:1em;font-weight:bolder;color:#1C92D0"/>
+          <apex:inputField value="{!Case.CR__c}" required="true" taborderhint="7" label="Is This In Reference To An Audit?:" style="width:50%"/>
+          
+          <apex:pageBlockSectionItem rendered="{!NOT(submitted)}" >
+             <apex:outputLabel value="Doc/File That Supports The Escalation"/>
+             <apex:inputFile value="{!file}" filename="{!fileName}" contentType="{!contentType1}" required="false"/>
+          </apex:pageBlockSectionItem>
+          <apex:outputText value="{!fileName}" rendered="{!submitted}"/>  
+          
+          <apex:inputField value="{!Case.Description}" required="true" taborderhint="7" label="Reason for Care Request:" style="width:100%"/>
+          
+          <apex:pageBlockSectionItem rendered="{!NOT(submitted)}" >
+             <apex:outputLabel value="Second File If Needed"/>
+             <apex:inputFile value="{!file2}" filename="{!fileName2}" contentType="{!contentType2}" required="false"/>
+          </apex:pageBlockSectionItem>
+          <apex:outputText value="{!fileName2}" rendered="{!submitted}"/>  
+
+          
+          <apex:inputField value="{!Case.Product__c}" required="true" taborderhint="8" label="G/O Care Request - Product/s Of Concern:"/>
+          <br/>
+          <apex:inputField value="{!Case.Monthly_Spend__c}" style="width: 30%;" required="true" taborderhint="9" label="Account Total Monthly Spend:"/>
+          <br/>
+        </apex:pageBlockSection>
+       </apex:pageBlock>
+
+       <!-- Digital Audit -->
+       <br></br>
+       
+   </apex:form>
+   <div id="tooltip" style="display:none;">
+        <apex:outputText value="{!$Label.GLCareHelp}" escape="false"/>
+    </div>
+  </apex:define> 
+ </apex:composition> 
+ <script type="text/javascript">
+        $j = jQuery.noConflict();
+        var ctn = $j('#tooltip').html();
+        $j('#helpme').poshytip({content:ctn, alignTo:'target', alignX:'inner-right'});
+</script> 
+</apex:page>

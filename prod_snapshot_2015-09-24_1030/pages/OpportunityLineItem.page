@@ -1,0 +1,25 @@
+<apex:page standardController="OpportunityLineItem" extensions="OpportunityLineItemExt">
+	<head>
+		<c:OpportunityLineItemCSS />
+	</head>
+	<apex:detail inlineEdit="true" rerender="oliHistory" oncomplete="location.reload(true)"/>
+	<apex:pageBlock id="oliHistory" title="Other Information">
+		<apex:pageBlockSection title="Stage History" collapsible="true" columns="1">
+		    <apex:pageBlockTable value="{!HistoryTrackRecords}" var="h" >
+		        <apex:column headerValue="Order of Occurence" width="60px" value="{!h.orderOfOccurence}" styleClass="{!h.styleClass}" />
+		        <apex:column headerValue="Stage Name" headerClass="tableHeaderCentered" value="{!h.record.OLI_Stage__c}" styleClass="{!h.styleClass}"/>
+		        <apex:column headerValue="Time In" headerClass="tableHeaderCentered" value="{!h.record.Time_In__c}" styleClass="{!h.styleClass}"/>
+		        <apex:column headerValue="Time Out" headerClass="tableHeaderCentered" value="{!h.record.Time_Out__c}" styleClass="{!h.styleClass}"/>
+		        <apex:column headerValue="Duration (Hours)" headerClass="tableHeaderCentered" styleClass="{!h.styleClass}">
+		        	<apex:outputText value="{0, number, 0.000}">
+		        		<apex:param value="{!h.getDuration}" />
+		        	</apex:outputText>
+		        </apex:column>
+		        <apex:column headerValue="Notes" headerClass="tableHeaderCentered" styleClass="{!h.styleClass}">
+		        	<apex:outputLink value="/{!h.record.Id}" id="theLink">Notes</apex:outputLink>
+		        </apex:column>
+		    </apex:pageBlockTable>
+	     	<c:OpportunityProductChart yTitle="Time in Business Hours" xTitle="Opportunity Product Waiting Stage" chartData="{!chartDataJSON}" chartFieldDepth="{!dataFieldDepth}"/>
+		   </apex:pageBlockSection>
+   </apex:pageBlock>
+</apex:page>

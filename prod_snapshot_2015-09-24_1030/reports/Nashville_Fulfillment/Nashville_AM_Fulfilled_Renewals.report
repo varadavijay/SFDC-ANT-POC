@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Products</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Opportunity.Monthly_Total__c:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Value</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_88872980</developerName>
+        <masterLabel>Product Name Bucket</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>PRODUCT_NAME</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>5 KW SEO</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Custom SEO</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SEO KW Accel +5 KW</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SEO KW Accel Pt 1</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SEO-10 Keywords</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SEO-10 Pages</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SEO-15 Keywords</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SEO-15+ Keywords</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SEO-5 Pages</sourceValue>
+            </sourceValues>
+            <value>SEO</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>PPC</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>PPC Budget</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>PPC Budget II</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>PPC Guaranteed</sourceValue>
+            </sourceValues>
+            <value>PPC</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Social Media- Tier 1</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Tier 2</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Presence (with Ad Spend)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Presence (no FB ads)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Presence</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Loyalty</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Enterprise</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Engagement (No ADS)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Engagement</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Daily Content</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Customer Loyalty and Reward (Original - No Baked-In FB Ads)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SMB Facebook Leads</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Facebook Ads</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Custom FB Page</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social PR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Custom Social Package</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DMS - Engagement</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DMS - Presence</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Retargeting</sourceValue>
+            </sourceValues>
+            <value>Social</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Email Blast</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Email Blast List Fee</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Opt-In Custom Email</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Opt-In Semi-Custom Email</sourceValue>
+            </sourceValues>
+            <value>Email</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_70045257</developerName>
+        <masterLabel>Sell Type</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>OpportunityLineItem.Sell_Type__c</sourceColumnName>
+        <useOther>false</useOther>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA2</column>
+        </chartSummaries>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA1</column>
+        </chartSummaries>
+        <chartType>VerticalColumnStackedLine</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>Opportunity.Dig_Account_Manager__c</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_BOTTOM</location>
+        <secondaryGroupingColumn>OpportunityLineItem.Waiting_Status__c</secondaryGroupingColumn>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>PRODUCT_NAME</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.IsRenewed__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.Monthly_Total__c</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Sell_Type__c</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>AMOUNT</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>PROBABILITY</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>QUANTITY</field>
+    </columns>
+    <columns>
+        <field>UNIT_PRICE</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>TOTAL_PRICE</field>
+    </columns>
+    <columns>
+        <field>SERVICE_DATE</field>
+    </columns>
+    <columns>
+        <field>SERVICE_MONTH</field>
+    </columns>
+    <columns>
+        <field>PRODUCT_PRICE</field>
+    </columns>
+    <columns>
+        <field>PRODUCT_CUSTOMER_ID</field>
+    </columns>
+    <columns>
+        <field>PRODUCT_ACTIVE</field>
+    </columns>
+    <columns>
+        <field>FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>ROLLUP_DESCRIPTION</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity.Role_Dig_Acct_Man__c</column>
+            <operator>contains</operator>
+            <value>Fulfillment - Nashville</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OpportunityLineItem.Waiting_Status__c</column>
+            <operator>equals</operator>
+            <value>Fulfilled Renewed</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.Dig_Account_Manager__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OpportunityLineItem.Waiting_Status__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Nashville AM Fulfilled Renewals</name>
+    <params>
+        <name>open</name>
+        <value>closedwon</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityProduct</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>OpportunityLineItem.Expiration_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

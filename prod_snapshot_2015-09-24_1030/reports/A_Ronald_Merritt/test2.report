@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <block>
+        <blockInfo>
+            <blockId>B1</blockId>
+            <joinTable>Market__c</joinTable>
+        </blockInfo>
+        <columns>
+            <field>Market__c$Name</field>
+        </columns>
+        <columns>
+            <field>Market__c.Opportunities__r$Name</field>
+        </columns>
+        <format>Tabular</format>
+        <name>Markets With Opps For Join block 1</name>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>Markets_With_Opps_For_Join__c</reportType>
+        <scope>organization</scope>
+        <timeFrameFilter>
+            <dateColumn>Market__c$CreatedDate</dateColumn>
+            <interval>INTERVAL_CUSTOM</interval>
+        </timeFrameFilter>
+    </block>
+    <block>
+        <blockInfo>
+            <blockId>B0</blockId>
+            <joinTable>Market__c</joinTable>
+        </blockInfo>
+        <columns>
+            <field>Market__c$Name</field>
+        </columns>
+        <columns>
+            <field>Market__c.Opportunities__r$Name</field>
+        </columns>
+        <format>Summary</format>
+        <name>Market Opportunity Inner Join block 2</name>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>Market_Opportunity_Inner_Join__c</reportType>
+        <scope>user</scope>
+        <timeFrameFilter>
+            <dateColumn>Market__c$CreatedDate</dateColumn>
+            <interval>INTERVAL_CURRENT</interval>
+        </timeFrameFilter>
+    </block>
+    <blockInfo>
+        <blockId xsi:nil="true"/>
+        <joinTable>Market__c</joinTable>
+    </blockInfo>
+    <format>MultiBlock</format>
+    <name>test</name>
+    <reportType>Markets_With_Opps_For_Join__c</reportType>
+    <showDetails>true</showDetails>
+</Report>

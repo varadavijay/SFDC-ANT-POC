@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>Submit_a_Support_Ticket</links>
+    <links>New_Support_Queue</links>
+    <links>Old_Support_Queue</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

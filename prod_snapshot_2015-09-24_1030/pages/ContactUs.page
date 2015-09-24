@@ -1,0 +1,60 @@
+<apex:page standardController="Lead" extensions="myWeb2LeadExtension" title="Contact Us" showHeader="false" standardStylesheets="true">
+ <apex:composition template="{!$Site.Template}"> 
+  <apex:define name="body"> 
+   <apex:form >
+    <apex:messages id="error" styleClass="errorMsg" layout="table" style="margin-top:1em;"/>
+      <apex:pageBlock title="" mode="edit">
+        <apex:pageBlockButtons >
+           <apex:commandButton value="Save" action="{!saveLead}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection title="Contact Us" collapsible="false" columns="2">
+         <apex:inputField value="{!Lead.Affiliated_Sales_Rep__c}"/>
+         <apex:inputField value="{!Lead.Market__c}"/>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Client:</apex:outputlabel> 
+          <apex:inputField value="{!Lead.LastName}"/>
+         </apex:pageBlockSectionItem>
+          <apex:inputField value="{!Lead.Company}"/>
+          <apex:inputField value="{!Lead.Industry_AffiliatedMarkets__c}"/>
+         </apex:pageBlockSection>
+        <apex:pageBlockSection title="" collapsible="true" columns="1">
+         <apex:inputField value="{!Lead.Website}" style="width: 50%;"/>
+         <br></br>
+         <apex:outputText value="What is a Win to your Client?"/>
+         <apex:inputField value="{!Lead.Win_1__c}" style="width: 35%;"/>
+         <apex:inputField value="{!Lead.Win_2__c}" style="width: 35%;"/>
+         <br></br> 
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >Which products/services do they sell the most of?</apex:outputlabel> 
+          <apex:inputField value="{!Lead.List_Products_Services__c}" style="width: 75%;"/>
+         </apex:pageBlockSectionItem> 
+         <br></br>
+         <apex:inputField value="{!Lead.Budget_Range__c}"/>
+         <br></br>
+         <apex:inputField value="{!Lead.Geog_Serv_Area__c}"/>
+         <br></br>
+         <apex:outputText value="Who are the client's top three competitors?"/>
+         <apex:inputField value="{!Lead.Comp_1__c}" style="width: 50%;"/>
+         <apex:inputField value="{!Lead.Comp_2__c}" style="width: 50%;"/>
+         <apex:inputField value="{!Lead.Comp_3__c}" style="width: 50%;"/>
+         <br></br>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >What is the average customer value?</apex:outputlabel> 
+          <apex:inputField value="{!Lead.Avg_Cust_Val__c}"/>
+         </apex:pageBlockSectionItem>
+         <br></br>
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >What is their current advertising?</apex:outputlabel> 
+          <apex:inputField value="{!Lead.Curr_Adv__c}"/>
+         </apex:pageBlockSectionItem>  
+         <br></br>  
+         <apex:pageBlockSectionItem >
+          <apex:outputLabel >What medium works best and why?</apex:outputlabel> 
+          <apex:inputField value="{!Lead.BestWhy__c}" style="width: 75%;"/>
+         </apex:pageBlockSectionItem>  
+        </apex:pageBlockSection>
+     </apex:pageBlock>
+   </apex:form>
+  </apex:define> 
+ </apex:composition>  
+</apex:page>

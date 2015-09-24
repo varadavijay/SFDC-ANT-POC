@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DashboardFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessType>Shared</accessType>
+    <name>DealChicken Operations</name>
+    <publicFolderAccess>ReadOnly</publicFolderAccess>
+    <sharedTo>
+        <group>DealChicken_DQNS</group>
+        <group>DealChicken_DQ_S</group>
+        <group>DealChicken_Sr_Management</group>
+        <role>DealChicken_Operations</role>
+    </sharedTo>
+</DashboardFolder>

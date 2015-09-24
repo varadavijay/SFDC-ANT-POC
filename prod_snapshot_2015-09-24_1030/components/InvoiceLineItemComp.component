@@ -1,0 +1,97 @@
+<apex:component controller="InvoiceLineItemCompCntrl">
+ <apex:attribute name="oppLineItemId" description="OppLineItem Id"
+                  type="Id" required="required" assignTo="{!oliId}"/>
+    <apex:pageBlockSection title="Invoice Line Items" columns="1">
+     <apex:pageblocktable value="{!invoiceLst}" var="inv">
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="ILI: Name"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputLink value="/{!inv.id}">{!inv.name}</apex:outputLink>
+         </apex:column>
+         
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="ILI Schedule Date"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputField value="{!inv.Invoice_ScheduleDate__c}"/>
+         </apex:column>
+         
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Period Start"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputField value="{!inv.Invoice_PeriodStart__c}"/>
+         </apex:column>
+         <!--<apex:column value="{!inv.Invoice_PeriodStart__c}"/> -->
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Period End"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputField value="{!inv.Invoice_PeriodEnd__c}"/>
+         </apex:column>
+         <!--<apex:column value="{!inv.Invoice_PeriodEnd__c}"/> -->
+		 <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Media Spend"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputField value="{!inv.Media_Spend__c}"/>
+         </apex:column>
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Wholesale Fee"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputField value="{!inv.Wholesale_Fee__c}"/>
+         </apex:column>
+         <!--<apex:column value="{!inv.Invoice_ScheduleDate__c}"/> -->
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="ILI Total"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputField value="{!inv.TotalMonthlyCharge__c}"/>
+         </apex:column>
+         <!--<apex:column value="{!inv.TotalMonthlyCharge__c}"/> -->
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="ILI Type"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputField value="{!inv.Invoice_LineItemType__c}"/>
+         </apex:column>
+         <!--<apex:column value="{!inv.Invoice_LineItemType__c}"/> -->
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Is Locked"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:inputCheckbox disabled="true" value="{!inv.isLocked__c}"/>
+         </apex:column>
+         <apex:column >
+          <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Is Deleted"/> 
+            </apex:outputPanel>
+          </apex:facet>
+           <apex:inputCheckbox disabled="true" value="{!inv.isDeleted__c}"/>
+        </apex:column>
+         
+     </apex:pageblocktable>   
+    </apex:pageBlockSection>
+    
+</apex:component>

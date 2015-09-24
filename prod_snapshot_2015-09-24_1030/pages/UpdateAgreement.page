@@ -1,0 +1,65 @@
+<apex:page standardController="OpportunityLineItem" extensions="UpdateAgreementCntrl" tabStyle="Opportunity" sidebar="true">
+    <Script>
+   	function validateMnths(inputNumber) { 
+                      var inputNumberVal= document.getElementById(inputNumber).value;
+                      if(inputNumberVal % 1 != 0 || inputNumberVal <= 0){
+                          alert("Please enter a valid number");
+                         document.getElementById(inputNumber).value = null;
+                      }
+                  }
+    function inputLimiter(e, allow) {
+        var AllowableCharacters = '';
+
+        if (allow == 'Numbers') {
+          AllowableCharacters = '1234567890';
+        }
+    	
+    	var k = document.all ? parseInt(e.keyCode) : parseInt(e.which);
+        if (k != 13 && k != 8 && k != 0) {
+          if ((e.ctrlKey == false) && (e.altKey == false)) {
+            return (AllowableCharacters.indexOf(String.fromCharCode(k)) != -1);
+          } else {
+            return true;
+          }
+        } else {
+          return true;
+        }
+
+      }
+    </Script>
+    <apex:form >
+    <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlock mode="edit">
+            <apex:pageBlockButtons location="top" >
+               <apex:outputPanel id="renewal">
+            <apex:commandButton action="{!save}" value="Save" rendered="{!sellType!='None'}"/>
+                 </apex:outputPanel>
+            <apex:commandButton action="{!cancel}" value="Cancel" />
+            </apex:pageBlockButtons>
+         <apex:pageBlockSection title="Update Agreement" columns="1">
+             <apex:selectList label="Sell Type" value="{!sellType}" size="1">
+                 <apex:selectOption itemValue="None" itemLabel="None"  />
+                 <apex:selectOption itemValue="Renewal" itemLabel="Renewal"/>
+		 <apex:selectOption itemValue="DownSell" itemLabel="DownSell"/>
+                 <apex:selectOption itemValue="UpSell" itemLabel="UpSell"/>
+                 	<apex:actionSupport event="onchange" rerender="renewal,renewalText" status="status" />
+             </apex:selectList>
+             <apex:inputField value="{!OpportunityLineItem.Qty_ContractMonths__c}" required="true" id="months" onkeypress="return inputLimiter(event,'Numbers')" onchange="validateMnths('{!$Component.months}');"/>
+			 <!--
+             <apex:actionSupport event="onchange"
+    	                rerender="renewal,renewalText" status="status" />
+             </apex:inputField-->
+         <apex:pageBlockSection id="renewalText">
+            <apex:outputText > 
+                <div style="text-align:left;">
+                    By clicking Save a new line item will be added and will repeat the original contract values with the Sell Type selected.  
+                	Click Save to continue. To create another line item for a different product, click Cancel and click Edit from that product line item.
+                    To Edit the Values created automatically, click Edit on the newly created Line Item.
+                </div>
+            </apex:outputText>
+          </apex:pageBlockSection>
+         </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

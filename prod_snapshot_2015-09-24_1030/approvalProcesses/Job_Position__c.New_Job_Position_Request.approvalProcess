@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Job_Title__c</field>
+        <field>Job_Description__c</field>
+        <field>Compensation__c</field>
+        <field>Positions_Available__c</field>
+        <field>Fulfillment_Period__c</field>
+        <field>Interview_Process__c</field>
+        <field>Supervisor__c</field>
+        <field>Job_Position_Type__c</field>
+        <field>User_being_replaced__c</field>
+        <field>Department_Category__c</field>
+        <field>Final_Approver__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Job_Position_Approved_by_Recruiting_Email_to_Hiring_Manager</name>
+                <type>Alert</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>acqrep@gannett.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>ann.phillips@gannett.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Submitted to Recruiting for Approval</description>
+        <label>Recruiting Approval</label>
+        <name>Recruiting_Approval</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>raetest@gannett.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Once Approved by Recruiting, Approval required by Brad for any Sales Hires</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Job_Position__c.Department_Category__c</field>
+                <operation>equals</operation>
+                <value>Sales</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>Brad Approval</label>
+        <name>Brad_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Dax_Approved</name>
+                <type>Alert</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>dax@gannett.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Once Approved by Recruiting, Approval required by Dax for any Operations Hires</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Job_Position__c.Department_Category__c</field>
+                <operation>equals</operation>
+                <value>Operations</value>
+            </criteriaItems>
+        </entryCriteria>
+        <label>Dax Approval</label>
+        <name>Dax_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>Approval Process For New Job Position Requests</description>
+    <emailTemplate>Job_Position_Templetes/New_Job_Position_Request</emailTemplate>
+    <enableMobileDeviceAccess>true</enableMobileDeviceAccess>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>New Job Position Request</label>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

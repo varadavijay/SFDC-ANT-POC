@@ -1,0 +1,9 @@
+Hi {!Opportunity.OwnerFirstName},
+
+I tried to call you for our appointment at ______ today, however I was unable to reach you.
+
+Please contact me as soon as possible so we can reschedule our meeting. After doing a great deal of research on {!Opportunity.Account}, I believe you are in a fantastic position to see success through our services. 
+
+ If I just missed you, please give me a call back or shoot me a quick email and I will call you right back!
+
+Thanks,

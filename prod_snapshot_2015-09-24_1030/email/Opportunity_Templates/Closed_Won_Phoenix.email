@@ -1,0 +1,8 @@
+A Phoenix deal has been Closed-Won, please follow up.
+
+{!Opportunity.Name}
+{!Opportunity.OwnerFullName}
+{!Opportunity.Amount}
+Payment Processing: {!Payment_Processing__c.RecordType}
+
+{!Opportunity.Link}

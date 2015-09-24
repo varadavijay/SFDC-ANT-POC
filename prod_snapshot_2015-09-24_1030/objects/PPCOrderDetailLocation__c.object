@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <fields>
+        <fullName>Address1__c</fullName>
+        <externalId>false</externalId>
+        <label>Address 1</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Address2__c</fullName>
+        <externalId>false</externalId>
+        <label>Address 2</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CallExtPhone__c</fullName>
+        <externalId>false</externalId>
+        <label>Mobile/Call Ext Phone</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GeoTargets__c</fullName>
+        <description>Geographic Targets</description>
+        <externalId>false</externalId>
+        <label>Geo Targets</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LocationName__c</fullName>
+        <externalId>false</externalId>
+        <label>Location Name</label>
+        <length>200</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location_Name_Unique__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>Location Name Unique</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>PPCOrderDetailId__c</fullName>
+        <externalId>false</externalId>
+        <label>PPC Order Detail</label>
+        <referenceTo>PPCOrderDetail__c</referenceTo>
+        <relationshipLabel>PPC Order Detail Location</relationshipLabel>
+        <relationshipName>PPC_Order_Detail_Location</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>PostalCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Postal Code</label>
+        <length>15</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProxyPhone__c</fullName>
+        <externalId>false</externalId>
+        <label>Proxy Phone</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <picklist>
+            <picklistValues>
+                <fullName>AL</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AZ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ME</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NJ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>WebsiteType__c</fullName>
+        <externalId>false</externalId>
+        <label>Website Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Client</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proxy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Website__c</fullName>
+        <externalId>false</externalId>
+        <label>Website</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <label>PPC Order Detail Location</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>PPCOrderDetailLocation Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>PPC Order Detail Location</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>phone1</fullName>
+        <active>true</active>
+        <description>OR(
+NOT(LEN( 
+SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(Phone__c,&quot; &quot;,&quot;&quot;),&quot;-&quot;,&quot;&quot;),&quot;)&quot;,&quot;&quot;),&quot;(&quot;,&quot;&quot;)
+) = 10),
+NOT(ISNUMBER(
+SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(Phone__c,&quot; &quot;,&quot;&quot;),&quot;-&quot;,&quot;&quot;),&quot;)&quot;,&quot;&quot;),&quot;(&quot;,&quot;&quot;)
+)))</description>
+        <errorConditionFormula>OR(
+NOT(LEN( 
+SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(Phone__c,&quot; &quot;,&quot;&quot;),&quot;-&quot;,&quot;&quot;),&quot;)&quot;,&quot;&quot;),&quot;(&quot;,&quot;&quot;)
+) = 10),
+NOT(ISNUMBER(
+SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(Phone__c,&quot; &quot;,&quot;&quot;),&quot;-&quot;,&quot;&quot;),&quot;)&quot;,&quot;&quot;),&quot;(&quot;,&quot;&quot;)
+)))</errorConditionFormula>
+        <errorDisplayField>Phone__c</errorDisplayField>
+        <errorMessage>Invalid Phone Number - Please enter 10 characters and only numeric  characters.  If there is an extension or other comments that apply, please enter them in the notes below.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>phone2</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR(
+AND(NOT(ISBLANK(ProxyPhone__c)),
+NOT(LEN( 
+SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ProxyPhone__c,&quot; &quot;,&quot;&quot;),&quot;-&quot;,&quot;&quot;),&quot;)&quot;,&quot;&quot;),&quot;(&quot;,&quot;&quot;) 
+) = 10)),
+AND(NOT(ISBLANK(ProxyPhone__c)), 
+NOT(ISNUMBER( 
+SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ProxyPhone__c,&quot; &quot;,&quot;&quot;),&quot;-&quot;,&quot;&quot;),&quot;)&quot;,&quot;&quot;),&quot;(&quot;,&quot;&quot;) 
+))))</errorConditionFormula>
+        <errorDisplayField>ProxyPhone__c</errorDisplayField>
+        <errorMessage>Invalid Phone Number - Please enter 10 characters and only numeric  characters.  If there is an extension or other comments that apply, please enter them in the notes below.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>phone3</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR( 
+AND(NOT(ISBLANK( CallExtPhone__c )), 
+NOT(LEN( 
+SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(CallExtPhone__c ,&quot; &quot;,&quot;&quot;),&quot;-&quot;,&quot;&quot;),&quot;)&quot;,&quot;&quot;),&quot;(&quot;,&quot;&quot;) 
+) = 10)), 
+AND(NOT(ISBLANK(CallExtPhone__c)), 
+NOT(ISNUMBER( 
+SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(CallExtPhone__c ,&quot; &quot;,&quot;&quot;),&quot;-&quot;,&quot;&quot;),&quot;)&quot;,&quot;&quot;),&quot;(&quot;,&quot;&quot;) 
+))))</errorConditionFormula>
+        <errorDisplayField>CallExtPhone__c</errorDisplayField>
+        <errorMessage>Invalid Phone Number - Please enter 10 characters and only numeric  characters.  If there is an extension or other comments that apply, please enter them in the notes below.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>state</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(
+OR(
+ISPICKVAL(State__c,&quot;AL&quot;),
+ISPICKVAL(State__c,&quot;AK&quot;),
+ISPICKVAL(State__c,&quot;AR&quot;),
+ISPICKVAL(State__c,&quot;AZ&quot;),
+
+ISPICKVAL(State__c,&quot;CA&quot;),
+ISPICKVAL(State__c,&quot;CO&quot;),
+ISPICKVAL(State__c,&quot;CT&quot;),
+
+ISPICKVAL(State__c,&quot;DE&quot;),
+ISPICKVAL(State__c,&quot;DC&quot;),
+
+ISPICKVAL(State__c,&quot;FL&quot;),
+
+ISPICKVAL(State__c,&quot;GA&quot;),
+ISPICKVAL(State__c,&quot;HI&quot;),
+
+ISPICKVAL(State__c,&quot;ID&quot;),
+ISPICKVAL(State__c,&quot;IL&quot;),
+ISPICKVAL(State__c,&quot;IN&quot;),
+ISPICKVAL(State__c,&quot;IA&quot;),
+
+ISPICKVAL(State__c,&quot;KS&quot;),
+ISPICKVAL(State__c,&quot;KY&quot;),
+
+ISPICKVAL(State__c,&quot;LA&quot;),
+
+ISPICKVAL(State__c,&quot;ME&quot;),
+ISPICKVAL(State__c,&quot;MD&quot;),
+ISPICKVAL(State__c,&quot;MA&quot;),
+ISPICKVAL(State__c,&quot;MI&quot;),
+ISPICKVAL(State__c,&quot;MN&quot;),
+ISPICKVAL(State__c,&quot;MS&quot;),
+ISPICKVAL(State__c,&quot;MO&quot;),
+ISPICKVAL(State__c,&quot;MT&quot;),
+
+ISPICKVAL(State__c,&quot;NE&quot;),
+ISPICKVAL(State__c,&quot;NV&quot;),
+ISPICKVAL(State__c,&quot;NH&quot;),
+ISPICKVAL(State__c,&quot;NJ&quot;),
+ISPICKVAL(State__c,&quot;NM&quot;),
+ISPICKVAL(State__c,&quot;NY&quot;),
+ISPICKVAL(State__c,&quot;NC&quot;),
+ISPICKVAL(State__c,&quot;ND&quot;),
+
+ISPICKVAL(State__c,&quot;OH&quot;),
+ISPICKVAL(State__c,&quot;OK&quot;),
+ISPICKVAL(State__c,&quot;OR&quot;),
+
+ISPICKVAL(State__c,&quot;PA&quot;),
+ISPICKVAL(State__c,&quot;RI&quot;),
+ISPICKVAL(State__c,&quot;SC&quot;),
+ISPICKVAL(State__c,&quot;SD&quot;),
+ISPICKVAL(State__c,&quot;TN&quot;),
+ISPICKVAL(State__c,&quot;TX&quot;),
+ISPICKVAL(State__c,&quot;UT&quot;),
+ISPICKVAL(State__c,&quot;VT&quot;),
+ISPICKVAL(State__c,&quot;VA&quot;),
+
+ISPICKVAL(State__c,&quot;WA&quot;),
+ISPICKVAL(State__c,&quot;WV&quot;),
+ISPICKVAL(State__c,&quot;WI&quot;),
+ISPICKVAL(State__c,&quot;WY&quot;)
+)
+)</errorConditionFormula>
+        <errorDisplayField>State__c</errorDisplayField>
+        <errorMessage>please select a valid state abbreviation</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>website</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(
+REGEX(Website__c, &quot;http://[0-9a-zA-Z./-]+\\.[0-9a-zA-Z/?&amp;=_#.-]+&quot;))
+&amp;&amp;
+NOT(
+REGEX(Website__c, &quot;https://[0-9a-zA-Z./-]+\\.[0-9a-zA-Z/?&amp;=_#.-]+&quot;))</errorConditionFormula>
+        <errorDisplayField>Website__c</errorDisplayField>
+        <errorMessage>Please Enter A Valid Web Address (such as https://website.com OR http://website.com)</errorMessage>
+    </validationRules>
+</CustomObject>

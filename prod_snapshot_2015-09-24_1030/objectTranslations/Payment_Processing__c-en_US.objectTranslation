@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Payment Processing</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Payment Processing</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>AccountName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Number --></label>
+        <name>Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Payment Processing --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Billing Options --></label>
+        <name>Billing_Options__c</name>
+        <picklistValues>
+            <masterLabel>Bi-Weekly</masterLabel>
+            <translation><!-- Bi-Weekly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bill Monthly</masterLabel>
+            <translation><!-- Bill Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bill Total</masterLabel>
+            <translation><!-- Bill Total --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bill Weekly</masterLabel>
+            <translation><!-- Bill Weekly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invoice/Credit Terms</masterLabel>
+            <translation><!-- Invoice/Credit Terms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Memo Bill</masterLabel>
+            <translation><!-- Memo Bill --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Card #2 Exp Month --></label>
+        <name>Card_2_Exp_Month__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11</masterLabel>
+            <translation><!-- 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12</masterLabel>
+            <translation><!-- 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Card #2 Exp Year --></label>
+        <name>Card_2_Exp_Year__c</name>
+        <picklistValues>
+            <masterLabel>2009</masterLabel>
+            <translation><!-- 2009 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2010</masterLabel>
+            <translation><!-- 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2011</masterLabel>
+            <translation><!-- 2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2012</masterLabel>
+            <translation><!-- 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2013</masterLabel>
+            <translation><!-- 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014</masterLabel>
+            <translation><!-- 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015</masterLabel>
+            <translation><!-- 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2016</masterLabel>
+            <translation><!-- 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2017</masterLabel>
+            <translation><!-- 2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2018</masterLabel>
+            <translation><!-- 2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2019</masterLabel>
+            <translation><!-- 2019 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2020</masterLabel>
+            <translation><!-- 2020 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Card #2 Holder First Name --></label>
+        <name>Card_2_Holder_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Card #2 Holder Last Name --></label>
+        <name>Card_2_Holder_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Card #2 Security Code --></label>
+        <name>Card_2_Security_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Card #1 Holder First Name --></label>
+        <name>Card_Holder_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Card #1 Holder Last Name --></label>
+        <name>Card_Holder_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charge Date Code --></label>
+        <name>Charge_Date_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charge Date Date --></label>
+        <name>Charge_Date_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charge Date --></label>
+        <name>Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charge Month Yes or No --></label>
+        <name>Charge_Month_YesorNo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check by Phone? --></label>
+        <name>Check_by_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed Payments --></label>
+        <name>Completed_Payments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit Card #2 Type --></label>
+        <name>Credit_Card_2_Type__c</name>
+        <picklistValues>
+            <masterLabel>American Express</masterLabel>
+            <translation><!-- American Express --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discover</masterLabel>
+            <translation><!-- Discover --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mastercard</masterLabel>
+            <translation><!-- Mastercard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visa</masterLabel>
+            <translation><!-- Visa --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter numbers only, no dashes --></help>
+        <label><!-- Credit Card #2 Number --></label>
+        <name>Credit_Card_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter numbers only, no dashes --></help>
+        <label><!-- Credit Card #1 Number --></label>
+        <name>Credit_Card_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit Card #1 Type --></label>
+        <name>Credit_Card_Type__c</name>
+        <picklistValues>
+            <masterLabel>American Express</masterLabel>
+            <translation><!-- American Express --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discover</masterLabel>
+            <translation><!-- Discover --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mastercard</masterLabel>
+            <translation><!-- Mastercard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visa</masterLabel>
+            <translation><!-- Visa --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Current Month Charged --></label>
+        <name>Current_Month_Charged__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cycles --></label>
+        <name>Cycles__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11</masterLabel>
+            <translation><!-- 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12</masterLabel>
+            <translation><!-- 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13</masterLabel>
+            <translation><!-- 13 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14</masterLabel>
+            <translation><!-- 14 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15</masterLabel>
+            <translation><!-- 15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16</masterLabel>
+            <translation><!-- 16 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>17</masterLabel>
+            <translation><!-- 17 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18</masterLabel>
+            <translation><!-- 18 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19</masterLabel>
+            <translation><!-- 19 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20</masterLabel>
+            <translation><!-- 20 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>21</masterLabel>
+            <translation><!-- 21 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>22</masterLabel>
+            <translation><!-- 22 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>23</masterLabel>
+            <translation><!-- 23 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24</masterLabel>
+            <translation><!-- 24 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25</masterLabel>
+            <translation><!-- 25 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>26</masterLabel>
+            <translation><!-- 26 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>27</masterLabel>
+            <translation><!-- 27 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>28</masterLabel>
+            <translation><!-- 28 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>29</masterLabel>
+            <translation><!-- 29 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30</masterLabel>
+            <translation><!-- 30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>31</masterLabel>
+            <translation><!-- 31 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>32</masterLabel>
+            <translation><!-- 32 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>33</masterLabel>
+            <translation><!-- 33 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>34</masterLabel>
+            <translation><!-- 34 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>35</masterLabel>
+            <translation><!-- 35 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>36</masterLabel>
+            <translation><!-- 36 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>37</masterLabel>
+            <translation><!-- 37 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>38</masterLabel>
+            <translation><!-- 38 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>39</masterLabel>
+            <translation><!-- 39 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>40</masterLabel>
+            <translation><!-- 40 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>41</masterLabel>
+            <translation><!-- 41 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>42</masterLabel>
+            <translation><!-- 42 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>43</masterLabel>
+            <translation><!-- 43 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>44</masterLabel>
+            <translation><!-- 44 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>45</masterLabel>
+            <translation><!-- 45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>46</masterLabel>
+            <translation><!-- 46 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>47</masterLabel>
+            <translation><!-- 47 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>48</masterLabel>
+            <translation><!-- 48 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>49</masterLabel>
+            <translation><!-- 49 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50</masterLabel>
+            <translation><!-- 50 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>51</masterLabel>
+            <translation><!-- 51 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>52</masterLabel>
+            <translation><!-- 52 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>53</masterLabel>
+            <translation><!-- 53 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Digital Account --></label>
+        <name>Digital_Account__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date After Which Charges Will No Longer Be Applied. --></help>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entry Cycle --></label>
+        <name>Entry_Cycle__c</name>
+        <picklistValues>
+            <masterLabel>Bi-Weekly</masterLabel>
+            <translation><!-- Bi-Weekly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly</masterLabel>
+            <translation><!-- Weekly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Entry Payment Total --></label>
+        <name>Entry_Payment_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entry Processor --></label>
+        <name>Entry_Processor__c</name>
+        <relationshipLabel><!-- Payment Processing --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Card #1 Exp Month --></label>
+        <name>Exp_Month__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11</masterLabel>
+            <translation><!-- 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12</masterLabel>
+            <translation><!-- 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Card #1 Exp Year --></label>
+        <name>Exp_Year__c</name>
+        <picklistValues>
+            <masterLabel>2009</masterLabel>
+            <translation><!-- 2009 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2010</masterLabel>
+            <translation><!-- 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2011</masterLabel>
+            <translation><!-- 2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2012</masterLabel>
+            <translation><!-- 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2013</masterLabel>
+            <translation><!-- 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014</masterLabel>
+            <translation><!-- 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015</masterLabel>
+            <translation><!-- 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2016</masterLabel>
+            <translation><!-- 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2017</masterLabel>
+            <translation><!-- 2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2018</masterLabel>
+            <translation><!-- 2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2019</masterLabel>
+            <translation><!-- 2019 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2020</masterLabel>
+            <translation><!-- 2020 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- First Charge Date --></label>
+        <name>First_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Charge Day --></label>
+        <name>First_Charge_Day__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Payment Made On --></label>
+        <name>Last_Payment_Made_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Month Day --></label>
+        <name>Next_Month_Day__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Owner --></label>
+        <name>Opp_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Total Value --></label>
+        <name>Opp_Total_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Payment Processing --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Package Duration --></label>
+        <name>Package_Duration__c</name>
+        <picklistValues>
+            <masterLabel>3 Month</masterLabel>
+            <translation><!-- 3 Month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6 Month</masterLabel>
+            <translation><!-- 6 Month --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Payment Notes --></label>
+        <name>Payment_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Policy --></label>
+        <name>Policy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Processing Status --></label>
+        <name>Processing_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Captured</masterLabel>
+            <translation><!-- Captured --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined</masterLabel>
+            <translation><!-- Declined --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reminder Target --></label>
+        <name>Reminder_Target__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this box to have the Charge reminders &apos;FROM&apos; sent in your name. --></help>
+        <label><!-- Reset Charge Reminders --></label>
+        <name>Reset_Charge_Reminders__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reset Entries --></label>
+        <name>Reset_Entries__c</name>
+    </fields>
+    <fields>
+        <label><!-- Routing Number --></label>
+        <name>Routing_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Card #1 Security Code --></label>
+        <name>Security_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- 10th Charge Date --></label>
+        <name>X10th_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 10th Check Charge --></label>
+        <name>X10th_Check_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- 11th Charge Date --></label>
+        <name>X11th_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 11th Check Charge --></label>
+        <name>X11th_Check_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- 12th Charge Date --></label>
+        <name>X12th_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 12th Check Charge --></label>
+        <name>X12th_Check_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- 13th Charge Date --></label>
+        <name>X13th_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 13th Check Charge --></label>
+        <name>X13th_Check_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- 14th Charge Date --></label>
+        <name>X14th_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 14th Check Charge --></label>
+        <name>X14th_Check_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- 15th Charge Date --></label>
+        <name>X15th_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 15th Check Charge --></label>
+        <name>X15th_Check_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- 16th Charge Date --></label>
+        <name>X16th_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 16th Check Charge --></label>
+        <name>X16th_Check_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- 17th Charge Date --></label>
+        <name>X17th_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 17th Check Charge --></label>
+        <name>X17th_Check_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- 18th Charge Date --></label>
+        <name>X18th_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 18th Check Charge --></label>
+        <name>X18th_Check_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- 19th Charge Date --></label>
+        <name>X19th_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 19th Check Charge --></label>
+        <name>X19th_Check_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1st Charge Date --></label>
+        <name>X1st_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1st Check Charge --></label>
+        <name>X1st_Check_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- 20th Charge Date --></label>
+        <name>X20th_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 20th Check Charge --></label>
+        <name>X20th_Check_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2nd Charge Date --></label>
+        <name>X2nd_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2nd Check Charge --></label>
+        <name>X2nd_Check_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3rd Charge Date --></label>
+        <name>X3rd_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3rd Check Charge --></label>
+        <name>X3rd_Check_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- 4th Charge Date --></label>
+        <name>X4th_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 4th Check Charge --></label>
+        <name>X4th_Check_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- 5th Charge Date --></label>
+        <name>X5th_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 5th Check Charge --></label>
+        <name>X5th_Check_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- 6th Charge Date --></label>
+        <name>X6th_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 6th Check Charge --></label>
+        <name>X6th_Check_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- 7th Charge Date --></label>
+        <name>X7th_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 7th Check Charge --></label>
+        <name>X7th_Check_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- 8th Charge Date --></label>
+        <name>X8th_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 8th Check Charge --></label>
+        <name>X8th_Check_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- 9th Charge Date --></label>
+        <name>X9th_Charge_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 9th Check Charge --></label>
+        <name>X9th_Check_Charge__c</name>
+    </fields>
+    <layouts>
+        <layout>Check Processing Layout</layout>
+        <sections>
+            <label><!-- Account Information --></label>
+            <section>Account Information</section>
+        </sections>
+        <sections>
+            <label><!-- Check --></label>
+            <section>Check</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Information --></label>
+            <section>Opportunity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Payment Schedule Setup --></label>
+            <section>Payment Schedule Setup</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Check Processing Layout Admin</layout>
+        <sections>
+            <label><!-- Account Information --></label>
+            <section>Account Information</section>
+        </sections>
+        <sections>
+            <label><!-- Check Section --></label>
+            <section>Check Section</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Payment Schedule Setup --></label>
+            <section>Payment Schedule Setup</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Credit Card Processing Layout</layout>
+        <sections>
+            <label><!-- Card #1 Info --></label>
+            <section>Card #1 Info</section>
+        </sections>
+        <sections>
+            <label><!-- Card #2 info --></label>
+            <section>Card #2 info</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Information --></label>
+            <section>Opportunity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Payment Schedule Setup --></label>
+            <section>Payment Schedule Setup</section>
+        </sections>
+        <sections>
+            <label><!-- hidden --></label>
+            <section>hidden</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Credit Card Processing Layout Admin</layout>
+        <sections>
+            <label><!-- Card #1 Info --></label>
+            <section>Card #1 Info</section>
+        </sections>
+        <sections>
+            <label><!-- Card #2 Info --></label>
+            <section>Card #2 Info</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Information --></label>
+            <section>Opportunity Information</section>
+        </sections>
+        <sections>
+            <label><!-- Payment Schedule Setup --></label>
+            <section>Payment Schedule Setup</section>
+        </sections>
+        <sections>
+            <label><!-- hidden --></label>
+            <section>hidden</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Check Processing --></label>
+        <name>Check_Processing</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Credit Card Processing --></label>
+        <name>Credit_Card_Processing</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You Need To Enter EITHER An End Date OR A Cycle Count, But Not Both.  Please Clear One Or The Other. --></errorMessage>
+        <name>End_Date_OR_Cycle_Count</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Package Duration can&apos;t be blank if First Charge Date is not blank and vice versa. --></errorMessage>
+        <name>PackageDateForce</name>
+    </validationRules>
+    <workflowTasks>
+        <description><!-- A customer&apos;s credit card processing was declined. Please contact the customer to resolve this issue. --></description>
+        <name>Credit_Card_Declined</name>
+        <subject><!-- Credit Card Declined - Contact Customer --></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

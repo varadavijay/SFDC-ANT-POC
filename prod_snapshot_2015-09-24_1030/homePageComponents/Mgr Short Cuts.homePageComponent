@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>Send_Sys_Request</links>
+    <links>Request_List_View</links>
+    <links>Sys_Req_Summary</links>
+    <links>CustomLink2</links>
+    <links>Dashboard_Today</links>
+    <links>Dashboard_Lead_Review</links>
+    <links>Toll_Free_s</links>
+    <links>Issue_List_View</links>
+    <links>CustomLink1</links>
+    <links>Products_Prices</links>
+    <links>Owner_Change_Request</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

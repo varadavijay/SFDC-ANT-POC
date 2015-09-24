@@ -1,0 +1,19 @@
+{!Contact.FirstName},
+
+
+As mentioned on the CHOOSE ONE {PHONE} {MESSAGE}, I’d like to introduce you to your dedicated Account Manager, {!Contact.Account_Manager__c}.  
+
+{!Contact.Account_Manager_Print_FName__c} will be responsible for developing best practices for your ad content {offers, ways to track response, and get results}.  {!Contact.Account_Manager_Print_HeShe__c} will also be reviewing the results of your advertising campaign and adjusting the campaign when necessary for optimal results.
+
+{!Contact.Account_Manager_Print_FName__c} will be calling you in the next few days to introduce {!Contact.Account_Manager_Print_Self__c} and set a time to talk more in depth about your campaign.
+
+If you have any questions, please reach out to {!Contact.Account_Manager_Print_HimHer__c} directly at {!Contact.Account_Manager_Print_Email__c} or {!Contact.Account_Manager_Print_Phone__c}. 
+
+
+Please let me know if you have any questions.
+
+
+Thanks,
+
+
+{!User.Name}

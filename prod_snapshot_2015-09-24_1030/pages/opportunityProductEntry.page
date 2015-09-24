@@ -1,0 +1,365 @@
+<apex:page standardController="Opportunity" tabstyle="Opportunity" extensions="opportunityProductEntry_VFC">
+   <style>
+        .displayNone{display:none}
+	</style>
+   <apex:sectionHeader Title="Add Products to" subtitle="{!oppty.Name}"/>
+   <apex:messages Id="responseErrors" style="color:red"/> 
+   <apex:form id="theForm">
+      
+       <apex:outputPanel id="productSelection">
+           <apex:outputText styleClass="label">Enter selected product details to add products to this Opportunity. Required fields calculate product pricing and may not be edited later.
+           </apex:outputText>
+           <br/>
+          <!--apex:outputText styleClass="label">Add products to this opportunity from <b>{!oppty.PriceBook2.Name}</b> price book. 
+          </apex:outputText-->
+       </apex:outputPanel>
+       <br/>
+       <br/>
+       
+        <script type="text/javascript">
+        		  function isInt(value) {
+				 	 return !isNaN(value) && (function(x) { return (x | 0) === x; })(parseFloat(value))
+				  }
+				  
+                  function inputLimiter(e, allow) {
+                        var AllowableCharacters = '';
+                
+                        if (allow == 'Numbers') {
+                          AllowableCharacters = '1234567890';
+                        }
+                
+                        var k = document.all ? parseInt(e.keyCode) : parseInt(e.which);
+                        if (k != 13 && k != 8 && k != 0) {
+                          if ((e.ctrlKey == false) && (e.altKey == false)) {
+                            return (AllowableCharacters.indexOf(String.fromCharCode(k)) != -1);
+                          } else {
+                            return true;
+                          }
+                        } else {
+                          return true;
+                        }
+                  }
+                  
+                  function validateInputVal(inputNumber) { 
+                      var inputNumberVal= document.getElementById(inputNumber).value;
+                      if(inputNumberVal % 1 != 0 || inputNumberVal <= 0){
+                          alert("Please enter a valid number");
+                         document.getElementById(inputNumber).value = null;
+                      }  
+                  }
+                  function calculateCMTotalPrice(inputCM,inputUnitPrice,inputMgmtFee,OutputTotalPrice,OutputOLIPrice,inputNOH,inputNOL) {    
+                         
+                         var inputNOHVal= document.getElementById(inputNOH).value;
+                         var inputNOLVal= document.getElementById(inputNOL).value;
+                         
+                         
+                         if (inputNOHVal && inputNOHVal.trim()!= ""){
+                             calculateTotalPriceNoOfHours(inputNOH,inputUnitPrice,inputMgmtFee,OutputTotalPrice,OutputOLIPrice); 
+                         } else if (inputNOLVal && inputNOLVal.trim()!= ""){
+                             calculateTotalPriceNoOfLocations(inputCM,inputNOL,inputUnitPrice,inputMgmtFee,OutputTotalPrice,OutputOLIPrice, false); 
+                         } else {
+                             
+                             var inputCMVal= document.getElementById(inputCM).value;
+                             var inputUnitPriceVal= document.getElementById(inputUnitPrice).value;
+                             var inputMgmtFeeVal= document.getElementById(inputMgmtFee).value;
+                             
+                             if (inputCMVal && inputUnitPriceVal && inputCMVal.trim()!= "" && inputUnitPriceVal.trim()!= "") {
+                             
+                                     var intCMVal= parseFloat(inputCMVal);
+                                     var intUnitPriceVal= parseFloat(inputUnitPriceVal);
+                                     var intMgmtFee= parseFloat(inputMgmtFeeVal);
+                                     var inttotalVal= intCMVal*intUnitPriceVal;
+                                     var displaytotal= "$" + inttotalVal.toFixed(2);
+                                     
+                                     if ( !isNaN(parseFloat(inttotalVal)) ){
+                                        document.getElementById(OutputTotalPrice).innerHTML = displaytotal;
+                                        
+                                        if (inputMgmtFeeVal && inputMgmtFeeVal.trim()!= "" && !isNaN(parseFloat(intMgmtFee)) ){
+                                           var intOLItotalVal= inttotalVal + inttotalVal*intMgmtFee/100;
+                                           var displayOLItotal= "$" + intOLItotalVal.toFixed(2);
+                                           document.getElementById(OutputOLIPrice).innerHTML = displayOLItotal;
+                                        }else {
+                                           document.getElementById(OutputOLIPrice).innerHTML = displaytotal;
+                                        }
+                                        
+                                     }else{
+                                        alert("Please enter valid value");
+                                     }
+                               
+                             }else { 
+                                document.getElementById(OutputTotalPrice).innerHTML = "";
+                                document.getElementById(OutputOLIPrice).innerHTML = "";
+                             }     
+                        }     
+                  }
+                  function calculateLITotalPrice(inputQLI,inputEmail,inputProd,inputPbname,inputpbeId, inputUnitPrice) {    
+                       
+                       var inputQLIVal= document.getElementById(inputQLI).value;
+                       var inputEmailVal= document.getElementById(inputEmail).value;
+                       
+                               calcLIPrice(
+                                    inputQLIVal,
+                                    inputEmailVal,
+                                    inputpbeId,
+                                    inputProd,
+                                    inputPbname,
+                                    inputUnitPrice
+                                );
+                  }
+                  
+                  function colorPageBlock(pageblock, color) {
+                        if (pageblock != null) 
+                            pageblock.firstChild.style.cssText = "background-color: "+ color + ";" 
+                                                        +"background-repeat:no-repeat;"
+                                                        +"background-position:left;";
+                 
+                  }
+                  
+                  function calculateTotalPriceNoOfLocations(inputCM,inputNOL,inputUnitPrice,inputMgmtFee,OutputTotalPrice,OutputOLIPrice,inputpbeId, pFlag) {
+                        
+                        var inputCMVal= document.getElementById(inputCM).value;
+                        var inputUnitPriceVal= document.getElementById(inputUnitPrice).value;
+                        var inputMgmtFeeVal= document.getElementById(inputMgmtFee).value;
+                        var inputNOLVal= document.getElementById(inputNOL).value;
+                       	
+                       	if(pFlag && isInt(inputNOLVal)){	 
+	                       	Visualforce.remoting.Manager.invokeAction(
+						        '{!$RemoteAction.opportunityProductEntry_VFC.returnMatrixResult}',
+						        inputNOLVal,
+						        inputpbeId,
+						        function(result, event) {
+						           inputUnitPriceVal = result;
+						           document.getElementById(inputUnitPrice).value = result;
+						        }
+							);	 
+						}
+						
+                       	if (inputCMVal && inputUnitPriceVal && inputNOLVal && inputCMVal.trim()!= "" && inputUnitPriceVal.trim()!= "" && inputNOLVal.trim()!= "") {
+                              
+                             var intCMVal= parseFloat(inputCMVal);
+                             var intUnitPriceVal= parseFloat(inputUnitPriceVal);
+                             var intMgmtFee= parseFloat(inputMgmtFeeVal);
+                             var intNOLVal= parseFloat(inputNOLVal);
+                             var inttotalVal= intCMVal*intUnitPriceVal*intNOLVal;
+                             var displaytotal= "$" + inttotalVal.toFixed(2);
+                             
+                             if ( !isNaN(parseFloat(inttotalVal)) ){
+                                document.getElementById(OutputTotalPrice).innerHTML = displaytotal;
+                                if (inputMgmtFeeVal && inputMgmtFeeVal.trim()!= "" && !isNaN(parseFloat(intMgmtFee)) ){
+                                   var intOLItotalVal= inttotalVal + inttotalVal*intMgmtFee/100;
+                                   var displayOLItotal= "$" + intOLItotalVal.toFixed(2);
+                                   document.getElementById(OutputOLIPrice).innerHTML = displayOLItotal;
+                                }else {
+                                   document.getElementById(OutputOLIPrice).innerHTML = displaytotal;
+                                }
+                             }else {
+                                alert("Please enter valid value"); 
+                             }
+                            
+                        }else{
+                              document.getElementById(OutputTotalPrice).innerHTML = "";
+                              document.getElementById(OutputOLIPrice).innerHTML = "";
+                        }
+                 
+                  }
+                  function calculateTotalPriceNoOfHours(inputNOH,inputUnitPrice,inputMgmtFee,OutputTotalPrice,OutputOLIPrice) {
+                        
+                        var inputUnitPriceVal= document.getElementById(inputUnitPrice).value;
+                        var inputMgmtFeeVal= document.getElementById(inputMgmtFee).value;
+                        var inputNOHVal= document.getElementById(inputNOH).value;
+                        
+                        if (inputNOHVal && inputUnitPriceVal && inputNOHVal.trim()!= "" && inputUnitPriceVal.trim()!= "") {
+                             
+                             var intUnitPriceVal= parseFloat(inputUnitPriceVal);
+                             var intMgmtFee= parseFloat(inputMgmtFeeVal);
+                             var intNOHVal= parseFloat(inputNOHVal);
+                             var inttotalVal= intUnitPriceVal*intNOHVal;
+                             var displaytotal= "$" + inttotalVal.toFixed(2);
+                             
+                             if ( !isNaN(parseFloat(inttotalVal)) ){
+                                document.getElementById(OutputTotalPrice).innerHTML = displaytotal;
+                                if (inputMgmtFeeVal && inputMgmtFeeVal.trim()!= "" && !isNaN(parseFloat(intMgmtFee)) ){
+                                   var intOLItotalVal= inttotalVal + inttotalVal*intMgmtFee/100;
+                                   var displayOLItotal= "$" + intOLItotalVal.toFixed(2);
+                                   document.getElementById(OutputOLIPrice).innerHTML = displayOLItotal;
+                                }else {
+                                   document.getElementById(OutputOLIPrice).innerHTML = displaytotal;
+                                }
+                             }else {
+                                alert("Please enter valid value"); 
+                             }
+                             
+                        }else{
+                              document.getElementById(OutputTotalPrice).innerHTML = "";
+                              document.getElementById(OutputOLIPrice).innerHTML = "";
+                        }
+                  }
+                                  
+                  
+       </script>
+      
+       <apex:pageBlock title="Selected {!$ObjectType.Product2.LabelPlural}" id="selectedProducts">
+            
+            <apex:pageblocksection title="Products by Contract Months" showheader="true" rendered="{!renderCMTable}" collapsible="true" columns="1">
+            <apex:pageblockTable value="{!olineItemCM}" var="oli"  id="CMTable">
+                    
+                    <apex:column >
+                        <apex:commandLink action="{!removeCMOLIfromList}" reRender="CMTable" immediate="true" >
+                            <apex:image title="Delete" value="{!$Resource.RemoveIcon}" width="15" height="15" >﻿</apex:image>
+                            <apex:param value="{!oli.PriceBookEntryId}" assignTo="{!toUnselectCM}" name="toUnselectCM"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    
+                    <apex:column headerValue="{!$ObjectType.Product2.LabelPlural}" value="{!oli.PriceBookEntry.Product2.Name}"/>
+                    
+                <!-- hiding this field as part of DEV-2417
+
+                    <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.Qty_LineItems__c.Label}">
+                        <apex:outputField value="{!oli.Qty_LineItems__c}" style="width:70px" />
+                    </apex:column>
+                  -->
+                    <apex:column id="inputCMHeader" headerValue="# of Months">
+                        <apex:inputField id="inputCM"  html-autocomplete="off" value="{!oli.Qty_ContractMonths__c}" style="width:70px" required="{!AND(oli.PriceBookEntry.Product2.Edit_NumberOfHours__c==False,oli.PriceBookEntry.Product2.Edit_Qty_ContractMonths__c==True)}" onkeyup="calculateCMTotalPrice('{!$Component.inputCM}','{!$Component.inputUnitPrice}','{!$Component.inputMgmtFee}','{!$Component.OutputTotalPrice}','{!$Component.OutputOLIPrice}','{!$Component.inputNOH}','{!$Component.inputNOL}');" onChange="validateInputVal('{!$Component.inputCM}');" onkeypress="return inputLimiter(event,'Numbers')"/>
+                        <script>document.getElementById('{!$Component.inputCM}').disabled = {!OR(oli.PriceBookEntry.Product2.Edit_NumberOfHours__c==True,oli.PriceBookEntry.Product2.Edit_Qty_ContractMonths__c!=True)}; </script>
+                    </apex:column>
+                    
+                     <apex:column headerValue="# of Locations">
+                       <apex:inputField id="inputNOL"  html-autocomplete="off" value="{!oli.NumberOfLocations__c}" style="width:70px" required="{!oli.PriceBookEntry.Product2.Edit_NumberOfLocations__c==True}" onkeypress="return inputLimiter(event,'Numbers')" onkeyup="calculateTotalPriceNoOfLocations('{!$Component.inputCM}','{!$Component.inputNOL}','{!$Component.inputUnitPrice}','{!$Component.inputMgmtFee}','{!$Component.OutputTotalPrice}','{!$Component.OutputOLIPrice}', '{!oli.PriceBookEntry.Id}', 'true');" onChange="validateInputVal('{!$Component.inputNOL}');"/>
+                       <script>document.getElementById('{!$Component.inputNOL}').disabled = {!IF(oli.PriceBookEntry.Product2.Edit_NumberOfLocations__c==True,False,True)}; </script>
+                    </apex:column>
+                    
+                    <apex:column headerValue="# of Hours">
+                       <apex:inputField id="inputNOH"  html-autocomplete="off" value="{!oli.NumberOfHours__c}" style="width:70px" required="{!oli.PriceBookEntry.Product2.Edit_NumberOfHours__c==True}" onkeyup="calculateTotalPriceNoOfHours('{!$Component.inputNOH}','{!$Component.inputUnitPrice}','{!$Component.inputMgmtFee}','{!$Component.OutputTotalPrice}','{!$Component.OutputOLIPrice}');"/>
+                       <script>document.getElementById('{!$Component.inputNOH}').disabled = {!IF(oli.PriceBookEntry.Product2.Edit_NumberOfHours__c==True,False,True)}; </script>
+                    </apex:column>
+                    
+                    <apex:column id="inputMgmtFeeHeader" headerValue="{!$ObjectType.OpportunityLineItem.Fields.Mgmt_Fee_Percent__c.Label}">
+                        <apex:inputfield id="inputMgmtFee" html-autocomplete="off" required="{!NOT(OR(oli.PriceBookEntry.Product2.HasMediaSpend__c==false,AND(oli.PriceBookEntry.Product2.HasMediaSpend__c==true,oli.PriceBookEntry.MgmtFee_Percent__c!=null)))}" value="{!oli.Mgmt_Fee_Percent__c}" style="width:70px"  onkeyup="calculateCMTotalPrice('{!$Component.inputCM}','{!$Component.inputUnitPrice}','{!$Component.inputMgmtFee}','{!$Component.OutputTotalPrice}','{!$Component.OutputOLIPrice}','{!$Component.inputNOH}','{!$Component.inputNOL}');" />
+                        <script>document.getElementById('{!$Component.inputMgmtFee}').disabled = {!OR(oli.PriceBookEntry.Product2.HasMediaSpend__c==false,AND(oli.PriceBookEntry.Product2.HasMediaSpend__c==true,oli.PriceBookEntry.MgmtFee_Percent__c!=null))}; </script>
+                    </apex:column>
+                    
+                    <apex:column id="inputUnitPriceHeader" headerValue="{!$ObjectType.OpportunityLineItem.Fields.UnitPrice.Label}">
+                        <div style="display:inline-block"> 
+                        <apex:inputField id="inputUnitPrice" html-autocomplete="off" required="true" value="{!oli.UnitPrice}" style="width:70px"  onkeyup="calculateCMTotalPrice('{!$Component.inputCM}','{!$Component.inputUnitPrice}','{!$Component.inputMgmtFee}','{!$Component.OutputTotalPrice}','{!$Component.OutputOLIPrice}','{!$Component.inputNOH}','{!$Component.inputNOL}');"></apex:inputField>
+                        <script>document.getElementById('{!$Component.inputUnitPrice}').disabled = {!IF(oli.PriceBookEntry.UnitPrice > 0.00, True, IF(oli.PriceBookEntry.Product2.UseMatrix__c,True,False))}; </script>
+                        </div>
+                        <div style="display:inline-block"> 
+                        <apex:image value="{!$Resource.HelpIcon}" width="13" height="13" title="Must be within range : {!oli.PriceBookEntry.PriceRangeMin__c} to {!oli.PriceBookEntry.PriceRangeMax__c}"  rendered="{!OR(oli.PriceBookEntry.PriceRangeMin__c!=null,oli.PriceBookEntry.PriceRangeMax__c!=null)}"/>
+                        </div>
+                    </apex:column>
+                    
+                    <!-- Hiding these field as part of DEV-2417-->
+                    <apex:column id="OutputTotalPrice" headerClass="displayNone" style="display:none" headerValue="{!$ObjectType.OpportunityLineItem.Fields.TotalPrice.Label}" >
+                            <apex:OutputText value="" style="width:70px"/>
+                    </apex:column>
+                     
+                    <apex:column id="OutputOLIPrice" headerClass="displayNone" style="display:none" headerValue="{!$ObjectType.OpportunityLineItem.Fields.TotalMonthlyCharge__c.Label}">
+                        <apex:OutputText value="" style="width:70px"/>
+                    </apex:column>
+                    <!-- End-->
+                        
+                    <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.Notes__c.Label}">
+                        <apex:inputField value="{!oli.Notes__c}" style="width:200px" required="false"/>
+                    </apex:column>
+                    
+            </apex:pageblockTable>
+            </apex:pageblocksection>
+            
+            <apex:pageblocksection title="Products by Quantity" showheader="true" rendered="{!renderLITable}" collapsible="true" columns="1">
+            <apex:actionFunction immediate="true" name="calcLIPrice" action="{!createChildTable}" rerender="childTable">
+                <apex:param value="" assignTo="{!selectedQLI}" name="qli"/>
+                <apex:param value="" assignTo="{!selectedEmailR}" name="emailRec"/>
+                <apex:param value="" assignTo="{!selectedPbeId}" name="pbeId"/>
+                <apex:param value="" assignTo="{!selectedProdName}" name="prodName"/>
+                <apex:param value="" assignTo="{!selectedPbName}" name="pbName"/>
+                <apex:param value="" assignTo="{!selectedUnitPrice}" name="pbUnitPrice"/>
+            </apex:actionFunction>
+                    
+            <apex:pageblockTable value="{!olineItemWrapperLI}" var="oli"  id="LITable">
+                  
+                    <apex:column style="width:22px" >
+                        <apex:commandLink action="{!removeLIOLIfromList}" reRender="LITable" immediate="true">
+                            <apex:image title="Delete" value="{!$Resource.RemoveIcon}" width="15" height="15">﻿</apex:image>
+                            <apex:param value="{!oli.parentOLI.PriceBookEntryId}" assignTo="{!toUnselectLI}" name="toUnselectLI"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    
+                    <apex:column headerValue="{!$ObjectType.Product2.LabelPlural}" value="{!oli.parentOLI.PriceBookEntry.Product2.Name}"/>
+                    
+                    <apex:column headerValue="# of Blasts (max 25)">
+                        <apex:inputField styleClass="inputQLI" id="inputQLI" html-autocomplete="off" value="{!oli.parentOLI.Qty_LineItems__c}" style="width:70px" required="true" onkeyup="calculateLITotalPrice('{!$Component.inputQLI}','{!$Component.inputEmail}','{!oli.prodName}','{!oli.pbookName}','{!oli.parentOLI.PriceBookEntryId}', '{!oli.parentOLI.PriceBookEntry.UnitPrice}');" onChange="validateInputVal('{!$Component.inputQLI}');" onkeypress="return inputLimiter(event,'Numbers')"/>
+                    </apex:column>
+                    
+                    <!-- Hiding this field as part of DEV-2417
+                    <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.Qty_ContractMonths__c.Label}">
+                        <apex:outputField value="{!oli.parentOLI.Qty_ContractMonths__c}" style="width:70px"/>
+                    </apex:column>
+                    -->  
+                            
+                    <apex:column headerValue="# of Recipients (min 10,000)">
+                        <apex:inputField id="inputEmail" html-autocomplete="off" value="{!oli.parentOLI.Email_Recipients_Qty__c}" style="width:70px" required="{!oli.parentOLI.PriceBookEntry.Product2.Edit_Email_Recipients__c}" onkeyup="calculateLITotalPrice('{!$Component.inputQLI}','{!$Component.inputEmail}','{!oli.prodName}','{!oli.pbookName}','{!oli.parentOLI.PriceBookEntryId}', '{!oli.parentOLI.PriceBookEntry.UnitPrice}');" />
+                        <script>document.getElementById('{!$Component.inputEmail}').disabled = {!NOT(oli.parentOLI.PriceBookEntry.Product2.Edit_Email_Recipients__c)};  </script>
+                    </apex:column>
+                    
+                    <!-- Hiding this as part of DEV-2462
+                    <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.Notes__c.Label}">
+                        <apex:inputField value="{!oli.parentOLI.Notes__c}" style="width:200px" required="false"/>
+                    </apex:column>
+                    -->
+                    <apex:column breakBefore="true" colspan="9">
+                      
+                      <apex:pageblocksection title="" showheader="true" collapsible="true" columns="1"  Id="childTable" >
+                      <script>colorPageBlock(document.getElementById("{!$Component.childTable}"), "#D6D6FF");</script>  
+                      
+                      
+                      <apex:pageBlockTable value="{!oli.childOLI}" var="olichild" rendered="{!renderchildTable}">
+                           <!-- Updating Label as pat of DEv-2642-->
+                            <apex:column headerValue="# of Blasts (max 25)">
+                                <apex:outputfield value="{!olichild.Qty_LineItems__c}" style="width:70px" />
+                            </apex:column>
+                          
+                           <!-- Hiding this as part of DEV-2642
+                            <apex:column headerValue="# of Months">
+                                <apex:outputField value="{!olichild.Qty_ContractMonths__c}" style="width:70px"/>
+                            </apex:column>
+                            -->
+							
+							<!-- Updaing the label as part of DEV-2642 -->
+                            <apex:column headerValue="# of Recipients (min 10,000)">
+                                <apex:outputfield value="{!olichild.Email_Recipients_Qty__c}" style="width:70px" />
+                            </apex:column>
+                          
+                            <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.UnitPrice.Label}">
+                                <apex:outputfield value="{!olichild.UnitPrice}" style="width:70px"/>
+                            </apex:column>
+                          
+                            <!-- Hiding these fields as part of DEV-2642 
+                            <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.TotalPrice.Label}">
+                                <apex:Outputfield value="{!olichild.TotalPrice}" style="width:70px"/>
+                            </apex:column>
+                            
+                            <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.TotalMonthlyCharge__c.Label}">
+                                <apex:Outputfield value="{!olichild.TotalPrice}" style="width:70px"/>
+                            </apex:column>
+                            -->
+                            <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.Notes__c.Label}">
+                                <apex:inputField value="{!olichild.Notes__c}" style="width:200px"/>
+                            </apex:column>
+        
+                        </apex:pageBlockTable>
+        
+                    </apex:pageblockSection>
+                </apex:column>
+                    
+            </apex:pageblockTable>
+            </apex:pageblocksection>
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!onSave}" value="Save"/>
+                <apex:commandButton action="{!onCancel}" value="Cancel" immediate="true"/>
+            </apex:pageBlockButtons>
+
+       </apex:pageBlock>
+       
+   </apex:form>
+</apex:page>

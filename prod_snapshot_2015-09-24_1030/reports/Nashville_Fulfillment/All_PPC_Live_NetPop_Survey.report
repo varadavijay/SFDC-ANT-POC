@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity.Media_Partner__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Live_Date__c</field>
+    </columns>
+    <description>Used for NetPop survey and Google PSP</description>
+    <filter>
+        <criteriaItems>
+            <column>PRODUCT_NAME</column>
+            <operator>contains</operator>
+            <value>PPC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OpportunityLineItem.Expiration_Date__c</column>
+            <operator>greaterOrEqual</operator>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OpportunityLineItem.Waiting_Status__c</column>
+            <operator>equals</operator>
+            <value>Live,Fulfilled Renewed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Paused_Or_Canceled__c</column>
+            <operator>notEqual</operator>
+            <value>Canceled,Fulfilled,Paused : Billing,Paused : No Contact</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>All PPC Live - NetPop Survey</name>
+    <params>
+        <name>open</name>
+        <value>closedwon</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityProduct</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

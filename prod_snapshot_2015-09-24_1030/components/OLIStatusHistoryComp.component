@@ -1,0 +1,46 @@
+<!--OLI status History Component -->
+<apex:component controller="OLIStatusHistoryCompCntrl">
+    <apex:attribute name="oppLineItemId" description="OppLineItem Id"
+                  type="Id" required="required" assignTo="{!oliId}"/>
+    <apex:pageBlockSection title="Status History" columns="1">
+        <apex:pageblocktable value="{!HistoryTrackRecords}" var="histRec">
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Order of Occurrence"/>  
+            </apex:outputPanel>
+           </apex:facet>
+              <apex:outputtext value="{!histRec.orderOfOccurence}"/>
+         </apex:column>
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Status"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputtext value="{!histRec.record.OLI_Stage__c}"/>
+         </apex:column>
+      
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Time In"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputtext value="{!histRec.TimeInFormatted}"/>
+         </apex:column>
+        
+         <apex:column >
+           <apex:facet name="header">
+           <apex:outputPanel layout="none">
+             <apex:outputLabel value="Updated By"/>  
+            </apex:outputPanel>
+           </apex:facet>
+             <apex:outputtext value="{!histRec.record.CreatedBy.Name}"/>
+         </apex:column>
+        
+         
+     </apex:pageblocktable> 
+        
+    </apex:pageBlockSection>     
+</apex:component>

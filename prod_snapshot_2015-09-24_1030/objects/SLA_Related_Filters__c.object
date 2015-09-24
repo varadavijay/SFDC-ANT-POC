@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <customSettingsVisibility>Protected</customSettingsVisibility>
+    <description>Holds information relevant to the search and display of the SLA Summary Report VF Page, and to the updates in batchProductSLARecalc</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Is_Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Whether the record should be considered or not during the filtering processes.  Needs to be reset for the BatchProductSLARecalculation before every run.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Whether the record should be considered or not during the filtering processes.  Needs to be reset for the BatchProductSLARecalculation before every run.</inlineHelpText>
+        <label>Is Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Live_After__c</fullName>
+        <description>Only include Opportunity Products that went live after this date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Only include Opportunity Products that went live after this date.</inlineHelpText>
+        <label>Live After</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Live_Before__c</fullName>
+        <description>Only include Opportunity Products that went live before this date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Only include Opportunity Products that went live before this date.</inlineHelpText>
+        <label>Live Before</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Live_Status__c</fullName>
+        <description>A list of status&apos; that contribute to Live. These should also set the live date. Comma Separated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A list of status&apos; that contribute to Live. These should also set the live date. Comma Separated.</inlineHelpText>
+        <label>Live Status</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Product_Created_After__c</fullName>
+        <description>Process Opportunity Products created after this date. Date in this field should be on or after 12/8/2013, since that&apos;s when the Opportunity Product History object started gathering data.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Process Opportunity Products created after this date. Date in this field should be on or after 12/8/2013, since that&apos;s when the Opportunity Product History object started gathering data.</inlineHelpText>
+        <label>Opportunity Product Created After</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Product_Created_Before__c</fullName>
+        <description>Process Opportunity Products created before this date. Date in this field should be after 12/8/2013, since that&apos;s when the Opportunity Product History object started gathering data.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Process Opportunity Products created before this date. Date in this field should be after 12/8/2013, since that&apos;s when the Opportunity Product History object started gathering data.</inlineHelpText>
+        <label>Opportunity Product Created Before</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Product_Filters__c</fullName>
+        <description>SLA Products Types excluded for the SLA Summary Report / Product IDs included for updates in batchProductSLARecalc</description>
+        <externalId>false</externalId>
+        <inlineHelpText>SLA Products Types excluded for the SLA Summary Report / Product IDs included for updates in batchProductSLARecalc</inlineHelpText>
+        <label>Product Filters</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Type_Sort_Order__c</fullName>
+        <description>The order of the products displayed on the report.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The order of the products displayed on the report.</inlineHelpText>
+        <label>Product Type Sort Order</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLA_Status__c</fullName>
+        <description>A list of status&apos; that are to be counted toward the Days to Go Live calculation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A list of status&apos; that are to be counted toward the Days to Go Live calculation.</inlineHelpText>
+        <label>SLA Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>SLA Related Filters</label>
+</CustomObject>

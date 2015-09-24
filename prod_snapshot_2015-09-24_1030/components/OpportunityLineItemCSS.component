@@ -1,0 +1,20 @@
+<apex:component >
+
+	<style type="text/css">
+	
+		.tableHeaderCentered {
+			text-align:center;
+		}
+		.backgroundRowStyle {
+			text-align:center;
+			background:pink;
+		}
+		.backgroundRowStyleDefault {
+			text-align:center;
+			background:transparent;
+		}
+	
+	</style>
+	
+
+</apex:component>

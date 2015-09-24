@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Number</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>UNIT_PRICE:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Value</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Opportunity.Monthly_Total__c:SUM/RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA3</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Average</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_45304804</developerName>
+        <masterLabel>Product Name</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>PRODUCT_NAME</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Facebook Ads</sourceValue>
+            </sourceValues>
+            <value>Facebook Ads</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>SEO 10 Keywords</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SEO 15 Keywords</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SEO 5 Keywords</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SEO Custom Package</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SEO KW Accel +5 KW</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SEO KW Accel Pt 1</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SEO-10 Pages</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SEO-15+ Keywords</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SEO-5 Pages</sourceValue>
+            </sourceValues>
+            <value>SEO</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Website - Custom</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Website - Exposure</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Website - Presence</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Website Maintenance</sourceValue>
+            </sourceValues>
+            <value>Website</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Social Media Customer Loyalty and Reward (Original - No Baked-In FB Ads)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Daily Content</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Engagement (No ADS)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Engagement Package</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Loyalty Package</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Presence</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Presence (no FB ads)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Presence Package</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media Tier 2</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social Media- Tier 1</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Social PR</sourceValue>
+            </sourceValues>
+            <value>Social</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Maps</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Maps Plus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Maps Plus II</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Maps/Reputation Package</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>MapsPlus</sourceValue>
+            </sourceValues>
+            <value>Maps/Rep</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_13047303</developerName>
+        <masterLabel>Status</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>OpportunityLineItem.Waiting_Status__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Live</sourceValue>
+            </sourceValues>
+            <value>Live</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Awaiting Onboard</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>In Fulfillment</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Waiting On Client Approval</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Waiting On Client Resource</sourceValue>
+            </sourceValues>
+            <value>Non-Live</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <aggregate>Average</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>OpportunityLineItem.Project_In_Pipe_Time__c</column>
+        </chartSummaries>
+        <chartSummaries>
+            <aggregate>Average</aggregate>
+            <axisBinding>y2</axisBinding>
+            <column>OpportunityLineItem.Project_Awaiting_Onboard_to_today__c</column>
+        </chartSummaries>
+        <chartType>VerticalColumnGroupedLine</chartType>
+        <enableHoverLabels>true</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>Opportunity.Dig_Account_Manager__c</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <secondaryGroupingColumn>BucketField_13047303</secondaryGroupingColumn>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Huge</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>OpportunityLineItem.Project_Start_Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>OpportunityLineItem.Count__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.Monthly_Total__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>OpportunityLineItem.Project_Awaiting_Onboard_to_today__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>OpportunityLineItem.Project_In_Pipe_Time__c</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.DAMAssigned__c</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Status_Change_Date__c</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Time_In_Current_Status_Days__c</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Waiting_Status_Descr__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Media_Partner__c</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Affl_Sales_Rep__c</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Notes__c</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>QUANTITY</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Dig_OnB_Call__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>(((1 AND 2 AND 3 AND 4 AND 5 AND 6) OR (1 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8)) AND 9) AND 10</booleanFilter>
+        <criteriaItems>
+            <column>Opportunity.Role_Dig_Acct_Man__c</column>
+            <operator>equals</operator>
+            <value>Account Managers,Fulfillment - Nashville</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OpportunityLineItem.Waiting_Status__c</column>
+            <operator>equals</operator>
+            <value>Awaiting Onboard,In Fulfillment,Waiting On Client Approval,Waiting On Client Resource</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>PRODUCT_NAME</column>
+            <operator>notEqual</operator>
+            <value>direct mail,Email Blast,setup,website - custom</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Dig_Account_Manager__c</column>
+            <operator>notContain</operator>
+            <value>elle turner,brienne chance,knauer,potts,karlyn,boyle,wiles,mcillece,reid,naboshek,escobedo</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <operator>equals</operator>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>PRODUCT_NAME</column>
+            <operator>notContain</operator>
+            <value>setup,creative,hosting</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OpportunityLineItem.Waiting_Status__c</column>
+            <operator>equals</operator>
+            <value>Live</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OpportunityLineItem.Live_Date__c</column>
+            <operator>equals</operator>
+            <value>LAST_MONTH</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>TYPE</column>
+            <operator>equals</operator>
+            <value>New Business,Upsell</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Tier_Level__c</column>
+            <operator>notEqual</operator>
+            <value>Tier 1</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.Dig_Account_Manager__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_13047303</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_45304804</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Go-To-Live (Non-Live + Live last month)</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityProduct</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>FormStack Data</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>FormStack Data</value>
+    </caseValues>
+    <fields>
+        <label><!-- Checking Company Name --></label>
+        <name>Checking_Company_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deposit Company Name --></label>
+        <name>Deposit_Company_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- FormStack Data --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- W8 Company Name --></label>
+        <name>W8_Company_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- W9 Company Name --></label>
+        <name>W9_Company_Name__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

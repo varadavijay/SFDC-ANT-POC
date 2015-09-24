@@ -1,0 +1,13 @@
+<apex:page showHeader="false" id="SiteTemplate">
+  <apex:stylesheet value="{!URLFOR($Resource.GL_Styles)}"/>
+  <div id="container">
+  <!-- <apex:pageBlockSection title="" collapsible="false" columns="1" showHeader="true"> -->
+  <!-- </apex:pageBlockSection> -->
+  <apex:insert name="header">
+      <apex:image value="{!URLFOR($Resource.GO_Digital_Logo)}"/>
+  </apex:insert>
+  <apex:insert name="body"/>
+  <apex:insert name="footer">
+  </apex:insert>
+  </div>
+</apex:page>

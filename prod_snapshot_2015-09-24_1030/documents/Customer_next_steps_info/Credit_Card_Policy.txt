@@ -1,0 +1,8 @@
+"The length of your contract is determined by the package selected. 
+
+Your credit card will be charged on a monthly basis during this period and you will receive confirmation
+by mail.  
+
+Should you decide to cancel, you will be charged the next month before cancellation takes effect.  
+
+Package upgrades are allowed any time."

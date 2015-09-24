@@ -1,0 +1,34 @@
+<apex:page standardController="OpportunityLineItem" tabStyle="OpportunityLineItem" extensions="OpportunityLineItemUSCPCancelController">
+    <apex:form >
+    
+        <script type="text/javascript">
+        function colorPageBlock(pageblock, color) {
+                        if (pageblock != null) 
+                            pageblock.firstChild.style.cssText = "background-color: "+ color + ";" 
+                                                        +"background-repeat:no-repeat;"
+                                                        +"background-position:left;";
+                 
+                  }
+        </script>
+
+    <!--<apex:detail inlineEdit="true"  />--> 
+    <apex:sectionHeader Title="Cancel Information"/>
+        <apex:pageMessages ></apex:pageMessages>
+    <apex:pageBlock mode="edit" >        
+     <apex:pageBlockButtons >
+       <apex:commandButton action="{!save}" value="Save"/>  
+       <apex:commandButton action="{!cancel}" value="Cancel"/>  
+     </apex:pageBlockButtons>   
+     <apex:pageBlockSection collapsible="false" id="tabcolor" title="Cancel Information" columns="2">
+      
+      <apex:inputField value="{!oli.CancelType__c}" required="true" />
+      <apex:inputField value="{!oli.Cancellation_Category__c}" />
+      <apex:inputField value="{!oli.Invoice_CancelDate__c}" required="true" />
+      <apex:inputField value="{!oli.Cancellation_Reason__c}" />
+      <apex:inputField value="{!oli.Waiting_Status_Descr__c}"/>
+      <apex:inputField value="{!oli.Cancellation_Detail__c}" />
+            
+    </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

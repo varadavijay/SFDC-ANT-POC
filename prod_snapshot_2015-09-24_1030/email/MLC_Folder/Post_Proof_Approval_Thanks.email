@@ -1,0 +1,19 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<p class="MsoNormal">Hello&nbsp;{!Contact.Name},<o:p></o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Thank you for approving
+the {!Opportunity.Account}&nbsp;DealChicken proof. Your deal is currently scheduled to run
+on {!Opportunity.DC_Run_Date__c}. <o:p></o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">As a reminder, I am your
+Merchant Loyalty Coordinator and here to guide you through each step of your
+DealChicken promotion. If you have any questions, please feel free to reach out
+to me at any time.</p><p class="MsoNormal"><br></p><p class="MsoNormal">Thanks!<o:p></o:p></p>]]></td>
+</tr>
+</table>

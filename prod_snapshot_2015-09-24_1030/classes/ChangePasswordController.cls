@@ -1,0 +1,28 @@
+/**
+ * An apex page controller that exposes the change password functionality
+ */
+public with sharing class ChangePasswordController {
+    public String oldPassword {get; set;}
+    public String newPassword {get; set;}
+    public String verifyNewPassword {get; set;}        
+    
+    public PageReference changePassword() {
+        return Site.changePassword(newPassword, verifyNewPassword, oldpassword);    
+    }     
+    
+   	public ChangePasswordController() {}
+   	
+    // <testMethod> should be put into test class 
+ 	// <CC> clarify use of SeeAllData in this test 
+   	@IsTest(SeeAllData=true) public static void testChangePasswordController() {
+        // Instantiate a new controller with all parameters in the page
+        ChangePasswordController controller = new ChangePasswordController();
+        controller.oldPassword = '123456';
+        controller.newPassword = 'qwerty1'; 
+        controller.verifyNewPassword = 'qwerty1';     
+                   
+        // <logic> assertEquals (expected, actual), this works but arguments are backwards 
+        // <refactor> needs an errror message to describe the problem 
+        System.assertEquals(controller.changePassword(),null);                           
+    }    
+}

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Job Position</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Job Positions</value>
+    </caseValues>
+    <fields>
+        <help><!-- How much does this position pay? --></help>
+        <label><!-- Compensation --></label>
+        <name>Compensation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Department Category --></label>
+        <name>Department_Category__c</name>
+        <picklistValues>
+            <masterLabel>Operations</masterLabel>
+            <translation><!-- Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Final Approver --></label>
+        <name>Final_Approver__c</name>
+        <relationshipLabel><!-- Job Positions (Final Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Time span in which the position will need to be filled --></help>
+        <label><!-- Fulfillment Period --></label>
+        <name>Fulfillment_Period__c</name>
+        <picklistValues>
+            <masterLabel>Next 30 Days</masterLabel>
+            <translation><!-- Next 30 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Next 60 Days</masterLabel>
+            <translation><!-- Next 60 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Next 90 Days</masterLabel>
+            <translation><!-- Next 90 Days --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- A Quick list of who the candidate will interview with
+
+I.E. {Name of Department Supervisor}, {Name of Hiring Manager}, then {Name of Department Head} --></help>
+        <label><!-- Interview Process --></label>
+        <name>Interview_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Description --></label>
+        <name>Job_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this a new position to be filled? 
+Or Is this to fill an already existing position? --></help>
+        <label><!-- Job Position Type --></label>
+        <name>Job_Position_Type__c</name>
+        <picklistValues>
+            <masterLabel>New Position</masterLabel>
+            <translation><!-- New Position --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Replacement</masterLabel>
+            <translation><!-- Replacement --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The Name of the Position to be Filled --></help>
+        <label><!-- Job Title --></label>
+        <name>Job_Title__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of seats available for this position --></help>
+        <label><!-- Positions Available --></label>
+        <name>Positions_Available__c</name>
+    </fields>
+    <fields>
+        <help><!-- Who will this person report to? --></help>
+        <label><!-- Supervisor --></label>
+        <name>Supervisor__c</name>
+        <relationshipLabel><!-- Job Positions (Supervisor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Name of the User being replaced --></help>
+        <label><!-- User being replaced --></label>
+        <name>User_being_replaced__c</name>
+        <relationshipLabel><!-- Job Positions (User being replaced) --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Job Position Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please enter the user being replaced --></errorMessage>
+        <name>Replacement_User</name>
+    </validationRules>
+</CustomObjectTranslation>

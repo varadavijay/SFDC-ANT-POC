@@ -1,0 +1,402 @@
+<apex:page standardController="Case" extensions="NewSupportTicketExtension" docType="html-5.0">
+<apex:pageMessages id="errmessages"/>
+<apex:relatedList list="NotesAndAttachments"/>
+    <Apex:Form >
+        <Apex:pageBlock >
+                      
+			<apex:pageBlockButtons location="bottom" id="pgButtons">
+				<apex:actionStatus id="go">
+					<apex:facet name="stop">
+						<apex:commandButton value="Submit" action="{!customSave}"
+							status="go" disabled="false" rerender="go,errmessages" />
+					</apex:facet>
+					<apex:facet name="start">
+						<apex:commandButton status="go" value="Saving..." disabled="true" />
+					</apex:facet>
+				</apex:actionStatus>
+			</apex:pageBlockButtons>
+			
+			<apex:pageBlockSection >
+				<br/>
+			</apex:pageBlockSection>
+            <apex:pageBlockSection collapsible="false" title="About You">
+            
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel >Submitted By</apex:outputlabel>
+                    <apex:outputpanel layout="block" styleClass="requiredInput">
+                        <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputfield label="Submitted By" value="{!supportCase.Dev_Submitted_By__c}" required="false"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel >Business Unit</apex:outputlabel>
+                    <apex:outputpanel layout="block" styleClass="requiredInput">
+                        <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField label="Business Unit:" value="{!supportCase.Dev_Business_Unit__c}" Required="false"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>                
+                        
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="What Problem Are You Having?" collapsible="false" columns="2">
+                    <apex:PanelGroup id="Categories">
+                        <apex:ActionRegion >
+                            <apex:selectRadio value="{!problemCat}" required="false" layout="pageDirection">
+                                <apex:selectOption itemLabel="User Access and Permissions" itemValue="User"/>
+                                <apex:selectOption itemLabel="Reports, Dashboards or Notifications" itemValue="Reports"/>
+                                <apex:selectOption itemLabel="General Request" itemValue="Function"/>
+                                <apex:selectOption itemLabel="Development Suggestion" itemValue="Error"/>
+<!-- Future Release
+                                <apex:selectOption itemLabel="Data" itemValue="Data"/>
+-->
+                                
+                                <apex:actionSupport action="{!clearSubCat}" event="onchange" rerender="SubCategories,ProblemInformation"  />
+                            </apex:selectRadio>
+                        </apex:ActionRegion>            
+                   </apex:PanelGroup>
+                    <apex:PanelGroup id="SubCategories">
+                        <apex:ActionRegion >
+                            <apex:selectRadio value="{!problemSubCat}" rendered="{!if(problemCat='',false,true)}" layout="pageDirection" >
+                                <!-- User SubCategories -->
+                                <apex:selectOption itemLabel="Add User" itemValue="NewUser" rendered="{!if(problemCat='User',true,false)}"/>
+                                <apex:selectOption itemLabel="Edit User" itemValue="EditUser" rendered="{!if(problemCat='User',true,false)}"/>
+                                <apex:selectOption itemLabel="Reset User Password" itemValue="ResetPassword" rendered="{!if(problemCat='User',true,false)}"/>
+                                <apex:selectOption itemLabel="Deactivate User" itemValue="Deactivate" rendered="{!if(problemCat='User',true,false)}"/>
+                                <apex:selectOption itemLabel="Add TinderBox Access" itemValue="TinderBox" rendered="{!if(problemCat='User',true,false)}"/>
+                                <apex:selectOption itemLabel="Add InsideSales Access" itemValue="InsideSales" rendered="{!if(problemCat='User',true,false)}"/>
+                                
+                                <!-- Report SubCategories -->
+                                <apex:selectOption itemLabel="Incorrect Data in a Report" itemValue="Report" rendered="{!if(problemCat='Reports',true,false)}"/>
+                                <apex:selectOption itemLabel="Incorrect Data on a Dashboard" itemValue="Dashboard" rendered="{!if(problemCat='Reports',true,false)}"/>
+                                <apex:selectOption itemLabel="Update an Email Notification" itemValue="ChangeEmail" rendered="{!if(problemCat='Reports',true,false)}"/>
+                                <apex:selectOption itemLabel="Other Report, Dashboard or Notification Issue" itemValue="OtherReport" rendered="{!if(problemCat='Reports',true,false)}"/>
+<!-- Future Release            
+                                <apex:selectOption itemLabel="I Need to Add/Remove Contacts/Users from Market Product Status Reports" itemValue="Courier" rendered="{!if(problemCat='Reports',true,false)}"/>
+                                <apex:selectOption itemLabel="I Want to Start/Stop Receiving an Email Notification" itemValue="Email" rendered="{!if(problemCat='Reports',true,false)}"/>
+                                
+-->                                 
+                                <!-- Function SubCategories -->
+                                <apex:selectOption itemLabel="Description of Change" itemValue="ChangeRequest" rendered="{!if(problemCat='Function',true,false)}"/>
+                                
+                                <!-- Error SubCategories -->
+                                <apex:selectOption itemLabel="Functionality Update" itemValue="Other" rendered="{!if(problemCat='Error',true,false)}"/>
+
+                                <!-- Data SubCategories -->
+                                <apex:selectOption itemLabel="I Need to Hear a Call Recording Someone Made" itemValue="Recording" rendered="{!if(problemCat='Data',true,false)}"/>
+                                <apex:selectOption itemLabel="I Need to Reassign a Large Group of Records" itemValue="Reassign" rendered="{!if(problemCat='Data',true,false)}"/>
+                                <apex:selectOption itemLabel="I Need to Insert/Update/Delete a Large Group of Records" itemValue="BulkData" rendered="{!if(problemCat='Data',true,false)}"/>
+                                
+                                <!-- Errors SubCategories --
+                                <apex:selectOption itemLabel="I Got an 'Insufficient Privileges' Error Message" itemValue="Permissions" rendered="{!if(problemCat='Error',true,false)}"/>
+                                <apex:selectOption itemLabel="I Got an Error Message When Trying to Save a Record" itemValue="RecordError" rendered="{!if(problemCat='Error',true,false)}"/>
+                                <apex:selectOption itemLabel="I Got a Different Error Message" itemValue="OtherError" rendered="{!if(problemCat='Error',true,false)}"/>
+--> 
+
+
+                                <apex:actionSupport event="onchange" rerender="ProblemInformation"/>
+
+                            </apex:selectRadio>
+                        </apex:ActionRegion>
+                    </apex:PanelGroup>
+            </apex:pageBlockSection>
+            <apex:panelGroup id="ProblemInformation">
+                <apex:pageBlockSection title="What We Need to Know" collapsible="false" rendered="{!if(problemSubCat='',false,true)}">
+                    <!-- Section to Display if New User -->
+                    <apex:pageBlockSection columns="1"  rendered="{!if(problemSubCat='NewUser' && problemCat='User',true,False)}">
+                            <apex:pageblocksectionitem dataStyle="width:10%" labelStyle="width:23%" >
+                                <apex:outputlabel >User Name</apex:outputlabel>
+                                <apex:outputpanel layout="block" styleClass="requiredInput">
+                                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                                    <apex:inputField label="User Name" value="{!supportCase.Dev_New_User_Name__c}" Required="false"/>
+                                </apex:outputpanel>
+                            </apex:pageblocksectionitem>
+                            <apex:pageblocksectionitem dataStyle="width:10%" labelStyle="width:23%" >
+                                <apex:outputlabel >Role Report To</apex:outputlabel>
+                                <apex:outputpanel layout="block" styleClass="requiredInput">
+                                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                                    <apex:inputField label="Role Report To" value="{!supportCase.Dev_New_User_Manager__c}" Required="false"/>
+                                </apex:outputpanel>
+                            </apex:pageblocksectionitem>                        
+
+                            <apex:pageblocksectionitem >
+                                <apex:outputlabel >User to Mirror</apex:outputlabel>
+                                <apex:outputpanel layout="block" styleClass="requiredInput">
+                                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                                    <apex:inputField label="User to Mirror" value="{!supportCase.Dev_User_to_Mirror__c}" Required="true"/>
+                                </apex:outputpanel>
+                                
+                            </apex:pageblocksectionitem>     
+                            <apex:pageblocksectionitem >                            
+                                <apex:outputlabel >New User Email</apex:outputlabel>
+                                    <apex:outputpanel layout="block" styleClass="requiredInput">
+                                        <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                                        <apex:inputField label="New User Email" value="{!supportCase.Dev_New_User_Email__c}" Required="true"/>
+                                    </apex:outputpanel>
+                            </apex:pageblocksectionitem>
+                        
+                        <apex:inputField label="Title" value="{!supportCase.Dev_Title__c}" Required="true"/>
+                        <apex:inputField label="Department" value="{!supportCase.Dev_Department__c}" Required="true"/>  
+                        <apex:inputTextarea cols="40" rows="6" label="Notes" value="{!supportCase.Dev_Notes__c}" Required="false"/>
+
+                    </apex:pageBlockSection>
+                    
+                    <!-- Section to Display if EditUser -->
+                    <apex:pageBlockSection columns="1" rendered="{!if(problemSubCat='EditUser',true,False)}">
+                            <apex:pageblocksectionitem dataStyle="width:10%" labelStyle="width:23%" >
+                                <apex:outputlabel >User to Change</apex:outputlabel>
+                                <apex:outputpanel layout="block" styleClass="requiredInput">
+                                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                                    <apex:InputField label="User to Change" value="{!supportCase.Dev_User_to_Change__c }" Required="false"/>
+                                </apex:outputpanel>
+                            </apex:pageblocksectionitem>
+                        <apex:inputTextarea cols="40" rows="6" label="Notes" value="{!supportCase.Dev_Notes__c}" Required="false"/>
+                    </apex:pageBlockSection>                    
+                    
+                    <!-- Section to Display if ResetPassword -->
+                    <apex:pageBlockSection columns="1" rendered="{!if(problemSubCat='ResetPassword',true,False)}">
+                            <apex:pageblocksectionitem dataStyle="width:10%" labelStyle="width:23%" >
+                                <apex:outputlabel >User to Change</apex:outputlabel>
+                                <apex:outputpanel layout="block" styleClass="requiredInput">
+                                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                                    <apex:InputField label="User to Change" value="{!supportCase.Dev_User_to_Change__c }" Required="false"/>
+                                </apex:outputpanel>
+                            </apex:pageblocksectionitem>
+                        <apex:inputTextarea cols="40" rows="6" label="Notes" value="{!supportCase.Dev_Notes__c}" Required="false"/>
+                    </apex:pageBlockSection>
+                
+                <!-- Section to Display if Deactivate -->
+                    <apex:pageBlockSection columns="1" rendered="{!if(problemSubCat='Deactivate',true,False)}">
+                            <apex:pageblocksectionitem dataStyle="width:10%" labelStyle="width:23%" >
+                                <apex:outputlabel >User to Change</apex:outputlabel>
+                                <apex:outputpanel layout="block" styleClass="requiredInput">
+                                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                                    <apex:InputField label="User to Change" value="{!supportCase.Dev_User_to_Change__c }" Required="false"/>
+                                </apex:outputpanel>
+                            </apex:pageblocksectionitem>
+                        <apex:inputTextarea cols="40" rows="6" label="Notes" value="{!supportCase.Dev_Notes__c}" Required="false"/>
+                    </apex:pageBlockSection>
+                    
+                    <!-- Section to Display if TinderBox -->
+                    <apex:pageBlockSection columns="1" rendered="{!if(problemSubCat='TinderBox',true,False)}">
+                            <apex:pageblocksectionitem dataStyle="width:10%" labelStyle="width:23%" >
+                                <apex:outputlabel >User to Change</apex:outputlabel>
+                                <apex:outputpanel layout="block" styleClass="requiredInput">
+                                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                                    <apex:InputField label="User to Change" value="{!supportCase.Dev_User_to_Change__c }" Required="false"/>
+                                </apex:outputpanel>
+                            </apex:pageblocksectionitem>
+                        <apex:inputTextarea cols="40" rows="6" label="Notes" value="{!supportCase.Dev_Notes__c}" Required="false"/>
+                    </apex:pageBlockSection>
+                   
+                   <!-- Section to Display if InsideSales -->
+                    <apex:pageBlockSection columns="1" rendered="{!if(problemSubCat='InsideSales',true,False)}">
+                            <apex:pageblocksectionitem dataStyle="width:10%" labelStyle="width:23%" >
+                                <apex:outputlabel >User to Change</apex:outputlabel>
+                                <apex:outputpanel layout="block" styleClass="requiredInput">
+                                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                                    <apex:InputField label="User to Change" value="{!supportCase.Dev_User_to_Change__c }" Required="false"/>
+                                </apex:outputpanel>
+                            </apex:pageblocksectionitem>
+                        <apex:inputTextarea cols="40" rows="6" label="Notes" value="{!supportCase.Dev_Notes__c}" Required="false"/>
+                    </apex:pageBlockSection>
+                    
+
+                    
+                    <!-- Section to Display if Report -->
+                    <apex:pageBlockSection rendered="{!if(problemSubCat='Report',true,False)}" columns="1">
+                        <apex:inputField value="{!supportCase.Dev_Report_URL__c}" label="Report URL:" type="url" required="true"/>
+                        <apex:pageblocksectionitem >
+                            <apex:outputlabel >Issue Description</apex:outputlabel>
+                            <apex:outputpanel layout="block" styleClass="requiredInput">
+                                <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                                <apex:inputTextarea cols="40" rows="6" value="{!supportCase.Description}" label="Issue Description:" required="true"/>
+                            </apex:outputpanel>
+                        </apex:pageblocksectionitem>                        
+  
+<!-- Future Release                        
+                        <apex:inputField value="{!supportCase.Dev_SalesForce_URL__c}" label="Example URL of a Record Not Showing on Report" type="url" required="false"/>
+-->                             
+                    </apex:pageBlockSection>
+                    
+                    <!-- Section to Display if Dashboard -->
+                    <apex:pageBlockSection rendered="{!if(problemSubCat='Dashboard',true,False)}" columns="1">
+                        
+                        <apex:inputField value="{!supportCase.Dev_DashBoard_Name__c}" label="Dashboard Name:" required="true"/>
+                        <apex:inputField value="{!supportCase.Dev_DashBoard_URL__c}" label="Dashboard URL:" type="url" required="true"/>
+                        <apex:pageblocksectionitem >                        
+                            <apex:outputlabel >Issue Description</apex:outputlabel>
+                                <apex:outputpanel layout="block" styleClass="requiredInput">
+                                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                                    <apex:inputTextarea cols="40" rows="6" value="{!supportCase.Description}" label="Issue Description:" required="true"/>
+                            </apex:outputpanel>
+                        </apex:pageblocksectionitem>    
+<!-- Future Release                          
+                        <apex:inputField value="{!supportCase.Dev_Report_URL__c}" label="What is one of the Report URLs Not Working on the Dashboard?" type="url" required="false"/>
+                        <apex:inputField value="{!supportCase.Dev_SalesForce_URL__c}" label="Example URL of a Record Not Showing on the Dashboard Report" type="url" required="false"/>
+-->                 
+                        </apex:pageBlockSection>
+<!-- Future Release
+                    <!-- Section to Display if Courier --
+                    <apex:pageBlockSection rendered="{!if(problemSubCat='Courier',true,False)}" id="Courier" columns="1">
+                        <apex:selectRadio value="{!AddRecipient}" required="true">
+                            <apex:selectOption itemValue="true" itemLabel="Add"/>
+                            <apex:selectOption itemvalue="false" itemlabel="Remove"/>
+                        </apex:selectRadio>
+                        <Apex:actionRegion >
+                            <apex:selectRadio value="{!isUser}" required="true">
+                                <apex:selectOption itemValue="true" itemLabel="User"/>
+                                <apex:selectOption itemvalue="false" itemlabel="Contact"/>
+                                <apex:actionSupport event="onchange" rerender="Courier"/>
+                            </apex:selectRadio>
+                        </Apex:actionRegion>
+                        <apex:selectList value="{!partnerMarket}" >
+                            <apex:SelectOptions value="{!markets}"/>
+                        </apex:selectList>
+                        <apex:InputField label="User to Add" value="{!supportCase.Dev_User_to_Change__c}" Required="true" rendered="{!isUser}"/>
+                        <apex:InputField label="Contact to Add" value="{!supportCase.Dev_Affl_Sales_Rep__c}" Required="true" rendered="{!Not(isUser)}"/>
+                    </apex:pageBlockSection>
+                   
+                   <!-- Section to Display if OtherReport -->
+                    <apex:pageBlockSection rendered="{!if(problemSubCat='OtherReport',true,False)}"  columns="1" >
+                        <apex:inputField value="{!supportCase.Dev_Report_URL__c}" label="URL:" type="url" />
+                        <apex:pageblocksectionitem >
+                            <apex:outputlabel >Issue Description</apex:outputlabel>
+                            <apex:outputpanel layout="block" styleClass="requiredInput">
+                                <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                                <apex:inputTextarea cols="40" rows="6" value="{!supportCase.Description}" label="Issue Description:" required="true"/>
+                            </apex:outputpanel>
+                        </apex:pageblocksectionitem>    
+                        
+<!--Future Release
+                        <apex:outputLabel value="Please Attach a ScreenShot of the Issue"/>
+                         <apex:inputFile value="{!screenShotFile}" filename="{!screenShotFilename}" contentType="{!contentType}" required="true"/>
+   -->      
+                    </apex:pageBlockSection>
+<!--Future Release                    
+                    <!-- Section to Display if Email -->
+                    <apex:pageBlockSection rendered="{!if(problemSubCat='Email',true,False)}" id="emailNotifications" columns="1">
+                        <apex:pageblocksectionitem >
+                            <apex:outputlabel >Issue Description</apex:outputlabel>
+                            <apex:outputpanel layout="block" styleClass="requiredInput">
+                                <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                                <apex:inputTextarea cols="40" rows="6" value="{!supportCase.Description}" label="Issue Description:" required="true"/>
+                            </apex:outputpanel>
+                        </apex:pageblocksectionitem>        
+                        <apex:actionRegion >
+                            <apex:selectRadio value="{!stopEmail}" required="true">
+                                <apex:selectOption itemValue="false" itemLabel="Add to Email Notifications"/>
+                                <apex:selectOption itemvalue="true" itemlabel="Stop Email Notifications"/>
+                                <apex:actionSupport event="onchange" rerender="emailNotifications"/>
+                            </apex:selectRadio>
+                        </apex:actionRegion>
+                        <apex:InputField label="User to {!If(stopEmail,'Remove','Add')}" value="{!supportCase.Dev_User_to_Change__c}" Required="true"/>
+                       
+                        <apex:outputLabel value="Please Attach an Example of the Email Notification" />
+                        <apex:inputFile value="{!emailNotifictionFile}" filename="{!emailNotifictionFilename}" contentType="{!contentType}" required="true"/>
+-->                  
+                    </apex:pageBlockSection>
+                    
+                    <!-- Section to Display if ChangeEmail -->
+                    <apex:pageBlockSection rendered="{!if(problemSubCat='ChangeEmail',true,False)}" columns="1">
+                        <apex:pageblocksectionitem >
+                            <apex:outputlabel >Description of Change:</apex:outputlabel>
+                                <apex:outputpanel layout="block" styleClass="requiredInput">
+                                    <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                                    <apex:inputTextarea cols="40" rows="6" value="{!supportCase.Description}" label="Description of Change:" required="true"/>
+                            </apex:outputpanel>
+                        </apex:pageblocksectionitem>                        
+                        
+                                      
+<!--Future Release
+                        <apex:outputLabel value="Please Attach an Example of the Email Notification" /> 
+                        <apex:inputFile value="{!emailNotifictionFile}" filename="{!emailNotifictionFilename}" contentType="{!contentType}" rendered="true"/>
+-->                  
+                    </apex:pageBlockSection>
+                    
+                    <!-- Section to Display if ChangeRequest -->
+                    <apex:pageBlockSection rendered="{!if(problemSubCat='ChangeRequest',true,False)}" columns="1">
+                        <apex:inputField label="Summary:" value="{!supportCase.Subject}" required="true" />
+                        <apex:pageblocksectionitem >
+                            <apex:outputlabel >Request Description</apex:outputlabel>
+                            <apex:outputpanel layout="block" styleClass="requiredInput">
+                                <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                                <apex:inputTextarea cols="40" rows="6" value="{!supportCase.Description}" label="Request Description:" required="true"/>
+                            </apex:outputpanel>
+                        </apex:pageblocksectionitem>                        
+                                             
+                    </apex:pageBlockSection>
+
+                    <!-- Section to Display if Other -->
+                    <apex:pageBlockSection rendered="{!if(problemSubCat='Other',true,False)}" columns="1">
+                        <apex:inputField label="Summary:" value="{!supportCase.Subject}" required="true" />
+                        <apex:pageblocksectionitem >
+                            <apex:outputlabel >Description of Suggestion:</apex:outputlabel>
+                            <apex:outputpanel layout="block" styleClass="requiredInput">
+                                <apex:outputpanel layout="block" styleClass="requiredBlock"/>
+                                <apex:inputTextarea cols="40" rows="6" value="{!supportCase.Description}" label="Description of Suggestion:" required="true"/>
+                            </apex:outputpanel>
+                        </apex:pageblocksectionitem>                            
+                                             
+<!--Future Release                        
+                        <apex:outputLabel value="Please Attach a ScreenShot of the Issue"/>
+                        <apex:inputFile value="{!screenShotFile}" filename="{!screenShotFilename}" contentType="{!contentType}" required="true"/>
+-->
+                    </apex:pageBlockSection>
+<!--Future Release
+                   
+                   <!-- Section to Display if Recording --
+                    <apex:pageBlockSection rendered="{!if(problemSubCat='Recording',true,False)}">
+                        <apex:inputfield value="{!supportCase.Dev_User_to_Change__c}" Required="true" label="Which User made the Recording?" />
+                        <apex:inputField label="Time"/>
+                        <apex:inputField label="Date"/>
+                        <apex:inputField label="Approximate Call Length"/>
+                        <apex:inputField label="Additional Comments"/>
+                    </apex:pageBlockSection>
+                    <!-- Section to Display if Reassign --
+                    <apex:pageBlockSection rendered="{!if(problemSubCat='Reassign',true,False)}">
+                    </apex:pageBlockSection>
+                    <!-- Section to Display if BulkData --
+                    <apex:pageBlockSection rendered="{!if(problemSubCat='BulkData',true,False)}">
+                    </apex:pageBlockSection>
+                    <!-- Section to Display if Permissions --
+                    <apex:pageBlockSection rendered="{!if(problemSubCat='Permissions',true,False)}">
+                    </apex:pageBlockSection>
+                    <!-- Section to Display if RecordError --
+                    <apex:pageBlockSection rendered="{!if(problemSubCat='RecordError',true,False)}">
+                    </apex:pageBlockSection>
+                    <!-- Section to Display if OtherError --
+                    <apex:pageBlockSection rendered="{!if(problemSubCat='OtherError',true,False)}">
+                    </apex:pageBlockSection>
+-->
+                    
+                </apex:pageBlockSection><!--Ends "What we Need to Know" Page Block -->
+            </apex:panelGroup>    <!-- Ends Group Affected by action rerender -->
+
+<!-- Here is the new Notifications section - 01/14/2015 - DTD. 
+Removed per DEV-1694
+            
+       <apex:panelGroup id="Notifications">
+                <apex:pageBlockSection title="Notifications" columns="1" collapsible="false" >
+                        <apex:outputLabel value="If additional parties need to be notified of this request, please list them here." />
+                        <apex:inputField value="{!supportCase.Notify_Email_1__c}" label="Notify Email 1" />
+                        <apex:inputField value="{!supportCase.Notify_Email_2__c}" label="Notify Email 2" />
+                        <apex:inputField value="{!supportCase.Notify_Email_3__c}" label="Notify Email 3" />
+                </apex:pageBlockSection>
+        </apex:panelGroup>        
+-->
+
+<!-- Section to Display if Attachments are going to be added. -->
+
+        <apex:panelGroup id="Attachments">
+                <apex:pageBlockSection title="Attachments" collapsible="false" >
+                    <!-- Section to Display if Attachments are going to be added. -->
+                    <apex:pageBlockSection columns="1">
+                        <apex:outputLabel value="To attach additional documents or images, please click Submit and use the standard Attachment functionality on the Case that is created for your ticket." for="file"/>
+                        
+                    </apex:pageBlockSection>
+                </apex:pageBlockSection>
+        </apex:panelGroup>
+        
+<!-- End of Line. -->       
+        </Apex:pageBlock>
+    </Apex:Form>
+</apex:page>

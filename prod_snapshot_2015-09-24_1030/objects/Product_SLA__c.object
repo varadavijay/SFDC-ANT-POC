@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Summaries the duration an Opportunity Product has spent on different stages.</description>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Awaiting_Client_Approval_Hours__c</fullName>
+        <description>OLI total duration in Stage &quot;Waiting On Client Approval&quot;  (biz hours converted to biz days)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>OLI total duration in Stage &quot;Waiting On Client Approval&quot;  (biz hours converted to biz days)</inlineHelpText>
+        <label>Awaiting Client Approval Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Awaiting_Client_Approval__c</fullName>
+        <description>Awaiting Client Approval Hours divided by Business Hours per Day</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Awaiting Client Approval Hours divided by Business Hours per Day</inlineHelpText>
+        <label>Awaiting Client Approval</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Awaiting_Client_Asset_Hours__c</fullName>
+        <description>OLI total duration in Stage &quot;Awaiting Client Asset&quot;  (biz hours converted to biz days)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>OLI total duration in Stage &quot;Awaiting Client Asset&quot;  (biz hours converted to biz days)</inlineHelpText>
+        <label>Awaiting Client Asset Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Awaiting_Client_Asset__c</fullName>
+        <description>Awaiting Client Asset Hours divided by Business Hours per Day and rounded.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Awaiting Client Asset Hours divided by Business Hours per Day and rounded.</inlineHelpText>
+        <label>Awaiting Client Asset</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Awaiting_On_Board_Hours__c</fullName>
+        <description>OLI total duration in Stage &quot;Awaiting Onboard&quot; (biz hours converted to biz days)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>OLI total duration in Stage &quot;Awaiting Onboard&quot; (biz hours converted to biz days)</inlineHelpText>
+        <label>Awaiting On Board Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Awaiting_On_Board__c</fullName>
+        <description>Awaiting On Board Hours divided by Business Hours per Day and rounded.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Awaiting On Board Hours divided by Business Hours per Day and rounded.</inlineHelpText>
+        <label>Awaiting On Board</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Business_Hours_per_Day__c</fullName>
+        <description>This records the number of business hours in a Monday of the week the Opportunity Product went live.  The assumption is that all working days have the same number of hours in them.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This records the number of business hours in a Monday of the week the Opportunity Product went live.  The assumption is that all working days have the same number of hours in them.</inlineHelpText>
+        <label>Business Hours per Day</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Closed_Won_Hours__c</fullName>
+        <description>OLI total duration in Stage &quot;Created &amp; Closed Won&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>OLI total duration in Stage &quot;Created &amp; Closed Won&quot;</inlineHelpText>
+        <label>Closed - Won Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Closed_Won__c</fullName>
+        <description>Closed - Won Hours divided by Business Hours per Day and rounded.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Closed - Won Hours divided by Business Hours per Day and rounded.</inlineHelpText>
+        <label>Closed - Won</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Count__c</fullName>
+        <description>Defaults to 1 - For reporting use</description>
+        <externalId>false</externalId>
+        <label>Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_To_Go_Live__c</fullName>
+        <description>Duration Hours divided by Business Hours per Day and rounded.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Duration Hours divided by Business Hours per Day and rounded.</inlineHelpText>
+        <label>Duration Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Filter_Date__c</fullName>
+        <description>Used by the SLA Summary VF Page for Calendar utility in a date format without the time.</description>
+        <externalId>false</externalId>
+        <label>Filter Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Hours_To_Go_Live__c</fullName>
+        <description>The business hours between the OLI Create Date and Live Date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The business hours between the OLI Create Date and Live Date.</inlineHelpText>
+        <label>Duration Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>In_Fulfillment_Hours__c</fullName>
+        <description>OLI total duration in Stage &quot;In Fulfillment&quot;  (biz hours converted to biz days)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>OLI total duration in Stage &quot;In Fulfillment&quot;  (biz hours converted to biz days)</inlineHelpText>
+        <label>In Fulfillment Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>In_Fulfillment__c</fullName>
+        <description>In Fulfillment Hours divided by Business Hours per Day and rounded.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>In Fulfillment Hours divided by Business Hours per Day and rounded.</inlineHelpText>
+        <label>In Fulfillment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Live_Date__c</fullName>
+        <description>The live date as per the related Opportunity Product record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The live date as per the related Opportunity Product record.</inlineHelpText>
+        <label>Live Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Media_Partner__c</fullName>
+        <description>Derived from Opportunity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Derived from Opportunity.</inlineHelpText>
+        <label>Media Partner</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Non_SLA_Satus__c</fullName>
+        <description>All the status that the product went through before going live that aren&apos;t capture through the other Status fields</description>
+        <externalId>false</externalId>
+        <inlineHelpText>All the status that the product went through before going live that aren&apos;t capture through the other Status fields</inlineHelpText>
+        <label>Non SLA Satus</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Product_Create_Date__c</fullName>
+        <description>Date Opportunity Line Item was created</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date Opportunity Line Item was created</inlineHelpText>
+        <label>Opportunity Product Create Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Product__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>The 18 character ID of the related Opportunity Product.  Is unique and mandatory for a Product SLA record to be saved.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The 18 character ID of the related Opportunity Product.  Is unique and mandatory for a Product SLA record to be saved.</inlineHelpText>
+        <label>Opportunity Product</label>
+        <length>18</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>SLA</relationshipLabel>
+        <relationshipName>SLA</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Type__c</fullName>
+        <description>The partner type of the media partner.</description>
+        <externalId>false</externalId>
+        <label>Partner Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pending_Hours__c</fullName>
+        <description>Calculation of average total duration in OLI Stage &quot;Pending&quot;  (biz hours converted to biz days)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculation of average total duration in OLI Stage &quot;Pending&quot;  (biz hours converted to biz days)</inlineHelpText>
+        <label>Pending Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pending__c</fullName>
+        <description>Pending Hours divided by Business Hours per Day and rounded.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Pending Hours divided by Business Hours per Day and rounded.</inlineHelpText>
+        <label>Pending</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Type__c</fullName>
+        <description>Derived from the related Product</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Derived from the related Product</inlineHelpText>
+        <label>Product Type</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Product associated with the related Opportunity Product</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>SLA</relationshipLabel>
+        <relationshipName>SLA</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProjectRef__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Related Project</label>
+        <referenceTo>Project__c</referenceTo>
+        <relationshipLabel>Product SLA</relationshipLabel>
+        <relationshipName>Product_SLA</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SLA_Met__c</fullName>
+        <description>Whether SLA was met or not.  1 = Yes; 0 = No</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Whether SLA was met or not.  1 = Yes; 0 = No</inlineHelpText>
+        <label>SLA Met</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLA__c</fullName>
+        <description>From Product</description>
+        <externalId>false</externalId>
+        <label>SLA</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Non_SLA_Status_Hours__c</fullName>
+        <description>Sum of duraiton in business hours of any Status that was entered between the Create Date and the OLI Live Date but is not reported on.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of duraiton in business hours of any Status that was entered between the Create Date and the OLI Live Date but is not reported on.</inlineHelpText>
+        <label>Total Non-SLA Status Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Non_SLA_Status__c</fullName>
+        <description>Total Non-SLA Status Hours divided by Business Hours per Day and rounded.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Non-SLA Status Hours divided by Business Hours per Day and rounded.</inlineHelpText>
+        <label>Total Non-SLA Status</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_SLA_Status_Hours__c</fullName>
+        <description>All the SLA status on this object added up.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>All the SLA status on this object added up.</inlineHelpText>
+        <label>Total SLA Status Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_SLA_Status__c</fullName>
+        <description>Total SLA Status Hours divided by Business Hours per Day and rounded.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total SLA Status Hours divided by Business Hours per Day and rounded.</inlineHelpText>
+        <label>Total SLA Status</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Product SLA</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Opportunity_Product__c</columns>
+        <columns>Live_Date__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Prod_SLAs</fullName>
+        <columns>NAME</columns>
+        <columns>Non_SLA_Satus__c</columns>
+        <columns>Live_Date__c</columns>
+        <columns>Opportunity_Product__c</columns>
+        <columns>Days_To_Go_Live__c</columns>
+        <columns>Hours_To_Go_Live__c</columns>
+        <columns>Partner_Type__c</columns>
+        <columns>Media_Partner__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Opportunity_Product__c</field>
+            <operation>equals</operation>
+            <value>00kF000000XoCl9IAF</value>
+        </filters>
+        <label>All Prod SLAs</label>
+    </listViews>
+    <listViews>
+        <fullName>ByProduct</fullName>
+        <columns>NAME</columns>
+        <columns>Media_Partner__c</columns>
+        <columns>Opportunity_Product__c</columns>
+        <columns>Live_Date__c</columns>
+        <columns>Closed_Won__c</columns>
+        <columns>Awaiting_On_Board__c</columns>
+        <columns>Awaiting_Client_Asset__c</columns>
+        <columns>Awaiting_Client_Approval__c</columns>
+        <columns>Pending__c</columns>
+        <columns>In_Fulfillment__c</columns>
+        <columns>SLA_Met__c</columns>
+        <columns>Opportunity_Product_Create_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Product_Type__c</field>
+            <operation>equals</operation>
+            <value>PPC</value>
+        </filters>
+        <filters>
+            <field>Live_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>8/4/2014 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>Opportunity_Product_Create_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>12/8/2013 12:00 AM</value>
+        </filters>
+        <label>ByProduct</label>
+    </listViews>
+    <listViews>
+        <fullName>Filter_by_OppProd</fullName>
+        <columns>NAME</columns>
+        <columns>Non_SLA_Satus__c</columns>
+        <columns>Live_Date__c</columns>
+        <columns>Opportunity_Product__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Opportunity_Product__c</field>
+            <operation>contains</operation>
+            <value>00kF000000XqOSgIAN</value>
+        </filters>
+        <label>Filter by OppProd</label>
+    </listViews>
+    <nameField>
+        <label>Product SLA Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Product SLA</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Opportunity_Product__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Live_Date__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Forward</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

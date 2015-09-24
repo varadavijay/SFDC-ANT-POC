@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Number</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>UNIT_PRICE:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Value</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Opportunity.Monthly_Total__c:SUM/RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA3</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Average</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA1</column>
+        </chartSummaries>
+        <chartSummaries>
+            <axisBinding>y2</axisBinding>
+            <column>FORMULA2</column>
+        </chartSummaries>
+        <chartType>VerticalColumnLine</chartType>
+        <enableHoverLabels>true</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>Opportunity.Closed_Won_Time_Stamp__c</groupingColumn>
+        <legendPosition>Bottom</legendPosition>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Product_Name__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Dig_OnB_Call__c</field>
+    </columns>
+    <columns>
+        <field>UNIT_PRICE</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Notes__c</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Waiting_Status_Descr__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Sales_Rep__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Media_Partner__c</field>
+    </columns>
+    <columns>
+        <field>QUANTITY</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Expiration_Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>TOTAL_PRICE</field>
+    </columns>
+    <filter>
+        <booleanFilter>(1 AND 2 AND 3) AND ((4 AND 5) OR (6 AND 7) OR (8 AND 9) OR (10 AND 11) OR (12 AND 13) OR (14 AND 15) OR (16 AND 17) OR (18 AND 19))</booleanFilter>
+        <criteriaItems>
+            <column>OpportunityLineItem.Live_Date__c</column>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Media_Partner__c</column>
+            <operator>contains</operator>
+            <value>republic</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>TYPE</column>
+            <operator>equals</operator>
+            <value>New Business,New</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Closed_Won_Time_Stamp__c</column>
+            <operator>greaterOrEqual</operator>
+            <value>12/31/2012 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Closed_Won_Time_Stamp__c</column>
+            <operator>lessThan</operator>
+            <value>2/4/2013 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Closed_Won_Time_Stamp__c</column>
+            <operator>greaterOrEqual</operator>
+            <value>2/4/2013 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Closed_Won_Time_Stamp__c</column>
+            <operator>lessThan</operator>
+            <value>3/4/2013 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Closed_Won_Time_Stamp__c</column>
+            <operator>greaterOrEqual</operator>
+            <value>3/4/2013 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Closed_Won_Time_Stamp__c</column>
+            <operator>lessThan</operator>
+            <value>4/1/2013 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Closed_Won_Time_Stamp__c</column>
+            <operator>greaterOrEqual</operator>
+            <value>4/1/2013 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Closed_Won_Time_Stamp__c</column>
+            <operator>lessThan</operator>
+            <value>5/6/2013 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Closed_Won_Time_Stamp__c</column>
+            <operator>greaterOrEqual</operator>
+            <value>5/6/2013 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Closed_Won_Time_Stamp__c</column>
+            <operator>lessThan</operator>
+            <value>6/3/2013 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Closed_Won_Time_Stamp__c</column>
+            <operator>greaterOrEqual</operator>
+            <value>6/3/2013 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Closed_Won_Time_Stamp__c</column>
+            <operator>lessThan</operator>
+            <value>7/1/2013 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Closed_Won_Time_Stamp__c</column>
+            <operator>greaterOrEqual</operator>
+            <value>7/1/2013 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Closed_Won_Time_Stamp__c</column>
+            <operator>lessThan</operator>
+            <value>8/5/2013 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Closed_Won_Time_Stamp__c</column>
+            <operator>greaterOrEqual</operator>
+            <value>8/5/2013 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Closed_Won_Time_Stamp__c</column>
+            <operator>lessThan</operator>
+            <value>9/2/2013 12:00 AM</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>FiscalPeriod</dateGranularity>
+        <field>Opportunity.Closed_Won_Time_Stamp__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Product2.Product_Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>AZR New Biz by Product</name>
+    <params>
+        <name>open</name>
+        <value>closedwon</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityProduct</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>OpportunityLineItem.Status_Change_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

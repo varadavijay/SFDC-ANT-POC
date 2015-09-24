@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>Case.Media_Partner__c</field>
+    </columns>
+    <columns>
+        <field>Case.Media_Partner_Type__c</field>
+    </columns>
+    <columns>
+        <field>Case.Affl_Sales_Rep__c</field>
+    </columns>
+    <columns>
+        <field>STATUS</field>
+    </columns>
+    <columns>
+        <field>Case.Expected_Prod_Mix__c</field>
+    </columns>
+    <columns>
+        <field>Case.DA_Budget_Range__c</field>
+    </columns>
+    <columns>
+        <field>Case.Company_Name__c</field>
+    </columns>
+    <description>Monday Morning Report for Courtney</description>
+    <filter>
+        <criteriaItems>
+            <column>Case.Opportunity_Stage__c</column>
+            <operator>notEqual</operator>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <operator>equals</operator>
+            <value>Case.GL_Digital_Audit,Case.GL_Email_Count,Case.GL_Website_Audit</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CREATED_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Audits w/out a Closed Opportunity</name>
+    <params>
+        <name>units</name>
+        <value>h</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATEONLY</dateColumn>
+        <interval>INTERVAL_LAST30</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Welcome message for new Gannett Local accounts.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Welcome Message</name>
+    <style>none</style>
+    <subject>Welcome to GannettLocal</subject>
+    <textOnly>Hi {!Contact.FirstName},
+
+ Welcome to Gannett Local! I&apos;ll be your marketing specialist -- I&apos;m here to make sure your campaign delivers results for {!Opportunity.Account} If you ever have any questions – from how something works, to how to update your ads for a big sale – I&apos;m here to help.
+
+You can expect two important phone calls in the next two days:
+
+First, our customer care team will call to help design and place your print ads. They know tons about ad design and promotions, but want your ads to capture your business&apos;s personality too. They&apos;ll be asking about any business information, discounts or logo images you&apos;d like to include. They&apos;ll also confirm the zip codes you&apos;d like to target, to make sure we reach the right customers.
+
+Second, expect a call from our tech team. These digital experts will set up your online strategy, so when someone searches for your type of business in your neighborhood, you show up near the top.
+
+I&apos;ll be coordinating this whole process - so if you have any questions, give me a call or shoot an email. I&apos;m here to make it simple!
+
+{!Opportunity.OwnerFullName}
+{!User.X800_Number__c}
+{!Opportunity.OwnerEmail}
+ GannettLocal.com</textOnly>
+    <type>custom</type>
+</EmailTemplate>

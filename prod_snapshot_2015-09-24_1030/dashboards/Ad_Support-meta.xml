@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DashboardFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessType>Shared</accessType>
+    <name>2. Ad Support</name>
+    <publicFolderAccess>ReadOnly</publicFolderAccess>
+    <sharedTo>
+        <role>AdSupportGLA</role>
+        <role>ExecutiveDirector</role>
+    </sharedTo>
+</DashboardFolder>

@@ -1,0 +1,159 @@
+<apex:page standardController="Case" extensions="myWeb2EnhanceExtension" title="GL Rate" showHeader="false" sidebar="false">
+<apex:includeScript value="{!URLFOR($Resource.ulPicklist, '/jquery-1.7.2.min.js')}"  />
+<apex:includeScript value="{!URLFOR($Resource.poshytip, '/jquery.poshytip.js')}"  />
+<apex:stylesheet value="{!URLFOR($Resource.poshytip, '/tip-yellow/tip-yellow.css')}"/>
+
+ 
+ <apex:composition template="{!$Site.Template}"> 
+  <apex:define name="body">
+   <apex:form >
+
+<apex:pageBlock mode="mainDetail">
+      
+        <apex:pageBlockButtons location="top">
+        <apex:commandButton value="Submit Request" action="{!saveCase}"/>
+        </apex:pageBlockButtons>
+
+        <apex:pageBlockSection title="" collapsible="false" columns="1" showHeader="true">
+        <apex:outputText value="Product Enhancement Request" style="font-size:2em;font-weight:bold;color:green"/>
+        </apex:pageBlockSection>    
+        
+<table width="100%">
+<tr valign="top">
+<td width="50%">
+
+<apex:pageBlockSection title="" collapsible="false" columns="1" showHeader="true">
+<apex:outputText value="Submitter Selection" style="font-size:1em;font-weight:bold;color:green"/>        
+    <apex:pageBlockSectionItem >
+         <apex:outputPanel layout="block" styleClass="requiredInput">
+         <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+            <apex:selectList id="RepList" value="{!includeLetter}" multiselect="false" size="1" required="true" tabIndex="1">
+                <apex:selectOptions value="{!salesRepOptions}"/>
+            </apex:selectList>
+        </apex:outputPanel>
+    </apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+
+</td>
+<td width="50%">       
+
+<apex:pageBlockSection title="" collapsible="false" columns="1" showHeader="true">
+<!--<apex:outputText value="Select Media Partner" style="font-size:1em;font-weight:bold;color:green"/>
+<apex:pageBlockSectionItem >
+ <apex:outputPanel layout="block" styleClass="requiredInput">
+ <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+  <apex:selectList value="{!Case.Media_Partner__c}" size="1">
+    <apex:selectOptions value="{!itemsm}" id="moptions"/>
+  </apex:selectList>
+ </apex:outputPanel>
+</apex:pageBlockSectionItem>
+-->
+</apex:pageBlockSection>
+    
+</td>
+</tr>
+</table> 
+
+<table width="100%">
+<tr valign="top">
+<td width="50%"> 
+
+        <apex:actionRegion >
+        <apex:actionFunction name="redrawRequestType" action="{!null}" rerender="requestType"/>
+        <apex:pageBlockSection title="" columns="1" collapsible="false">
+          <apex:outputText value="Product Information" style="font-size:1em;font-weight:bolder;color:green"/>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputPanel layout="block">New Product Or Existing</apex:outputPanel>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList value="{!fieldRequestTypeResult}" multiselect="false" size="1"  required="true" onchange="redrawRequestType();">
+                            <apex:selectOptions value="{!fieldRequestType}"/>
+                        </apex:selectList>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        </apex:actionRegion>
+        
+<apex:outputPanel id="requestType">
+          <!--<apex:pageBlockSection rendered="{!fieldRequestTypeResult == 'one'}" columns="1" collapsible="false">-->
+          <apex:pageBlockSection rendered="{!LEN(fieldRequestTypeResult)==3}" columns="1" collapsible="false">
+              <!--apex:pageBlockSectionItem rendered="{!fieldRequestTypeResult=='1'}"><rendered="{!LEN(fieldRequestTypeResult)<=20}"><rendered="{!AND(fieldRequestTypeResult == 'new',fieldRequestTypeResult != '')}"
+                  <apex:outputPanel layout="block" style="width:100px;">Description Of Product</apex:outputPanel>-->
+                  <apex:inputField value="{!Case.PE_New_Product_Description__c}" required="true" taborderhint="2" label="Enter A New Product Description"/>
+              <!--</apex:pageBlockSectionItem>-->
+          </apex:pageBlockSection> 
+              <!--<apex:pageBlockSection rendered="{!fieldRequestTypeResult == 'two'}" columns="1" collapsible="false">-->
+          <apex:pageBlockSection rendered="{!LEN(fieldRequestTypeResult)==5}" columns="1" collapsible="false">
+              <!--apex:pageBlockSectionItem rendered="{!fieldRequestTypeResult=='2'}"><rendered="{!LEN(fieldRequestTypeResult)>=21}">
+                  <apex:outputPanel layout="block" style="width:100px;">Select Product</apex:outputPanel>-->
+                  <apex:inputField value="{!Case.Product__c}" required="true" taborderhint="3" style="width:100%" label="Enter The Current Product"/>
+              <!--</apex:pageBlockSectionItem>-->
+          </apex:pageBlockSection>   
+</apex:outputPanel>
+<apex:outputPanel id="dollars">
+          <apex:pageBlockSection rendered="true" columns="1" collapsible="false">
+              <br/>
+              <apex:inputField value="{!Case.PE_Potential_Revenue_Dollars__c}" style="width: 50%;" required="true" taborderhint="6" label="What Is The Expected Product Revenue?"/>
+          </apex:pageBlockSection>      
+</apex:outputPanel>
+
+</td>
+<td width="50%">
+
+        <apex:actionRegion >
+        <apex:actionFunction name="redrawCompOffer" action="{!null}" rerender="comp"/>
+        <apex:pageBlockSection title="" columns="1" collapsible="false" showHeader="true">
+        <apex:outputText value="General & Competitive Information" style="font-size:1em;font-weight:bolder;color:green"/>
+        <apex:inputField value="{!Case.PE_Request_Summary__c}" style="width: 100%;" required="false" taborderhint="6" label="General Info"/>
+                <apex:pageBlockSectionItem >
+                    <apex:outputPanel layout="block">Does A Competitor Offer This?</apex:outputPanel>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList value="{!fieldCompetitorResult}" multiselect="false" size="1"  required="true" onchange="redrawCompOffer();">
+                            <apex:selectOptions value="{!fieldCompetitor}"/>
+                        </apex:selectList>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        </apex:actionRegion>
+        
+<apex:outputPanel id="comp">
+          <apex:pageBlockSection rendered="{!LEN(fieldCompetitorResult)>2}" columns="1" collapsible="false"><!--!OR(Lead.Website_Search_Rank__c ='Important',Lead.Website_Search_Rank__c ='Very Important')-->
+              <br/>
+              <apex:inputField value="{!Case.PE_Competitor__c}" style="width: 100%;" required="true" taborderhint="6" label="Please Enter Competitor"/>
+              <apex:inputField value="{!Case.PE_Competitive_Offers_Details__c}" style="width: 100%;" required="false" taborderhint="7" label="Please Enter Competitive Details"/>
+          </apex:pageBlockSection>      
+</apex:outputPanel>
+
+</td>
+</tr>
+</table> 
+
+<table width="100%">
+<tr valign="top">
+<td width="50%">
+
+            <apex:pageBlockSection title="Supporting Documents" columns="1" collapsible="false">
+            <apex:outputText value="Document Submission" style="font-size:1em;font-weight:bolder;color:green"/>
+          <apex:pageBlockSectionItem rendered="{!NOT(submitted)}">
+             <apex:outputLabel value="Doc/File To Assist With Review Of Request"/>
+             <apex:inputFile value="{!file}" filename="{!fileName}" contentType="{!contentType}" required="false"/>
+          </apex:pageBlockSectionItem>
+          <apex:outputText value="{!fileName}" rendered="{!submitted}"/> 
+          
+          <apex:pageBlockSectionItem rendered="{!NOT(submitted)}" >
+             <apex:outputLabel value="Second File If Needed"/>
+             <apex:inputFile value="{!file2}" filename="{!fileName2}" contentType="{!contentType}" required="false"/>
+          </apex:pageBlockSectionItem>
+          <apex:outputText value="{!fileName2}" rendered="{!submitted}"/> 
+          </apex:pageBlockSection>
+    </td>
+    </tr>
+    </table> 
+    </apex:pageBlock>
+    <br></br>
+   </apex:form>
+  </apex:define> 
+ </apex:composition> 
+</apex:page>

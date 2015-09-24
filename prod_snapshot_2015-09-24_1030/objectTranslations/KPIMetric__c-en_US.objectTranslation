@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>KPI Metric</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>KPI Metrics</value>
+    </caseValues>
+    <fields>
+        <label><!-- Deals Closed --></label>
+        <name>Deals_Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dials --></label>
+        <name>Dials__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI Calender --></label>
+        <name>KPI_Calender__c</name>
+        <relationshipLabel><!-- KPI Metrics --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- KPI Rep --></label>
+        <name>KPI_Rep__c</name>
+        <relationshipLabel><!-- KPI Metrics --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rev Booked --></label>
+        <name>Rev_Booked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Run Demos --></label>
+        <name>Run_Demos__c</name>
+    </fields>
+    <fields>
+        <label><!-- Set Demos --></label>
+        <name>Set_Demos__c</name>
+    </fields>
+    <fields>
+        <label><!-- Talk Time --></label>
+        <name>Talk_Time__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

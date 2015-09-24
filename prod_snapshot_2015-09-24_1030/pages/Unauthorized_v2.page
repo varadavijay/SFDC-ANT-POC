@@ -1,0 +1,47 @@
+<apex:page showHeader="false" title="{!$Label.site.authorization_required}" id="Unauthorized" cache="false">
+    <apex:define name="body">
+      <center>
+        <apex:panelGrid bgcolor="white" columns="1">
+          <br/>
+          <br/>
+          <apex:panelGrid width="758" cellpadding="0" cellspacing="0" bgcolor="white" columns="1" styleClass="topPanelContainer">
+            <br/>
+            <apex:outputPanel layout="block" styleClass="topPanel">
+              <apex:panelGrid width="758" cellpadding="0" cellspacing="0" bgcolor="white" columns="3">
+                
+                  <apex:insert name="header">
+                  <apex:image value="{!URLFOR($Resource.GO_Digital_Logo)}"/>
+                  </apex:insert>
+  
+  
+                <apex:panelGroup >
+                  <apex:outputText styleClass="title" value="An error has occurred.  Please check the following:"/>
+                  <br/><br/>
+                  <apex:outputText styleClass="title" value="--You are not logged into Salesforce.com in another tab or window"/>
+                  <br/>
+                  <apex:outputText styleClass="title" value="--Any attachments do not approach or exceed 5 Meg in size"/>
+                  <br/>
+                  <apex:outputText styleClass="title" value="--You have ONLY typed in the 10 digits for the Phone (let the page apply any formatting)"/>
+                  <br/>
+                  <apex:outputText styleClass="title" value="--You have ONLY typed NUMBERS for the Budget Entries(let the page apply any formatting)"/>
+                  <br/>
+                  <apex:outputText styleClass="title" value="--Email Addresses are formatted correctly"/>
+                  <br/><br/>
+                  <apex:outputText styleClass="title" value="If problems persist try the following:"/>
+                  <br/><br/>
+                  <apex:outputText styleClass="title" value="--Clear out your browser cookies"/>        
+                </apex:panelGroup>
+                <apex:outputText value=""/>
+                <apex:outputText value=""/>
+                <c:SiteLogin rendered="{!$Site.LoginEnabled && ISPICKVAL($User.UserType,'Guest')}" id="siteLogin"/>
+                <br/>
+              </apex:panelGrid>
+            </apex:outputPanel>
+            <c:SitePoweredBy />
+          </apex:panelGrid>
+        </apex:panelGrid>
+      </center>
+      <br/>
+    </apex:define>
+  <site:previewAsAdmin />
+</apex:page>

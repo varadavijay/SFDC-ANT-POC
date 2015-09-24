@@ -1,0 +1,11 @@
+Hi,
+
+A new Customer Care case has been created and needs your attention.  Please check the Case queue and respond appropriately.
+
+Details:
+{!Case.Link}
+{!Case.Account}
+{!Case.CreatedBy}
+{!Case.Type}
+{!Case.Description}
+{!Case.Priority}

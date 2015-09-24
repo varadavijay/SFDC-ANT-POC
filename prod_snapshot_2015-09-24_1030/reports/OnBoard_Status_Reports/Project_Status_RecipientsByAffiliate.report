@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Courier1__Courier_Schedule__c.Courier1__Trigger_Run_Day__c</field>
+    </columns>
+    <columns>
+        <field>Courier1__Recipient__c.Courier1__Name__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Courier1__Courier_Schedule__c.Courier1__Schedule_Title__c</column>
+            <operator>startsWith</operator>
+            <value>Project Status - Market Report</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Courier1__Courier_Schedule__c.Courier1__Schedule_Title__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Project Status - Recipients By Affiliate</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$Courier1__Courier_Schedule__c$Courier1__Recipient__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Courier1__Courier_Schedule__c.Courier1__Last_Run_Date_Display__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

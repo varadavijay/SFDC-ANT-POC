@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ILI</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Invoice Line Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- Adjustment Details --></label>
+        <name>Invoice_AdjustmentDetails__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adjustment Reason --></label>
+        <name>Invoice_CreditOrDebit_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Evergreen</masterLabel>
+            <translation><!-- Evergreen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>G/O Error</masterLabel>
+            <translation><!-- G/O Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Market Error</masterLabel>
+            <translation><!-- Market Error --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is this an A/R Credit or Debit? --></label>
+        <name>Invoice_CreditOrDebit__c</name>
+        <picklistValues>
+            <masterLabel>Credit</masterLabel>
+            <translation><!-- Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Debit</masterLabel>
+            <translation><!-- Debit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ILI Type --></label>
+        <name>Invoice_LineItemType__c</name>
+        <picklistValues>
+            <masterLabel>Adjustment</masterLabel>
+            <translation><!-- Adjustment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancel</masterLabel>
+            <translation><!-- Cancel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kill</masterLabel>
+            <translation><!-- Kill --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Period End --></label>
+        <name>Invoice_PeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label><!-- Period Start --></label>
+        <name>Invoice_PeriodStart__c</name>
+    </fields>
+    <fields>
+        <label><!-- ILI Schedule Date --></label>
+        <name>Invoice_ScheduleDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is System Generated --></label>
+        <name>IsSystemGenerated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Media Spend --></label>
+        <name>Media_Spend__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mgmt Fee % --></label>
+        <name>Mgmt_Fee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Months --></label>
+        <name>Number_of_Months__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Units --></label>
+        <name>Number_of_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related OLI ID --></label>
+        <name>OLI_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Opportunity --></label>
+        <name>OpportunityRef__c</name>
+        <relationshipLabel><!-- Invoice Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Price --></label>
+        <name>Product_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Project --></label>
+        <name>ProjectRef__c</name>
+        <relationshipLabel><!-- Invoice Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Total Monthly Charge --></label>
+        <name>TotalMonthlyCharge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wholesale Fee --></label>
+        <name>Wholesale_Fee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Deleted --></label>
+        <name>isDeleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Locked --></label>
+        <name>isLocked__c</name>
+    </fields>
+    <layouts>
+        <layout>Invoice Line Items Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The ILI must be unlocked and not deleted in order to edit the Period Dates. --></errorMessage>
+        <name>To_Edit_the_Period_Dates</name>
+    </validationRules>
+</CustomObjectTranslation>

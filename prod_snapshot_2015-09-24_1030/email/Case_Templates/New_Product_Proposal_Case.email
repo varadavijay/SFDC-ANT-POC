@@ -1,0 +1,9 @@
+Details:
+
+{!Case.Link}
+{!Case.Description}
+
+
+From:
+
+{!Case.CreatedBy}

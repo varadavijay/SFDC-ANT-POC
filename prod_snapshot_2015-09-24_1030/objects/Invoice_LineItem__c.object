@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Maintains all Invoice records which can be used for billing .</description>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Invoice_AdjustmentDetails__c</fullName>
+        <externalId>false</externalId>
+        <label>Adjustment Details</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_CreditOrDebit_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Adjustment Reason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Evergreen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>G/O Error</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Market Error</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_CreditOrDebit__c</fullName>
+        <description>Decides the OLI_Amount__c(Invoice Line Item Total) field to be positive or negative for the ILI&apos;s created manually by clicking on the adjust Invoice button</description>
+        <externalId>false</externalId>
+        <label>Is this an A/R Credit or Debit?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Credit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Debit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_LineItemType__c</fullName>
+        <externalId>false</externalId>
+        <label>ILI Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Adjustment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kill</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_PeriodEnd__c</fullName>
+        <externalId>false</externalId>
+        <label>Period End</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_PeriodStart__c</fullName>
+        <externalId>false</externalId>
+        <label>Period Start</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_ScheduleDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( MONTH(Invoice_PeriodStart__c) &lt;&gt; 12 ,
+    DATE( YEAR(Invoice_PeriodStart__c) , MONTH(Invoice_PeriodStart__c)+1 ,1),
+    DATE( YEAR(Invoice_PeriodStart__c)+1 , 1 ,1))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ILI Schedule Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>IsSystemGenerated__c</fullName>
+        <externalId>false</externalId>
+        <formula>OR(
+Text(Invoice_LineItemType__c) == &apos;Standard&apos;,
+Text(Invoice_LineItemType__c) == &apos;Cancellation&apos;,
+Text(Invoice_LineItemType__c) == &apos;Cancel&apos;,
+Text(Invoice_LineItemType__c) == &apos;Kill&apos;
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is System Generated</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Media_Spend__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(ISPICKVAL(Invoice_LineItemType__c,&apos;Manual&apos;),ISPICKVAL(Invoice_LineItemType__c,&apos;Adjustment&apos;)),null,IF( ProjectRef__r.Related_Product__r.HasMediaSpend__c = true,  Product_Price__c , null))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Media Spend</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Mgmt_Fee__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(ISPICKVAL(Invoice_LineItemType__c,&apos;Manual&apos;),ISPICKVAL(Invoice_LineItemType__c,&apos;Adjustment&apos;)),null,ProjectRef__r.Mgmt_Fee_Percent__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mgmt Fee %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Months__c</fullName>
+        <externalId>false</externalId>
+        <formula>ProjectRef__r.Qty_ContractMonths__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Number of Months</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Units__c</fullName>
+        <externalId>false</externalId>
+        <formula>ProjectRef__r.Invoice_Units__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Number of Units</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OLI_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>ProjectRef__r.Product_Id__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Related OLI ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OpportunityRef__c</fullName>
+        <externalId>false</externalId>
+        <label>Related Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Invoice Line Items</relationshipLabel>
+        <relationshipName>Invoice_Line_Items</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Product_Price__c</fullName>
+        <externalId>false</externalId>
+        <formula>ProjectRef__r.UnitPrice__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ProjectRef__c</fullName>
+        <externalId>false</externalId>
+        <label>Related Project</label>
+        <referenceTo>Project__c</referenceTo>
+        <relationshipLabel>Invoice Line Items</relationshipLabel>
+        <relationshipName>Invoice_Line_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>TotalMonthlyCharge__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Monthly Charge</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Wholesale_Fee__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(ISPICKVAL(Invoice_LineItemType__c,&apos;Manual&apos;),ISPICKVAL(Invoice_LineItemType__c,&apos;Adjustment&apos;)),null,IF( ProjectRef__r.Related_Product__r.HasMediaSpend__c = true ,  TotalMonthlyCharge__c -  Product_Price__c ,  Product_Price__c ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Wholesale Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>isDeleted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Deleted</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>isLocked__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Locked</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>ILI</label>
+    <nameField>
+        <displayFormat>ILI-{0}</displayFormat>
+        <label>Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Invoice Line Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>To_Edit_the_Period_Dates</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+OR(
+ISCHANGED( Invoice_PeriodEnd__c ),
+ISCHANGED( Invoice_PeriodStart__c )  
+),
+OR(
+isDeleted__c = true, 
+isLocked__c = true
+) 
+)</errorConditionFormula>
+        <errorMessage>The ILI must be unlocked and not deleted in order to edit the Period Dates.</errorMessage>
+    </validationRules>
+</CustomObject>

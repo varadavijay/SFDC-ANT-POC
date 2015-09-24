@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomSite xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowHomePage>false</allowHomePage>
+    <allowStandardAnswersPages>false</allowStandardAnswersPages>
+    <allowStandardIdeasPages>false</allowStandardIdeasPages>
+    <allowStandardLookups>false</allowStandardLookups>
+    <allowStandardSearch>false</allowStandardSearch>
+    <authorizationRequiredPage>CustomErrorPage</authorizationRequiredPage>
+    <bandwidthExceededPage>BandwidthExceeded</bandwidthExceededPage>
+    <description>This is the live site that the users use.
+
+Changing the Active Site Home Page from:
+GLSalesSupport.page
+to
+DigitalAuditTest.page
+
+Rolling back changes due to config issues</description>
+    <fileNotFoundPage>FileNotFound</fileNotFoundPage>
+    <genericErrorPage>Exception</genericErrorPage>
+    <inMaintenancePage>InMaintenance</inMaintenancePage>
+    <inactiveIndexPage>CustomErrorPage</inactiveIndexPage>
+    <indexPage>GLSalesSupport</indexPage>
+    <masterLabel>Digital Audit</masterLabel>
+    <requireInsecurePortalAccess>false</requireInsecurePortalAccess>
+    <siteAdmin>courtney.vix@gannett.com</siteAdmin>
+    <siteTemplate>GLSiteTemplate</siteTemplate>
+    <siteType>Visualforce</siteType>
+    <subdomain>gannettlocal</subdomain>
+    <urlPathPrefix>digitalaudit</urlPathPrefix>
+</CustomSite>

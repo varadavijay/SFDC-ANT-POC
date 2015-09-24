@@ -1,0 +1,9 @@
+A Systems Issue Has Been Reported By {!RequestsIssues__c.CreatedBy}.
+
+Short Description:
+{!RequestsIssues__c.Name}
+{!RequestsIssues__c.Title_Short_Description__c}
+
+
+To View The Issue Record, Click Here
+{!RequestsIssues__c.Link}

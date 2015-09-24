@@ -1,0 +1,150 @@
+<apex:page standardController="OpportunityLineItem" extensions="OpportunityLineItemUSCPExt">
+    <apex:form id="frm">
+    
+    <apex:sectionHeader Title="USCP Oppportunity Product" subtitle="{!subtxt}"/>
+    <apex:pageBlock title="USCP Opportunity Product Detail" mode="maindetail">   
+    <apex:pagemessages escape="false"></apex:pagemessages>    
+    <apex:pageblockbuttons >
+      <!-- <apex:commandButton action="{!editOpportunityProduct}" value="Edit"/> -->
+        
+        <apex:commandButton action="{!editOpportunityProduct}"  value="Edit"/>
+        <apex:commandButton rendered="{!canCancelOLI}" action="{!cancelInvoiceLineItems}" value="{!if(OpportunityLineItem.Invoice_CancelDate__c != null && OpportunityLineItem.Invoice_CancelDate__c>today(), 'Edit Cancel OLI', 'Cancel OLI')}" disabled="{!disableCancelOLI}" rerender="frm"/>
+        <apex:commandButton rendered="{!canUpdateAgreement}" action="{!updateAgreement}" value="Update Agreement" disabled="{!((OpportunityLineItem.Sell_Type__c == 'CrossSell' || OpportunityLineItem.Sell_Type__c == 'Auto Extension') || (OpportunityLineItem.Waiting_Status__c == 'Cancelled' || OpportunityLineItem.Waiting_Status__c == 'Hard Cancel') || (OpportunityLineItem.Product2.Invoice_Frequency__c =='One Time' || OpportunityLineItem.Product2.Invoice_Frequency__c =='Two Times')) }" />
+        <apex:commandButton action="{!URLFOR(
+                $Action.OpportunityLineItem.Delete,
+                oli.Id,
+               [retURL='/'&oli.OpportunityId]
+                )}" value="Delete" rendered="{!OpportunityLineItem.Waiting_Status__c == null}">
+        </apex:commandButton>
+        <apex:commandButton rendered="{!canAdjustInvoice}" action="{!invoiceAdjustment}" value="Adjust Invoice"/>
+       <!-- <apex:commandButton action="{!createPaymentEntries}" value="Create Payment Entries"/> -->
+     </apex:pageblockbuttons>    
+    <apex:pageBlockSection collapsible="false" id="color" title="Product Information">
+      <apex:outputField value="{!OpportunityLineItem.opportunityid}" />
+      <apex:outputField value="{!OpportunityLineItem.Sell_Type__c}"/>
+      <apex:outputField value="{!OpportunityLineItem.Opp_Product_Id__c}"/>
+      <apex:outputField value="{!OpportunityLineItem.Product_OriginalValue__c}"/>
+      <apex:outputField value="{!OpportunityLineItem.ReplicationOLI_TargetID__c}"/>
+      <apex:outputField value="{!OpportunityLineItem.Product_CurrentValue__c}"/>
+      <apex:outputField value="{!OpportunityLineItem.ReplicationOLI_SourceID__c}"/>
+      <apex:outputField label="Product Price" value="{!OpportunityLineItem.UnitPrice}"/>
+      <apex:outputText label="Product" value="{!ProdName}"/>
+      <apex:outputField value="{!OpportunityLineItem.TotalPrice}"/>
+      <apex:outputField value="{!OpportunityLineItem.Notes__c}"/>
+      <apex:outputText value="" />
+      <apex:outputField value="{!OpportunityLineItem.SLA_Product_Type__c}"/>
+      <apex:outputText value="" />
+      <apex:outputField value="{!OpportunityLineItem.Active_Product__c}"/>
+      <apex:outputText value="" />
+      <apex:outputField label="Fulfillment Specialist" value="{!OpportunityLineItem.Fulfillment_Specialist__r.name}" />
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection collapsible="true" title="Price Calculation Information" columns="2">
+        <apex:outputField value="{!OpportunityLineItem.Qty_ContractMonths__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Mgmt_Fee_Percent__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.NumberOfHours__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Invoice_CancelFeePercent__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.NumberOfLocations__c}"/>
+        <apex:outputText value="" />
+        <apex:outputField value="{!OpportunityLineItem.Email_Recipients_Qty__c}"/>
+        <apex:outputText value="" />
+        <apex:outputField value="{!OpportunityLineItem.Invoice_PriceVariable__c}"/>
+        <apex:outputText value="" />
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection title="Fulfillment Information" columns="2">
+        <apex:outputField value="{!OpportunityLineItem.Project_Initiation_Date__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Waiting_Status__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Invoice_ServiceStartDate__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.FulfillmentStatus__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Invoice_ServiceEndDate__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.AMP_PPC_Start_Date__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.OnBoard_Date__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Waiting_Status_Descr__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Fulfilled_Date__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Approved_by_Manager__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Live_Date__c}"/>
+        <apex:outputText label="Last Modified By" value="{!LastMod}"/>
+        <apex:outputField value="{!OpportunityLineItem.Days_To_Live__c}"/> 
+        <apex:outputText value="" />
+        <apex:outputField value="{!OpportunityLineItem.Date_Delivered__c}"/>
+        <apex:outputText value="" />
+        <apex:outputField value="{!OpportunityLineItem.ServiceDate}"/>
+        <apex:outputText value="" />
+        <apex:outputField value="{!OpportunityLineItem.End_Date__c}"/>
+        <apex:outputText value="" />
+        <apex:outputField value="{!OpportunityLineItem.Expiration_Date__c}"/>
+    </apex:pageBlockSection>
+        
+    <apex:pageBlockSection title="Cancel Information" columns="2">
+        <apex:outputField value="{!OpportunityLineItem.Canceled__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Cancellation_Category__c}"/> 
+        <apex:outputField value="{!OpportunityLineItem.Product_PorC_Date__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Cancellation_Reason__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Invoice_CancelDate__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Cancellation_Detail__c}"/>
+    </apex:pageBlockSection>
+        
+    <apex:pageBlockSection title="Additional Information" columns="2">
+        <apex:outputField value="{!OpportunityLineItem.Company_Name__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Opp_Owner__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Opp_Acct_Id__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Dig_Account_Manager__c}"/>
+        <apex:outputText label="Created By" value="{!CreatdBy}"/>
+        <apex:outputField value="{!OpportunityLineItem.Media_Partner_Name__c}"/>
+        <apex:outputText value=""/>
+        <apex:outputField value="{!OpportunityLineItem.Affl_Sales_Rep_Name__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Project__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Notify_Email_1__c}"/>
+        <apex:outputText value="" />
+        <apex:outputField value="{!OpportunityLineItem.Notify_Email_2__c}"/>
+        <apex:outputText value="" />
+        <apex:outputField value="{!OpportunityLineItem.Notify_Email_3__c}"/>
+    </apex:pageBlockSection>
+    
+    <c:OLIStatusHistoryComp oppLineItemId="{!OpportunityLineItem.id}"></c:OLIStatusHistoryComp>
+        
+    <apex:pageBlockSection title="Legacy Finance Information" columns="2">
+        <apex:outputField value="{!OpportunityLineItem.Payment_Processing__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Last_Schedule_Bill_Date__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Periods2__c}"/>
+        <apex:outputText value="" />
+        <apex:outputField value="{!OpportunityLineItem.End_Of_Service_Date__c}"/>
+    </apex:pageBlockSection>
+        
+    <apex:pageBlockSection title="No, Dupe or Old Data" columns="2">
+        <apex:outputField value="{!OpportunityLineItem.Account__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Digital_No_Start_Date_Req__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Product_Name__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Test_Workflow_Box__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Discount}"/>
+        <apex:outputField value="{!OpportunityLineItem.Ad_ID__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Days_To_Go_Live__c}"/>
+        <apex:outputField label="Quantity" value="{!OpportunityLineItem.Quantity}"/>
+        
+        <apex:outputField value="{!OpportunityLineItem.ProductCode}"/>
+    </apex:pageBlockSection>
+        
+    <apex:pageBlockSection title="Unknown Purpose Fields" columns="2">
+        <apex:outputField value="{!OpportunityLineItem.Social_Media_Notice__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Opp_Sales_Rep_Id__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Month_1_Charge__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Digital_Product__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Full_Charge_Amt__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Default_Include_In_Monthly_Total__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Term__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Print_Product__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Count_SEO__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.ExpireNoticeDate__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Count_Web__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Live_Timer__c}"/>
+        <apex:outputField value="{!OpportunityLineItem.Count_Social__c}"/>
+        <apex:outputText value="" />
+        <apex:outputField value="{!OpportunityLineItem.Earliest_Timestamp__c}"/>
+    </apex:pageBlockSection>
+    
+    <c:InvoiceLineItemComp oppLineItemId="{!OpportunityLineItem.id}"></c:InvoiceLineItemComp>    
+        
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

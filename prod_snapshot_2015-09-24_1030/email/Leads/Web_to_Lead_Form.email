@@ -1,0 +1,8 @@
+Hello {!Lead.OwnerFirstName}, 
+
+A new lead was received at {!Lead.CreatedDate} for {!Lead.Company} in {!Lead.Market__c}. Please change the owner of this lead to the Account Executive you wish to assign. 
+
+Thanks, 
+
+Liam Oliver
+Merchant Loyalty Manager

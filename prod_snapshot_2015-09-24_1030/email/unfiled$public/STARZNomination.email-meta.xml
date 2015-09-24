@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>STARZ Nomination</name>
+    <style>none</style>
+    <subject>{!STARZ__c.Nominee__c} - You&apos;ve Received a STAR!</subject>
+    <textOnly>{!STARZ__c.Nominee__c}
+{!STARZ__c.Special__c}
+
+{!STARZ__c.STARZ_Event__c}
+
+
+{!STARZ__c.Supervisor__c}
+{!STARZ__c.Link}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

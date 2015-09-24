@@ -1,0 +1,7 @@
+{!RequestsIssues__c.Link}<br/>
+{!RequestsIssues__c.Name}<br/><br/>
+Here are the details of the request:<br/><br/>
+Submitted By : {!RequestsIssues__c.CreatedBy}<br/>
+Transfer From : {!RequestsIssues__c.Transfer_From_Txt__c}<br/>
+Transfer To : {!RequestsIssues__c.Transfer_To_Txt__c}<br/>
+Records To Transfer : {!RequestsIssues__c.Transfer_Object__c}

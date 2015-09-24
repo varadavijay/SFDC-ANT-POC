@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SLA By Product Type v2</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SLAs By Product Type v2</value>
+    </caseValues>
+    <fields>
+        <label><!-- Awaiting Client Approval BH --></label>
+        <name>Awaiting_Client_Approval_BH__c</name>
+    </fields>
+    <fields>
+        <label><!-- Awaiting Client Approval --></label>
+        <name>Awaiting_Client_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Awaiting Client Asset BH --></label>
+        <name>Awaiting_Client_Asset_BH__c</name>
+    </fields>
+    <fields>
+        <label><!-- Awaiting Client Asset --></label>
+        <name>Awaiting_Client_Asset__c</name>
+    </fields>
+    <fields>
+        <label><!-- Awaiting Client Onboard BH --></label>
+        <name>Awaiting_Client_Onboard_BH__c</name>
+    </fields>
+    <fields>
+        <label><!-- Awaiting Client Onboard --></label>
+        <name>Awaiting_Client_Onboard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed Won To Assigned BH --></label>
+        <name>Closed_Won_To_Assigned_BH__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed Won To Assigned --></label>
+        <name>Closed_Won_To_Assigned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days To Live BH --></label>
+        <name>Days_To_Live_BH__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days To Live --></label>
+        <name>Days_To_Live__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Fulfillment BH --></label>
+        <name>In_Fulfillment_BH__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Fulfillment --></label>
+        <name>In_Fulfillment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Period Live Date --></label>
+        <name>Period_Live_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product SLA Dec --></label>
+        <name>Product_SLA_Dec__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product SLA --></label>
+        <name>Product_SLA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>Product_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Products Live --></label>
+        <name>Products_Live__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report Sort --></label>
+        <name>Report_Sort__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

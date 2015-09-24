@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Make DC Sys Request</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>https://na7.salesforce.com/a0Q/e?retURL=%2Fa0Q%2Fo&amp;RecordType=012A0000000xuOh&amp;ent=01IA0000001nf2R&amp;00NA0000007iIeX=&quot;Salesforce - DealChicken&quot;</url>
+</CustomPageWebLink>

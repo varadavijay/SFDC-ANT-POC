@@ -1,0 +1,7 @@
+Hi there,
+
+A Valley Values Artwork change is due.  Please respond appropriately.
+
+{!Opportunity.Name}
+{!Opportunity.OwnerFullName}
+{!Order_Fulfillment__c.Link}

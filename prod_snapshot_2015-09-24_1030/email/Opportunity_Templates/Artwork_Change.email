@@ -1,0 +1,6 @@
+An Artwork Change Date for one of the Community Print Order records is 14 days out. Please review the detail in salesforce.com.
+
+
+{!Order_Fulfillment__c.Link}
+{!Opportunity.Name}
+{!Opportunity.OwnerFullName}

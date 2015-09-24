@@ -1,0 +1,10 @@
+<apex:page showHeader="false" cache="false" id="SiteTemplate">
+    <div id="container">
+        <apex:insert name="header">
+            <apex:image value="{!URLFOR($Resource.GO_Digital_Logo)}" />
+        </apex:insert>
+        <apex:insert name="body" />
+        <apex:insert name="footer">
+        </apex:insert>
+    </div>
+</apex:page>
